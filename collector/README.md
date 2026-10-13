@@ -17,7 +17,13 @@ Sends prompts to each model and saves every answer in the same format, so data c
 
 ## Setup (once)
 
-1. Python 3.9+, then `pip install -r requirements.txt`
+1. Python 3.9+. From inside `collector/`, create a virtual environment and install the one library:
+```
+   python3 -m venv .venv
+   source .venv/bin/activate        # Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+```
+   Run `source .venv/bin/activate` again in each new Terminal window before using the script, and `deactivate` to leave it.
 2. Install Ollama (https://ollama.com), then pull the open models:
    ```
    ollama pull llama3.1:8b
