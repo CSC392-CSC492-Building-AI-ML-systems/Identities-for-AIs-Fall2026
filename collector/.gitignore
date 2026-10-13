@@ -1,0 +1,5 @@
+# API keys - never commit
+.env
+# collected data - shared separately, not in git
+data/
+__pycache__/
