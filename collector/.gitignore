@@ -2,4 +2,6 @@
 .env
 # collected data - shared separately, not in git
 data/
+# local Python environment
+.venv/
 __pycache__/
