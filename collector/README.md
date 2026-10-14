@@ -93,7 +93,7 @@ Size of a full training run: 300 prompts × 3 samples = **900 answers per model*
 
 `data/raw/<model_key>/<prompt_set_version>.jsonl`, or `<prompt_set_version>__<tag>.jsonl` when `--tag` is used. One JSON record per answer. The fields are described in `RESPONSE_FORMAT.md`.
 
-`data/` is not committed to git (it gets big).
+Collected data in `data/` is committed to the repo (it is no longer in `.gitignore`). Only commit real runs, not test runs.
 
 ## Known limitations
 
