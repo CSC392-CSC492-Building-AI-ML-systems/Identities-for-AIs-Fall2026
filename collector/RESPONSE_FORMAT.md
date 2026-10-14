@@ -6,7 +6,7 @@ Records are stored as **JSON Lines** (`.jsonl`): one record per line.
 
 - New records are appended, so an interrupted run can resume where it stopped.
 - Load in Python with `pandas.read_json("file.jsonl", lines=True)`.
-- Files are named `data/raw/<model_key>/<prompt_set_version>.jsonl`, e.g. `data/raw/llama3.1-8b/training_v1.jsonl`.
+- Files are named `data/raw/<model_key>/<prompt_set_version>.jsonl`, e.g. `data/raw/llama3.1-8b/training_v1.jsonl`. When `--tag` is used, the tag is added: `training_v1__noon.jsonl`.
 
 ## Fields
 
@@ -36,6 +36,10 @@ Records are stored as **JSON Lines** (`.jsonl`): one record per line.
 | `output_tokens` | integer or null | `148` | Tokens received. For tracking API cost |
 | `latency_ms` | integer or null | `1840` | Time from request to full response |
 | `error` | string or null | `null` | Error message if the call failed. Failed calls are recorded rather than dropped, so we can see which models or providers fail instead of the data silently thinning out |
+| `tag` | string or null | `"noon"` | Label for the round, from `--tag`. Lets a repeat run (e.g. noon vs midnight, for drift) be saved and told apart. `null` if no tag was used |
+| `seed` | integer or null | `1000` | Random seed sent to Ollama (1000 + `sample_index`), so an answer can be reproduced. `null` for API models |
+| `model_digest` | string or null | `"68ceab7e…"` | Ollama's ID for the exact model file. If it changes between runs, the model was updated or re-pulled, so a difference is not drift. `null` for API models |
+| `quantization` | string or null | `"Q4_K_M"` | Compression level of the local model. Confirms everyone ran the same version. `null` for API models |
 
 ## Example record
 
@@ -66,7 +70,12 @@ Shown on several lines for readability; in the file it is a single line.
   "input_tokens": 98,
   "output_tokens": 64,
   "latency_ms": 1840,
-  "error": null
+  "error": null,
+  "tag": "noon",
+  "seed": 1000,
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "quantization": "Q4_K_M"
+}
 }
 ```
 

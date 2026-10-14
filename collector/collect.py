@@ -26,6 +26,8 @@ HERE = Path(__file__).parent
 SAMPLES_PER_PROMPT = 3              # answers collected per prompt
 # Defaults from V1's collect_data.py. Override per run with --temperature / --max-tokens
 # (both are saved in every record).
+SEED_BASE = 1000                    # Ollama runs: seed = SEED_BASE + sample_index ...
+OLLAMA_NATIVE = "http://localhost:11434"   # for digest/quantization ...
 TEMPERATURE = 0.7
 MAX_TOKENS = 1200
 SUBSET_SEED = 398                   # fixed, so --subset always picks the same prompts
@@ -90,15 +92,18 @@ def load_models(path, only=None):
 
 
 # --- Calling a model ------------------------------------------------------------------------
-def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_tokens):
+def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_tokens, seed=None):
     """Send one request. Returns (text, served_model, finish_reason, in_tokens, out_tokens)."""
     if provider == "mock":
         return (f"[mock answer from {model_id} to: {user_prompt[:40]}]", model_id, "stop", 10, 12)
     cfg = PROVIDERS[provider]
     messages = ([{"role": "system", "content": system_prompt}] if system_prompt else []) + \
                [{"role": "user", "content": user_prompt}]
-    body = json.dumps({"model": model_id, "messages": messages,
-                       "temperature": temperature, "max_tokens": max_tokens}).encode()
+    payload = {"model": model_id, "messages": messages,
+               "temperature": temperature, "max_tokens": max_tokens}
+    if seed is not None and provider == "ollama":   # only sent to local Ollama
+        payload["seed"] = seed
+    body = json.dumps(payload).encode()
     headers = {"Content-Type": "application/json"}
     if cfg["key_env"]:
         key = os.environ.get(cfg["key_env"])
@@ -117,7 +122,7 @@ def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_
         text = f"<think>{thinking}</think>" + text
     return (text, data.get("model"), choice.get("finish_reason"),
             usage.get("prompt_tokens"), usage.get("completion_tokens"))
-
+ 
 
 def call_with_retries(*args):
     for attempt in range(MAX_RETRIES):
@@ -135,13 +140,32 @@ def call_with_retries(*args):
         time.sleep(min(60, 2 ** attempt * 2))   # wait 2, 4, 8, 16 s ... then try again
 
 
+def ollama_model_info(model_id):
+    """Get digest and quantization of a local Ollama model. The chat response does not include them,
+    so they are asked for separately (once per model per run). Returns None values if unavailable."""
+    info = {"model_digest": None, "quantization": None}
+    try:
+        with urllib.request.urlopen(OLLAMA_NATIVE + "/api/tags", timeout=10) as r:
+            for t in json.load(r).get("models", []):
+                if t.get("name") in (model_id, model_id + ":latest"):
+                    info["model_digest"] = t.get("digest")
+        req = urllib.request.Request(OLLAMA_NATIVE + "/api/show", data=json.dumps({"model": model_id}).encode(),
+                                     headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=10) as r:
+            info["quantization"] = json.load(r).get("details", {}).get("quantization_level")
+    except Exception:   # noqa: BLE001 - best effort, never stop a run for this
+        pass
+    return info
 # --- Main loop ------------------------------------------------------------------------------
 def already_saved(out_file):
     """Keys of answers already saved without error, so a restart skips them."""
     done = set()
     if out_file.exists():
         for line in open(out_file, encoding="utf-8"):
-            r = json.loads(line)
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
             if not r.get("error"):
                 done.add((r["prompt_id"], r["persona_id"], r["sample_index"]))
     return done
@@ -166,6 +190,7 @@ def main():
                     help="only N prompts per category, picked at random with a fixed seed (same every time)")
     ap.add_argument("--run-type", default="library", choices=["library", "baseline", "monitoring"])
     ap.add_argument("--deployment-id", default=None, help="for baseline/monitoring runs, e.g. bank-support-bot")
+    ap.add_argument("--tag", default=None, help="label for this round e.g. noon or midnight.")
     ap.add_argument("--out", default=HERE / "data/raw")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -183,7 +208,10 @@ def main():
           f"= {len(prompts) * n_personas * len(models) * args.samples} answers")
 
     for m in models:
-        out_file = Path(args.out) / m["model_key"] / f"{args.prompt_set_version}.jsonl"
+        name = args.prompt_set_version + (f"__{args.tag}" if args.tag else "")
+        out_file = Path(args.out) / m["model_key"] / f"{name}.jsonl"
+        info = ollama_model_info(m["model_id"]) if m["provider"] == "ollama" and not args.dry_run \
+            else {"model_digest": None, "quantization": None}
         done = already_saved(out_file)
         new = errors = 0
         if not args.dry_run:
@@ -201,8 +229,9 @@ def main():
                             print(f"[dry run] {m['model_key']} | {p['prompt_id']} | {persona_id} | t={temp}")
                             continue
                         t0 = time.time()
+                        seed = SEED_BASE + s
                         result, err = call_with_retries(m["provider"], m["model_id"], personas[persona_id],
-                                                        p["text"], temp, args.max_tokens)
+                                                        p["text"], temp, args.max_tokens, seed)
                         text, served, finish, tin, tout = result or (None, None, None, None, None)
                         reasoning = None
                         if text and THINK_BLOCK.search(text):   # keep reasoning separate from the answer
@@ -234,6 +263,11 @@ def main():
                             "output_tokens": tout,
                             "latency_ms": int((time.time() - t0) * 1000),
                             "error": err,
+                            #extras
+                            "tag": args.tag,
+                            "seed": seed if m["provider"] == "ollama" else None,
+                            "model_digest": info["model_digest"],
+                            "quantization": info["quantization"],
                         }
                         f.write(json.dumps(record, ensure_ascii=False) + "\n")
                         f.flush()
