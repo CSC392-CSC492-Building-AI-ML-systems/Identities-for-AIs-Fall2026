@@ -1,0 +1,22 @@
+# Models the collector calls.
+# model_key = our short name (used in file names and records). model_id = exact ID sent to the provider.
+# enabled: false = skipped. Open models run locally through Ollama (4-bit quantized tags).
+
+models:
+  # --- Open models (Ollama, local, free) ---
+  - {model_key: llama3.1-8b,  provider: ollama, model_id: "llama3.1:8b", enabled: true}
+  - {model_key: llama3.2-3b,  provider: ollama, model_id: "llama3.2:3b", enabled: true}
+  - {model_key: qwen3-8b,     provider: ollama, model_id: "qwen3:8b",    enabled: true}   # its <think> text is saved to reasoning_text
+  - {model_key: qwen3.5-9b,   provider: ollama, model_id: "qwen3.5:9b",  enabled: true}
+  - {model_key: gemma3-4b,    provider: ollama, model_id: "gemma3:4b",   enabled: true}
+
+  # --- Closed models (need an API key in .env; set enabled: true once it is there) ---
+  - {model_key: gpt-5.6-terra,     provider: openai,    model_id: "TODO-confirm", enabled: false, delay_seconds: 1}  # TODO: set the OpenAI model IDs
+  - {model_key: gpt-5.6-luna,      provider: openai,    model_id: "TODO-confirm", enabled: false, delay_seconds: 1}
+  - {model_key: claude-sonnet-5.5, provider: anthropic, model_id: "claude-sonnet-5-5",          enabled: false, delay_seconds: 1}
+  - {model_key: claude-haiku-4.5,  provider: anthropic, model_id: "claude-haiku-4-5-20251001",  enabled: false, delay_seconds: 1}
+  - {model_key: gemini-3.8-flash,  provider: google,    model_id: "gemini-3.8-flash",           enabled: false, delay_seconds: 4}  # free tier is rate limited
+  - {model_key: gemini-3.1-pro,    provider: google,    model_id: "gemini-3.1-pro-preview",     enabled: false, delay_seconds: 4}  # preview model
+
+  # --- Test only: no model is called ---
+  - {model_key: mock-model, provider: mock, model_id: "mock", enabled: true}
