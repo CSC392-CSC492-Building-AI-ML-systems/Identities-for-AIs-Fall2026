@@ -6,9 +6,9 @@ models:
   # --- Open models (Ollama, local, free) ---
   - {model_key: llama3.1-8b,  provider: ollama, model_id: "llama3.1:8b", enabled: true}
   - {model_key: llama3.2-3b,  provider: ollama, model_id: "llama3.2:3b", enabled: true}
-  - {model_key: qwen3-8b,     provider: ollama, model_id: "qwen3:8b",    enabled: true}   # its <think> text is saved to reasoning_text
-  - {model_key: qwen3.5-9b,   provider: ollama, model_id: "qwen3.5:9b",  enabled: true}
-  - {model_key: gemma3-4b,    provider: ollama, model_id: "gemma3:4b",   enabled: true}
+  - {model_key: qwen3-8b,     provider: ollama, model_id: "qwen3:8b",    enabled: false}   # its <think> text is saved to reasoning_text
+  - {model_key: qwen3.5-9b,   provider: ollama, model_id: "qwen3.5:9b",  enabled: false}
+  - {model_key: gemma3-4b,    provider: ollama, model_id: "gemma3:4b",   enabled: false}
 
   # --- Closed models (need an API key in .env; set enabled: true once it is there) ---
   - {model_key: gpt-5.6-terra,     provider: openai,    model_id: "TODO-confirm", enabled: false, delay_seconds: 1}  # TODO: set the OpenAI model IDs
