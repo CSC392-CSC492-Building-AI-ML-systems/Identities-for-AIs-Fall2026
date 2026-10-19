@@ -40,21 +40,21 @@ Sends prompts to each model and saves every answer in the same format, so data c
 ```
 python collect.py --dry-run --limit 2                # shows what would be sent, calls nothing
 python collect.py --model mock-model --limit 3       # tests the whole pipeline without a real model
-python collect.py --model llama3.1-8b --limit 1      # first real test: 1 prompt on 1 model
-python collect.py --model llama3.1-8b                # full training run for one model
+python collect.py --model <your model> --limit 1      # first real test: 1 prompt on 1 model
+python collect.py --model <your model>                # full training run for one model
 python collect.py                                    # all enabled models
 ```
 
 No-persona comparison (small subset, everything with P13):
 ```
-python collect.py --subset 3 --persona P13 --prompt-set-version training_v1_no_persona
+python collect.py --model <your model> --subset 3 --persona P13 --prompt-set-version training_v1_no_persona
 ```
 `--subset 3` takes 3 prompts from each category (24 prompts, 72 answers per model). It picks the same prompts every time.
 Use a separate `--prompt-set-version` so this data stays in its own file.
 
 Fingerprinting prompts (Step 2), run under several personas:
 ```
-python collect.py --prompts prompts/fingerprint_prompts.yaml --prompt-set-version fingerprint_v0 \
+python collect.py --model <your model> --prompts prompts/fingerprint_prompts.yaml --prompt-set-version fingerprint_v0 \
                   --persona P13 --persona BK1 --persona P05
 ```
 
