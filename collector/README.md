@@ -63,7 +63,12 @@ Baseline / monitoring run for one simulated deployment (Step 1):
 python collect.py --prompts <baseline file> --prompt-set-version baseline_v0 \
                   --run-type baseline --deployment-id bank-support-bot --persona BK1 --samples 10
 ```
-
+Repeat rounds (for drift): rerunning the same command skips answers already saved, so give each round
+its own tag. The tag goes in the file name. Reuse the same tag to resume a round.
+```
+python collect.py --model gemma3-4b --tag noon
+python collect.py --model gemma3-4b --tag midnight
+```
 **Stopping is safe.** Run the same command again and it skips answers already saved. Failed calls are saved with an `error` and retried on the next run.
 
 ## Settings (top of `collect.py`)
@@ -78,6 +83,7 @@ Change them per run with flags. Every record saves the values used, so data from
 | Max tokens | 1200 | `--max-tokens 1500` |
 | Persona | the sheet's `persona_id` | `--persona P13` (repeatable) |
 | Subset | all prompts | `--subset N` = N per category |
+| Round label | none | `--tag noon` |
 
 To check whether max tokens is high enough, count records with `"finish_reason": "length"` (answer cut off). Qwen's thinking text uses tokens too.
 
@@ -85,9 +91,9 @@ Size of a full training run: 300 prompts × 3 samples = **900 answers per model*
 
 ## Output
 
-`data/raw/<model_key>/<prompt_set_version>.jsonl`, one JSON record per answer. The fields are described in `RESPONSE_FORMAT.md`.
+`data/raw/<model_key>/<prompt_set_version>.jsonl`, or `<prompt_set_version>__<tag>.jsonl` when `--tag` is used. One JSON record per answer. The fields are described in `RESPONSE_FORMAT.md`.
 
-`data/` is not committed to git (it gets big).
+Collected data in `data/` is committed to the repo (it is no longer in `.gitignore`). Only commit real runs, not test runs.
 
 ## Known limitations
 
