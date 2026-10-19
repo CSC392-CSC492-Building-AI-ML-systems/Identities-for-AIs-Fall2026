@@ -1,6 +1,6 @@
 # Data collector
 
-Sends prompts to each model and saves every answer in the same format, so data collected by different people can be combined.
+Sends prompts to each model and saves every answer in the same format, so data collected by different people can be combined
 
 ## What's in this folder
 
