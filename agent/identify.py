@@ -1,18 +1,19 @@
 """
-Agentic model identifier (Stage 2, harness approach), first version.
+Agentic model identifier (Stage 2, harness approach).
 
 Given one chatbot answer and the prompt that produced it, an LLM (e.g. Gemini) guesses which model
-wrote it. The "harness" gives the LLM context: example answers from every known model to the SAME
-prompt, taken from our collected fingerprinting data. It then returns family, version, confidence
-and a reason, and attaches the predicted model's licence info (a first "tool": model card lookup).
+wrote it. The "harness" gives the LLM context: example answers from every known model, taken from our
+collected data (fingerprinting prompts, the 300 training prompts, or both). It returns family, version,
+confidences and a reason, and attaches the predicted model's licence (a first "tool": model card lookup).
 
 Evaluation: answers with sample_index 0 and 1 are the example pool; sample_index 2 is the test set,
 so the LLM is never tested on an answer it was shown.
 
-Examples
-    python identify.py --dry-run --limit 1          # print the context that would be sent, call nothing
-    python identify.py --provider mock --limit 5    # test the pipeline with a fake LLM
-    python identify.py --limit 20                   # real run on 20 test answers (Gemini free tier)
+Test modes (--mode), from easiest to hardest:
+    easy           examples answer the SAME prompt, same persona when possible
+    other-persona  examples answer the same prompt, but under DIFFERENT personas (fingerprinting data only)
+    other-prompt   examples answer DIFFERENT prompts, so the LLM must recognise general style
+--leave-out MODEL  hides one model from the LLM; the right answer for its test answers becomes "Unknown"
 """
 import argparse, csv, json, os, random, re, time, urllib.request, urllib.error
 from collections import Counter, defaultdict
@@ -39,9 +40,10 @@ PROVIDERS = {
     "openai":    ("https://api.openai.com/v1", "OPENAI_API_KEY"),
 }
 MAX_EXAMPLE_CHARS = 600      # cut long example answers so the context stays small (and cheap)
+EXAMPLES_PER_MODEL = 2
 
 INSTRUCTIONS = """You identify which AI model wrote a chatbot answer.
-You are given the prompt, examples of how each known model answered that same prompt, and the answer to identify.
+You are given the prompt, example answers from each known model, and the answer to identify.
 Compare wording, tone, length, formatting, self-descriptions and refusal style.
 Known models: {models}.
 If the answer does not clearly match any known model, use "Unknown".
@@ -84,18 +86,29 @@ def load_prompt_texts(datasets):
     return texts
 
 
-def build_messages(test, pool, models):
-    """Context = each model's example answers to the same prompt, under the same persona if possible."""
+def pick_examples(test, pool, key, mode):
+    """Example answers from one model, chosen according to the test mode."""
+    same_data = [r for r in pool if r["model_key"] == key and r["_data"] == test["_data"]]
+    if mode == "other-prompt":
+        ex = [r for r in same_data if r["prompt_id"] != test["prompt_id"]]
+        rng = random.Random(f"{test['record_id']}-{key}")      # same examples every run
+        return rng.sample(ex, min(EXAMPLES_PER_MODEL, len(ex)))
+    ex = [r for r in same_data if r["prompt_id"] == test["prompt_id"]]
+    if mode == "other-persona":
+        return [r for r in ex if r["persona_id"] != test["persona_id"]][:EXAMPLES_PER_MODEL]
+    same_persona = [r for r in ex if r["persona_id"] == test["persona_id"]]
+    return (same_persona or ex)[:EXAMPLES_PER_MODEL]
+
+
+def build_messages(test, pool, known, mode):
     parts = [f"PROMPT:\n{test['prompt_text']}\n"]
-    for key in models:
-        ex = [r for r in pool if r["model_key"] == key and r["prompt_id"] == test["prompt_id"]
-              and r["_data"] == test["_data"]]        
-        same_persona = [r for r in ex if r["persona_id"] == test["persona_id"]]
-        for r in (same_persona or ex)[:2]:
-            parts.append(f"EXAMPLE from {MODELS[key][1]}:\n{r['response_text'][:MAX_EXAMPLE_CHARS]}\n")
+    for key in known:
+        for r in pick_examples(test, pool, key, mode):
+            asked = "" if r["prompt_id"] == test["prompt_id"] else f" (answering a different prompt: {r['prompt_text'][:150]})"
+            parts.append(f"EXAMPLE from {MODELS[key][1]}{asked}:\n{r['response_text'][:MAX_EXAMPLE_CHARS]}\n")
     parts.append(f"ANSWER TO IDENTIFY:\n{test['response_text'][:MAX_EXAMPLE_CHARS * 2]}")
-    families = sorted({MODELS[k][0] for k in models})
-    system = INSTRUCTIONS.format(models=", ".join(MODELS[k][1] for k in models), families="|".join(families))    
+    families = sorted({MODELS[k][0] for k in known})
+    system = INSTRUCTIONS.format(models=", ".join(MODELS[k][1] for k in known), families="|".join(families))
     return [{"role": "system", "content": system}, {"role": "user", "content": "\n".join(parts)}]
 
 
@@ -148,12 +161,21 @@ def load_env(path):
                 k, v = line.strip().split("=", 1)
                 os.environ.setdefault(k, v.strip().strip('"'))
 
+def expected_answer(true_key, known):
+    """What counts as correct. A hidden model should be called Unknown; its family is still
+    correct if another model of that family is known (e.g. Llama 3.2 hidden, Llama 3.1 known)."""
+    fam, ver = MODELS[true_key]
+    if true_key in known:
+        return fam, ver
+    return (fam if any(MODELS[k][0] == fam for k in known) else "Unknown"), "Unknown"
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--provider", default="google", choices=["google", "anthropic", "openai", "mock"])
     ap.add_argument("--model", default="gemini-3.8-flash")
     ap.add_argument("--data", default="fingerprint", choices=["fingerprint", "training", "both"])
+    ap.add_argument("--mode", default="easy", choices=["easy", "other-persona", "other-prompt"])
+    ap.add_argument("--leave-out", choices=list(MODELS), help="hide this model from the LLM (tests 'Unknown')")
     ap.add_argument("--limit", type=int, default=20, help="number of test answers")
     ap.add_argument("--per-model", type=int, help="this many test answers from EACH model")
     ap.add_argument("--delay", type=float, default=4, help="seconds between calls (free tier)")
@@ -161,14 +183,18 @@ def main():
     ap.add_argument("--out")
     args = ap.parse_args()
     datasets = ["fingerprint", "training"] if args.data == "both" else [args.data]
-    if not args.out:
-        args.out = HERE / ("results.jsonl" if args.data == "fingerprint" else f"results_{args.data}.jsonl")
+    if args.mode == "other-persona" and args.data != "fingerprint":
+        exit("--mode other-persona needs --data fingerprint (training prompts each have only one persona)")
+    if not args.out:   # one file per experiment, so results from different settings never mix
+        name = f"results_{args.data}_{args.mode}" + (f"_without-{args.leave_out}" if args.leave_out else "")
+        args.out = HERE / f"{name}.jsonl"
     load_env(HERE.parent / "collector" / ".env")
 
     prompts = load_prompt_texts(datasets)
 
     recs = load_records(MODELS, datasets)
     models = sorted({r["model_key"] for r in recs})
+    known = [m for m in models if m != args.leave_out]
     if not recs:
         exit(f"No {args.data} data found under {DATA}")
     for r in recs:
@@ -187,6 +213,9 @@ def main():
         random.Random(398).shuffle(tests)
     else:
         tests = tests[: args.limit]
+
+    print(f"Data: {args.data} | mode: {args.mode} | known models: {', '.join(known)}"
+          + (f" | hidden: {args.leave_out}" if args.leave_out else "") + f" | testing {len(tests)}")
     
     licences = licence_lookup()
     done = {}                                  # resume: keep answers already scored in this file
@@ -199,7 +228,7 @@ def main():
     for i, t in enumerate(tests, 1):
         if t["record_id"] in done:
             continue
-        msgs = build_messages(t, pool, models)
+        msgs = build_messages(t, pool, known, args.mode)
         if args.dry_run:
             print(msgs[0]["content"], "\n---\n", msgs[1]["content"])
             return
@@ -208,16 +237,19 @@ def main():
         except RuntimeError as e:
             print(f"[{i}/{len(tests)}] skipped ({e}); run the same command again to retry it")
             continue
-        true_fam, true_ver = MODELS[t["model_key"]]
+        
+        exp_fam, exp_ver = expected_answer(t["model_key"], known)
         pred_key = next((k for k, v in MODELS.items() if v[1] == pred.get("version")), None)
-        row = {"record_id": t["record_id"], "prompt_id": t["prompt_id"], "persona_id": t["persona_id"],
-               "true_model": true_ver, "pred_family": pred.get("family"), "pred_version": pred.get("version"),
+        row = {"record_id": t["record_id"], "data": t["_data"], "mode": args.mode, "left_out": args.leave_out,
+               "prompt_id": t["prompt_id"], "persona_id": t["persona_id"],
+               "true_model": MODELS[t["model_key"]][1], "expected_family": exp_fam, "expected_version": exp_ver,
+               "pred_family": pred.get("family"), "pred_version": pred.get("version"),
                "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
                "reason": pred.get("reason"), "licence": licences.get(pred_key),
-               "family_correct": pred.get("family") == true_fam, "version_correct": pred.get("version") == true_ver}
+               "family_correct": pred.get("family") == exp_fam, "version_correct": pred.get("version") == exp_ver}
         results.append(row)
         out.write(json.dumps(row) + "\n"); out.flush()   # saved straight away, so nothing is lost
-        print(f"[{i}/{len(tests)}] true {true_ver:14} | guess {str(pred.get('version')):14} "
+        print(f"[{i}/{len(tests)}] true {row['true_model']:16} | expected {exp_ver:16} | guess {str(pred.get('version')):16} "
               f"{'OK' if row['version_correct'] else 'X '} | {t['prompt_id']} {t['persona_id']}", flush=True)
         if args.provider != "mock":
             time.sleep(args.delay)
@@ -233,6 +265,10 @@ def main():
         by_model[r["true_model"]].append(r["version_correct"])
     for m, v in sorted(by_model.items()):
         print(f"  {m:14} {sum(v)}/{len(v)} correct")
+    if len(datasets) > 1:
+        for ds in datasets:
+            v = [r["version_correct"] for r in results if r.get("data") == ds]
+            print(f"  {ds} data: {sum(v)}/{len(v)} correct")
     print("Most common mistakes:", Counter((r["true_model"], r["pred_version"]) for r in results
                                           if not r["version_correct"]).most_common(3))
     print(f"Saved -> {args.out}")

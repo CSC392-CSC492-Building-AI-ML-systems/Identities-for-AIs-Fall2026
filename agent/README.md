@@ -4,7 +4,17 @@ An LLM (Gemini by default) guesses which model wrote a chatbot answer. The harne
 
 ## How it's tested
 
-Answers with `sample_index` 0 and 1 are the examples; `sample_index` 2 is the test set, so the LLM is never tested on an answer it was shown. It reports family and version accuracy, accuracy per model, and the most common mistakes, and saves every guess to `results.jsonl`.
+Answers with `sample_index` 0 and 1 are the examples; `sample_index` 2 is the test set, so the LLM is never tested on an answer it was shown. It reports family and version accuracy, accuracy per model (and per dataset with `--data both`), and the most common mistakes.
+
+Test modes (`--mode`), from easiest to hardest:
+
+| Mode | Examples shown to the LLM | What it tests |
+|---|---|---|
+| `easy` (default) | Answers to the **same prompt**, same persona when possible | Matching near-identical answers |
+| `other-persona` | Same prompt, **different personas** (fingerprinting data only) | Recognising a model hidden behind different instructions |
+| `other-prompt` | Answers to **different prompts** | Recognising a model by general style, as with a real customer question |
+
+`--leave-out MODEL` hides one model from the LLM. Its test answers should be called "Unknown" (the family still counts as correct if another model of that family is known).
 
 ## Setup
 
@@ -19,10 +29,17 @@ python identify.py --provider mock --limit 5  # test the pipeline with a fake LL
 python identify.py --limit 20                 # real run on 20 test answers
 python identify.py --data training --per-model 5   # training data, 5 test answers from each model
 python identify.py --data both --per-model 5       # fingerprinting + training data together
+python identify.py --per-model 5 --mode other-persona
+python identify.py --per-model 5 --mode other-prompt
+python identify.py --per-model 5 --leave-out qwen3.5-9b      # does it say "Unknown" for a hidden model?
 ```
 
-Options: `--data` (`fingerprint` default, `training`, or `both`), `--per-model N` (balanced test set: N test answers from each model, instead of `--limit`), `--model` (default `gemini-3.8-flash`), `--provider` (`google`, `anthropic`, `openai`), `--delay` (seconds between calls, default 4 for the free tier).
+Options: `--data` (`fingerprint` default, `training`, `both`), `--mode` (`easy` default, `other-persona`, `other-prompt`), `--leave-out MODEL`, `--per-model N` (balanced test set: N test answers from each model, instead of `--limit`), `--model` (default `gemini-3.8-flash`), `--provider` (`google`, `anthropic`, `openai`, `mock`), `--delay` (seconds between calls, default 4), `--out` (results file).
 
-# Which models it can identify
+## Results files
+
+Each experiment saves to its own file, named from the settings, e.g. `results_fingerprint_other-prompt.jsonl` or `results_fingerprint_easy_without-qwen3.5-9b.jsonl`. Running the same command again continues that file and skips answers already scored. Use `--out` to name a file yourself, e.g. when comparing different instructions.
+
+## Which models it can identify
 
 Only models that have collected data for the chosen `--data` are offered to the LLM as "known models". The list of possible models is in `MODELS` at the top of `identify.py`. The Gemini models only have training data so far, so they show up with `--data training` or `--data both`.
