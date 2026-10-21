@@ -14,7 +14,7 @@ Examples
     python identify.py --provider mock --limit 5    # test the pipeline with a fake LLM
     python identify.py --limit 20                   # real run on 20 test answers (Gemini free tier)
 """
-import argparse, json, os, random, re, time, urllib.request, urllib.error
+import argparse, csv, json, os, random, re, time, urllib.request, urllib.error
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -29,7 +29,10 @@ MODELS = {
     "qwen3-8b":    ("Qwen", "Qwen3 8B"),
     "qwen3.5-9b":  ("Qwen", "Qwen3.5 9B"),
     "gemma3-4b":   ("Gemma", "Gemma 3 4B"),
+    "gemini-3.8-flash": ("Gemini", "Gemini 3.8 Flash"),
+    "gemini-3.1-pro":   ("Gemini", "Gemini 3.1 Pro"),
 }
+DATASETS = {"fingerprint": "fingerprint_v0.jsonl", "training": "training_v1.jsonl"}
 PROVIDERS = {
     "google":    ("https://generativelanguage.googleapis.com/v1beta/openai", "GEMINI_API_KEY"),
     "anthropic": ("https://api.anthropic.com/v1", "ANTHROPIC_API_KEY"),
@@ -43,30 +46,56 @@ Compare wording, tone, length, formatting, self-descriptions and refusal style.
 Known models: {models}.
 If the answer does not clearly match any known model, use "Unknown".
 Reply with JSON only, no other text:
-{{"family": "<Llama|Qwen|Gemma|Unknown>", "version": "<one of the known versions or Unknown>",
+{{"family": "<{families}|Unknown>", "version": "<one of the known versions or Unknown>",
   "family_confidence": <0-1>, "version_confidence": <0-1>, "reason": "<one sentence>"}}"""
 
 
-def load_records(models):
+def load_records(models, datasets):
     recs = []
     for key in models:
-        f = DATA / key / "fingerprint_v0.jsonl"
-        if f.exists():
-            recs += [r for r in map(json.loads, open(f, encoding="utf-8"))
-                     if not r.get("error") and r.get("response_text")]
+        for ds in datasets:
+            f = DATA / key / DATASETS[ds]
+            if f.exists():
+                for r in map(json.loads, open(f, encoding="utf-8")):
+                    if not r.get("error") and r.get("response_text"):
+                        r["_data"] = ds
+                        recs.append(r)
     return recs
+
+
+def load_prompt_texts(datasets):
+    texts = {}
+    pdir = HERE.parent / "collector" / "prompts"
+    try:
+        import yaml
+        if "fingerprint" in datasets:
+            for p in yaml.safe_load(open(pdir / "fingerprinting_prompts.yaml", encoding="utf-8"))["prompts"]:
+                texts[("fingerprint", p["id"])] = p["text"]
+    except Exception:
+        pass
+    if "training" in datasets:
+        try:
+            lines = open(pdir / "training_prompts.csv", encoding="utf-8-sig").read().splitlines(True)
+            start = next(i for i, l in enumerate(lines) if l.startswith("id,"))
+            for r in csv.DictReader(lines[start:]):
+                texts[("training", r.get("source_id") or r["id"])] = r["text"]
+        except Exception:
+            pass
+    return texts
 
 
 def build_messages(test, pool, models):
     """Context = each model's example answers to the same prompt, under the same persona if possible."""
     parts = [f"PROMPT:\n{test['prompt_text']}\n"]
     for key in models:
-        ex = [r for r in pool if r["model_key"] == key and r["prompt_id"] == test["prompt_id"]]
+        ex = [r for r in pool if r["model_key"] == key and r["prompt_id"] == test["prompt_id"]
+              and r["_data"] == test["_data"]]        
         same_persona = [r for r in ex if r["persona_id"] == test["persona_id"]]
         for r in (same_persona or ex)[:2]:
             parts.append(f"EXAMPLE from {MODELS[key][1]}:\n{r['response_text'][:MAX_EXAMPLE_CHARS]}\n")
     parts.append(f"ANSWER TO IDENTIFY:\n{test['response_text'][:MAX_EXAMPLE_CHARS * 2]}")
-    system = INSTRUCTIONS.format(models=", ".join(MODELS[k][1] for k in models))
+    families = sorted({MODELS[k][0] for k in models})
+    system = INSTRUCTIONS.format(models=", ".join(MODELS[k][1] for k in models), families="|".join(families))    
     return [{"role": "system", "content": system}, {"role": "user", "content": "\n".join(parts)}]
 
 
@@ -124,33 +153,41 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--provider", default="google", choices=["google", "anthropic", "openai", "mock"])
     ap.add_argument("--model", default="gemini-3.8-flash")
+    ap.add_argument("--data", default="fingerprint", choices=["fingerprint", "training", "both"])
     ap.add_argument("--limit", type=int, default=20, help="number of test answers")
+    ap.add_argument("--per-model", type=int, help="this many test answers from EACH model")
     ap.add_argument("--delay", type=float, default=4, help="seconds between calls (free tier)")
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--out", default=HERE / "results.jsonl")
+    ap.add_argument("--out")
     args = ap.parse_args()
+    datasets = ["fingerprint", "training"] if args.data == "both" else [args.data]
+    if not args.out:
+        args.out = HERE / ("results.jsonl" if args.data == "fingerprint" else f"results_{args.data}.jsonl")
     load_env(HERE.parent / "collector" / ".env")
 
-    prompts = {}   # prompt_id -> text, from the fingerprinting prompt file
-    try:
-        import yaml
-        pf = HERE.parent / "collector" / "prompts" / "fingerprinting_prompts.yaml"
-        prompts = {p["id"]: p["text"] for p in yaml.safe_load(open(pf, encoding="utf-8"))["prompts"]}
-    except Exception:
-        pass
+    prompts = load_prompt_texts(datasets)
 
-    recs = load_records(MODELS)
+    recs = load_records(MODELS, datasets)
     models = sorted({r["model_key"] for r in recs})
     if not recs:
-        exit(f"No fingerprinting data found under {DATA}")
+        exit(f"No {args.data} data found under {DATA}")
     for r in recs:
-        r["prompt_text"] = prompts.get(r["prompt_id"], f"(prompt {r['prompt_id']})")
+        r["prompt_text"] = prompts.get((r["_data"], r["prompt_id"]), f"(prompt {r['prompt_id']})")
     pool = [r for r in recs if r["sample_index"] in (0, 1)]
     tests = [r for r in recs if r["sample_index"] == 2]
-    random.Random(398).shuffle(tests)           # same test order every run
-    tests = tests[: args.limit]
-    print(f"Models with data: {', '.join(models)} | example pool {len(pool)} | testing {len(tests)}")
-
+    random.Random(398).shuffle(tests)
+    if args.per_model:
+        seen = Counter()
+        picked = []
+        for t in tests:
+            if seen[t["model_key"]] < args.per_model:
+                seen[t["model_key"]] += 1
+                picked.append(t)
+        tests = picked
+        random.Random(398).shuffle(tests)
+    else:
+        tests = tests[: args.limit]
+    
     licences = licence_lookup()
     done = {}                                  # resume: keep answers already scored in this file
     if Path(args.out).exists() and not args.dry_run:
