@@ -1,0 +1,121 @@
+{
+  "source_files": [
+    "gemma3-4b/fingerprint_v0.jsonl",
+    "llama3.1-8b/fingerprint_v0.jsonl",
+    "llama3.2-3b/fingerprint_v0.jsonl",
+    "qwen3-8b/fingerprint_v0.jsonl",
+    "qwen3.5-9b/fingerprint_v0.jsonl"
+  ],
+  "prompt_yaml": "prompts\\fingerprinting_prompts.yaml",
+  "prompt_definitions": 32,
+  "model_labels": [
+    "gemma3-4b",
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "distinct_prompt_ids": 32,
+  "distinct_persona_ids": [
+    "BK1",
+    "BK2",
+    "BK3",
+    "BK4",
+    "P01",
+    "P12",
+    "P13",
+    "P15"
+  ],
+  "all": {
+    "total": 3840,
+    "null_response_text": 120,
+    "missing_response_text": 753,
+    "expected_missing_refusal_only": 120,
+    "unexpected_missing_response_text": 633
+  },
+  "P13": {
+    "total": 480,
+    "null_response_text": 15,
+    "missing_response_text": 87,
+    "expected_missing_refusal_only": 15,
+    "unexpected_missing_response_text": 72
+  },
+  "records_per_model": {
+    "gemma3-4b": 768,
+    "llama3.1-8b": 768,
+    "llama3.2-3b": 768,
+    "qwen3-8b": 768,
+    "qwen3.5-9b": 768
+  },
+  "records_per_persona": {
+    "BK1": 480,
+    "BK2": 480,
+    "BK3": 480,
+    "BK4": 480,
+    "P01": 480,
+    "P12": 480,
+    "P13": 480,
+    "P15": 480
+  },
+  "records_per_model_and_persona": {
+    "gemma3-4b": {
+      "BK1": 96,
+      "BK2": 96,
+      "BK3": 96,
+      "BK4": 96,
+      "P01": 96,
+      "P12": 96,
+      "P13": 96,
+      "P15": 96
+    },
+    "llama3.1-8b": {
+      "BK1": 96,
+      "BK2": 96,
+      "BK3": 96,
+      "BK4": 96,
+      "P01": 96,
+      "P12": 96,
+      "P13": 96,
+      "P15": 96
+    },
+    "llama3.2-3b": {
+      "BK1": 96,
+      "BK2": 96,
+      "BK3": 96,
+      "BK4": 96,
+      "P01": 96,
+      "P12": 96,
+      "P13": 96,
+      "P15": 96
+    },
+    "qwen3-8b": {
+      "BK1": 96,
+      "BK2": 96,
+      "BK3": 96,
+      "BK4": 96,
+      "P01": 96,
+      "P12": 96,
+      "P13": 96,
+      "P15": 96
+    },
+    "qwen3.5-9b": {
+      "BK1": 96,
+      "BK2": 96,
+      "BK3": 96,
+      "BK4": 96,
+      "P01": 96,
+      "P12": 96,
+      "P13": 96,
+      "P15": 96
+    }
+  },
+  "duplicate_record_ids": 0,
+  "repeated_sample_keys": 0,
+  "warnings": [
+    "Some response text is missing for prompts that request full storage"
+  ],
+  "outputs": [
+    "data\\processed\\fingerprint_v0_all.csv",
+    "data\\processed\\fingerprint_v0_P13.csv"
+  ]
+}
