@@ -1,0 +1,177 @@
+{
+  "input_files": {
+    "all_personas": "collector/data/processed/fingerprint_v0_all.csv",
+    "selected_persona": "collector/data/processed/fingerprint_v0_P13.csv"
+  },
+  "persona": "P13",
+  "seed": 42,
+  "split_strategy": "Within each (model_key, prompt_id) group, hold out one distinct response string when at least two exist. Exact text duplicates remain in the same split.",
+  "input_records": {
+    "all_personas": 3840,
+    "selected_persona": 480,
+    "all_missing_response": 753,
+    "persona_missing_response": 87,
+    "all_missing_output_tokens": 0,
+    "all_missing_latency_ms": 0
+  },
+  "output_records": {
+    "rf_all_train": 2933,
+    "rf_P13_train": 261,
+    "rf_P13_test": 132
+  },
+  "class_counts": {
+    "rf_all_train": {
+      "gemma3-4b": 712,
+      "llama3.1-8b": 713,
+      "llama3.2-3b": 695,
+      "qwen3-8b": 690,
+      "qwen3.5-9b": 123
+    },
+    "rf_P13_train": {
+      "gemma3-4b": 61,
+      "llama3.1-8b": 62,
+      "llama3.2-3b": 62,
+      "qwen3-8b": 54,
+      "qwen3.5-9b": 22
+    },
+    "rf_P13_test": {
+      "gemma3-4b": 32,
+      "llama3.1-8b": 31,
+      "llama3.2-3b": 31,
+      "qwen3-8b": 28,
+      "qwen3.5-9b": 10
+    }
+  },
+  "feature_count": 52,
+  "feature_columns": [
+    "response_char_count",
+    "response_word_count",
+    "response_avg_word_length",
+    "response_unique_word_fraction",
+    "response_line_count",
+    "response_punctuation_count",
+    "response_punctuation_fraction",
+    "response_uppercase_letter_fraction",
+    "response_uppercase_word_fraction",
+    "response_markdown_marker_count",
+    "response_bullet_marker_count",
+    "response_code_fence_count",
+    "response_first_person_pronoun_count",
+    "response_first_person_pronoun_fraction",
+    "prompt_id__H1",
+    "prompt_id__H2",
+    "prompt_id__I1",
+    "prompt_id__I2",
+    "prompt_id__LM-01",
+    "prompt_id__LM-02",
+    "prompt_id__LM-03",
+    "prompt_id__LM-04",
+    "prompt_id__LM-05",
+    "prompt_id__LM-06",
+    "prompt_id__LM-07",
+    "prompt_id__LM-08",
+    "prompt_id__V1-01",
+    "prompt_id__V1-02",
+    "prompt_id__V1-03",
+    "prompt_id__V1-04",
+    "prompt_id__V1-05",
+    "prompt_id__V1-06",
+    "prompt_id__V1-07",
+    "prompt_id__V1-08",
+    "prompt_id__V1-09",
+    "prompt_id__V1-10",
+    "prompt_id__V1-11",
+    "prompt_id__V1-12",
+    "prompt_id__V1-13",
+    "prompt_id__V1-14",
+    "prompt_id__V1-15",
+    "prompt_id__V1-16",
+    "prompt_id__V1-17",
+    "prompt_id__V1-18",
+    "prompt_id__V1-19",
+    "prompt_id__V1-20",
+    "prompt_char_count",
+    "prompt_word_count",
+    "output_tokens",
+    "latency_ms",
+    "output_tokens_missing",
+    "latency_ms_missing"
+  ],
+  "unsplittable_groups": [
+    {
+      "model_key": "llama3.1-8b",
+      "prompt_id": "LM-05",
+      "reason": "all usable response strings are identical",
+      "rows": 3
+    },
+    {
+      "model_key": "llama3.2-3b",
+      "prompt_id": "LM-01",
+      "reason": "all usable response strings are identical",
+      "rows": 3
+    },
+    {
+      "model_key": "qwen3-8b",
+      "prompt_id": "V1-01",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3-8b",
+      "prompt_id": "V1-08",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3-8b",
+      "prompt_id": "V1-16",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "prompt_id": "LM-06",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "prompt_id": "V1-04",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "prompt_id": "V1-05",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "prompt_id": "V1-12",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "prompt_id": "V1-18",
+      "reason": "all usable response strings are identical",
+      "rows": 1
+    }
+  ],
+  "split_assignment_counts": {
+    "P13_test": 132,
+    "P13_train_and_all_train": 261,
+    "all_train": 2672,
+    "excluded_duplicate_of_test": 22,
+    "missing_response": 753
+  },
+  "outputs": [
+    "rf_all_train.csv",
+    "rf_P13_train.csv",
+    "rf_P13_test.csv",
+    "rf_split_manifest.csv",
+    "rf_feature_manifest.json",
+    "rf_preparation_report.json"
+  ]
+}

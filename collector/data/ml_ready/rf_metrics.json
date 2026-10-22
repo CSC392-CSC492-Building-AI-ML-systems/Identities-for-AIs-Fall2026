@@ -1,0 +1,139 @@
+{
+  "estimators": 500,
+  "seed": 42,
+  "feature_count": 52,
+  "test_file": "collector/data/ml_ready/rf_P13_test.csv",
+  "experiments": {
+    "all_personas": {
+      "training_rows": 2933,
+      "test_rows": 132,
+      "class_counts_train": {
+        "gemma3-4b": 712,
+        "llama3.1-8b": 713,
+        "llama3.2-3b": 695,
+        "qwen3-8b": 690,
+        "qwen3.5-9b": 123
+      },
+      "class_counts_test": {
+        "gemma3-4b": 32,
+        "llama3.1-8b": 31,
+        "llama3.2-3b": 31,
+        "qwen3-8b": 28,
+        "qwen3.5-9b": 10
+      },
+      "accuracy": 0.9393939393939394,
+      "macro_f1": 0.8975351899497497,
+      "classification_report": {
+        "gemma3-4b": {
+          "precision": 0.9411764705882353,
+          "recall": 1.0,
+          "f1-score": 0.9696969696969697,
+          "support": 32.0
+        },
+        "llama3.1-8b": {
+          "precision": 1.0,
+          "recall": 0.9032258064516129,
+          "f1-score": 0.9491525423728814,
+          "support": 31.0
+        },
+        "llama3.2-3b": {
+          "precision": 0.96875,
+          "recall": 1.0,
+          "f1-score": 0.9841269841269841,
+          "support": 31.0
+        },
+        "qwen3-8b": {
+          "precision": 0.8484848484848485,
+          "recall": 1.0,
+          "f1-score": 0.9180327868852459,
+          "support": 28.0
+        },
+        "qwen3.5-9b": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 10.0
+        },
+        "accuracy": 0.9393939393939394,
+        "macro avg": {
+          "precision": 0.9516822638146168,
+          "recall": 0.8806451612903226,
+          "f1-score": 0.8975351899497497,
+          "support": 132.0
+        },
+        "weighted avg": {
+          "precision": 0.9462611576999946,
+          "recall": 0.9393939393939394,
+          "f1-score": 0.9343450988731244,
+          "support": 132.0
+        }
+      }
+    },
+    "P13_only": {
+      "training_rows": 261,
+      "test_rows": 132,
+      "class_counts_train": {
+        "gemma3-4b": 61,
+        "llama3.1-8b": 62,
+        "llama3.2-3b": 62,
+        "qwen3-8b": 54,
+        "qwen3.5-9b": 22
+      },
+      "class_counts_test": {
+        "gemma3-4b": 32,
+        "llama3.1-8b": 31,
+        "llama3.2-3b": 31,
+        "qwen3-8b": 28,
+        "qwen3.5-9b": 10
+      },
+      "accuracy": 0.9090909090909091,
+      "macro_f1": 0.8995797185270871,
+      "classification_report": {
+        "gemma3-4b": {
+          "precision": 0.9696969696969697,
+          "recall": 1.0,
+          "f1-score": 0.9846153846153847,
+          "support": 32.0
+        },
+        "llama3.1-8b": {
+          "precision": 0.896551724137931,
+          "recall": 0.8387096774193549,
+          "f1-score": 0.8666666666666667,
+          "support": 31.0
+        },
+        "llama3.2-3b": {
+          "precision": 0.84375,
+          "recall": 0.8709677419354839,
+          "f1-score": 0.8571428571428571,
+          "support": 31.0
+        },
+        "qwen3-8b": {
+          "precision": 0.9310344827586207,
+          "recall": 0.9642857142857143,
+          "f1-score": 0.9473684210526315,
+          "support": 28.0
+        },
+        "qwen3.5-9b": {
+          "precision": 0.8888888888888888,
+          "recall": 0.8,
+          "f1-score": 0.8421052631578947,
+          "support": 10.0
+        },
+        "accuracy": 0.9090909090909091,
+        "macro avg": {
+          "precision": 0.9059844130964819,
+          "recall": 0.8947926267281107,
+          "f1-score": 0.8995797185270871,
+          "support": 132.0
+        },
+        "weighted avg": {
+          "precision": 0.9086175067023421,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.908281484597274,
+          "support": 132.0
+        }
+      }
+    }
+  },
+  "caveat": "Both models use the same P13 test set. This is a fixed-prompt evaluation and does not measure generalization to unseen prompts."
+}
