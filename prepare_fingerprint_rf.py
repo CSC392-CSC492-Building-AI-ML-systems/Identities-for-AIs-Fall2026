@@ -197,9 +197,24 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--persona", default="P13")
     parser.add_argument("--output-dir", type=Path, default=Path("collector/data/ml_ready"))
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--split-mode",
+        choices=["response-held-out", "prompt-held-out"],
+        default="response-held-out",
+        help=(
+            "Hold out responses to known prompts (default), or hold out entire "
+            "prompt IDs to estimate performance on unseen prompts"
+        ),
+    )
+    parser.add_argument(
+        "--test-prompt-fraction", type=float, default=0.2,
+        help="Fraction of eligible prompt IDs held out in prompt-held-out mode (default: 0.2)",
+    )
     args = parser.parse_args(argv)
     if not args.persona.strip():
         parser.error("--persona cannot be blank")
+    if not 0 < args.test_prompt_fraction < 1:
+        parser.error("--test-prompt-fraction must be between 0 and 1")
 
     try:
         all_rows = read_csv(args.all_csv)
@@ -220,7 +235,10 @@ def main(argv: list[str] | None = None) -> int:
             )
 
         prompt_ids = sorted({row["prompt_id"] for row in all_rows})
-        one_hot_columns = [prompt_feature_name(pid) for pid in prompt_ids]
+        one_hot_columns = (
+            [prompt_feature_name(pid) for pid in prompt_ids]
+            if args.split_mode == "response-held-out" else []
+        )
         if len(one_hot_columns) != len(set(one_hot_columns)):
             raise ValueError("Prompt IDs produce colliding one-hot feature names")
         feature_columns = (
@@ -228,53 +246,95 @@ def main(argv: list[str] | None = None) -> int:
             + ["prompt_char_count", "prompt_word_count"] + BACKEND_FEATURES
         )
 
-        # Select one distinct P13 response string per splittable model/prompt group.
         rng = random.Random(args.seed)
-        groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
-        for row in persona_rows:
-            if not is_missing(row["response_text"]):
-                groups[(row["model_key"], row["prompt_id"])].append(row)
-
         test_texts: set[tuple[str, str, str]] = set()
+        test_prompt_ids: set[str] = set()
         unsplittable: list[dict[str, Any]] = []
-        for (model, prompt_id), rows in sorted(groups.items()):
-            by_text: dict[str, list[dict[str, str]]] = defaultdict(list)
-            for row in rows:
-                by_text[row["response_text"]].append(row)
-            unique_texts = sorted(by_text)
-            if len(unique_texts) < 2:
-                unsplittable.append({
-                    "model_key": model,
-                    "prompt_id": prompt_id,
-                    "reason": "all usable response strings are identical",
-                    "rows": len(rows),
-                })
-                continue
-            held_out_text = rng.choice(unique_texts)
-            test_texts.add((model, prompt_id, held_out_text))
-
-        test_keys = {
-            record_key(row)
-            for row in persona_rows
-            if (
-                not is_missing(row["response_text"])
-                and (row["model_key"], row["prompt_id"], row["response_text"]) in test_texts
+        test_keys: set[tuple[str, str, str, str, str]] = set()
+        if args.split_mode == "prompt-held-out":
+            model_labels = {row["model_key"] for row in persona_rows}
+            prompts_by_model = {
+                model: {
+                    row["prompt_id"] for row in persona_rows
+                    if row["model_key"] == model and not is_missing(row["response_text"])
+                }
+                for model in model_labels
+            }
+            eligible_prompts = sorted(
+                set.intersection(*prompts_by_model.values())
+                if prompts_by_model else set()
             )
-        }
-        p13_test_rows = [
-            row for row in persona_rows
-            if record_key(row) in test_keys and not is_missing(row["response_text"])
-        ]
-        p13_train_rows = [
-            row for row in persona_rows
-            if not is_missing(row["response_text"]) and record_key(row) not in test_keys
-        ]
+            if len(eligible_prompts) < 2:
+                raise ValueError(
+                    "Prompt-held-out evaluation needs at least two prompts with "
+                    f"usable {args.persona} responses for every model"
+                )
+            test_count = max(1, round(len(eligible_prompts) * args.test_prompt_fraction))
+            test_count = min(test_count, len(eligible_prompts) - 1)
+            test_prompt_ids = set(rng.sample(eligible_prompts, test_count))
+            p13_test_rows = [
+                row for row in persona_rows
+                if row["prompt_id"] in test_prompt_ids and not is_missing(row["response_text"])
+            ]
+            p13_train_rows = [
+                row for row in persona_rows
+                if row["prompt_id"] not in test_prompt_ids and not is_missing(row["response_text"])
+            ]
+            if {row["model_key"] for row in p13_test_rows} != model_labels:
+                raise ValueError("Held-out prompts do not contain usable P13 responses for every model")
+            if {row["model_key"] for row in p13_train_rows} != model_labels:
+                raise ValueError("Training prompts do not contain usable P13 responses for every model")
+        else:
+            # Select one distinct P13 response string per splittable model/prompt group.
+            groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+            for row in persona_rows:
+                if not is_missing(row["response_text"]):
+                    groups[(row["model_key"], row["prompt_id"])].append(row)
+            for (model, prompt_id), rows in sorted(groups.items()):
+                unique_texts = sorted({row["response_text"] for row in rows})
+                if len(unique_texts) < 2:
+                    unsplittable.append({
+                        "model_key": model,
+                        "prompt_id": prompt_id,
+                        "reason": "all usable response strings are identical",
+                        "rows": len(rows),
+                    })
+                    continue
+                held_out_text = rng.choice(unique_texts)
+                test_texts.add((model, prompt_id, held_out_text))
+
+            test_keys = {
+                record_key(row)
+                for row in persona_rows
+                if (
+                    not is_missing(row["response_text"])
+                    and (row["model_key"], row["prompt_id"], row["response_text"]) in test_texts
+                )
+            }
+            p13_test_rows = [
+                row for row in persona_rows
+                if record_key(row) in test_keys and not is_missing(row["response_text"])
+            ]
+            p13_train_rows = [
+                row for row in persona_rows
+                if not is_missing(row["response_text"]) and record_key(row) not in test_keys
+            ]
 
         assignments: list[str] = []
         all_train_rows: list[dict[str, str]] = []
         for row in all_rows:
             if is_missing(row["response_text"]):
                 assignments.append("missing_response")
+                continue
+            if args.split_mode == "prompt-held-out":
+                if row["prompt_id"] in test_prompt_ids:
+                    assignments.append("prompt_test")
+                else:
+                    assignments.append(
+                        f"{args.persona}_train_and_all_train"
+                        if row["persona_id"] == args.persona else "all_train"
+                    )
+                    all_train_rows.append(row)
                 continue
             key = record_key(row)
             text_key = (row["model_key"], row["prompt_id"], row["response_text"])
@@ -318,10 +378,24 @@ def main(argv: list[str] | None = None) -> int:
             },
             "persona": args.persona,
             "seed": args.seed,
+            "split_mode": args.split_mode,
+            "test_prompt_fraction": (
+                args.test_prompt_fraction
+                if args.split_mode == "prompt-held-out" else None
+            ),
+            "held_out_prompt_ids": sorted(test_prompt_ids),
             "split_strategy": (
-                "Within each (model_key, prompt_id) group, hold out one distinct "
-                "response string when at least two exist. Exact text duplicates "
-                "remain in the same split."
+                (
+                    f"Hold out {len(test_prompt_ids)} entire prompt IDs from all personas "
+                    "and models; prompts are selected from the set with usable P13 "
+                    "responses for every model."
+                )
+                if args.split_mode == "prompt-held-out"
+                else (
+                    "Within each (model_key, prompt_id) group, hold out one distinct "
+                    "response string when at least two exist. Exact text duplicates "
+                    "remain in the same split."
+                )
             ),
             "input_records": {
                 "all_personas": len(all_rows),
@@ -374,7 +448,11 @@ def main(argv: list[str] | None = None) -> int:
                 "All listed predictors are numeric; model_key is the target only.",
                 "Rows with missing response text are excluded from feature tables.",
                 "Missing output_tokens/latency_ms are left blank and indicated by flags.",
-                "Prompt IDs are one-hot features because this is a fixed-prompt task.",
+                (
+                    "Prompt IDs are one-hot features because this is a fixed-prompt task."
+                    if args.split_mode == "response-held-out"
+                    else "Prompt-ID one-hot features are omitted to evaluate unseen prompts."
+                ),
             ],
         }
 
@@ -402,6 +480,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  All-persona training rows: {len(all_train)}")
     print(f"  {args.persona} training rows: {len(p13_train)}")
     print(f"  {args.persona} test rows: {len(p13_test)}")
+    print(f"  Split mode: {args.split_mode}")
+    if test_prompt_ids:
+        print(f"  Held-out prompt IDs: {', '.join(sorted(test_prompt_ids))}")
     print(f"  Output directory: {args.output_dir}")
     if unsplittable:
         print(f"  Unsplittable model/prompt groups kept in training: {len(unsplittable)}")

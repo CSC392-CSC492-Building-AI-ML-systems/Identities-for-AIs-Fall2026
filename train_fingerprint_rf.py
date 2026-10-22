@@ -63,6 +63,13 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         test_x, test_y = read_feature_csv(args.feature_dir / "rf_P13_test.csv")
+        preparation_report_path = args.feature_dir / "rf_preparation_report.json"
+        preparation_report = (
+            json.loads(preparation_report_path.read_text(encoding="utf-8"))
+            if preparation_report_path.is_file() else {}
+        )
+        split_mode = preparation_report.get("split_mode", "unknown")
+        held_out_prompt_ids = preparation_report.get("held_out_prompt_ids", [])
         train_sets = {
             "all_personas": args.feature_dir / "rf_all_train.csv",
             "P13_only": args.feature_dir / "rf_P13_train.csv",
@@ -142,10 +149,19 @@ def main(argv: list[str] | None = None) -> int:
                     "seed": args.seed,
                     "feature_count": len(test_columns),
                     "test_file": str(args.feature_dir / "rf_P13_test.csv"),
+                    "split_mode": split_mode,
+                    "held_out_prompt_ids": held_out_prompt_ids,
                     "experiments": results,
                     "caveat": (
-                        "Both models use the same P13 test set. This is a fixed-prompt "
-                        "evaluation and does not measure generalization to unseen prompts."
+                        (
+                            "Both models use the same P13 test set, and all test prompt "
+                            "IDs were excluded from training."
+                        )
+                        if split_mode == "prompt-held-out"
+                        else (
+                            "Both models use the same P13 test set. This is a fixed-prompt "
+                            "evaluation and does not measure generalization to unseen prompts."
+                        )
                     ),
                 },
                 indent=2,
@@ -164,6 +180,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     print("Random Forest experiments complete")
+    print(f"  Split mode: {split_mode}")
+    if held_out_prompt_ids:
+        print(f"  Held-out prompts: {', '.join(held_out_prompt_ids)}")
     for name, result in results.items():
         print(
             f"  {name}: accuracy={result['accuracy']:.3f}, "

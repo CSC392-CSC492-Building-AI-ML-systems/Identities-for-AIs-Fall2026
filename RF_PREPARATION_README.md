@@ -40,6 +40,15 @@ python prepare_fingerprint_rf.py --all-csv collector/data/processed/fingerprint_
 
 All relative paths are interpreted from your terminal's **current working directory**, so start in the repository root, not inside `collector/`.
 
+To evaluate on prompts never used for training, use prompt-level holdout mode and a separate output folder:
+
+```bash
+python prepare_fingerprint_rf.py --split-mode prompt-held-out --output-dir collector/data/ml_ready_unseen_prompts
+python train_fingerprint_rf.py --feature-dir collector/data/ml_ready_unseen_prompts --output-dir collector/data/ml_ready_unseen_prompts
+```
+
+This holds out 20% of eligible prompt IDs by default (adjust with `--test-prompt-fraction`, for example `0.25`). A prompt is eligible when every model has at least one usable response for the selected persona. All records for held-out prompts, across every model and persona, are excluded from training. Prompt-ID one-hot features are omitted in this mode; response features and general prompt-length features are retained. The preparation report lists the held-out IDs and split mode. This mode uses the existing 32 prompts, so it is a prompt-held-out estimate; a separately collected prompt set is a stronger final evaluation.
+
 ## 3. Output files
 
 | Output | Meaning |
@@ -77,11 +86,11 @@ To compare two future Random Forests fairly:
 - **Model B:** train on `rf_P13_train.csv`.
 - **Evaluate both:** using the exact same `rf_P13_test.csv`.
 
-Since this is a **fixed-prompt** fingerprinting task, the prompt IDs themselves appear in both train and test. The scripts instead hold out independent *responses* from each (model, prompt) group for P13.
+The default `response-held-out` mode is for a **fixed-prompt** task: prompt IDs appear in both train and test, while responses are held out within each (model, prompt) group for P13.
 
 To reduce direct memorization from accidental repeats, **exactly identical response strings from the same model and prompt are never split between train and test**. If all responses for a model/prompt are identical, the entire group remains in training; the report lists these groups. This also excludes copies of a test response under other personas from the all-persona training file.
 
-This split is reproducible with `--seed`. It is not a test of generalization to unseen prompts. Since there are only a few repeats per prompt, scores will be noisy: report the class counts and consider collecting *new* independent held-out generations for final evaluation.
+This split is reproducible with `--seed`. It does not test generalization to unseen prompts. Use `--split-mode prompt-held-out` for that evaluation; it reserves whole prompt IDs across all models/personas and drops prompt-ID one-hot features. Both modes use the same shared P13 test set for the two model comparisons. Since there are only 32 prompts, prompt-held-out scores will be noisy: report the held-out prompt IDs and class counts, and consider collecting *new* independent prompts and generations for final evaluation.
 
 **Comparison caveats:** the all-persona training set contains substantially more samples. To isolate the effect of persona diversity, later add a third experiment that uses a size-matched sample of all-persona training records. Token counts can reflect model-specific tokenizers and latency can reflect hardware/provider conditions; compare features with and without these fields.
 
