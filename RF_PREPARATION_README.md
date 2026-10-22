@@ -112,3 +112,14 @@ These `X` dataframes are numeric and consistent across splits. `y` contains the 
 ## 8. Verification
 
 Checked against the **one uploaded Llama JSONL** (768 total records, 96 P13 records) and separately against a synthetic six-model collection. The one-model test produced 713 all-persona training rows, 62 P13 training rows, and 31 shared test rows. These are NOT performance or six-real-model dataset results; actual outputs will depend on your collection and the seeded split.
+
+## 9. Train the Random Forest baselines
+
+After generating the feature tables, install the training dependencies and run the separate training script from the repository root:
+
+```bash
+python -m pip install pandas scikit-learn
+python train_fingerprint_rf.py
+```
+
+The script trains an all-persona model and a P13-only model, evaluates both on the same `rf_P13_test.csv`, and writes `rf_metrics.json`, `rf_predictions.csv`, and `rf_feature_importances.csv` to `collector/data/ml_ready/`. It uses a median imputer fitted within each training pipeline; test data is not used to compute imputation values. The script trains and evaluates models but does not save serialized model files.
