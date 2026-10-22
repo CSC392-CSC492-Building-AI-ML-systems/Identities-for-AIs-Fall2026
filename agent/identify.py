@@ -169,6 +169,27 @@ def expected_answer(true_key, known):
         return fam, ver
     return (fam if any(MODELS[k][0] == fam for k in known) else "Unknown"), "Unknown"
 
+def vote_group(test, all_tests, n):
+    """The test answer plus n-1 other answers from the same chatbot (same model, persona and data),
+    to different prompts. Mimics sending a deployment several probes."""
+    if n <= 1:
+        return [test]
+    others = [r for r in all_tests if r["model_key"] == test["model_key"] and r["persona_id"] == test["persona_id"]
+              and r["_data"] == test["_data"] and r["prompt_id"] != test["prompt_id"]]
+    rng = random.Random(f"vote-{test['record_id']}")          # same group every run
+    return [test] + rng.sample(others, min(n - 1, len(others)))
+
+
+def majority(preds):
+    """Combine several guesses: most common version and family; confidence = share of votes."""
+    if len(preds) == 1:
+        return preds[0]
+    ver, count = Counter(p.get("version") for p in preds).most_common(1)[0]
+    fam = Counter(p.get("family") for p in preds).most_common(1)[0][0]
+    first = next(p for p in preds if p.get("version") == ver)
+    return {**first, "family": fam, "version_confidence": round(count / len(preds), 2),
+            "votes": [p.get("version") for p in preds]}
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--provider", default="google", choices=["google", "anthropic", "openai", "mock"])
@@ -176,6 +197,7 @@ def main():
     ap.add_argument("--data", default="fingerprint", choices=["fingerprint", "training", "both"])
     ap.add_argument("--mode", default="easy", choices=["easy", "other-persona", "other-prompt"])
     ap.add_argument("--leave-out", choices=list(MODELS), help="hide this model from the LLM (tests 'Unknown')")
+    ap.add_argument("--vote", type=int, default=1, help="judge this many answers from the same chatbot and take the majority")
     ap.add_argument("--limit", type=int, default=20, help="number of test answers")
     ap.add_argument("--per-model", type=int, help="this many test answers from EACH model")
     ap.add_argument("--delay", type=float, default=4, help="seconds between calls (free tier)")
@@ -186,7 +208,8 @@ def main():
     if args.mode == "other-persona" and args.data != "fingerprint":
         exit("--mode other-persona needs --data fingerprint (training prompts each have only one persona)")
     if not args.out:   # one file per experiment, so results from different settings never mix
-        name = f"results_{args.data}_{args.mode}" + (f"_without-{args.leave_out}" if args.leave_out else "")
+        name = f"results_{args.data}_{args.mode}" + (f"_without-{args.leave_out}" if args.leave_out else "") \
+               + (f"_vote{args.vote}" if args.vote > 1 else "")
         args.out = HERE / f"{name}.jsonl"
     load_env(HERE.parent / "collector" / ".env")
 
@@ -201,6 +224,7 @@ def main():
         r["prompt_text"] = prompts.get((r["_data"], r["prompt_id"]), f"(prompt {r['prompt_id']})")
     pool = [r for r in recs if r["sample_index"] in (0, 1)]
     tests = [r for r in recs if r["sample_index"] == 2]
+    all_tests = list(tests)
     random.Random(398).shuffle(tests)
     if args.per_model:
         seen = Counter()
@@ -232,11 +256,16 @@ def main():
         if args.dry_run:
             print(msgs[0]["content"], "\n---\n", msgs[1]["content"])
             return
+        preds = []
         try:
-            pred = parse(call_llm(args.provider, args.model, msgs))
+            for g in vote_group(t, all_tests, args.vote):
+                preds.append(parse(call_llm(args.provider, args.model, build_messages(g, pool, known, args.mode))))
+                if args.provider != "mock" and args.vote > 1:
+                    time.sleep(args.delay)
         except RuntimeError as e:
             print(f"[{i}/{len(tests)}] skipped ({e}); run the same command again to retry it")
             continue
+        pred = majority(preds)
         
         exp_fam, exp_ver = expected_answer(t["model_key"], known)
         pred_key = next((k for k, v in MODELS.items() if v[1] == pred.get("version")), None)
@@ -245,7 +274,7 @@ def main():
                "true_model": MODELS[t["model_key"]][1], "expected_family": exp_fam, "expected_version": exp_ver,
                "pred_family": pred.get("family"), "pred_version": pred.get("version"),
                "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
-               "reason": pred.get("reason"), "licence": licences.get(pred_key),
+               "reason": pred.get("reason"), "licence": licences.get(pred_key), "votes": pred.get("votes"),
                "family_correct": pred.get("family") == exp_fam, "version_correct": pred.get("version") == exp_ver}
         results.append(row)
         out.write(json.dumps(row) + "\n"); out.flush()   # saved straight away, so nothing is lost
