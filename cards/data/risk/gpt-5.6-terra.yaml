@@ -1,0 +1,72 @@
+model_key: gpt-5.6-terra
+name: GPT-5.6 Terra
+family: GPT
+access: closed
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: low
+    value: System card says larger models are more factual than smaller ones but gives no numbers for this model. Not in Phare.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  confabulation:
+    evidence: low
+    value: No hallucination rate published for this model.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  data_leakage_model:
+    evidence: moderate
+    value: Training data filtered to reduce personal information; no memorization rate.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: API data is not used to train OpenAI's models unless the customer opts in.
+    source:
+    - https://openai.com/policies/services-agreement/
+    own_test: null
+  security:
+    evidence: high
+    value: 'Prompt injection robustness: connectors 1.0, search and function calling 0.946; red-team attack success 3.32%
+      (indirect) and 0.061% (direct). Rated High cyber capability under the Preparedness Framework (below Critical).'
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Training data categories only. OpenAI covers customers against third-party IP claims, with exclusions.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    - https://openai.com/policies/services-agreement/
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: Avoided accidental data-destructive actions 0.81 (avoidance only); asked for confirmation before financial transactions
+      0.98.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: 'Not-unsafe rates on hard prompts: violent illicit 0.952, sexual/minors 0.974, hate 1.000, gore 0.6 (weakest area).
+      Rated High biological/chemical capability, with safeguards.'
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  bias_fairness:
+    evidence: low
+    value: A first-person fairness evaluation is described but no result is given for this model.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+    - https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+    own_test: null

@@ -1,0 +1,70 @@
+model_key: llama3.2-3b
+name: Llama 3.2 3B Instruct
+family: Llama
+access: open
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: none
+    value: No model-specific factuality evidence found (not in Phare).
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    - https://phare.giskard.ai
+    own_test: null
+  confabulation:
+    evidence: low
+    value: Meta acknowledges outputs may be inaccurate; no fabrication rate published.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  data_leakage_model:
+    evidence: none
+    value: Not disclosed.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Runs on the bank's own hardware (we use Ollama locally), so prompts and answers never go to the developer. Risk
+      depends on how the bank hosts it.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  security:
+    evidence: low
+    value: Red teaming described; CBRNE and cyber testing done on larger Llama 3.1 models and assumed to apply. No jailbreak
+      or prompt-injection numbers.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Up to 9 trillion tokens of 'publicly available' data; no dataset list or regurgitation rate.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: 'Tool use evaluated: BFCL V2 67.0, Nexus 34.3.'
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  harmful_content:
+    evidence: low
+    value: Safety tuning, refusal-tone work and red teaming described; no rates published.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  bias_fairness:
+    evidence: none
+    value: No model-specific bias results (not evidence that it is unbiased).
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null
+  environmental_impact:
+    evidence: high
+    value: 'Training: 460k H100 GPU hours; 133 tCO2eq location-based, 0 market-based. Inference footprint not disclosed.'
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md
+    own_test: null

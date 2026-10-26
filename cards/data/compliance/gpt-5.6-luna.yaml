@@ -1,0 +1,36 @@
+model_key: gpt-5.6-luna
+name: "GPT-5.6 Luna"
+family: GPT
+access: closed
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: openai-api-terms
+fields:
+  developer:
+    value: "OpenAI (the contracting entity is named in the Services Agreement)"
+    source: "https://openai.com/policies/services-agreement/"
+  licence:
+    value: "No licence: proprietary model used under the OpenAI Services Agreement and Usage Policies"
+    source: "https://openai.com/policies/services-agreement/"
+  base_model:
+    value: "Not applicable (closed model, OpenAI's own). Base model not stated."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  training_data:
+    value: "Partial, by category only: publicly available internet data, data from third-party partnerships, and data from users, human trainers and researchers. Filtered to reduce personal information. No dataset list."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  permitted_uses:
+    value: "OpenAI describes Luna as its fastest and most cost-efficient model, for high-volume tasks. Usage Policies: no automating high-stakes financial, credit or insurance decisions without human review, and no tailored advice that needs a licence without a professional involved."
+    source:
+      - "https://openai.com/blog/advancing-the-price-performance-frontier-with-gpt-5-6"
+      - "https://openai.com/policies/usage-policies/"
+  official_documentation:
+    value: "Yes: GPT-5.6 system card (July 9, 2026), covering Sol, Terra and Luna together"
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  disclosed_risks:
+    value: "Rated High capability for biological/chemical and cybersecurity under OpenAI's Preparedness Framework (safeguards applied); weakest on gore content; smaller models perform worse than Sol on complex tasks; OpenAI calls its evaluations a lower bound on capabilities."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  audit_contact:
+    value: "OpenAI Trust Portal (trust.openai.com) for compliance documents; security issues through the Coordinated Vulnerability Disclosure Policy."
+    source:
+      - "https://trust.openai.com/"
+      - "https://openai.com/policies/coordinated-vulnerability-disclosure-policy"

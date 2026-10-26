@@ -1,0 +1,18 @@
+model_key: qwen3-8b
+name: "Qwen3 8B"
+family: Qwen
+access: open
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "Hugging Face Qwen/Qwen3-8B (Qwen3 released April 29, 2025); run locally as Ollama tag qwen3:8b (4-bit quantized). Record the Ollama digest (model_digest in collected records) at registration. Note: thinking mode is on by default and changes the output."
+    source:
+      - "https://huggingface.co/Qwen/Qwen3-8B"
+      - "https://qwenlm.github.io/blog/qwen3/"
+  rereview_triggers:
+    value: "Scan detects drift; a new Qwen release; changes to the Hugging Face repo (licence or model card). No published change or deprecation policy, so rely on scans and repo history."
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  support_status:
+    value: "Superseded by Qwen3.5 (early 2026) and Qwen3.6. No end-of-support policy published. Open weights stay downloadable."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"

@@ -1,0 +1,39 @@
+model_key: claude-sonnet-5.5
+name: "Claude Sonnet 5.5"
+family: Claude
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "Terminal-Bench 4.0, FrontierCode 1.1, CursorBench 4.0, GDPval-AA v2.1, AA-Briefcase v1.1, Humanity's Last Exam, OSWorld 2.1, Chartography, plus SWE-Bench Pro, HealthBench and others in the system card"
+    source:
+      - "https://www.anthropic.com/claude-sonnet-5-5"
+      - "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  benchmark_results:
+    value:
+      - {benchmark: Terminal-Bench 4.0, score: "70.6%", setting: "Anthropic launch post"}
+      - {benchmark: FrontierCode 1.1 (Main), score: "46.2% max effort / 52.1% xhigh", setting: ""}
+      - {benchmark: CursorBench 4.0, score: "55.5%", setting: ""}
+      - {benchmark: GDPval-AA v2.1, score: "1844 Elo", setting: "pre-release deployment (bug may understate score)"}
+      - {benchmark: Humanity's Last Exam, score: "64.5%", setting: "with tools"}
+      - {benchmark: OSWorld 2.1, score: "80.1%", setting: "partial credit"}
+      - {benchmark: Chartography, score: "61.6%", setting: "no tools"}
+    source: "https://www.anthropic.com/claude-sonnet-5-5"
+  methodology:
+    value: "Effort level matters: Medium is the default in Claude apps, High on the Claude Platform; some results use Max or Xhigh. Several results were run by outside groups (Cognition, Cursor, Artificial Analysis)."
+    source: "https://www.anthropic.com/claude-sonnet-5-5"
+  evaluated_version:
+    value: "claude-sonnet-5-5 as released September 28, 2026."
+    source: "https://www.anthropic.com/claude-sonnet-5-5"
+  known_limitations:
+    value: "Scores vary with effort level (scores lower at Max than Xhigh on one coding benchmark); alignment testing is narrower than for Opus 5.5; rare behaviours may be missed at test scale."
+    source:
+      - "https://www.anthropic.com/claude-sonnet-5-5"
+      - "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  capabilities:
+    value: [agentic coding, computer use, knowledge work, research with tools, chart understanding, healthcare, multilingual, life sciences]
+    source: "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  provenance:
+    value: "Developer-reported by Anthropic, with some runs by third parties named in the launch post. Not in the Phare leaderboard (July 2026). Not reproduced by our project."
+    source: "https://www.anthropic.com/claude-sonnet-5-5"
