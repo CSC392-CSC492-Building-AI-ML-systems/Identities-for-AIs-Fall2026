@@ -1,0 +1,16 @@
+model_key: gemini-3.8-flash
+name: "Gemini 3.8 Flash"
+family: Gemini
+access: closed
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "API model ID gemini-3.8-flash (stable, updated September 2026). No dated snapshot is listed, so the exact version cannot be pinned beyond this ID."
+    source: "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash"
+  rereview_triggers:
+    value: "Scan detects drift; a deprecation notice; changes to the Gemini API terms. Watch the Gemini API release notes and deprecations page. Note: Google already routes requests for gemini-3.7-flash to gemini-3.8-flash automatically, a real example of a silent model swap."
+    source: "https://ai.google.dev/gemini-api/docs/deprecations"
+  support_status:
+    value: "Active, listed as the new stable model. No shutdown date announced. Google gives advance notice of shutdowns; listed dates are the earliest possible."
+    source: "https://ai.google.dev/gemini-api/docs/deprecations"

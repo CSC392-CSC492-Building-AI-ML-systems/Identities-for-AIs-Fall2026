@@ -1,0 +1,34 @@
+model_key: llama3.2-3b
+name: "Llama 3.2 3B Instruct"
+family: Llama
+access: open
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: llama-3.2-community
+fields:
+  developer:
+    value: "Meta Platforms, Inc. (Meta Platforms Ireland Ltd. for the EEA and Switzerland)"
+    source: "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/blob/main/LICENSE.txt"
+  licence:
+    value: "Llama 3.2 Community License (custom open-weight licence), dated September 25, 2024"
+    source: "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/blob/main/LICENSE.txt"
+  base_model:
+    value: "Instruction-tuned version of the Llama 3.2 3B pretrained model. The 3B was built by pruning and distillation, using Llama 3.1 8B and 70B outputs as training targets. Not a third-party fine-tune."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  training_data:
+    value: "Partial. Up to 9 trillion tokens of publicly available online data (cutoff December 2023). Specific datasets and their licences are not disclosed."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  permitted_uses:
+    value: "Intended for commercial and research use: assistant chat, retrieval, summarization, writing help and query rewriting. Out of scope: breaking laws or the Acceptable Use Policy, and unsupported languages. The Acceptable Use Policy bans unlicensed financial practice, discrimination in credit, processing private data without the right to, and presenting outputs as human-generated."
+    source:
+      - "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+      - "https://www.llama.com/llama3_2/use-policy"
+  official_documentation:
+    value: "Yes: model card (its release-date line shows Oct 24, 2024, when quantized versions were added)"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  disclosed_risks:
+    value: "Outputs may be inaccurate, biased or objectionable; testing could not cover all scenarios; static model trained on offline data; not designed to be deployed alone (use Llama Guard / Prompt Guard). CBRNE and cyber testing was done on larger Llama 3.1 models and assumed to apply."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  audit_contact:
+    value: "Same channels as Llama 3.1: LlamaUseReport@meta.com, GitHub issues on meta-llama/llama-models, developers.facebook.com/llama_output_feedback, Meta bug bounty."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"

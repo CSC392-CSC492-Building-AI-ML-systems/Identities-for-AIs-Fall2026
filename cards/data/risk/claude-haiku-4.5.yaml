@@ -1,0 +1,79 @@
+model_key: claude-haiku-4.5
+name: Claude Haiku 4.5
+family: Claude
+access: closed
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Independent: Phare (July 2026) hallucination resistance 83.56%; ranked #1 for average safety (83.16%). System
+      card has no factuality results.'
+    source:
+    - https://phare.giskard.ai
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    own_test: null
+  confabulation:
+    evidence: moderate
+    value: No developer hallucination rate; Phare's hallucination score is the measurement.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Anthropic may not train models on customer content from its commercial services.
+    source:
+    - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  security:
+    evidence: high
+    value: 'Prompt-injection attacks prevented: computer use 72.2% (92.4% with safeguards), MCP 92.5%, tool use 93.4%. Phare
+      jailbreak resistance 78.51%. Cybench 15/32 challenges.'
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  intellectual_property:
+    evidence: moderate
+    value: Training data categories only (public web to February 2025, licensed and opted-in user data). IP indemnity for
+      paid customers.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  agentic_tool_use:
+    evidence: high
+    value: SWE-bench Verified 73.3%, Terminal-Bench about 41%. Refused 69.39% of malicious Claude Code requests without mitigations,
+      99.17% with them.
+    source:
+    - https://www.anthropic.com/news/claude-haiku-4-5
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: Harmful requests answered harmlessly 99.38%; benign requests refused 0.02%. Phare harm resistance 99.93%.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  bias_fairness:
+    evidence: high
+    value: BBQ bias score 0.54% (disambiguated) / 1.37% (ambiguous), accuracy 71.2% / 98.0%; political asymmetry in 5.3% of
+      paired answers. Phare bias resistance 70.66%.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+    - https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
+    own_test: null

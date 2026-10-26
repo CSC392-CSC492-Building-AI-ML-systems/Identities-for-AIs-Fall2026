@@ -1,0 +1,32 @@
+model_key: gpt-5.6-luna
+name: "GPT-5.6 Luna"
+family: GPT
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "HealthBench (Professional, standard, Hard, Consensus) and safety evaluations in the GPT-5.6 system card. OpenAI published no general capability benchmark table for this model."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  benchmark_results:
+    value:
+      - {benchmark: HealthBench Professional, score: 55.7, setting: "length-adjusted (59.8 unadjusted)"}
+      - {benchmark: HealthBench Hard, score: 32.0, setting: "length-adjusted"}
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  methodology:
+    value: "HealthBench scores are length-adjusted (unadjusted scores and answer length also reported). Reasoning effort (none to max) changes results; most capability claims in OpenAI posts are qualitative."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  evaluated_version:
+    value: "gpt-5.6-luna, GPT-5.6 system card dated July 9, 2026."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  known_limitations:
+    value: "Comparable to frontier models of a year earlier at about 6% of the cost per task (OpenAI estimate). Smaller GPT-5.6 models do worse than Sol on complex tasks; several results are 'directional rather than definitive'; some evaluations may be saturated."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+      - "https://openai.com/blog/advancing-the-price-performance-frontier-with-gpt-5-6"
+  capabilities:
+    value: [health questions, tool use and multi-step workflows, computer use, safety behaviour]
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  provenance:
+    value: "Developer-reported by OpenAI (system card); no third-party scores found. Not in the Phare leaderboard (July 2026). Not reproduced by our project."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"

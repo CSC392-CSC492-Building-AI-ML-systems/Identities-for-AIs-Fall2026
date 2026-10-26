@@ -1,0 +1,36 @@
+model_key: gpt-5.6-terra
+name: "GPT-5.6 Terra"
+family: GPT
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "HealthBench (Professional, standard, Hard, Consensus) and safety evaluations in the GPT-5.6 system card. OpenAI published no general capability benchmark table for this model."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  benchmark_results:
+    value:
+      - {benchmark: HealthBench Professional, score: 57.7, setting: "length-adjusted (62.4 unadjusted)"}
+      - {benchmark: HealthBench Hard, score: 32.7, setting: "length-adjusted"}
+      - {benchmark: DeepSWE v1.1, score: "69.6%", setting: "reported by Google in the Gemini 3.8 Flash model card, not by OpenAI"}
+      - {benchmark: Terminal-bench 2.1, score: "87.4%", setting: "reported by Google in the Gemini 3.8 Flash model card, not by OpenAI"}
+    source:
+      - "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+      - "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  methodology:
+    value: "HealthBench scores are length-adjusted (unadjusted scores and answer length also reported). Reasoning effort (none to max) changes results; most capability claims in OpenAI posts are qualitative."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  evaluated_version:
+    value: "gpt-5.6-terra, GPT-5.6 system card dated July 9, 2026."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  known_limitations:
+    value: "Matches GPT-5.5 performance at half the cost (OpenAI, no benchmark given). Smaller GPT-5.6 models do worse than Sol on complex tasks; several results are 'directional rather than definitive'; some evaluations may be saturated."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+      - "https://openai.com/blog/advancing-the-price-performance-frontier-with-gpt-5-6"
+  capabilities:
+    value: [health questions, tool use and multi-step workflows, computer use, safety behaviour]
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  provenance:
+    value: "Developer-reported by OpenAI (system card); two coding scores for Terra come from Google's comparison table. Not in the Phare leaderboard (July 2026). Not reproduced by our project."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"

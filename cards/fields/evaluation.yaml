@@ -1,0 +1,88 @@
+# Evaluation card: what the developer (and independent testers) measured, and whether that evidence still applies.
+# filled_by / level: see fields/compliance.yaml.
+
+domain: evaluation
+title: Evaluation card
+purpose: Gives a model validation analyst the benchmark results, methods and known limits of the identified model, so they can decide whether it needs re-evaluation.
+
+fields:
+  - id: benchmarks
+    name: Evaluation datasets / benchmarks
+    filled_by: research
+    level: version
+    where_open: Hugging Face model card; technical report
+    where_closed: Official model/system card; technical report
+    if_missing: '"Not disclosed"'
+
+  - id: benchmark_results
+    name: Benchmark results
+    filled_by: research
+    level: version
+    where_open: Results tables in the model card or paper
+    where_closed: Official model/system card or launch post
+    if_missing: '"No official benchmark result found"'
+    note: Developer-reported unless the source says otherwise. Scores from different setups are not directly comparable.
+
+  - id: methodology
+    name: Evaluation methodology
+    filled_by: research
+    level: version
+    where_open: Model card / paper (zero-shot, few-shot, prompting, scoring)
+    where_closed: System/model card or evaluation methodology page
+    if_missing: '"Methodology not disclosed"'
+
+  - id: evaluated_version
+    name: Evaluation date / model version
+    filled_by: research
+    level: version
+    where_open: Release / evaluation documentation
+    where_closed: Provider release notes / model documentation
+    if_missing: '"Not stated"'
+
+  - id: known_limitations
+    name: Known performance limitations
+    filled_by: research
+    level: family
+    where_open: Model card "Limitations"; technical report
+    where_closed: System card / official limitations
+    if_missing: '"No evaluation limitations disclosed"'
+
+  - id: capabilities
+    name: Task / capability coverage
+    filled_by: research
+    level: version
+    where_open: Benchmark categories in the model card
+    where_closed: Official evaluation documentation
+    if_missing: Record only the capabilities actually evaluated
+
+  - id: internal_results
+    name: Bank / internal evaluation results
+    filled_by: organization
+    level: version
+    where_open: Bank's own validation / test suite
+    where_closed: Same
+    if_missing: '"Not yet internally evaluated"'
+
+  - id: behaviour_change
+    name: Observed behavioural change vs. baseline
+    filled_by: system
+    level: version
+    where_open: Our fingerprinting / test-prompt results
+    where_closed: Same
+    if_missing: '"No baseline available"'
+
+  - id: identification_level
+    name: Family-level / version-level confidence
+    filled_by: system
+    level: version
+    where_open: Our identification system
+    where_closed: Same
+    if_missing: Mark "Needs review" if confidence is too low
+
+  - id: provenance
+    name: Evaluation provenance
+    filled_by: research
+    level: version
+    where_open: Who ran the evaluations, documents, independent verification
+    where_closed: Same
+    if_missing: '"Source unavailable"'

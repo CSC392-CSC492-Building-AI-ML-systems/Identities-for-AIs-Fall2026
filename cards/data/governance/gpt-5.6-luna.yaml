@@ -1,0 +1,18 @@
+model_key: gpt-5.6-luna
+name: "GPT-5.6 Luna"
+family: GPT
+access: closed
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "API model ID gpt-5.6-luna (GPT-5.6 family released July 9, 2026). No dated snapshot found in OpenAI's docs."
+    source: "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf"
+  rereview_triggers:
+    value: "Scan detects drift; a deprecation notice; Usage Policy changes. Watch OpenAI's deprecations page."
+    source: "https://developers.openai.com/api/docs/deprecations"
+  support_status:
+    value: "Active, not deprecated. Newer models exist (GPT-6 family, e.g. gpt-6.1-terra and gpt-6-luna). OpenAI gives at least 6 months' notice before retiring a generally available model."
+    source:
+      - "https://developers.openai.com/api/docs/deprecations"
+      - "https://developers.openai.com/api/docs/models"

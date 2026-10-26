@@ -1,0 +1,79 @@
+model_key: gemini-3.8-flash
+name: Gemini 3.8 Flash
+family: Gemini
+access: closed
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: low
+    value: No factuality metric in the model card; hallucinations acknowledged. Phare has only a partial result for the older
+      Gemini 3.5 Flash.
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    - https://phare.giskard.ai
+    own_test: null
+  confabulation:
+    evidence: low
+    value: Google acknowledges hallucinations; no rate published.
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed in the 3.8 card; Gemini 3 training data was filtered for safety and deduplicated.
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: 'Free tier: prompts and answers used to improve Google products and may be read by human reviewers. Paid tier:
+      not used to improve products, logged only for abuse detection.'
+    source:
+    - https://ai.google.dev/gemini-api/terms
+    own_test: null
+  security:
+    evidence: moderate
+    value: Jailbreak resistance 'still being improved'. Its base, Gemini 3.7 Flash, reached Google's cyber and CBRN alert
+      thresholds (below the critical level); Google says 3.8 adds no meaningful new capabilities.
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    - https://deepmind.google/models/model-cards/gemini-3-7-flash/
+    own_test: null
+  intellectual_property:
+    evidence: moderate
+    value: Training data categories disclosed, no dataset list. The Gemini API can stop an answer that recites training data
+      (RECITATION finish reason).
+    source:
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    - https://discuss.ai.google.dev/t/no-response-due-to-recitation-finishreason/3957
+    own_test: null
+  agentic_tool_use:
+    evidence: high
+    value: 'Built for agents: Terminal-bench 2.1 89.4%, OSWorld-2.0 59.0%, but Terminal-bench 4.0 only 19.1%, so long agent
+      tasks are unreliable.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    own_test: null
+  harmful_content:
+    evidence: moderate
+    value: 'Automated safety vs Gemini 3.7 Flash: text -0.4pp, multilingual +5.4pp (a slight regression), image 0.0pp, unjustified
+      refusals +1.1pp. Child safety met launch thresholds in red teaming.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    own_test: null
+  bias_fairness:
+    evidence: none
+    value: No model-specific bias results (not evidence that it is unbiased).
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    own_test: null
+  environmental_impact:
+    evidence: low
+    value: 'Model-specific footprint not disclosed. Google''s service-wide estimate (median Gemini Apps text prompt, May 2025:
+      0.24 Wh) is not specific to this model.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-8-flash/
+    - https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference
+    own_test: null
