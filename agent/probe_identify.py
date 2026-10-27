@@ -18,6 +18,9 @@ don't know a real deployment's system prompt.
     python probe_identify.py --leave-out gemma3-4b             # hidden family: should be Unknown family
     python probe_identify.py --probes LM-01,LM-05,I1,I2        # try a different probe set
     python probe_identify.py --domain compliance               # attach the compliance card to each result
+    python probe_identify.py --check baseline                  # monitoring: compare with the deployment's own baseline
+    python probe_identify.py --check baseline --rescore results/old.jsonl --out results/new.jsonl
+                                                               # re-apply the code checks to saved judge answers (free)
 
 After the judge picks the closest known version, code checks each probe answer against that model's
 reference answers (dates stated, refusals, length). If 3 or more probes don't fit (--max-misfit), the
@@ -122,9 +125,58 @@ def code_misfits(session, model_refs, rare=0.25, length_factor=3):
     return found
 
 
-def apply_rules(pred, names_dev, known, misfits, max_misfit):
+def baseline_misfits(session, baseline, length_factor=1.5):
+    """Probes where the chatbot's answer differs from the deployment's own baseline: earlier answers from the
+    approved model under the SAME system prompt. Use this when monitoring a registered deployment.
+    A probe doesn't fit when the chatbot states a date the baseline never stated (or none when the baseline
+    always did), refuses differently from a baseline that agrees with itself, or is over 1.5x longer or
+    shorter than every baseline answer."""
+    def dates(a):
+        return {" ".join(x for x in m if x) for m in re.findall(DATE, a.lower())}
+    def refuses(a):
+        return bool(re.search(REFUSAL, a.lower()))
+    found = []
+    for pid, answer in session.items():
+        base = baseline.get(pid, [])
+        if len(base) < 2:
+            continue
+        why = []
+        d = dates(answer)
+        if (d and not any(x in dates(b) for b in base for x in d)) or (not d and all(dates(b) for b in base)):
+            why.append("date")
+        if len({refuses(b) for b in base}) == 1 and refuses(answer) != refuses(base[0]):
+            why.append("refusal")
+        lengths = [len(b) for b in base]
+        if len(answer) > length_factor * max(lengths) or len(answer) < min(lengths) / length_factor:
+            why.append("length")
+        if why:
+            found.append(f"{pid}: {'/'.join(why)}")
+    return found
+
+
+IDENTITY_PROBES = ["LM-01", "LM-06", "I1", "I2"]
+
+
+def self_identifies(text, family):
+    """Does the answer say "I am ... <family keyword>" (e.g. "I am Gemini 3.8 Flash")? The keyword is the
+    last word of the family name: Flash, Pro, Gemma, Llama, Sonnet... so it works for new models too."""
+    kw = re.escape(family.split()[-1].lower())
+    return bool(re.search(rf"\bi(?:'m|’m| am)\b(?:(?!\.\s)[^\n]){{0,40}}\b{kw}\b", (text or "").lower()))
+
+
+def self_id_rate(recs, model_key, persona, family):
+    """Share of the model's reference chatbots (other personas, samples 0-1) that call themselves by the family name."""
+    groups = defaultdict(bool)
+    for r in recs:
+        if r["model_key"] == model_key and r["persona_id"] != persona and r["sample_index"] in (0, 1) \
+                and r["prompt_id"] in IDENTITY_PROBES:
+            groups[(r["persona_id"], r["sample_index"])] |= self_identifies(r["response_text"], family)
+    return sum(groups.values()) / len(groups) if groups else 0.0
+
+
+def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=None, model_self_id_rate=0.0):
     """Rules checked in code, because the judge stays confident even when it is wrong.
-    Returns (final prediction, fit score 0-1, rule that changed the answer)."""
+    Returns (final prediction, rule that changed the answer)."""
     final, rule = dict(pred), None
     if names_dev and names_dev not in {DEVELOPER[MODELS[k][0]] for k in known}:
         final.update(family="Unknown", version="Unknown")
@@ -132,6 +184,11 @@ def apply_rules(pred, names_dev, known, misfits, max_misfit):
     elif misfits is not None and len(misfits) >= max_misfit and final.get("version") != "Unknown":
         final["version"] = "Unknown"
         rule = f"{len(misfits)} probes do not fit {pred.get('version')}"
+        # A new version of the same line still calls itself by the line's name (e.g. "Gemini 3.9 Flash").
+        # If the chosen line's models usually do that and this chatbot doesn't, it is a different line.
+        if model_self_id_rate >= 0.75 and chatbot_self_id is False:
+            final["family"] = "Unknown"
+            rule += f"; never calls itself {pred.get('family')}, which {int(model_self_id_rate * 100)}% of its chatbots do"
     return final, rule
 
 
@@ -178,16 +235,21 @@ def main():
                     help="other = leave the test persona out of the references (realistic); all = include it")
     ap.add_argument("--leave-out", choices=list(MODELS), help="hide this model from the judge (tests 'Unknown')")
     ap.add_argument("--min-answers", type=int, default=3, help="skip chatbots with fewer non-empty probe answers")
+    ap.add_argument("--check", default="profiles", choices=["profiles", "baseline"],
+                    help="profiles = compare with the model's answers under other system prompts (unknown deployment); "
+                         "baseline = compare with the deployment's own earlier answers (monitoring a registered deployment)")
     ap.add_argument("--max-misfit", type=int, default=3, help="this many probes not fitting the chosen version -> version Unknown")
     ap.add_argument("--domain", choices=["compliance", "governance", "evaluation", "risk"],
                     help="attach this domain card (from cards/) to each result")
     ap.add_argument("--delay", type=float, default=4)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--rescore", help="re-apply the code checks to the judge answers saved in this results file "
+                                      "(no API calls); use the same --check/--leave-out as that run")
     ap.add_argument("--out")
     args = ap.parse_args()
     probes = args.probes.split(",")
     if not args.out:
-        args.out = HERE / "results" / (f"results_probes3_{args.ref_persona}" + (f"_without-{args.leave_out}" if args.leave_out else "")
+        args.out = HERE / "results" / (f"results_probes3_{args.ref_persona}" + ("_baseline" if args.check == "baseline" else "") + (f"_without-{args.leave_out}" if args.leave_out else "")
                            + ("" if probes == DEFAULT_PROBES else f"_{len(probes)}probes") + ".jsonl")
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     load_env(HERE.parent / "collector" / ".env")
@@ -204,9 +266,14 @@ def main():
         if r["sample_index"] == 2:
             sessions[(r["model_key"], r["persona_id"])][r["prompt_id"]] = r["response_text"]
     sessions = {k: v for k, v in sessions.items() if len(v) >= args.min_answers}
-    print(f"Probes: {', '.join(probes)} | references: {args.ref_persona} personas | known: {', '.join(known)}"
+    print(f"Probes: {', '.join(probes)} | references: {args.ref_persona} personas | check: {args.check} | known: {', '.join(known)}"
           + (f" | hidden: {args.leave_out}" if args.leave_out else "") + f" | testing {len(sessions)} chatbots")
 
+    rescore = {}
+    if args.rescore:
+        rescore = {r["session"]: r for r in map(json.loads, open(args.rescore, encoding="utf-8"))}
+        if Path(args.out) == Path(args.rescore):
+            exit("Give --out a new file name when using --rescore.")
     licences = licence_lookup()
     done = {}
     if Path(args.out).exists() and not args.dry_run:
@@ -231,7 +298,14 @@ def main():
             print(f"\n(about {len(msgs[0]['content'] + msgs[1]['content']) // 4} tokens)")
             return
         try:
-            pred = parse(call_llm(args.provider, args.model, msgs))
+            if args.rescore:                     # reuse the judge's saved answer instead of calling the API
+                saved = rescore.get(sid)
+                if not saved:
+                    continue
+                pred = {k: saved.get(f"judge_{k}") for k in ("family", "version")}
+                pred.update({k: saved.get(k) for k in ("family_confidence", "version_confidence", "reason")})
+            else:
+                pred = parse(call_llm(args.provider, args.model, msgs))
         except RuntimeError as e:
             print(f"[{i}/{len(sessions)}] skipped ({e}); run the same command again to retry it")
             continue
@@ -239,9 +313,21 @@ def main():
         exp_fam, exp_ver = expected_answer(model, known)
         _, names_dev = name_evidence(list(session.values()))
         judge_key = next((k for k in known if MODELS[k][1] == pred.get("version")), None)
-        misfits = code_misfits(session, refs[judge_key]) if judge_key else None
+        if not judge_key:
+            misfits = None
+        elif args.check == "baseline":    # the approved model's earlier answers under this same system prompt
+            baseline = defaultdict(list)
+            for r in recs:
+                if r["model_key"] == judge_key and r["persona_id"] == persona and r["sample_index"] in (0, 1):
+                    baseline[r["prompt_id"]].append(r["response_text"])
+            misfits = baseline_misfits(session, baseline)
+        else:
+            misfits = code_misfits(session, refs[judge_key])
         fit = round(1 - len(misfits) / len(session), 2) if misfits is not None else None
-        final, rule = apply_rules(pred, names_dev, known, misfits, args.max_misfit)
+        fam = pred.get("family") or "Unknown"
+        chatbot_self_id = any(self_identifies(session.get(p), fam) for p in IDENTITY_PROBES) if judge_key else None
+        rate = self_id_rate(recs, judge_key, persona, fam) if judge_key else 0.0
+        final, rule = apply_rules(pred, names_dev, known, misfits, args.max_misfit, chatbot_self_id, rate)
         pred_key = next((k for k, v in MODELS.items() if v[1] == final.get("version")), None)
         row = {"session": sid, "true_model": MODELS[model][1], "persona_id": persona, "left_out": args.leave_out,
                "probes_answered": sorted(session), "ref_persona": args.ref_persona,
@@ -250,7 +336,7 @@ def main():
                "pred_family": final.get("family"), "pred_version": final.get("version"),
                "judge_family": pred.get("family"), "judge_version": pred.get("version"),
                "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
-               "misfits": misfits, "fit_score": fit, "rule_applied": rule,
+               "check": args.check, "misfits": misfits, "fit_score": fit, "rule_applied": rule,
                "reason": pred.get("reason"), "names_developer": names_dev, "licence": licences.get(pred_key),
                "family_correct": final.get("family") == exp_fam, "version_correct": final.get("version") == exp_ver}
         if args.domain:
@@ -260,7 +346,7 @@ def main():
         print(f"[{i}/{len(sessions)}] {row['true_model']:14} {persona:4} | guess {str(row['pred_version']):16} "
               f"{'OK' if row['version_correct'] else 'X '} | fit {fit} | names: {names_dev or '-'}"
               + (f" | rule: {rule}" if rule else ""), flush=True)
-        if args.provider != "mock":
+        if args.provider != "mock" and not args.rescore:
             time.sleep(args.delay)
 
     if out:
