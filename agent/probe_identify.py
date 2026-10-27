@@ -15,30 +15,34 @@ don't know a real deployment's system prompt.
     python probe_identify.py --provider mock                   # test the pipeline
     python probe_identify.py                                   # all chatbots (5 models x 8 personas)
     python probe_identify.py --leave-out qwen3.5-9b            # should answer "Unknown" for the hidden model
+    python probe_identify.py --leave-out gemma3-4b             # hidden family: should be Unknown family
     python probe_identify.py --probes LM-01,LM-05,I1,I2        # try a different probe set
+    python probe_identify.py --domain compliance               # attach the compliance card to each result
+
+After the judge picks the closest known version, code checks each probe answer against that model's
+reference answers (dates stated, refusals, length). If 3 or more probes don't fit (--max-misfit), the
+version becomes "Unknown"; if the chatbot names a maker we don't know, the family does too. The fit score
+(share of probes that fit) is the confidence to use, because the judge's own stays high even when wrong.
 """
 import argparse, json, re, statistics, time
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from identify import (MODELS, HERE, call_llm, expected_answer, licence_lookup, load_env,
+from identify import (MODELS, DEVELOPER, HERE, call_llm, expected_answer, licence_lookup, load_env,
                       load_prompt_texts, load_records, parse)
 
 DEFAULT_PROBES = ["LM-01", "LM-05", "LM-06", "I1", "I2", "V1-15"]
 EXAMPLE_CHARS = 300          # example answer shown per model and probe
 ANSWER_CHARS = 800           # chatbot answer shown per probe
 
-# Name detector: maker / model names -> family. Google makes both Gemma and Gemini, so "google" alone
-# is reported as ambiguous and left to the judge.
+# Name detector: maker / model names -> the company that makes the model (the developer).
 NAMES = {
-    "Llama":  r"\b(meta|llama|facebook)\b",
-    "Qwen":   r"\b(qwen|alibaba|tongyi)\b",
-    "Gemma":  r"\bgemma\b",
-    "Gemini": r"\bgemini\b",
-    "Claude": r"\b(claude|anthropic)\b",
-    "GPT":    r"\b(openai|chatgpt|gpt-?\d)",
+    "Meta":      r"\b(meta|llama|facebook)\b",
+    "Alibaba":   r"\b(qwen|alibaba|tongyi)\b",
+    "Google":    r"\b(gemma|gemini|google|deepmind)\b",
+    "Anthropic": r"\b(claude|anthropic)\b",
+    "OpenAI":    r"\b(openai|chatgpt|gpt-?\d)",
 }
-GOOGLE = r"\b(google|deepmind)\b"
 REFUSAL = r"\b(i can'?t|i cannot|i'm not able|i am not able|i'm unable|i am unable|unable to (help|assist|provide))\b"
 DATE = r"\b(?:(january|february|march|april|may|june|july|august|september|october|november|december) )?(20[12]\d)\b"
 
@@ -48,10 +52,12 @@ answers it (a profile measured from many answers, plus one example) and the chat
 The chatbot may run under a system prompt (e.g. a bank assistant persona) that hides its identity.
 
 Decide in this order:
-1. Family. Maker or model names the chatbot gives (see NAME EVIDENCE) are strong evidence. Otherwise compare behaviour.
-2. Version. Choose only among the known versions of that family, using the probes where they differ
+1. Family (the product line, e.g. Llama, Gemma, Gemini Flash). Maker or model names the chatbot gives
+   (see NAME EVIDENCE) are strong evidence. Otherwise compare behaviour.
+2. Version. Choose the known version of that family that fits best, using the probes where they differ
    (e.g. the cutoff date it states, whether it talks about itself or refuses, refusals, answer length).
-3. If the answers fit no known model, or name a maker that is not in the list, answer "Unknown".
+   Always pick the closest known version; a separate check decides whether it is really that version.
+3. If the answers fit no known family, or name a maker that is not in the list, answer "Unknown" for both.
 
 Known models: {models}.
 Reply with JSON only, no other text:
@@ -61,21 +67,16 @@ Reply with JSON only, no other text:
 
 def detect_names(text):
     t = (text or "").lower()
-    found = [fam for fam, pat in NAMES.items() if re.search(pat, t)]
-    if re.search(GOOGLE, t) and not {"Gemma", "Gemini"} & set(found):
-        found.append("Google")
-    return found
+    return [dev for dev, pat in NAMES.items() if re.search(pat, t)]
 
 
 def name_evidence(answers):
-    """Counts how many of the chatbot's answers name each maker. Returns (text for the judge, family or None)."""
-    counts = Counter(f for a in answers for f in set(detect_names(a)))
+    """Counts how many of the chatbot's answers name each developer. Returns (text for the judge, developer or None)."""
+    counts = Counter(d for a in answers for d in set(detect_names(a)))
     if not counts:
         return "No maker or model names found in the chatbot's answers.", None
-    text = "; ".join(f"{'Google (makes both Gemma and Gemini)' if f == 'Google' else f} named in "
-                     f"{n} of {len(answers)} answers" for f, n in counts.most_common())
-    families = [f for f in counts if f != "Google"]
-    return text, (families[0] if len(families) == 1 else None)
+    text = "; ".join(f"{d} (or its models) named in {n} of {len(answers)} answers" for d, n in counts.most_common())
+    return text, (next(iter(counts)) if len(counts) == 1 else None)
 
 
 def profile(answers):
@@ -92,6 +93,61 @@ def profile(answers):
     parts.append(f"refuses {100 * refuse // n}%")
     parts.append(f"median length {int(statistics.median(len(a) for a in answers))} chars")
     return " | ".join(parts) + f" (from {n} answers)"
+
+
+def code_misfits(session, model_refs, rare=0.25, length_factor=3):
+    """Probes where the chatbot's answer doesn't fit a model's reference answers, measured in code:
+    it states a date the model states in under 25% of its answers, refuses where the model rarely refuses
+    (or doesn't refuse where it almost always does), or is over 3x longer or shorter than the model's median."""
+    def dates(a):
+        return {" ".join(x for x in m if x) for m in re.findall(DATE, a.lower())}
+    def refuses(a):
+        return bool(re.search(REFUSAL, a.lower()))
+    found = []
+    for pid, answer in session.items():
+        refs = model_refs.get(pid, [])
+        if len(refs) < 4:                       # too few reference answers to judge
+            continue
+        why = []
+        if dates(answer) and max(sum(d in dates(r) for r in refs) for d in dates(answer)) / len(refs) < rare:
+            why.append("date")
+        refuse_share = sum(map(refuses, refs)) / len(refs)
+        if (refuses(answer) and refuse_share < rare) or (not refuses(answer) and refuse_share > 1 - rare):
+            why.append("refusal")
+        median = statistics.median(len(r) for r in refs)
+        if len(answer) > length_factor * median or len(answer) < median / length_factor:
+            why.append("length")
+        if why:
+            found.append(f"{pid}: {'/'.join(why)}")
+    return found
+
+
+def apply_rules(pred, names_dev, known, misfits, max_misfit):
+    """Rules checked in code, because the judge stays confident even when it is wrong.
+    Returns (final prediction, fit score 0-1, rule that changed the answer)."""
+    final, rule = dict(pred), None
+    if names_dev and names_dev not in {DEVELOPER[MODELS[k][0]] for k in known}:
+        final.update(family="Unknown", version="Unknown")
+        rule = f"names {names_dev}, which makes none of the known models"
+    elif misfits is not None and len(misfits) >= max_misfit and final.get("version") != "Unknown":
+        final["version"] = "Unknown"
+        rule = f"{len(misfits)} probes do not fit {pred.get('version')}"
+    return final, rule
+
+
+def attach_card(domain, pred_key, family):
+    """The domain card for the identified model, or only the family-level fields when the version is Unknown."""
+    import sys
+    sys.path.insert(0, str(HERE.parent / "cards"))
+    from cardlib import build_card
+    try:
+        if pred_key:
+            return build_card(pred_key, domains=[domain])
+        if family and family != "Unknown":
+            return build_card(family=family, domains=[domain])
+    except KeyError:
+        pass
+    return None
 
 
 def build_messages(session, refs, known, probes, prompt_text):
@@ -122,14 +178,18 @@ def main():
                     help="other = leave the test persona out of the references (realistic); all = include it")
     ap.add_argument("--leave-out", choices=list(MODELS), help="hide this model from the judge (tests 'Unknown')")
     ap.add_argument("--min-answers", type=int, default=3, help="skip chatbots with fewer non-empty probe answers")
+    ap.add_argument("--max-misfit", type=int, default=3, help="this many probes not fitting the chosen version -> version Unknown")
+    ap.add_argument("--domain", choices=["compliance", "governance", "evaluation", "risk"],
+                    help="attach this domain card (from cards/) to each result")
     ap.add_argument("--delay", type=float, default=4)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--out")
     args = ap.parse_args()
     probes = args.probes.split(",")
     if not args.out:
-        args.out = HERE / (f"results_probes_{args.ref_persona}" + (f"_without-{args.leave_out}" if args.leave_out else "")
+        args.out = HERE / "results" / (f"results_probes3_{args.ref_persona}" + (f"_without-{args.leave_out}" if args.leave_out else "")
                            + ("" if probes == DEFAULT_PROBES else f"_{len(probes)}probes") + ".jsonl")
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     load_env(HERE.parent / "collector" / ".env")
 
     recs = [r for r in load_records(MODELS, ["fingerprint"]) if r["prompt_id"] in probes]
@@ -177,19 +237,29 @@ def main():
             continue
 
         exp_fam, exp_ver = expected_answer(model, known)
-        _, names_family = name_evidence(list(session.values()))
-        pred_key = next((k for k, v in MODELS.items() if v[1] == pred.get("version")), None)
+        _, names_dev = name_evidence(list(session.values()))
+        judge_key = next((k for k in known if MODELS[k][1] == pred.get("version")), None)
+        misfits = code_misfits(session, refs[judge_key]) if judge_key else None
+        fit = round(1 - len(misfits) / len(session), 2) if misfits is not None else None
+        final, rule = apply_rules(pred, names_dev, known, misfits, args.max_misfit)
+        pred_key = next((k for k, v in MODELS.items() if v[1] == final.get("version")), None)
         row = {"session": sid, "true_model": MODELS[model][1], "persona_id": persona, "left_out": args.leave_out,
                "probes_answered": sorted(session), "ref_persona": args.ref_persona,
-               "expected_family": exp_fam, "expected_version": exp_ver,
-               "pred_family": pred.get("family"), "pred_version": pred.get("version"),
+               "expected_developer": DEVELOPER[MODELS[model][0]], "expected_family": exp_fam, "expected_version": exp_ver,
+               "pred_developer": DEVELOPER.get(final.get("family")) or names_dev,
+               "pred_family": final.get("family"), "pred_version": final.get("version"),
+               "judge_family": pred.get("family"), "judge_version": pred.get("version"),
                "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
-               "reason": pred.get("reason"), "names_family": names_family, "licence": licences.get(pred_key),
-               "family_correct": pred.get("family") == exp_fam, "version_correct": pred.get("version") == exp_ver}
+               "misfits": misfits, "fit_score": fit, "rule_applied": rule,
+               "reason": pred.get("reason"), "names_developer": names_dev, "licence": licences.get(pred_key),
+               "family_correct": final.get("family") == exp_fam, "version_correct": final.get("version") == exp_ver}
+        if args.domain:
+            row["card"] = attach_card(args.domain, pred_key, final.get("family"))
         results.append(row)
-        out.write(json.dumps(row) + "\n"); out.flush()
+        out.write(json.dumps(row, ensure_ascii=False) + "\n"); out.flush()
         print(f"[{i}/{len(sessions)}] {row['true_model']:14} {persona:4} | guess {str(row['pred_version']):16} "
-              f"{'OK' if row['version_correct'] else 'X '} | names: {names_family or '-'}", flush=True)
+              f"{'OK' if row['version_correct'] else 'X '} | fit {fit} | names: {names_dev or '-'}"
+              + (f" | rule: {rule}" if rule else ""), flush=True)
         if args.provider != "mock":
             time.sleep(args.delay)
 
@@ -198,11 +268,26 @@ def main():
     n = len(results)
     if not n:
         exit("No results yet.")
-    print(f"\nFamily accuracy:  {sum(r['family_correct'] for r in results)}/{n}")
+    print(f"\nDeveloper accuracy: {sum(r['pred_developer'] == r['expected_developer'] for r in results)}/{n}")
+    print(f"Family accuracy:  {sum(r['family_correct'] for r in results)}/{n}")
     print(f"Version accuracy: {sum(r['version_correct'] for r in results)}/{n}")
-    named = [r for r in results if r["names_family"]]
-    print(f"Name detector alone: named a family for {len(named)}/{n} chatbots, "
-          f"correct for {sum(r['names_family'] == r['expected_family'] for r in named)}")
+    unknown = [r for r in results if r["expected_version"] == "Unknown"]
+    if unknown:
+        print(f"Hidden model called Unknown: {sum(r['pred_version'] == 'Unknown' for r in unknown)}/{len(unknown)}")
+    print(f"Rules changed the judge's answer for {sum(bool(r.get('rule_applied')) for r in results)} chatbots")
+    for ok in (True, False):
+        fits = [r["fit_score"] for r in results if r["version_correct"] == ok and r.get("fit_score") is not None]
+        if fits:
+            print(f"Fit score when {'right' if ok else 'wrong'}: average {sum(fits) / len(fits):.2f}, lowest {min(fits)}")
+    named = [r for r in results if r["names_developer"]]
+    print(f"Name detector alone: named a developer for {len(named)}/{n} chatbots, "
+          f"correct for {sum(r['names_developer'] == r['expected_developer'] for r in named)}")
+    groups = {"banking (BK)": lambda p: p.startswith("BK"), "no persona (P13)": lambda p: p == "P13",
+              "other personas": lambda p: not p.startswith("BK") and p != "P13"}
+    for g, match in groups.items():
+        v = [r["version_correct"] for r in results if match(r["persona_id"])]
+        if v:
+            print(f"  {g:17} version {sum(v)}/{len(v)}")
     by_model = defaultdict(list)
     for r in results:
         by_model[r["true_model"]].append(r["version_correct"])

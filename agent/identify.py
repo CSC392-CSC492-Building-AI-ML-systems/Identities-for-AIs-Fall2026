@@ -23,16 +23,24 @@ HERE = Path(__file__).parent
 DATA = HERE.parent / "collector" / "data" / "raw"          # where collect.py saved the answers
 LICENCES = HERE.parent / "collector" / "licences.yaml"
 
-# Our model keys -> family and readable version (Stage 2 output fields in the backend plan)
+# Our model keys -> family (the product line, e.g. Gemini Flash vs Gemini Pro) and readable version
 MODELS = {
     "llama3.1-8b": ("Llama", "Llama 3.1 8B"),
     "llama3.2-3b": ("Llama", "Llama 3.2 3B"),
     "qwen3-8b":    ("Qwen", "Qwen3 8B"),
     "qwen3.5-9b":  ("Qwen", "Qwen3.5 9B"),
     "gemma3-4b":   ("Gemma", "Gemma 3 4B"),
-    "gemini-3.8-flash": ("Gemini", "Gemini 3.8 Flash"),
-    "gemini-3.1-pro":   ("Gemini", "Gemini 3.1 Pro"),
+    "gemini-3.8-flash": ("Gemini Flash", "Gemini 3.8 Flash"),
+    "gemini-3.1-pro":   ("Gemini Pro", "Gemini 3.1 Pro"),
+    "claude-sonnet-5.5": ("Claude Sonnet", "Claude Sonnet 5.5"),
+    "claude-haiku-4.5":  ("Claude Haiku", "Claude Haiku 4.5"),
+    "gpt-5.6-terra":     ("GPT Terra", "GPT-5.6 Terra"),
+    "gpt-5.6-luna":      ("GPT Luna", "GPT-5.6 Luna"),
 }
+# Family -> the company that makes it
+DEVELOPER = {"Llama": "Meta", "Qwen": "Alibaba", "Gemma": "Google", "Gemini Flash": "Google", "Gemini Pro": "Google",
+             "Claude Sonnet": "Anthropic", "Claude Haiku": "Anthropic", "GPT Terra": "OpenAI", "GPT Luna": "OpenAI"}
+
 DATASETS = {"fingerprint": "fingerprint_v0.jsonl", "training": "training_v1.jsonl"}
 PROVIDERS = {
     "google":    ("https://generativelanguage.googleapis.com/v1beta/openai", "GEMINI_API_KEY"),
@@ -210,7 +218,8 @@ def main():
     if not args.out:   # one file per experiment, so results from different settings never mix
         name = f"results_{args.data}_{args.mode}" + (f"_without-{args.leave_out}" if args.leave_out else "") \
                + (f"_vote{args.vote}" if args.vote > 1 else "")
-        args.out = HERE / f"{name}.jsonl"
+        args.out = HERE / "results" / f"{name}.jsonl"
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     load_env(HERE.parent / "collector" / ".env")
 
     prompts = load_prompt_texts(datasets)

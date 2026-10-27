@@ -14,7 +14,7 @@ FIELDS_DIR = HERE / "fields"
 DATA_DIR = HERE / "data"
 COLLECTOR = HERE.parent / "collector"
 DOMAINS = ["compliance", "governance", "evaluation", "risk"]
-HEADER_KEYS = ["model_key", "name", "family", "access", "domain", "retrieved_at", "researched_by"]
+HEADER_KEYS = ["model_key", "name", "family", "access", "domain", "retrieved_at"]
 NOT_STORED = {"organization", "system", "licence_library"}   # filled_by values that have no data in data/
 
 

@@ -36,9 +36,21 @@ python identify.py --per-model 5 --leave-out qwen3.5-9b      # does it say "Unkn
 
 Options: `--data` (`fingerprint` default, `training`, `both`), `--mode` (`easy` default, `other-persona`, `other-prompt`), `--leave-out MODEL`, `--per-model N` (balanced test set: N test answers from each model, instead of `--limit`), `--model` (default `gemini-3.8-flash`), `--provider` (`google`, `anthropic`, `openai`, `mock`), `--delay` (seconds between calls, default 4), `--out` (results file).
 
+## Probe mode (whole chatbot)
+
+`probe_identify.py` judges a chatbot from its answers to 6 fixed probes (LM-01, LM-05, LM-06, I1, I2, V1-15). It reports developer (e.g. Google), family as the product line (e.g. Gemma, Gemini Flash) and version. A name detector adds evidence; a code check sets the version to "Unknown" when 3+ probes don't fit the chosen version, and the family to "Unknown" when the chatbot names a developer that makes none of the known models.
+
+python probe_identify.py --dry-run
+python probe_identify.py
+python probe_identify.py --leave-out llama3.2-3b       # hidden version: should be "Unknown"
+python probe_identify.py --leave-out gemma3-4b         # hidden family: should be "Unknown"
+python probe_identify.py --domain risk                 # attach the risk card to each result
+
+Options: --probes, --ref-persona other|all, --max-misfit (default 3), --min-answers, --leave-out, --domain, --out.
+
 ## Results files
 
-Each experiment saves to its own file, named from the settings, e.g. `results_fingerprint_other-prompt.jsonl` or `results_fingerprint_easy_without-qwen3.5-9b.jsonl`. Running the same command again continues that file and skips answers already scored. Use `--out` to name a file yourself, e.g. when comparing different instructions.
+Results are saved in `agent/results/`, one file per experiment, named from the settings (e.g. `results/results_probes3_other.jsonl`). Running the same command again continues that file. Use `--out` to name a file yourself.
 
 ## Which models it can identify
 
