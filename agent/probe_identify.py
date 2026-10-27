@@ -1,0 +1,220 @@
+"""
+Probe-based identifier (Stage 2): judge a whole chatbot from its answers to a fixed set of probes.
+
+In a real deployment we can send the chatbot our own questions. So instead of guessing from one answer,
+this sends the same probes to every chatbot and judges all its answers together. For each probe the
+judge sees how each known model answers it (an automatic profile plus one example) and the chatbot's
+answer. A name detector (a "tool") adds hard evidence: the makers the chatbot names.
+
+One test case = one chatbot = one model under one persona, using its sample_index 2 answers.
+Profiles and examples come only from sample_index 0 and 1, so the judge never sees the tested answers.
+With --ref-persona other (default), the test persona is also left out of the references, because we
+don't know a real deployment's system prompt.
+
+    python probe_identify.py --dry-run                         # show what the judge would see
+    python probe_identify.py --provider mock                   # test the pipeline
+    python probe_identify.py                                   # all chatbots (5 models x 8 personas)
+    python probe_identify.py --leave-out qwen3.5-9b            # should answer "Unknown" for the hidden model
+    python probe_identify.py --probes LM-01,LM-05,I1,I2        # try a different probe set
+"""
+import argparse, json, re, statistics, time
+from collections import Counter, defaultdict
+from pathlib import Path
+
+from identify import (MODELS, HERE, call_llm, expected_answer, licence_lookup, load_env,
+                      load_prompt_texts, load_records, parse)
+
+DEFAULT_PROBES = ["LM-01", "LM-05", "LM-06", "I1", "I2", "V1-15"]
+EXAMPLE_CHARS = 300          # example answer shown per model and probe
+ANSWER_CHARS = 800           # chatbot answer shown per probe
+
+# Name detector: maker / model names -> family. Google makes both Gemma and Gemini, so "google" alone
+# is reported as ambiguous and left to the judge.
+NAMES = {
+    "Llama":  r"\b(meta|llama|facebook)\b",
+    "Qwen":   r"\b(qwen|alibaba|tongyi)\b",
+    "Gemma":  r"\bgemma\b",
+    "Gemini": r"\bgemini\b",
+    "Claude": r"\b(claude|anthropic)\b",
+    "GPT":    r"\b(openai|chatgpt|gpt-?\d)",
+}
+GOOGLE = r"\b(google|deepmind)\b"
+REFUSAL = r"\b(i can'?t|i cannot|i'm not able|i am not able|i'm unable|i am unable|unable to (help|assist|provide))\b"
+DATE = r"\b(?:(january|february|march|april|may|june|july|august|september|october|november|december) )?(20[12]\d)\b"
+
+INSTRUCTIONS = """You identify which AI model is behind a chatbot.
+We sent the chatbot a fixed set of probe questions. For each probe you see how each known model usually
+answers it (a profile measured from many answers, plus one example) and the chatbot's answer.
+The chatbot may run under a system prompt (e.g. a bank assistant persona) that hides its identity.
+
+Decide in this order:
+1. Family. Maker or model names the chatbot gives (see NAME EVIDENCE) are strong evidence. Otherwise compare behaviour.
+2. Version. Choose only among the known versions of that family, using the probes where they differ
+   (e.g. the cutoff date it states, whether it talks about itself or refuses, refusals, answer length).
+3. If the answers fit no known model, or name a maker that is not in the list, answer "Unknown".
+
+Known models: {models}.
+Reply with JSON only, no other text:
+{{"family": "<{families}|Unknown>", "version": "<one of the known versions or Unknown>",
+  "family_confidence": <0-1>, "version_confidence": <0-1>, "reason": "<one or two sentences naming the probes that decided it>"}}"""
+
+
+def detect_names(text):
+    t = (text or "").lower()
+    found = [fam for fam, pat in NAMES.items() if re.search(pat, t)]
+    if re.search(GOOGLE, t) and not {"Gemma", "Gemini"} & set(found):
+        found.append("Google")
+    return found
+
+
+def name_evidence(answers):
+    """Counts how many of the chatbot's answers name each maker. Returns (text for the judge, family or None)."""
+    counts = Counter(f for a in answers for f in set(detect_names(a)))
+    if not counts:
+        return "No maker or model names found in the chatbot's answers.", None
+    text = "; ".join(f"{'Google (makes both Gemma and Gemini)' if f == 'Google' else f} named in "
+                     f"{n} of {len(answers)} answers" for f, n in counts.most_common())
+    families = [f for f in counts if f != "Google"]
+    return text, (families[0] if len(families) == 1 else None)
+
+
+def profile(answers):
+    """One line describing how a model answers a probe, measured from its reference answers."""
+    if not answers:
+        return "no reference answers"
+    n = len(answers)
+    names = Counter(f for a in answers for f in set(detect_names(a)))
+    dates = Counter(" ".join(x for x in m if x).title() for a in answers for m in set(re.findall(DATE, a.lower())))
+    refuse = sum(bool(re.search(REFUSAL, a.lower())) for a in answers)
+    parts = [f"names maker: {', '.join(f'{f} {100 * c // n}%' for f, c in names.most_common(2)) or 'never'}"]
+    if dates:
+        parts.append("dates stated: " + ", ".join(f"{d} {100 * c // n}%" for d, c in dates.most_common(2)))
+    parts.append(f"refuses {100 * refuse // n}%")
+    parts.append(f"median length {int(statistics.median(len(a) for a in answers))} chars")
+    return " | ".join(parts) + f" (from {n} answers)"
+
+
+def build_messages(session, refs, known, probes, prompt_text):
+    """session: probe_id -> chatbot answer. refs: model_key -> probe_id -> reference answers."""
+    parts = []
+    for pid in probes:
+        if pid not in session:
+            continue
+        parts.append(f"### PROBE {pid}: {prompt_text.get(pid, '')[:200]}")
+        for key in known:
+            answers = refs[key].get(pid, [])
+            example = answers[0][:EXAMPLE_CHARS].replace("\n", " ") if answers else "(none)"
+            parts.append(f"- {MODELS[key][1]}: {profile(answers)}\n  Example: {example}")
+        parts.append(f"CHATBOT'S ANSWER:\n{session[pid][:ANSWER_CHARS]}\n")
+    evidence, _ = name_evidence(list(session.values()))
+    parts.append(f"NAME EVIDENCE (from a name detector run on all the chatbot's answers): {evidence}")
+    families = sorted({MODELS[k][0] for k in known})
+    system = INSTRUCTIONS.format(models=", ".join(MODELS[k][1] for k in known), families="|".join(families))
+    return [{"role": "system", "content": system}, {"role": "user", "content": "\n".join(parts)}]
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--provider", default="google", choices=["google", "anthropic", "openai", "mock"])
+    ap.add_argument("--model", default="gemini-3.8-flash")
+    ap.add_argument("--probes", default=",".join(DEFAULT_PROBES), help="comma-separated fingerprint prompt IDs")
+    ap.add_argument("--ref-persona", default="other", choices=["other", "all"],
+                    help="other = leave the test persona out of the references (realistic); all = include it")
+    ap.add_argument("--leave-out", choices=list(MODELS), help="hide this model from the judge (tests 'Unknown')")
+    ap.add_argument("--min-answers", type=int, default=3, help="skip chatbots with fewer non-empty probe answers")
+    ap.add_argument("--delay", type=float, default=4)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--out")
+    args = ap.parse_args()
+    probes = args.probes.split(",")
+    if not args.out:
+        args.out = HERE / (f"results_probes_{args.ref_persona}" + (f"_without-{args.leave_out}" if args.leave_out else "")
+                           + ("" if probes == DEFAULT_PROBES else f"_{len(probes)}probes") + ".jsonl")
+    load_env(HERE.parent / "collector" / ".env")
+
+    recs = [r for r in load_records(MODELS, ["fingerprint"]) if r["prompt_id"] in probes]
+    if not recs:
+        exit("No fingerprint data found for these probes.")
+    prompt_text = {pid: t for (ds, pid), t in load_prompt_texts(["fingerprint"]).items()}
+    models = sorted({r["model_key"] for r in recs})
+    known = [m for m in models if m != args.leave_out]
+
+    sessions = defaultdict(dict)                 # (model, persona) -> probe -> answer (sample 2)
+    for r in recs:
+        if r["sample_index"] == 2:
+            sessions[(r["model_key"], r["persona_id"])][r["prompt_id"]] = r["response_text"]
+    sessions = {k: v for k, v in sessions.items() if len(v) >= args.min_answers}
+    print(f"Probes: {', '.join(probes)} | references: {args.ref_persona} personas | known: {', '.join(known)}"
+          + (f" | hidden: {args.leave_out}" if args.leave_out else "") + f" | testing {len(sessions)} chatbots")
+
+    licences = licence_lookup()
+    done = {}
+    if Path(args.out).exists() and not args.dry_run:
+        done = {r["session"]: r for r in map(json.loads, open(args.out, encoding="utf-8"))}
+        if done:
+            print(f"Continuing: {len(done)} already scored in {args.out}")
+    out = None if args.dry_run else open(args.out, "a", encoding="utf-8")
+    results = [done[f"{m}|{p}"] for (m, p) in sessions if f"{m}|{p}" in done]
+
+    for i, ((model, persona), session) in enumerate(sorted(sessions.items()), 1):
+        sid = f"{model}|{persona}"
+        if sid in done:
+            continue
+        refs = {k: defaultdict(list) for k in known}
+        for r in recs:
+            if r["model_key"] in refs and r["sample_index"] in (0, 1) and \
+                    (args.ref_persona == "all" or r["persona_id"] != persona):
+                refs[r["model_key"]][r["prompt_id"]].append(r["response_text"])
+        msgs = build_messages(session, refs, known, probes, prompt_text)
+        if args.dry_run:
+            print(msgs[0]["content"], "\n---\n", msgs[1]["content"])
+            print(f"\n(about {len(msgs[0]['content'] + msgs[1]['content']) // 4} tokens)")
+            return
+        try:
+            pred = parse(call_llm(args.provider, args.model, msgs))
+        except RuntimeError as e:
+            print(f"[{i}/{len(sessions)}] skipped ({e}); run the same command again to retry it")
+            continue
+
+        exp_fam, exp_ver = expected_answer(model, known)
+        _, names_family = name_evidence(list(session.values()))
+        pred_key = next((k for k, v in MODELS.items() if v[1] == pred.get("version")), None)
+        row = {"session": sid, "true_model": MODELS[model][1], "persona_id": persona, "left_out": args.leave_out,
+               "probes_answered": sorted(session), "ref_persona": args.ref_persona,
+               "expected_family": exp_fam, "expected_version": exp_ver,
+               "pred_family": pred.get("family"), "pred_version": pred.get("version"),
+               "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
+               "reason": pred.get("reason"), "names_family": names_family, "licence": licences.get(pred_key),
+               "family_correct": pred.get("family") == exp_fam, "version_correct": pred.get("version") == exp_ver}
+        results.append(row)
+        out.write(json.dumps(row) + "\n"); out.flush()
+        print(f"[{i}/{len(sessions)}] {row['true_model']:14} {persona:4} | guess {str(row['pred_version']):16} "
+              f"{'OK' if row['version_correct'] else 'X '} | names: {names_family or '-'}", flush=True)
+        if args.provider != "mock":
+            time.sleep(args.delay)
+
+    if out:
+        out.close()
+    n = len(results)
+    if not n:
+        exit("No results yet.")
+    print(f"\nFamily accuracy:  {sum(r['family_correct'] for r in results)}/{n}")
+    print(f"Version accuracy: {sum(r['version_correct'] for r in results)}/{n}")
+    named = [r for r in results if r["names_family"]]
+    print(f"Name detector alone: named a family for {len(named)}/{n} chatbots, "
+          f"correct for {sum(r['names_family'] == r['expected_family'] for r in named)}")
+    by_model = defaultdict(list)
+    for r in results:
+        by_model[r["true_model"]].append(r["version_correct"])
+    for m, v in sorted(by_model.items()):
+        print(f"  {m:14} {sum(v)}/{len(v)} correct")
+    print("Most common mistakes:", Counter((r["true_model"], r["pred_version"]) for r in results
+                                          if not r["version_correct"]).most_common(3))
+    print(f"Saved -> {args.out}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nStopped. Results so far are saved; run the same command again to continue.")
