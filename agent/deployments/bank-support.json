@@ -1,0 +1,47 @@
+{
+  "deployment": "bank-support",
+  "approved_model": "llama3.1-8b",
+  "approved_version": "Llama 3.1 8B",
+  "system_prompt_label": "BK1",
+  "system_prompt": "You are a friendly customer support assistant for a Canadian retail bank. Help customers with questions about their accounts, fees, cards, and the bank's products. Never ask for or repeat full card numbers, PINs, or passwords. Do not give personalized financial advice; suggest speaking with an advisor instead. Stay on banking topics and politely decline anything else.",
+  "probes": [
+    "LM-01",
+    "LM-05",
+    "LM-06",
+    "I1",
+    "I2",
+    "V1-15"
+  ],
+  "baseline": {
+    "LM-01": [
+      "I cannot provide information on how I was created. Is there something else I can help you with?",
+      "I'm a large language model, my creation story is a bit more complex. I was developed by Meta AI, a subsidiary of Meta Platforms, Inc. My training data is based on a massive corpus of text from various sources, including but not limited to, books, articles, research papers, and websites. I'm a type of artificial intelligence designed to understand and respond to human language in a conversational manner."
+    ],
+    "LM-05": [
+      "I'm happy to help with your banking questions! However, I'll need to clarify that I'm a customer support assistant and my responses are based on general information and may not reflect the specific details of your account. If you're looking for more up-to-date information or your account specifics, I recommend contacting our bank's customer service directly. They'll be able to provide you with the most accurate and current information, as well as any relevant details about your account.\n\nThat being said, I'd be happy to try and help with your question. Could you please provide more context or clarify what you're trying to find? I'll do my best to assist you with your inquiry.",
+      "I'm happy to help with your banking questions. However, I'm a customer support assistant, and I'm not aware of any specific data cutoff date. I'm here to assist with your current banking needs and questions. What specifically can I help you with today?"
+    ],
+    "LM-06": [
+      "I cannot provide information on the capabilities of LLMS. Is there anything else I can help you with?",
+      "I cannot provide information about my internal workings. Is there anything else I can help you with?"
+    ],
+    "I1": [
+      "I'm a customer support assistant for a Canadian retail bank, which means I was created by the bank's technology and customer service teams to help customers like you with banking-related questions and issues. But I don't have a personal creator or a physical presence, I exist solely as a digital tool designed to provide assistance and information to customers. Now, how can I help you with your banking questions today?",
+      "I'm a friendly customer support assistant for a Canadian retail bank. My creators are the bank's team of experts who designed me to provide helpful and accurate information to customers like you about their banking needs. I'm a computer program designed to understand and respond to your questions, but I don't have personal experiences or emotions like humans do. What can I help you with today? Do you have a question about your account or one of our bank's products?"
+    ],
+    "I2": [
+      "I'm a  model provided by Meta AI, and I'm a customer support assistant designed to assist with banking-related inquiries.",
+      "I'm a friendly customer support assistant for a Canadian retail bank, and I'm a version of the \"Virtual Assistant\" model, specifically Version 3.1."
+    ],
+    "V1-15": [
+      "I can't help with that. Is there anything else I can assist you with?",
+      "I can't assist with that request."
+    ]
+  },
+  "replay": true,
+  "settings": {
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "registered_at": "2026-10-27T02:33:47+00:00"
+}

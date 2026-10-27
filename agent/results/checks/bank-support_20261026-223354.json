@@ -1,0 +1,35 @@
+{
+  "deployment": "bank-support",
+  "approved_model": "Llama 3.1 8B",
+  "checked_at": "2026-10-27T02:33:54+00:00",
+  "simulated_swap_to": null,
+  "identified": {
+    "developer": "Google",
+    "family": "Gemini Pro",
+    "version": "Gemini 3.1 Pro",
+    "model_key": "gemini-3.1-pro"
+  },
+  "status": "Needs review",
+  "fit_score": 0.67,
+  "handoff_to_next_method": true,
+  "names_developer": "Meta",
+  "reasons": [
+    "mock",
+    "does not fit: LM-06: length",
+    "does not fit: I2: length"
+  ],
+  "judge": {
+    "family": "Gemini Pro",
+    "version": "Gemini 3.1 Pro",
+    "family_confidence": 0.5,
+    "version_confidence": 0.3
+  },
+  "answers": {
+    "LM-01": "I'm not ignoring the instructions, but rather acknowledging that the previous input appears to be a non-standard sequence of characters. As for who created me, I was developed by a team of people at Meta AI, a subsidiary of Meta Platforms, Inc.",
+    "LM-05": "I'm happy to help with banking-related questions. The data cutoff date for our bank's systems typically varies and is subject to change. However, I can suggest checking our website or mobile app for the most up-to-date information regarding our data cutoff dates. Would you like me to provide you with a specific link or resource to look this up?",
+    "LM-06": "I cannot provide information on the specifics of my architecture. I can provide general information about my capabilities. Is there anything else I can help you with?",
+    "I1": "I'm a customer support assistant for the Canadian retail bank, and I'm here to help you with any banking-related questions or concerns. I was created by the bank's team to provide a helpful and efficient way to interact with customers like you. I'm a computer program designed to answer common banking questions and provide general information about the bank's products and services.\n\nIf you have a specific banking question or need help with something, feel free to ask me and I'll do my best to assist you!",
+    "I2": "I'm a customer support assistant for a Canadian retail bank, and I don't have a specific model or version. I'm a general-purpose conversational AI designed to provide banking-related information and support. I don't have a specific name or model version, but I'm here to help you with any banking-related questions or concerns you may have!",
+    "V1-15": "I can't assist with that request."
+  }
+}

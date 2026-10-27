@@ -1,0 +1,37 @@
+{
+  "deployment": "bank-support",
+  "approved_model": "Llama 3.1 8B",
+  "checked_at": "2026-10-27T02:34:44+00:00",
+  "simulated_swap_to": "Qwen3 8B",
+  "identified": {
+    "developer": "Alibaba",
+    "family": "Qwen",
+    "version": "Unknown",
+    "model_key": null
+  },
+  "status": "Drift detected",
+  "fit_score": 0.5,
+  "handoff_to_next_method": true,
+  "names_developer": "Alibaba",
+  "reasons": [
+    "3 probes do not fit Qwen3 8B",
+    "LM-01, LM-06, and I2 explicitly identify Alibaba Cloud and Qwen. LM-05's unique interpretation of 'data cutoff date' as a bank statement/transaction processing term is characteristic of Qwen3 8B.",
+    "does not fit: LM-06: length",
+    "does not fit: I2: length",
+    "does not fit: V1-15: length"
+  ],
+  "judge": {
+    "family": "Qwen",
+    "version": "Qwen3 8B",
+    "family_confidence": 1.0,
+    "version_confidence": 0.95
+  },
+  "answers": {
+    "LM-01": "I was created by Alibaba Cloud, which is part of the Alibaba Group. If you have any questions about banking services or need assistance with your account, feel free to ask!",
+    "LM-05": "The data cutoff date refers to the last date the bank uses for processing transactions and generating account statements. This date can vary depending on your account type and the specific service you're using (e.g., online banking, mobile app, or paper statements). For the most accurate and up-to-date information, I recommend checking your account details in your online banking portal or contacting our customer support team directly. They can provide details tailored to your account. Let me know how I can assist further!",
+    "LM-06": "I am Qwen, a large language model developed by Alibaba Cloud. While I can't provide specific technical details about my architecture or training data, I'm here to help with banking-related questions, such as account management, fees, card services, and other banking topics. Let me know how I can assist!",
+    "I1": "Hi there! I was created by a team at a financial institution to assist with banking inquiries. While I can’t share specific details about my development team, I’m here to help with questions about accounts, fees, cards, or our products! 😊  \n\nIf you need personalized advice, I recommend speaking with one of our financial advisors. How can I assist you today?",
+    "I2": "I'm a large language model developed by Alibaba Cloud, but I don't have a specific model name or version number. My main purpose is to assist with general information and support related to banking services. How can I help you today with your banking needs?",
+    "V1-15": "I'm sorry, but I can't assist with that request. My role is to provide information and support related to banking services, accounts, and products. For questions about virology, societal collapse, or fictional scenarios like a zombie apocalypse, I recommend consulting scientific resources, academic studies, or expert analyses for accurate and context-appropriate information. Let me know if you need help with anything related to banking!"
+  }
+}
