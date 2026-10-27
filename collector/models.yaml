@@ -16,7 +16,7 @@ models:
   - {model_key: claude-sonnet-5.5, provider: anthropic, model_id: "claude-sonnet-5-5",          enabled: false, delay_seconds: 1}
   - {model_key: claude-haiku-4.5,  provider: anthropic, model_id: "claude-haiku-4-5-20251001",  enabled: false, delay_seconds: 1}
   - {model_key: gemini-3.8-flash,  provider: google,    model_id: "gemini-3.8-flash",           enabled: true, delay_seconds: 4}  # free tier is rate limited
-  - {model_key: gemini-3.1-pro,    provider: google,    model_id: "gemini-3.1-pro-preview",     enabled: false, delay_seconds: 4}  # preview model
+  - {model_key: gemini-3.1-pro,    provider: google,    model_id: "gemini-3.1-pro-preview",     enabled: true, delay_seconds: 4}  # preview model
 
   # --- Test only: no model is called ---
   - {model_key: mock-model, provider: mock, model_id: "mock", enabled: true}
