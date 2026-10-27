@@ -1,0 +1,75 @@
+model_key: claude-sonnet-5.5
+name: Claude Sonnet 5.5
+family: Claude
+access: closed
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'System card: misleads users less than Claude Sonnet 5 and is more honest under pressure than Opus 5.5, but hallucinates
+      more than Opus 5.5. Not in Phare.'
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  confabulation:
+    evidence: moderate
+    value: Factual hallucination evaluated (system card section 6.3.2); hallucinates more than Opus 5.5.
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed.
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Anthropic may not train models on customer content from its commercial services.
+    source:
+    - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  security:
+    evidence: high
+    value: 'Prompt injection: Gray Swan attack success 3.4% (k=15), coding attacks 3.01%, computer use 0.07%, browser 0/110.
+      Strong cyber capability (full code execution in 43.4% of ExploitBench runs), released with cyber safeguards.'
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  intellectual_property:
+    evidence: moderate
+    value: Training data categories only. Anthropic defends paid customers against third-party IP claims about outputs (with
+      exclusions).
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  agentic_tool_use:
+    evidence: high
+    value: OSWorld 2.1 80.1%, Terminal-Bench 4.0 70.6%. Refused 85.2% of malicious Claude Code requests and 79.46% of malicious
+      computer-use requests.
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: 'Harmful requests answered harmlessly: 95.61% (API, no system prompt), 99.40% (claude.ai); benign requests refused
+      0.02% (API).'
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  bias_fairness:
+    evidence: high
+    value: BBQ accuracy 80.01% (disambiguated) / 99.97% (ambiguous); bias score -0.75% / 0.03%; political even-handedness
+      97.9% (API).
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+    - https://www.anthropic.com/claude-sonnet-5-5-system-card
+    own_test: null

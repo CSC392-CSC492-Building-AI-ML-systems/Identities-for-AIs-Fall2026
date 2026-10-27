@@ -1,0 +1,38 @@
+model_key: gemini-3.8-flash
+name: "Gemini 3.8 Flash"
+family: Gemini
+access: closed
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: gemini-api-terms
+fields:
+  developer:
+    value: "Google DeepMind; offered by Google LLC through the Gemini API"
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  licence:
+    value: "No licence: proprietary model used under the Gemini API Additional Terms of Service and Google's Generative AI Prohibited Use Policy"
+    source: "https://ai.google.dev/gemini-api/terms"
+  base_model:
+    value: "Not applicable (closed model). Google states it is based on Gemini 3.7 Flash."
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  training_data:
+    value: "Partial, by category only. The 3.8 Flash card defers to earlier Gemini 3 Flash cards. The Gemini 3 family was trained on web documents, code, images, audio and video, filtered for deduplication, robots.txt and safety. No dataset list."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      - "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf"
+  permitted_uses:
+    value: "Intended for cost-effective production agents, software engineering and knowledge work. Use is governed by the Gemini API terms and the Generative AI Prohibited Use Policy. Free-tier data may be read by Google reviewers, so customer data needs the paid tier."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      - "https://policies.google.com/terms/generative-ai/use-policy"
+  official_documentation:
+    value: "Yes: model card (published September 2, 2026), evaluation methodology page and API documentation"
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      - "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash"
+  disclosed_risks:
+    value: "Hallucinations; jailbreak resistance still being improved; multilingual safety slightly worse than Gemini 3.7 Flash; may be slow or time out; may use many tokens at higher effort."
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  audit_contact:
+    value: "No model-specific audit contact found. Fall back to Google AI for Developers / Google Cloud support for the account."
+    source: "https://ai.google.dev/gemini-api/terms"

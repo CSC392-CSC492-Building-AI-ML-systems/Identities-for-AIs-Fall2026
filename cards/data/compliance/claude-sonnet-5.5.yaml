@@ -1,0 +1,34 @@
+model_key: claude-sonnet-5.5
+name: "Claude Sonnet 5.5"
+family: Claude
+access: closed
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: anthropic-commercial-terms
+fields:
+  developer:
+    value: "Anthropic PBC"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  licence:
+    value: "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  base_model:
+    value: "Not applicable (closed model, Anthropic's own)"
+    source: "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  training_data:
+    value: "Partial, by category only: a proprietary mix of public internet data, public and private datasets, and synthetic data from other models. Reliable knowledge cutoff June 2026."
+    source: "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  permitted_uses:
+    value: "Governed by the Usage Policy. Finance and credit are high-risk uses: a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI."
+    source: "https://www.anthropic.com/aup"
+  official_documentation:
+    value: "Yes: system card (September 28, 2026), launch post and API documentation"
+    source: "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  disclosed_risks:
+    value: "Testing is smaller-scale than deployment, so rare behaviours may be missed; possible undiscovered unsafe behaviour in untested settings; hallucinates more than Claude Opus 5.5; meaningful cyber capability (exploit development), handled with cyber safeguards."
+    source: "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+  audit_contact:
+    value: "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy."
+    source:
+      - "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude"
+      - "https://www.anthropic.com/responsible-disclosure-policy"

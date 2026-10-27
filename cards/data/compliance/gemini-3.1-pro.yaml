@@ -1,0 +1,36 @@
+model_key: gemini-3.1-pro
+name: "Gemini 3.1 Pro (Preview)"
+family: Gemini
+access: closed
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: gemini-api-terms
+fields:
+  developer:
+    value: "Google DeepMind; offered by Google LLC through the Gemini API"
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  licence:
+    value: "No licence: proprietary model used under the Gemini API Additional Terms of Service and Google's Generative AI Prohibited Use Policy. It is a preview model."
+    source: "https://ai.google.dev/gemini-api/terms"
+  base_model:
+    value: "Not applicable (closed model). Google states it is based on Gemini 3 Pro."
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  training_data:
+    value: "Partial, by category only (inherited from Gemini 3 Pro): web documents, code, images, audio and video, filtered for deduplication, robots.txt and safety. Knowledge cutoff January 2025. No dataset list."
+    source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf"
+  permitted_uses:
+    value: "Intended for complex multi-step work: agents, advanced coding, long-context and multimodal tasks. Use is governed by the Gemini API terms and the Generative AI Prohibited Use Policy; customer data needs the paid tier."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      - "https://policies.google.com/terms/generative-ai/use-policy"
+  official_documentation:
+    value: "Yes: model card (published February 19, 2026), evaluation methodology and API documentation. Limitations are deferred to the Gemini 3 Pro card."
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  disclosed_risks:
+    value: "Inherited from Gemini 3 Pro: hallucinations; jailbreak vulnerability is improved but 'still an open research problem'. Reached Google's cyber alert threshold (below the critical level)."
+    source:
+      - "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf"
+      - "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  audit_contact:
+    value: "No model-specific audit contact found. Fall back to Google AI for Developers / Google Cloud support for the account."
+    source: "https://ai.google.dev/gemini-api/terms"

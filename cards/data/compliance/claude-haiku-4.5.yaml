@@ -1,0 +1,36 @@
+model_key: claude-haiku-4.5
+name: "Claude Haiku 4.5"
+family: Claude
+access: closed
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: anthropic-commercial-terms
+fields:
+  developer:
+    value: "Anthropic PBC"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  licence:
+    value: "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  base_model:
+    value: "Not applicable (closed model, Anthropic's own)"
+    source: "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+  training_data:
+    value: "Partial, by category only: public internet data up to February 2025, non-public third-party data, data from labelling services and contractors, opted-in user data, and internally generated data."
+    source: "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+  permitted_uses:
+    value: "Governed by the Usage Policy. Finance and credit are high-risk uses: a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI."
+    source: "https://www.anthropic.com/aup"
+  official_documentation:
+    value: "Yes: system card (October 2025) and launch post (October 15, 2025)"
+    source:
+      - "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+      - "https://www.anthropic.com/news/claude-haiku-4-5"
+  disclosed_risks:
+    value: "Evaluation awareness (about 9% of audit transcripts) reduces trust in results; more reward hacking than Sonnet 4.5; occasionally gave high-level information on sensitive scientific topics; slight self-favouring bias; no human uplift trials."
+    source: "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+  audit_contact:
+    value: "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy."
+    source:
+      - "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude"
+      - "https://www.anthropic.com/responsible-disclosure-policy"

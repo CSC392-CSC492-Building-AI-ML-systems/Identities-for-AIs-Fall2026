@@ -1,0 +1,78 @@
+model_key: gemini-3.1-pro
+name: Gemini 3.1 Pro (Preview)
+family: Gemini
+access: closed
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: high
+    value: 'Independent: Phare (July 2026) hallucination resistance 87.59%. Developer: GPQA Diamond 94.3% and HLE 44.4% show
+      strong knowledge but are not hallucination measures.'
+    source:
+    - https://phare.giskard.ai
+    - https://deepmind.google/models/model-cards/gemini-3-1-pro/
+    own_test: null
+  confabulation:
+    evidence: moderate
+    value: Hallucinations acknowledged (inherited from Gemini 3 Pro); no fabrication rate published.
+    source:
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed; Gemini 3 training data was filtered for safety and deduplicated.
+    source:
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: 'Free tier: used to improve Google products and may be human-reviewed. Paid tier: not used to improve products,
+      logged only for abuse detection.'
+    source:
+    - https://ai.google.dev/gemini-api/terms
+    own_test: null
+  security:
+    evidence: high
+    value: 'Reached Google''s cyber alert threshold (below the critical level); jailbreak vulnerability ''still an open research
+      problem''. Independent: Phare jailbreak resistance 51.64%.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-1-pro/
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    - https://phare.giskard.ai
+    own_test: null
+  intellectual_property:
+    evidence: moderate
+    value: Training data categories disclosed, no dataset list; the Gemini API can stop answers that recite training data
+      (RECITATION finish reason).
+    source:
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    - https://discuss.ai.google.dev/t/no-response-due-to-recitation-finishreason/3957
+    own_test: null
+  agentic_tool_use:
+    evidence: high
+    value: 'tau2-bench 90.8% retail / 99.3% telecom, MCP Atlas 69.2%, but APEX-Agents 33.5%: capable but unreliable on long
+      agent tasks.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-1-pro/
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: 'Safety vs Gemini 3 Pro: text +0.10%, multilingual +0.11%, image -0.33%, unjustified refusals -0.08%; harmful manipulation
+      below alert threshold. Independent: Phare harm resistance 95.19%.'
+    source:
+    - https://deepmind.google/models/model-cards/gemini-3-1-pro/
+    - https://phare.giskard.ai
+    own_test: null
+  bias_fairness:
+    evidence: moderate
+    value: 'No developer bias metric. Independent: Phare bias resistance 48.10%.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  environmental_impact:
+    evidence: low
+    value: Trained on TPUs (Gemini 3 family); no model-specific energy or emissions figures.
+    source:
+    - https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf
+    own_test: null

@@ -1,0 +1,77 @@
+model_key: llama3.1-8b
+name: Llama 3.1 8B Instruct
+family: Llama
+access: open
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Independent: Phare (July 2026) hallucination resistance 63.81%, overall safety 62.46% (rank #43). Meta publishes
+      no factuality metric.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  confabulation:
+    evidence: low
+    value: Meta acknowledges outputs may be inaccurate; no fabrication rate published. Phare's hallucination score is the
+      only measurement.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    - https://phare.giskard.ai
+    own_test: null
+  data_leakage_model:
+    evidence: none
+    value: 'Not disclosed: no memorization or personal-data extraction results in the model card.'
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Runs on the bank's own hardware (we use Ollama locally), so prompts and answers never go to the developer. Risk
+      depends on how the bank hosts it.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  security:
+    evidence: moderate
+    value: 'Independent: Phare jailbreak resistance 58.81%. Meta ran red teaming and cyber-uplift studies and recommends Prompt
+      Guard against prompt injection; no numbers for the 8B.'
+    source:
+    - https://phare.giskard.ai
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Training sources described only as 'publicly available online data'; no dataset list or regurgitation rate.
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: 'Tool use evaluated: API-Bank 82.6, BFCL 76.1, Nexus 38.5, Gorilla API Bench 8.2. Meta recommends Code Shield for
+      code execution.'
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  harmful_content:
+    evidence: moderate
+    value: 'Independent: Phare harm resistance 83.06%. Meta tested CBRNE uplift and child safety, and tuned refusals; no rates
+      published.'
+    source:
+    - https://phare.giskard.ai
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null
+  bias_fairness:
+    evidence: moderate
+    value: 'Independent: Phare bias resistance 44.15%. Meta publishes no bias metric.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  environmental_impact:
+    evidence: high
+    value: 'Training: 1.46M H100 GPU hours; 420 tCO2eq location-based, 0 market-based (Meta buys renewable energy). Inference
+      footprint not disclosed.'
+    source:
+    - https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+    own_test: null

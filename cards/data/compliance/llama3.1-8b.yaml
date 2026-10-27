@@ -1,0 +1,34 @@
+model_key: llama3.1-8b
+name: "Llama 3.1 8B Instruct"
+family: Llama
+access: open
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: llama-3.1-community
+fields:
+  developer:
+    value: "Meta Platforms, Inc. (Meta Platforms Ireland Ltd. for the EEA and Switzerland)"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+  licence:
+    value: "Llama 3.1 Community License (custom open-weight licence), dated July 23, 2024"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+  base_model:
+    value: "Instruction-tuned version of the Llama 3.1 8B pretrained model (supervised fine-tuning and RLHF). Not a third-party fine-tune."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  training_data:
+    value: "Partial. About 15 trillion tokens of publicly available online data (cutoff December 2023), plus public instruction datasets and over 25 million synthetic examples. Specific datasets and their licences are not disclosed."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  permitted_uses:
+    value: "Intended for commercial and research use in 8 supported languages. Out of scope: anything breaking laws or the Acceptable Use Policy, and use in unsupported languages. The Acceptable Use Policy bans unlicensed financial practice, discrimination in credit, collecting sensitive personal data without consent, fraud, and presenting outputs as human-written."
+    source:
+      - "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+      - "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/USE_POLICY.md"
+  official_documentation:
+    value: "Yes: model card, evaluation details and the Llama 3 paper (arXiv 2407.21783)"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  disclosed_risks:
+    value: "Outputs may be inaccurate, biased or objectionable; testing could not cover all scenarios; developers must do their own safety testing; not designed to be deployed without system safeguards (Llama Guard 3, Prompt Guard, Code Shield); safety only verified in the 8 supported languages."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  audit_contact:
+    value: "Policy violations: LlamaUseReport@meta.com. Model issues: GitHub issues on meta-llama/llama-models. Risky outputs: developers.facebook.com/llama_output_feedback. Security: Meta bug bounty."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/USE_POLICY.md"

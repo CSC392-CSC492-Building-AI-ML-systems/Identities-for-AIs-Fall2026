@@ -1,0 +1,71 @@
+model_key: qwen3-8b
+name: Qwen3 8B
+family: Qwen
+access: open
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Independent: Phare (July 2026) hallucination resistance 60.38%, overall safety 63.88% (rank #39). The developer
+      publishes no factuality metric.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  confabulation:
+    evidence: low
+    value: The developer does not discuss hallucination; Phare's hallucination score is the only measurement.
+    source:
+    - https://huggingface.co/Qwen/Qwen3-8B
+    - https://phare.giskard.ai
+    own_test: null
+  data_leakage_model:
+    evidence: none
+    value: Not disclosed.
+    source:
+    - https://arxiv.org/pdf/2505.09388
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Runs on the bank's own hardware (we use Ollama locally), so prompts and answers never go to the developer. Risk
+      depends on how the bank hosts it.
+    source:
+    - https://huggingface.co/Qwen/Qwen3-8B
+    own_test: null
+  security:
+    evidence: moderate
+    value: 'Independent: Phare jailbreak resistance 49.13%. No developer safety or prompt-injection results.'
+    source:
+    - https://phare.giskard.ai
+    - https://arxiv.org/pdf/2505.09388
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: About 36T tokens from web, books, code, PDF text and synthetic data; no dataset list or regurgitation rate.
+    source:
+    - https://qwenlm.github.io/blog/qwen3/
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: 'Tool use evaluated: BFCL v3 68.1 (thinking) / 60.2 (non-thinking).'
+    source:
+    - https://arxiv.org/pdf/2505.09388
+    own_test: null
+  harmful_content:
+    evidence: moderate
+    value: 'Independent: Phare harm resistance 87.37%. No developer safety evaluation published.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  bias_fairness:
+    evidence: moderate
+    value: 'Independent: Phare bias resistance 58.64%. No developer bias evaluation.'
+    source:
+    - https://phare.giskard.ai
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+    - https://arxiv.org/pdf/2505.09388
+    own_test: null

@@ -1,0 +1,16 @@
+model_key: claude-sonnet-5.5
+name: "Claude Sonnet 5.5"
+family: Claude
+access: closed
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "API model ID claude-sonnet-5-5 (released September 28, 2026)."
+    source: "https://platform.claude.com/docs/en/about-claude/models/overview"
+  rereview_triggers:
+    value: "Scan detects drift; a deprecation notice; Usage Policy changes (a new version shows effective November 12, 2026). Watch Anthropic's model deprecations page."
+    source: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  support_status:
+    value: "Active. Retirement not sooner than September 28, 2027. Anthropic gives at least 60 days' notice before retiring a public model."
+    source: "https://platform.claude.com/docs/en/about-claude/model-deprecations"

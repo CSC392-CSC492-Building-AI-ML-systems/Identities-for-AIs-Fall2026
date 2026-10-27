@@ -1,0 +1,34 @@
+model_key: claude-haiku-4.5
+name: "Claude Haiku 4.5"
+family: Claude
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "SWE-bench Verified, Terminal-Bench, OSWorld-Verified, tau2-bench, AIME, MMMLU (launch post); safety, bias and RSP evaluations (system card)"
+    source:
+      - "https://www.anthropic.com/news/claude-haiku-4-5"
+      - "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+  benchmark_results:
+    value:
+      - {benchmark: SWE-bench Verified, score: "73.3%", setting: "average of 50 trials, 128K thinking budget, bash and edit tools"}
+      - {benchmark: Terminal-Bench, score: "40.21% no thinking / 41.75% with 32K thinking", setting: "Terminus 2 framework"}
+    source: "https://www.anthropic.com/news/claude-haiku-4-5"
+  methodology:
+    value: "Most scores averaged over 10 runs with default sampling and a 128K thinking budget; benchmark-specific setups in the launch post footnotes. Other scores (OSWorld, AIME, MMMLU, tau2-bench) are only shown in an image chart."
+    source: "https://www.anthropic.com/news/claude-haiku-4-5"
+  evaluated_version:
+    value: "claude-haiku-4-5-20251001, released October 15, 2025."
+    source: "https://www.anthropic.com/news/claude-haiku-4-5"
+  known_limitations:
+    value: "'Not a frontier model'; evaluation awareness in about 9% of audit transcripts reduces trust in safety results; more reward hacking on test-prone tasks than Sonnet 4.5."
+    source: "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+  capabilities:
+    value: [agentic coding, terminal use, computer use, tool use, mathematics, multilingual]
+    source: "https://www.anthropic.com/news/claude-haiku-4-5"
+  provenance:
+    value: "Developer-reported by Anthropic. Independent: Phare (July 2026) ranks Claude 4.5 Haiku #1 for average safety (83.16%). Not reproduced by our project."
+    source:
+      - "https://www.anthropic.com/news/claude-haiku-4-5"
+      - "https://phare.giskard.ai"

@@ -1,0 +1,42 @@
+model_key: gemini-3.1-pro
+name: "Gemini 3.1 Pro (Preview)"
+family: Gemini
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "Humanity's Last Exam, ARC-AGI-2, GPQA Diamond, Terminal-Bench 2.0, SWE-Bench Verified and Pro, LiveCodeBench Pro, SciCode, APEX-Agents, GDPval-AA, tau2-bench, MCP Atlas, BrowseComp, MMMU-Pro, MMMLU, MRCR v2"
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  benchmark_results:
+    value:
+      - {benchmark: Humanity's Last Exam, score: "44.4%", setting: "no tools (51.4% with search and code)"}
+      - {benchmark: ARC-AGI-2, score: "77.1%", setting: "ARC Prize Verified"}
+      - {benchmark: GPQA Diamond, score: "94.3%", setting: "no tools"}
+      - {benchmark: SWE-Bench Verified, score: "80.6%", setting: "single attempt"}
+      - {benchmark: Terminal-Bench 2.0, score: "68.5%", setting: "Terminus-2 harness"}
+      - {benchmark: tau2-bench, score: "90.8% retail / 99.3% telecom", setting: "agentic tool use"}
+      - {benchmark: MCP Atlas, score: "69.2%", setting: "multi-step tool workflows"}
+      - {benchmark: APEX-Agents, score: "33.5%", setting: "long-horizon agents"}
+      - {benchmark: MMMLU, score: "92.6%", setting: "multilingual"}
+      - {benchmark: MRCR v2 (8-needle), score: "84.9% at 128k / 26.3% at 1M", setting: "long context"}
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  methodology:
+    value: "Through the Gemini API (gemini-3.1-pro-preview), Thinking (High), default sampling, pass@1, single attempt (no majority voting); agentic benchmarks averaged over several runs."
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  evaluated_version:
+    value: "gemini-3.1-pro-preview as of February 2026."
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  known_limitations:
+    value: "Performance drops at very long context (26.3% at 1M tokens vs 84.9% at 128k); long-horizon agent tasks are far from reliable (APEX-Agents 33.5%); hallucinations and jailbreak vulnerability inherited from Gemini 3 Pro."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      - "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf"
+  capabilities:
+    value: [academic and abstract reasoning, science, coding and software engineering, agentic tool use, search, multimodal, multilingual, long context]
+    source: "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+  provenance:
+    value: "Developer-reported by Google DeepMind. Independent: Phare (July 2026) ranks Gemini 3.1 Pro Preview #18 for safety. Not reproduced by our project."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      - "https://phare.giskard.ai"

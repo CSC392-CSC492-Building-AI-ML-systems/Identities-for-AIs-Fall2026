@@ -1,0 +1,38 @@
+model_key: gemini-3.8-flash
+name: "Gemini 3.8 Flash"
+family: Gemini
+access: closed
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "DeepSWE v1.1, GDPVal-AA v2, Vals Finance Agent v2, Harvey's Legal Agent Benchmark, Terminal-bench 2.1 and 4.0, GDP.PDF, CharXiv Reasoning, LVBench, HLE-Verified, OSWorld-2.0, BioMysteryBench, LABBench2"
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  benchmark_results:
+    value:
+      - {benchmark: DeepSWE v1.1, score: "73.7%", setting: "long-horizon software engineering"}
+      - {benchmark: Vals Finance Agent v2, score: "61.4%", setting: "financial analyst tasks"}
+      - {benchmark: Terminal-bench 2.1, score: "89.4%", setting: "agentic terminal coding"}
+      - {benchmark: HLE-Verified, score: "54.9%", setting: "expert reasoning"}
+      - {benchmark: CharXiv Reasoning, score: "86.2%", setting: "no tools"}
+      - {benchmark: OSWorld-2.0, score: "59.0%", setting: "computer use, partial score"}
+      - {benchmark: GDPVal-AA v2, score: "1545 Elo", setting: "knowledge work"}
+      - {benchmark: Harvey's Legal Agent Benchmark, score: "10.0%", setting: "all-pass rate"}
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  methodology:
+    value: "Published separately at deepmind.com/models/evals-methodology/gemini-3-8-flash. Thinking levels low/medium/high are available; results depend on the level used."
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  evaluated_version:
+    value: "gemini-3.8-flash as of the model card (September 2, 2026)."
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  known_limitations:
+    value: "Hallucinations; jailbreak resistance still improving; occasional slowness or timeouts; may use more tokens at higher effort; knowledge cutoff March 2026 for some domains but January 2025 for others."
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  capabilities:
+    value: [software engineering, agentic coding, knowledge work, finance and legal tasks, document and chart understanding, video understanding, computer use, biology research]
+    source: "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+  provenance:
+    value: "Developer-reported by Google DeepMind (model card and methodology page). Independent: Phare lists only a partial result for Gemini 3.5 Flash, none for 3.8. Not reproduced by our project."
+    source:
+      - "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      - "https://phare.giskard.ai"

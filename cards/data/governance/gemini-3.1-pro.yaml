@@ -1,0 +1,16 @@
+model_key: gemini-3.1-pro
+name: "Gemini 3.1 Pro (Preview)"
+family: Gemini
+access: closed
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "API model ID gemini-3.1-pro-preview (model card published February 19, 2026). Preview model: no dated snapshot, so it cannot be pinned beyond this ID."
+    source: "https://ai.google.dev/gemini-api/docs/models"
+  rereview_triggers:
+    value: "Scan detects drift; a deprecation notice (its predecessor gemini-3-pro-preview was shut down March 9, 2026); changes to the Gemini API terms. Watch the release notes and deprecations page."
+    source: "https://ai.google.dev/gemini-api/docs/deprecations"
+  support_status:
+    value: "Active preview model. No shutdown date announced. Preview models can be replaced at short notice, as gemini-3-pro-preview was."
+    source: "https://ai.google.dev/gemini-api/docs/deprecations"

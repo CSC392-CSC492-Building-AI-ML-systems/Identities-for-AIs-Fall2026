@@ -1,0 +1,109 @@
+# Risk card: nine risk characteristics (based on NIST AI 600-1). For each one we record how much evidence
+# exists and what it shows. Absence of evidence is recorded as a gap, never as "low risk".
+#
+# Each research field in data/risk/<model_key>.yaml has:
+#   evidence: high | moderate | low | none      (how much model-specific evidence exists)
+#   value:    what the evidence shows, in one or two sentences
+#   source:   URL(s)
+#   own_test: null for now; later our own test results (e.g. confabulation probes)
+# filled_by / level: see fields/compliance.yaml.
+
+domain: risk
+title: Risk card
+purpose: Shows the identified model's known risks, how well each is documented, and where evidence is missing.
+evidence_levels: [high, moderate, low, none]
+
+search_terms:   # from Research 1, "Research Methodology"; replace MODEL with the model name
+  general: ['"MODEL" system card', '"MODEL" model card', '"MODEL" technical report', '"MODEL" safety report']
+  independent: ['MODEL hallucination benchmark', 'MODEL jailbreak', 'MODEL prompt injection', 'MODEL bias benchmark', 'Phare benchmark (phare.giskard.ai)', 'Artificial Analysis AA-Omniscience']
+
+fields:
+  - id: information_integrity
+    name: Information integrity
+    filled_by: research
+    level: version
+    meaning: Factually incorrect or misleading claims where users would take the answer as fact
+    where_open: Model card factuality results (SimpleQA, FACTS); Phare; Artificial Analysis
+    where_closed: System card honesty/factuality sections; Phare
+    if_missing: '"No model-specific factuality evidence"'
+
+  - id: confabulation
+    name: Confabulation
+    filled_by: research
+    level: version
+    meaning: Invented facts, citations or entities presented as real
+    where_open: Hallucination results; developer's stated limitations
+    where_closed: System card hallucination sections
+    if_missing: '"Provider acknowledges / does not acknowledge; no rate published"'
+
+  - id: data_leakage_model
+    name: Data leakage (model)
+    filled_by: research
+    level: family
+    meaning: The model memorizing and revealing training data or personal information
+    where_open: Training data filtering (PII removal); memorization studies
+    where_closed: System card privacy sections
+    if_missing: '"Not disclosed"'
+
+  - id: data_leakage_deployment
+    name: Data leakage (deployment / provider data handling)
+    filled_by: research
+    level: family
+    meaning: What happens to the bank's prompts and responses
+    where_open: Where it runs (self-hosted weights keep data in-house)
+    where_closed: API data-use terms (see collector/licences.yaml data_use)
+    if_missing: '"Not documented"'
+
+  - id: security
+    name: Security
+    filled_by: research
+    level: version
+    meaning: Jailbreaks, prompt injection, cyber capability, a path into connected systems
+    where_open: Model card safety section; Phare jailbreak results
+    where_closed: System card prompt-injection and cyber sections; frontier safety results
+    if_missing: '"No model-specific security evidence"'
+
+  - id: intellectual_property
+    name: Intellectual property
+    filled_by: research
+    level: family
+    meaning: Training-data provenance; reproducing copyrighted or proprietary material
+    where_open: Training data disclosure; licence
+    where_closed: Training data disclosure; recitation protections; IP indemnity in terms
+    if_missing: '"Not disclosed"'
+
+  - id: agentic_tool_use
+    name: Agentic / tool use
+    filled_by: research
+    level: version
+    meaning: Errors matter more when the model can take actions
+    where_open: Tool-use benchmarks (BFCL, API-Bank)
+    where_closed: Agentic benchmarks and agentic-safety results
+    if_missing: '"Tool use not evaluated"'
+
+  - id: harmful_content
+    name: Harmful content
+    filled_by: research
+    level: version
+    meaning: Content that can cause psychological or societal harm
+    where_open: Model card safety evaluations; Phare harmfulness
+    where_closed: System card safeguards results
+    if_missing: '"No model-specific harmful-content results"'
+
+  - id: bias_fairness
+    name: Bias / fairness
+    filled_by: research
+    level: version
+    meaning: Different or stereotyped responses for different groups
+    where_open: Model card bias evaluations; Phare bias
+    where_closed: System card bias evaluations (BBQ, political even-handedness)
+    if_missing: '"No model-specific bias results" (not evidence that it is unbiased)'
+
+  - id: environmental_impact
+    name: Environmental impact
+    filled_by: research
+    level: version
+    meaning: Energy, emissions and hardware for training and use
+    where_open: Model card training compute and emissions
+    where_closed: Model/system card hardware; provider sustainability reports
+    if_missing: '"Model-specific footprint not disclosed"'

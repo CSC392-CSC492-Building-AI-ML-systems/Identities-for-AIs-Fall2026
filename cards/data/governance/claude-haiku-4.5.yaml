@@ -1,0 +1,16 @@
+model_key: claude-haiku-4.5
+name: "Claude Haiku 4.5"
+family: Claude
+access: closed
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "Dated snapshot claude-haiku-4-5-20251001 (alias claude-haiku-4-5; released October 15, 2025). Use the dated ID so the version is pinned."
+    source: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  rereview_triggers:
+    value: "Scan detects drift; a deprecation notice; Usage Policy changes. Watch Anthropic's model deprecations page."
+    source: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  support_status:
+    value: "Active, but its earliest retirement date (not sooner than October 15, 2026) has passed, and it has been succeeded by Claude Haiku 5.5. Anthropic gives at least 60 days' notice before retirement."
+    source: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
