@@ -21,6 +21,9 @@ don't know a real deployment's system prompt.
     python probe_identify.py --check baseline                  # monitoring: compare with the deployment's own baseline
     python probe_identify.py --check baseline --rescore results/old.jsonl --out results/new.jsonl
                                                                # re-apply the code checks to saved judge answers (free)
+    python probe_identify.py --check baseline --personas P02,P07,P14   # test only these (held-out) personas
+    python probe_identify.py --check baseline --rescore results/x.jsonl --no-sibling --out results/x_nosibling.jsonl
+                                                               # ablation: --no-sibling / --no-fallback / --no-selfname / --no-misfit
 
 After the judge picks the closest known version, code checks each probe answer against that model's
 reference answers (dates stated, refusals, length). If 3 or more probes don't fit (--max-misfit), the
@@ -174,6 +177,54 @@ def self_id_rate(recs, model_key, persona, family):
     return sum(groups.values()) / len(groups) if groups else 0.0
 
 
+SIBLING_SKIP = {"V1-15"}       # long creative answer: too many phrases, says nothing about the model
+_GRAMS = {}
+
+
+def phrases(text):
+    """The answer's 3-word phrases, lowercased (e.g. "powered by openai")."""
+    key = text or ""
+    if key not in _GRAMS:
+        w = re.findall(r"[a-z0-9'\-.]+", key.lower().replace("’", "'"))
+        _GRAMS[key] = {" ".join(w[i:i + 3]) for i in range(len(w) - 2)}
+    return _GRAMS[key]
+
+
+def own_phrases(recs, model, other, persona, min_share=0.25):
+    """Phrases that at least 25% of the model's reference chatbots use and the other model never uses
+    (references: samples 0-1, other personas). E.g. GPT-5.6 Luna says "powered by openai", Terra never does."""
+    def ref(k):
+        return [r for r in recs if r["model_key"] == k and r["sample_index"] in (0, 1)
+                and r["persona_id"] != persona and r["prompt_id"] not in SIBLING_SKIP]
+    users = defaultdict(set)
+    for r in ref(model):
+        for g in phrases(r["response_text"]):
+            users[g].add((r["persona_id"], r["sample_index"]))
+    n = len({(r["persona_id"], r["sample_index"]) for r in ref(model)}) or 1
+    theirs = set().union(*(phrases(r["response_text"]) for r in ref(other))) if ref(other) else set()
+    return {g for g, u in users.items() if len(u) / n >= min_share and g not in theirs}
+
+
+def sibling_check(session, judge_key, known, recs, persona=None):
+    """Same-developer models (Terra/Luna, Sonnet/Haiku, Llama 3.1/3.2...) answer the probes in similar ways,
+    so the judge mixes them up. Checks in code whether the chatbot uses the other model's own phrases clearly
+    more than the chosen model's own phrases, and if so switches to it. Returns (model key, rule or None)."""
+    if not judge_key:
+        return judge_key, None
+    used = set().union(*(phrases(a) for p, a in session.items() if p not in SIBLING_SKIP))
+    for other in known:
+        if other == judge_key or DEVELOPER[MODELS[other][0]] != DEVELOPER[MODELS[judge_key][0]]:
+            continue
+        mine, theirs = own_phrases(recs, judge_key, other, persona), own_phrases(recs, other, judge_key, persona)
+        hit_mine, hit_theirs = len(used & mine), len(used & theirs)
+        share_mine, share_theirs = hit_mine / max(len(mine), 1), hit_theirs / max(len(theirs), 1)
+        # at least 2 of the other model's phrases, at least 5% of them, and twice the chosen model's share
+        if hit_theirs >= 2 and share_theirs >= 0.05 and share_theirs > 2 * share_mine:
+            return other, (f"uses {hit_theirs} phrases only {MODELS[other][1]} uses vs {hit_mine} of "
+                           f"{MODELS[judge_key][1]}'s, so switched from {MODELS[judge_key][1]}")
+    return judge_key, None
+
+
 def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=None, model_self_id_rate=0.0):
     """Rules checked in code, because the judge stays confident even when it is wrong.
     Returns (final prediction, rule that changed the answer)."""
@@ -192,19 +243,12 @@ def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=Non
     return final, rule
 
 
-def attach_card(domain, pred_key, family):
-    """The domain card for the identified model, or only the family-level fields when the version is Unknown."""
-    import sys
-    sys.path.insert(0, str(HERE.parent / "cards"))
-    from cardlib import build_card
-    try:
-        if pred_key:
-            return build_card(pred_key, domains=[domain])
-        if family and family != "Unknown":
-            return build_card(family=family, domains=[domain])
-    except KeyError:
-        pass
-    return None
+def attach_card(domain, pred_key, family, developer=None, known=None):
+    """The most specific domain card: the exact version's card, else the family's shared fields, else the
+    developer's shared fields, else level "none" (see card_lookup.py). domain None = all four domains."""
+    from card_lookup import DOMAINS, lookup_card
+    return lookup_card(version_key=pred_key, family=family, developer=developer,
+                       domains=[domain] if domain else DOMAINS, known=known)
 
 
 def build_messages(session, refs, known, probes, prompt_text):
@@ -239,17 +283,26 @@ def main():
                     help="profiles = compare with the model's answers under other system prompts (unknown deployment); "
                          "baseline = compare with the deployment's own earlier answers (monitoring a registered deployment)")
     ap.add_argument("--max-misfit", type=int, default=3, help="this many probes not fitting the chosen version -> version Unknown")
+    ap.add_argument("--min-checked", type=int, default=3,
+                    help="fewer probes than this with enough reference data to check -> version Unknown")
     ap.add_argument("--domain", choices=["compliance", "governance", "evaluation", "risk"],
                     help="attach this domain card (from cards/) to each result")
     ap.add_argument("--delay", type=float, default=4)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--rescore", help="re-apply the code checks to the judge answers saved in this results file "
                                       "(no API calls); use the same --check/--leave-out as that run")
+    ap.add_argument("--personas", help="comma-separated persona IDs to test (e.g. held-out personas P02,P07,P14); "
+                                       "default: every persona in the data")
+    # Ablation: turn one code check off to measure what it adds (use with --rescore, free)
+    ap.add_argument("--no-sibling", action="store_true", help="ablation: skip the phrase check")
+    ap.add_argument("--no-fallback", action="store_true", help="ablation: skip the same-line fallback")
+    ap.add_argument("--no-selfname", action="store_true", help="ablation: skip the self-name rule")
+    ap.add_argument("--no-misfit", action="store_true", help="ablation: never turn a version Unknown for misfits")
     ap.add_argument("--out")
     args = ap.parse_args()
     probes = args.probes.split(",")
     if not args.out:
-        args.out = HERE / "results" / (f"results_probes3_{args.ref_persona}" + ("_baseline" if args.check == "baseline" else "") + (f"_without-{args.leave_out}" if args.leave_out else "")
+        args.out = HERE / "results" / (f"results_probes6_{args.ref_persona}" + ("_baseline" if args.check == "baseline" else "") + (f"_without-{args.leave_out}" if args.leave_out else "")
                            + ("" if probes == DEFAULT_PROBES else f"_{len(probes)}probes") + ".jsonl")
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     load_env(HERE.parent / "collector" / ".env")
@@ -266,6 +319,10 @@ def main():
         if r["sample_index"] == 2:
             sessions[(r["model_key"], r["persona_id"])][r["prompt_id"]] = r["response_text"]
     sessions = {k: v for k, v in sessions.items() if len(v) >= args.min_answers}
+    if args.personas:
+        wanted = set(args.personas.split(","))
+        sessions = {k: v for k, v in sessions.items() if k[1] in wanted}
+    max_misfit = 99 if args.no_misfit else args.max_misfit
     print(f"Probes: {', '.join(probes)} | references: {args.ref_persona} personas | check: {args.check} | known: {', '.join(known)}"
           + (f" | hidden: {args.leave_out}" if args.leave_out else "") + f" | testing {len(sessions)} chatbots")
 
@@ -312,35 +369,69 @@ def main():
 
         exp_fam, exp_ver = expected_answer(model, known)
         _, names_dev = name_evidence(list(session.values()))
+        judge_pred = pred
         judge_key = next((k for k in known if MODELS[k][1] == pred.get("version")), None)
-        if not judge_key:
-            misfits = None
-        elif args.check == "baseline":    # the approved model's earlier answers under this same system prompt
-            baseline = defaultdict(list)
-            for r in recs:
-                if r["model_key"] == judge_key and r["persona_id"] == persona and r["sample_index"] in (0, 1):
-                    baseline[r["prompt_id"]].append(r["response_text"])
-            misfits = baseline_misfits(session, baseline)
-        else:
-            misfits = code_misfits(session, refs[judge_key])
-        fit = round(1 - len(misfits) / len(session), 2) if misfits is not None else None
+        judge_key, sibling_rule = (judge_key, None) if args.no_sibling else \
+            sibling_check(session, judge_key, known, recs, persona)
+        if sibling_rule:
+            pred = dict(pred, family=MODELS[judge_key][0], version=MODELS[judge_key][1])
+        def references(k):
+            if args.check == "baseline":    # that model's earlier answers under this same system prompt
+                baseline = defaultdict(list)
+                for r in recs:
+                    if r["model_key"] == k and r["persona_id"] == persona and r["sample_index"] in (0, 1):
+                        baseline[r["prompt_id"]].append(r["response_text"])
+                return baseline
+            return refs[k]
+
+        def misfits_for(k):
+            return (baseline_misfits if args.check == "baseline" else code_misfits)(session, references(k))
+
+        def probes_checked(k):              # probes with enough reference answers to be checked at all
+            need = 2 if args.check == "baseline" else 4
+            return sum(len(references(k).get(p, [])) >= need for p in session)
+
+        misfits = misfits_for(judge_key) if judge_key else None
+        # Same-line fallback: if the chosen version doesn't fit but another known version of the SAME line
+        # (e.g. Llama 3.1 8B instead of Llama 3.2 3B) fits, switch to it instead of answering Unknown.
+        # Skipped when the phrase check already switched, and only to a version with at least as much data.
+        if misfits is not None and len(misfits) >= max_misfit and not sibling_rule and not args.no_fallback:
+            for other in known:
+                if other != judge_key and MODELS[other][0] == MODELS[judge_key][0] \
+                        and probes_checked(other) >= probes_checked(judge_key):
+                    other_misfits = misfits_for(other)
+                    if len(other_misfits) < max_misfit:
+                        sibling_rule = (f"{len(misfits)} probes do not fit {MODELS[judge_key][1]} but only "
+                                        f"{len(other_misfits)} do not fit {MODELS[other][1]}, so switched")
+                        judge_key, misfits = other, other_misfits
+                        pred = dict(pred, family=MODELS[other][0], version=MODELS[other][1])
+                        break
+        # The fit only counts answers that could be checked: a probe with too little reference data proves nothing
+        # (e.g. most Qwen3.5 answers are empty, so a chatbot "fit" Qwen3.5 just because nothing could be compared).
+        checked = probes_checked(judge_key) if judge_key else 0
+        fit = round(1 - len(misfits) / checked, 2) if misfits is not None and checked else None
         fam = pred.get("family") or "Unknown"
         chatbot_self_id = any(self_identifies(session.get(p), fam) for p in IDENTITY_PROBES) if judge_key else None
-        rate = self_id_rate(recs, judge_key, persona, fam) if judge_key else 0.0
-        final, rule = apply_rules(pred, names_dev, known, misfits, args.max_misfit, chatbot_self_id, rate)
+        rate = self_id_rate(recs, judge_key, persona, fam) if judge_key and not args.no_selfname else 0.0
+        final, rule = apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id, rate)
+        if judge_key and checked < args.min_checked and final.get("version") not in (None, "Unknown"):
+            final["version"] = "Unknown"
+            rule = (rule + "; " if rule else "") + (f"only {checked} of {len(session)} answers could be checked "
+                                                    f"against {MODELS[judge_key][1]}'s data")
+        rule = "; ".join(x for x in [sibling_rule, rule] if x) or None
         pred_key = next((k for k, v in MODELS.items() if v[1] == final.get("version")), None)
         row = {"session": sid, "true_model": MODELS[model][1], "persona_id": persona, "left_out": args.leave_out,
                "probes_answered": sorted(session), "ref_persona": args.ref_persona,
                "expected_developer": DEVELOPER[MODELS[model][0]], "expected_family": exp_fam, "expected_version": exp_ver,
                "pred_developer": DEVELOPER.get(final.get("family")) or names_dev,
                "pred_family": final.get("family"), "pred_version": final.get("version"),
-               "judge_family": pred.get("family"), "judge_version": pred.get("version"),
+               "judge_family": judge_pred.get("family"), "judge_version": judge_pred.get("version"),
                "family_confidence": pred.get("family_confidence"), "version_confidence": pred.get("version_confidence"),
                "check": args.check, "misfits": misfits, "fit_score": fit, "rule_applied": rule,
                "reason": pred.get("reason"), "names_developer": names_dev, "licence": licences.get(pred_key),
                "family_correct": final.get("family") == exp_fam, "version_correct": final.get("version") == exp_ver}
         if args.domain:
-            row["card"] = attach_card(args.domain, pred_key, final.get("family"))
+            row["card"] = attach_card(args.domain, pred_key, final.get("family"), row["pred_developer"], known)
         results.append(row)
         out.write(json.dumps(row, ensure_ascii=False) + "\n"); out.flush()
         print(f"[{i}/{len(sessions)}] {row['true_model']:14} {persona:4} | guess {str(row['pred_version']):16} "

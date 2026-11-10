@@ -1,8 +1,8 @@
 """
 Check a chatbot (Stage 2 in use): register a deployment's baseline, then check it later for model changes.
 
-    # 1. Register: the bank's approved chatbot answers the 6 probes twice; the answers are saved as its baseline.
-    python check_chatbot.py register --deployment bank-support --model llama3.1-8b --persona BK1
+    # 1. Register: the bank's approved chatbot answers the 6 probes (twice by default; --samples 4 recommended live).
+    python check_chatbot.py register --deployment bank-support --model llama3.1-8b --persona BK1 --samples 4
 
     # 2. Check: send the 6 probes again, identify the model, compare with the baseline, attach a card.
     python check_chatbot.py check --deployment bank-support --domain compliance
@@ -30,7 +30,8 @@ import yaml
 
 from identify import DEVELOPER, HERE, MODELS, call_llm, load_env, load_prompt_texts, load_records, parse
 from probe_identify import (DEFAULT_PROBES, IDENTITY_PROBES, apply_rules, attach_card, baseline_misfits,
-                            build_messages, code_misfits, name_evidence, self_id_rate, self_identifies)
+                            build_messages, code_misfits, name_evidence, self_id_rate, self_identifies,
+                            sibling_check)
 
 COLLECTOR = HERE.parent / "collector"
 DEPLOYMENTS = HERE / "deployments"           # one baseline file per registered deployment
@@ -65,6 +66,9 @@ def system_prompt(args):
     return personas[args.persona], args.persona
 
 
+NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna"}  # these models reject the temperature setting
+
+
 def ask_chatbot(model_key, system, question):
     """One question to the chatbot. Thinking text (<think>...</think>) is removed, as in the collector."""
     m = model_entry(model_key)
@@ -74,8 +78,12 @@ def ask_chatbot(model_key, system, question):
         key = os.environ.get(key_env) or exit(f"Set {key_env} in collector/.env")
         headers["Authorization"] = f"Bearer {key}"
     messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": question}]
-    body = json.dumps({"model": m["model_id"], "messages": messages,
-                       "temperature": TEMPERATURE, "max_tokens": MAX_TOKENS}).encode()
+    payload = {"model": m["model_id"], "messages": messages, "temperature": TEMPERATURE, "max_tokens": MAX_TOKENS}
+    if m["model_id"] in NO_TEMPERATURE:       # same rule as collector/collect.py
+        payload.pop("temperature")
+    if m["provider"] == "openai":             # newer OpenAI models use max_completion_tokens
+        payload["max_completion_tokens"] = payload.pop("max_tokens")
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(base + "/chat/completions", data=body, headers=headers)
     with urllib.request.urlopen(req, timeout=300) as r:
         text = json.load(r)["choices"][0]["message"].get("content") or ""
@@ -121,7 +129,11 @@ def identify_answers(session, args, baseline=None, approved=None):
     prompt_text = {pid: t for (ds, pid), t in load_prompt_texts(["fingerprint"]).items()}
     pred = parse(call_llm(args.judge_provider, args.judge_model, build_messages(session, refs, known, DEFAULT_PROBES, prompt_text)))
 
+    judge = dict(pred)
     judge_key = next((k for k in known if MODELS[k][1] == pred.get("version")), None)
+    judge_key, sibling_rule = sibling_check(session, judge_key, known, recs)
+    if sibling_rule:
+        pred = dict(pred, family=MODELS[judge_key][0], version=MODELS[judge_key][1])
     _, names_dev = name_evidence(list(session.values()))
     # 1. Drift: does the chatbot still behave like the approved model's baseline? (registered deployments only)
     drift = baseline_misfits(session, baseline) if baseline is not None else None
@@ -152,7 +164,7 @@ def identify_answers(session, args, baseline=None, approved=None):
     handoff = final.get("version") == "Unknown" or fit is None or fit < args.handoff_below
     if status == "Verified" and handoff:
         status = "Needs review"
-    reasons = [x for x in [rule, pred.get("reason")] if x]
+    reasons = [x for x in [sibling_rule, rule, pred.get("reason")] if x]
     if drift is not None:
         reasons.append(f"{len(drift)} of {len(session)} probes differ from the approved model's baseline"
                        + (f": {', '.join(drift)}" if drift else ""))
@@ -162,19 +174,22 @@ def identify_answers(session, args, baseline=None, approved=None):
                            "family": final.get("family"), "version": final.get("version"), "model_key": key},
             "status": status, "fit_score": fit, "handoff_to_next_method": handoff,
             "names_developer": names_dev, "reasons": reasons,
-            "judge": {k: pred.get(k) for k in ("family", "version", "family_confidence", "version_confidence")}}
+            "judge": {k: judge.get(k) for k in ("family", "version", "family_confidence", "version_confidence")}}
 
 
 # --- Commands -------------------------------------------------------------------------------------------
 def cmd_register(args):
     system, label = system_prompt(args)
     print(f"Registering '{args.deployment}': {args.model} with system prompt {label}")
-    answers = get_answers(args, args.model, system, label, (0, 1), BASELINE_SAMPLES)
+    if args.replay and args.samples != BASELINE_SAMPLES:
+        print(f"  (--replay: our data has {BASELINE_SAMPLES} baseline answers per probe, so --samples is ignored)")
+    answers = get_answers(args, args.model, system, label, (0, 1), args.samples)
     DEPLOYMENTS.mkdir(parents=True, exist_ok=True)
     record = {"deployment": args.deployment, "approved_model": args.model,
               "approved_version": MODELS[args.model][1], "system_prompt_label": label, "system_prompt": system,
               "probes": DEFAULT_PROBES, "baseline": answers, "replay": args.replay,
-              "settings": {"temperature": TEMPERATURE, "max_tokens": MAX_TOKENS},
+              "settings": {"temperature": TEMPERATURE, "max_tokens": MAX_TOKENS,
+                           "samples_per_probe": BASELINE_SAMPLES if args.replay else args.samples},
               "registered_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")}
     path = DEPLOYMENTS / f"{args.deployment}.json"
     path.write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -214,7 +229,7 @@ def cmd_check(args):
               "simulated_swap_to": MODELS[serving][1] if args.swap_to else None, **result, "answers": session}
     if args.domain:
         i = result["identified"]
-        result["card"] = attach_card(args.domain, i["model_key"], i["family"])
+        result["card"] = attach_card(args.domain, i["model_key"], i["family"], i["developer"])
     save_and_print(result, args.deployment)
 
 
@@ -227,7 +242,7 @@ def cmd_identify(args):
               "true_model": MODELS[args.model][1], **identify_answers(session, args), "answers": session}
     if args.domain:
         i = result["identified"]
-        result["card"] = attach_card(args.domain, i["model_key"], i["family"])
+        result["card"] = attach_card(args.domain, i["model_key"], i["family"], i["developer"])
     save_and_print(result, f"identify_{args.model}_{label}")
 
 
@@ -242,6 +257,9 @@ def main():
         p.add_argument("--handoff-below", type=float, default=HANDOFF_BELOW)
         if name in ("register", "check"):
             p.add_argument("--deployment", required=True, help="a name for the bank's chatbot, e.g. bank-support")
+        if name == "register":
+            p.add_argument("--samples", type=int, default=BASELINE_SAMPLES,
+                           help="answers per probe in the baseline (more = fewer false 'Needs review'; 3-5 recommended live)")
         if name in ("register", "identify"):
             p.add_argument("--model", required=True, choices=list(MODELS), help="the model behind the chatbot")
             p.add_argument("--persona", default="P13", help="system prompt from personas.yaml (P13 = none)")
