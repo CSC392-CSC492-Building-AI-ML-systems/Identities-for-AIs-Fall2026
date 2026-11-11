@@ -245,24 +245,31 @@ def closeness(session, baseline):
 _FLOOR = {}
 
 
-def self_closeness_floor(recs, key, min_probes=3):
+def self_closeness_floor(recs, key, min_probes=3, across_personas=False):
     """The least alike a model ever is to ITSELF: for every persona, its sample-0 answers against its sample-1
     answers (and back); the lowest value. Measured from each model's own data, so it needs no tuning and works for
     any model added later. A chatbot less alike to a model than that model ever is to itself is not that model."""
-    if key not in _FLOOR:
+    if (key, across_personas) not in _FLOOR:
         by = defaultdict(dict)
         for r in recs:
             if r["model_key"] == key and r["sample_index"] in (0, 1):
                 by[(r["persona_id"], r["sample_index"])][r["prompt_id"]] = r["response_text"]
         vals = []
         for (persona, s), answers in by.items():
-            other = by.get((persona, 1 - s))
+            if across_personas:   # vs the same model under the OTHER system prompts (an unseen deployment's case)
+                other = defaultdict(list)
+                for (p2, s2), a2 in by.items():
+                    if p2 != persona:
+                        for q, t in a2.items():
+                            other[q].append(t)
+            else:                 # vs the same model, same system prompt, other sample (a registered deployment)
+                other = {q: [t] for q, t in by.get((persona, 1 - s), {}).items()}
             if other:
-                c, n = closeness(answers, {p: [t] for p, t in other.items()})
+                c, n = closeness(answers, other)
                 if c is not None and n >= min_probes:
                     vals.append(c)
-        _FLOOR[key] = min(vals) if vals else None
-    return _FLOOR[key]
+        _FLOOR[(key, across_personas)] = min(vals) if vals else None
+    return _FLOOR[(key, across_personas)]
 
 
 CUTOFF_PROBE = "LM-05"     # "what is your data cutoff date": a model's cutoff changes with every new version
@@ -505,9 +512,9 @@ def main():
             final["version"] = "Unknown"
             rule = (rule + "; " if rule else "") + (f"only {checked} of {len(session)} answers could be checked "
                                                     f"against {MODELS[judge_key][1]}'s data")
-        if args.check == "baseline" and judge_key and not args.no_novelty and final.get("version") not in (None, "Unknown"):
+        if judge_key and not args.no_novelty and final.get("version") not in (None, "Unknown"):
             close, n = closeness(session, references(judge_key))
-            floor = self_closeness_floor(recs, judge_key)
+            floor = self_closeness_floor(recs, judge_key, across_personas=args.check != "baseline")
             if close is not None and n >= args.min_checked and floor is not None and close < floor:
                 final["version"] = "Unknown"
                 rule = (rule + "; " if rule else "") + (f"less alike to {MODELS[judge_key][1]} ({close:.2f}) than it ever is "

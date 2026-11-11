@@ -79,7 +79,7 @@ Without `--replay`, the chatbot is called live: Ollama (`localhost:11434`) for o
 | Field | Meaning |
 |---|---|
 | `deployment`, `approved_model` | The registered chatbot and the model the bank approved (`check` only) |
-| `identified` | `developer`, `family`, `version` (each can be "Unknown") and `model_key` |
+| `identified` | `developer`, `family`, `version` (each can be "Unknown"), `model_key`, and for a swap `closest_known_version` (the version is reported as Unknown, because the new model has no baseline under this system prompt to confirm it) |
 | `status` | `Verified` (still the approved model), `Drift detected` (it changed or is now another model), `Needs review` (unclear, e.g. the answers still match the baseline but the judge names a sibling model from the same company); for `identify`: `Identified` or `Unknown model` |
 | `fit_score` | Share of the 6 answers that fit (0–1) |
 | `handoff_to_next_method` | `true` when the fit score is below the threshold or the version is Unknown |

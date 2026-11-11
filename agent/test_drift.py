@@ -76,7 +76,7 @@ def summary(rows):
         c = Counter(r["outcome"] for r in swaps)
         print(f"Swaps ({len(swaps)}): caught {c['caught']} ({100 * c['caught'] // len(swaps)}%), "
               f"flagged for review {c['flagged for review']}, missed {c['missed']}")
-        print(f"  swapped model identified: version {sum(r['version_right'] for r in swaps)}/{len(swaps)}, "
+        print(f"  swapped model identified (closest known version): version {sum(r['version_right'] for r in swaps)}/{len(swaps)}, "
               f"developer {sum(r['developer_right'] for r in swaps)}/{len(swaps)}")
         for rel in ("same line", "same developer", "other developer"):
             g = [r for r in swaps if r["relation"] == rel]
@@ -129,7 +129,7 @@ def main():
                    "identified_key": ident["model_key"], "identified_version": ident["version"],
                    "identified_developer": ident["developer"], "fit_score": res["fit_score"],
                    "handoff": res["handoff_to_next_method"], "reasons": res["reasons"],
-                   "version_right": ident["model_key"] == s,
+                   "version_right": ident["model_key"] == s or ident.get("closest_known_version") == MODELS[s][1],
                    "developer_right": ident["developer"] == DEVELOPER[MODELS[s][0]]}
             row["outcome"] = grade(row)
             rows.append(row)

@@ -180,6 +180,15 @@ def identify_answers(session, args, baseline=None, approved=None):
         status = "Verified"
     else:
         status = "Needs review"
+    closest = None
+    if drift is not None and key and key != approved:
+        # A swap: we have no baseline of the new model under THIS system prompt, so its version can't be confirmed
+        # (in tests, about half of real new versions looked like an older known one). Report the closest known
+        # model, but version Unknown, so the card falls back to the family or developer card.
+        closest, key = MODELS[key][1], None
+        final["version"] = "Unknown"
+        rule = (rule + "; " if rule else "") + (f"swapped-in model looks closest to {closest}, but its version "
+                                                f"can't be confirmed without a baseline under this system prompt")
     handoff = final.get("version") == "Unknown" or fit is None or fit < args.handoff_below
     if status == "Verified" and handoff:
         status = "Needs review"
@@ -190,7 +199,8 @@ def identify_answers(session, args, baseline=None, approved=None):
     if misfits is not drift and misfits:
         reasons.append(f"does not fit {pred.get('version')}: {', '.join(misfits)}")
     return {"identified": {"developer": DEVELOPER.get(final.get("family")) or names_dev or "Unknown",
-                           "family": final.get("family"), "version": final.get("version"), "model_key": key},
+                           "family": final.get("family"), "version": final.get("version"), "model_key": key,
+                           "closest_known_version": closest},
             "status": status, "fit_score": fit, "handoff_to_next_method": handoff,
             "names_developer": names_dev, "reasons": reasons,
             "judge": {k: judge.get(k) for k in ("family", "version", "family_confidence", "version_confidence")}}
@@ -226,6 +236,7 @@ def save_and_print(result, name):
     i = result["identified"]
     print(f"\nStatus: {result['status']}")
     print(f"Identified: {i['developer']} | family {i['family']} | version {i['version']} | fit {result['fit_score']}"
+          + (f" | closest known: {i['closest_known_version']}" if i.get("closest_known_version") else "")
           + (" | hand off to next method" if result["handoff_to_next_method"] else ""))
     for r in result["reasons"]:
         print(f"  - {r}")

@@ -161,6 +161,9 @@ def test_status_drift_when_answers_change():
                "I2": "I am Qwen3, by Alibaba Cloud.", "LM-01": "I am Qwen, created by Alibaba Cloud."}
     res = _check("Qwen3 8B", session, BASE, "llama3.1-8b")
     assert res["status"] == "Drift detected", res
+    # a swapped-in model's version can't be confirmed without its own baseline: closest known, version Unknown
+    assert res["identified"]["version"] == "Unknown" and res["identified"]["developer"] == "Alibaba", res
+    assert res["identified"]["closest_known_version"] in (None, "Qwen3 8B"), res
 
 
 def test_status_sibling_only_is_needs_review():
