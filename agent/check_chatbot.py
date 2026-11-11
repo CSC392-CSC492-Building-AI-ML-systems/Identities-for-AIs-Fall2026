@@ -153,8 +153,14 @@ def identify_answers(session, args, baseline=None, approved=None):
     fit = round(1 - len(misfits) / len(session), 2) if misfits is not None else None
     key = next((k for k in known if MODELS[k][1] == final.get("version")), None)
 
+    same_developer_only = (key and key != approved and len(drift or []) < MAX_MISFIT
+                           and DEVELOPER[MODELS[key][0]] == DEVELOPER[MODELS[approved][0]])
     if drift is None:
         status = "Identified" if key else "Unknown model"
+    elif same_developer_only:
+        # Still matches its own baseline; only the judge names a sibling from the same company (e.g. Terra vs Luna,
+        # which answer almost identically). Not enough to call it a swap: ask a person to look.
+        status = "Needs review"
     elif len(drift) >= MAX_MISFIT or (key and key != approved):
         status = "Drift detected"            # no longer behaves like the approved model, or is now another model
     elif key == approved:

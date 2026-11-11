@@ -54,7 +54,9 @@ def group(p):
 def identification(path, rows, lines, confusion):
     n = len(rows)
     hidden = rows[0].get("left_out")
-    lines.append(f"\n## {Path(path).name}" + (f" (hidden: {MODELS[hidden][1]})" if hidden else ""))
+    new = sorted({r["true_model"] for r in rows if r.get("unknown_model")})
+    lines.append(f"\n## {Path(path).name}" + (f" (hidden: {MODELS[hidden][1]})" if hidden else "")
+                 + (f" (models never seen: {', '.join(new)})" if new else ""))
     dev = sum(r["pred_developer"] == r["expected_developer"] for r in rows)
     fam = sum(r["family_correct"] for r in rows)
     ver = sum(r["version_correct"] for r in rows)
@@ -64,9 +66,9 @@ def identification(path, rows, lines, confusion):
               f"| Developer right | {pct(dev, n)} |", f"| Family right | {pct(fam, n)} |",
               f"| Version right | {pct(ver, n)} |", f"| Flagged \"Unknown\" (sent for review) | {unk} |",
               f"| Wrong without a flag | {pct(wrong, n)} |"]
-    if hidden:
-        h = [r for r in rows if r["expected_version"] == "Unknown"]
-        lines.append(f"| Hidden model called \"Unknown\" | {pct(sum(r['pred_version'] == 'Unknown' for r in h), len(h))} |")
+    h = [r for r in rows if r["expected_version"] == "Unknown"]
+    if h:
+        lines.append(f"| Hidden or never-seen model called \"Unknown\" | {pct(sum(r['pred_version'] == 'Unknown' for r in h), len(h))} |")
     k = [r for r in rows if kept(r)]
     lines.append(f"| Kept by the identifier (fit ≥ {HANDOFF_BELOW}, version known) | {len(k)} of {n}; right: "
                  f"{pct(sum(r['version_correct'] for r in k), len(k))} |")

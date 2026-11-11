@@ -78,7 +78,7 @@ Without `--replay`, the chatbot is called live: Ollama (`localhost:11434`) for o
 |---|---|
 | `deployment`, `approved_model` | The registered chatbot and the model the bank approved (`check` only) |
 | `identified` | `developer`, `family`, `version` (each can be "Unknown") and `model_key` |
-| `status` | `Verified` (still the approved model), `Drift detected` (it changed or is now another model), `Needs review` (unclear); for `identify`: `Identified` or `Unknown model` |
+| `status` | `Verified` (still the approved model), `Drift detected` (it changed or is now another model), `Needs review` (unclear, e.g. the answers still match the baseline but the judge names a sibling model from the same company); for `identify`: `Identified` or `Unknown model` |
 | `fit_score` | Share of the 6 answers that fit (0–1) |
 | `handoff_to_next_method` | `true` when the fit score is below the threshold or the version is Unknown |
 | `reasons` | The rule that changed the answer, the judge's reason, and which probes differ |
@@ -142,7 +142,7 @@ bash run_all_tests.sh            # everything (~1,800 judge calls, a few dollars
 
 | Step | What it shows | Script |
 |---|---|---|
-| Unit tests | Each code check gives the right answer on made-up inputs (14 tests) | `test_rules.py` |
+| Unit tests | Each code check gives the right answer on made-up inputs (15 tests) | `test_rules.py` |
 | Repeatability | The main test 3 times with fresh judge calls: range and how many chatbots agree | `probe_identify.py` ×3 |
 | Hide every model | "Unknown" rate for each of the 11 models | `probe_identify.py --leave-out` ×11 |
 | Drift | Swap caught / missed, false alarms, swapped-in model identified | `test_drift.py` |

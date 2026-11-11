@@ -75,26 +75,30 @@ def lookup_tests():
 
 
 # ---------------------------------------------------------------- 2. results tests
-def best_level(true_key, known):
+def best_level(true_key, known, tfam, tdev):
     if true_key in known:
         return "version"
-    if sum(fam(k) == fam(true_key) for k in known) >= MIN_FAMILY_MODELS:
+    if sum(fam(k) == tfam for k in known) >= MIN_FAMILY_MODELS:
         return "family"
-    if any(dev(k) == dev(true_key) for k in known):
+    if any(dev(k) == tdev for k in known):
         return "developer"
     return "none"
 
 
 def grade(row):
     true_key = row["session"].split("|")[0]
+    if true_key in MODELS:
+        tfam, tdev = fam(true_key), dev(true_key)
+    else:                      # a model the system has never seen (probe_identify.py --unknown)
+        tfam, tdev = row.get("true_family"), row.get("expected_developer")
     known = [k for k in MODELS if k != row.get("left_out")]
     pred_key = NAME_TO_KEY.get(row.get("pred_version"))
     card = lookup_card(version_key=pred_key, family=row.get("pred_family"), developer=row.get("pred_developer"),
                        known=known)
     lvl = card["level"]
-    right = {"version": card.get("model_key") == true_key, "family": card["label"] == fam(true_key),
-             "developer": card["label"] == dev(true_key), "none": None}[lvl]
-    best = best_level(true_key, known)
+    right = {"version": card.get("model_key") == true_key, "family": card["label"] == tfam,
+             "developer": card["label"] == tdev, "none": None}[lvl]
+    best = best_level(true_key, known, tfam, tdev)
     if lvl == "none":
         outcome = "no card"
     elif not right:
@@ -103,7 +107,8 @@ def grade(row):
         outcome = "right, most specific"
     else:
         outcome = "right, less specific"
-    return {"session": row["session"], "true_model": MODELS[true_key][1], "persona": row.get("persona_id"),
+    return {"session": row["session"], "true_model": row.get("true_model") or MODELS[true_key][1],
+            "persona": row.get("persona_id"),
             "hidden": row.get("left_out"), "identified": {"developer": row.get("pred_developer"),
             "family": row.get("pred_family"), "version": row.get("pred_version")},
             "card_level": lvl, "card_label": card["label"], "best_level": best, "outcome": outcome,

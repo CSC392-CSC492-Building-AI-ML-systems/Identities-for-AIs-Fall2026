@@ -143,6 +143,13 @@ def test_status_drift_when_answers_change():
     assert res["status"] == "Drift detected", res
 
 
+def test_status_sibling_only_is_needs_review():
+    # Answers still match the approved model's baseline; only the judge names a sibling from the same company
+    session = {p: v[0] for p, v in BASE.items()}
+    res = _check("Llama 3.2 3B", session, BASE, "llama3.1-8b")
+    assert res["status"] == "Needs review", res
+
+
 # --- cards --------------------------------------------------------------------------------------------------
 def test_card_levels():
     from card_lookup import lookup_card
