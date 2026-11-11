@@ -1,11 +1,15 @@
 import streamlit as st
-from backend import identify, get_card
+from backend import identify, get_card, sample_answer, VERSION_TO_KEY
 
 st.title("Model Change Monitor (demo)")
 
-declared = st.selectbox("Model the company says it uses",
-                        ["Llama 3.1 8B", "Qwen3 8B", "Gemma 3 4B"])
-answer = st.text_area("Paste a chatbot answer here")
+declared = st.selectbox("Model the company says it uses", list(VERSION_TO_KEY))
+
+source = st.selectbox("Load a real answer written by", list(VERSION_TO_KEY))
+if st.button("Load sample answer"):
+    st.session_state["answer"] = sample_answer(VERSION_TO_KEY[source])
+
+answer = st.text_area("Paste a chatbot answer here", key="answer")
 
 if st.button("Check") and answer:
     result = identify(answer)

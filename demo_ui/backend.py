@@ -27,3 +27,22 @@ def get_card(result):
     if key:
         return build_card(key)                    # exact model known
     return build_card(family=result["family"])    # only family known
+
+
+import json
+import random
+
+RAW = ROOT / "collector" / "data" / "raw"
+
+
+def sample_answer(model_key):
+    """Pick a real collected answer from a model's data file."""
+    rows = []
+    for f in sorted((RAW / model_key).glob("*.jsonl")):
+        with open(f) as fh:
+            for line in fh:
+                if line.strip():
+                    r = json.loads(line)
+                    if r.get("response_text") and not r.get("error"):
+                        rows.append(r)
+    return random.choice(rows)["response_text"] if rows else ""
