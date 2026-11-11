@@ -92,7 +92,7 @@ def load_models(path, only=None):
 
 
 # --- Calling a model ------------------------------------------------------------------------
-NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna"}  # these models reject the temperature setting
+NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna", "claude-haiku-5-5", "gpt-6.1-terra", "gpt-6-luna"}  # these models reject the temperature setting
 def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_tokens, seed=None):
     """Send one request. Returns (text, served_model, finish_reason, in_tokens, out_tokens)."""
     if provider == "mock":

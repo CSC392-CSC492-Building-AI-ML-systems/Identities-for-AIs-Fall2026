@@ -17,6 +17,9 @@ models:
   - {model_key: claude-haiku-4.5,  provider: anthropic, model_id: "claude-haiku-4-5-20251001",  enabled: true, delay_seconds: 1}
   - {model_key: gemini-3.8-flash,  provider: google,    model_id: "gemini-3.8-flash",           enabled: true, delay_seconds: 4}  # free tier is rate limited
   - {model_key: gemini-3.1-pro,    provider: google,    model_id: "gemini-3.1-pro-preview",     enabled: true, delay_seconds: 4}  # preview model
+  - {model_key: claude-haiku-5.5, provider: anthropic, model_id: "claude-haiku-5-5", enabled: true, delay_seconds: 1}
+  - {model_key: gpt-6.1-terra,    provider: openai,    model_id: "gpt-6.1-terra",    enabled: true, delay_seconds: 1}
+  - {model_key: gpt-6-luna,       provider: openai,    model_id: "gpt-6-luna",       enabled: true, delay_seconds: 1}
 
   # --- Test only: no model is called ---
   - {model_key: mock-model, provider: mock, model_id: "mock", enabled: true}
