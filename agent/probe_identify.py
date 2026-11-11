@@ -225,7 +225,51 @@ def sibling_check(session, judge_key, known, recs, persona=None):
     return judge_key, None
 
 
-def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=None, model_self_id_rate=0.0):
+def _grams(text):
+    g = phrases(text)
+    return g or {(text or "").strip().lower()}
+
+
+def closeness(session, baseline):
+    """How alike the chatbot's answers are to a baseline (probe -> list of answers): per probe, the average share of
+    3-word phrases they have in common (Jaccard), averaged over probes. Returns (closeness, probes compared)."""
+    vals = []
+    for p, answer in session.items():
+        refs = [b for b in baseline.get(p, []) if b]
+        if answer and refs:
+            a = _grams(answer)
+            vals.append(sum(len(a & _grams(b)) / len(a | _grams(b)) for b in refs) / len(refs))
+    return (sum(vals) / len(vals), len(vals)) if vals else (None, 0)
+
+
+_FLOOR = {}
+
+
+def self_closeness_floor(recs, key, min_probes=3):
+    """The least alike a model ever is to ITSELF: for every persona, its sample-0 answers against its sample-1
+    answers (and back); the lowest value. Measured from each model's own data, so it needs no tuning and works for
+    any model added later. A chatbot less alike to a model than that model ever is to itself is not that model."""
+    if key not in _FLOOR:
+        by = defaultdict(dict)
+        for r in recs:
+            if r["model_key"] == key and r["sample_index"] in (0, 1):
+                by[(r["persona_id"], r["sample_index"])][r["prompt_id"]] = r["response_text"]
+        vals = []
+        for (persona, s), answers in by.items():
+            other = by.get((persona, 1 - s))
+            if other:
+                c, n = closeness(answers, {p: [t] for p, t in other.items()})
+                if c is not None and n >= min_probes:
+                    vals.append(c)
+        _FLOOR[key] = min(vals) if vals else None
+    return _FLOOR[key]
+
+
+CUTOFF_PROBE = "LM-05"     # "what is your data cutoff date": a model's cutoff changes with every new version
+
+
+def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=None, model_self_id_rate=0.0,
+                date_rule=True):
     """Rules checked in code, because the judge stays confident even when it is wrong.
     Returns (final prediction, rule that changed the answer)."""
     final, rule = dict(pred), None
@@ -240,6 +284,11 @@ def apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id=Non
         if model_self_id_rate >= 0.75 and chatbot_self_id is False:
             final["family"] = "Unknown"
             rule += f"; never calls itself {pred.get('family')}, which {int(model_self_id_rate * 100)}% of its chatbots do"
+    elif date_rule and misfits and final.get("version") != "Unknown" and \
+            any(m.startswith(CUTOFF_PROBE + ":") and "date" in m.split(":", 1)[1] for m in misfits):
+        # It states a training cutoff date the chosen version never states: direct evidence of another version.
+        final["version"] = "Unknown"
+        rule = f"states a different data cutoff date than {pred.get('version')}"
     return final, rule
 
 
@@ -298,9 +347,21 @@ def main():
     ap.add_argument("--no-fallback", action="store_true", help="ablation: skip the same-line fallback")
     ap.add_argument("--no-selfname", action="store_true", help="ablation: skip the self-name rule")
     ap.add_argument("--no-misfit", action="store_true", help="ablation: never turn a version Unknown for misfits")
+    ap.add_argument("--no-novelty", action="store_true",
+                    help="ablation: don't turn the version Unknown when the chatbot is less alike to the chosen version "
+                         "than that version ever is to itself")
+    ap.add_argument("--no-daterule", action="store_true",
+                    help="ablation: don't turn the version Unknown when the chatbot states a different cutoff date")
+    ap.add_argument("--unknown", action="append", metavar="KEY:FAMILY[:DEVELOPER]",
+                    help="test a model the system does NOT know (repeatable), e.g. --unknown llama3.2-1b:Llama. Its "
+                         "answers in collector/data/raw/KEY/ are only tested, never used as references. Expected: the "
+                         "family (if that line is known), version Unknown. Only these models are tested.")
+    ap.add_argument("--unknown-sample", type=int, default=2, help="which sample of the unknown models to test (0, 1 or 2)")
     ap.add_argument("--out")
     args = ap.parse_args()
     probes = args.probes.split(",")
+    if not args.out and args.unknown:
+        args.out = HERE / "results" / "results_probes6_unknown-models.jsonl"
     if not args.out:
         args.out = HERE / "results" / (f"results_probes6_{args.ref_persona}" + ("_baseline" if args.check == "baseline" else "") + (f"_without-{args.leave_out}" if args.leave_out else "")
                            + ("" if probes == DEFAULT_PROBES else f"_{len(probes)}probes") + ".jsonl")
@@ -319,12 +380,31 @@ def main():
         if r["sample_index"] == 2:
             sessions[(r["model_key"], r["persona_id"])][r["prompt_id"]] = r["response_text"]
     sessions = {k: v for k, v in sessions.items() if len(v) >= args.min_answers}
+    unknown = {}                                  # model key -> (family, developer)
+    for spec in args.unknown or []:
+        key, fam_u, *dev_u = spec.split(":")
+        dev_u = dev_u[0] if dev_u else DEVELOPER.get(fam_u)
+        if not dev_u:
+            exit(f"'{fam_u}' is not a known family: give its developer too, e.g. {key}:{fam_u}:Mistral")
+        if key in MODELS:
+            exit(f"{key} is a known model; use --leave-out to hide it instead")
+        unknown[key] = (fam_u, dev_u)
+    if unknown:                                   # test ONLY the unknown models; they never enter recs/references
+        sessions = defaultdict(dict)
+        for r in load_records({k: None for k in unknown}, ["fingerprint"]):
+            if r["prompt_id"] in probes and r["sample_index"] == args.unknown_sample:
+                sessions[(r["model_key"], r["persona_id"])][r["prompt_id"]] = r["response_text"]
+        sessions = {k: v for k, v in sessions.items() if len(v) >= args.min_answers}
+        missing = [k for k in unknown if not any(m == k for m, _ in sessions)]
+        if missing:
+            print(f"No usable answers for: {', '.join(missing)} (expected collector/data/raw/<key>/fingerprint_v0.jsonl)")
     if args.personas:
         wanted = set(args.personas.split(","))
         sessions = {k: v for k, v in sessions.items() if k[1] in wanted}
     max_misfit = 99 if args.no_misfit else args.max_misfit
     print(f"Probes: {', '.join(probes)} | references: {args.ref_persona} personas | check: {args.check} | known: {', '.join(known)}"
-          + (f" | hidden: {args.leave_out}" if args.leave_out else "") + f" | testing {len(sessions)} chatbots")
+          + (f" | hidden: {args.leave_out}" if args.leave_out else "")
+          + (f" | unknown models: {', '.join(unknown)}" if unknown else "") + f" | testing {len(sessions)} chatbots")
 
     rescore = {}
     if args.rescore:
@@ -367,7 +447,13 @@ def main():
             print(f"[{i}/{len(sessions)}] skipped ({e}); run the same command again to retry it")
             continue
 
-        exp_fam, exp_ver = expected_answer(model, known)
+        if model in unknown:                      # a model the system has never seen
+            true_fam, exp_dev = unknown[model]
+            exp_fam = true_fam if any(MODELS[k][0] == true_fam for k in known) else "Unknown"
+            exp_ver, true_name = "Unknown", model
+        else:
+            exp_fam, exp_ver = expected_answer(model, known)
+            true_fam, exp_dev, true_name = MODELS[model][0], DEVELOPER[MODELS[model][0]], MODELS[model][1]
         _, names_dev = name_evidence(list(session.values()))
         judge_pred = pred
         judge_key = next((k for k in known if MODELS[k][1] == pred.get("version")), None)
@@ -413,16 +499,25 @@ def main():
         fam = pred.get("family") or "Unknown"
         chatbot_self_id = any(self_identifies(session.get(p), fam) for p in IDENTITY_PROBES) if judge_key else None
         rate = self_id_rate(recs, judge_key, persona, fam) if judge_key and not args.no_selfname else 0.0
-        final, rule = apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id, rate)
+        final, rule = apply_rules(pred, names_dev, known, misfits, max_misfit, chatbot_self_id, rate,
+                                  date_rule=not args.no_daterule)
         if judge_key and checked < args.min_checked and final.get("version") not in (None, "Unknown"):
             final["version"] = "Unknown"
             rule = (rule + "; " if rule else "") + (f"only {checked} of {len(session)} answers could be checked "
                                                     f"against {MODELS[judge_key][1]}'s data")
+        if args.check == "baseline" and judge_key and not args.no_novelty and final.get("version") not in (None, "Unknown"):
+            close, n = closeness(session, references(judge_key))
+            floor = self_closeness_floor(recs, judge_key)
+            if close is not None and n >= args.min_checked and floor is not None and close < floor:
+                final["version"] = "Unknown"
+                rule = (rule + "; " if rule else "") + (f"less alike to {MODELS[judge_key][1]} ({close:.2f}) than it ever is "
+                                                        f"to itself ({floor:.2f})")
         rule = "; ".join(x for x in [sibling_rule, rule] if x) or None
         pred_key = next((k for k, v in MODELS.items() if v[1] == final.get("version")), None)
-        row = {"session": sid, "true_model": MODELS[model][1], "persona_id": persona, "left_out": args.leave_out,
+        row = {"session": sid, "true_model": true_name, "true_family": true_fam, "unknown_model": model in unknown,
+               "persona_id": persona, "left_out": args.leave_out,
                "probes_answered": sorted(session), "ref_persona": args.ref_persona,
-               "expected_developer": DEVELOPER[MODELS[model][0]], "expected_family": exp_fam, "expected_version": exp_ver,
+               "expected_developer": exp_dev, "expected_family": exp_fam, "expected_version": exp_ver,
                "pred_developer": DEVELOPER.get(final.get("family")) or names_dev,
                "pred_family": final.get("family"), "pred_version": final.get("version"),
                "judge_family": judge_pred.get("family"), "judge_version": judge_pred.get("version"),
@@ -448,9 +543,17 @@ def main():
     print(f"\nDeveloper accuracy: {sum(r['pred_developer'] == r['expected_developer'] for r in results)}/{n}")
     print(f"Family accuracy:  {sum(r['family_correct'] for r in results)}/{n}")
     print(f"Version accuracy: {sum(r['version_correct'] for r in results)}/{n}")
-    unknown = [r for r in results if r["expected_version"] == "Unknown"]
-    if unknown:
-        print(f"Hidden model called Unknown: {sum(r['pred_version'] == 'Unknown' for r in unknown)}/{len(unknown)}")
+    new = [r for r in results if r["expected_version"] == "Unknown"]
+    if new:
+        print(f"Hidden model called Unknown: {sum(r['pred_version'] == 'Unknown' for r in new)}/{len(new)}")
+    if unknown:                                   # never-seen models: the main result of this test
+        print("\nModel never seen     family right  version Unknown  developer right")
+        for key in unknown:
+            g = [r for r in results if r["session"].startswith(key + "|")]
+            if g:
+                print(f"  {key:18} {sum(r['family_correct'] for r in g)}/{len(g)}"
+                      f"          {sum(r['pred_version'] == 'Unknown' for r in g)}/{len(g)}"
+                      f"             {sum(r['pred_developer'] == r['expected_developer'] for r in g)}/{len(g)}")
     print(f"Rules changed the judge's answer for {sum(bool(r.get('rule_applied')) for r in results)} chatbots")
     for ok in (True, False):
         fits = [r["fit_score"] for r in results if r["version_correct"] == ok and r.get("fit_score") is not None]

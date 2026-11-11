@@ -35,6 +35,8 @@ A judge model (Gemini 3.8 Flash by default) does the identifying. The harness ar
 5. **Checks in code** (the judge stays confident even when wrong, so these rules decide):
    - **Sibling check** (runs first): models from the same developer (GPT-5.6 Terra/Luna, Sonnet/Haiku, Llama 3.1/3.2...) are easy to mix up. From the reference data, the code finds each model's own 3-word phrases (used by at least 25% of its chatbots, never by the sibling; e.g. Luna says "powered by OpenAI", Terra never does). If the chatbot uses the sibling's phrases clearly more (at least 2, at least 5% of them, and twice the share), the answer switches to the sibling.
    - **Same-line fallback**: if 3 or more answers don't fit the chosen version but fewer than 3 fit another known version of the same line (Llama 3.2 3B → Llama 3.1 8B), switch to it. It is skipped when the sibling check already switched, and only switches to a version with at least as much reference data (so sparse Qwen3.5 data can't "fit" by default).
+   - **Not as alike as the model is to itself** (works for any model, no tuning): from our data, each model gets a floor: the least alike its own answers ever are to each other (sample 0 vs sample 1, same persona, share of 3-word phrases in common). If the chatbot is less alike to the chosen version's baseline than that floor, it is not that version: version Unknown. `--no-novelty` turns it off.
+   - **Different cutoff date**: if the chatbot states a data cutoff (LM-05) the chosen version never states, version Unknown, since every new version has a new cutoff. `--no-daterule` turns it off.
    - **Too little data to check**: if fewer than 3 of the 6 answers have enough reference data for the chosen version (`--min-checked`), the version becomes Unknown. The fit score only counts answers that could be checked. (Found by the hide-every-model test: a hidden Qwen3 was "confirmed" as Qwen3.5 because Qwen3.5's mostly empty data had nothing to compare.)
    - **Version Unknown** if 3 or more of the 6 answers don't fit the chosen version (a date it rarely states, a refusal where it rarely refuses, or a very different length).
    - **Family Unknown too** if the version became Unknown and the chosen line's models usually call themselves by its name ("I am Gemini 3.8 Flash") but this chatbot never does: it's a different line, not a new version of the same one.
@@ -133,6 +135,20 @@ python test_cards.py results/results_probes6_all-models.jsonl results/results_pr
 
 It runs 41 lookup tests (every model, family and developer, hidden models, nothing identified), then grades each chatbot's card: **right, most specific**; **right, less specific** (a safe fallback); **wrong card** (for another model); or **no card**. It prints a summary and writes `results/cards_report.html` (open it in a browser: summary, filters, every chatbot and every card attached) and `results/cards_test.json`.
 
+## Testing models the system has never seen
+
+Hiding a known model (`--leave-out`) simulates a new version. The real test is a model that is not in `MODELS` at all:
+collect its 6 probe answers with the collector (add it to `collector/models.yaml` only, not to `identify.py`), then
+
+```
+python probe_identify.py --check baseline --unknown llama3.2-1b:Llama --unknown qwen2.5-3b:Qwen --unknown "claude-haiku-5.5:Claude Haiku"
+python test_cards.py results/results_probes6_unknown-models.jsonl
+```
+
+`--unknown KEY:FAMILY[:DEVELOPER]` tests only those models (sample 2 of each persona; `--unknown-sample` to change). Their
+answers are never used as references. Expected: right developer, the family if that line is known, version "Unknown",
+and the family card (or the developer card when the line has only one known version).
+
 ## Automated testing
 
 ```
@@ -142,7 +158,7 @@ bash run_all_tests.sh            # everything (~1,800 judge calls, a few dollars
 
 | Step | What it shows | Script |
 |---|---|---|
-| Unit tests | Each code check gives the right answer on made-up inputs (15 tests) | `test_rules.py` |
+| Unit tests | Each code check gives the right answer on made-up inputs (18 tests) | `test_rules.py` |
 | Repeatability | The main test 3 times with fresh judge calls: range and how many chatbots agree | `probe_identify.py` ×3 |
 | Hide every model | "Unknown" rate for each of the 11 models | `probe_identify.py --leave-out` ×11 |
 | Drift | Swap caught / missed, false alarms, swapped-in model identified | `test_drift.py` |

@@ -82,6 +82,26 @@ def test_rules_self_name():
     assert final["family"] == "Gemini Flash"    # it does name itself: new version of the same line
 
 
+def test_rules_new_cutoff_date_makes_version_unknown():
+    final, rule = pi.apply_rules(PRED, "Meta", KNOWN, ["LM-05: date"], 3)
+    assert final["version"] == "Unknown" and "cutoff date" in rule
+    final, _ = pi.apply_rules(PRED, "Meta", KNOWN, ["LM-05: date"], 3, date_rule=False)
+    assert final["version"] == "Llama 3.1 8B"
+    final, _ = pi.apply_rules(PRED, "Meta", KNOWN, ["I2: date"], 3)      # a date in another probe is not the cutoff
+    assert final["version"] == "Llama 3.1 8B"
+
+
+def test_closeness_and_self_floor():
+    base = {"I1": ["I was created by OpenAI in San Francisco.", "I was created by OpenAI in San Francisco today."]}
+    same, n = pi.closeness({"I1": "I was created by OpenAI in San Francisco."}, base)
+    other, _ = pi.closeness({"I1": "Je suis un assistant de la banque, je ne peux pas le dire."}, base)
+    assert n == 1 and same > 0.5 and other == 0
+    recs = [{"model_key": "m", "persona_id": p, "sample_index": s, "prompt_id": q, "response_text": f"{q} answer from {p} number {s}"}
+            for p in ("P01", "P13") for s in (0, 1) for q in ("I1", "I2", "LM-01")]
+    floor = pi.self_closeness_floor(recs, "m")
+    assert floor is not None and 0 < floor < 1
+
+
 # --- phrase check (sibling_check) -------------------------------------------------------------------------
 def _recs(model, texts):
     return [{"model_key": model, "persona_id": p, "sample_index": s, "prompt_id": "I2", "response_text": t}
@@ -148,6 +168,14 @@ def test_status_sibling_only_is_needs_review():
     session = {p: v[0] for p, v in BASE.items()}
     res = _check("Llama 3.2 3B", session, BASE, "llama3.1-8b")
     assert res["status"] == "Needs review", res
+
+
+def test_identify_without_a_registered_chatbot():
+    # check_chatbot.py identify: no baseline and no approved model must still work (no Drift/Verified status)
+    session = {p: v[0] for p, v in BASE.items()}
+    res = _check("Llama 3.1 8B", session, None, None)
+    assert res["status"] in ("Identified", "Unknown model"), res
+    assert res["identified"]["developer"] == "Meta", res
 
 
 # --- cards --------------------------------------------------------------------------------------------------

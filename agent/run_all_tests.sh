@@ -45,12 +45,12 @@ fi
 MAIN=$R/rig_main_run1.jsonl
 [ -f "$MAIN" ] || MAIN=$R/results_probes6_all-models.jsonl     # free mode: use the latest saved run
 step "6. Ablation on $MAIN (free, re-applies the checks with one turned off)"
-for flag in no-sibling no-fallback no-selfname no-misfit; do
+for flag in no-sibling no-fallback no-selfname no-misfit no-daterule no-novelty; do
   rm -f $R/rig_ablation_$flag.jsonl
   $PY probe_identify.py --check baseline --rescore $MAIN --$flag --out $R/rig_ablation_$flag.jsonl | grep "Version accuracy" | sed "s/^/  --$flag: /"
 done
 rm -f $R/rig_ablation_judge-only.jsonl
-$PY probe_identify.py --check baseline --rescore $MAIN --no-sibling --no-fallback --no-selfname --no-misfit \
+$PY probe_identify.py --check baseline --rescore $MAIN --no-sibling --no-fallback --no-selfname --no-misfit --no-daterule --no-novelty \
   --out $R/rig_ablation_judge-only.jsonl | grep "Version accuracy" | sed "s/^/  judge only: /"
 
 step "7. Domain cards on every run (free)"

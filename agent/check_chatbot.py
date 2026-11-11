@@ -31,7 +31,7 @@ import yaml
 from identify import DEVELOPER, HERE, MODELS, call_llm, load_env, load_prompt_texts, load_records, parse
 from probe_identify import (DEFAULT_PROBES, IDENTITY_PROBES, apply_rules, attach_card, baseline_misfits,
                             build_messages, code_misfits, name_evidence, self_id_rate, self_identifies,
-                            sibling_check)
+                            sibling_check, closeness, self_closeness_floor)
 
 COLLECTOR = HERE.parent / "collector"
 DEPLOYMENTS = HERE / "deployments"           # one baseline file per registered deployment
@@ -49,6 +49,11 @@ CHAT_APIS = {   # OpenAI-compatible chat endpoints and the .env key each needs
 
 
 # --- Talking to the chatbot ------------------------------------------------------------------------------
+def name(model_key):
+    """Display name: from identify.MODELS when the system knows the model, else the key itself."""
+    return MODELS[model_key][1] if model_key in MODELS else model_key
+
+
 def model_entry(model_key):
     for m in yaml.safe_load(open(COLLECTOR / "models.yaml", encoding="utf-8"))["models"]:
         if m["model_key"] == model_key:
@@ -66,7 +71,7 @@ def system_prompt(args):
     return personas[args.persona], args.persona
 
 
-NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna"}  # these models reject the temperature setting
+NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna", "claude-haiku-5-5", "gpt-6.1-terra", "gpt-6-luna"}  # these models reject the temperature setting
 
 
 def ask_chatbot(model_key, system, question):
@@ -95,7 +100,7 @@ def ask_chatbot(model_key, system, question):
 def replay_answers(model_key, persona, samples):
     """Answers from our collected data instead of a live call: probe -> list of answers."""
     out = defaultdict(list)
-    for r in load_records({model_key: MODELS[model_key]}, ["fingerprint"]):
+    for r in load_records({model_key: None}, ["fingerprint"]):
         if r["persona_id"] == persona and r["sample_index"] in samples and r["prompt_id"] in DEFAULT_PROBES:
             out[r["prompt_id"]].append(r["response_text"])
     if not out:
@@ -148,12 +153,20 @@ def identify_answers(session, args, baseline=None, approved=None):
     chatbot_self_id = any(self_identifies(session.get(p), fam) for p in IDENTITY_PROBES) if judge_key else None
     rate = self_id_rate(recs, judge_key, None, fam) if judge_key else 0.0
     final, rule = apply_rules(pred, names_dev, known, misfits, MAX_MISFIT, chatbot_self_id, rate)
+    if drift is not None and judge_key == approved and final.get("version") not in (None, "Unknown"):
+        # Less alike to the approved model's own baseline than that model ever is to itself -> not confirmed
+        close, n = closeness(session, baseline)
+        floor = self_closeness_floor(recs, approved)
+        if close is not None and n >= 3 and floor is not None and close < floor:
+            final["version"] = "Unknown"
+            rule = (rule + "; " if rule else "") + (f"less alike to the approved model's baseline ({close:.2f}) than "
+                                                    f"{MODELS[approved][1]} ever is to itself ({floor:.2f})")
     if final.get("version") not in [MODELS[k][1] for k in known]:   # the judge named a model we have no data for
         final["version"] = "Unknown"
     fit = round(1 - len(misfits) / len(session), 2) if misfits is not None else None
     key = next((k for k in known if MODELS[k][1] == final.get("version")), None)
 
-    same_developer_only = (key and key != approved and len(drift or []) < MAX_MISFIT
+    same_developer_only = (approved and key and key != approved and len(drift or []) < MAX_MISFIT
                            and DEVELOPER[MODELS[key][0]] == DEVELOPER[MODELS[approved][0]])
     if drift is None:
         status = "Identified" if key else "Unknown model"
@@ -226,13 +239,13 @@ def cmd_check(args):
     dep = json.loads(path.read_text(encoding="utf-8"))
     serving = args.swap_to or dep["approved_model"]
     print(f"Checking '{args.deployment}' (approved: {dep['approved_version']})"
-          + (f" -- simulating a swap to {MODELS[serving][1]}" if args.swap_to else ""))
+          + (f" -- simulating a swap to {name(serving)}" if args.swap_to else ""))
     answers = get_answers(args, serving, dep["system_prompt"], dep["system_prompt_label"], (2,), 1)
     session = {pid: a[0] for pid, a in answers.items() if a and a[0]}
     result = identify_answers(session, args, baseline=dep["baseline"], approved=dep["approved_model"])
     result = {"deployment": args.deployment, "approved_model": dep["approved_version"],
               "checked_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
-              "simulated_swap_to": MODELS[serving][1] if args.swap_to else None, **result, "answers": session}
+              "simulated_swap_to": name(serving) if args.swap_to else None, **result, "answers": session}
     if args.domain:
         i = result["identified"]
         result["card"] = attach_card(args.domain, i["model_key"], i["family"], i["developer"])
@@ -245,7 +258,7 @@ def cmd_identify(args):
     answers = get_answers(args, args.model, system, label, (2,), 1)
     session = {pid: a[0] for pid, a in answers.items() if a and a[0]}
     result = {"checked_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
-              "true_model": MODELS[args.model][1], **identify_answers(session, args), "answers": session}
+              "true_model": name(args.model), **identify_answers(session, args), "answers": session}
     if args.domain:
         i = result["identified"]
         result["card"] = attach_card(args.domain, i["model_key"], i["family"], i["developer"])
@@ -267,15 +280,23 @@ def main():
             p.add_argument("--samples", type=int, default=BASELINE_SAMPLES,
                            help="answers per probe in the baseline (more = fewer false 'Needs review'; 3-5 recommended live)")
         if name in ("register", "identify"):
-            p.add_argument("--model", required=True, choices=list(MODELS), help="the model behind the chatbot")
+            p.add_argument("--model", required=True,
+                           help="the model behind the chatbot: a model_key from collector/models.yaml. For identify it "
+                                "may be a model the system doesn't know (e.g. a newer version), to test 'Unknown'")
             p.add_argument("--persona", default="P13", help="system prompt from personas.yaml (P13 = none)")
             p.add_argument("--system-prompt-file", help="or a text file with your own system prompt")
         if name in ("check", "identify"):
             p.add_argument("--domain", choices=["compliance", "governance", "evaluation", "risk"],
                            help="attach this domain card to the result")
         if name == "check":
-            p.add_argument("--swap-to", choices=list(MODELS), help="simulate the vendor swapping to this model")
+            p.add_argument("--swap-to", help="simulate the vendor swapping to this model (any model_key in "
+                                             "collector/models.yaml, also one the system doesn't know)")
     args = ap.parse_args()
+    if args.command == "register" and args.model not in MODELS:
+        exit(f"The approved model must be one the system knows: {', '.join(MODELS)}")
+    for key in [getattr(args, "model", None), getattr(args, "swap_to", None)]:
+        if key and not model_entry(key):
+            exit(f"'{key}' is not in collector/models.yaml")
     load_env(COLLECTOR / ".env")
     {"register": cmd_register, "check": cmd_check, "identify": cmd_identify}[args.command](args)
 
