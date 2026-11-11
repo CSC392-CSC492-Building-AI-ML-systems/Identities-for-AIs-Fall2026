@@ -11,6 +11,7 @@ A judge model (Gemini 3.8 Flash by default) does the identifying. The harness ar
 | `check_chatbot.py` | **The identifier in use.** Register a chatbot's baseline, check it later, or identify an unregistered chatbot. |
 | `probe_identify.py` | Evaluates probe mode on our collected data (accuracy, hidden-model tests). `check_chatbot.py` uses its functions. |
 | `identify.py` | Earlier single-answer experiments; also holds the model list (`MODELS`, `DEVELOPER`) and the judge call. |
+| `identify_api.py` | **One entry point for other code** (eval pipeline, demo UI, package): `get_probes()` gives the 6 questions; `identify(answers, domain, deployment=None)` returns the JSON result with the card. Also a command line: `python identify_api.py answers.json --domain risk`. |
 | `card_lookup.py` | Picks the most specific domain card for a result: version → family → developer → none. |
 | `test_cards.py` | Tests the card lookup and the cards attached in a results file, and makes `results/cards_report.html`. |
 | `test_rules.py` | Unit tests of the code checks on small made-up inputs (no API calls). |
