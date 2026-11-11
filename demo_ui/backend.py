@@ -1,5 +1,8 @@
 import sys
-sys.path.insert(0, "cards")   # lets us use the team's model card code
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "cards"))   # lets us use the team's model card code
 from cardlib import build_card
 
 def identify(answer_text):
