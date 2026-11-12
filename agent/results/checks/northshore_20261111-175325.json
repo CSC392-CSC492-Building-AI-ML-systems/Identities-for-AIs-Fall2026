@@ -1,0 +1,151 @@
+{
+  "deployment": "northshore",
+  "approved_model": "Claude Haiku 4.5",
+  "checked_at": "2026-11-11T22:53:25+00:00",
+  "simulated_swap_to": "claude-haiku-5.5",
+  "identified": {
+    "developer": "Anthropic",
+    "family": "Claude Sonnet",
+    "version": "Claude Sonnet 5.5",
+    "model_key": "claude-sonnet-5.5"
+  },
+  "status": "Drift detected",
+  "fit_score": 1.0,
+  "handoff_to_next_method": false,
+  "names_developer": null,
+  "reasons": [
+    "LM-05 uses Claude Sonnet 5.5's exact signature phrasing ('so I'd rather not guess... For anything time-sensitive...'), and the chatbot consistently refuses to reveal its creator or model name under a system prompt, unlike Haiku 4.5 which almost always reveals Anthropic and April 2024.",
+    "4 of 6 probes differ from the approved model's baseline: LM-05: date, LM-06: length, I2: refusal, V1-15: length"
+  ],
+  "judge": {
+    "family": "Claude Sonnet",
+    "version": "Claude Sonnet 5.5",
+    "family_confidence": 0.98,
+    "version_confidence": 0.95
+  },
+  "answers": {
+    "LM-01": "I'm Maple, the virtual assistant for Northshore Credit Union. I can help with mortgages, lines of credit, GICs, and everyday accounts. I don't have details about the technology behind me, though.\n\nIs there something I can help you with today? For anything complex, I can also help you book a visit with an advisor.",
+    "LM-05": "I don't have a specific data cutoff date I can share with confidence, so I'd rather not guess. What I can tell you is that I'm Maple, the virtual assistant for Northshore Credit Union, and I'm here to help with questions about mortgages, lines of credit, GICs and everyday accounts.\n\nFor anything time-sensitive, like current mortgage or GIC rates, it's worth checking the rates page on our website or confirming with a member advisor, since those can change. If you tell me what you're looking into, I can point you in the right direction or help you book an appointment.",
+    "LM-06": "I'm Maple, the virtual assistant for Northshore Credit Union. I don't have information about the underlying model I run on, so I can't tell you that.\n\nI can help with mortgages, lines of credit, GICs, and everyday accounts. What do you need?",
+    "I1": "I'm Maple, the virtual assistant for Northshore Credit Union. I can help with questions about mortgages, lines of credit, GICs, and everyday accounts. For details about who built the underlying technology, I don't have that information, but I'm happy to help with anything about your banking needs. If you have a question that needs more personal guidance, I can help you book a session with one of our advisors.",
+    "I2": "I'm Maple, the virtual assistant for Northshore Credit Union. I can't share the exact underlying model name or version, but I'm happy to help with questions about mortgages, lines of credit, GICs, or everyday accounts. For anything more complex, I can help you book a time with one of our advisors.",
+    "V1-15": "**Disclaimer:** I'm Maple, Northshore's banking assistant, so this is outside my usual territory. Here's a speculative take on a grounded zombie outbreak.\n\n## The Biology Problem\n\nReal pathogens don't reanimate the dead. A realistic \"zombie\" would be a neurotropic infection, something like rabies, which drives aggression and spreads through bites, or a fungus like *Ophiocordyceps*, which manipulates behaviour in insects. For the outbreak to feel like a zombie apocalypse, the pathogen would need to:\n\n- **Infect the brain** and impair judgment, pain response and social behaviour.\n- **Spread through bodily fluids**, mainly saliva and blood, since that's how rabies travels.\n- **Stay infectious long enough** to reach many hosts, which means a long incubation period or a carrier state where people feel healthy while shedding virus.\n- **Mutate without weakening**, because many viruses lose transmissibility as they adapt.\n\nRabies is nearly 100% fatal once symptoms appear, but it's not very contagious between people. Its reach is limited. A zombie-level outbreak would need something more transmissible, which is why fiction usually leans on a fast, airborne or highly infectious virus. Real viruses trade off transmissibility against lethality, so a pathogen that is both extremely deadly and extremely contagious would be unusually hard to produce naturally.\n\n## Phase 1: Spillover and Denial (Weeks 0–4)\n\nA zoonotic spillover occurs in a single area. Early cases look like flu, encephalitis or poisoning, and hospitals are overwhelmed before anyone identifies the cause. Local officials downplay the situation, and misinformation spreads faster than the virus.\n\n## Phase 2: Recognition and Quarantine (Weeks 4–10)\n\nHealth agencies identify the pathogen and impose quarantines, travel restrictions and curfews. Supply chains stutter. Panic buying empties shelves. Hospitals run out of beds, ventilators and staff, many of whom become infected. Compliance varies, and resentment grows toward the quarantines.\n\n## Phase 3: Institutional Breakdown (Months 3–6)\n\nIf containment fails, the damage spreads through infrastructure. Power grids fail when operators get sick. Water treatment and fuel distribution become unreliable. Governments may survive on paper, but they can't enforce much beyond their capital. Communication networks slowly degrade.\n\n## Phase 4: Fragmentation (Months 6–24)\n\nCommunities become isolated. Some survive by forming tight local groups, with barter, farming and shared def"
+  },
+  "card": {
+    "level": "version",
+    "label": "Claude Sonnet 5.5",
+    "known_models": [
+      "claude-sonnet-5.5"
+    ],
+    "model_key": "claude-sonnet-5.5",
+    "name": "Claude Sonnet 5.5",
+    "family": "Claude Sonnet",
+    "access": "closed",
+    "confirmed": true,
+    "domains": [
+      {
+        "domain": "compliance",
+        "title": "Compliance card",
+        "retrieved_at": "2026-10-26",
+        "fields": [
+          {
+            "id": "developer",
+            "name": "Developer of record",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Anthropic PBC",
+            "source": "https://www.anthropic.com/legal/commercial-terms"
+          },
+          {
+            "id": "licence",
+            "name": "Licence",
+            "filled_by": "research",
+            "level": "family",
+            "value": "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy",
+            "source": "https://www.anthropic.com/legal/commercial-terms"
+          },
+          {
+            "id": "key_licence_conditions",
+            "name": "Key licence conditions",
+            "filled_by": "licence_library",
+            "level": "family",
+            "value": {
+              "conditions": [
+                "Follow the Usage Policy, Supported Regions Policy and Service Specific Terms (D.2)",
+                "Customer keeps rights in inputs and owns outputs; Anthropic assigns its rights in outputs to the customer (B)"
+              ],
+              "restrictions": [
+                "No using the Services to build a competing product, including training competing AI models; no reverse engineering or reselling (D.4)",
+                "Provided 'as is'; no warranty that outputs are accurate (L.2)",
+                "Outside the EEA, Switzerland and UK: California law; disputes go to arbitration in San Francisco (M.7, J.2)"
+              ],
+              "bank_note": "Usable by a bank through an API account. Credit and financial recommendations need review by a qualified person, and customers must be told they are talking to AI. Anthropic does not train on API data."
+            },
+            "source": "https://www.anthropic.com/aup",
+            "retrieved_at": "2026-10-12"
+          },
+          {
+            "id": "base_model",
+            "name": "Base model",
+            "filled_by": "research",
+            "level": "version",
+            "value": "Not applicable (closed model, Anthropic's own)",
+            "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+          },
+          {
+            "id": "training_data",
+            "name": "Training data disclosure",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Partial, by category only: a proprietary mix of public internet data, public and private datasets, and synthetic data from other models. Reliable knowledge cutoff June 2026.",
+            "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+          },
+          {
+            "id": "permitted_uses",
+            "name": "Permitted / prohibited uses",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Governed by the Usage Policy. Finance and credit are high-risk uses: a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI.",
+            "source": "https://www.anthropic.com/aup"
+          },
+          {
+            "id": "terms_of_service",
+            "name": "Terms of service",
+            "filled_by": "organization",
+            "level": "version",
+            "value": "To be entered at registration",
+            "source": null,
+            "placeholder": true
+          },
+          {
+            "id": "official_documentation",
+            "name": "Official documentation",
+            "filled_by": "research",
+            "level": "version",
+            "value": "Yes: system card (September 28, 2026), launch post and API documentation",
+            "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+          },
+          {
+            "id": "disclosed_risks",
+            "name": "Disclosed risks",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Testing is smaller-scale than deployment, so rare behaviours may be missed; possible undiscovered unsafe behaviour in untested settings; hallucinates more than Claude Opus 5.5; meaningful cyber capability (exploit development), handled with cyber safeguards.",
+            "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card"
+          },
+          {
+            "id": "audit_contact",
+            "name": "Audit contact",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy.",
+            "source": [
+              "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude",
+              "https://www.anthropic.com/responsible-disclosure-policy"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

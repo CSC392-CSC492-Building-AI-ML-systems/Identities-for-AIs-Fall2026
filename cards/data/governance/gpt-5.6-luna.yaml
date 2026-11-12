@@ -1,6 +1,6 @@
 model_key: gpt-5.6-luna
 name: "GPT-5.6 Luna"
-family: GPT
+family: GPT Luna
 access: closed
 domain: governance
 retrieved_at: 2026-10-26

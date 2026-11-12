@@ -1,6 +1,6 @@
 model_key: claude-sonnet-5.5
 name: "Claude Sonnet 5.5"
-family: Claude
+family: Claude Sonnet
 access: closed
 domain: governance
 retrieved_at: 2026-10-26

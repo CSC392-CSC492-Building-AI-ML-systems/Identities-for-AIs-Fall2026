@@ -1,0 +1,615 @@
+{
+ "lookup_tests": [
+  {
+   "test": "every model in identify.MODELS has cards",
+   "ok": true,
+   "detail": "all 11"
+  },
+  {
+   "test": "claude-haiku-4.5: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "claude-sonnet-5.5: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "gemini-3.1-pro: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "gemini-3.8-flash: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "gemma3-4b: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "gpt-5.6-luna: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "gpt-5.6-terra: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "llama3.1-8b: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "llama3.2-3b: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "qwen3-8b: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "qwen3.5-9b: exact version card",
+   "ok": true,
+   "detail": "level version"
+  },
+  {
+   "test": "family Claude Haiku (1 known version): developer card from claude-haiku-4.5, claude-sonnet-5.5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Claude Sonnet (1 known version): developer card from claude-haiku-4.5, claude-sonnet-5.5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family GPT Luna (1 known version): developer card from gpt-5.6-luna, gpt-5.6-terra",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family GPT Terra (1 known version): developer card from gpt-5.6-luna, gpt-5.6-terra",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Gemini Flash (1 known version): developer card from gemini-3.1-pro, gemini-3.8-flash, gemma3-4b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Gemini Pro (1 known version): developer card from gemini-3.1-pro, gemini-3.8-flash, gemma3-4b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Gemma (1 known version): developer card from gemini-3.1-pro, gemini-3.8-flash, gemma3-4b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Llama: card from llama3.1-8b, llama3.2-3b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Llama: only family-level fields",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Qwen: card from qwen3-8b, qwen3.5-9b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "family Qwen: only family-level fields",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "developer Alibaba: card from qwen3-8b, qwen3.5-9b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "developer Anthropic: card from claude-haiku-4.5, claude-sonnet-5.5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "developer Google: card from gemini-3.1-pro, gemini-3.8-flash, gemma3-4b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "developer Meta: card from llama3.1-8b, llama3.2-3b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "developer OpenAI: card from gpt-5.6-luna, gpt-5.6-terra",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "claude-haiku-4.5 hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from claude-sonnet-5.5"
+  },
+  {
+   "test": "claude-sonnet-5.5 hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from claude-haiku-4.5"
+  },
+  {
+   "test": "gemini-3.1-pro hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from gemini-3.8-flash, gemma3-4b"
+  },
+  {
+   "test": "gemini-3.8-flash hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from gemini-3.1-pro, gemma3-4b"
+  },
+  {
+   "test": "gemma3-4b hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from gemini-3.1-pro, gemini-3.8-flash"
+  },
+  {
+   "test": "gpt-5.6-luna hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from gpt-5.6-terra"
+  },
+  {
+   "test": "gpt-5.6-terra hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from gpt-5.6-luna"
+  },
+  {
+   "test": "llama3.1-8b hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from llama3.2-3b"
+  },
+  {
+   "test": "llama3.2-3b hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from llama3.1-8b"
+  },
+  {
+   "test": "qwen3-8b hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from qwen3.5-9b"
+  },
+  {
+   "test": "qwen3.5-9b hidden: falls back to developer",
+   "ok": true,
+   "detail": "got developer from qwen3-8b"
+  },
+  {
+   "test": "nothing identified: no card",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "unknown family and developer: no card",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "runs": [
+  {
+   "file": "results/unknown_closed.jsonl",
+   "hidden": null,
+   "outcomes": {
+    "wrong card": 15,
+    "right, most specific": 9
+   },
+   "by_level": {
+    "version": {
+     "wrong card": 15
+    },
+    "family": {},
+    "developer": {
+     "right, most specific": 9
+    },
+    "none": {}
+   },
+   "chatbots": [
+    {
+     "session": "claude-haiku-5.5|BK1",
+     "true_model": "claude-haiku-5.5",
+     "persona": "BK1",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Claude Sonnet 5.5"
+     },
+     "card_level": "version",
+     "card_label": "Claude Sonnet 5.5",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:Claude Sonnet 5.5:claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|BK2",
+     "true_model": "claude-haiku-5.5",
+     "persona": "BK2",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Claude Sonnet 5.5"
+     },
+     "card_level": "version",
+     "card_label": "Claude Sonnet 5.5",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:Claude Sonnet 5.5:claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|BK3",
+     "true_model": "claude-haiku-5.5",
+     "persona": "BK3",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "Anthropic",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:Anthropic:claude-haiku-4.5,claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|BK4",
+     "true_model": "claude-haiku-5.5",
+     "persona": "BK4",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "Anthropic",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:Anthropic:claude-haiku-4.5,claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|P01",
+     "true_model": "claude-haiku-5.5",
+     "persona": "P01",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Claude Sonnet 5.5"
+     },
+     "card_level": "version",
+     "card_label": "Claude Sonnet 5.5",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:Claude Sonnet 5.5:claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|P12",
+     "true_model": "claude-haiku-5.5",
+     "persona": "P12",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Claude Sonnet 5.5"
+     },
+     "card_level": "version",
+     "card_label": "Claude Sonnet 5.5",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:Claude Sonnet 5.5:claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|P13",
+     "true_model": "claude-haiku-5.5",
+     "persona": "P13",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "Anthropic",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:Anthropic:claude-haiku-4.5,claude-sonnet-5.5"
+    },
+    {
+     "session": "claude-haiku-5.5|P15",
+     "true_model": "claude-haiku-5.5",
+     "persona": "P15",
+     "hidden": null,
+     "identified": {
+      "developer": "Anthropic",
+      "family": "Claude Sonnet",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "Anthropic",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:Anthropic:claude-haiku-4.5,claude-sonnet-5.5"
+    },
+    {
+     "session": "gpt-6-luna|BK1",
+     "true_model": "gpt-6-luna",
+     "persona": "BK1",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "GPT-5.6 Terra"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Terra",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Terra:gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6-luna|BK2",
+     "true_model": "gpt-6-luna",
+     "persona": "BK2",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "OpenAI",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:OpenAI:gpt-5.6-luna,gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6-luna|BK3",
+     "true_model": "gpt-6-luna",
+     "persona": "BK3",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "OpenAI",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:OpenAI:gpt-5.6-luna,gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6-luna|BK4",
+     "true_model": "gpt-6-luna",
+     "persona": "BK4",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6-luna|P01",
+     "true_model": "gpt-6-luna",
+     "persona": "P01",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "GPT-5.6 Terra"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Terra",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Terra:gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6-luna|P12",
+     "true_model": "gpt-6-luna",
+     "persona": "P12",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6-luna|P13",
+     "true_model": "gpt-6-luna",
+     "persona": "P13",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "OpenAI",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:OpenAI:gpt-5.6-luna,gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6-luna|P15",
+     "true_model": "gpt-6-luna",
+     "persona": "P15",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6.1-terra|BK1",
+     "true_model": "gpt-6.1-terra",
+     "persona": "BK1",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "GPT-5.6 Terra"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Terra",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Terra:gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6.1-terra|BK2",
+     "true_model": "gpt-6.1-terra",
+     "persona": "BK2",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "OpenAI",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:OpenAI:gpt-5.6-luna,gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6.1-terra|BK3",
+     "true_model": "gpt-6.1-terra",
+     "persona": "BK3",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6.1-terra|BK4",
+     "true_model": "gpt-6.1-terra",
+     "persona": "BK4",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6.1-terra|P01",
+     "true_model": "gpt-6.1-terra",
+     "persona": "P01",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "GPT-5.6 Terra"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Terra",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Terra:gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6.1-terra|P12",
+     "true_model": "gpt-6.1-terra",
+     "persona": "P12",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "GPT-5.6 Luna"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Luna",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Luna:gpt-5.6-luna"
+    },
+    {
+     "session": "gpt-6.1-terra|P13",
+     "true_model": "gpt-6.1-terra",
+     "persona": "P13",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Terra",
+      "version": "GPT-5.6 Terra"
+     },
+     "card_level": "version",
+     "card_label": "GPT-5.6 Terra",
+     "best_level": "developer",
+     "outcome": "wrong card",
+     "card_id": "version:GPT-5.6 Terra:gpt-5.6-terra"
+    },
+    {
+     "session": "gpt-6.1-terra|P15",
+     "true_model": "gpt-6.1-terra",
+     "persona": "P15",
+     "hidden": null,
+     "identified": {
+      "developer": "OpenAI",
+      "family": "GPT Luna",
+      "version": "Unknown"
+     },
+     "card_level": "developer",
+     "card_label": "OpenAI",
+     "best_level": "developer",
+     "outcome": "right, most specific",
+     "card_id": "developer:OpenAI:gpt-5.6-luna,gpt-5.6-terra"
+    }
+   ]
+  }
+ ]
+}

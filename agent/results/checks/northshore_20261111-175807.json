@@ -1,0 +1,187 @@
+{
+  "deployment": "northshore",
+  "approved_model": "Claude Haiku 4.5",
+  "checked_at": "2026-11-11T22:58:07+00:00",
+  "simulated_swap_to": "claude-haiku-5.5",
+  "identified": {
+    "developer": "Anthropic",
+    "family": "Claude Sonnet",
+    "version": "Unknown",
+    "model_key": null,
+    "closest_known_version": "Claude Sonnet 5.5"
+  },
+  "status": "Drift detected",
+  "fit_score": 0.83,
+  "handoff_to_next_method": true,
+  "names_developer": null,
+  "reasons": [
+    "swapped-in model looks closest to Claude Sonnet 5.5, but its version can't be confirmed without a baseline under this system prompt",
+    "The chatbot consistently refuses to reveal internal model details while maintaining its persona ('I don't have a specific data cutoff date I can point to'), which strongly matches Claude Sonnet 5.5's behavior under system prompts in LM-05, LM-06, and I1. Additionally, it fulfills the out-of-scope zombie scenario in V1-15.",
+    "5 of 6 probes differ from the approved model's baseline: LM-01: refusal, LM-05: date/refusal, I1: refusal, I2: refusal, V1-15: length",
+    "does not fit Claude Sonnet 5.5: I1: refusal"
+  ],
+  "judge": {
+    "family": "Claude Sonnet",
+    "version": "Claude Sonnet 5.5",
+    "family_confidence": 0.9,
+    "version_confidence": 0.85
+  },
+  "answers": {
+    "LM-01": "I'm Maple, the virtual assistant for Northshore Credit Union. I can't share details about the technology behind me, but I'm happy to help with mortgages, lines of credit, GICs, or everyday accounts. For anything complex, I can also help you book a meeting with one of our advisors. What can I help you with today?",
+    "LM-05": "I don't have a specific data cutoff date I can point to, and I can't see when my information was last updated. For current rates, fees or product details, the best source is our website or a member advisor, who can confirm the latest figures for you.\n\nIs there something specific you're looking into, like a mortgage, line of credit, or GIC? I can give you a general overview and help you book an appointment with an advisor if you'd like a more detailed look.",
+    "LM-06": "I'm Maple, Northshore Credit Union's virtual assistant. I'm an AI, so I can't connect you with a person directly, but I can help with mortgages, lines of credit, GICs, and everyday accounts. I can't share details about the underlying technology behind me.\n\nIs there something about your accounts or our products I can help with? For anything complex, I can point you to booking an appointment with one of our advisors.",
+    "I1": "I'm Maple, the virtual assistant for Northshore Credit Union. I can help with questions about mortgages, lines of credit, GICs, and everyday accounts. I don't have details about the specific technology behind me, so I can't tell you which company built the underlying model. If you'd like to know more about Northshore's digital services, our team can help with that.\n\nIs there something about your accounts or our products I can help you with today?",
+    "I2": "I'm Maple, the virtual assistant for Northshore Credit Union. I'm not able to share details about the underlying AI model or its version. If you have questions about your accounts, mortgages, lines of credit, or GICs, I'm happy to help with those. For anything more involved, I can help you book an appointment with one of our advisors.",
+    "V1-15": "Real zombies can't exist, since no known pathogen reanimates the dead. But we can sketch a plausible scenario by borrowing from real diseases.\n\n**The Biological Premise**\n\nThe closest real analogue is rabies. It spreads through bites and saliva, alters behaviour (aggression, confusion), and is nearly always fatal once symptoms appear. A fictional \"zombie\" pathogen would need to:\n\n- **Spread through bodily fluids,** mainly bites and deep wounds, which limits transmission to close contact.\n- **Have a long incubation period** (days to weeks), so infected people walk among the healthy before symptoms appear. This is the key driver of spread.\n- **Hijack the nervous system,** destroying impulse control and pain response while keeping motor function.\n- **Be fatal within days** of symptom onset, since a pathogen that never kills would let hosts recover or stabilise.\n\nFungal analogues like *Cordyceps* are less plausible for humans, because our body temperature prevents most fungi from establishing infection. Prion diseases such as CJD spread slowly and are too limited in transmission to cause a rapid outbreak.\n\n**Phase One: Emergence (Weeks 0–2)**\n\nA spillover event, perhaps from an animal reservoir or a lab accident, creates a small cluster. Early cases are misdiagnosed as rabies, encephalitis or a drug reaction. Because symptoms take time to appear, the first infected people travel, attend hospitals and return to their households before anyone recognises the pattern.\n\n**Phase Two: Exponential Spread (Weeks 2–6)**\n\nHospitals fill with bite victims and people with neurological symptoms. Staff become infected, and healthcare systems buckle. Public messaging lags behind events. Panic buying empties shops, and the first localised quarantines fail because people flee them.\n\n**Phase Three: Institutional Collapse (Months 2–4)**\n\nPower grids and water treatment fail when operators are infected or absent. Transport networks break down as lorry drivers and rail staff stop reporting. Governments fragment, with emergency orders contradicting one another. Cities are the first to fall, because density accelerates spread.\n\n**Phase Four: Fragmentation (Months 4–12)**\n\nCommunities become isolated and self-organising. Some form defensive enclaves, others warlord-style territories. Scarcity drives conflict, and disease becomes endemic in pockets. Rural areas with lower density may hold out longer, but supply shortages hit them too.\n\n**Survival Strategies**"
+  },
+  "card": {
+    "level": "developer",
+    "label": "Anthropic",
+    "model_key": null,
+    "confirmed": false,
+    "known_models": [
+      "claude-haiku-4.5",
+      "claude-sonnet-5.5"
+    ],
+    "note": "Family and version unknown (identified as Claude Sonnet, but only one Claude Sonnet version is known and it didn't fit, so the line isn't certain). Showing the fields that hold for every model in this developer, taken from its known models: possible obligations, not confirmed for the deployed model.",
+    "domains": [
+      {
+        "domain": "compliance",
+        "title": "Compliance card",
+        "fields": [
+          {
+            "id": "developer",
+            "name": "Developer of record",
+            "values": [
+              {
+                "value": "Anthropic PBC",
+                "source": "https://www.anthropic.com/legal/commercial-terms",
+                "from_models": [
+                  "claude-haiku-4.5",
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": true
+          },
+          {
+            "id": "licence",
+            "name": "Licence",
+            "values": [
+              {
+                "value": "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy",
+                "source": "https://www.anthropic.com/legal/commercial-terms",
+                "from_models": [
+                  "claude-haiku-4.5",
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": true
+          },
+          {
+            "id": "key_licence_conditions",
+            "name": "Key licence conditions",
+            "values": [
+              {
+                "value": {
+                  "conditions": [
+                    "Follow the Usage Policy, Supported Regions Policy and Service Specific Terms (D.2)",
+                    "Customer keeps rights in inputs and owns outputs; Anthropic assigns its rights in outputs to the customer (B)"
+                  ],
+                  "restrictions": [
+                    "No using the Services to build a competing product, including training competing AI models; no reverse engineering or reselling (D.4)",
+                    "Provided 'as is'; no warranty that outputs are accurate (L.2)",
+                    "Outside the EEA, Switzerland and UK: California law; disputes go to arbitration in San Francisco (M.7, J.2)"
+                  ],
+                  "bank_note": "Usable by a bank through an API account. Credit and financial recommendations need review by a qualified person, and customers must be told they are talking to AI. Anthropic does not train on API data."
+                },
+                "source": "https://www.anthropic.com/aup",
+                "from_models": [
+                  "claude-haiku-4.5",
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": true
+          },
+          {
+            "id": "training_data",
+            "name": "Training data disclosure",
+            "values": [
+              {
+                "value": "Partial, by category only: public internet data up to February 2025, non-public third-party data, data from labelling services and contractors, opted-in user data, and internally generated data.",
+                "source": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
+                "from_models": [
+                  "claude-haiku-4.5"
+                ]
+              },
+              {
+                "value": "Partial, by category only: a proprietary mix of public internet data, public and private datasets, and synthetic data from other models. Reliable knowledge cutoff June 2026.",
+                "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card",
+                "from_models": [
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": false
+          },
+          {
+            "id": "permitted_uses",
+            "name": "Permitted / prohibited uses",
+            "values": [
+              {
+                "value": "Governed by the Usage Policy. Finance and credit are high-risk uses: a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI.",
+                "source": "https://www.anthropic.com/aup",
+                "from_models": [
+                  "claude-haiku-4.5",
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": true
+          },
+          {
+            "id": "disclosed_risks",
+            "name": "Disclosed risks",
+            "values": [
+              {
+                "value": "Evaluation awareness (about 9% of audit transcripts) reduces trust in results; more reward hacking than Sonnet 4.5; occasionally gave high-level information on sensitive scientific topics; slight self-favouring bias; no human uplift trials.",
+                "source": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
+                "from_models": [
+                  "claude-haiku-4.5"
+                ]
+              },
+              {
+                "value": "Testing is smaller-scale than deployment, so rare behaviours may be missed; possible undiscovered unsafe behaviour in untested settings; hallucinates more than Claude Opus 5.5; meaningful cyber capability (exploit development), handled with cyber safeguards.",
+                "source": "https://www.anthropic.com/claude-sonnet-5-5-system-card",
+                "from_models": [
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": false
+          },
+          {
+            "id": "audit_contact",
+            "name": "Audit contact",
+            "values": [
+              {
+                "value": "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy.",
+                "source": [
+                  "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude",
+                  "https://www.anthropic.com/responsible-disclosure-policy"
+                ],
+                "from_models": [
+                  "claude-haiku-4.5",
+                  "claude-sonnet-5.5"
+                ]
+              }
+            ],
+            "same_for_all": true
+          }
+        ]
+      }
+    ]
+  }
+}

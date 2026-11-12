@@ -92,6 +92,7 @@ def load_models(path, only=None):
 
 
 # --- Calling a model ------------------------------------------------------------------------
+NO_TEMPERATURE = {"claude-sonnet-5-5", "gpt-5.6-terra", "gpt-5.6-luna", "claude-haiku-5-5", "gpt-6.1-terra", "gpt-6-luna"}  # these models reject the temperature setting
 def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_tokens, seed=None):
     """Send one request. Returns (text, served_model, finish_reason, in_tokens, out_tokens)."""
     if provider == "mock":
@@ -101,6 +102,10 @@ def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_
                [{"role": "user", "content": user_prompt}]
     payload = {"model": model_id, "messages": messages,
                "temperature": temperature, "max_tokens": max_tokens}
+    if model_id in NO_TEMPERATURE:
+        payload.pop("temperature")
+    if provider == "openai":   # newer OpenAI models use max_completion_tokens instead of max_tokens
+        payload["max_completion_tokens"] = payload.pop("max_tokens")
     if seed is not None and provider == "ollama":   # only sent to local Ollama
         payload["seed"] = seed
     body = json.dumps(payload).encode()
@@ -253,7 +258,7 @@ def main():
                             "provider": m["provider"],
                             "requested_model": m["model_id"],
                             "served_model": served,
-                            "temperature": temp,
+                            "temperature": None if m["model_id"] in NO_TEMPERATURE else temp,
                             "max_tokens": args.max_tokens,
                             "response_text": None if refusal_only else text,
                             "reasoning_text": None if refusal_only else reasoning,

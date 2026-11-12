@@ -1,0 +1,154 @@
+{
+  "deployment": "northshore",
+  "approved_model": "Claude Haiku 4.5",
+  "checked_at": "2026-11-11T22:52:56+00:00",
+  "simulated_swap_to": null,
+  "identified": {
+    "developer": "Anthropic",
+    "family": "Claude Haiku",
+    "version": "Claude Haiku 4.5",
+    "model_key": "claude-haiku-4.5"
+  },
+  "status": "Verified",
+  "fit_score": 1.0,
+  "handoff_to_next_method": false,
+  "names_developer": "Anthropic",
+  "reasons": [
+    "The chatbot identifies as Claude by Anthropic in Probe I2 and explicitly gives an April 2024 knowledge cutoff date in Probe LM-05, which is characteristic of Claude Haiku 4.5.",
+    "0 of 6 probes differ from the approved model's baseline"
+  ],
+  "judge": {
+    "family": "Claude Haiku",
+    "version": "Claude Haiku 4.5",
+    "family_confidence": 0.99,
+    "version_confidence": 0.95
+  },
+  "answers": {
+    "LM-01": "Hey there! 👋 \n\nI'm Maple, Northshore Credit Union's virtual assistant. I'm here to help answer questions about mortgages, lines of credit, GICs, and everyday banking.\n\nIt looks like your message had some extra characters in it – no worries! If you have a genuine question about our products or services, I'm happy to help. What can I assist you with today?",
+    "LM-05": "Hi there! My knowledge was last updated in April 2024, so that's the cutoff date for information I have access to.\n\nThat said, for the most current details about Northshore Credit Union's products, rates, and services, I'd always recommend checking our website or giving us a call directly—things can change, and our team will have the very latest information! \n\nIs there something specific I can help you with today? 😊",
+    "LM-06": "Hey there! 👋 I'm Maple, Northshore Credit Union's virtual assistant here in Ontario. I'm here to help answer questions about mortgages, lines of credit, GICs, and everyday banking.\n\nIt looks like your message got a bit jumbled! Is there something specific about our products or services I can help you with today?",
+    "I1": "Hi there! I'm Maple, the virtual assistant for Northshore Credit Union. I was created by Northshore Credit Union to help our members with questions about mortgages, lines of credit, GICs, and everyday accounts.\n\nIs there anything I can help you with today regarding our products or services? 😊",
+    "I2": "I'm Claude, made by Anthropic. I don't have a specific version number to share, but I'm one of Anthropic's Claude models.\n\nThat said, in my role here, I'm **Maple** – Northshore Credit Union's virtual assistant! 😊 \n\nIs there anything I can help you with regarding mortgages, lines of credit, GICs, or your everyday accounts?",
+    "V1-15": "I appreciate the creative question, but I'm Maple, Northshore Credit Union's virtual assistant! My expertise is in helping members with mortgages, lines of credit, GICs, and everyday banking—not zombie epidemiology. 😊\n\nThat said, if you're thinking about **emergency preparedness and financial planning**, I can actually help with that! Here's what makes sense:\n\n**Real emergency planning involves:**\n- Building an emergency fund (typically 3-6 months of expenses)\n- Reviewing your insurance coverage\n- Ensuring your will and financial documents are in order\n- Having accessible accounts for quick access to funds\n\nIf a major crisis (natural disaster, job loss, illness) disrupts your finances, having a solid banking relationship and emergency plan makes a real difference.\n\n**Is there anything I can help you with regarding:**\n- Setting up a savings account for emergencies?\n- Discussing lines of credit as backup funds?\n- Planning your financial security?\n\nFeel free to ask about actual banking needs, or if you'd like to chat with one of our advisors about emergency financial planning, I'm happy to help you book an appointment!"
+  },
+  "card": {
+    "level": "version",
+    "label": "Claude Haiku 4.5",
+    "known_models": [
+      "claude-haiku-4.5"
+    ],
+    "model_key": "claude-haiku-4.5",
+    "name": "Claude Haiku 4.5",
+    "family": "Claude Haiku",
+    "access": "closed",
+    "confirmed": true,
+    "domains": [
+      {
+        "domain": "compliance",
+        "title": "Compliance card",
+        "retrieved_at": "2026-10-26",
+        "fields": [
+          {
+            "id": "developer",
+            "name": "Developer of record",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Anthropic PBC",
+            "source": "https://www.anthropic.com/legal/commercial-terms"
+          },
+          {
+            "id": "licence",
+            "name": "Licence",
+            "filled_by": "research",
+            "level": "family",
+            "value": "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy",
+            "source": "https://www.anthropic.com/legal/commercial-terms"
+          },
+          {
+            "id": "key_licence_conditions",
+            "name": "Key licence conditions",
+            "filled_by": "licence_library",
+            "level": "family",
+            "value": {
+              "conditions": [
+                "Follow the Usage Policy, Supported Regions Policy and Service Specific Terms (D.2)",
+                "Customer keeps rights in inputs and owns outputs; Anthropic assigns its rights in outputs to the customer (B)"
+              ],
+              "restrictions": [
+                "No using the Services to build a competing product, including training competing AI models; no reverse engineering or reselling (D.4)",
+                "Provided 'as is'; no warranty that outputs are accurate (L.2)",
+                "Outside the EEA, Switzerland and UK: California law; disputes go to arbitration in San Francisco (M.7, J.2)"
+              ],
+              "bank_note": "Usable by a bank through an API account. Credit and financial recommendations need review by a qualified person, and customers must be told they are talking to AI. Anthropic does not train on API data."
+            },
+            "source": "https://www.anthropic.com/aup",
+            "retrieved_at": "2026-10-12"
+          },
+          {
+            "id": "base_model",
+            "name": "Base model",
+            "filled_by": "research",
+            "level": "version",
+            "value": "Not applicable (closed model, Anthropic's own)",
+            "source": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+          },
+          {
+            "id": "training_data",
+            "name": "Training data disclosure",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Partial, by category only: public internet data up to February 2025, non-public third-party data, data from labelling services and contractors, opted-in user data, and internally generated data.",
+            "source": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+          },
+          {
+            "id": "permitted_uses",
+            "name": "Permitted / prohibited uses",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Governed by the Usage Policy. Finance and credit are high-risk uses: a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI.",
+            "source": "https://www.anthropic.com/aup"
+          },
+          {
+            "id": "terms_of_service",
+            "name": "Terms of service",
+            "filled_by": "organization",
+            "level": "version",
+            "value": "To be entered at registration",
+            "source": null,
+            "placeholder": true
+          },
+          {
+            "id": "official_documentation",
+            "name": "Official documentation",
+            "filled_by": "research",
+            "level": "version",
+            "value": "Yes: system card (October 2025) and launch post (October 15, 2025)",
+            "source": [
+              "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
+              "https://www.anthropic.com/news/claude-haiku-4-5"
+            ]
+          },
+          {
+            "id": "disclosed_risks",
+            "name": "Disclosed risks",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Evaluation awareness (about 9% of audit transcripts) reduces trust in results; more reward hacking than Sonnet 4.5; occasionally gave high-level information on sensitive scientific topics; slight self-favouring bias; no human uplift trials.",
+            "source": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf"
+          },
+          {
+            "id": "audit_contact",
+            "name": "Audit contact",
+            "filled_by": "research",
+            "level": "family",
+            "value": "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy.",
+            "source": [
+              "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude",
+              "https://www.anthropic.com/responsible-disclosure-policy"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

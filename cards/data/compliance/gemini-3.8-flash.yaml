@@ -1,6 +1,6 @@
 model_key: gemini-3.8-flash
 name: "Gemini 3.8 Flash"
-family: Gemini
+family: Gemini Flash
 access: closed
 domain: compliance
 retrieved_at: 2026-10-26

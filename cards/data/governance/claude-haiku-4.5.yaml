@@ -1,6 +1,6 @@
 model_key: claude-haiku-4.5
 name: "Claude Haiku 4.5"
-family: Claude
+family: Claude Haiku
 access: closed
 domain: governance
 retrieved_at: 2026-10-26

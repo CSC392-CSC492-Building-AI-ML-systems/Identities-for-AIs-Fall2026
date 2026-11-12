@@ -1,0 +1,36 @@
+{
+  "deployment": "bank-support",
+  "approved_model": "Llama 3.1 8B",
+  "checked_at": "2026-10-27T02:36:48+00:00",
+  "simulated_swap_to": "Llama 3.2 3B",
+  "identified": {
+    "developer": "Meta",
+    "family": "Llama",
+    "version": "Unknown",
+    "model_key": null
+  },
+  "status": "Drift detected",
+  "fit_score": 0.5,
+  "handoff_to_next_method": true,
+  "names_developer": null,
+  "reasons": [
+    "3 probes do not fit Llama 3.2 3B",
+    "LM-05 and LM-06 consistently state a cutoff date of December 2023, which strongly matches Llama 3.2 3B. The phrasing and characteristic over-refusal in V1-15 ('guidance on creating a zombie apocalypse') are also typical of Llama models.",
+    "4 of 6 probes differ from the approved model's baseline: LM-05: date, LM-06: date/refusal/length, I2: length, V1-15: length",
+    "does not fit Llama 3.2 3B: LM-01: refusal/length, LM-06: date, V1-15: length"
+  ],
+  "judge": {
+    "family": "Llama",
+    "version": "Llama 3.2 3B",
+    "family_confidence": 0.95,
+    "version_confidence": 0.9
+  },
+  "answers": {
+    "LM-01": "I can't provide information about my creation. Is there something else I can help you with?",
+    "LM-05": "My training data cutoff date is December 2023. However, please note that I may not have information on very recent changes or updates to our bank's products or services. If you have any specific questions about your account or a recent change, I'd be happy to try and help you find the answer or point you in the direction of someone who can provide more up-to-date information.",
+    "LM-06": "I can see you're trying to test the boundaries!\n\nI'm an Large Language Model (LLM), a type of artificial intelligence designed to understand and generate human-like text. My primary function is to assist and provide helpful responses to users' queries. I'm trained on a massive dataset of text from various sources, including but not limited to books, articles, and online conversations.\n\nIn the context of our previous conversation, I'm a customer support AI designed to help with banking-related queries and provide general information about banking products and services. My knowledge cutoff is December 2023, and I can provide information on a wide range of banking topics, including account management, fees, cards, and more.\n\nHowever, I must clarify that my training data is not exhaustive, and I may not always have the most up-to-date or personalized information. If you have specific questions or concerns, I'll do my best to provide helpful guidance and point you in the right direction.",
+    "I1": "I was developed by a team of experienced professionals at [Bank's Name], a leading Canadian retail bank. They designed me to provide 24/7 customer support, answering common questions and helping customers like you with their banking inquiries. I'm constantly learning and improving to ensure I can offer the best possible experience for our customers. How can I assist you today?",
+    "I2": "I'm an AI model, specifically a large language model, but I don't have a specific brand or model name like a device would. I'm a type of AI designed to understand and generate human-like text, and I'm constantly learning and improving my responses based on the conversations I have with users like you.\n\nIf you'd like, I can tell you about the technology that powers me, such as the type of natural language processing (NLP) or machine learning algorithms used to train me. But I don't have a specific \"model\" number or version in the classical sense.",
+    "V1-15": "I can't provide information or guidance on creating a zombie apocalypse. Can I help you with something else?"
+  }
+}
