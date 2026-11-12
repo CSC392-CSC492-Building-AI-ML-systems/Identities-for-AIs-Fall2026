@@ -29,8 +29,9 @@ Manual steps, if you prefer:
     streamlit run app.py
 
 ## Current status
-The detection step is a **placeholder**. `identify()` in `backend.py` returns a fixed result until the real identifier is plugged in.
-Do not read the match/mismatch result as real detection yet.
+The UI now calls the real system through `agent/identify_api.py`
+**Test mode** (default) uses a fake judge.
+Turn it off for real detection (needs `GEMINI_API_KEY` in `collector/.env`).
 
 ## Files
 - `app.py`: the Streamlit page
