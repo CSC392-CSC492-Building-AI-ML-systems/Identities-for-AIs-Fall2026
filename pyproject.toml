@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "identities-for-ais"
+version = "0.1.0"
+description = "LLM identification and model-change monitoring"
+requires-python = ">=3.10"
+dependencies = ["pyyaml"]
+
+[project.optional-dependencies]
+ui = ["streamlit"]
+
+[tool.setuptools]
+package-dir = {"" = "agent"}
+py-modules = ["identify_api", "identify", "probe_identify", "check_chatbot", "card_lookup"]
