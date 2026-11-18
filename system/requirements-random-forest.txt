@@ -1,0 +1,7 @@
+# Random Forest v1 was reconstructed with this version of scikit-learn.
+# Use a compatible environment instead of installing this alongside an older
+# Stage 1 release without first checking that release's compatibility.
+scikit-learn==1.8.0
+pandas>=2.2,<3
+joblib>=1.3,<2
+numpy>=1.26,<3

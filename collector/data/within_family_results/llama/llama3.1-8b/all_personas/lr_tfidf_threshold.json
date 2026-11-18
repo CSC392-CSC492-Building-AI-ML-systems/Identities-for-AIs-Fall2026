@@ -1,0 +1,11 @@
+{
+  "family": "llama",
+  "target_model": "llama3.1-8b",
+  "sibling_model": "llama3.2-3b",
+  "algorithm": "lr_tfidf",
+  "threshold": 0.4320031097873642,
+  "max_false_alarm": 0.1,
+  "selection": "validation_false_alarm_limit",
+  "positive_label": "target_model",
+  "note": "Valid conditional on two known models from this family, not an open-set detector"
+}

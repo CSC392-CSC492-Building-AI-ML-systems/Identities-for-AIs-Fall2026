@@ -1,0 +1,36 @@
+model_key: gemma3-4b
+name: "Gemma 3 4B Instruct"
+family: Gemma
+access: open
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: gemma-terms
+fields:
+  developer:
+    value: "Google DeepMind (Google LLC is the party to the Gemma Terms of Use)"
+    source:
+      - "https://ai.google.dev/gemma/docs/core/model_card_3"
+      - "https://ai.google.dev/gemma/terms"
+  licence:
+    value: "Gemma Terms of Use (custom open-weight licence) plus the Gemma Prohibited Use Policy"
+    source: "https://ai.google.dev/gemma/terms"
+  base_model:
+    value: "Instruction-tuned version of the Gemma 3 4B pretrained model (Google's own). Not a third-party fine-tune."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  training_data:
+    value: "Partial. 4 trillion tokens for the 4B model: web documents in over 140 languages, code, mathematics and images. Filtered for CSAM, personal information and other sensitive data. Specific datasets are not disclosed."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  permitted_uses:
+    value: "Intended for content creation, chatbots, summarization, research and education. The Prohibited Use Policy bans unlicensed professional practice (including financial), automated decisions affecting rights in finance, employment, housing or insurance, and processing sensitive personal data without consent."
+    source:
+      - "https://ai.google.dev/gemma/docs/core/model_card_3"
+      - "https://ai.google.dev/gemma/prohibited_use_policy"
+  official_documentation:
+    value: "Yes: Gemma 3 model card and the Gemma 3 Technical Report (arXiv 2503.19786)"
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  disclosed_risks:
+    value: "Can reflect social biases from training data; can generate false or harmful text; not a reliable knowledge base (may give outdated or wrong facts); struggles with nuance, sarcasm and common-sense reasoning; safety evaluations covered English prompts only."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  audit_contact:
+    value: "No misuse-reporting channel on the Gemma Prohibited Use Policy page. Fall back to Google AI for Developers feedback and the model's Hugging Face discussions."
+    source: "https://ai.google.dev/gemma/prohibited_use_policy"

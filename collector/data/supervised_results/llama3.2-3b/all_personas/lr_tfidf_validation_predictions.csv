@@ -1,0 +1,541 @@
+record_id,prompt_id,model_key,prompt_category,persona_id,label,algorithm,split,target_score,predicted_target,threshold
+dbca9fa3-908e-4c19-8764-1e2415761b5c,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.2932077335329768,0,0.3740820102176698
+de862c47-2fdb-42ed-9926-f5aed91fa584,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.2833503656633645,0,0.3740820102176698
+b7fd357e-03f4-4f13-b91c-ab7e4e1562bb,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.3013122511504915,0,0.3740820102176698
+818fb0fd-0fd1-445e-8d57-2d8172a0d678,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.10511011414561602,0,0.3740820102176698
+689c244b-3c0a-4641-8554-e5dc26368165,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.12538270533416287,0,0.3740820102176698
+d4a04278-25b0-4502-8b26-af8520909107,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.13247309566445076,0,0.3740820102176698
+14b3fa09-b8a4-40fc-a743-a842423f80ee,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1605964386469818,0,0.3740820102176698
+a7e1f4be-62c3-4502-b9c0-bc35aaa30551,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.21191411750659908,0,0.3740820102176698
+423789ff-3ca4-4ec8-952d-40ec22a230ec,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.17920812401025682,0,0.3740820102176698
+d80673da-33e1-4d1f-9bbc-36a84b9dfc69,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.26254351402781795,0,0.3740820102176698
+433258aa-4cd2-4a8b-9e8c-255595fb057a,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.38691144823461393,1,0.3740820102176698
+295238e3-cb7b-463b-b96d-20cc46100ac3,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3596996578122517,0,0.3740820102176698
+dcd89203-1270-49b9-9dde-4ddccf18df64,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.24011313057951728,0,0.3740820102176698
+47078ee9-d1a7-428a-871e-ad77f81a7096,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2513028788059705,0,0.3740820102176698
+d00d6428-0733-4719-b7e0-b229f2ecd6e9,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.25218786189780334,0,0.3740820102176698
+57ab27a0-0db9-40fb-80b8-46925f57cf23,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.09325033523807891,0,0.3740820102176698
+f9a6b351-1ac9-4e10-8630-3bcf44d4d717,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.070259387476906,0,0.3740820102176698
+9b8f0129-db6b-4931-a767-f85412ca7b69,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1041887220438431,0,0.3740820102176698
+c26b2fc9-3522-46df-ae9d-b69df53d5a58,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2240207088441799,0,0.3740820102176698
+13fe2c8a-e50f-4430-821d-832c334fee4b,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2020062344813823,0,0.3740820102176698
+780c43cd-88dc-4fb3-a42c-b5371ecc7fd8,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.20109099095639202,0,0.3740820102176698
+d66c2bd1-349b-457f-84b2-833eb91b351b,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2540253228120036,0,0.3740820102176698
+d91b9c79-0917-4e48-a006-ed0ace991a0f,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2408867509803733,0,0.3740820102176698
+eabbac2b-7699-4984-85ba-75fd825be8b8,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.21527100074126654,0,0.3740820102176698
+0c24ad06-bafe-4088-a7b6-cf75aebb5a18,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2943171356340948,0,0.3740820102176698
+c67bfb31-088e-4736-a827-196e35820ac3,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.3080028920035061,0,0.3740820102176698
+eed1b6e1-a4c4-4045-b8a2-b52d2098c09b,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.21658939250761347,0,0.3740820102176698
+60e70a48-759e-4111-bc47-90a72d5771dc,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2906042428755737,0,0.3740820102176698
+b9a7a03b-2f03-4546-8784-ed4778a0b1a6,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2810011056115145,0,0.3740820102176698
+a8ee0608-0ee1-4d3b-aed8-acdf47dcd5b3,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2464617906328437,0,0.3740820102176698
+ecf17b17-6af4-4db4-93cd-aa05c12ccdaf,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2081014664914352,0,0.3740820102176698
+7cb20173-db61-41a7-91aa-f854cfcb1a92,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.35558698267213346,0,0.3740820102176698
+a8efb7dc-805f-48e3-a2f6-b361639a8cad,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.25428489567667334,0,0.3740820102176698
+01c0decb-1603-41ee-8945-23410ac8792f,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,lr_tfidf,validation,0.130502944010075,0,0.3740820102176698
+8436df85-8f9d-472d-b081-77c2f57ca3f8,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,lr_tfidf,validation,0.14856924635269322,0,0.3740820102176698
+45799e40-72fa-48d5-801b-0ef1301c84a3,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,lr_tfidf,validation,0.20575494628235608,0,0.3740820102176698
+6dab56c6-86d7-40e7-a281-7f9813d1af48,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.15832956594317055,0,0.3740820102176698
+b1e4ce40-3712-4d00-a89a-4dc3e9a4ee3f,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.13793630671259335,0,0.3740820102176698
+f630671f-3834-4f2b-aabc-38f82fe938d9,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.14081936927521438,0,0.3740820102176698
+8f3496d5-e681-49fe-ba20-79a1130f22f2,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.21232113435551833,0,0.3740820102176698
+db44c8cc-1703-4ffc-aead-3e42aa8c5fd6,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2303191819013874,0,0.3740820102176698
+512a880c-9bca-4e0e-b7fe-267ecf3f0523,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2362931438740343,0,0.3740820102176698
+0ab35133-bbc3-4f41-9820-c91e5368ef33,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.15569069433204236,0,0.3740820102176698
+7ae6f64a-7b68-485d-acf1-3082ffc90c79,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.13576826466817365,0,0.3740820102176698
+f012ec79-a00b-43c6-8783-3fe0d3c4657f,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.1935982862814959,0,0.3740820102176698
+32a39f1d-5343-464d-a99d-6c8258c2cd32,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.1226147569802858,0,0.3740820102176698
+25c2cbec-5c5f-4572-8556-35ec9bec3189,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.17835585705426424,0,0.3740820102176698
+3cc765ab-16b1-4bd8-9504-5c1c90973b9c,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2415015430704007,0,0.3740820102176698
+b3274327-ea76-4ec5-954f-be0b53bfee00,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.2355052189638012,0,0.3740820102176698
+3ac06797-2e50-4993-b4d0-c6b6d6fc99bd,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.11788234566104362,0,0.3740820102176698
+77086b5f-7d6c-45a5-929c-fd9eb7f293d9,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.18575191673217217,0,0.3740820102176698
+9132842b-3b34-42e2-880b-1602f60f480c,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.26823596321667625,0,0.3740820102176698
+c0f85f4f-38f9-459e-8b5a-3c8183e0f6b2,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.1376619700075293,0,0.3740820102176698
+58fc3fae-85fd-47fe-8de6-99ec9668f59e,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.18274179536762988,0,0.3740820102176698
+bec29c84-2366-4c3d-9327-d42df7549f20,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.12833202342706138,0,0.3740820102176698
+f8665e5f-d557-4339-b58d-df3df368233d,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.1300958602197648,0,0.3740820102176698
+062eda87-20e4-46d7-9638-7fe8f987d257,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.14514177619852092,0,0.3740820102176698
+f996482f-84c2-44b8-b376-fa54e2fab563,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.13639919297856426,0,0.3740820102176698
+a03e5aab-1d43-4517-afc1-89bd25a5ab50,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.170402428696634,0,0.3740820102176698
+893fc7dd-b11d-4fa5-a629-a5a960ba9556,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1296772336572268,0,0.3740820102176698
+8976803d-4a0d-48ce-bcc5-19f82dfa60ac,BK-018,gemini-3.1-pro,Text transformation,BK2,0,lr_tfidf,validation,0.1957952491300734,0,0.3740820102176698
+b04c4743-9329-4ce6-b058-3206ec839ea4,BK-018,gemini-3.1-pro,Text transformation,BK2,0,lr_tfidf,validation,0.1639459563712333,0,0.3740820102176698
+9e0e5040-b0bd-4a99-8377-a02df524c586,BK-018,gemini-3.1-pro,Text transformation,BK2,0,lr_tfidf,validation,0.18537861550810245,0,0.3740820102176698
+5313e963-0bde-4abc-ab2c-2d177542085a,BK-045,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.14157053534860875,0,0.3740820102176698
+ba8ff927-d0ee-449d-9525-518dd86e29f4,BK-045,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.16977842317694902,0,0.3740820102176698
+f858b7ca-c278-44c9-8b33-38d70f35d1bf,BK-045,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.13311803192236743,0,0.3740820102176698
+8622017a-140c-4611-aa8b-4b01f895aa20,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.10790746310666106,0,0.3740820102176698
+baff749a-c079-4b6a-9466-25f764aca94a,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.14352381700792016,0,0.3740820102176698
+7a51ff80-8bc5-4673-84cd-719c75520583,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.2704746662231885,0,0.3740820102176698
+128d11be-f03a-4947-ab9e-55d7110a297f,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.1417668019181892,0,0.3740820102176698
+8dc8012e-550b-4e89-aa3d-452b7735e132,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.16459589889638096,0,0.3740820102176698
+ec6b7c92-4df5-400b-bd5a-16e55cbb21cf,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.14990827398328385,0,0.3740820102176698
+f5fee31d-fead-472f-9601-b8dfdee8306d,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,lr_tfidf,validation,0.12908800565222991,0,0.3740820102176698
+ea802dd1-9d89-4d49-80a4-bec83be56f1b,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,lr_tfidf,validation,0.1012500728532918,0,0.3740820102176698
+d9342c48-a149-4301-935d-e1e22f3bc6a7,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,lr_tfidf,validation,0.1007555288372022,0,0.3740820102176698
+0a25b484-fb29-4e4b-9869-e8d93880f115,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.41665319185341243,1,0.3740820102176698
+60f944b8-7018-4ebd-ae1e-215f0c85f10d,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.4570045842715397,1,0.3740820102176698
+af9ad0c9-5cab-490c-89a7-78a8e9e1baf7,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.39147388088393065,1,0.3740820102176698
+1bb8a756-6062-4636-bf64-f2f80e545056,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.3959382525546893,1,0.3740820102176698
+f2c32d75-3310-4556-845b-f1e65932af1f,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.3371604628945849,0,0.3740820102176698
+ad1aad68-e260-4e3c-805a-b3d1a2a9cc2c,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,lr_tfidf,validation,0.38519336278568966,1,0.3740820102176698
+0445b5e4-7d0d-4ba3-8bf9-230294e6da06,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,lr_tfidf,validation,0.24341595675117234,0,0.3740820102176698
+b745cd5d-4f7b-4dcf-a809-b75fdb8fc0e4,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,lr_tfidf,validation,0.280502984159071,0,0.3740820102176698
+c8749ee4-4edb-46fd-ac7f-19a89d3aa75d,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,lr_tfidf,validation,0.33903865716063303,0,0.3740820102176698
+dd4bc378-44f5-48c2-ad29-dc9aea013013,IF-2034,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2856086621310177,0,0.3740820102176698
+e8119045-243b-42fd-8df3-64b0acded803,IF-2034,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.25423067395218607,0,0.3740820102176698
+d4c753d6-110c-45d2-9cd1-4a553f29ffd8,IF-2034,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.291388434389574,0,0.3740820102176698
+f5fa8ad0-7564-4cbe-a04d-9b396fb3569e,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,lr_tfidf,validation,0.20243748501488443,0,0.3740820102176698
+92928c09-ec7f-42d7-b1d2-d3f1fcbc7599,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,lr_tfidf,validation,0.2034009534577981,0,0.3740820102176698
+2a7d9f52-7dfa-4b9a-aa0a-ba563ccdc69f,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,lr_tfidf,validation,0.12623428614204138,0,0.3740820102176698
+743af496-c990-4d97-915c-32ba22b30633,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3237729498124994,0,0.3740820102176698
+a682e549-d7a4-4a2b-aa5b-c7c5b183f8ff,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.35465112657547115,0,0.3740820102176698
+ada3b996-1cc0-4342-8288-82f25a32dfa7,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2827224117580413,0,0.3740820102176698
+a2c72375-1e45-42c7-a8ca-0317a2cb80a0,WC-015,gemini-3.1-pro,Programming and technical,P09,0,lr_tfidf,validation,0.202850620363734,0,0.3740820102176698
+d1ddba38-dc52-4a2e-933c-ec4a0dd59d3d,WC-015,gemini-3.1-pro,Programming and technical,P09,0,lr_tfidf,validation,0.22733081059803728,0,0.3740820102176698
+fa9eda7c-8462-4364-9f1a-36f493f7aab3,WC-015,gemini-3.1-pro,Programming and technical,P09,0,lr_tfidf,validation,0.09490816512561878,0,0.3740820102176698
+52d66013-0bc0-44eb-9c0a-e215897e9929,WC-056,gemini-3.1-pro,Programming and technical,P12,0,lr_tfidf,validation,0.19134248382641883,0,0.3740820102176698
+16449cd1-0f96-4880-9c23-5f192579dd74,WC-056,gemini-3.1-pro,Programming and technical,P12,0,lr_tfidf,validation,0.24805989542819873,0,0.3740820102176698
+f4eafd39-6076-4929-bcb1-f7f5b22e3a9c,WC-056,gemini-3.1-pro,Programming and technical,P12,0,lr_tfidf,validation,0.2442378045789584,0,0.3740820102176698
+a32f560a-54f1-488c-94c9-9f448784c561,WC-079,gemini-3.1-pro,English language and wording,BK1,0,lr_tfidf,validation,0.06309952404517243,0,0.3740820102176698
+b2ff7c46-55ea-461b-92ab-4b5b46091f1f,WC-079,gemini-3.1-pro,English language and wording,BK1,0,lr_tfidf,validation,0.16117637417701614,0,0.3740820102176698
+055f911e-41e2-43fa-8ea4-a38a44454d37,WC-079,gemini-3.1-pro,English language and wording,BK1,0,lr_tfidf,validation,0.16031711530662549,0,0.3740820102176698
+68f9206d-a756-4067-9ae0-3b114cbc004e,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,lr_tfidf,validation,0.2426045770419357,0,0.3740820102176698
+e22ce4f2-dd73-4ec0-9e46-6e34e252d30a,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,lr_tfidf,validation,0.18964676004087255,0,0.3740820102176698
+4d2a9f07-5f24-4139-ae14-072ced5c6c70,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,lr_tfidf,validation,0.19209708112673948,0,0.3740820102176698
+1d924a03-f760-475b-b2a8-d38c372fdca8,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,lr_tfidf,validation,0.07000421705867158,0,0.3740820102176698
+7a5b9315-b896-4410-ab50-c4487b0fbe46,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,lr_tfidf,validation,0.10827507528289267,0,0.3740820102176698
+2cdbeb92-cc99-410a-a314-56e817af0620,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,lr_tfidf,validation,0.06718270468709205,0,0.3740820102176698
+7525fcbb-e54f-41bf-a214-555a1d3e48dd,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.2384677802263437,0,0.3740820102176698
+4f793a80-c28e-4257-b1fc-f9e83b529e18,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.25383220850856275,0,0.3740820102176698
+f09d27a5-05f3-4e18-9185-fa5ecaf019a3,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.1581153305858109,0,0.3740820102176698
+31336063-5bd9-4781-b50a-6fa076aa5f28,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.11609125506525508,0,0.3740820102176698
+a9d01263-4b7c-4f1d-b41c-6b8737f18757,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.13465253586248235,0,0.3740820102176698
+ac03802d-875a-4c4a-90ca-dd0a6668174e,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.11609125506525508,0,0.3740820102176698
+316dbf3e-d2c1-46e2-a314-5b2cfffdb66a,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.14851948129054693,0,0.3740820102176698
+d038f788-aa3a-4316-bb38-35ef88fa651e,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.23487163020366128,0,0.3740820102176698
+3ff15704-b2ee-4081-9a40-baed19213e1d,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.3271563349362132,0,0.3740820102176698
+5db6b354-dc65-4005-baa6-4b5fbaddfe97,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.1245044023950372,0,0.3740820102176698
+9943b696-8759-48b3-bb3a-3b9506f8f5dd,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.10254667043251141,0,0.3740820102176698
+0e9737fc-25f1-4cc5-9499-d81141bb63c9,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.15509016008779233,0,0.3740820102176698
+900471b5-8f0d-4f9f-849c-806d9ef035b8,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.17923519118733325,0,0.3740820102176698
+ddbb0964-1dd1-4f45-8350-5c12320b8d62,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.34073779351149686,0,0.3740820102176698
+37500def-3e3d-460d-ab50-e3d735972bc7,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,lr_tfidf,validation,0.17273936625728503,0,0.3740820102176698
+e1c149c9-3af9-45a2-9cbe-89368acd6282,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.2918459395933961,0,0.3740820102176698
+5f435cea-b4ff-422e-90b3-6e0765f29875,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.22006552137556323,0,0.3740820102176698
+c99169e2-4629-48aa-96bf-9fcdba974dd5,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.20928383076655283,0,0.3740820102176698
+bfe02756-d0c7-40f5-b042-74cf991fa83d,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.12440588701861477,0,0.3740820102176698
+15f5b890-3ceb-4962-9b3f-127ac67c28f1,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.14045084864850807,0,0.3740820102176698
+ada378da-238a-4de9-8e86-e85b3c960e75,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,lr_tfidf,validation,0.13004531642234898,0,0.3740820102176698
+75a5a7cb-10d2-45a7-a2d2-01ca48169a0c,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.11859261569643,0,0.3740820102176698
+e31df6d8-81e6-4924-aadc-ad3b08414e40,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.14968994225592017,0,0.3740820102176698
+22895eb6-74d4-4e2a-9f8b-8146364de56e,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,lr_tfidf,validation,0.14365520632148032,0,0.3740820102176698
+f215fe9c-c8f9-48c4-ae22-7bf7ea34d2d9,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.2837751114663156,0,0.3740820102176698
+7fa878e0-a722-4867-a5bb-ae39a714392a,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.3594941141610226,0,0.3740820102176698
+856bce1b-e1fa-44e5-920a-046539e87038,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,lr_tfidf,validation,0.26236392439345463,0,0.3740820102176698
+75882409-ed14-45e9-a768-de1266d3801a,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.24348099349311467,0,0.3740820102176698
+b0b35fa5-447f-467e-b3e1-9f09fe78d6aa,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.2480910542993696,0,0.3740820102176698
+0c494d8b-3df4-413c-878f-6dcee4da67a0,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.20770638426033328,0,0.3740820102176698
+ceafe6b0-11b9-45a3-ad82-996af57188cf,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1426013606466497,0,0.3740820102176698
+c57ae47c-3486-457b-bc63-a1c9c297f92a,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.10368220408047037,0,0.3740820102176698
+9c41cdbd-eeb0-4a1e-81aa-e1344ab9aa22,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.11790592765643651,0,0.3740820102176698
+36dd6316-9f4d-4aa8-81a8-16c6f8c5da09,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1828735154851331,0,0.3740820102176698
+7418005f-9d09-4978-96f9-f43bea6c7260,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.19837520617760168,0,0.3740820102176698
+4a42fb9b-3d08-4a99-b9bf-1e6faf670790,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.18244564123002455,0,0.3740820102176698
+e7fd3192-90f4-4db6-a8e6-52a2c9af3414,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.33880383560639465,0,0.3740820102176698
+41d694c8-1ba9-415d-8371-01457258473f,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3717093163013049,0,0.3740820102176698
+1e1eb3be-ee5c-476e-a1a9-dbf8c19d492a,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3125141622334176,0,0.3740820102176698
+b5247792-9756-447a-8eb6-657d2f4dd318,AYA-1856,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.1707859400782049,0,0.3740820102176698
+11fc4367-59cc-4f4e-b90f-4bbec96cd5bc,AYA-1856,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.1707859400782049,0,0.3740820102176698
+e253954a-4ee4-4c17-a78b-fa80963a99db,AYA-1856,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.1605874927042263,0,0.3740820102176698
+8e16c22c-4baa-4c67-a72e-43f44e5d1e24,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.15713665938060228,0,0.3740820102176698
+529180dc-e750-427f-91ee-813d39cb851b,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.19415106425541037,0,0.3740820102176698
+1443f97e-2133-467c-a38e-96e72da3fc5f,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.1820928288334974,0,0.3740820102176698
+80496555-adc5-4b5a-9e63-2f722845fed8,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2466321977422135,0,0.3740820102176698
+f42431d4-39e7-4cb2-bdcd-fc30857c9eb7,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2559801451771664,0,0.3740820102176698
+92c27e74-c764-4f00-86f9-a21c85f5feb4,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2559801451771664,0,0.3740820102176698
+20525e3e-1585-4a26-a971-dc4e0bbb3a0e,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.20132913170143393,0,0.3740820102176698
+6ec512f6-5d22-45c5-9593-422260fb34e2,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.20781295425395022,0,0.3740820102176698
+5caf3b54-7df5-40c6-acad-a584fcdffb21,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.12958790639546144,0,0.3740820102176698
+df7746d1-52f2-4779-913d-2c6b266b2c49,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.1440825200357306,0,0.3740820102176698
+2e895e47-b61e-42ad-a668-f1bb65c2b257,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.09295264507670785,0,0.3740820102176698
+c510a0d2-c00c-4ae9-95d1-60f0a0d59667,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.20527191011905996,0,0.3740820102176698
+0e0d0e64-5f91-4942-93c8-6affb8550e44,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2401519901148634,0,0.3740820102176698
+ed9f7734-88f5-4369-a904-066b6057dc11,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.3283214007793366,0,0.3740820102176698
+088f342c-7df2-413a-a2a9-746240fa74b7,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.302566338402442,0,0.3740820102176698
+52074464-b4f2-416a-a943-fa94062e9a16,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.21964209942536464,0,0.3740820102176698
+76236e09-843f-4290-ba81-72157d422f25,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.26780247732987306,0,0.3740820102176698
+9af3ed07-1308-4cf8-8ec3-9ede052e11bd,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.2862161687060728,0,0.3740820102176698
+8c1c8153-5f4a-43fd-b762-7eff8cf41037,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,0,lr_tfidf,validation,0.17951098741026084,0,0.3740820102176698
+7fd7f0e7-e9b1-462b-b049-fa61f67e7363,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,0,lr_tfidf,validation,0.14630602497692596,0,0.3740820102176698
+02bb277a-2eca-4767-a28e-d8532021b85c,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,0,lr_tfidf,validation,0.13994240358850193,0,0.3740820102176698
+e0b1917a-b624-4f28-9db0-a59d543129d5,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.13838860113138496,0,0.3740820102176698
+5c16af92-8a45-4686-b361-8312807689fb,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.24542959678286191,0,0.3740820102176698
+0a0c856e-bebe-4d92-8c1d-dff0259c0b05,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.23531974843096778,0,0.3740820102176698
+b8c8843a-5945-4bcf-b360-293ab3ce5b3a,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.2795084428670173,0,0.3740820102176698
+9474a1e2-a150-4356-82d0-4c691171e843,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.31122910676780363,0,0.3740820102176698
+178d6493-5594-4262-a004-cbced8c2ff5f,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.24738304857896534,0,0.3740820102176698
+557ef8db-87dc-45d3-9984-1f712d47f816,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.3972234360364448,1,0.3740820102176698
+c4e40ad3-604c-4059-a070-03db6a279880,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.20653538999032803,0,0.3740820102176698
+e47b38b6-f4a4-48ae-8ed2-7442160f829e,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.24630768578700588,0,0.3740820102176698
+114b6523-3d03-4f49-aac2-c5c0f62e1940,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.06699603593480888,0,0.3740820102176698
+a3aed255-af41-4797-be9f-c472509503f8,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.08308240910805949,0,0.3740820102176698
+26ef62c7-9752-4d7d-a06b-110604d3163b,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,0,lr_tfidf,validation,0.07536243319719359,0,0.3740820102176698
+39b2e6ba-86b4-437b-81fd-a49683f663d6,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.15105591617613087,0,0.3740820102176698
+e3832388-4d11-4019-a4e4-7fbd6fc0cb0f,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.1844828119077443,0,0.3740820102176698
+838e1ae8-a731-43db-b445-7336cc8810b1,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.19782877353667602,0,0.3740820102176698
+275f9e15-7103-4276-9840-afcfda6e019d,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.15879315617841558,0,0.3740820102176698
+3b3b4f9b-2092-4f70-b117-a31e296bc18d,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.12278526242885661,0,0.3740820102176698
+334d2717-4dbf-44f7-8d66-1177aeb67124,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.09434047718169368,0,0.3740820102176698
+27910b8e-910d-49bc-a957-e60809b6f202,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.17888052023699058,0,0.3740820102176698
+79053599-bb40-4f09-b3db-5709d76f9ba3,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.19436367486697576,0,0.3740820102176698
+244c9db4-4d2b-4eb1-a612-eeebb362b465,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.1506459521136893,0,0.3740820102176698
+6c3d0350-9622-442b-8465-1c779cb995ba,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.119344047122046,0,0.3740820102176698
+5fd8703f-6338-46d7-9e33-0741ffdaa161,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.09963951065150752,0,0.3740820102176698
+08cc79bd-ba34-498b-ae94-ec15fe0213a0,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.17015845301643373,0,0.3740820102176698
+9162729c-c59a-49e2-836d-1d7858b27f5d,BK-018,gemini-3.8-flash,Text transformation,BK2,0,lr_tfidf,validation,0.1439742162576769,0,0.3740820102176698
+b2e3275b-e882-4ba5-9ffa-159b97e48358,BK-018,gemini-3.8-flash,Text transformation,BK2,0,lr_tfidf,validation,0.12758751350484698,0,0.3740820102176698
+5648c0f2-c1e2-47be-881e-b9d66ed91696,BK-018,gemini-3.8-flash,Text transformation,BK2,0,lr_tfidf,validation,0.14126920794374617,0,0.3740820102176698
+99792e7b-377a-4c80-9dd3-8dddb95c7ad3,BK-045,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.10559467498486123,0,0.3740820102176698
+89d1ce9d-5cf7-42e2-a53f-d157f54f23a9,BK-045,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.14489407519227748,0,0.3740820102176698
+7da1719b-6a1f-4d5b-9d2a-c41b1b1d532c,BK-045,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.13233613751219128,0,0.3740820102176698
+2ecb009a-7549-4909-952a-015af85c744a,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.067468190611947,0,0.3740820102176698
+e179a5c8-3fc0-4d1b-8b4a-14a49f436e3d,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.07060623649760576,0,0.3740820102176698
+62764773-c988-4eac-916e-c3003bcd44df,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.10447385240836209,0,0.3740820102176698
+c4f7c7f8-0318-41c4-8508-1cb59c98654f,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.16489926826068516,0,0.3740820102176698
+4719f69b-7e7a-45ab-864a-92c42ebaf1a7,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.14919614933969258,0,0.3740820102176698
+2ae7a400-6727-4322-9004-53b266c8c851,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.1559682323774606,0,0.3740820102176698
+4427ba92-ea38-46bb-ae1d-65593eb9e0c5,IF-1021,gemini-3.8-flash,Structured instruction following,P04,0,lr_tfidf,validation,0.14391803097695194,0,0.3740820102176698
+03e8b0ac-bd16-42cf-8433-b3c1cbbf15cd,IF-1021,gemini-3.8-flash,Structured instruction following,P04,0,lr_tfidf,validation,0.10972398029212135,0,0.3740820102176698
+e8155c3e-db09-4165-83d9-709d2d640d3e,IF-1021,gemini-3.8-flash,Structured instruction following,P04,0,lr_tfidf,validation,0.13164062049707667,0,0.3740820102176698
+90c5d166-fa7d-4ebb-b576-82d16ec804f6,IF-1148,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.47478290311566046,1,0.3740820102176698
+fdd84a56-750c-4c34-9083-690fd3c4ac1e,IF-1148,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.5419951260701066,1,0.3740820102176698
+2a24f01e-c7fd-4a41-b056-f73f55ee9058,IF-1148,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.525035468759213,1,0.3740820102176698
+ccec912e-053d-4521-a6bf-60417a2ea4e5,IF-1242,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.38519336278568966,1,0.3740820102176698
+69e2030f-1faf-4c8f-8b34-28175e1945b8,IF-1242,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.38519336278568966,1,0.3740820102176698
+ea752477-e840-497e-8349-76b6975da247,IF-1242,gemini-3.8-flash,Structured instruction following,P13,0,lr_tfidf,validation,0.2873611663275876,0,0.3740820102176698
+731af4a2-e07b-4539-8bd7-79a3cdb567bb,IF-1516,gemini-3.8-flash,Structured instruction following,P05,0,lr_tfidf,validation,0.3242027627665167,0,0.3740820102176698
+1c1a4086-3dac-47f7-91d3-448f2ed813da,IF-1516,gemini-3.8-flash,Structured instruction following,P05,0,lr_tfidf,validation,0.28809872129929215,0,0.3740820102176698
+55adc25e-3c44-43d3-98d7-4093ec49dda7,IF-1516,gemini-3.8-flash,Structured instruction following,P05,0,lr_tfidf,validation,0.22875607031065257,0,0.3740820102176698
+caca17c3-9f31-46b3-9968-d89c950cc96d,IF-2034,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.385927104925083,1,0.3740820102176698
+95c0d8fb-d495-4f24-b933-1f635110bd07,IF-2034,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.32893684753901353,0,0.3740820102176698
+a5765026-a71b-4e33-be1a-71394fb53f38,IF-2034,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.33835981370560586,0,0.3740820102176698
+5e579bae-0823-4682-b4f5-9b8f26266ea4,IF-2577,gemini-3.8-flash,Structured instruction following,P07,0,lr_tfidf,validation,0.17935081627239552,0,0.3740820102176698
+d6aa8066-d24b-4285-a5fd-365f37c45ea4,IF-2577,gemini-3.8-flash,Structured instruction following,P07,0,lr_tfidf,validation,0.15499644601724044,0,0.3740820102176698
+33dc8f84-8cba-44b3-81b9-b7c4eb6b6ee6,IF-2577,gemini-3.8-flash,Structured instruction following,P07,0,lr_tfidf,validation,0.18873295977795193,0,0.3740820102176698
+cb8c8c32-1684-4cb2-bf34-17012c4aff92,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.2842230889194933,0,0.3740820102176698
+885fca4a-991b-4dda-ba21-150c631d6c86,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.30657550973730757,0,0.3740820102176698
+cef49fd2-eafb-4fcb-a2fc-e80b4a694e56,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3070325772241654,0,0.3740820102176698
+f44fd9d0-89f7-4ebf-bcdd-f8710c2db0c7,WC-015,gemini-3.8-flash,Programming and technical,P09,0,lr_tfidf,validation,0.18526326057744935,0,0.3740820102176698
+04bd19c7-fe60-4f2e-8a59-1b16f566e5c9,WC-015,gemini-3.8-flash,Programming and technical,P09,0,lr_tfidf,validation,0.3835087410266667,1,0.3740820102176698
+5d799c76-e5c4-4282-9882-8c3b496e9247,WC-015,gemini-3.8-flash,Programming and technical,P09,0,lr_tfidf,validation,0.16678765732209078,0,0.3740820102176698
+3dd1bd0d-3216-4f9e-8ccc-3523110720e5,WC-056,gemini-3.8-flash,Programming and technical,P12,0,lr_tfidf,validation,0.2298069691753494,0,0.3740820102176698
+a9c5374c-8483-48db-9830-8f2249038ba7,WC-056,gemini-3.8-flash,Programming and technical,P12,0,lr_tfidf,validation,0.3860478868335401,1,0.3740820102176698
+73669aea-7721-4176-8022-06e2f10449c3,WC-056,gemini-3.8-flash,Programming and technical,P12,0,lr_tfidf,validation,0.18984621920495656,0,0.3740820102176698
+f4f02c8e-8408-4800-8d88-9206d3a70087,WC-079,gemini-3.8-flash,English language and wording,BK1,0,lr_tfidf,validation,0.15993896471437236,0,0.3740820102176698
+5d50c928-0773-4a44-9616-90bfba93b7d2,WC-079,gemini-3.8-flash,English language and wording,BK1,0,lr_tfidf,validation,0.21175046834385933,0,0.3740820102176698
+3167b724-f990-448e-97a7-6ffbee8e16ec,WC-079,gemini-3.8-flash,English language and wording,BK1,0,lr_tfidf,validation,0.12804500628088566,0,0.3740820102176698
+3783b843-d6fc-4cca-b69b-56b1e4bf8396,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,0,lr_tfidf,validation,0.1925531660845083,0,0.3740820102176698
+9a6feeff-f62b-4532-8620-377d3a956de7,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,0,lr_tfidf,validation,0.18320872010659478,0,0.3740820102176698
+2a3cafe5-bdc5-4a79-a7c9-33faa522c5fe,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,0,lr_tfidf,validation,0.21927884839929565,0,0.3740820102176698
+3c842b9a-241a-4aa0-b80a-763881d6cca9,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,0,lr_tfidf,validation,0.1388540219926283,0,0.3740820102176698
+b6b97680-7f78-47a7-8505-7892fb19cd01,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,0,lr_tfidf,validation,0.08065962390131858,0,0.3740820102176698
+0ff0e81d-e4fa-4f6b-b6e8-59aaf597c525,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,0,lr_tfidf,validation,0.08421162846957032,0,0.3740820102176698
+1021d05f-4044-4f56-8408-f364b355ada2,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.21870142186245267,0,0.3740820102176698
+390c0f1a-ba14-4b32-8b08-dcac1711ee10,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.2327055331293752,0,0.3740820102176698
+b9c7e51a-2236-4fee-8f83-a337c587d76c,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.28693794089638014,0,0.3740820102176698
+50d1a4cf-9bb7-47cd-a7f4-d80fbc21b98e,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.11609125506525508,0,0.3740820102176698
+0c89d68a-47b3-4726-a7cf-2ffcb8388321,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.11609125506525508,0,0.3740820102176698
+b105b1d2-841f-4dcd-8861-a4b4d3d8f8f4,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.11609125506525508,0,0.3740820102176698
+e55316cc-bb0e-47c4-abb5-82777cfe8f31,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.36527863325357085,0,0.3740820102176698
+2443ed7f-6dbb-4f94-b013-e4ebb87b0075,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.5881707964352048,1,0.3740820102176698
+dff628c3-b1a2-46d3-a83b-f7dcd5762df4,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.4257421111463262,1,0.3740820102176698
+54b2757a-7391-4813-abf3-9bfe24bea4d6,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.1872614924899672,0,0.3740820102176698
+eeeae979-401c-4d2c-9b16-b24362528b84,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.12705882120299952,0,0.3740820102176698
+2b526cae-1c3b-4944-b1cf-ef3b57f706fa,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.17224726557287703,0,0.3740820102176698
+dd847d4a-af83-48f4-9cf7-65b9f60ae652,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.25187144625000996,0,0.3740820102176698
+9b348978-3a91-4b29-a54b-f00302533616,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.21327871649277177,0,0.3740820102176698
+6dea0303-d446-4880-a878-68a82f6229fa,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,0,lr_tfidf,validation,0.3236553909568961,0,0.3740820102176698
+6b104424-1c74-4410-9bd1-ca2e9e8b1600,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.2839283030948742,0,0.3740820102176698
+79213e81-04bf-44ec-a646-22281c3bf3b1,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.3977399511760144,1,0.3740820102176698
+b4b0f7fd-e107-426d-892f-ac449a50e1b4,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.3443964376972287,0,0.3740820102176698
+a1c027e3-6ea5-42ad-95e1-b0894ea6e293,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.11201481911938338,0,0.3740820102176698
+3d62894d-f53b-4e95-b726-7941c398c4a4,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.22694589654710864,0,0.3740820102176698
+4486366a-85a9-4644-b053-31c875c3fe10,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,0,lr_tfidf,validation,0.13079838539964353,0,0.3740820102176698
+59a5e1b5-205d-422c-9be4-2703c3e3690e,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.15183642343070083,0,0.3740820102176698
+1f4892a3-a503-41f1-8ff9-f3f51234d101,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.23171852081975505,0,0.3740820102176698
+4c6db120-d802-42d3-ae28-fa383a088bcf,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,0,lr_tfidf,validation,0.20461167636999175,0,0.3740820102176698
+98fd033c-703f-435c-814d-955f2d01a050,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.29971483645015323,0,0.3740820102176698
+ec937111-b6b3-4271-8ece-87555bbd5e81,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.3356839134040883,0,0.3740820102176698
+f7119e9b-6cdd-412f-b769-3e7b0537241b,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,0,lr_tfidf,validation,0.47195577994212956,1,0.3740820102176698
+3df44c4a-2c8b-4454-9893-d101b314e1ab,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.4242430279182581,1,0.3740820102176698
+12796a5b-c19b-4ef6-8c44-c57d173e3bff,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.39277141329242105,1,0.3740820102176698
+0d48919a-f260-4cfe-a238-6eb14c6f99dd,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.2654796053601866,0,0.3740820102176698
+4d11fb91-14b1-4952-8ebe-b3e78efe5b40,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3642902148969306,0,0.3740820102176698
+81c51609-ebff-4551-8dd2-9ac896c4f308,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.6351640406551932,1,0.3740820102176698
+f96f9b39-67cb-4335-a3aa-80bb9aa9aa5b,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.6129472263990395,1,0.3740820102176698
+0db4595c-bfa4-4861-b214-ff5921f793b5,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.636223327380675,1,0.3740820102176698
+b4618cee-983b-4c12-a557-1e79b19be560,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5307642730949066,1,0.3740820102176698
+8905555d-0a9a-4600-9183-a861fdf4d1ce,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5723122577986015,1,0.3740820102176698
+66c43c88-3123-4237-8ddc-28c832ceaa66,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.36255481566520537,0,0.3740820102176698
+91e79ea5-6c32-4b22-8920-13d604019478,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5111550519561487,1,0.3740820102176698
+3121d722-1fa4-42ad-8fc8-7f56e0192462,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.38498575353435527,1,0.3740820102176698
+fb02f5a2-7f43-421e-befb-ddfa19054db4,AYA-1856,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.39388201826381214,1,0.3740820102176698
+d387a908-4b10-4757-ae87-ef7a6469d2d5,AYA-1856,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.3977689188837399,1,0.3740820102176698
+b994b4e7-770f-4b66-8449-47a4230e110b,AYA-1856,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.4794670555565529,1,0.3740820102176698
+639fc077-d26e-47c5-8720-d8866ed20584,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.419180474715163,1,0.3740820102176698
+a3224c4d-47e6-4f16-8ff6-cc74b34736f9,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.41917691848198907,1,0.3740820102176698
+db396117-501a-4184-9921-f668aebc520a,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.4876258088695666,1,0.3740820102176698
+ec0b1437-d6cb-4b64-9705-e7668d88e54f,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.31351060019454274,0,0.3740820102176698
+004a7e42-5533-419d-8dfc-66db19630551,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3050533894128427,0,0.3740820102176698
+bd63b595-1191-4972-8227-ea0011c16062,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.3200653024489483,0,0.3740820102176698
+62aa8015-6ab0-4a01-a2ee-d997b10e594b,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.39722338891255055,1,0.3740820102176698
+8316642c-5298-4f8a-b5e2-4c5405fd2500,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.6376105448049871,1,0.3740820102176698
+522b30fc-96d7-4f21-b2e2-eb2434b4807b,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.7076532253670199,1,0.3740820102176698
+af2ba5c6-a47d-4cfa-b6da-e45114f29966,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.47172818101916514,1,0.3740820102176698
+6a70d49d-beaa-4636-9694-7c79220edbcd,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.4568578330325034,1,0.3740820102176698
+c3bcee0d-3f1e-41ba-a800-1c54d6427da6,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5137001905887557,1,0.3740820102176698
+191c393e-5c53-477c-b2ad-7ae5e0676689,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.4922842144938036,1,0.3740820102176698
+a0e3fb24-5baa-4d2b-a6a8-3f7641ed5e91,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.521805146165785,1,0.3740820102176698
+25d13c33-926f-4a6e-9a85-eb762e87776d,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.47314831894525383,1,0.3740820102176698
+c127c24b-337f-4e0f-a1c1-e58258672b36,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.46844286601488194,1,0.3740820102176698
+02319c91-761d-4c3a-a0b9-3f7635aa81b2,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.48252609187960943,1,0.3740820102176698
+a9e11328-8d88-495d-987f-ae1cb904a42a,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.3720927038006194,0,0.3740820102176698
+a15f7c9d-1e0b-427c-a417-b62698565475,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,lr_tfidf,validation,0.5740935145066247,1,0.3740820102176698
+26c72adb-0160-49f3-9f30-6c9bf5a2f1e8,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,lr_tfidf,validation,0.5051552016786451,1,0.3740820102176698
+196c9340-074c-4d03-a3eb-8706a9809d12,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,lr_tfidf,validation,0.587903206368742,1,0.3740820102176698
+dbb7987c-da66-46a9-99a8-79b4ef681e86,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.3740911502772091,1,0.3740820102176698
+1c10fe9d-194d-4cee-800f-662f5d5d1c4c,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.3282085193688023,0,0.3740820102176698
+338b3b52-cca9-4427-994d-30e755222a34,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.27654239290651805,0,0.3740820102176698
+2d44016d-719c-499b-b650-b8055ed35261,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.6706287807763928,1,0.3740820102176698
+a3ee76a5-7566-4b46-9975-152c8adf2fa4,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.7613540303619387,1,0.3740820102176698
+d978764a-04bf-48e3-b2da-b4b641931be1,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5762753453055717,1,0.3740820102176698
+e152549e-ab12-463c-8891-7d46c775ec47,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5909629001561439,1,0.3740820102176698
+81ef5a76-beb9-42e5-ac59-e8b73e82b765,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5388212004246757,1,0.3740820102176698
+22093b00-53ad-496f-b303-7610b75d4116,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.41121352674343953,1,0.3740820102176698
+dc812cba-0270-4c05-9c74-f5014916a3ff,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.6594836086684743,1,0.3740820102176698
+a2147c51-3ecb-4219-bd5c-e5c0f1e2ec1a,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.5572941197616813,1,0.3740820102176698
+65fb95d6-0ce3-4c74-93aa-3abdbebf01d7,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,lr_tfidf,validation,0.47987774729336424,1,0.3740820102176698
+9dc25fec-84b2-496e-97b1-b85dad73e22e,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.6811688817257713,1,0.3740820102176698
+a7c20997-51be-4d53-bfc1-2f9ad4ecfacb,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.6546836889391591,1,0.3740820102176698
+8db8c7a5-154f-413d-8d54-5e1093838e95,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.6169636156261366,1,0.3740820102176698
+098d541f-6f2f-4f7d-b95d-e82be04bd9b3,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.414095029835414,1,0.3740820102176698
+8e729ba7-c170-4671-9ecf-e7f5f4f396cd,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.5590859399036182,1,0.3740820102176698
+ae54b52a-916e-4447-adb7-e801f956fc59,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.4858188663303782,1,0.3740820102176698
+cbe9c46c-1d85-4972-bb04-0ca1323ad96d,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.3197535012994541,0,0.3740820102176698
+d920f9de-7d7f-4bad-9e5e-9d6e5c79dca7,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.3941222030076104,1,0.3740820102176698
+ce8e6874-1779-40b2-8aba-eefa89c3780d,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,lr_tfidf,validation,0.43017188633829045,1,0.3740820102176698
+ac195a00-0ee3-404d-8e7d-fa4a11ee2712,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5122843634307322,1,0.3740820102176698
+9b2b81d7-244e-4b9b-b20b-68294bba10a3,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5152245694084625,1,0.3740820102176698
+6e2d4f54-bfc8-4a00-af48-3512ee44bea0,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.47171991508479805,1,0.3740820102176698
+838b5a03-5c49-4554-8384-4d35065ce572,BK-018,llama3.1-8b,Text transformation,BK2,0,lr_tfidf,validation,0.220104667184827,0,0.3740820102176698
+71c23dcd-6068-45ae-99ea-3735c4f5e528,BK-018,llama3.1-8b,Text transformation,BK2,0,lr_tfidf,validation,0.26863113275421446,0,0.3740820102176698
+ac96a6d6-a8d2-4251-a567-7b0f72afb591,BK-018,llama3.1-8b,Text transformation,BK2,0,lr_tfidf,validation,0.2847847985557268,0,0.3740820102176698
+9de3d8aa-4d09-4516-a1f3-aede114b4e71,BK-045,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.46530654932326354,1,0.3740820102176698
+d83a3f7e-6796-459e-94af-b73b11291b30,BK-045,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.4623658780774556,1,0.3740820102176698
+b322dde1-c22b-4db8-a7c7-4e44d1f9c41d,BK-045,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.4952335312248389,1,0.3740820102176698
+b164e157-1906-46f0-9eb9-a4fb45c77a68,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.7204708710488542,1,0.3740820102176698
+965e3f09-9977-4254-ac3a-643156f19f8d,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.7177502651557962,1,0.3740820102176698
+15719bb5-a352-4eac-bc49-9280d40ff988,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,lr_tfidf,validation,0.633817524238389,1,0.3740820102176698
+b8b9b6d3-5382-4d4a-b10e-00a31144666c,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.46467413159033827,1,0.3740820102176698
+00e405d5-ebb1-4042-b7c9-b1c8c43f09a9,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.5109412878515548,1,0.3740820102176698
+8407a339-a2e1-465b-a94e-507282cf62d9,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,lr_tfidf,validation,0.6140204054903259,1,0.3740820102176698
+f76bb84e-89df-427e-81a1-fd863021c554,IF-1021,llama3.1-8b,Structured instruction following,P04,0,lr_tfidf,validation,0.30195715468876,0,0.3740820102176698
+6045a35e-0811-4f82-8b59-313d2bcd2e9f,IF-1021,llama3.1-8b,Structured instruction following,P04,0,lr_tfidf,validation,0.33509158530241373,0,0.3740820102176698
+12012305-64c8-469f-bd01-5fcc6973bb7b,IF-1021,llama3.1-8b,Structured instruction following,P04,0,lr_tfidf,validation,0.5398025290827118,1,0.3740820102176698
+0f5a1b20-ddbd-413a-9f86-316c30dfcf27,IF-1148,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.45362135298215517,1,0.3740820102176698
+e1daf9f6-7c4e-4c8e-8680-bb55e30ccdc0,IF-1148,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.59672685660506,1,0.3740820102176698
+bfa722ec-b46a-4231-b773-f37b024d86f6,IF-1148,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.5207184524869706,1,0.3740820102176698
+54a9427e-855c-42c9-8930-864847724448,IF-1242,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.31589964482931177,0,0.3740820102176698
+cdef265d-b9f2-48f6-8ddc-49c1fa6eaf2d,IF-1242,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.3408348220163365,0,0.3740820102176698
+40dc3b94-ebe0-4056-88a4-9d6c40210953,IF-1242,llama3.1-8b,Structured instruction following,P13,0,lr_tfidf,validation,0.3272830578148911,0,0.3740820102176698
+2ca62d0f-7b6a-493d-bdb4-f84a58fa7f6d,IF-1516,llama3.1-8b,Structured instruction following,P05,0,lr_tfidf,validation,0.3962147784534073,1,0.3740820102176698
+a063fc46-2ae4-4080-9b71-f5105e8384c1,IF-1516,llama3.1-8b,Structured instruction following,P05,0,lr_tfidf,validation,0.3811902354128225,1,0.3740820102176698
+0cf7017d-1751-4c93-af27-9f58cc97153d,IF-1516,llama3.1-8b,Structured instruction following,P05,0,lr_tfidf,validation,0.2526422776259254,0,0.3740820102176698
+f1546545-07e4-456a-ba20-c089d12cc6f6,IF-2034,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.3325438454792342,0,0.3740820102176698
+dc79fb23-b2d0-45d9-92e9-2ae2b746790a,IF-2034,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.528621718488747,1,0.3740820102176698
+f2dd0e72-01e8-4a4b-9255-2f010ebce03a,IF-2034,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5657682394613137,1,0.3740820102176698
+6e5363b1-3dd7-44c0-824f-d9c05bbd9f9a,IF-2577,llama3.1-8b,Structured instruction following,P07,0,lr_tfidf,validation,0.6001679404331929,1,0.3740820102176698
+e67e4fbf-4ada-4238-bf00-e5fa3bb3964e,IF-2577,llama3.1-8b,Structured instruction following,P07,0,lr_tfidf,validation,0.686077754811526,1,0.3740820102176698
+3a5cc96b-f7a8-4fc5-aa99-ff69eb254c45,IF-2577,llama3.1-8b,Structured instruction following,P07,0,lr_tfidf,validation,0.733801705900525,1,0.3740820102176698
+81449885-73e0-4ddd-8436-8fe19747241b,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5662732072548536,1,0.3740820102176698
+f82aa1b6-4599-4b2c-b864-ea3d4e570f2b,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.47609210913134464,1,0.3740820102176698
+dbd3c2e1-9fc8-4a28-abd0-e408378cd135,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.5836071812531591,1,0.3740820102176698
+c60c134a-ac99-4a53-8f33-2151b01824b2,WC-015,llama3.1-8b,Programming and technical,P09,0,lr_tfidf,validation,0.29728825009696713,0,0.3740820102176698
+3d0f14a0-6017-46c9-bf6b-e252e1f32e31,WC-015,llama3.1-8b,Programming and technical,P09,0,lr_tfidf,validation,0.31606940420644297,0,0.3740820102176698
+d27bc6bf-51af-476f-af9f-669c9a6deb4d,WC-015,llama3.1-8b,Programming and technical,P09,0,lr_tfidf,validation,0.28764662731970697,0,0.3740820102176698
+822ea99c-347b-486d-a002-01798cd29fa9,WC-056,llama3.1-8b,Programming and technical,P12,0,lr_tfidf,validation,0.5351289017785723,1,0.3740820102176698
+422d6446-135c-43de-8510-4f43f6d2f9ee,WC-056,llama3.1-8b,Programming and technical,P12,0,lr_tfidf,validation,0.6394348564329876,1,0.3740820102176698
+05e0f002-a6fe-4efd-812e-e4a0232e47ea,WC-056,llama3.1-8b,Programming and technical,P12,0,lr_tfidf,validation,0.6747286161086851,1,0.3740820102176698
+978dd76d-bc2a-4c3c-8bd0-692f945654bf,WC-079,llama3.1-8b,English language and wording,BK1,0,lr_tfidf,validation,0.27992629456908447,0,0.3740820102176698
+3bf709db-b426-418d-be1f-5bca39add944,WC-079,llama3.1-8b,English language and wording,BK1,0,lr_tfidf,validation,0.6291313054653586,1,0.3740820102176698
+5dcce47f-b8b8-4590-94d6-9141753fc108,WC-079,llama3.1-8b,English language and wording,BK1,0,lr_tfidf,validation,0.3651464705861583,0,0.3740820102176698
+4a658009-75f4-4522-a065-4fc787ebde7d,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,lr_tfidf,validation,0.6473308779426525,1,0.3740820102176698
+a4aa9650-0488-4d7d-af29-df76f584d6a9,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,lr_tfidf,validation,0.367154925400264,0,0.3740820102176698
+a3329971-337b-4bfd-abaa-5877e656d576,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,lr_tfidf,validation,0.5523475471460576,1,0.3740820102176698
+bdf7a67a-e49a-448b-9a99-5c8665b171b0,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,lr_tfidf,validation,0.5646013564825594,1,0.3740820102176698
+b8223570-e4da-4942-81c9-3771165784c5,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,lr_tfidf,validation,0.689030414162986,1,0.3740820102176698
+c35a6d67-ffbb-4f94-b5bc-d645fff01703,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,lr_tfidf,validation,0.7081163571454674,1,0.3740820102176698
+f6313687-c2ef-43de-a20a-9d520b95b516,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.6320364782291855,1,0.3740820102176698
+c9399563-0eec-4eec-97bc-0decf8ac1802,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.5471745839759125,1,0.3740820102176698
+888d0992-6f11-46e7-a5bf-bca0283ff9d2,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.813467054443876,1,0.3740820102176698
+11bcf017-2044-4e0e-83ca-9bcc7c22e793,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.8518339958734277,1,0.3740820102176698
+45a084e4-bd0b-4074-ba30-807d7be0f07f,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.8518339958734277,1,0.3740820102176698
+743afe5e-f805-42e0-8fc3-a1633b993abf,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,lr_tfidf,validation,0.8518339958734277,1,0.3740820102176698
+66131c1a-2f62-467d-b168-b4845c2904c6,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.4887141575525277,1,0.3740820102176698
+9697a1e1-9f7b-4289-895a-0f0d61fc67ec,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5760717345165302,1,0.3740820102176698
+8dba3a44-6d5b-4280-ba74-a8c19491668c,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5966535664759061,1,0.3740820102176698
+72d2636b-fcb0-4cdb-b893-79847e2a3421,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.5746042311470728,1,0.3740820102176698
+fae71a65-4dda-4b31-bfb6-f0018c163184,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.6012988740507293,1,0.3740820102176698
+38bade03-137b-4ff2-9cc4-3184c2b440af,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.6427251618997571,1,0.3740820102176698
+86c01c3d-827d-4ae3-a31e-463c7c0104dd,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.6627985922958336,1,0.3740820102176698
+91928a72-74e9-4726-9557-f7d04e5fa935,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.711340192042667,1,0.3740820102176698
+5ce43181-8ed4-4389-b28c-87e268692798,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,lr_tfidf,validation,0.7618725362308456,1,0.3740820102176698
+18fea1c4-db38-4076-83ff-a8dbce04ae42,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5819260654592177,1,0.3740820102176698
+7352b2ac-3004-407a-95e9-31ac884ac6f4,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5864636819287614,1,0.3740820102176698
+77b2d0fd-d779-4f17-a561-2dfa5266bce6,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5178109849804394,1,0.3740820102176698
+e2028a45-0013-4df6-a2a1-ca41ec141981,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.543949854170357,1,0.3740820102176698
+b171bff2-5582-4337-a6d6-c981f94fed8a,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.6909344972254312,1,0.3740820102176698
+7dc4d2c4-e388-40ba-a5b3-50f72dda748f,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,lr_tfidf,validation,0.6868036933104941,1,0.3740820102176698
+c41ce589-057c-4d65-af4b-d490a9e269e5,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.6668831133050949,1,0.3740820102176698
+34073168-1ae2-41f5-a1c9-cfaf12b1c51e,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5945205149546899,1,0.3740820102176698
+119364cb-4ca8-4d5f-94fb-4c5049b67660,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,lr_tfidf,validation,0.5236786718327172,1,0.3740820102176698
+141942df-63c0-411c-9d4c-d481fa4ed3d3,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5791229069382675,1,0.3740820102176698
+1ccd70ea-c850-49d1-962c-5bc218cc77eb,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.6292186394085314,1,0.3740820102176698
+56392e28-b8fd-4171-86fe-0afc5b7037c7,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,lr_tfidf,validation,0.5311121304253761,1,0.3740820102176698
+a54757fe-67e9-4c27-9516-d7ed8f07c41c,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.3993861389446313,1,0.3740820102176698
+c3964d8b-ea35-4046-a87a-583c8eb4d910,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.47505360091278875,1,0.3740820102176698
+7213b7a9-63a6-4595-88df-1491bb209e42,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.43418007038691564,1,0.3740820102176698
+8f6efae0-9889-4aa1-828b-38a146408367,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5484975820003162,1,0.3740820102176698
+900e8cf0-ad44-410b-821b-dde76ab2e7f1,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.42973895105013915,1,0.3740820102176698
+9a7708ec-d531-4831-be5e-a8e5a2fa0950,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5685275610344634,1,0.3740820102176698
+bcc479b7-566a-4d2d-bec4-66db77bea6d2,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.6315369641559709,1,0.3740820102176698
+9804ab78-7564-477c-b290-8c4eda36515d,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.6429224799086997,1,0.3740820102176698
+6e7c96d6-e090-4569-8cd0-457312ff79c3,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.7366773697223313,1,0.3740820102176698
+bc7812da-187b-4cbd-87c6-2d7caee48ac1,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.3419744020002879,0,0.3740820102176698
+e355e12e-618d-47d7-ab2f-5b49ea50c379,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.3684375018395162,0,0.3740820102176698
+f97e311d-7aad-457a-94a0-7d31c02af655,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.3740820102176698,1,0.3740820102176698
+abd1171a-f7fc-4b52-9143-78b4052ca864,AYA-1856,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.41219675534300904,1,0.3740820102176698
+867b4f79-8531-40bf-9d41-8e67b4710e5d,AYA-1856,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.4212690667364803,1,0.3740820102176698
+383255ce-f7ff-4252-abf1-bb25a4411be7,AYA-1856,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.38006460151839044,1,0.3740820102176698
+1a88af81-3ca1-49d8-ac4c-67e6ce375f0d,AYA-375,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.6437874682630257,1,0.3740820102176698
+b45d3096-4761-479b-85fc-cb2114ff9f10,AYA-375,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5634541874468242,1,0.3740820102176698
+9fdbd2ab-1ff6-4fe3-8031-c9f37c3ac98a,AYA-375,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5467497945696891,1,0.3740820102176698
+a8da0525-19c6-4837-82e5-27d2ba278bf7,AYA-725,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.2752470668969709,0,0.3740820102176698
+d9e7c57c-5922-4e4f-baee-d277f626fad8,AYA-725,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.2662528357007903,0,0.3740820102176698
+5b2a9d30-5c8e-46d3-aa5d-81f5d2a9cee7,AYA-725,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.29248856622275976,0,0.3740820102176698
+35832729-ac5a-4cd5-a64b-9a2f8862b2fd,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5765570243741133,1,0.3740820102176698
+1e7596c6-d573-4cf9-ab40-7abd472eea6c,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5529780016717515,1,0.3740820102176698
+c523616a-6b47-4342-a4f2-a2142794c63f,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5549026247686485,1,0.3740820102176698
+c2b20277-52b2-400f-9c51-9a2c0429ea45,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.558721105549181,1,0.3740820102176698
+45778c3c-0b4b-40ea-8d37-91127a2df154,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5531826940101336,1,0.3740820102176698
+aeccbcd8-39b9-4139-96e2-5713699e5075,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.6279767863746102,1,0.3740820102176698
+88789a4e-8c1b-4e7c-9767-3d59e1bba074,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6771329637336434,1,0.3740820102176698
+994403bf-fe8c-48e1-8a47-19911440d376,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6558724527534039,1,0.3740820102176698
+7213e626-0226-49d2-86ed-9bab4748b6ba,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.4080976547782834,1,0.3740820102176698
+0394a299-63ac-4f7a-80f7-0223c7f8fe1a,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.378713917632172,1,0.3740820102176698
+b6ac60b3-d346-4794-a0e6-64e90cf25324,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.402636428407415,1,0.3740820102176698
+e08b190d-cfae-477c-958c-907981f675d9,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6185174118452117,1,0.3740820102176698
+a624303c-8797-4443-a6b7-a888c4207bb3,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,1,lr_tfidf,validation,0.5197768484716595,1,0.3740820102176698
+15bc81a4-d5bf-4fc0-8d4f-e4970d3951b2,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,1,lr_tfidf,validation,0.6113658947938065,1,0.3740820102176698
+9f696bcf-415b-4cce-9daa-f1472bb22d26,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,1,lr_tfidf,validation,0.6400466531572649,1,0.3740820102176698
+2c662d35-fbb6-4038-81ae-9baa871532b5,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.5543573183714956,1,0.3740820102176698
+e8872be2-a963-4e79-8503-7dbd8d0228a6,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6912596382135635,1,0.3740820102176698
+632f0c96-01b4-45af-809f-63426ffe1ef4,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.5333549789313559,1,0.3740820102176698
+88ea3d83-7fbc-4792-92a2-27139146257e,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.6689927362129576,1,0.3740820102176698
+87043650-5667-47b6-91ea-ca7f285ab9f1,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.6007675832024097,1,0.3740820102176698
+cb111cc6-e7d0-4cd1-a6c8-2629916153ea,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5789131583610903,1,0.3740820102176698
+b516fe47-286f-4984-b963-6ece5db88df3,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5223736621607716,1,0.3740820102176698
+b80afcfd-be16-4171-bddd-e7978a03457a,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5306792473807437,1,0.3740820102176698
+9312a2a0-a3cd-4d7e-8753-5bb480369331,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.44069565965583435,1,0.3740820102176698
+afac0ccd-3324-489f-a567-292335021679,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.7571483175189307,1,0.3740820102176698
+c89287dc-7b44-4dd6-971b-760c38258e71,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6478551709924167,1,0.3740820102176698
+f6f76a4a-8621-48b0-901e-cf16b0307686,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,1,lr_tfidf,validation,0.6077577453108314,1,0.3740820102176698
+ade74b31-3128-420f-836d-b735239d6fab,BK-003,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.6572912957576242,1,0.3740820102176698
+86815e49-38fe-49a0-ae57-9e9d510611bc,BK-003,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.5197784495181743,1,0.3740820102176698
+10af37a8-cfc3-4681-a146-02d7bc6877d9,BK-003,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.6472022875084982,1,0.3740820102176698
+5269e45c-52ec-47ba-9ad9-d124579302e5,BK-012,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.625830243478735,1,0.3740820102176698
+62a12608-6909-4907-8375-78ea1a1eca7a,BK-012,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.45859970672833844,1,0.3740820102176698
+f50f143d-4b97-4da8-a595-6d4c7ddb038a,BK-012,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.532414187234719,1,0.3740820102176698
+701aab16-f651-4bb0-8c03-09d7eaf64834,BK-014,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.7088857316642848,1,0.3740820102176698
+76fb1f42-bb6a-4cfa-a386-615fceb02897,BK-014,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.4885654751359664,1,0.3740820102176698
+ffd51e07-d4e4-4792-a72e-47932a6cad39,BK-014,llama3.2-3b,General Q&A and explanation,BK1,1,lr_tfidf,validation,0.6576995877891489,1,0.3740820102176698
+5fb24d06-14c5-47d2-a741-2b84aa999ab1,BK-015,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5810601161781022,1,0.3740820102176698
+63fd5a88-6db8-4559-90ad-1ace596c8a5d,BK-015,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.7041397048489574,1,0.3740820102176698
+988238e1-565a-4c08-8b90-6f458179d969,BK-015,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5065753124358314,1,0.3740820102176698
+1a95d672-9563-4c27-a5f5-d5970035454c,BK-018,llama3.2-3b,Text transformation,BK2,1,lr_tfidf,validation,0.4740551144704351,1,0.3740820102176698
+4131263b-6137-4903-b9c7-7a9f68e819b1,BK-018,llama3.2-3b,Text transformation,BK2,1,lr_tfidf,validation,0.4211495072212867,1,0.3740820102176698
+01388dab-7f9c-4eba-8a7b-e19181dba354,BK-018,llama3.2-3b,Text transformation,BK2,1,lr_tfidf,validation,0.57266101067795,1,0.3740820102176698
+53269415-3a6a-4004-a5f8-ab1f14f6561a,BK-045,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.5595166707408166,1,0.3740820102176698
+ac03ec16-7d80-4709-b3b5-8fd52e3bd2ba,BK-045,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.4833445292688199,1,0.3740820102176698
+4a6f99c7-8101-4ef1-95b2-ac7031d60011,BK-045,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.5195330700215854,1,0.3740820102176698
+286093cc-7153-4d34-b3c7-0a4f00e9b7f6,BK-048,llama3.2-3b,General Q&A and explanation,BK4,1,lr_tfidf,validation,0.5767123316735808,1,0.3740820102176698
+26ca439b-4779-4016-a85b-6b6f689c8134,BK-048,llama3.2-3b,General Q&A and explanation,BK4,1,lr_tfidf,validation,0.7107741475688245,1,0.3740820102176698
+9aed6588-d752-4a4a-a1c0-8d846519ef9d,BK-048,llama3.2-3b,General Q&A and explanation,BK4,1,lr_tfidf,validation,0.6176824800289415,1,0.3740820102176698
+acf3574d-2333-4637-935d-b8b9dddfd6dd,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,1,lr_tfidf,validation,0.5459052129879873,1,0.3740820102176698
+f5d25fc7-6449-43ce-bf52-acc7a5ca8082,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,1,lr_tfidf,validation,0.6206386506854181,1,0.3740820102176698
+4916545e-0a41-4eaf-b5d5-db37f8459cae,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,1,lr_tfidf,validation,0.6391691261744692,1,0.3740820102176698
+cf9e1927-22cf-4975-ac82-f2c9e739bb7d,IF-1021,llama3.2-3b,Structured instruction following,P04,1,lr_tfidf,validation,0.6693075973953249,1,0.3740820102176698
+3e23a8c9-a1b8-48f9-a908-39b8e7c38c8e,IF-1021,llama3.2-3b,Structured instruction following,P04,1,lr_tfidf,validation,0.6017266330790008,1,0.3740820102176698
+23632201-3f97-484f-843e-2e09884a327c,IF-1021,llama3.2-3b,Structured instruction following,P04,1,lr_tfidf,validation,0.6922491552998518,1,0.3740820102176698
+071781b7-7530-48f1-bf37-8da0c28f61d8,IF-1148,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.5346927798523013,1,0.3740820102176698
+25bd6347-bde5-41f8-a19e-a2dd9f55f7c7,IF-1148,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.4567716736122442,1,0.3740820102176698
+8ca508e3-2b91-44b5-8cb7-1086a4d0be13,IF-1148,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.5294533059908517,1,0.3740820102176698
+e5d16694-b210-4b42-b415-b3945c6d5277,IF-1242,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.35792842294781496,0,0.3740820102176698
+2686313f-4f5b-486d-bfb8-a3be126e8331,IF-1242,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.36000004921556533,0,0.3740820102176698
+33a03c33-a498-4c21-99f8-994c860881e7,IF-1242,llama3.2-3b,Structured instruction following,P13,1,lr_tfidf,validation,0.39698678577941354,1,0.3740820102176698
+3d856dda-9448-475b-893a-8540fa40d661,IF-1516,llama3.2-3b,Structured instruction following,P05,1,lr_tfidf,validation,0.39188558269846435,1,0.3740820102176698
+ca9a6c33-514a-4ca5-ae76-550e5a101fa9,IF-1516,llama3.2-3b,Structured instruction following,P05,1,lr_tfidf,validation,0.38503704288143686,1,0.3740820102176698
+1b2836df-065a-4446-933b-4a5fe52a16fd,IF-1516,llama3.2-3b,Structured instruction following,P05,1,lr_tfidf,validation,0.3905723931858788,1,0.3740820102176698
+dded3406-6e6f-4877-9bf1-4715005b4254,IF-2034,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.41425189221426834,1,0.3740820102176698
+58d52e29-0a7b-4ab8-bf6a-4e0b722988e3,IF-2034,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5059680628599913,1,0.3740820102176698
+97cb2858-5d20-4a8a-93a7-cc9c48637130,IF-2034,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.35526364687457257,0,0.3740820102176698
+a4d3646b-b36b-4877-887b-034ff39a4bed,IF-2577,llama3.2-3b,Structured instruction following,P07,1,lr_tfidf,validation,0.6561870402686426,1,0.3740820102176698
+42abd6ca-6636-4912-9ce1-133dc4df84f8,IF-2577,llama3.2-3b,Structured instruction following,P07,1,lr_tfidf,validation,0.5869650767910425,1,0.3740820102176698
+e4b43b92-dfe2-4741-9241-2827c2c89983,IF-2577,llama3.2-3b,Structured instruction following,P07,1,lr_tfidf,validation,0.6281414487527119,1,0.3740820102176698
+9c974b4c-0aa6-4211-b601-46408012e9d9,IF-3150,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5366195352359303,1,0.3740820102176698
+34ffeca2-7483-4ecb-a44c-3e4a3cbf0503,IF-3150,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.6006457066484874,1,0.3740820102176698
+6d4c9afc-77eb-4330-b038-a79cdf13461c,IF-3150,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.6515689425170367,1,0.3740820102176698
+55773d7a-f4e1-4c9a-afeb-3fb766541407,WC-015,llama3.2-3b,Programming and technical,P09,1,lr_tfidf,validation,0.5455176668657659,1,0.3740820102176698
+0ec43cb8-38d0-432a-9cb5-9a277c7a62f3,WC-015,llama3.2-3b,Programming and technical,P09,1,lr_tfidf,validation,0.5909263399408715,1,0.3740820102176698
+2381c452-bf95-4c05-afa5-ad8ae5e1a391,WC-015,llama3.2-3b,Programming and technical,P09,1,lr_tfidf,validation,0.6699478058171199,1,0.3740820102176698
+05503c19-56b4-4487-b7ab-c97923263bd0,WC-056,llama3.2-3b,Programming and technical,P12,1,lr_tfidf,validation,0.42463403666069177,1,0.3740820102176698
+f695554a-1ee9-430b-8057-97e289834f96,WC-056,llama3.2-3b,Programming and technical,P12,1,lr_tfidf,validation,0.4968717923375766,1,0.3740820102176698
+8c51df5c-fecb-4a52-9840-a9e629ae5c78,WC-056,llama3.2-3b,Programming and technical,P12,1,lr_tfidf,validation,0.6419811560106268,1,0.3740820102176698
+ba22df33-2d58-441d-84e5-45fa0170bd6b,WC-079,llama3.2-3b,English language and wording,BK1,1,lr_tfidf,validation,0.24389533988658485,0,0.3740820102176698
+026a0ad4-19f8-42c5-9ffe-75876df419ad,WC-079,llama3.2-3b,English language and wording,BK1,1,lr_tfidf,validation,0.4999322203746598,1,0.3740820102176698
+89362d65-011e-499c-9e98-3961bbdff1ac,WC-079,llama3.2-3b,English language and wording,BK1,1,lr_tfidf,validation,0.3500931506033949,0,0.3740820102176698
+53c04244-0753-41b7-bbb9-dfaa00331f7b,WC-099,llama3.2-3b,Creative and open-ended,BK2,1,lr_tfidf,validation,0.6506081576963393,1,0.3740820102176698
+f8126883-c65a-47a7-8431-0487c0122747,WC-099,llama3.2-3b,Creative and open-ended,BK2,1,lr_tfidf,validation,0.6162766704629838,1,0.3740820102176698
+80fc3f68-0e27-40f9-acef-8e3c03107286,WC-099,llama3.2-3b,Creative and open-ended,BK2,1,lr_tfidf,validation,0.703014980303993,1,0.3740820102176698
+dca68822-1d0d-4770-8eb2-7108f692a46e,WC-140,llama3.2-3b,General Q&A and explanation,P01,1,lr_tfidf,validation,0.5946804186297231,1,0.3740820102176698
+a50b39e7-89c0-4830-8319-7035bfba12d9,WC-140,llama3.2-3b,General Q&A and explanation,P01,1,lr_tfidf,validation,0.6305924000850368,1,0.3740820102176698
+772928a2-8d6b-47f5-a24d-268e0de17184,WC-140,llama3.2-3b,General Q&A and explanation,P01,1,lr_tfidf,validation,0.7084784263726176,1,0.3740820102176698
+f3701647-cb64-46d0-83cc-1d10ec894f52,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.6140948062129391,1,0.3740820102176698
+027185ea-fd32-44a6-8f33-0ec0587f44ee,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.7537744496442546,1,0.3740820102176698
+9aacf08c-5f58-48e5-afed-fc9f591d9d1f,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.6251007192129631,1,0.3740820102176698
+fb1a8afe-2513-42aa-a4d9-b022b653ef1f,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.1668713951417929,0,0.3740820102176698
+f5233e7b-70b3-40fa-8256-147f6923c6c4,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.1668713951417929,0,0.3740820102176698
+36fa56af-1ed9-4203-b6f1-fea2157133fb,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,1,lr_tfidf,validation,0.1572740693422369,0,0.3740820102176698
+5692bb1b-c4ed-4a12-a357-a8314dd578e9,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.6027099909616807,1,0.3740820102176698
+49a16c77-8028-4e26-a7d3-7c2880e68954,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.5915279207548517,1,0.3740820102176698
+d4deb0c3-b89d-4c2c-bf5d-5d10ac85ed15,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.6041218555291541,1,0.3740820102176698
+f3be2bbf-57ec-46cf-bec0-adf75e856ac4,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.6879037852266472,1,0.3740820102176698
+d5e8ca7c-8481-4999-8873-dc90599ada7b,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.500973707055819,1,0.3740820102176698
+e580c2db-a5bd-4fca-83cd-547d1b83cf6a,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.5648288080193743,1,0.3740820102176698
+9f065a69-6699-4080-bc07-c7fc6347ee62,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.752936392458515,1,0.3740820102176698
+64bb055a-0f06-402a-b62b-629724f2848d,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.6965999974805724,1,0.3740820102176698
+94f6e2de-36a2-49ec-8ab1-4c05835d373d,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,1,lr_tfidf,validation,0.7409030040254465,1,0.3740820102176698
+16831293-ac95-4020-89f0-ed38ccb91d68,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.6274563021758941,1,0.3740820102176698
+8217641c-6191-4ad5-988f-896b61476254,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.6604323833113229,1,0.3740820102176698
+20e58f53-51a5-4a8f-a423-5549717f20cd,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.5684753723586978,1,0.3740820102176698
+55c7e304-0456-4636-a05d-c08518fb8f66,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5207889536260766,1,0.3740820102176698
+d2f1a6fd-c7ba-41b0-848a-faf26eb5927b,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.5913228953206062,1,0.3740820102176698
+d98aca99-b11c-43d3-b9fc-63e64df2a272,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,1,lr_tfidf,validation,0.633937513906432,1,0.3740820102176698
+2dac7425-c5b9-4f1f-8f0c-956bc6e5cc6c,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.615311372602955,1,0.3740820102176698
+219ccb46-8b4f-4b55-b0b4-852c036ffb47,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.6124097412814922,1,0.3740820102176698
+5b09c9ac-4b92-4112-b548-3c229abdbc4c,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,1,lr_tfidf,validation,0.7042570259162294,1,0.3740820102176698
+5bcdd565-ac36-479b-9112-89100276f264,WCNEW-985-14,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.6155467502614647,1,0.3740820102176698
+ad4755bd-9d46-485c-99b4-9980e9c6e382,WCNEW-985-14,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.5875101418186881,1,0.3740820102176698
+a0e1d96e-2ab2-452d-b264-70a1477f89ae,WCNEW-985-14,llama3.2-3b,Text transformation,P13,1,lr_tfidf,validation,0.6560355957751486,1,0.3740820102176698

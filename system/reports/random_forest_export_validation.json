@@ -1,0 +1,21 @@
+{
+  "source": "reconstructed_from_original_feature_tables",
+  "sklearn_version": "1.8.0",
+  "seed": 42,
+  "estimators": 500,
+  "train_rows": 2933,
+  "test_rows": 132,
+  "feature_count": 52,
+  "classes": [
+    "gemma3-4b",
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "heldout_accuracy": 0.9318181818181818,
+  "heldout_macro_f1": 0.8571672771672771,
+  "original_predictions_match": 129,
+  "original_train_sha256": "bede06340272044956d650b96d581c114e2c4d95f77094e072f3b919f734f558",
+  "original_predictions_total": 132
+}

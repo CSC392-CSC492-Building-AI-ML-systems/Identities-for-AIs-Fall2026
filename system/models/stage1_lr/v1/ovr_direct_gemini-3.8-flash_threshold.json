@@ -1,0 +1,7 @@
+{
+  "target": "gemini-3.8-flash",
+  "algorithm": "baseline_lr",
+  "approach": "ovr_direct",
+  "validation_threshold": 0.43109740424436105,
+  "max_false_alarm": 0.1
+}

@@ -1,0 +1,32 @@
+{
+  "trained_at_utc": "2026-11-04T20:26:44.126977+00:00",
+  "target_model": "gemini-3.8-flash",
+  "view": "all_personas",
+  "models": [
+    "rf",
+    "lr"
+  ],
+  "seed": 42,
+  "training_rows": 2518,
+  "validation_rows": 540,
+  "development_prompts": 210,
+  "validation_prompts": 45,
+  "positive_training": 628,
+  "negative_training": 1890,
+  "negative_models_training": [
+    "gemini-3.1-pro",
+    "llama3.1-8b",
+    "llama3.2-3b"
+  ],
+  "training_input_columns": [
+    "response_text"
+  ],
+  "label_rule": "1 if model_key equals target_model, else 0",
+  "threshold_selection": "validation only; maximum 10% baseline false alarm unless overridden",
+  "note": "No test data was read. Do not change settings after final test evaluation.",
+  "versions": {
+    "sklearn": "1.6.1",
+    "numpy": "1.26.3",
+    "pandas": "2.3.3"
+  }
+}

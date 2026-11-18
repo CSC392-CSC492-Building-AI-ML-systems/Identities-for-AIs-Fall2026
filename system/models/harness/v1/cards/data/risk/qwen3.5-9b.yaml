@@ -1,0 +1,73 @@
+model_key: qwen3.5-9b
+name: Qwen3.5 9B
+family: Qwen
+access: open
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Independent: Artificial Analysis AA-Omniscience score -56, with 14.7% accuracy and an 82% hallucination rate;
+      called a relative weakness of the small Qwen3.5 models.'
+    source:
+    - https://artificialanalysis.ai/articles/qwen3-5-small-models
+    own_test: null
+  confabulation:
+    evidence: moderate
+    value: High hallucination rate (82%) on AA-Omniscience. The developer does not discuss hallucination.
+    source:
+    - https://artificialanalysis.ai/articles/qwen3-5-small-models
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  data_leakage_model:
+    evidence: none
+    value: 'Not disclosed: training data is not described.'
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Runs on the bank's own hardware (we use Ollama locally), so prompts and answers never go to the developer. Risk
+      depends on how the bank hosts it.
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  security:
+    evidence: none
+    value: No model-specific security evidence found (no developer safety section; not in Phare).
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    - https://phare.giskard.ai
+    own_test: null
+  intellectual_property:
+    evidence: none
+    value: Training data not disclosed.
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: 'Tool and agent use evaluated: BFCL-V4 66.1, TAU2-Bench 79.1, OSWorld-Verified 41.8 (developer-reported).'
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  harmful_content:
+    evidence: none
+    value: No model-specific harmful-content results.
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  bias_fairness:
+    evidence: none
+    value: No model-specific bias results (not evidence that it is unbiased).
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: 'Model-specific footprint not disclosed. Note: it uses many tokens per answer (thinking on by default), which raises
+      inference energy.'
+    source:
+    - https://huggingface.co/Qwen/Qwen3.5-9B
+    - https://artificialanalysis.ai/articles/qwen3-5-small-models
+    own_test: null

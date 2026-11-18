@@ -1,0 +1,11 @@
+{
+  "family": "gemini",
+  "target_model": "gemini-3.8-flash",
+  "sibling_model": "gemini-3.1-pro",
+  "algorithm": "lr_tfidf",
+  "threshold": 0.4779589482468869,
+  "max_false_alarm": 0.1,
+  "selection": "validation_false_alarm_limit",
+  "positive_label": "target_model",
+  "note": "Valid conditional on two known models from this family, not an open-set detector"
+}

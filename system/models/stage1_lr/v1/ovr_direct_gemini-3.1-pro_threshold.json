@@ -1,0 +1,7 @@
+{
+  "target": "gemini-3.1-pro",
+  "algorithm": "baseline_lr",
+  "approach": "ovr_direct",
+  "validation_threshold": 0.29075532637467444,
+  "max_false_alarm": 0.1
+}

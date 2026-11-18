@@ -1,0 +1,7 @@
+{
+  "threshold": 0.3515524730489323,
+  "target_model": "gemini-3.1-pro",
+  "feature_set": "baseline_lr",
+  "max_false_alarm": 0.1,
+  "selection_split": "validation"
+}

@@ -1,0 +1,14 @@
+scope,metric,value
+stage2/harness,n_cases,2
+stage2/harness,accepted,0
+stage2/harness,acceptance_coverage,0.0
+stage2/harness,exact_accuracy_all_cases,
+stage2/harness,exact_accuracy_accepted,
+stage2/harness,unresolved,2
+stage2/harness,case_coverage_with_candidate,0.5
+stage2/harness,missing_replay_probe_errors,0
+stage2/harness,mock_judge_attempts,2
+stage2/harness,supported_identity_cases,2
+stage2/harness,out_of_supported_identity_cases,0
+stage2/harness,candidate_top1_accuracy_on_supported_with_candidate,
+stage2/harness,accepted_out_of_supported_identity_count,0

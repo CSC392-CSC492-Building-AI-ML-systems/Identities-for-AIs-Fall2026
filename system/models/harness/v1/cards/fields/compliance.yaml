@@ -1,0 +1,93 @@
+# Compliance card: does the model's licence, usage rules and documentation allow the bank to use it?
+#
+# filled_by:  research      = we look it up once per model and save it in data/compliance/<model_key>.yaml
+#             licence_library = taken automatically from collector/licences.yaml
+#             organization  = entered by the bank when it registers a deployment (not stored here)
+# level:      family  = still true if only the model family is known (shown for an "Unknown" version)
+#             version = only true for the exact model
+
+domain: compliance
+title: Compliance card
+purpose: Tells a compliance analyst whether the model's licence, usage rules and documentation allow the bank to use it.
+
+fields:
+  - id: developer
+    name: Developer of record
+    filled_by: research
+    level: family
+    where_open: Hugging Face organization; the licence text names the legal entity
+    where_closed: Developer's model page or terms
+    if_missing: Use the organization that publishes it and note "legal entity not stated"
+
+  - id: licence
+    name: Licence
+    filled_by: research
+    level: family
+    where_open: Hugging Face `license` field; LICENSE file
+    where_closed: Terms of service (they replace a licence)
+    if_missing: '"No licence found" (this is itself a red flag)'
+    note: Also set `licence_id` to an entry in collector/licences.yaml.
+
+  - id: key_licence_conditions
+    name: Key licence conditions
+    filled_by: licence_library
+    level: family
+    where_open: collector/licences.yaml (conditions, restrictions, bank_note)
+    where_closed: collector/licences.yaml (conditions, restrictions, bank_note)
+    if_missing: '"No conditions found"; link the licence text'
+
+  - id: base_model
+    name: Base model
+    filled_by: research
+    level: version
+    where_open: Hugging Face `base_model` field
+    where_closed: Not applicable
+    if_missing: Empty = original model, not a fine-tune. Check the model card text to confirm
+
+  - id: training_data
+    name: Training data disclosure
+    filled_by: research
+    level: family
+    where_open: Model card "Training Data" section; technical report
+    where_closed: System card / model card
+    if_missing: '"Not disclosed"'
+
+  - id: permitted_uses
+    name: Permitted / prohibited uses
+    filled_by: research
+    level: family
+    where_open: Model card "Intended use" / "Out-of-scope use"; acceptable use policy
+    where_closed: Usage policy
+    if_missing: Fall back to the licence's restrictions
+
+  - id: terms_of_service
+    name: Terms of service
+    filled_by: organization
+    level: version
+    where_open: Bank's vendor contract; hosting provider's terms
+    where_closed: Bank's vendor contract; API terms
+    if_missing: '"To be entered at registration"'
+
+  - id: official_documentation
+    name: Official documentation
+    filled_by: research
+    level: version
+    where_open: Does a model card or technical report exist?
+    where_closed: Does a system card or model card exist?
+    if_missing: '"None"'
+
+  - id: disclosed_risks
+    name: Disclosed risks
+    filled_by: research
+    level: family
+    where_open: Model card "Limitations" / "Ethical considerations"
+    where_closed: System card safety and limitations sections
+    if_missing: '"No risks disclosed"'
+
+  - id: audit_contact
+    name: Audit contact
+    filled_by: research
+    level: family
+    where_open: Model card contact; developer's reporting channels
+    where_closed: Developer's support, trust or safety reporting page
+    if_missing: Fall back to the developer's general contact

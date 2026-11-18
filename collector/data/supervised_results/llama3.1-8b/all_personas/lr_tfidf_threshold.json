@@ -1,0 +1,9 @@
+{
+  "algorithm": "lr_tfidf",
+  "target_model": "llama3.1-8b",
+  "view": "all_personas",
+  "threshold": 0.3900873409335276,
+  "selection": "validation_false_alarm_limit",
+  "max_false_alarm": 0.1,
+  "seed": 42
+}

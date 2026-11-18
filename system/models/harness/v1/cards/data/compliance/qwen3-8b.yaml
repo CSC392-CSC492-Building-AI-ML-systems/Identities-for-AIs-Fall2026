@@ -1,0 +1,36 @@
+model_key: qwen3-8b
+name: "Qwen3 8B"
+family: Qwen
+access: open
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: apache-2.0
+fields:
+  developer:
+    value: "Qwen Team, Alibaba Cloud (legal entity not stated on the model card)"
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  licence:
+    value: "Apache License 2.0 (Hugging Face license field: apache-2.0)"
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  base_model:
+    value: "Fine-tune of Qwen/Qwen3-8B-Base (the developer's own base model)"
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  training_data:
+    value: "Partial. About 36 trillion tokens in 119 languages: web text, books, code, STEM, PDF text extracted with Qwen2.5-VL, and synthetic data from Qwen2.5 models. Specific datasets and their licences are not disclosed."
+    source:
+      - "https://qwenlm.github.io/blog/qwen3/"
+      - "https://arxiv.org/abs/2505.09388"
+  permitted_uses:
+    value: "No usage policy published. The Apache 2.0 licence allows any use, including commercial, with no use restrictions; only notice and attribution conditions apply."
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  official_documentation:
+    value: "Yes: Hugging Face model card and the Qwen3 Technical Report (arXiv 2505.09388)"
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  disclosed_risks:
+    value: "No risks disclosed. The model card has no limitations or safety section, and the technical report does not discuss safety. Only usage cautions: greedy decoding can cause endless repetition."
+    source:
+      - "https://huggingface.co/Qwen/Qwen3-8B"
+      - "https://arxiv.org/abs/2505.09388"
+  audit_contact:
+    value: "No contact channel listed. Fall back to the Hugging Face community discussions on Qwen/Qwen3-8B or GitHub issues on QwenLM."
+    source: "https://huggingface.co/Qwen/Qwen3-8B"

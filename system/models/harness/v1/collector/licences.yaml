@@ -1,0 +1,213 @@
+# Licence summaries for the compliance card.
+# One entry per licence; applies_to lists the models it covers (model_key in models.yaml).
+# Plain-language summaries, not legal advice: the official text is the authority.
+# retrieved_at = the date the official text was read (licence terms can change).
+#
+# kind:                 open-source | custom-open-weight | proprietary-terms
+# commercial_use:       allowed | conditional | not-allowed
+# derivatives_inherit:  "yes" | "partial" | "no" | null (do fine-tuned copies carry the same terms?
+#                       null = not applicable, API-only model). Quoted so YAML keeps them as text.
+
+licences:
+  - licence_id: apache-2.0
+    name: "Apache License 2.0"
+    applies_to: [qwen3-8b, qwen3.5-9b]
+    applies_to_sources:
+      - "qwen3: LICENSE file in the Ollama library (Apache License, Version 2.0): https://ollama.com/library/qwen3/blobs/d18a5cc71b84"
+      - "qwen3.5: LICENSE in a Hugging Face copy of Qwen3.5-9B (Apache 2.0, Copyright 2026 Alibaba Cloud): https://huggingface.co/unsloth/Qwen3.5-9B/blob/main/LICENSE. TODO: confirm on the official Qwen/Qwen3.5-9B page"
+    kind: open-source
+    official_url: "https://www.apache.org/licenses/LICENSE-2.0"
+    commercial_use: allowed
+    conditions:                         # what you must do (Section 4, when redistributing)
+      - "Give recipients a copy of the licence (4a)"
+      - "Mark any modified files with a notice saying they were changed (4b)"
+      - "Keep the original copyright, patent and attribution notices (4c)"
+      - "Include the NOTICE file contents, if the work has one (4d)"
+    restrictions:                       # what you can't do
+      - "No right to use the licensor's trademarks or product names, beyond describing where the work came from (Section 6)"
+      - "Patent licence ends if you sue anyone claiming the work infringes a patent (Section 3)"
+    usage_policy_url: null              # no separate acceptable-use policy
+    derivatives_inherit: "partial"
+    derivatives_note: "A fine-tune can be released under different terms, but must keep the original notices (Sections 4 and 4c)."
+    bank_note: "Commercial use, including financial services, is allowed with no user limits or use restrictions. The model comes with no warranty, so the developer accepts no liability (Sections 7-8)."
+    retrieved_at: 2026-10-03
+
+  - licence_id: mit
+    name: "MIT License"
+    applies_to: []   # no current model; kept for the BIG-Bench Hard prompts and backup models (DeepSeek)
+    kind: open-source
+    official_url: "https://opensource.org/license/mit"
+    commercial_use: allowed
+    conditions:
+      - "Include the copyright notice and licence text in all copies or substantial portions"
+    restrictions: []                    # grants use "without restriction" beyond the condition above
+    usage_policy_url: null              # the licence has none; check the model's own docs
+    derivatives_inherit: "partial"
+    derivatives_note: "A fine-tune can use any terms, but must keep the original copyright notice and licence text."
+    bank_note: "The most permissive licence in our set: commercial use allowed with no user limits or use restrictions. Provided 'as is' with no warranty or liability."
+    retrieved_at: 2026-10-03
+
+  - licence_id: llama-3.1-community
+    name: "Llama 3.1 Community License Agreement"
+    applies_to: [llama3.1-8b]
+    version_date: 2024-07-23
+    kind: custom-open-weight
+    official_url: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+    commercial_use: conditional         # allowed, but with conditions and a user limit
+    conditions:
+      - "When distributing the model or a product using it, include a copy of the licence and show 'Built with Llama' (1.b.i)"
+      - "If outputs are used to train or improve an AI model that is shared, that model's name must start with 'Llama' (1.b.i)"
+      - "Keep the notice: 'Llama 3.1 is licensed under the Llama 3.1 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.' (1.b.iii)"
+      - "Follow applicable laws and the Acceptable Use Policy, which is part of the licence (1.b.iv)"
+    restrictions:
+      - "Organizations with over 700 million monthly active users (as of July 23, 2024) must request a separate licence from Meta (Section 2)"
+      - "No trademark rights except using 'Llama' as required above (5.a)"
+      - "All licences end if you sue Meta claiming Llama or its outputs infringe your IP (5.c)"
+      - "Meta can terminate the licence for any breach; you must then delete the model (Section 6)"
+      - "Governed by California law, California courts (Section 7)"
+    usage_policy_url: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/USE_POLICY.md"
+    usage_policy_bank_relevant:         # Acceptable Use Policy items that matter for a bank
+      - "No unlicensed practice of a profession, including financial practice"
+      - "No discrimination in the provision of credit, employment, housing or other economic benefits"
+      - "No collecting or inferring sensitive personal information without the consents required by law"
+      - "No fraud, and no representing outputs as human-generated"
+      - "Must disclose known dangers of the AI system to end users"
+    derivatives_inherit: "yes"
+    derivatives_note: "Fine-tunes stay under this licence: they must carry the licence, 'Built with Llama', and a name starting with 'Llama' if shared."
+    bank_note: "Allowed for a bank (all Canadian banks are far below 700M users), but conditional: the Acceptable Use Policy bans unlicensed financial advice and discriminatory credit decisions, and customer letters must not be presented as written by a person. A vendor swapping in a Llama fine-tune brings these obligations with it."
+    retrieved_at: 2026-10-03
+
+  - licence_id: openai-api-terms
+    name: "OpenAI Services Agreement + Usage Policies"
+    applies_to: [gpt-5.6-terra, gpt-5.6-luna] 
+    kind: proprietary-terms
+    official_url: "https://openai.com/policies/services-agreement/"
+    effective_date: 2026-01-01          # Services Agreement; Usage Policies effective 2025-10-29
+    commercial_use: allowed             # through a paid API account
+    conditions:
+      - "Follow the Usage Policies"
+      - "Customer owns its inputs and outputs"
+    restrictions:
+      - "No tailored advice that requires a licence (e.g. legal, medical) without a licensed professional involved (Usage Policies)"
+      - "No automating high-stakes decisions in financial activities, credit, insurance or employment without human review (Usage Policies)"
+      - "No profiling or distributing people's private information without authorization (Usage Policies)"
+      - "No using outputs to build models that compete with OpenAI; internal classifiers are an allowed exception (Services Agreement)"
+      - "Provided 'as is' with no warranty; governed by California law, arbitration in San Francisco (Services Agreement)"
+    usage_policy_url: "https://openai.com/policies/usage-policies/"
+    data_use: "API data is not used to train OpenAI's models unless the customer opts in."
+    derivatives_inherit: null
+    derivatives_note: "Not applicable; the model is only accessed through the API."
+    bank_note: "Usable by a bank through a paid account. Credit and other financial decisions need human review, and tailored financial advice needs a licensed professional involved. OpenAI also covers customers against third-party IP claims (with exclusions)."
+    retrieved_at: 2026-10-03
+
+  - licence_id: gemini-api-terms
+    name: "Gemini API Additional Terms of Service + Prohibited Use Policy"
+    applies_to: [gemini-3.8-flash, gemini-3.1-pro]
+    kind: proprietary-terms
+    official_url: "https://ai.google.dev/gemini-api/terms"
+    effective_date: 2026-03-23          # updated 2026-04-28
+    commercial_use: allowed
+    conditions:
+      - "Users must be 18 or older and in an available region"
+      - "Follow Google's Generative AI Prohibited Use Policy"
+    restrictions:
+      - "Free tier: Google uses prompts and responses to improve its products, and human reviewers may read them; do not submit sensitive, confidential or personal information"
+      - "No developing models that compete with the Services, and no reverse engineering"
+      - "Users in the EEA, Switzerland or UK must use paid services"
+    usage_policy_url: "https://policies.google.com/terms/generative-ai/use-policy"
+    data_use: "Free tier: used to improve Google products, may be human-reviewed. Paid tier: not used to improve products; logged only for safety and abuse detection."
+    derivatives_inherit: null
+    derivatives_note: "Not applicable; the model is only accessed through the API."
+    bank_note: "A bank must use the paid tier for anything involving customer data, because free-tier inputs can be read by Google reviewers. Prompts with no personal data (e.g. research prompts) are fine on the free tier."
+    retrieved_at: 2026-10-03
+
+  - licence_id: llama-3.2-community
+    name: "Llama 3.2 Community License Agreement"
+    version_date: 2024-09-25
+    applies_to: [llama3.2-3b]
+    kind: custom-open-weight
+    official_url: "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/blob/main/LICENSE.txt"   # same text for all Llama 3.2 models
+    commercial_use: conditional
+    conditions:
+      - "When distributing the model or a product using it, include a copy of the licence and prominently display 'Built with Llama' (1.b.i)"
+      - "If outputs are used to create, train, fine-tune or improve an AI model that is distributed or made available, include 'Llama' at the beginning of that model's name (1.b.i)"
+      - "Keep the notice: 'Llama 3.2 is licensed under the Llama 3.2 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.' (1.b.iii)"
+      - "Follow applicable laws and the Llama 3.2 Acceptable Use Policy, which is part of the licence (1.b.iv)"
+    restrictions:
+      - "Organizations with over 700 million monthly active users (as of September 25, 2024) must request a separate licence from Meta (Section 2)"
+      - "Multimodal Llama 3.2 models only: no licence for individuals living in, or companies based in, the European Union; end users of a product built with them are not affected (Acceptable Use Policy). llama3.2:3b is text-only, so this does not apply to it"
+      - "All licences end if you sue Meta claiming Llama or its outputs infringe your IP (5.c)"
+      - "Meta can terminate the licence for any breach; you must then delete the model (Section 6)"
+      - "Governed by California law, California courts (Section 7)"
+    usage_policy_url: "https://www.llama.com/llama3_2/use-policy"
+    usage_policy_source: "Text read from a copy of USE_POLICY.md: https://huggingface.co/e7mac/vision-encoder/blob/main/USE_POLICY.md"
+    usage_policy_bank_relevant:
+      - "No unauthorized or unlicensed practice of any profession, including financial (1.4)"
+      - "No discrimination or other unlawful or harmful conduct in providing employment, benefits, credit, housing or other essential services (1.3)"
+      - "No collecting, processing, disclosing, generating or inferring private or sensitive information about individuals without the legal right to do so (1.5)"
+      - "No representing that the use of Llama 3.2 or its outputs are human-generated (3)"
+      - "Must disclose known dangers of the AI system to end users (4)"
+    derivatives_inherit: "yes"
+    derivatives_note: "Same as Llama 3.1: fine-tunes stay under this licence, and a shared model trained on Llama outputs must have a name starting with 'Llama'. Open question: whether this applies to a model-identification classifier trained on Llama outputs and shared."
+    bank_note: "Same as Llama 3.1: allowed for a bank, but the Acceptable Use Policy bans unlicensed financial advice and discriminatory credit decisions, and customer letters must not be presented as written by a person."
+    retrieved_at: 2026-10-12
+
+  - licence_id: gemma-terms
+    name: "Gemma Terms of Use + Gemma Prohibited Use Policy"
+    version_date: 2026-04-01            # Terms of Use last modified; Prohibited Use Policy last modified 2024-02-21
+    applies_to: [gemma3-4b]
+    applies_to_note: "Gemma 3 is listed in the Terms' Appendix. Gemma 4 has its own licence, so this entry does not cover it."
+    kind: custom-open-weight
+    official_url: "https://ai.google.dev/gemma/terms"
+    commercial_use: conditional         # allowed, as long as the Prohibited Use Policy is followed
+    conditions:
+      - "When distributing Gemma or a Model Derivative, make the use restrictions (3.2) enforceable in your own terms and tell downstream users they apply (3.1)"
+      - "Give all recipients a copy of the Terms; mark modified files (3.1)"
+      - "Include a NOTICE file: 'Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms' (3.1; not required when offered only as a hosted service)"
+      - "Follow the Prohibited Use Policy and applicable law (3.2)"
+    restrictions:
+      - "Google may restrict usage it reasonably believes breaks the Terms, remotely or otherwise (3.2)"
+      - "'Model Derivatives' include models trained on Gemma's outputs or synthetic data to perform similarly to Gemma, e.g. distillation (1.1(e)). Outputs themselves are not derivatives"
+      - "No rights to Google trademarks, and no implying Google endorsement (4.2)"
+      - "Google can terminate for breach; you must then delete Gemma and any Model Derivatives (4.5)"
+      - "Governed by California law, courts of Santa Clara County (4.6)"
+    usage_policy_url: "https://ai.google.dev/gemma/prohibited_use_policy"
+    usage_policy_bank_relevant:
+      - "No unauthorized or unlicensed practice of any profession, including financial"
+      - "No automated decisions in domains that affect material or individual rights or well-being, such as finance, employment, housing and insurance"
+      - "No content that unfairly harms people based on sensitive or protected characteristics"
+      - "No collecting, processing or inferring sensitive personal information without the required rights and consents"
+      - "No claiming AI-generated content was made by a person in order to deceive"
+    outputs: "Google claims no rights in outputs; the user is responsible for them and their use (3.3)"
+    derivatives_inherit: "yes"
+    derivatives_note: "Fine-tunes and models distilled from Gemma outputs must carry the same use restrictions. A classifier that identifies models does not perform like Gemma, so it likely does not count as a Model Derivative."
+    bank_note: "Allowed for a bank, but stricter than Apache 2.0: Gemma cannot make automated decisions about credit or other finance matters affecting customers, and cannot give unlicensed financial advice. A vendor swapping in a Gemma-based model brings these restrictions with it."
+    retrieved_at: 2026-10-12
+
+  - licence_id: anthropic-commercial-terms
+    name: "Anthropic Commercial Terms of Service + Usage Policy"
+    applies_to: [claude-sonnet-5.5, claude-haiku-4.5]
+    kind: proprietary-terms
+    official_url: "https://www.anthropic.com/legal/commercial-terms"
+    effective_date: null                # binding from when you accept the terms or first use the API
+    commercial_use: allowed             # through an API account
+    conditions:
+      - "Follow the Usage Policy, Supported Regions Policy and Service Specific Terms (D.2)"
+      - "Customer keeps rights in inputs and owns outputs; Anthropic assigns its rights in outputs to the customer (B)"
+    restrictions:
+      - "No using the Services to build a competing product, including training competing AI models; no reverse engineering or reselling (D.4)"
+      - "Provided 'as is'; no warranty that outputs are accurate (L.2)"
+      - "Outside the EEA, Switzerland and UK: California law; disputes go to arbitration in San Francisco (M.7, J.2)"
+    usage_policy_url: "https://www.anthropic.com/aup"
+    usage_policy_version: "The page shows a version effective 2026-11-12"
+    usage_policy_bank_relevant:
+      - "Finance and credit are high-risk areas: a qualified person must meaningfully review AI recommendations, with authority to change them"
+      - "People receiving advice or a decision in a high-risk area must be told AI was used"
+      - "Customer-facing chatbots must tell users they are talking to AI, at least at the start of each session"
+      - "No discriminatory practices; no collecting or accessing private information without permission"
+    data_use: "Anthropic may not train models on customer content from the Services (B)."
+    ip_indemnity: "Anthropic defends paid customers against third-party IP claims about their use or outputs, with exclusions (K.1)"
+    derivatives_inherit: null
+    derivatives_note: "Not applicable; the model is only accessed through the API."
+    bank_note: "Usable by a bank through an API account. Credit and financial recommendations need review by a qualified person, and customers must be told they are talking to AI. Anthropic does not train on API data."
+    retrieved_at: 2026-10-12

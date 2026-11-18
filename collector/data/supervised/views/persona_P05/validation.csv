@@ -1,0 +1,61 @@
+record_id,model_key,prompt_id,prompt_text,response_text,prompt_category,prompt_subcategory,persona_id,sample_index,split,prompt_group,collected_at,deployment_id,error,finish_reason,input_tokens,latency_ms,max_tokens,model_digest,output_tokens,prompt_expected_format,prompt_language,prompt_length,prompt_license,prompt_set_version,prompt_source,prompt_source_record_id,provider,quantization,reasoning_text,refused,requested_model,run_type,seed,served_model,tag,temperature
+0445b5e4-7d0d-4ba3-8bf9-230294e6da06,gemini-3.1-pro,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i fired up netflix to play,
+and binged all my weekend away.
+one episode done,
+then another begun,
+and now i'm asleep in the day.",Structured instruction following,Length and formatting constraints,P05,0,validation,ifeval,2026-10-17T17:32:20Z,,,stop,88,15451,4000,,38,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.1-pro-preview,library,,gemini-3.1-pro-preview,,0.7
+b745cd5d-4f7b-4dcf-a809-b75fdb8fc0e4,gemini-3.1-pro,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i opened up netflix to play
+and watched a whole season today
+my eyes are so red
+i should go to bed
+but i cannot pull myself away",Structured instruction following,Length and formatting constraints,P05,1,validation,ifeval,2026-10-17T17:32:32Z,,,stop,88,7975,4000,,33,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.1-pro-preview,library,,gemini-3.1-pro-preview,,0.7
+c8749ee4-4edb-46fd-ac7f-19a89d3aa75d,gemini-3.1-pro,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i opened up netflix at night,
+and watched till the morning brought light.
+the snacks were all gone,
+as i stifled a yawn,
+but the season finale was tight.",Structured instruction following,Length and formatting constraints,P05,2,validation,ifeval,2026-10-17T17:32:45Z,,,stop,88,9325,4000,,40,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.1-pro-preview,library,,gemini-3.1-pro-preview,,0.7
+731af4a2-e07b-4539-8bd7-79a3cdb567bb,gemini-3.8-flash,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i planned just one episode late in the night,
+but netflix kept streaming until morning light,
+my popcorn was gone,
+as hours rolled on,
+and sleep was completely forgotten from sight.",Structured instruction following,Length and formatting constraints,P05,0,validation,ifeval,2026-10-19T14:11:36Z,,,stop,88,10227,1200,,41,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.8-flash,library,,gemini-3.8-flash,,0.7
+1c1a4086-3dac-47f7-91d3-448f2ed813da,gemini-3.8-flash,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i sat on the couch with a mix
+of popcorn and shows on netflix
+the hours flew by
+the sun climbed the sky
+while screen light played magical tricks",Structured instruction following,Length and formatting constraints,P05,1,validation,ifeval,2026-10-19T14:11:51Z,,,stop,88,11172,1200,,34,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.8-flash,library,,gemini-3.8-flash,,0.7
+55adc25e-3c44-43d3-98d7-4093ec49dda7,gemini-3.8-flash,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","i sat on the couch late at night,
+with netflix my only real light,
+another show played,
+while slumber delayed,
+until morning was blindingly bright.",Structured instruction following,Length and formatting constraints,P05,2,validation,ifeval,2026-10-19T14:12:04Z,,,stop,88,9168,1200,,36,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,google,,,False,gemini-3.8-flash,library,,gemini-3.8-flash,,0.7
+2ca62d0f-7b6a-493d-bdb4-f84a58fa7f6d,llama3.1-8b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","softly glowing screen, a siren's call
+my fingers danced upon the remote's fall
+hours slipped away, lost in a haze
+as i devoured shows on netflix's daze
+morning light, my guilty secret's wall",Structured instruction following,Length and formatting constraints,P05,0,validation,ifeval,2026-10-15T15:19:54Z,,,stop,101,13805,1200,46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e,51,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.1:8b,library,1000,llama3.1:8b,,0.7
+a063fc46-2ae4-4080-9b71-f5105e8384c1,llama3.1-8b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","softly glowing screen in the night
+i lost myself in netflix's delight
+hours slipped away like falling sand
+my binge watching habit took command
+now morning's here, and i'm not right",Structured instruction following,Length and formatting constraints,P05,1,validation,ifeval,2026-10-15T15:20:03Z,,,stop,101,9072,1200,46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e,42,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.1:8b,library,1001,llama3.1:8b,,0.7
+0cf7017d-1751-4c93-af27-9f58cc97153d,llama3.1-8b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","softly glowing screens at night
+my binge watching episode took flight
+hours slipped away like falling sand
+as i scrolled through netflix's vast land
+my exhaustion came with morning light",Structured instruction following,Length and formatting constraints,P05,2,validation,ifeval,2026-10-15T15:20:12Z,,,stop,101,8294,1200,46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e,38,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.1:8b,library,1002,llama3.1:8b,,0.7
+3d856dda-9448-475b-893a-8540fa40d661,llama3.2-3b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","as i settled in for the night
+the show began, and i lost the fight
+hours slipped by like falling rain
+my snacks were eaten, my energy vain
+now i'm tired, and it's not right",Structured instruction following,Length and formatting constraints,P05,0,validation,ifeval,2026-10-15T13:38:18Z,,,stop,111,2832,1200,a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72,45,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.2:3b,library,1000,llama3.2:3b,,0.7
+ca9a6c33-514a-4ca5-ae76-550e5a101fa9,llama3.2-3b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","as i settled in for a lazy night
+netflix beckoned with its endless sight
+i clicked play and let the hours pass
+lost in stories that would forever last
+in a haze of screens, my sanity took flight",Structured instruction following,Length and formatting constraints,P05,1,validation,ifeval,2026-10-15T13:38:21Z,,,stop,111,2790,1200,a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72,46,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.2:3b,library,1001,llama3.2:3b,,0.7
+1b2836df-065a-4446-933b-4a5fe52a16fd,llama3.2-3b,IF-1516,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.","as i settled in for a lazy night
+my fingers danced across the remote's delight
+netflix beckoned, a siren's call
+i surrendered to the shows, standing tall
+and slept through dawn, in a binge-watching night",Structured instruction following,Length and formatting constraints,P05,2,validation,ifeval,2026-10-15T13:38:24Z,,,stop,111,2809,1200,a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72,50,poem,en,medium,Apache 2.0,training_v1,IFEval,key:1516,ollama,Q4_K_M,,False,llama3.2:3b,library,1002,llama3.2:3b,,0.7

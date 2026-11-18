@@ -1,0 +1,7 @@
+{
+  "target": "gemini-3.8-flash",
+  "algorithm": "baseline_rf",
+  "approach": "hierarchy_soft",
+  "validation_threshold": 0.2973285168590903,
+  "max_false_alarm": 0.1
+}

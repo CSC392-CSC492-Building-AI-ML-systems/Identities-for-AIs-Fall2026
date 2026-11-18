@@ -1,0 +1,21 @@
+{
+  "milestone": "Stage 2B - AI Harness integration",
+  "artifact": "harness/v1",
+  "artifact_files_checksummed": 74,
+  "reference_split": "sample_index 0 and 1 only, six fixed probes",
+  "unit_integration_test_count": 105,
+  "unit_integration_test_passed": 105,
+  "upstream_original_rules": "18/18 passed (also invoked by integration suite)",
+  "artifact_readiness": "passed",
+  "full_pipeline_readiness": "blocked by LoRA and Random Forest artifacts",
+  "original_harness_mock_judge_smoke": "passed, real rule/card execution with mock judge",
+  "stage1_to_harness_mock_judge_smoke": "passed, six probes requested and unresolved result handled",
+  "live_judge_calls": 0,
+  "real_judge_model_accuracy_measured": false,
+  "full_e2e_accuracy_measured": false,
+  "missing_dependencies": [
+    "LoRA PEFT adapter weights and pinned base-model commit",
+    "Random Forest fitted model bundle",
+    "Judge API key and network for real judge inference"
+  ]
+}

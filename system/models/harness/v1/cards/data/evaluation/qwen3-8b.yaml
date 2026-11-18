@@ -1,0 +1,39 @@
+model_key: qwen3-8b
+name: "Qwen3 8B"
+family: Qwen
+access: open
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "MMLU-Redux, GPQA-Diamond, C-Eval, LiveBench, IFEval, Arena-Hard, AlignBench, Creative Writing v3, WritingBench, MATH-500, AIME'24/'25, ZebraLogic, AutoLogi, BFCL v3, LiveCodeBench v5, CodeForces, Multi-IF, INCLUDE, MMMLU, MT-AIME2024, PolyMath, MLogiQA"
+    source: "https://arxiv.org/pdf/2505.09388"
+  benchmark_results:
+    value:
+      - {benchmark: MMLU-Redux, score: "87.5 thinking / 79.5 non-thinking", setting: "Tables 17-18"}
+      - {benchmark: GPQA-Diamond, score: "62.0 / 39.3", setting: "sampled 10 times"}
+      - {benchmark: IFEval (strict prompt), score: "85.0 / 83.0", setting: ""}
+      - {benchmark: Arena-Hard, score: "85.8 / 79.6", setting: ""}
+      - {benchmark: MATH-500, score: "97.4 / 87.4", setting: ""}
+      - {benchmark: AIME'25, score: "67.3 / 20.9", setting: "64 samples averaged"}
+      - {benchmark: LiveCodeBench v5, score: "57.5 / 22.8", setting: ""}
+      - {benchmark: BFCL v3, score: "68.1 / 60.2", setting: "tool use"}
+      - {benchmark: MMMLU (14 languages), score: "74.4 / 66.9", setting: "multilingual"}
+    source: "https://arxiv.org/pdf/2505.09388"
+  methodology:
+    value: "Thinking mode: temperature 0.6, top-p 0.95, top-k 20. Non-thinking: temperature 0.7, top-p 0.8, top-k 20, presence penalty 1.5. Max output 32,768 tokens (38,912 for AIME)."
+    source: "https://arxiv.org/html/2505.09388"
+  evaluated_version:
+    value: "Qwen3-8B as released (April 29, 2025), reported in the Qwen3 Technical Report (May 14, 2025). Results differ a lot between thinking and non-thinking mode."
+    source: "https://arxiv.org/abs/2505.09388"
+  known_limitations:
+    value: "No limitations section published. Usage cautions only: greedy decoding causes repetition; long-context scaling can hurt short texts. Thinking mode uses many tokens (in our data, 357 of 768 answers were cut off at 1,200 tokens)."
+    source: "https://huggingface.co/Qwen/Qwen3-8B"
+  capabilities:
+    value: [general knowledge, alignment and writing, mathematics and logic, coding, tool use, multilingual]
+    source: "https://arxiv.org/pdf/2505.09388"
+  provenance:
+    value: "Developer-reported by the Qwen Team (technical report). Independent: Phare safety benchmark (July 2026) includes Qwen 3 8B. Not reproduced by our project."
+    source:
+      - "https://arxiv.org/pdf/2505.09388"
+      - "https://phare.giskard.ai"

@@ -1,0 +1,193 @@
+target_model,algorithm,prompt_category,prompts,wins,mean_margin,win_rate
+gemini-3.1-pro,baseline_lr,Ambiguous and minimal,3,2,0.11336938507123917,0.6666666666666666
+gemini-3.1-pro,baseline_lr,Creative and open-ended,4,4,0.4370583916425925,1.0
+gemini-3.1-pro,baseline_lr,English language and wording,2,2,0.33404751830654705,1.0
+gemini-3.1-pro,baseline_lr,General Q&A and explanation,13,13,0.23817263539856073,1.0
+gemini-3.1-pro,baseline_lr,Multi-step reasoning,4,4,0.271699888301154,1.0
+gemini-3.1-pro,baseline_lr,Programming and technical,6,6,0.29588576325665694,1.0
+gemini-3.1-pro,baseline_lr,Structured instruction following,5,5,0.1423748924176073,1.0
+gemini-3.1-pro,baseline_lr,Text transformation,8,8,0.10401929006254618,1.0
+gemini-3.1-pro,baseline_rf,Ambiguous and minimal,3,1,0.09665046350837701,0.3333333333333333
+gemini-3.1-pro,baseline_rf,Creative and open-ended,4,4,0.7154012457188869,1.0
+gemini-3.1-pro,baseline_rf,English language and wording,2,2,0.281703445985659,1.0
+gemini-3.1-pro,baseline_rf,General Q&A and explanation,13,13,0.42321866004552144,1.0
+gemini-3.1-pro,baseline_rf,Multi-step reasoning,4,3,0.2492359116845805,0.75
+gemini-3.1-pro,baseline_rf,Programming and technical,6,6,0.6361606754247365,1.0
+gemini-3.1-pro,baseline_rf,Structured instruction following,5,4,0.09341287911027381,0.8
+gemini-3.1-pro,baseline_rf,Text transformation,8,6,0.1377331216315373,0.75
+gemini-3.1-pro,char_lr,Ambiguous and minimal,3,2,0.09549148576264675,0.6666666666666666
+gemini-3.1-pro,char_lr,Creative and open-ended,4,4,0.3712796321751143,1.0
+gemini-3.1-pro,char_lr,English language and wording,2,2,0.24456868212701866,1.0
+gemini-3.1-pro,char_lr,General Q&A and explanation,13,12,0.18503142729877642,0.9230769230769231
+gemini-3.1-pro,char_lr,Multi-step reasoning,4,4,0.21281359417128853,1.0
+gemini-3.1-pro,char_lr,Programming and technical,6,6,0.24279623836720873,1.0
+gemini-3.1-pro,char_lr,Structured instruction following,5,4,0.10657254992487657,0.8
+gemini-3.1-pro,char_lr,Text transformation,8,8,0.0826759235217299,1.0
+gemini-3.1-pro,hybrid_lr,Ambiguous and minimal,3,3,0.20195723652049327,1.0
+gemini-3.1-pro,hybrid_lr,Creative and open-ended,4,4,0.8030443973397525,1.0
+gemini-3.1-pro,hybrid_lr,English language and wording,2,2,0.37361979764444525,1.0
+gemini-3.1-pro,hybrid_lr,General Q&A and explanation,13,12,0.5575857046788654,0.9230769230769231
+gemini-3.1-pro,hybrid_lr,Multi-step reasoning,4,4,0.47143423590764777,1.0
+gemini-3.1-pro,hybrid_lr,Programming and technical,6,6,0.8236054966995962,1.0
+gemini-3.1-pro,hybrid_lr,Structured instruction following,5,2,0.1158744670095245,0.4
+gemini-3.1-pro,hybrid_lr,Text transformation,8,8,0.24968563482260514,1.0
+gemini-3.1-pro,rich_rf,Ambiguous and minimal,3,1,0.03572788875850021,0.3333333333333333
+gemini-3.1-pro,rich_rf,Creative and open-ended,4,4,0.6938627585072538,1.0
+gemini-3.1-pro,rich_rf,English language and wording,2,2,0.2937444970162939,1.0
+gemini-3.1-pro,rich_rf,General Q&A and explanation,13,13,0.41106157698206747,1.0
+gemini-3.1-pro,rich_rf,Multi-step reasoning,4,4,0.25715603616389227,1.0
+gemini-3.1-pro,rich_rf,Programming and technical,6,6,0.6361856181104221,1.0
+gemini-3.1-pro,rich_rf,Structured instruction following,5,5,0.07392238153545966,1.0
+gemini-3.1-pro,rich_rf,Text transformation,8,6,0.1388427170239471,0.75
+gemini-3.1-pro,word_lr,Ambiguous and minimal,3,2,0.06621244719892129,0.6666666666666666
+gemini-3.1-pro,word_lr,Creative and open-ended,4,4,0.2508450456199437,1.0
+gemini-3.1-pro,word_lr,English language and wording,2,2,0.2114856608541665,1.0
+gemini-3.1-pro,word_lr,General Q&A and explanation,13,13,0.15241212029418486,1.0
+gemini-3.1-pro,word_lr,Multi-step reasoning,4,4,0.14538353544858207,1.0
+gemini-3.1-pro,word_lr,Programming and technical,6,6,0.17422742769927815,1.0
+gemini-3.1-pro,word_lr,Structured instruction following,5,5,0.09338481898013744,1.0
+gemini-3.1-pro,word_lr,Text transformation,8,7,0.052308431665024975,0.875
+gemini-3.8-flash,baseline_lr,Ambiguous and minimal,3,2,0.11336938507124157,0.6666666666666666
+gemini-3.8-flash,baseline_lr,Creative and open-ended,4,4,0.4370583916425957,1.0
+gemini-3.8-flash,baseline_lr,English language and wording,2,2,0.33404751830655116,1.0
+gemini-3.8-flash,baseline_lr,General Q&A and explanation,13,13,0.2381726353985638,1.0
+gemini-3.8-flash,baseline_lr,Multi-step reasoning,4,4,0.27169988830115493,1.0
+gemini-3.8-flash,baseline_lr,Programming and technical,6,6,0.2958857632566614,1.0
+gemini-3.8-flash,baseline_lr,Structured instruction following,5,5,0.14237489241760976,1.0
+gemini-3.8-flash,baseline_lr,Text transformation,8,8,0.10401929006254776,1.0
+gemini-3.8-flash,baseline_rf,Ambiguous and minimal,3,1,0.0966504635083771,0.3333333333333333
+gemini-3.8-flash,baseline_rf,Creative and open-ended,4,4,0.7154012457188867,1.0
+gemini-3.8-flash,baseline_rf,English language and wording,2,2,0.2817034459856591,1.0
+gemini-3.8-flash,baseline_rf,General Q&A and explanation,13,13,0.42321866004552144,1.0
+gemini-3.8-flash,baseline_rf,Multi-step reasoning,4,3,0.24923591168458067,0.75
+gemini-3.8-flash,baseline_rf,Programming and technical,6,6,0.6361606754247365,1.0
+gemini-3.8-flash,baseline_rf,Structured instruction following,5,4,0.09341287911027374,0.8
+gemini-3.8-flash,baseline_rf,Text transformation,8,6,0.13773312163153734,0.75
+gemini-3.8-flash,char_lr,Ambiguous and minimal,3,2,0.09549148576264675,0.6666666666666666
+gemini-3.8-flash,char_lr,Creative and open-ended,4,4,0.37127963217511384,1.0
+gemini-3.8-flash,char_lr,English language and wording,2,2,0.2445686821270184,1.0
+gemini-3.8-flash,char_lr,General Q&A and explanation,13,12,0.18503142729877642,0.9230769230769231
+gemini-3.8-flash,char_lr,Multi-step reasoning,4,4,0.21281359417128812,1.0
+gemini-3.8-flash,char_lr,Programming and technical,6,6,0.24279623836720843,1.0
+gemini-3.8-flash,char_lr,Structured instruction following,5,4,0.10657254992487675,0.8
+gemini-3.8-flash,char_lr,Text transformation,8,8,0.08267592352172984,1.0
+gemini-3.8-flash,hybrid_lr,Ambiguous and minimal,3,3,0.20195736680734988,1.0
+gemini-3.8-flash,hybrid_lr,Creative and open-ended,4,4,0.8030404223996088,1.0
+gemini-3.8-flash,hybrid_lr,English language and wording,2,2,0.3736228820596325,1.0
+gemini-3.8-flash,hybrid_lr,General Q&A and explanation,13,12,0.5575845788743133,0.9230769230769231
+gemini-3.8-flash,hybrid_lr,Multi-step reasoning,4,4,0.47143629645055884,1.0
+gemini-3.8-flash,hybrid_lr,Programming and technical,6,6,0.8236048585663714,1.0
+gemini-3.8-flash,hybrid_lr,Structured instruction following,5,2,0.11587103343863432,0.4
+gemini-3.8-flash,hybrid_lr,Text transformation,8,8,0.24968466989823718,1.0
+gemini-3.8-flash,rich_rf,Ambiguous and minimal,3,1,0.0357278887585001,0.3333333333333333
+gemini-3.8-flash,rich_rf,Creative and open-ended,4,4,0.6938627585072539,1.0
+gemini-3.8-flash,rich_rf,English language and wording,2,2,0.2937444970162939,1.0
+gemini-3.8-flash,rich_rf,General Q&A and explanation,13,13,0.41106157698206736,1.0
+gemini-3.8-flash,rich_rf,Multi-step reasoning,4,4,0.25715603616389215,1.0
+gemini-3.8-flash,rich_rf,Programming and technical,6,6,0.6361856181104221,1.0
+gemini-3.8-flash,rich_rf,Structured instruction following,5,5,0.07392238153545971,1.0
+gemini-3.8-flash,rich_rf,Text transformation,8,6,0.1388427170239471,0.75
+gemini-3.8-flash,word_lr,Ambiguous and minimal,3,2,0.06621244719892135,0.6666666666666666
+gemini-3.8-flash,word_lr,Creative and open-ended,4,4,0.25084504561994303,1.0
+gemini-3.8-flash,word_lr,English language and wording,2,2,0.2114856608541663,1.0
+gemini-3.8-flash,word_lr,General Q&A and explanation,13,13,0.1524121202941848,1.0
+gemini-3.8-flash,word_lr,Multi-step reasoning,4,4,0.14538353544858168,1.0
+gemini-3.8-flash,word_lr,Programming and technical,6,6,0.174227427699278,1.0
+gemini-3.8-flash,word_lr,Structured instruction following,5,5,0.09338481898013731,1.0
+gemini-3.8-flash,word_lr,Text transformation,8,7,0.052308431665024864,0.875
+llama3.1-8b,baseline_lr,Ambiguous and minimal,3,2,-0.05816740875105686,0.6666666666666666
+llama3.1-8b,baseline_lr,Creative and open-ended,4,4,0.0515873131128098,1.0
+llama3.1-8b,baseline_lr,English language and wording,2,2,0.07457748296510736,1.0
+llama3.1-8b,baseline_lr,General Q&A and explanation,13,9,0.03786035090463295,0.6923076923076923
+llama3.1-8b,baseline_lr,Multi-step reasoning,4,4,0.07811891380223883,1.0
+llama3.1-8b,baseline_lr,Programming and technical,6,5,0.024153783053888416,0.8333333333333334
+llama3.1-8b,baseline_lr,Structured instruction following,5,2,0.023216193058367595,0.4
+llama3.1-8b,baseline_lr,Text transformation,8,5,0.04195112777173085,0.625
+llama3.1-8b,baseline_rf,Ambiguous and minimal,3,2,-0.10463330704474294,0.6666666666666666
+llama3.1-8b,baseline_rf,Creative and open-ended,4,4,0.07232404921391876,1.0
+llama3.1-8b,baseline_rf,English language and wording,2,1,-0.002521750283534435,0.5
+llama3.1-8b,baseline_rf,General Q&A and explanation,13,8,0.04987963769159675,0.6153846153846154
+llama3.1-8b,baseline_rf,Multi-step reasoning,4,4,0.10513071263125144,1.0
+llama3.1-8b,baseline_rf,Programming and technical,6,3,0.017329491170661838,0.5
+llama3.1-8b,baseline_rf,Structured instruction following,5,3,0.0377797605527103,0.6
+llama3.1-8b,baseline_rf,Text transformation,8,5,0.05115115744018674,0.625
+llama3.1-8b,char_lr,Ambiguous and minimal,3,2,-0.03658875316522651,0.6666666666666666
+llama3.1-8b,char_lr,Creative and open-ended,4,3,0.031174525182124033,0.75
+llama3.1-8b,char_lr,English language and wording,2,2,0.04561437853039199,1.0
+llama3.1-8b,char_lr,General Q&A and explanation,13,9,0.028130621378402963,0.6923076923076923
+llama3.1-8b,char_lr,Multi-step reasoning,4,4,0.038195260844710935,1.0
+llama3.1-8b,char_lr,Programming and technical,6,4,0.012662364826968012,0.6666666666666666
+llama3.1-8b,char_lr,Structured instruction following,5,2,0.02177864135657671,0.4
+llama3.1-8b,char_lr,Text transformation,8,5,0.02924550929383217,0.625
+llama3.1-8b,hybrid_lr,Ambiguous and minimal,3,2,-0.0032227690052819002,0.6666666666666666
+llama3.1-8b,hybrid_lr,Creative and open-ended,4,3,0.13677691794819713,0.75
+llama3.1-8b,hybrid_lr,English language and wording,2,2,0.15863073329412017,1.0
+llama3.1-8b,hybrid_lr,General Q&A and explanation,13,8,0.10146924274169454,0.6153846153846154
+llama3.1-8b,hybrid_lr,Multi-step reasoning,4,2,0.16320421329558868,0.5
+llama3.1-8b,hybrid_lr,Programming and technical,6,2,-0.11010938306947982,0.3333333333333333
+llama3.1-8b,hybrid_lr,Structured instruction following,5,3,0.06809667467268152,0.6
+llama3.1-8b,hybrid_lr,Text transformation,8,8,0.22169473357796102,1.0
+llama3.1-8b,rich_rf,Ambiguous and minimal,3,2,-0.11002497194086296,0.6666666666666666
+llama3.1-8b,rich_rf,Creative and open-ended,4,4,0.09710153789422234,1.0
+llama3.1-8b,rich_rf,English language and wording,2,2,0.055700224422218836,1.0
+llama3.1-8b,rich_rf,General Q&A and explanation,13,9,0.04982341386296808,0.6923076923076923
+llama3.1-8b,rich_rf,Multi-step reasoning,4,4,0.11444236241157463,1.0
+llama3.1-8b,rich_rf,Programming and technical,6,3,0.026071420674444568,0.5
+llama3.1-8b,rich_rf,Structured instruction following,5,3,0.058965379399538984,0.6
+llama3.1-8b,rich_rf,Text transformation,8,7,0.07392029320179466,0.875
+llama3.1-8b,word_lr,Ambiguous and minimal,3,2,-0.040203671840246126,0.6666666666666666
+llama3.1-8b,word_lr,Creative and open-ended,4,4,0.034227809481900684,1.0
+llama3.1-8b,word_lr,English language and wording,2,2,0.04633364818486435,1.0
+llama3.1-8b,word_lr,General Q&A and explanation,13,9,0.015977330611467482,0.6923076923076923
+llama3.1-8b,word_lr,Multi-step reasoning,4,4,0.05603360145360188,1.0
+llama3.1-8b,word_lr,Programming and technical,6,5,0.016405093406793903,0.8333333333333334
+llama3.1-8b,word_lr,Structured instruction following,5,2,0.01250348410818829,0.4
+llama3.1-8b,word_lr,Text transformation,8,5,0.019811989202438013,0.625
+llama3.2-3b,baseline_lr,Ambiguous and minimal,3,2,-0.05816740875105728,0.6666666666666666
+llama3.2-3b,baseline_lr,Creative and open-ended,4,4,0.05158731311280994,1.0
+llama3.2-3b,baseline_lr,English language and wording,2,2,0.07457748296510719,1.0
+llama3.2-3b,baseline_lr,General Q&A and explanation,13,9,0.037860350904632974,0.6923076923076923
+llama3.2-3b,baseline_lr,Multi-step reasoning,4,4,0.07811891380223877,1.0
+llama3.2-3b,baseline_lr,Programming and technical,6,5,0.024153783053888406,0.8333333333333334
+llama3.2-3b,baseline_lr,Structured instruction following,5,2,0.02321619305836763,0.4
+llama3.2-3b,baseline_lr,Text transformation,8,5,0.04195112777173083,0.625
+llama3.2-3b,baseline_rf,Ambiguous and minimal,3,2,-0.10463330704474282,0.6666666666666666
+llama3.2-3b,baseline_rf,Creative and open-ended,4,4,0.07232404921391877,1.0
+llama3.2-3b,baseline_rf,English language and wording,2,1,-0.0025217502835344907,0.5
+llama3.2-3b,baseline_rf,General Q&A and explanation,13,8,0.049879637691596715,0.6153846153846154
+llama3.2-3b,baseline_rf,Multi-step reasoning,4,4,0.10513071263125146,1.0
+llama3.2-3b,baseline_rf,Programming and technical,6,3,0.01732949117066182,0.5
+llama3.2-3b,baseline_rf,Structured instruction following,5,3,0.037779760552710304,0.6
+llama3.2-3b,baseline_rf,Text transformation,8,5,0.05115115744018679,0.625
+llama3.2-3b,char_lr,Ambiguous and minimal,3,2,-0.03658875316522595,0.6666666666666666
+llama3.2-3b,char_lr,Creative and open-ended,4,3,0.031174525182123394,0.75
+llama3.2-3b,char_lr,English language and wording,2,2,0.04561437853039246,1.0
+llama3.2-3b,char_lr,General Q&A and explanation,13,9,0.02813062137840296,0.6923076923076923
+llama3.2-3b,char_lr,Multi-step reasoning,4,4,0.038195260844710796,1.0
+llama3.2-3b,char_lr,Programming and technical,6,4,0.012662364826968234,0.6666666666666666
+llama3.2-3b,char_lr,Structured instruction following,5,2,0.021778641356576443,0.4
+llama3.2-3b,char_lr,Text transformation,8,5,0.029245509293832295,0.625
+llama3.2-3b,hybrid_lr,Ambiguous and minimal,3,2,-0.003222865918350156,0.6666666666666666
+llama3.2-3b,hybrid_lr,Creative and open-ended,4,3,0.13677208654449602,0.75
+llama3.2-3b,hybrid_lr,English language and wording,2,2,0.15863178885688214,1.0
+llama3.2-3b,hybrid_lr,General Q&A and explanation,13,8,0.10146554196078048,0.6153846153846154
+llama3.2-3b,hybrid_lr,Multi-step reasoning,4,2,0.16320664215057254,0.5
+llama3.2-3b,hybrid_lr,Programming and technical,6,2,-0.11011569862277243,0.3333333333333333
+llama3.2-3b,hybrid_lr,Structured instruction following,5,3,0.0680917687038618,0.6
+llama3.2-3b,hybrid_lr,Text transformation,8,8,0.22169150280757882,1.0
+llama3.2-3b,rich_rf,Ambiguous and minimal,3,2,-0.11002497194086308,0.6666666666666666
+llama3.2-3b,rich_rf,Creative and open-ended,4,4,0.09710153789422234,1.0
+llama3.2-3b,rich_rf,English language and wording,2,2,0.05570022442221881,1.0
+llama3.2-3b,rich_rf,General Q&A and explanation,13,9,0.04982341386296808,0.6923076923076923
+llama3.2-3b,rich_rf,Multi-step reasoning,4,4,0.11444236241157467,1.0
+llama3.2-3b,rich_rf,Programming and technical,6,3,0.026071420674444633,0.5
+llama3.2-3b,rich_rf,Structured instruction following,5,3,0.05896537939953893,0.6
+llama3.2-3b,rich_rf,Text transformation,8,7,0.07392029320179472,0.875
+llama3.2-3b,word_lr,Ambiguous and minimal,3,2,-0.04020367184024609,0.6666666666666666
+llama3.2-3b,word_lr,Creative and open-ended,4,4,0.034227809481900684,1.0
+llama3.2-3b,word_lr,English language and wording,2,2,0.04633364818486449,1.0
+llama3.2-3b,word_lr,General Q&A and explanation,13,9,0.0159773306114675,0.6923076923076923
+llama3.2-3b,word_lr,Multi-step reasoning,4,4,0.05603360145360192,1.0
+llama3.2-3b,word_lr,Programming and technical,6,5,0.016405093406793858,0.8333333333333334
+llama3.2-3b,word_lr,Structured instruction following,5,2,0.012503484108188545,0.4
+llama3.2-3b,word_lr,Text transformation,8,5,0.019811989202437992,0.625

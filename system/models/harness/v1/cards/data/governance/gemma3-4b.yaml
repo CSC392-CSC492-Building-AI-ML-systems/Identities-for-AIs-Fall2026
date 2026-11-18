@@ -1,0 +1,18 @@
+model_key: gemma3-4b
+name: "Gemma 3 4B Instruct"
+family: Gemma
+access: open
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "Hugging Face google/gemma-3-4b-it; run locally as Ollama tag gemma3:4b. Ollama digest recorded by Pragya: 68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7."
+    source:
+      - "https://ai.google.dev/gemma/docs/core/model_card_3"
+      - "https://ollama.com/library/gemma3"
+  rereview_triggers:
+    value: "Scan detects drift; changes to the Gemma Terms of Use (last modified April 1, 2026) or Prohibited Use Policy; a new Gemma release. Google may restrict usage it believes breaks the Terms."
+    source: "https://ai.google.dev/gemma/terms"
+  support_status:
+    value: "Superseded by Gemma 4 (released under its own licence). No end-of-support notice found for Gemma 3. Open weights stay downloadable."
+    source: "https://ai.google.dev/gemma/terms"

@@ -1,0 +1,17 @@
+{
+  "created_at_utc": "2026-11-05T19:23:26.628791+00:00",
+  "data_root": "collector\\data\\supervised",
+  "view": "all_personas",
+  "models": [
+    "baseline_rf",
+    "baseline_lr"
+  ],
+  "seed": 42,
+  "max_false_alarm": 0.1,
+  "train_split": "development",
+  "validation_split": "validation",
+  "test_read": false,
+  "purpose": "known-four-model family->within-family gating for single-target Boolean change detection",
+  "score_warning": "Class-weighted model outputs are uncalibrated; soft products are heuristic scores, not verified probabilities.",
+  "unknown_family_warning": "The family stage is closed-set Gemini vs Llama. A never-seen family is forced into one of these and cannot be reliably identified as unknown."
+}

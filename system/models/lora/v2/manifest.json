@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "lora/v2",
+  "adapter": "lora",
+  "stage": 2,
+  "kind": "peft_adapter",
+  "supported_models": [
+    "gemma3-4b",
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "required_files": [
+    {
+      "path": "adapter_model.safetensors",
+      "sha256": "608766ab3742c4831e2a02903c55828d48265f536d72d1afe959b3082611f966"
+    },
+    {
+      "path": "adapter_config.json",
+      "sha256": "b35e7a1485fc2f63b73a5c3ea8214fcbec604dc326ee0a83d196f6fcb03aeea7"
+    }
+  ],
+  "options": {
+    "base_model": "Qwen/Qwen2.5-0.5B",
+    "max_tokens": 512,
+    "label_order": [
+      "gemma3-4b",
+      "llama3.1-8b",
+      "llama3.2-3b",
+      "qwen3-8b",
+      "qwen3.5-9b"
+    ],
+    "base_model_revision": "main",
+    "acceptance_policy": {
+      "mode": "review_only"
+    },
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "classifier_head_shape": [
+      5,
+      896
+    ],
+    "label_order_status": "provisional_unconfirmed"
+  },
+  "provenance": {
+    "status": "checkpoint_imported_inference_unvalidated",
+    "source": "user_supplied_my_lora_adapter.zip",
+    "source_zip_sha256": "5766bafeea28b3befe6ba219620a17af176ad0fa3a7f096824ac2c2ae07f9274",
+    "checkpoint_base_model": "Qwen/Qwen2.5-0.5B",
+    "checkpoint_peft_version": "0.21.2",
+    "source_label_order_evidence": "not included in checkpoint; provisional order from original five-class notebook",
+    "base_revision_status": "main_unpinned_replace_with_training_commit",
+    "note": "Contains real five-class weights and trained score head. No real inference or label parity yet validated. Review-only; never claim confirmed identity from LoRA."
+  }
+}

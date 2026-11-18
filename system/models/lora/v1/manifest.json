@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "lora/v1",
+  "adapter": "lora",
+  "stage": 2,
+  "kind": "peft_adapter",
+  "supported_models": [
+    "gemma3-4b",
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "required_files": [
+    {
+      "path": "adapter_model.safetensors",
+      "sha256": null
+    },
+    {
+      "path": "adapter_config.json",
+      "sha256": null
+    }
+  ],
+  "options": {
+    "base_model": "Qwen/Qwen2.5-1.5B",
+    "max_tokens": 512,
+    "label_order": [
+      "gemma3-4b",
+      "llama3.1-8b",
+      "llama3.2-3b",
+      "qwen3-8b",
+      "qwen3.5-9b"
+    ],
+    "base_model_revision": null,
+    "acceptance_policy": {
+      "mode": "review_only"
+    }
+  },
+  "provenance": {
+    "status": "metadata_only",
+    "training_dataset_id": null,
+    "note": "Notebook-trained LoRA weights not supplied; pin base commit and provide adapter + trained score head before inference. Review-only until a frozen open-set validation selects a threshold."
+  }
+}

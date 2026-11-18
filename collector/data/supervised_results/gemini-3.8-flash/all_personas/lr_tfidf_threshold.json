@@ -1,0 +1,9 @@
+{
+  "algorithm": "lr_tfidf",
+  "target_model": "gemini-3.8-flash",
+  "view": "all_personas",
+  "threshold": 0.43109740424436105,
+  "selection": "validation_false_alarm_limit",
+  "max_false_alarm": 0.1,
+  "seed": 42
+}

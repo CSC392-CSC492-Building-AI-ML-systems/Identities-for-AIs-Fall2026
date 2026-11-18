@@ -1,0 +1,42 @@
+model_key: qwen3.5-9b
+name: "Qwen3.5 9B"
+family: Qwen
+access: open
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "Language: MMLU-Pro, MMLU-Redux, C-Eval, SuperGPQA, GPQA Diamond, IFEval, IFBench, MultiChallenge, LongBench v2, HMMT, LiveCodeBench v6, BFCL-V4, TAU2-Bench, MMMLU and others. Vision: MMMU, MathVista, OCRBench, VideoMME, OSWorld-Verified and others."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  benchmark_results:
+    value:
+      - {benchmark: MMLU-Pro, score: 82.5, setting: "developer-reported"}
+      - {benchmark: GPQA Diamond, score: 81.7, setting: "developer-reported"}
+      - {benchmark: IFEval, score: 91.5, setting: ""}
+      - {benchmark: LiveCodeBench v6, score: 65.6, setting: ""}
+      - {benchmark: BFCL-V4, score: 66.1, setting: "tool use"}
+      - {benchmark: TAU2-Bench, score: 79.1, setting: "agentic"}
+      - {benchmark: MMMLU, score: 81.2, setting: "multilingual"}
+      - {benchmark: MMMU, score: 78.4, setting: "vision"}
+      - {benchmark: OSWorld-Verified, score: 41.8, setting: "computer use"}
+      - {benchmark: AA-Omniscience, score: "-56 (14.7% accuracy, 82% hallucination rate)", setting: "independent, Artificial Analysis"}
+    source:
+      - "https://huggingface.co/Qwen/Qwen3.5-9B"
+      - "https://artificialanalysis.ai/articles/qwen3-5-small-models"
+  methodology:
+    value: "Settings per row are not published; the model card gives general sampling recommendations and footnotes for a few benchmarks. Thinking mode is on by default."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  evaluated_version:
+    value: "Qwen3.5-9B as released (early March 2026), developer results on the Hugging Face model card."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  known_limitations:
+    value: "No limitations section published. Independent testing found a high hallucination rate (82% on AA-Omniscience) and very high token use. In our data, 631 of 768 answers were empty because thinking used all 1,200 tokens."
+    source: "https://artificialanalysis.ai/articles/qwen3-5-small-models"
+  capabilities:
+    value: [general knowledge, instruction following, long context, mathematics, coding, tool use and agents, multilingual, vision and video]
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  provenance:
+    value: "Developer-reported by the Qwen Team (model card) without per-benchmark settings. Independent: Artificial Analysis (March 5, 2026). Not reproduced by our project."
+    source:
+      - "https://huggingface.co/Qwen/Qwen3.5-9B"
+      - "https://artificialanalysis.ai/articles/qwen3-5-small-models"

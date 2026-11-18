@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-11-13T23:11:26.518723+00:00",
+  "config_sha256": "1d74a96e2d69587a04b612ed0206effcf882c51c2237140f5d3e9aeb145eab61",
+  "config_selection": {
+    "schema_version": "1.0",
+    "pipeline": {
+      "name": "fingerprinting_default"
+    },
+    "stage1": {
+      "adapter": "logistic_regression",
+      "artifact": "stage1_lr/v1",
+      "approach": "hierarchy_hard_route"
+    },
+    "stage2": {
+      "mode": "fallback",
+      "methods": [
+        {
+          "adapter": "lora",
+          "artifact": "lora/v1"
+        },
+        {
+          "adapter": "harness",
+          "artifact": "harness/v1"
+        },
+        {
+          "adapter": "random_forest",
+          "artifact": "random_forest/v1"
+        }
+      ]
+    },
+    "cards": {
+      "enabled": false
+    }
+  },
+  "requested": {
+    "scope": "stage2",
+    "methods": [
+      "harness"
+    ],
+    "stage2_mode": "fallback",
+    "allow_partial_e2e": false,
+    "run_all_stage1_approaches": false,
+    "judge_provider": "mock"
+  },
+  "dataset": {
+    "cases": 2,
+    "unique_source_observations": 2,
+    "per_dataset": {
+      "harness_bk1": 2
+    },
+    "per_split": {
+      "sample2_replay": 2
+    },
+    "per_persona": {
+      "BK1": 2
+    },
+    "per_actual_model": {
+      "gemini-3.1-pro": 1,
+      "llama3.1-8b": 1
+    },
+    "changed": 2,
+    "unchanged": 0,
+    "cases_with_complete_harness_probe_set": 2,
+    "cohorts_are_mixed": false,
+    "source_type": "user_supplied_normalized_jsonl",
+    "source_file": "harness_bk1_replay_cases.jsonl"
+  },
+  "artifact_readiness": {
+    "stage1_lr/v1": {
+      "ready": true,
+      "details": "ReadinessReport(artifact_id='stage1_lr/v1', ready=True, missing_files=(), checksum_failures=(), unchecksummed_files=())"
+    },
+    "harness/v1": {
+      "ready": true,
+      "details": "ReadinessReport(artifact_id='harness/v1', ready=True, missing_files=(), checksum_failures=(), unchecksummed_files=())"
+    }
+  },
+  "blocked": {},
+  "warnings": [
+    "Ground truth is used only for scoring, never passed to models.",
+    "Closed-set LoRA/RF candidates are NOT accepted while review_only; candidate accuracy differs from final resolution.",
+    "The included RF P13 split reuses known prompts and backend features. It is NOT unseen-prompt, unseen-family or deployment-transfer validation.",
+    "Confidence intervals assuming independent samples are not justified for repeated-source swap scenarios.",
+    "Harness mock provider does not measure true judge accuracy; Harness outcomes are diagnostic only."
+  ],
+  "dataset_source": "harness_bk1_replay_cases.jsonl",
+  "dataset_sha256": "5b0de76c21459427131c2db48a6a34f7d308d85ac4b953e6e3fe996e2a37346d",
+  "report_files": [
+    "stage2_harness.json"
+  ]
+}

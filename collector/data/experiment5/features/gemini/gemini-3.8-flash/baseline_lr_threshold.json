@@ -1,0 +1,7 @@
+{
+  "threshold": 0.4779589482468869,
+  "target_model": "gemini-3.8-flash",
+  "feature_set": "baseline_lr",
+  "max_false_alarm": 0.1,
+  "selection_split": "validation"
+}

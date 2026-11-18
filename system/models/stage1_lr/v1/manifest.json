@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "stage1_lr/v1",
+  "adapter": "logistic_regression",
+  "stage": 1,
+  "kind": "sklearn_model_bundle",
+  "supported_models": [
+    "gemini-3.1-pro",
+    "gemini-3.8-flash",
+    "llama3.1-8b",
+    "llama3.2-3b"
+  ],
+  "required_files": [
+    {
+      "path": "family_gemini_vs_llama.joblib",
+      "sha256": "79c1c0f576863e74cd2d06e94cafc5b2402d57d6644efa2e67b017c8846b03cb"
+    },
+    {
+      "path": "gemini_conditional_gemini-3.1-pro.joblib",
+      "sha256": "8140f83cc5a81f0364b88631dc55ac6638c894e52c422d56d79b298f4890ec44"
+    },
+    {
+      "path": "llama_conditional_llama3.1-8b.joblib",
+      "sha256": "5bd87fe3e3e85fb2b92df8ffc81ec5854e47fb87fbf16b904e0b68151b61f50e"
+    },
+    {
+      "path": "ovr_gemini-3.1-pro.joblib",
+      "sha256": "f5aa31bad8ad6f4f3fe6f34522ce226b2179ab210b0f574ca4115142d2e90a04"
+    },
+    {
+      "path": "ovr_gemini-3.8-flash.joblib",
+      "sha256": "9cb66e3e0e61b7193e248f9cdb3824a64075769b18e5def7eb759cf3c6388586"
+    },
+    {
+      "path": "ovr_llama3.1-8b.joblib",
+      "sha256": "d844c22191ffb641327678bc751a0ba1db4b01a5b6b52d20828356d4fb1b0e9c"
+    },
+    {
+      "path": "ovr_llama3.2-3b.joblib",
+      "sha256": "e5bc9bb8808335b21c76d4c1892c7bfe86c771ff9ea41743212add4adcc4298a"
+    },
+    {
+      "path": "hierarchy_hard_route_gemini-3.1-pro_threshold.json",
+      "sha256": "5feb1b90a3973450ffe56bb671eed5cce02f741caf6ece2c36e1ed1ae4383d9e"
+    },
+    {
+      "path": "hierarchy_hard_route_gemini-3.8-flash_threshold.json",
+      "sha256": "c8e01e85a538756c097ff4538b49ea7c90e6476e4bdb6f297ccd4a1dead5a9d4"
+    },
+    {
+      "path": "hierarchy_hard_route_llama3.1-8b_threshold.json",
+      "sha256": "f30a4bbe828adba758bf20e5653b7b2282f78099d7df128e2de491ca9d1db41e"
+    },
+    {
+      "path": "hierarchy_hard_route_llama3.2-3b_threshold.json",
+      "sha256": "8195a3a0efc257cdfaa291fb89182cd2ab64fe7844438e4b1147115bcb9755bf"
+    },
+    {
+      "path": "hierarchy_soft_gemini-3.1-pro_threshold.json",
+      "sha256": "123ea0aeac626e78e00d0abf926dac3d36356f8e70e554e9e62b869a06af4c24"
+    },
+    {
+      "path": "hierarchy_soft_gemini-3.8-flash_threshold.json",
+      "sha256": "9df58455c234e5f88ceb903ec0da1a3b229e86581f85cc1b4c4dc4dc3f8b170f"
+    },
+    {
+      "path": "hierarchy_soft_llama3.1-8b_threshold.json",
+      "sha256": "781d8a7b50577a6bf9cb74993b481362c8c869f617076fbcc0b66f17a3f1a7f9"
+    },
+    {
+      "path": "hierarchy_soft_llama3.2-3b_threshold.json",
+      "sha256": "a6ef1d876d08a51859f3734760528ab13c955d9645c53442f169f17518c004da"
+    },
+    {
+      "path": "ovr_direct_gemini-3.1-pro_threshold.json",
+      "sha256": "d1d88e6e9d4376b87c89ea2ec2d58feb851a9e09c9d61a94ef5e284b0de94b7d"
+    },
+    {
+      "path": "ovr_direct_gemini-3.8-flash_threshold.json",
+      "sha256": "4684b01754e82394ff2ecc83bcb087133ececaccd196a74c10434b7dc8736486"
+    },
+    {
+      "path": "ovr_direct_llama3.1-8b_threshold.json",
+      "sha256": "e98cfc24be9e193023a346b7de82762baf48c1808ddd632f1324c9ece990336b"
+    },
+    {
+      "path": "ovr_direct_llama3.2-3b_threshold.json",
+      "sha256": "6416442c8a08512f8d263b06b233b855b439b590a8cedf3977d1d5a6de2c315a"
+    }
+  ],
+  "options": {
+    "approaches": [
+      "hierarchy_hard_route",
+      "hierarchy_soft",
+      "ovr_direct"
+    ],
+    "thresholds": "per-model threshold JSON, matched by approach and target model",
+    "positive_class": 1,
+    "family_positive_class": "gemini",
+    "family_routing_threshold": 0.5,
+    "within_family_selection_threshold": 0.5,
+    "decision_policy": "strict_two_check"
+  },
+  "provenance": {
+    "status": "bundle_complete",
+    "source": "User-supplied Stage 1 experiment 5/6 saved models and threshold JSONs",
+    "source_script": "reference_stage1/scripts/predict_hierarchical.py",
+    "source_algorithm": "baseline_lr",
+    "artifact_format": "joblib: trusted files only; unsafe to load arbitrary pickles",
+    "training_sklearn_version": "1.6.1",
+    "evaluation_split": "thresholds selected on validation, separate final test not supplied",
+    "decision_policy": "strict_family_and_conditional_model_then_saved_target_threshold",
+    "note": "Original raw target scores and threshold decisions are preserved as diagnostics; production two-check verdict adds an explicit within-family model identity check."
+  }
+}

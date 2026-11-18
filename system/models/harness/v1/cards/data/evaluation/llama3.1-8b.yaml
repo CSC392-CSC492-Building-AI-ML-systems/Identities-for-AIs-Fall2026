@@ -1,0 +1,41 @@
+model_key: llama3.1-8b
+name: "Llama 3.1 8B Instruct"
+family: Llama
+access: open
+domain: evaluation
+retrieved_at: 2026-10-26
+fields:
+  benchmarks:
+    value: "MMLU, MMLU-Pro, IFEval, ARC-C, GPQA, HumanEval, MBPP++, MultiPL-E, GSM8K, MATH, API-Bank, BFCL, Gorilla, Nexus, MGSM, multilingual MMLU"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  benchmark_results:
+    value:
+      - {benchmark: MMLU, score: 69.4, setting: "5-shot, macro_avg/acc"}
+      - {benchmark: MMLU-Pro (CoT), score: 48.3, setting: "5-shot"}
+      - {benchmark: IFEval, score: 80.4, setting: "instruction following"}
+      - {benchmark: ARC-C, score: 83.4, setting: "0-shot, acc"}
+      - {benchmark: GPQA, score: 30.4, setting: "0-shot, exact match"}
+      - {benchmark: HumanEval, score: 72.6, setting: "0-shot, pass@1"}
+      - {benchmark: GSM8K (CoT), score: 84.5, setting: "8-shot, em_maj1@1"}
+      - {benchmark: MATH (CoT), score: 51.9, setting: "0-shot, final_em"}
+      - {benchmark: API-Bank, score: 82.6, setting: "0-shot, tool use"}
+      - {benchmark: BFCL, score: 76.1, setting: "0-shot, tool use"}
+      - {benchmark: MGSM (CoT), score: 68.9, setting: "0-shot, multilingual math"}
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  methodology:
+    value: "Meta's internal evaluation library; settings per benchmark as listed (e.g. MMLU 5-shot, HumanEval 0-shot pass@1, GSM8K 8-shot chain-of-thought). Full prompts and settings are published in eval_details.md."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/eval_details.md"
+  evaluated_version:
+    value: "Llama 3.1 8B Instruct as released July 23, 2024 (full-precision weights, not the 4-bit Ollama version we run)"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  known_limitations:
+    value: "May produce inaccurate or biased output; safety testing cannot cover every scenario; only 8 languages officially supported; developers must test for their own use case. Scores are for full-precision weights, so a 4-bit quantized deployment may score lower."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  capabilities:
+    value: [general knowledge and reasoning, mathematics, code generation, instruction following, tool use, multilingual]
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md"
+  provenance:
+    value: "Developer-reported by Meta (model card and eval_details.md). Independent: Phare safety benchmark (Giskard, July 2026) includes this model. Not reproduced by our project."
+    source:
+      - "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/eval_details.md"
+      - "https://phare.giskard.ai"

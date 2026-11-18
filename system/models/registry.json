@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "artifacts": {
+    "stage1_lr/v1": "models/stage1_lr/v1/manifest.json",
+    "lora/v1": "models/lora/v1/manifest.json",
+    "harness/v1": "models/harness/v1/manifest.json",
+    "random_forest/v1": "models/random_forest/v1/manifest.json",
+    "lora/v2": "models/lora/v2/manifest.json"
+  }
+}

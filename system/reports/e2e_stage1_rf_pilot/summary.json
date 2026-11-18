@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-11-13T23:14:38.597154+00:00",
+  "config_sha256": "1d74a96e2d69587a04b612ed0206effcf882c51c2237140f5d3e9aeb145eab61",
+  "config_selection": {
+    "schema_version": "1.0",
+    "pipeline": {
+      "name": "fingerprinting_default"
+    },
+    "stage1": {
+      "adapter": "logistic_regression",
+      "artifact": "stage1_lr/v1",
+      "approach": "hierarchy_hard_route"
+    },
+    "stage2": {
+      "mode": "fallback",
+      "methods": [
+        {
+          "adapter": "lora",
+          "artifact": "lora/v1"
+        },
+        {
+          "adapter": "harness",
+          "artifact": "harness/v1"
+        },
+        {
+          "adapter": "random_forest",
+          "artifact": "random_forest/v1"
+        }
+      ]
+    },
+    "cards": {
+      "enabled": false
+    }
+  },
+  "requested": {
+    "scope": "e2e",
+    "methods": [
+      "random_forest"
+    ],
+    "stage2_mode": "fallback",
+    "allow_partial_e2e": false,
+    "run_all_stage1_approaches": false,
+    "judge_provider": "mock"
+  },
+  "dataset": {
+    "cases": 21,
+    "unique_source_observations": 15,
+    "per_dataset": {
+      "rf_fingerprint_v0": 21
+    },
+    "per_split": {
+      "rf_fixed_prompt_holdout": 21
+    },
+    "per_persona": {
+      "P13": 21
+    },
+    "per_actual_model": {
+      "gemma3-4b": 3,
+      "llama3.1-8b": 6,
+      "llama3.2-3b": 6,
+      "qwen3-8b": 3,
+      "qwen3.5-9b": 3
+    },
+    "changed": 15,
+    "unchanged": 6,
+    "cases_with_complete_harness_probe_set": 0,
+    "cohorts_are_mixed": false,
+    "source_type": "rf_fixed_prompt_holdout_P13:paired_scenarios_NOT_independent",
+    "source_file": "heldout_raw_cases.jsonl"
+  },
+  "artifact_readiness": {
+    "stage1_lr/v1": {
+      "ready": true,
+      "details": "ReadinessReport(artifact_id='stage1_lr/v1', ready=True, missing_files=(), checksum_failures=(), unchecksummed_files=())"
+    },
+    "random_forest/v1": {
+      "ready": true,
+      "details": "ReadinessReport(artifact_id='random_forest/v1', ready=True, missing_files=(), checksum_failures=(), unchecksummed_files=())"
+    }
+  },
+  "blocked": {},
+  "warnings": [
+    "Ground truth is used only for scoring, never passed to models.",
+    "Closed-set LoRA/RF candidates are NOT accepted while review_only; candidate accuracy differs from final resolution.",
+    "The included RF P13 split reuses known prompts and backend features. It is NOT unseen-prompt, unseen-family or deployment-transfer validation.",
+    "Confidence intervals assuming independent samples are not justified for repeated-source swap scenarios.",
+    "Harness mock provider does not measure true judge accuracy; Harness outcomes are diagnostic only."
+  ],
+  "dataset_source": "heldout_raw_cases.jsonl",
+  "dataset_sha256": "a8d7d90d6b850eae2397975573a4ea5d44dcd9e0c3a892a5d924528c1336f789",
+  "report_files": [
+    "e2e.json"
+  ]
+}

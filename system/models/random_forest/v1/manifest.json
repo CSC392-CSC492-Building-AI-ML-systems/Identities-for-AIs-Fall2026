@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "random_forest/v1",
+  "adapter": "random_forest",
+  "stage": 2,
+  "kind": "sklearn_classifier",
+  "supported_models": [
+    "gemma3-4b",
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "required_files": [
+    {
+      "path": "classifier.joblib",
+      "sha256": "7ce04cbd57c8f680b290c2e9f186fe622f532302a0199e41b02068a173e92ec4"
+    },
+    {
+      "path": "feature_manifest.json",
+      "sha256": "3ef84e9c80afd512f02f5755c11c81af97129ebc20f79b7be114a665f1044d06"
+    },
+    {
+      "path": "feature_extractor.py",
+      "sha256": "813c1dc1e7ae28284f2d1d55d246d88423a3c9e017ca93c78f51e4e381fbd23c"
+    }
+  ],
+  "options": {
+    "feature_abi": "fingerprint_rf_52_v1",
+    "label_order": [
+      "gemma3-4b",
+      "llama3.1-8b",
+      "llama3.2-3b",
+      "qwen3-8b",
+      "qwen3.5-9b"
+    ],
+    "sklearn_version": "1.8.0",
+    "n_estimators": 500,
+    "random_state": 42,
+    "training_feature_split": "response-held-out",
+    "feature_source": "original prepare_fingerprint_rf.py",
+    "acceptance_policy": {
+      "mode": "review_only"
+    },
+    "input_policy": "initial_response_with_optional_prompt_id_and_backend_metadata"
+  },
+  "provenance": {
+    "status": "reconstructed_from_existing_feature_tables",
+    "training_dataset_id": "fingerprint_v0",
+    "training_rows": 2933,
+    "source_training_csv_sha256": "bede06340272044956d650b96d581c114e2c4d95f77094e072f3b919f734f558",
+    "source_repo": "Identities-for-AIs-Fall2026",
+    "notes": "Re-fitted from original exported train CSV with scikit-learn 1.8.0. Not original serialized forest. Baseline report uses fixed-prompt split; unknown-model rejection not calibrated."
+  }
+}

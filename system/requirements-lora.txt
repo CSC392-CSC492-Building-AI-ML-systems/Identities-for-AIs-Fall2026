@@ -1,0 +1,8 @@
+# Install separately when you have the actual LoRA adapter and plan to run inference.
+# Pin tested versions with a reproducible lock file before deployment.
+-r requirements-stage1.txt
+torch>=2.2
+transformers>=4.45,<5
+peft>=0.13
+safetensors>=0.4
+accelerate>=0.30

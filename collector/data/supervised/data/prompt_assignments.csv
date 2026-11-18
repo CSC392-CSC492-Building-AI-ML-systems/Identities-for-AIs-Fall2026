@@ -1,0 +1,301 @@
+prompt_id,split,prompt_category,persona_id
+AYA-1075,development,General Q&A and explanation,P13
+AYA-1080,test,Ambiguous and minimal,P13
+AYA-1149,test,General Q&A and explanation,P13
+AYA-1264,development,General Q&A and explanation,P13
+AYA-1330,development,Programming and technical,P13
+AYA-1430,development,Programming and technical,P13
+AYA-1457,validation,Ambiguous and minimal,P13
+AYA-1458,validation,General Q&A and explanation,P13
+AYA-1540,validation,General Q&A and explanation,P13
+AYA-164,test,Ambiguous and minimal,P13
+AYA-1839,validation,General Q&A and explanation,P13
+AYA-1856,validation,Text transformation,P13
+AYA-1964,development,General Q&A and explanation,P13
+AYA-290,development,Ambiguous and minimal,P13
+AYA-375,validation,General Q&A and explanation,P13
+AYA-502,development,Ambiguous and minimal,P13
+AYA-584,development,Ambiguous and minimal,P13
+AYA-658,development,General Q&A and explanation,P13
+AYA-725,validation,General Q&A and explanation,P13
+AYA-740,development,General Q&A and explanation,P13
+AYA-809,development,General Q&A and explanation,P13
+BBH-date_understanding-000,development,Multi-step reasoning,P13
+BBH-date_understanding-001,test,Multi-step reasoning,P13
+BBH-date_understanding-002,test,Multi-step reasoning,P13
+BBH-date_understanding-003,development,Multi-step reasoning,P13
+BBH-disambiguation_qa-000,validation,Text transformation,P13
+BBH-disambiguation_qa-001,development,Text transformation,P13
+BBH-disambiguation_qa-002,development,Text transformation,P13
+BBH-disambiguation_qa-003,test,Text transformation,P13
+BBH-disambiguation_qa-004,validation,Text transformation,P13
+BBH-disambiguation_qa-005,development,Text transformation,P13
+BBH-formal_fallacies-000,test,Multi-step reasoning,P13
+BBH-formal_fallacies-001,validation,Multi-step reasoning,P13
+BBH-formal_fallacies-002,test,Multi-step reasoning,P13
+BBH-formal_fallacies-003,validation,Multi-step reasoning,P13
+BBH-formal_fallacies-004,development,Multi-step reasoning,P13
+BBH-hyperbaton-000,test,English language and wording,P13
+BBH-hyperbaton-001,validation,English language and wording,P13
+BBH-hyperbaton-002,development,English language and wording,P13
+BBH-hyperbaton-003,development,English language and wording,P13
+BBH-logical_deduction_three_objects-000,development,Multi-step reasoning,P13
+BBH-logical_deduction_three_objects-001,development,Multi-step reasoning,P13
+BBH-logical_deduction_three_objects-002,development,Multi-step reasoning,P13
+BBH-logical_deduction_three_objects-003,development,Multi-step reasoning,P13
+BBH-logical_deduction_three_objects-004,development,Multi-step reasoning,P13
+BBH-multistep_arithmetic_two-000,development,Multi-step reasoning,P13
+BBH-multistep_arithmetic_two-001,development,Multi-step reasoning,P13
+BBH-multistep_arithmetic_two-002,validation,Multi-step reasoning,P13
+BBH-snarks-000,development,Text transformation,P13
+BBH-snarks-001,development,Text transformation,P13
+BBH-snarks-002,development,Text transformation,P13
+BBH-snarks-003,development,Text transformation,P13
+BBH-snarks-004,test,Text transformation,P13
+BBH-sports_understanding-000,development,Text transformation,P13
+BBH-sports_understanding-001,development,Text transformation,P13
+BBH-sports_understanding-002,validation,Text transformation,P13
+BBH-sports_understanding-003,development,Text transformation,P13
+BBH-sports_understanding-004,validation,Text transformation,P13
+BBH-temporal_sequences-000,development,Multi-step reasoning,P13
+BBH-temporal_sequences-001,test,Multi-step reasoning,P13
+BBH-temporal_sequences-002,development,Multi-step reasoning,P13
+BBH-temporal_sequences-003,development,Multi-step reasoning,P13
+BBH-temporal_sequences-004,development,Multi-step reasoning,P13
+BBH-temporal_sequences-005,validation,Multi-step reasoning,P13
+BBH-temporal_sequences-006,development,Multi-step reasoning,P13
+BBH-temporal_sequences-007,development,Multi-step reasoning,P13
+BBH-temporal_sequences-008,development,Multi-step reasoning,P13
+BBH-temporal_sequences-009,development,Multi-step reasoning,P13
+BK-001,development,General Q&A and explanation,BK1
+BK-002,development,General Q&A and explanation,BK1
+BK-003,validation,General Q&A and explanation,BK1
+BK-004,development,General Q&A and explanation,BK1
+BK-005,development,General Q&A and explanation,P13
+BK-006,test,General Q&A and explanation,BK1
+BK-007,development,General Q&A and explanation,BK1
+BK-008,development,General Q&A and explanation,BK1
+BK-009,development,General Q&A and explanation,BK1
+BK-010,development,General Q&A and explanation,P13
+BK-011,development,General Q&A and explanation,BK1
+BK-012,validation,General Q&A and explanation,BK1
+BK-013,test,General Q&A and explanation,BK1
+BK-014,validation,General Q&A and explanation,BK1
+BK-015,validation,General Q&A and explanation,P13
+BK-016,test,Text transformation,BK2
+BK-017,test,Text transformation,BK2
+BK-018,validation,Text transformation,BK2
+BK-019,development,Text transformation,BK2
+BK-020,development,Text transformation,P13
+BK-021,development,Text transformation,BK2
+BK-022,development,Text transformation,BK2
+BK-023,development,Text transformation,BK2
+BK-024,development,Creative and open-ended,BK3
+BK-025,development,Creative and open-ended,P13
+BK-026,test,Creative and open-ended,BK3
+BK-027,test,Creative and open-ended,BK3
+BK-028,development,Creative and open-ended,BK3
+BK-029,development,Creative and open-ended,BK3
+BK-030,development,Creative and open-ended,P13
+BK-031,development,Creative and open-ended,BK3
+BK-032,development,General Q&A and explanation,BK1
+BK-033,development,General Q&A and explanation,BK1
+BK-034,development,General Q&A and explanation,BK1
+BK-035,test,General Q&A and explanation,P13
+BK-036,development,General Q&A and explanation,BK1
+BK-037,development,General Q&A and explanation,BK1
+BK-038,development,General Q&A and explanation,BK1
+BK-039,development,General Q&A and explanation,BK1
+BK-040,development,General Q&A and explanation,P13
+BK-041,test,General Q&A and explanation,BK1
+BK-042,test,General Q&A and explanation,BK1
+BK-043,development,General Q&A and explanation,BK1
+BK-044,development,General Q&A and explanation,BK1
+BK-045,validation,Programming and technical,P13
+BK-046,development,General Q&A and explanation,BK1
+BK-047,development,General Q&A and explanation,BK1
+BK-048,validation,General Q&A and explanation,BK4
+BK-049,development,General Q&A and explanation,BK4
+BK-050,development,General Q&A and explanation,P13
+BK-052,development,General Q&A and explanation,BK4
+BK-053,development,General Q&A and explanation,BK4
+BK-054,development,Ambiguous and minimal,BK1
+BK-056,validation,Ambiguous and minimal,BK1
+BK-057,development,Ambiguous and minimal,BK1
+BK-059,development,Ambiguous and minimal,BK1
+BK-060,development,Ambiguous and minimal,P13
+IF-1021,validation,Structured instruction following,P04
+IF-1051,development,Structured instruction following,P12
+IF-1075,development,Structured instruction following,P13
+IF-1082,development,Creative and open-ended,P09
+IF-1092,development,Structured instruction following,P01
+IF-1094,development,Structured instruction following,P13
+IF-1127,development,Creative and open-ended,BK2
+IF-1147,development,Text transformation,P13
+IF-1148,validation,Structured instruction following,P13
+IF-1242,validation,Structured instruction following,P13
+IF-1476,development,Text transformation,P13
+IF-1516,validation,Structured instruction following,P05
+IF-1592,development,Text transformation,P13
+IF-1609,development,Structured instruction following,BK4
+IF-1634,test,Structured instruction following,P09
+IF-1705,development,Structured instruction following,P06
+IF-1730,development,Structured instruction following,P14
+IF-1825,development,Structured instruction following,P02
+IF-1879,development,Structured instruction following,P02
+IF-1927,development,Text transformation,P13
+IF-1999,development,Text transformation,P13
+IF-2034,validation,Text transformation,P13
+IF-2035,development,Structured instruction following,P07
+IF-2041,development,Structured instruction following,P12
+IF-2207,test,Text transformation,P13
+IF-2324,development,Structured instruction following,P01
+IF-2380,development,Text transformation,P13
+IF-2383,development,English language and wording,P04
+IF-2395,development,Structured instruction following,P13
+IF-2439,test,Text transformation,P13
+IF-2467,development,Structured instruction following,P10
+IF-2485,development,Text transformation,P13
+IF-2563,development,Text transformation,P13
+IF-2577,validation,Structured instruction following,P07
+IF-2591,development,Structured instruction following,P13
+IF-2649,development,Structured instruction following,P13
+IF-2713,development,Structured instruction following,P14
+IF-2728,development,Structured instruction following,P14
+IF-2779,test,Structured instruction following,P10
+IF-2801,development,Text transformation,P13
+IF-2825,test,Structured instruction following,P03
+IF-2857,development,Structured instruction following,P13
+IF-2908,development,Structured instruction following,P15
+IF-3035,test,Structured instruction following,P13
+IF-3084,development,Structured instruction following,P13
+IF-3150,validation,General Q&A and explanation,P13
+IF-321,development,Structured instruction following,P13
+IF-3276,development,English language and wording,P13
+IF-340,test,Structured instruction following,P06
+IF-3518,test,Structured instruction following,P13
+IF-3549,development,Structured instruction following,BK3
+IF-3565,test,English language and wording,P13
+IF-371,development,Structured instruction following,P13
+IF-3748,development,Structured instruction following,BK1
+TEAM-01,development,Text transformation,P13
+TEAM-02,test,Programming and technical,P13
+TEAM-03,development,English language and wording,P13
+WC-001,development,Programming and technical,P14
+WC-007,test,Programming and technical,P01
+WC-009,development,Multi-step reasoning,P03
+WC-015,validation,Programming and technical,P09
+WC-016,development,General Q&A and explanation,P10
+WC-019,development,General Q&A and explanation,P13
+WC-020,development,General Q&A and explanation,P14
+WC-021,test,General Q&A and explanation,P15
+WC-023,development,General Q&A and explanation,BK2
+WC-027,development,Programming and technical,P02
+WC-028,development,Creative and open-ended,P03
+WC-030,development,Creative and open-ended,P05
+WC-031,test,General Q&A and explanation,P06
+WC-036,test,Text transformation,P11
+WC-038,development,General Q&A and explanation,P13
+WC-039,development,General Q&A and explanation,P14
+WC-040,development,General Q&A and explanation,P15
+WC-042,development,Text transformation,BK2
+WC-044,development,English language and wording,BK4
+WC-045,development,Multi-step reasoning,P01
+WC-046,development,Programming and technical,P02
+WC-047,development,Creative and open-ended,P03
+WC-048,development,Text transformation,P04
+WC-049,development,Text transformation,P05
+WC-050,development,General Q&A and explanation,P06
+WC-054,development,Programming and technical,P10
+WC-055,development,General Q&A and explanation,P11
+WC-056,validation,Programming and technical,P12
+WC-057,development,Text transformation,P13
+WC-058,development,General Q&A and explanation,P14
+WC-059,development,General Q&A and explanation,P15
+WC-061,development,General Q&A and explanation,BK2
+WC-062,development,Ambiguous and minimal,BK3
+WC-064,development,Programming and technical,P01
+WC-066,development,General Q&A and explanation,P03
+WC-068,development,Programming and technical,P05
+WC-069,development,General Q&A and explanation,P06
+WC-070,development,Programming and technical,P07
+WC-074,development,Creative and open-ended,P11
+WC-075,development,General Q&A and explanation,P12
+WC-076,test,General Q&A and explanation,P13
+WC-078,development,Multi-step reasoning,P15
+WC-079,validation,English language and wording,BK1
+WC-081,development,Programming and technical,BK3
+WC-082,development,General Q&A and explanation,BK4
+WC-084,development,General Q&A and explanation,P02
+WC-086,development,Programming and technical,P04
+WC-087,development,Programming and technical,P05
+WC-088,development,Text transformation,P06
+WC-092,test,General Q&A and explanation,P10
+WC-093,development,Programming and technical,P11
+WC-095,development,General Q&A and explanation,P13
+WC-098,development,Programming and technical,BK1
+WC-099,validation,Creative and open-ended,BK2
+WC-101,development,Creative and open-ended,BK4
+WC-102,development,Programming and technical,P01
+WC-105,development,General Q&A and explanation,P04
+WC-109,development,General Q&A and explanation,P08
+WC-110,development,General Q&A and explanation,P09
+WC-111,development,Programming and technical,P10
+WC-112,development,Programming and technical,P11
+WC-116,test,Programming and technical,P15
+WC-117,test,Creative and open-ended,BK1
+WC-119,development,Programming and technical,BK3
+WC-121,development,Text transformation,P01
+WC-125,test,General Q&A and explanation,P05
+WC-127,development,Programming and technical,P07
+WC-129,test,Text transformation,P09
+WC-130,development,Creative and open-ended,P10
+WC-131,development,Programming and technical,P11
+WC-134,development,Creative and open-ended,P14
+WC-135,test,General Q&A and explanation,P15
+WC-138,development,English language and wording,BK3
+WC-140,validation,General Q&A and explanation,P01
+WC-143,development,General Q&A and explanation,P04
+WCNEW-1073-2,development,Text transformation,P13
+WCNEW-1088-14,development,General Q&A and explanation,P13
+WCNEW-1088-16,development,General Q&A and explanation,P13
+WCNEW-111-0,development,Ambiguous and minimal,P13
+WCNEW-1202-6,test,Programming and technical,P13
+WCNEW-1206-0,test,Programming and technical,P13
+WCNEW-1217-6,development,Text transformation,P13
+WCNEW-1251-2,development,Programming and technical,P13
+WCNEW-131-2,development,Text transformation,P13
+WCNEW-1384-22,validation,Programming and technical,P13
+WCNEW-1390-0,development,English language and wording,P13
+WCNEW-1488-0,development,Programming and technical,P13
+WCNEW-1498-0,development,Programming and technical,P13
+WCNEW-16-0,validation,Ambiguous and minimal,P13
+WCNEW-176-0,validation,Creative and open-ended,P13
+WCNEW-235-0,validation,Programming and technical,P13
+WCNEW-271-0,development,Programming and technical,P13
+WCNEW-302-0,development,Ambiguous and minimal,P13
+WCNEW-391-4,development,Programming and technical,P13
+WCNEW-391-6,test,Programming and technical,P13
+WCNEW-446-0,validation,Programming and technical,P13
+WCNEW-455-0,development,General Q&A and explanation,P13
+WCNEW-502-4,development,Programming and technical,P13
+WCNEW-531-0,development,General Q&A and explanation,P13
+WCNEW-593-2,test,Programming and technical,P13
+WCNEW-60-0,development,Ambiguous and minimal,P13
+WCNEW-631-2,development,Programming and technical,P13
+WCNEW-635-2,development,Programming and technical,P13
+WCNEW-636-0,development,Text transformation,P13
+WCNEW-713-0,development,Creative and open-ended,P13
+WCNEW-714-0,development,Ambiguous and minimal,P13
+WCNEW-721-0,validation,Creative and open-ended,P13
+WCNEW-725-6,development,General Q&A and explanation,P13
+WCNEW-742-0,development,Ambiguous and minimal,P13
+WCNEW-79-0,development,General Q&A and explanation,P13
+WCNEW-791-2,validation,General Q&A and explanation,P13
+WCNEW-855-0,validation,Creative and open-ended,P13
+WCNEW-860-0,development,Creative and open-ended,P13
+WCNEW-985-10,development,Text transformation,P13
+WCNEW-985-14,validation,Text transformation,P13
+WCNEW-985-6,development,Text transformation,P13
+WCNEW-985-8,development,Text transformation,P13
+WCNEW-999-0,development,Programming and technical,P13

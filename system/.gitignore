@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!*.env.example
+*.log
+.DS_Store
+.ipynb_checkpoints/
+# Local ad-hoc evaluation outputs (committed example reports stay under reports/)
+reports/unified_run/
+reports/unified_pilot/
+# Hugging Face cache and large local downloads
+.hf_cache/
+.cache/

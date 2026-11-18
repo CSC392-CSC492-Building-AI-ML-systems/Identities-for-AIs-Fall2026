@@ -1,0 +1,173 @@
+record_id,prompt_id,prompt_text,response_text,prompt_category,persona_id,sample_index,model_key,target_model,label,split,prompt_group,prompt_set_version
+645ccc31-6f4f-46c9-a569-688717cbf409,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are technically part of the **non-specific (innate) immunity**, but they act as the essential **bridge** to the **specific (adaptive) immunity**. 
+
+Here is a quick breakdown of how they work with both systems:
+
+*   **Non-specific (Innate) Role:** Dendritic cells patrol the body’s tissues (like the skin and inner linings). When they encounter a pathogen (like a virus or bacteria), they engulf and destroy it without needing to recognize the specific type of threat. 
+*   **Specific (Adaptive) Role:** After destroying the pathogen, the dendritic cell becomes an ""antigen-presenting cell"" (APC). It travels to the lymph nodes and ""presents"" pieces of the destroyed pathogen to T-cells. This action is what activates the T-cells and B-cells, officially kicking off the **specific immune response**.
+
+Because of this unique function, biologists often describe dendritic cells as the crucial link that connects the innate and adaptive immune systems.
+
+***
+
+*Note: As a professional translator, my primary role is to help you communicate across different languages! If you need this biological concept—or any other text—translated into another language for a colleague, student, or friend, please just let me know!*",General Q&A and explanation,P05,0,gemini-3.1-pro,gemini-3.1-pro,1,test,wildchat_4.8m,training_v1
+31dbf80c-7f48-4f56-974e-06b27c57ef0c,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are technically part of the **non-specific (innate) immune system**, but their primary and most important function is to act as the **bridge to the specific (adaptive) immune system**. 
+
+Here is how it works:
+* **Non-specific action:** They patrol the body and engulf pathogens (like viruses or bacteria) in a general, non-specific way. 
+* **Specific action:** Once they digest the pathogen, they travel to the lymph nodes and ""present"" pieces of that pathogen (antigens) to T-cells. This triggers the specific (adaptive) immune system to create a targeted response. 
+
+Because they connect the two systems, they are often referred to as professional **Antigen-Presenting Cells (APCs)**.
+
+***
+
+**🌍 Translator's Note:**
+Since I am a professional translator for a global communication app, I noticed you asked a scientific question in English! If you are discussing this topic with international colleagues or students, here is how you say these key terms in a few common languages:
+
+**Spanish:**
+* Dendritic cells: *Células dendríticas*
+* Non-specific (innate) immunity: *Inmunidad inespecífica (o inmunidad innata)*
+* Specific (adaptive) immunity: *Inmunidad específica (o inmunidad adaptativa)*
+
+**French:**
+* Dendritic cells: *Cellules dendritiques*
+* Non-specific (innate) immunity: *Immunité non spécifique (ou immunité innée)*
+* Specific (adaptive) immunity: *Immunité spécifique (ou immunité adaptative)*
+
+**Mandarin Chinese:**
+* Dendritic cells: 树突状细胞 (*Shùtú zhuàng xìbāo*)
+* Non-specific immunity: 非特异性免疫 (*Fēi tèyì xìng miǎnyì*)
+* Specific immunity: 特异性免疫 (*Tèyì xìng miǎnyì*)
+
+If you need this scientific explanation translated into a specific language for your communications, please just let me know!",General Q&A and explanation,P05,1,gemini-3.1-pro,gemini-3.1-pro,1,test,wildchat_4.8m,training_v1
+3e454feb-4fc7-4b72-903d-40cb6c1eac73,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are fascinating because they actually act as the **bridge** between both systems! 
+
+Strictly speaking, they are classified as part of the **non-specific (innate) immune system**, but their primary function is to activate the **specific (adaptive) immune system**. 
+
+Here is how they interact with both:
+
+**1. Their role in Non-Specific (Innate) Immunity:**
+Dendritic cells patrol tissues that are in contact with the outside environment (like the skin, lungs, and stomach lining). When they encounter a pathogen (like a virus or bacteria), they engulf and destroy it in a general, non-specific way. 
+
+**2. Their role in Specific (Adaptive) Immunity:**
+After destroying the pathogen, the dendritic cell takes pieces of it (called antigens), puts them on its own surface, and travels to the lymph nodes. There, it ""presents"" these antigens to T-cells. This is the exact moment the specific immune response is triggered, as it tells the T-cells exactly which specific invader to hunt down and build memory against.
+
+**Summary:** While they are inherently innate (non-specific) cells, you cannot have a specific immune response without them. They are the messengers that connect the two systems.
+
+***
+
+*Note: As a professional translator for a global communication app, I am happy to translate this medical explanation into Spanish, French, Mandarin, or any other language if you need to share this information with a colleague, classmate, or friend overseas! Just let me know.*",General Q&A and explanation,P05,2,gemini-3.1-pro,gemini-3.1-pro,1,test,wildchat_4.8m,training_v1
+2b900783-93e4-4922-ae15-19ac2e6a53b9,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are primarily considered part of the **non-specific (innate) immune system**, but they serve as the essential **bridge between non-specific and specific (adaptive) immunity**.
+
+Here is how they function in both:
+
+* **Innate (Non-Specific) Immunity:** Dendritic cells act as sensors. They use non-specific receptors (pattern recognition receptors) to detect, capture, and engulf pathogens through phagocytosis.
+* **Transition to Adaptive (Specific) Immunity:** Once they capture a pathogen, they mature and migrate to the lymph nodes. There, they act as professional **antigen-presenting cells (APCs)**—they display fragments of the pathogen (antigens) on their surface to naive T cells, directly activating the **specific (adaptive) immune response**.
+
+In summary: **They are cellular components of the innate immune system whose main job is to trigger and shape the specific immune system.**",General Q&A and explanation,P05,0,gemini-3.8-flash,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+fd8dc78e-4ea5-4b51-ae99-6c087c18c61f,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are primarily classified as part of the **non-specific (innate) immunity**, but their most critical function is serving as the **bridge between non-specific and specific (adaptive) immunity**.
+
+Here is how they fit into both:
+
+### 1. Their Role in Non-Specific (Innate) Immunity
+* **First Responders:** They reside in tissues that have contact with the external environment (skin, lungs, intestines) and patrol for invaders.
+* **Broad Recognition:** They detect pathogens using broad, non-specific pattern-recognition receptors (like Toll-like receptors or TLRs) rather than targeting one specific antigen.
+* **Phagocytosis:** Like macrophages, they engulf (eat) and destroy pathogens non-specifically.
+
+### 2. Their Role in Connecting to Specific (Adaptive) Immunity
+* **Antigen Presentation:** After engulfing a pathogen, dendritic cells process its antigens and display them on their surface using **MHC (Major Histocompatibility Complex)** molecules.
+* **T-Cell Activation:** They travel to the nearest lymph nodes to present these antigens to naive T cells. This directly **activates the specific immune response**, telling T cells and B cells precisely what pathogen to target.
+
+### Summary
+While dendritic cells **belong to the innate (non-specific) immune system**, they are considered the most powerful **antigen-presenting cells (APCs)** necessary to trigger and guide the **specific (adaptive) immune system**.",General Q&A and explanation,P05,1,gemini-3.8-flash,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+d16a478f-244c-409a-84ad-5d47c54a3325,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are primarily classified as part of the **non-specific (innate) immune system**, but they serve as the vital **bridge between non-specific and specific (adaptive) immunity**.
+
+Here is how they function across both branches:
+
+* **Role in Non-Specific (Innate) Immunity:** 
+  Dendritic cells originate from innate cell lineages and act as sentinels throughout tissues (especially tissues in contact with the external environment, like the skin and mucosal linings). They use non-specific pattern-recognition receptors (such as Toll-like receptors) to detect, capture, and engulf pathogens via phagocytosis without needing prior exposure to the specific pathogen.
+
+* **Role in Specific (Adaptive) Immunity:** 
+  After capturing an antigen, dendritic cells mature and migrate to nearby lymph nodes. There, they function as ""professional"" antigen-presenting cells (APCs). They present fragments of the digested pathogen on their cell surface (via MHC molecules) to naive T cells, directly activating the **specific (adaptive) immune response**.
+
+**Summary:** While they are **innate (non-specific)** immune cells by nature, their main job is to trigger and direct the **specific** immune response.",General Q&A and explanation,P05,2,gemini-3.8-flash,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+29f3b3d8-b286-4538-bf8b-f9c5ebad3833,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"A question that requires precision in translation!
+
+In the context of immunology, the term ""dendritic cells"" is a direct translation from English. However, in some languages, the terminology might vary slightly.
+
+Here's my translation:
+
+* In Spanish: Los cúlvulos dendríticos (dendritic cells) son parte de la inmunidad no específica (non-specific immunity), pero también desempeñan un papel importante en la presentación de antígenos a las células T, lo que los vincula a la inmunidad específica (specific immunity).
+* In French: Les cellules dendritiques (dendritic cells) sont des cellules de l'inflammation (inflammatory cells) qui participent à la réponse immunitaire non spécifique (non-specific immune response), mais elles jouent également un rôle crucial dans la présentation d'antigènes aux cellules T, ce qui les relie à la réponse immunitaire spécifique (specific immune response).
+* In German: Die dendritischen Zellen (dendritic cells) gehören zur unspezifischen Immunität (non-specific immunity), aber sie spielen auch eine wichtige Rolle bei der Präsentation von Antigenen an T-Zellen, was sie mit der spezifischen Immunität (specific immunity) in Verbindung bringt.
+* In Chinese: dendritische 细胞 (dendritic cells) 属于非特异性免疫 (non-specific immunity), 但它们在呈递抗原给 T 细胞方面发挥着重要作用， 将其与特异性免疫 (specific immunity) 联系起来。
+
+In all languages, I've been careful to preserve the nuance that dendritic cells can be part of both the non-specific and specific immune responses, depending on the context in which they are functioning.",General Q&A and explanation,P05,0,llama3.1-8b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+0bec0d82-a041-4885-b43e-88f0fe9232cf,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"A question that requires a nuanced translation!
+
+In the original text, I will translate this as:
+
+""Sono parte dell'immunità specifica o non specifica?""
+
+(Translation: ""Are they part of specific immunity or non-specific immunity?"")
+
+In the context of immunology, dendritic cells are actually part of the innate immune system, which is often referred to as non-specific immunity. They play a crucial role in the initiation of adaptive immune responses, but they are not part of the specific immunity itself.
+
+So, I would translate the answer as:
+
+""Sono parte dell'immunità non specifica.""
+
+(Translation: ""They are part of non-specific immunity."")
+
+Note that, in this context, I used ""non-specific"" to convey the idea that dendritic cells are part of the innate immune system, which is not specific to a particular antigen or pathogen.",General Q&A and explanation,P05,1,llama3.1-8b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+f7e165bf-acd3-427f-8784-7b769b2322dc,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"A question that bridges immunology and translation!
+
+Dendritic cells (DCs) are indeed a crucial component of the immune system. While they can interact with specific antigens to trigger adaptive immune responses, their primary function is to present antigens to T cells, thereby bridging innate and adaptive immunity.
+
+In immunology, it's common to categorize the immune response into two broad categories:
+
+1. **Specific immunity** (or adaptive immunity): a targeted response that involves the activation of immune cells, such as T and B lymphocytes, to recognize and eliminate specific pathogens.
+2. **Non-specific immunity** (or innate immunity): a rapid, non-specific response to pathogens, involving physical barriers, phagocytic cells, and other mechanisms to neutralize or eliminate pathogens.
+
+Dendritic cells (DCs) play a dual role:
+
+* As part of **innate immunity** (non-specific immunity), DCs can recognize and engulf pathogens, dead cells, and other foreign substances, thereby initiating an immune response.
+* As part of **specific immunity** (adaptive immunity), DCs can process and present antigens from pathogens to T cells, such as T-helper cells (Th cells) and cytotoxic T cells (CTLs), thereby activating a targeted immune response.
+
+In summary, while dendritic cells are not exclusively part of specific immunity, they are a key component of both innate and adaptive immunity, facilitating the transition from a non-specific response to a targeted, specific response.
+
+(Note: This translation reflects the nuances of immunological concepts and terminology.)",General Q&A and explanation,P05,2,llama3.1-8b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+76aa23eb-d2d5-4453-b8fc-e20568d9c3aa,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells (DCs) are considered to be part of the specific immunity. They are antigen-presenting cells (APCs) that play a crucial role in the adaptive immune response.
+
+As APCs, dendritic cells capture and process antigens, which are then presented to T-cells through major histocompatibility complex (MHC) molecules. This presentation of antigens to T-cells is a key event in the initiation of a specific immune response.
+
+In the context of specific immunity, dendritic cells are involved in the following processes:
+
+1. Antigen capture: Dendritic cells recognize and capture antigens from the environment.
+2. Antigen processing: Dendritic cells process and break down antigens into smaller peptides.
+3. Antigen presentation: Dendritic cells present antigens to T-cells through MHC molecules.
+4. T-cell activation: Dendritic cells activate T-cells by presenting antigens and providing co-stimulatory signals.
+
+As a result of these processes, dendritic cells contribute to the development of a specific immune response against particular antigens, which is a hallmark of specific immunity.
+
+In contrast, non-specific immunity refers to the innate immune response, which provides immediate defense against infections and is not specific to a particular antigen. Dendritic cells are not typically considered part of non-specific immunity, as they are primarily involved in the adaptive immune response.
+
+Would you like me to clarify anything or provide further information?",General Q&A and explanation,P05,0,llama3.2-3b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+5e97ab61-4c6b-4035-94ec-aa0677d25e18,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are typically considered to be part of the specific immunity. They play a crucial role in the adaptive immune system, specifically in the activation of T cells, which is a key component of specific immunity.
+
+Dendritic cells are antigen-presenting cells (APCs) that capture, process, and present antigens to T cells. They recognize and internalize antigens, break them down into peptides, and then display these peptides on their surface through the major histocompatibility complex (MHC) molecules. This process activates T cells to recognize and respond to the specific antigen.
+
+In contrast, non-specific immunity refers to the innate immune response, which is the first line of defense against pathogens. Non-specific immunity includes the activation of cells like neutrophils, macrophages, and natural killer cells, which can recognize and respond to pathogens through pattern recognition receptors that recognize pathogen-associated molecular patterns (PAMPs).
+
+While dendritic cells are involved in the response to specific pathogens, their role is crucial in initiating the specific immune response, making them a key component of specific immunity.",General Q&A and explanation,P05,1,llama3.2-3b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1
+b2c79406-f1b9-45f8-9d6c-abde262ee0cd,WC-125,are dendritic cells part of the specific immunity or non-specific immunity?,"Dendritic cells are generally considered to be part of the non-specific immunity.
+
+Non-specific immunity refers to the innate immune response, which provides immediate defense against pathogens, including bacteria, viruses, and other foreign substances. Dendritic cells, being antigen-presenting cells (APCs), play a crucial role in this non-specific immune response.
+
+As APCs, dendritic cells recognize, process, and present antigens to T-cells, activating the adaptive immune response. However, their primary function is not to recognize specific pathogens, but rather to detect and respond to general patterns of cellular activity, such as the presence of damage-associated molecular patterns (DAMPs) or nucleic acids.
+
+In contrast, specific immunity, also known as adaptive immunity, refers to the targeted response against specific pathogens or antigens, which is mediated by immune cells such as T-cells and B-cells. This type of immunity is more specific and requires prior exposure to the antigen to mount an effective response.
+
+While dendritic cells can induce specific immunity by presenting antigens to T-cells, their primary function is to provide a non-specific, immediate response to detect and eliminate pathogens.
+
+Would you like me to clarify anything or provide more context?",General Q&A and explanation,P05,2,llama3.2-3b,gemini-3.1-pro,0,test,wildchat_4.8m,training_v1

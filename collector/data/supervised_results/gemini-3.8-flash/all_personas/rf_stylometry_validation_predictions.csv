@@ -1,0 +1,541 @@
+record_id,prompt_id,model_key,prompt_category,persona_id,label,algorithm,split,target_score,predicted_target,threshold
+dbca9fa3-908e-4c19-8764-1e2415761b5c,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.5738210449329894,1,0.3012290209350177
+de862c47-2fdb-42ed-9926-f5aed91fa584,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.7002455605074503,1,0.3012290209350177
+b7fd357e-03f4-4f13-b91c-ab7e4e1562bb,AYA-1457,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.6698690118616119,1,0.3012290209350177
+818fb0fd-0fd1-445e-8d57-2d8172a0d678,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.27793634391841193,0,0.3012290209350177
+689c244b-3c0a-4641-8554-e5dc26368165,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.288771951339503,0,0.3012290209350177
+d4a04278-25b0-4502-8b26-af8520909107,AYA-1458,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.3583757265177125,1,0.3012290209350177
+14b3fa09-b8a4-40fc-a743-a842423f80ee,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2803068023176021,0,0.3012290209350177
+a7e1f4be-62c3-4502-b9c0-bc35aaa30551,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.1466416709755818,0,0.3012290209350177
+423789ff-3ca4-4ec8-952d-40ec22a230ec,AYA-1540,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.1810633494374012,0,0.3012290209350177
+d80673da-33e1-4d1f-9bbc-36a84b9dfc69,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.32364773310303785,1,0.3012290209350177
+433258aa-4cd2-4a8b-9e8c-255595fb057a,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.4826464984531991,1,0.3012290209350177
+295238e3-cb7b-463b-b96d-20cc46100ac3,AYA-1839,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.4603943756427774,1,0.3012290209350177
+dcd89203-1270-49b9-9dde-4ddccf18df64,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.5621773816877255,1,0.3012290209350177
+47078ee9-d1a7-428a-871e-ad77f81a7096,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.5561131422208244,1,0.3012290209350177
+d00d6428-0733-4719-b7e0-b229f2ecd6e9,AYA-1856,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.4228414238233006,1,0.3012290209350177
+57ab27a0-0db9-40fb-80b8-46925f57cf23,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.12025162136604511,0,0.3012290209350177
+f9a6b351-1ac9-4e10-8630-3bcf44d4d717,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.08497685689124528,0,0.3012290209350177
+9b8f0129-db6b-4931-a767-f85412ca7b69,AYA-375,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.08460721921661583,0,0.3012290209350177
+c26b2fc9-3522-46df-ae9d-b69df53d5a58,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.6463677348195802,1,0.3012290209350177
+13fe2c8a-e50f-4430-821d-832c334fee4b,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.7180903882171271,1,0.3012290209350177
+780c43cd-88dc-4fb3-a42c-b5371ecc7fd8,AYA-725,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.6950390728475255,1,0.3012290209350177
+d66c2bd1-349b-457f-84b2-833eb91b351b,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.40578206990044313,1,0.3012290209350177
+d91b9c79-0917-4e48-a006-ed0ace991a0f,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.2482752018218342,0,0.3012290209350177
+eabbac2b-7699-4984-85ba-75fd825be8b8,BBH-disambiguation_qa-000,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.27372311726788506,0,0.3012290209350177
+0c24ad06-bafe-4088-a7b6-cf75aebb5a18,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.3949745287149662,1,0.3012290209350177
+c67bfb31-088e-4736-a827-196e35820ac3,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.5075469731888631,1,0.3012290209350177
+eed1b6e1-a4c4-4045-b8a2-b52d2098c09b,BBH-disambiguation_qa-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.2876622743347952,0,0.3012290209350177
+60e70a48-759e-4111-bc47-90a72d5771dc,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.0758612688448298,0,0.3012290209350177
+b9a7a03b-2f03-4546-8784-ed4778a0b1a6,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.08526902525756913,0,0.3012290209350177
+a8ee0608-0ee1-4d3b-aed8-acdf47dcd5b3,BBH-formal_fallacies-001,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.1711610829335316,0,0.3012290209350177
+ecf17b17-6af4-4db4-93cd-aa05c12ccdaf,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.2629051642347167,0,0.3012290209350177
+7cb20173-db61-41a7-91aa-f854cfcb1a92,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.23992031518537899,0,0.3012290209350177
+a8efb7dc-805f-48e3-a2f6-b361639a8cad,BBH-formal_fallacies-003,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.20896257533947116,0,0.3012290209350177
+01c0decb-1603-41ee-8945-23410ac8792f,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,rf_stylometry,validation,0.4107417434096112,1,0.3012290209350177
+8436df85-8f9d-472d-b081-77c2f57ca3f8,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,rf_stylometry,validation,0.3431137774096077,1,0.3012290209350177
+45799e40-72fa-48d5-801b-0ef1301c84a3,BBH-hyperbaton-001,gemini-3.1-pro,English language and wording,P13,0,rf_stylometry,validation,0.41619797029043226,1,0.3012290209350177
+6dab56c6-86d7-40e7-a281-7f9813d1af48,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.23872297453895755,0,0.3012290209350177
+b1e4ce40-3712-4d00-a89a-4dc3e9a4ee3f,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.20576070826582124,0,0.3012290209350177
+f630671f-3834-4f2b-aabc-38f82fe938d9,BBH-multistep_arithmetic_two-002,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.5230606372195049,1,0.3012290209350177
+8f3496d5-e681-49fe-ba20-79a1130f22f2,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.1316650483593025,0,0.3012290209350177
+db44c8cc-1703-4ffc-aead-3e42aa8c5fd6,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.12879025502099972,0,0.3012290209350177
+512a880c-9bca-4e0e-b7fe-267ecf3f0523,BBH-sports_understanding-002,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.145232776251486,0,0.3012290209350177
+0ab35133-bbc3-4f41-9820-c91e5368ef33,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.37882240794383554,1,0.3012290209350177
+7ae6f64a-7b68-485d-acf1-3082ffc90c79,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.22932835250922154,0,0.3012290209350177
+f012ec79-a00b-43c6-8783-3fe0d3c4657f,BBH-sports_understanding-004,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.19720047237626878,0,0.3012290209350177
+32a39f1d-5343-464d-a99d-6c8258c2cd32,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.14237337074514192,0,0.3012290209350177
+25c2cbec-5c5f-4572-8556-35ec9bec3189,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.1943031888024377,0,0.3012290209350177
+3cc765ab-16b1-4bd8-9504-5c1c90973b9c,BBH-temporal_sequences-005,gemini-3.1-pro,Multi-step reasoning,P13,0,rf_stylometry,validation,0.1907532304590008,0,0.3012290209350177
+b3274327-ea76-4ec5-954f-be0b53bfee00,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.2284072292049952,0,0.3012290209350177
+3ac06797-2e50-4993-b4d0-c6b6d6fc99bd,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.24688377872861267,0,0.3012290209350177
+77086b5f-7d6c-45a5-929c-fd9eb7f293d9,BK-003,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.252915815991273,0,0.3012290209350177
+9132842b-3b34-42e2-880b-1602f60f480c,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.06467654405412936,0,0.3012290209350177
+c0f85f4f-38f9-459e-8b5a-3c8183e0f6b2,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.13311860750264126,0,0.3012290209350177
+58fc3fae-85fd-47fe-8de6-99ec9668f59e,BK-012,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.09415411230751891,0,0.3012290209350177
+bec29c84-2366-4c3d-9327-d42df7549f20,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.18015555505857825,0,0.3012290209350177
+f8665e5f-d557-4339-b58d-df3df368233d,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.10394123443320186,0,0.3012290209350177
+062eda87-20e4-46d7-9638-7fe8f987d257,BK-014,gemini-3.1-pro,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.25323130699756596,0,0.3012290209350177
+f996482f-84c2-44b8-b376-fa54e2fab563,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.15899771757495876,0,0.3012290209350177
+a03e5aab-1d43-4517-afc1-89bd25a5ab50,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2072567235741703,0,0.3012290209350177
+893fc7dd-b11d-4fa5-a629-a5a960ba9556,BK-015,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2681495763273898,0,0.3012290209350177
+8976803d-4a0d-48ce-bcc5-19f82dfa60ac,BK-018,gemini-3.1-pro,Text transformation,BK2,0,rf_stylometry,validation,0.5149153210931829,1,0.3012290209350177
+b04c4743-9329-4ce6-b058-3206ec839ea4,BK-018,gemini-3.1-pro,Text transformation,BK2,0,rf_stylometry,validation,0.3418196649184897,1,0.3012290209350177
+9e0e5040-b0bd-4a99-8377-a02df524c586,BK-018,gemini-3.1-pro,Text transformation,BK2,0,rf_stylometry,validation,0.39339543482352013,1,0.3012290209350177
+5313e963-0bde-4abc-ab2c-2d177542085a,BK-045,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.029841952227370735,0,0.3012290209350177
+ba8ff927-d0ee-449d-9525-518dd86e29f4,BK-045,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.03,0,0.3012290209350177
+f858b7ca-c278-44c9-8b33-38d70f35d1bf,BK-045,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.09089040278130817,0,0.3012290209350177
+8622017a-140c-4611-aa8b-4b01f895aa20,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.32086896421585887,1,0.3012290209350177
+baff749a-c079-4b6a-9466-25f764aca94a,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.47781160896827807,1,0.3012290209350177
+7a51ff80-8bc5-4673-84cd-719c75520583,BK-048,gemini-3.1-pro,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.3299193884176505,1,0.3012290209350177
+128d11be-f03a-4947-ab9e-55d7110a297f,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.2983659799345359,0,0.3012290209350177
+8dc8012e-550b-4e89-aa3d-452b7735e132,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.2767183231459783,0,0.3012290209350177
+ec6b7c92-4df5-400b-bd5a-16e55cbb21cf,BK-056,gemini-3.1-pro,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.1485944661803902,0,0.3012290209350177
+f5fee31d-fead-472f-9601-b8dfdee8306d,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,rf_stylometry,validation,0.2569631916527388,0,0.3012290209350177
+ea802dd1-9d89-4d49-80a4-bec83be56f1b,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,rf_stylometry,validation,0.2148040413606158,0,0.3012290209350177
+d9342c48-a149-4301-935d-e1e22f3bc6a7,IF-1021,gemini-3.1-pro,Structured instruction following,P04,0,rf_stylometry,validation,0.3124468171001681,1,0.3012290209350177
+0a25b484-fb29-4e4b-9869-e8d93880f115,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.4797646238771303,1,0.3012290209350177
+60f944b8-7018-4ebd-ae1e-215f0c85f10d,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.4553069399227992,1,0.3012290209350177
+af9ad0c9-5cab-490c-89a7-78a8e9e1baf7,IF-1148,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.4508734665519386,1,0.3012290209350177
+1bb8a756-6062-4636-bf64-f2f80e545056,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.4309969733290514,1,0.3012290209350177
+f2c32d75-3310-4556-845b-f1e65932af1f,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.36277784108618777,1,0.3012290209350177
+ad1aad68-e260-4e3c-805a-b3d1a2a9cc2c,IF-1242,gemini-3.1-pro,Structured instruction following,P13,0,rf_stylometry,validation,0.46019033572083223,1,0.3012290209350177
+0445b5e4-7d0d-4ba3-8bf9-230294e6da06,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,rf_stylometry,validation,0.5127660463807362,1,0.3012290209350177
+b745cd5d-4f7b-4dcf-a809-b75fdb8fc0e4,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,rf_stylometry,validation,0.44617215815008543,1,0.3012290209350177
+c8749ee4-4edb-46fd-ac7f-19a89d3aa75d,IF-1516,gemini-3.1-pro,Structured instruction following,P05,0,rf_stylometry,validation,0.652039569407449,1,0.3012290209350177
+dd4bc378-44f5-48c2-ad29-dc9aea013013,IF-2034,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.4244045750149213,1,0.3012290209350177
+e8119045-243b-42fd-8df3-64b0acded803,IF-2034,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.48433976224054986,1,0.3012290209350177
+d4c753d6-110c-45d2-9cd1-4a553f29ffd8,IF-2034,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.2482491625804948,0,0.3012290209350177
+f5fa8ad0-7564-4cbe-a04d-9b396fb3569e,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,rf_stylometry,validation,0.11171555015675556,0,0.3012290209350177
+92928c09-ec7f-42d7-b1d2-d3f1fcbc7599,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,rf_stylometry,validation,0.09681137440870059,0,0.3012290209350177
+2a7d9f52-7dfa-4b9a-aa0a-ba563ccdc69f,IF-2577,gemini-3.1-pro,Structured instruction following,P07,0,rf_stylometry,validation,0.10521628244239972,0,0.3012290209350177
+743af496-c990-4d97-915c-32ba22b30633,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2772750653136716,0,0.3012290209350177
+a682e549-d7a4-4a2b-aa5b-c7c5b183f8ff,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.3783943864777296,1,0.3012290209350177
+ada3b996-1cc0-4342-8288-82f25a32dfa7,IF-3150,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2562858217128721,0,0.3012290209350177
+a2c72375-1e45-42c7-a8ca-0317a2cb80a0,WC-015,gemini-3.1-pro,Programming and technical,P09,0,rf_stylometry,validation,0.27931014769802565,0,0.3012290209350177
+d1ddba38-dc52-4a2e-933c-ec4a0dd59d3d,WC-015,gemini-3.1-pro,Programming and technical,P09,0,rf_stylometry,validation,0.7922390979064972,1,0.3012290209350177
+fa9eda7c-8462-4364-9f1a-36f493f7aab3,WC-015,gemini-3.1-pro,Programming and technical,P09,0,rf_stylometry,validation,0.06919014617204447,0,0.3012290209350177
+52d66013-0bc0-44eb-9c0a-e215897e9929,WC-056,gemini-3.1-pro,Programming and technical,P12,0,rf_stylometry,validation,0.03126497272881458,0,0.3012290209350177
+16449cd1-0f96-4880-9c23-5f192579dd74,WC-056,gemini-3.1-pro,Programming and technical,P12,0,rf_stylometry,validation,0.05787085123955438,0,0.3012290209350177
+f4eafd39-6076-4929-bcb1-f7f5b22e3a9c,WC-056,gemini-3.1-pro,Programming and technical,P12,0,rf_stylometry,validation,0.06757059241987204,0,0.3012290209350177
+a32f560a-54f1-488c-94c9-9f448784c561,WC-079,gemini-3.1-pro,English language and wording,BK1,0,rf_stylometry,validation,0.4498753143190578,1,0.3012290209350177
+b2ff7c46-55ea-461b-92ab-4b5b46091f1f,WC-079,gemini-3.1-pro,English language and wording,BK1,0,rf_stylometry,validation,0.4277236272170552,1,0.3012290209350177
+055f911e-41e2-43fa-8ea4-a38a44454d37,WC-079,gemini-3.1-pro,English language and wording,BK1,0,rf_stylometry,validation,0.3084654068856755,1,0.3012290209350177
+68f9206d-a756-4067-9ae0-3b114cbc004e,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,rf_stylometry,validation,0.4965700068029189,1,0.3012290209350177
+e22ce4f2-dd73-4ec0-9e46-6e34e252d30a,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,rf_stylometry,validation,0.5353215892465794,1,0.3012290209350177
+4d2a9f07-5f24-4139-ae14-072ced5c6c70,WC-099,gemini-3.1-pro,Creative and open-ended,BK2,0,rf_stylometry,validation,0.2344116810070611,0,0.3012290209350177
+1d924a03-f760-475b-b2a8-d38c372fdca8,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,rf_stylometry,validation,0.11907458534873167,0,0.3012290209350177
+7a5b9315-b896-4410-ab50-c4487b0fbe46,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,rf_stylometry,validation,0.1275668265906161,0,0.3012290209350177
+2cdbeb92-cc99-410a-a314-56e817af0620,WC-140,gemini-3.1-pro,General Q&A and explanation,P01,0,rf_stylometry,validation,0.17211921235885394,0,0.3012290209350177
+7525fcbb-e54f-41bf-a214-555a1d3e48dd,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.09015441615636365,0,0.3012290209350177
+4f793a80-c28e-4257-b1fc-f9e83b529e18,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.061174671088052586,0,0.3012290209350177
+f09d27a5-05f3-4e18-9185-fa5ecaf019a3,WCNEW-1384-22,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.07623488147718112,0,0.3012290209350177
+31336063-5bd9-4781-b50a-6fa076aa5f28,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.49330289155469,1,0.3012290209350177
+a9d01263-4b7c-4f1d-b41c-6b8737f18757,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.61669629325799,1,0.3012290209350177
+ac03802d-875a-4c4a-90ca-dd0a6668174e,WCNEW-16-0,gemini-3.1-pro,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.49330289155469,1,0.3012290209350177
+316dbf3e-d2c1-46e2-a314-5b2cfffdb66a,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.005321886609664744,0,0.3012290209350177
+d038f788-aa3a-4316-bb38-35ef88fa651e,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.005321886609664744,0,0.3012290209350177
+3ff15704-b2ee-4081-9a40-baed19213e1d,WCNEW-176-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.00248080487159121,0,0.3012290209350177
+5db6b354-dc65-4005-baa6-4b5fbaddfe97,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.1023537288375295,0,0.3012290209350177
+9943b696-8759-48b3-bb3a-3b9506f8f5dd,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.10795958930828782,0,0.3012290209350177
+0e9737fc-25f1-4cc5-9499-d81141bb63c9,WCNEW-235-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.0980952217070421,0,0.3012290209350177
+900471b5-8f0d-4f9f-849c-806d9ef035b8,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.07500450397031305,0,0.3012290209350177
+ddbb0964-1dd1-4f45-8350-5c12320b8d62,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.07560308349682227,0,0.3012290209350177
+37500def-3e3d-460d-ab50-e3d735972bc7,WCNEW-446-0,gemini-3.1-pro,Programming and technical,P13,0,rf_stylometry,validation,0.08585041342225903,0,0.3012290209350177
+e1c149c9-3af9-45a2-9cbe-89368acd6282,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.00248080487159121,0,0.3012290209350177
+5f435cea-b4ff-422e-90b3-6e0765f29875,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.0033333333333333335,0,0.3012290209350177
+c99169e2-4629-48aa-96bf-9fcdba974dd5,WCNEW-721-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.00248080487159121,0,0.3012290209350177
+bfe02756-d0c7-40f5-b042-74cf991fa83d,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.02943420961494415,0,0.3012290209350177
+15f5b890-3ceb-4962-9b3f-127ac67c28f1,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.031677166608048056,0,0.3012290209350177
+ada378da-238a-4de9-8e86-e85b3c960e75,WCNEW-791-2,gemini-3.1-pro,General Q&A and explanation,P13,0,rf_stylometry,validation,0.015025170031283907,0,0.3012290209350177
+75a5a7cb-10d2-45a7-a2d2-01ca48169a0c,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.06375380253281228,0,0.3012290209350177
+e31df6d8-81e6-4924-aadc-ad3b08414e40,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.06728680491101731,0,0.3012290209350177
+22895eb6-74d4-4e2a-9f8b-8146364de56e,WCNEW-855-0,gemini-3.1-pro,Creative and open-ended,P13,0,rf_stylometry,validation,0.013335784179859471,0,0.3012290209350177
+f215fe9c-c8f9-48c4-ae22-7bf7ea34d2d9,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.3131736823034845,1,0.3012290209350177
+7fa878e0-a722-4867-a5bb-ae39a714392a,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.14879996884380384,0,0.3012290209350177
+856bce1b-e1fa-44e5-920a-046539e87038,WCNEW-985-14,gemini-3.1-pro,Text transformation,P13,0,rf_stylometry,validation,0.4643325254545362,1,0.3012290209350177
+75882409-ed14-45e9-a768-de1266d3801a,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.5771479207521427,1,0.3012290209350177
+b0b35fa5-447f-467e-b3e1-9f09fe78d6aa,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.5918155510746779,1,0.3012290209350177
+0c494d8b-3df4-413c-878f-6dcee4da67a0,AYA-1457,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.5629810622698017,1,0.3012290209350177
+ceafe6b0-11b9-45a3-ad82-996af57188cf,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.570686807012698,1,0.3012290209350177
+c57ae47c-3486-457b-bc63-a1c9c297f92a,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.480767824184729,1,0.3012290209350177
+9c41cdbd-eeb0-4a1e-81aa-e1344ab9aa22,AYA-1458,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.5272508842390471,1,0.3012290209350177
+36dd6316-9f4d-4aa8-81a8-16c6f8c5da09,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.9823105388087945,1,0.3012290209350177
+7418005f-9d09-4978-96f9-f43bea6c7260,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.938831316028092,1,0.3012290209350177
+4a42fb9b-3d08-4a99-b9bf-1e6faf670790,AYA-1540,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.978698479265087,1,0.3012290209350177
+e7fd3192-90f4-4db6-a8e6-52a2c9af3414,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.7519719646782667,1,0.3012290209350177
+41d694c8-1ba9-415d-8371-01457258473f,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8645554925225473,1,0.3012290209350177
+1e1eb3be-ee5c-476e-a1a9-dbf8c19d492a,AYA-1839,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8932241821953685,1,0.3012290209350177
+b5247792-9756-447a-8eb6-657d2f4dd318,AYA-1856,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5350035257342975,1,0.3012290209350177
+11fc4367-59cc-4f4e-b90f-4bbec96cd5bc,AYA-1856,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5350035257342975,1,0.3012290209350177
+e253954a-4ee4-4c17-a78b-fa80963a99db,AYA-1856,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.4820052557800276,1,0.3012290209350177
+8e16c22c-4baa-4c67-a72e-43f44e5d1e24,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.7821883197770586,1,0.3012290209350177
+529180dc-e750-427f-91ee-813d39cb851b,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8861491317366337,1,0.3012290209350177
+1443f97e-2133-467c-a38e-96e72da3fc5f,AYA-375,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8928568233396352,1,0.3012290209350177
+80496555-adc5-4b5a-9e63-2f722845fed8,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.7708047260095507,1,0.3012290209350177
+f42431d4-39e7-4cb2-bdcd-fc30857c9eb7,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8012474818599976,1,0.3012290209350177
+92c27e74-c764-4f00-86f9-a21c85f5feb4,AYA-725,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8012474818599976,1,0.3012290209350177
+20525e3e-1585-4a26-a971-dc4e0bbb3a0e,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.6118367070330615,1,0.3012290209350177
+6ec512f6-5d22-45c5-9593-422260fb34e2,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.424407467116688,1,0.3012290209350177
+5caf3b54-7df5-40c6-acad-a584fcdffb21,BBH-disambiguation_qa-000,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.3866717743266068,1,0.3012290209350177
+df7746d1-52f2-4779-913d-2c6b266b2c49,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.6257696773108186,1,0.3012290209350177
+2e895e47-b61e-42ad-a668-f1bb65c2b257,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.6301590173038563,1,0.3012290209350177
+c510a0d2-c00c-4ae9-95d1-60f0a0d59667,BBH-disambiguation_qa-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.7189660562168668,1,0.3012290209350177
+0e0d0e64-5f91-4942-93c8-6affb8550e44,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.13691535817897238,0,0.3012290209350177
+ed9f7734-88f5-4369-a904-066b6057dc11,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.1541444712352381,0,0.3012290209350177
+088f342c-7df2-413a-a2a9-746240fa74b7,BBH-formal_fallacies-001,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.44545543015094324,1,0.3012290209350177
+52074464-b4f2-416a-a943-fa94062e9a16,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.18810597231837894,0,0.3012290209350177
+76236e09-843f-4290-ba81-72157d422f25,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.18605081813917815,0,0.3012290209350177
+9af3ed07-1308-4cf8-8ec3-9ede052e11bd,BBH-formal_fallacies-003,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.17521644791896168,0,0.3012290209350177
+8c1c8153-5f4a-43fd-b762-7eff8cf41037,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,1,rf_stylometry,validation,0.48550098681858184,1,0.3012290209350177
+7fd7f0e7-e9b1-462b-b049-fa61f67e7363,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,1,rf_stylometry,validation,0.5117395246852025,1,0.3012290209350177
+02bb277a-2eca-4767-a28e-d8532021b85c,BBH-hyperbaton-001,gemini-3.8-flash,English language and wording,P13,1,rf_stylometry,validation,0.46184556704431107,1,0.3012290209350177
+e0b1917a-b624-4f28-9db0-a59d543129d5,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.7059103659079456,1,0.3012290209350177
+5c16af92-8a45-4686-b361-8312807689fb,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.4479247637634104,1,0.3012290209350177
+0a0c856e-bebe-4d92-8c1d-dff0259c0b05,BBH-multistep_arithmetic_two-002,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.6858699210378388,1,0.3012290209350177
+b8c8843a-5945-4bcf-b360-293ab3ce5b3a,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5940483645914302,1,0.3012290209350177
+9474a1e2-a150-4356-82d0-4c691171e843,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.2952364716359355,0,0.3012290209350177
+178d6493-5594-4262-a004-cbced8c2ff5f,BBH-sports_understanding-002,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5417878405737896,1,0.3012290209350177
+557ef8db-87dc-45d3-9984-1f712d47f816,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.44977000060872874,1,0.3012290209350177
+c4e40ad3-604c-4059-a070-03db6a279880,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.3372961844863841,1,0.3012290209350177
+e47b38b6-f4a4-48ae-8ed2-7442160f829e,BBH-sports_understanding-004,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5537092182890062,1,0.3012290209350177
+114b6523-3d03-4f49-aac2-c5c0f62e1940,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.8733115492971721,1,0.3012290209350177
+a3aed255-af41-4797-be9f-c472509503f8,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.4734177490351661,1,0.3012290209350177
+26ef62c7-9752-4d7d-a06b-110604d3163b,BBH-temporal_sequences-005,gemini-3.8-flash,Multi-step reasoning,P13,1,rf_stylometry,validation,0.8786049447690923,1,0.3012290209350177
+39b2e6ba-86b4-437b-81fd-a49683f663d6,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.2745810088281061,0,0.3012290209350177
+e3832388-4d11-4019-a4e4-7fbd6fc0cb0f,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.140892552194271,0,0.3012290209350177
+838e1ae8-a731-43db-b445-7336cc8810b1,BK-003,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.4156887053650802,1,0.3012290209350177
+275f9e15-7103-4276-9840-afcfda6e019d,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.7522296787313613,1,0.3012290209350177
+3b3b4f9b-2092-4f70-b117-a31e296bc18d,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.598744886735857,1,0.3012290209350177
+334d2717-4dbf-44f7-8d66-1177aeb67124,BK-012,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.8116753038205257,1,0.3012290209350177
+27910b8e-910d-49bc-a957-e60809b6f202,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.5744414295345086,1,0.3012290209350177
+79053599-bb40-4f09-b3db-5709d76f9ba3,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.2285461225629669,0,0.3012290209350177
+244c9db4-4d2b-4eb1-a612-eeebb362b465,BK-014,gemini-3.8-flash,General Q&A and explanation,BK1,1,rf_stylometry,validation,0.404084965072256,1,0.3012290209350177
+6c3d0350-9622-442b-8465-1c779cb995ba,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.9374503581167528,1,0.3012290209350177
+5fd8703f-6338-46d7-9e33-0741ffdaa161,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.9515943212265305,1,0.3012290209350177
+08cc79bd-ba34-498b-ae94-ec15fe0213a0,BK-015,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.9479244719578452,1,0.3012290209350177
+9162729c-c59a-49e2-836d-1d7858b27f5d,BK-018,gemini-3.8-flash,Text transformation,BK2,1,rf_stylometry,validation,0.5020120024686884,1,0.3012290209350177
+b2e3275b-e882-4ba5-9ffa-159b97e48358,BK-018,gemini-3.8-flash,Text transformation,BK2,1,rf_stylometry,validation,0.5681812227349808,1,0.3012290209350177
+5648c0f2-c1e2-47be-881e-b9d66ed91696,BK-018,gemini-3.8-flash,Text transformation,BK2,1,rf_stylometry,validation,0.49776135544486333,1,0.3012290209350177
+99792e7b-377a-4c80-9dd3-8dddb95c7ad3,BK-045,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.9182531107718156,1,0.3012290209350177
+89d1ce9d-5cf7-42e2-a53f-d157f54f23a9,BK-045,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.8831073361727723,1,0.3012290209350177
+7da1719b-6a1f-4d5b-9d2a-c41b1b1d532c,BK-045,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.9106798188167275,1,0.3012290209350177
+2ecb009a-7549-4909-952a-015af85c744a,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,1,rf_stylometry,validation,0.9198417184983001,1,0.3012290209350177
+e179a5c8-3fc0-4d1b-8b4a-14a49f436e3d,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,1,rf_stylometry,validation,0.9656328143689878,1,0.3012290209350177
+62764773-c988-4eac-916e-c3003bcd44df,BK-048,gemini-3.8-flash,General Q&A and explanation,BK4,1,rf_stylometry,validation,0.9577403120106328,1,0.3012290209350177
+c4f7c7f8-0318-41c4-8508-1cb59c98654f,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,1,rf_stylometry,validation,0.6387138137410995,1,0.3012290209350177
+4719f69b-7e7a-45ab-864a-92c42ebaf1a7,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,1,rf_stylometry,validation,0.5561621094090696,1,0.3012290209350177
+2ae7a400-6727-4322-9004-53b266c8c851,BK-056,gemini-3.8-flash,Ambiguous and minimal,BK1,1,rf_stylometry,validation,0.6265185029306837,1,0.3012290209350177
+4427ba92-ea38-46bb-ae1d-65593eb9e0c5,IF-1021,gemini-3.8-flash,Structured instruction following,P04,1,rf_stylometry,validation,0.2456844348665965,0,0.3012290209350177
+03e8b0ac-bd16-42cf-8433-b3c1cbbf15cd,IF-1021,gemini-3.8-flash,Structured instruction following,P04,1,rf_stylometry,validation,0.3012290209350177,1,0.3012290209350177
+e8155c3e-db09-4165-83d9-709d2d640d3e,IF-1021,gemini-3.8-flash,Structured instruction following,P04,1,rf_stylometry,validation,0.29389627432242843,0,0.3012290209350177
+90c5d166-fa7d-4ebb-b576-82d16ec804f6,IF-1148,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.3989672110755171,1,0.3012290209350177
+fdd84a56-750c-4c34-9083-690fd3c4ac1e,IF-1148,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.5207863831984215,1,0.3012290209350177
+2a24f01e-c7fd-4a41-b056-f73f55ee9058,IF-1148,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.47785894347158764,1,0.3012290209350177
+ccec912e-053d-4521-a6bf-60417a2ea4e5,IF-1242,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.46019033572083223,1,0.3012290209350177
+69e2030f-1faf-4c8f-8b34-28175e1945b8,IF-1242,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.46019033572083223,1,0.3012290209350177
+ea752477-e840-497e-8349-76b6975da247,IF-1242,gemini-3.8-flash,Structured instruction following,P13,1,rf_stylometry,validation,0.36375154470578497,1,0.3012290209350177
+731af4a2-e07b-4539-8bd7-79a3cdb567bb,IF-1516,gemini-3.8-flash,Structured instruction following,P05,1,rf_stylometry,validation,0.6655378771365792,1,0.3012290209350177
+1c1a4086-3dac-47f7-91d3-448f2ed813da,IF-1516,gemini-3.8-flash,Structured instruction following,P05,1,rf_stylometry,validation,0.48602927024113085,1,0.3012290209350177
+55adc25e-3c44-43d3-98d7-4093ec49dda7,IF-1516,gemini-3.8-flash,Structured instruction following,P05,1,rf_stylometry,validation,0.6166984828749175,1,0.3012290209350177
+caca17c3-9f31-46b3-9968-d89c950cc96d,IF-2034,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.29372839576850346,0,0.3012290209350177
+95c0d8fb-d495-4f24-b933-1f635110bd07,IF-2034,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.4004657299352564,1,0.3012290209350177
+a5765026-a71b-4e33-be1a-71394fb53f38,IF-2034,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.4251422554337721,1,0.3012290209350177
+5e579bae-0823-4682-b4f5-9b8f26266ea4,IF-2577,gemini-3.8-flash,Structured instruction following,P07,1,rf_stylometry,validation,0.5880341688006716,1,0.3012290209350177
+d6aa8066-d24b-4285-a5fd-365f37c45ea4,IF-2577,gemini-3.8-flash,Structured instruction following,P07,1,rf_stylometry,validation,0.5791946298031538,1,0.3012290209350177
+33dc8f84-8cba-44b3-81b9-b7c4eb6b6ee6,IF-2577,gemini-3.8-flash,Structured instruction following,P07,1,rf_stylometry,validation,0.43613591661140316,1,0.3012290209350177
+cb8c8c32-1684-4cb2-bf34-17012c4aff92,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.30198966783077763,1,0.3012290209350177
+885fca4a-991b-4dda-ba21-150c631d6c86,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.4180591815551139,1,0.3012290209350177
+cef49fd2-eafb-4fcb-a2fc-e80b4a694e56,IF-3150,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.4751368804890445,1,0.3012290209350177
+f44fd9d0-89f7-4ebf-bcdd-f8710c2db0c7,WC-015,gemini-3.8-flash,Programming and technical,P09,1,rf_stylometry,validation,0.8617897868383864,1,0.3012290209350177
+04bd19c7-fe60-4f2e-8a59-1b16f566e5c9,WC-015,gemini-3.8-flash,Programming and technical,P09,1,rf_stylometry,validation,0.7944221818891671,1,0.3012290209350177
+5d799c76-e5c4-4282-9882-8c3b496e9247,WC-015,gemini-3.8-flash,Programming and technical,P09,1,rf_stylometry,validation,0.8970272776495468,1,0.3012290209350177
+3dd1bd0d-3216-4f9e-8ccc-3523110720e5,WC-056,gemini-3.8-flash,Programming and technical,P12,1,rf_stylometry,validation,0.6384366528898631,1,0.3012290209350177
+a9c5374c-8483-48db-9830-8f2249038ba7,WC-056,gemini-3.8-flash,Programming and technical,P12,1,rf_stylometry,validation,0.4328695921127267,1,0.3012290209350177
+73669aea-7721-4176-8022-06e2f10449c3,WC-056,gemini-3.8-flash,Programming and technical,P12,1,rf_stylometry,validation,0.6068015683060223,1,0.3012290209350177
+f4f02c8e-8408-4800-8d88-9206d3a70087,WC-079,gemini-3.8-flash,English language and wording,BK1,1,rf_stylometry,validation,0.7250832655409475,1,0.3012290209350177
+5d50c928-0773-4a44-9616-90bfba93b7d2,WC-079,gemini-3.8-flash,English language and wording,BK1,1,rf_stylometry,validation,0.772331754514243,1,0.3012290209350177
+3167b724-f990-448e-97a7-6ffbee8e16ec,WC-079,gemini-3.8-flash,English language and wording,BK1,1,rf_stylometry,validation,0.9361772367549245,1,0.3012290209350177
+3783b843-d6fc-4cca-b69b-56b1e4bf8396,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,1,rf_stylometry,validation,0.5552492651219677,1,0.3012290209350177
+9a6feeff-f62b-4532-8620-377d3a956de7,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,1,rf_stylometry,validation,0.6548518734724967,1,0.3012290209350177
+2a3cafe5-bdc5-4a79-a7c9-33faa522c5fe,WC-099,gemini-3.8-flash,Creative and open-ended,BK2,1,rf_stylometry,validation,0.5331140601060352,1,0.3012290209350177
+3c842b9a-241a-4aa0-b80a-763881d6cca9,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,1,rf_stylometry,validation,0.7847364920818796,1,0.3012290209350177
+b6b97680-7f78-47a7-8505-7892fb19cd01,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,1,rf_stylometry,validation,0.8411475496740562,1,0.3012290209350177
+0ff0e81d-e4fa-4f6b-b6e8-59aaf597c525,WC-140,gemini-3.8-flash,General Q&A and explanation,P01,1,rf_stylometry,validation,0.5458078777431985,1,0.3012290209350177
+1021d05f-4044-4f56-8408-f364b355ada2,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.8501457393905544,1,0.3012290209350177
+390c0f1a-ba14-4b32-8b08-dcac1711ee10,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.6226877228619934,1,0.3012290209350177
+b9c7e51a-2236-4fee-8f83-a337c587d76c,WCNEW-1384-22,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.7270873482522184,1,0.3012290209350177
+50d1a4cf-9bb7-47cd-a7f4-d80fbc21b98e,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.49330289155469,1,0.3012290209350177
+0c89d68a-47b3-4726-a7cf-2ffcb8388321,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.49330289155469,1,0.3012290209350177
+b105b1d2-841f-4dcd-8861-a4b4d3d8f8f4,WCNEW-16-0,gemini-3.8-flash,Ambiguous and minimal,P13,1,rf_stylometry,validation,0.49330289155469,1,0.3012290209350177
+e55316cc-bb0e-47c4-abb5-82777cfe8f31,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.7413965194519099,1,0.3012290209350177
+2443ed7f-6dbb-4f94-b013-e4ebb87b0075,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.794354056873726,1,0.3012290209350177
+dff628c3-b1a2-46d3-a83b-f7dcd5762df4,WCNEW-176-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.7400487895802355,1,0.3012290209350177
+54b2757a-7391-4813-abf3-9bfe24bea4d6,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.7677885816319979,1,0.3012290209350177
+eeeae979-401c-4d2c-9b16-b24362528b84,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.6876183732221199,1,0.3012290209350177
+2b526cae-1c3b-4944-b1cf-ef3b57f706fa,WCNEW-235-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.8273242578256669,1,0.3012290209350177
+dd847d4a-af83-48f4-9cf7-65b9f60ae652,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.8396283098646791,1,0.3012290209350177
+9b348978-3a91-4b29-a54b-f00302533616,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.7288176574969721,1,0.3012290209350177
+6dea0303-d446-4880-a878-68a82f6229fa,WCNEW-446-0,gemini-3.8-flash,Programming and technical,P13,1,rf_stylometry,validation,0.7398510527679378,1,0.3012290209350177
+6b104424-1c74-4410-9bd1-ca2e9e8b1600,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.8106147527515912,1,0.3012290209350177
+79213e81-04bf-44ec-a646-22281c3bf3b1,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.6808661481825079,1,0.3012290209350177
+b4b0f7fd-e107-426d-892f-ac449a50e1b4,WCNEW-721-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.5738934637752942,1,0.3012290209350177
+a1c027e3-6ea5-42ad-95e1-b0894ea6e293,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.8034014111644782,1,0.3012290209350177
+3d62894d-f53b-4e95-b726-7941c398c4a4,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.7487046978693502,1,0.3012290209350177
+4486366a-85a9-4644-b053-31c875c3fe10,WCNEW-791-2,gemini-3.8-flash,General Q&A and explanation,P13,1,rf_stylometry,validation,0.15011594626056815,0,0.3012290209350177
+59a5e1b5-205d-422c-9be4-2703c3e3690e,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.8600020512888883,1,0.3012290209350177
+1f4892a3-a503-41f1-8ff9-f3f51234d101,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.8778110360199296,1,0.3012290209350177
+4c6db120-d802-42d3-ae28-fa383a088bcf,WCNEW-855-0,gemini-3.8-flash,Creative and open-ended,P13,1,rf_stylometry,validation,0.7204698385562128,1,0.3012290209350177
+98fd033c-703f-435c-814d-955f2d01a050,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.4824357240301575,1,0.3012290209350177
+ec937111-b6b3-4271-8ece-87555bbd5e81,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.5177762895305394,1,0.3012290209350177
+f7119e9b-6cdd-412f-b769-3e7b0537241b,WCNEW-985-14,gemini-3.8-flash,Text transformation,P13,1,rf_stylometry,validation,0.3468708649207265,1,0.3012290209350177
+3df44c4a-2c8b-4454-9893-d101b314e1ab,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.438427178904039,1,0.3012290209350177
+12796a5b-c19b-4ef6-8c44-c57d173e3bff,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.6551443290479531,1,0.3012290209350177
+0d48919a-f260-4cfe-a238-6eb14c6f99dd,AYA-1457,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.40195568981620133,1,0.3012290209350177
+4d11fb91-14b1-4952-8ebe-b3e78efe5b40,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.240081471179156,0,0.3012290209350177
+81c51609-ebff-4551-8dd2-9ac896c4f308,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.12952845074647606,0,0.3012290209350177
+f96f9b39-67cb-4335-a3aa-80bb9aa9aa5b,AYA-1458,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.22555819296287719,0,0.3012290209350177
+0db4595c-bfa4-4861-b214-ff5921f793b5,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.27572926133797365,0,0.3012290209350177
+b4618cee-983b-4c12-a557-1e79b19be560,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.15747763921684665,0,0.3012290209350177
+8905555d-0a9a-4600-9183-a861fdf4d1ce,AYA-1540,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.29039434911378853,0,0.3012290209350177
+66c43c88-3123-4237-8ddc-28c832ceaa66,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.5849687466787183,1,0.3012290209350177
+91e79ea5-6c32-4b22-8920-13d604019478,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.09054532428417825,0,0.3012290209350177
+3121d722-1fa4-42ad-8fc8-7f56e0192462,AYA-1839,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.10200655876327168,0,0.3012290209350177
+fb02f5a2-7f43-421e-befb-ddfa19054db4,AYA-1856,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.39290439916340164,1,0.3012290209350177
+d387a908-4b10-4757-ae87-ef7a6469d2d5,AYA-1856,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.4690201007656614,1,0.3012290209350177
+b994b4e7-770f-4b66-8449-47a4230e110b,AYA-1856,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.4402412713953014,1,0.3012290209350177
+639fc077-d26e-47c5-8720-d8866ed20584,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.034383768917394406,0,0.3012290209350177
+a3224c4d-47e6-4f16-8ff6-cc74b34736f9,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.19105108533896378,0,0.3012290209350177
+db396117-501a-4184-9921-f668aebc520a,AYA-375,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.025734129674441993,0,0.3012290209350177
+ec0b1437-d6cb-4b64-9705-e7668d88e54f,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.3149784857036639,1,0.3012290209350177
+004a7e42-5533-419d-8dfc-66db19630551,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.4565578707227084,1,0.3012290209350177
+bd63b595-1191-4972-8227-ea0011c16062,AYA-725,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.45464683130203826,1,0.3012290209350177
+62aa8015-6ab0-4a01-a2ee-d997b10e594b,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.1616257005271567,0,0.3012290209350177
+8316642c-5298-4f8a-b5e2-4c5405fd2500,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.014265573146850808,0,0.3012290209350177
+522b30fc-96d7-4f21-b2e2-eb2434b4807b,BBH-disambiguation_qa-000,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.12400976402599267,0,0.3012290209350177
+af2ba5c6-a47d-4cfa-b6da-e45114f29966,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.06102292398246025,0,0.3012290209350177
+6a70d49d-beaa-4636-9694-7c79220edbcd,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.06711358721967751,0,0.3012290209350177
+c3bcee0d-3f1e-41ba-a800-1c54d6427da6,BBH-disambiguation_qa-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.173748412071476,0,0.3012290209350177
+191c393e-5c53-477c-b2ad-7ae5e0676689,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.005325015122263257,0,0.3012290209350177
+a0e3fb24-5baa-4d2b-a6a8-3f7641ed5e91,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.33362022383452933,1,0.3012290209350177
+25d13c33-926f-4a6e-9a85-eb762e87776d,BBH-formal_fallacies-001,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.1967836262675383,0,0.3012290209350177
+c127c24b-337f-4e0f-a1c1-e58258672b36,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.06263810301415292,0,0.3012290209350177
+02319c91-761d-4c3a-a0b9-3f7635aa81b2,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.08833439433846889,0,0.3012290209350177
+a9e11328-8d88-495d-987f-ae1cb904a42a,BBH-formal_fallacies-003,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.029957815347520438,0,0.3012290209350177
+a15f7c9d-1e0b-427c-a417-b62698565475,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,rf_stylometry,validation,0.1705665676968873,0,0.3012290209350177
+26c72adb-0160-49f3-9f30-6c9bf5a2f1e8,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,rf_stylometry,validation,0.08712649095710288,0,0.3012290209350177
+196c9340-074c-4d03-a3eb-8706a9809d12,BBH-hyperbaton-001,llama3.1-8b,English language and wording,P13,0,rf_stylometry,validation,0.18359145787530554,0,0.3012290209350177
+dbb7987c-da66-46a9-99a8-79b4ef681e86,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.1245018687245688,0,0.3012290209350177
+1c10fe9d-194d-4cee-800f-662f5d5d1c4c,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.14985743631461199,0,0.3012290209350177
+338b3b52-cca9-4427-994d-30e755222a34,BBH-multistep_arithmetic_two-002,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.29370845415155117,0,0.3012290209350177
+2d44016d-719c-499b-b650-b8055ed35261,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.006660663725737225,0,0.3012290209350177
+a3ee76a5-7566-4b46-9975-152c8adf2fa4,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.04860793303456408,0,0.3012290209350177
+d978764a-04bf-48e3-b2da-b4b641931be1,BBH-sports_understanding-002,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.012237623475356018,0,0.3012290209350177
+e152549e-ab12-463c-8891-7d46c775ec47,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.162846691777455,0,0.3012290209350177
+81ef5a76-beb9-42e5-ac59-e8b73e82b765,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.4614603091679904,1,0.3012290209350177
+22093b00-53ad-496f-b303-7610b75d4116,BBH-sports_understanding-004,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.2220559774319829,0,0.3012290209350177
+dc812cba-0270-4c05-9c74-f5014916a3ff,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.07572587903868207,0,0.3012290209350177
+a2147c51-3ecb-4219-bd5c-e5c0f1e2ec1a,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.0365059249003284,0,0.3012290209350177
+65fb95d6-0ce3-4c74-93aa-3abdbebf01d7,BBH-temporal_sequences-005,llama3.1-8b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.05043909877903202,0,0.3012290209350177
+9dc25fec-84b2-496e-97b1-b85dad73e22e,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.06925023408112052,0,0.3012290209350177
+a7c20997-51be-4d53-bfc1-2f9ad4ecfacb,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.0033333333333333335,0,0.3012290209350177
+8db8c7a5-154f-413d-8d54-5e1093838e95,BK-003,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.2329054740885229,0,0.3012290209350177
+098d541f-6f2f-4f7d-b95d-e82be04bd9b3,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.017036875592195976,0,0.3012290209350177
+8e729ba7-c170-4671-9ecf-e7f5f4f396cd,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.0435690180413846,0,0.3012290209350177
+ae54b52a-916e-4447-adb7-e801f956fc59,BK-012,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.03950429223397465,0,0.3012290209350177
+cbe9c46c-1d85-4972-bb04-0ca1323ad96d,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.023100914106464837,0,0.3012290209350177
+d920f9de-7d7f-4bad-9e5e-9d6e5c79dca7,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.18144665846641383,0,0.3012290209350177
+ce8e6874-1779-40b2-8aba-eefa89c3780d,BK-014,llama3.1-8b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.1260114459909658,0,0.3012290209350177
+ac195a00-0ee3-404d-8e7d-fa4a11ee2712,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.07405021935168099,0,0.3012290209350177
+9b2b81d7-244e-4b9b-b20b-68294bba10a3,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.11545496285966095,0,0.3012290209350177
+6e2d4f54-bfc8-4a00-af48-3512ee44bea0,BK-015,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.06169156186705069,0,0.3012290209350177
+838b5a03-5c49-4554-8384-4d35065ce572,BK-018,llama3.1-8b,Text transformation,BK2,0,rf_stylometry,validation,0.31034568982967625,1,0.3012290209350177
+71c23dcd-6068-45ae-99ea-3735c4f5e528,BK-018,llama3.1-8b,Text transformation,BK2,0,rf_stylometry,validation,0.5390388629588195,1,0.3012290209350177
+ac96a6d6-a8d2-4251-a567-7b0f72afb591,BK-018,llama3.1-8b,Text transformation,BK2,0,rf_stylometry,validation,0.46245561229943594,1,0.3012290209350177
+9de3d8aa-4d09-4516-a1f3-aede114b4e71,BK-045,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.06299163352678393,0,0.3012290209350177
+d83a3f7e-6796-459e-94af-b73b11291b30,BK-045,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.012019427525485031,0,0.3012290209350177
+b322dde1-c22b-4db8-a7c7-4e44d1f9c41d,BK-045,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.05387067122125134,0,0.3012290209350177
+b164e157-1906-46f0-9eb9-a4fb45c77a68,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.14999194375972077,0,0.3012290209350177
+965e3f09-9977-4254-ac3a-643156f19f8d,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.19653164114395585,0,0.3012290209350177
+15719bb5-a352-4eac-bc49-9280d40ff988,BK-048,llama3.1-8b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.13890693371065643,0,0.3012290209350177
+b8b9b6d3-5382-4d4a-b10e-00a31144666c,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.02837907433444567,0,0.3012290209350177
+00e405d5-ebb1-4042-b7c9-b1c8c43f09a9,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.08747455180332177,0,0.3012290209350177
+8407a339-a2e1-465b-a94e-507282cf62d9,BK-056,llama3.1-8b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.06583532551544519,0,0.3012290209350177
+f76bb84e-89df-427e-81a1-fd863021c554,IF-1021,llama3.1-8b,Structured instruction following,P04,0,rf_stylometry,validation,0.11281679225037498,0,0.3012290209350177
+6045a35e-0811-4f82-8b59-313d2bcd2e9f,IF-1021,llama3.1-8b,Structured instruction following,P04,0,rf_stylometry,validation,0.06378540174500873,0,0.3012290209350177
+12012305-64c8-469f-bd01-5fcc6973bb7b,IF-1021,llama3.1-8b,Structured instruction following,P04,0,rf_stylometry,validation,0.04697903511641219,0,0.3012290209350177
+0f5a1b20-ddbd-413a-9f86-316c30dfcf27,IF-1148,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.30403087895835784,1,0.3012290209350177
+e1daf9f6-7c4e-4c8e-8680-bb55e30ccdc0,IF-1148,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.4781672592682142,1,0.3012290209350177
+bfa722ec-b46a-4231-b773-f37b024d86f6,IF-1148,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.2630487104775633,0,0.3012290209350177
+54a9427e-855c-42c9-8930-864847724448,IF-1242,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.4591181300502364,1,0.3012290209350177
+cdef265d-b9f2-48f6-8ddc-49c1fa6eaf2d,IF-1242,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.37326086680261866,1,0.3012290209350177
+40dc3b94-ebe0-4056-88a4-9d6c40210953,IF-1242,llama3.1-8b,Structured instruction following,P13,0,rf_stylometry,validation,0.44058778408201743,1,0.3012290209350177
+2ca62d0f-7b6a-493d-bdb4-f84a58fa7f6d,IF-1516,llama3.1-8b,Structured instruction following,P05,0,rf_stylometry,validation,0.3691233123857781,1,0.3012290209350177
+a063fc46-2ae4-4080-9b71-f5105e8384c1,IF-1516,llama3.1-8b,Structured instruction following,P05,0,rf_stylometry,validation,0.21640277412425343,0,0.3012290209350177
+0cf7017d-1751-4c93-af27-9f58cc97153d,IF-1516,llama3.1-8b,Structured instruction following,P05,0,rf_stylometry,validation,0.3086524045692868,1,0.3012290209350177
+f1546545-07e4-456a-ba20-c089d12cc6f6,IF-2034,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.5411675651120912,1,0.3012290209350177
+dc79fb23-b2d0-45d9-92e9-2ae2b746790a,IF-2034,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.1662255680762799,0,0.3012290209350177
+f2dd0e72-01e8-4a4b-9255-2f010ebce03a,IF-2034,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.14005756833652286,0,0.3012290209350177
+6e5363b1-3dd7-44c0-824f-d9c05bbd9f9a,IF-2577,llama3.1-8b,Structured instruction following,P07,0,rf_stylometry,validation,0.08039325919851747,0,0.3012290209350177
+e67e4fbf-4ada-4238-bf00-e5fa3bb3964e,IF-2577,llama3.1-8b,Structured instruction following,P07,0,rf_stylometry,validation,0.14543245025413662,0,0.3012290209350177
+3a5cc96b-f7a8-4fc5-aa99-ff69eb254c45,IF-2577,llama3.1-8b,Structured instruction following,P07,0,rf_stylometry,validation,0.19175776813018344,0,0.3012290209350177
+81449885-73e0-4ddd-8436-8fe19747241b,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.17032054442811498,0,0.3012290209350177
+f82aa1b6-4599-4b2c-b864-ea3d4e570f2b,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.2759924876708935,0,0.3012290209350177
+dbd3c2e1-9fc8-4a28-abd0-e408378cd135,IF-3150,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.14359446239178666,0,0.3012290209350177
+c60c134a-ac99-4a53-8f33-2151b01824b2,WC-015,llama3.1-8b,Programming and technical,P09,0,rf_stylometry,validation,0.05922860590870113,0,0.3012290209350177
+3d0f14a0-6017-46c9-bf6b-e252e1f32e31,WC-015,llama3.1-8b,Programming and technical,P09,0,rf_stylometry,validation,0.1025416275113402,0,0.3012290209350177
+d27bc6bf-51af-476f-af9f-669c9a6deb4d,WC-015,llama3.1-8b,Programming and technical,P09,0,rf_stylometry,validation,0.12119712968859628,0,0.3012290209350177
+822ea99c-347b-486d-a002-01798cd29fa9,WC-056,llama3.1-8b,Programming and technical,P12,0,rf_stylometry,validation,0.0024609478422028064,0,0.3012290209350177
+422d6446-135c-43de-8510-4f43f6d2f9ee,WC-056,llama3.1-8b,Programming and technical,P12,0,rf_stylometry,validation,0.018635677283666715,0,0.3012290209350177
+05e0f002-a6fe-4efd-812e-e4a0232e47ea,WC-056,llama3.1-8b,Programming and technical,P12,0,rf_stylometry,validation,0.010623072604268773,0,0.3012290209350177
+978dd76d-bc2a-4c3c-8bd0-692f945654bf,WC-079,llama3.1-8b,English language and wording,BK1,0,rf_stylometry,validation,0.1994001415645864,0,0.3012290209350177
+3bf709db-b426-418d-be1f-5bca39add944,WC-079,llama3.1-8b,English language and wording,BK1,0,rf_stylometry,validation,0.04930614009434471,0,0.3012290209350177
+5dcce47f-b8b8-4590-94d6-9141753fc108,WC-079,llama3.1-8b,English language and wording,BK1,0,rf_stylometry,validation,0.07717958561479035,0,0.3012290209350177
+4a658009-75f4-4522-a065-4fc787ebde7d,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.17158443285293282,0,0.3012290209350177
+a4aa9650-0488-4d7d-af29-df76f584d6a9,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.24094041187324375,0,0.3012290209350177
+a3329971-337b-4bfd-abaa-5877e656d576,WC-099,llama3.1-8b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.19074452963396338,0,0.3012290209350177
+bdf7a67a-e49a-448b-9a99-5c8665b171b0,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.004509846685811919,0,0.3012290209350177
+b8223570-e4da-4942-81c9-3771165784c5,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.0019621451104100945,0,0.3012290209350177
+c35a6d67-ffbb-4f94-b5bc-d645fff01703,WC-140,llama3.1-8b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.0032096184612368755,0,0.3012290209350177
+f6313687-c2ef-43de-a20a-9d520b95b516,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.2203318737386508,0,0.3012290209350177
+c9399563-0eec-4eec-97bc-0decf8ac1802,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.31133232188906906,1,0.3012290209350177
+888d0992-6f11-46e7-a5bf-bca0283ff9d2,WCNEW-1384-22,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.20973877376160482,0,0.3012290209350177
+11bcf017-2044-4e0e-83ca-9bcc7c22e793,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.18595462332547305,0,0.3012290209350177
+45a084e4-bd0b-4074-ba30-807d7be0f07f,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.18595462332547305,0,0.3012290209350177
+743afe5e-f805-42e0-8fc3-a1633b993abf,WCNEW-16-0,llama3.1-8b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.18595462332547305,0,0.3012290209350177
+66131c1a-2f62-467d-b168-b4845c2904c6,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.015434066950317658,0,0.3012290209350177
+9697a1e1-9f7b-4289-895a-0f0d61fc67ec,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0028918371936136724,0,0.3012290209350177
+8dba3a44-6d5b-4280-ba74-a8c19491668c,WCNEW-176-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.001978902953586498,0,0.3012290209350177
+72d2636b-fcb0-4cdb-b893-79847e2a3421,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.04276312494145462,0,0.3012290209350177
+fae71a65-4dda-4b31-bfb6-f0018c163184,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.04685201755319667,0,0.3012290209350177
+38bade03-137b-4ff2-9cc4-3184c2b440af,WCNEW-235-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.060470321194037994,0,0.3012290209350177
+86c01c3d-827d-4ae3-a31e-463c7c0104dd,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.11072109541416963,0,0.3012290209350177
+91928a72-74e9-4726-9557-f7d04e5fa935,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.05878192441998127,0,0.3012290209350177
+5ce43181-8ed4-4389-b28c-87e268692798,WCNEW-446-0,llama3.1-8b,Programming and technical,P13,0,rf_stylometry,validation,0.10402264398687568,0,0.3012290209350177
+18fea1c4-db38-4076-83ff-a8dbce04ae42,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.00864388906464199,0,0.3012290209350177
+7352b2ac-3004-407a-95e9-31ac884ac6f4,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0019654882154882154,0,0.3012290209350177
+77b2d0fd-d779-4f17-a561-2dfa5266bce6,WCNEW-721-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.029630109985910546,0,0.3012290209350177
+e2028a45-0013-4df6-a2a1-ca41ec141981,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.029575570141940552,0,0.3012290209350177
+b171bff2-5582-4337-a6d6-c981f94fed8a,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.02475885247665536,0,0.3012290209350177
+7dc4d2c4-e388-40ba-a5b3-50f72dda748f,WCNEW-791-2,llama3.1-8b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.016853852019226387,0,0.3012290209350177
+c41ce589-057c-4d65-af4b-d490a9e269e5,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0016188239387613082,0,0.3012290209350177
+34073168-1ae2-41f5-a1c9-cfaf12b1c51e,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.008719850811620782,0,0.3012290209350177
+119364cb-4ca8-4d5f-94fb-4c5049b67660,WCNEW-855-0,llama3.1-8b,Creative and open-ended,P13,0,rf_stylometry,validation,0.03401426527475407,0,0.3012290209350177
+141942df-63c0-411c-9d4c-d481fa4ed3d3,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.08833708533701347,0,0.3012290209350177
+1ccd70ea-c850-49d1-962c-5bc218cc77eb,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.18502333127671486,0,0.3012290209350177
+56392e28-b8fd-4171-86fe-0afc5b7037c7,WCNEW-985-14,llama3.1-8b,Text transformation,P13,0,rf_stylometry,validation,0.21849248732351773,0,0.3012290209350177
+a54757fe-67e9-4c27-9516-d7ed8f07c41c,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.5461045285226166,1,0.3012290209350177
+c3964d8b-ea35-4046-a87a-583c8eb4d910,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.38838256369782004,1,0.3012290209350177
+7213b7a9-63a6-4595-88df-1491bb209e42,AYA-1457,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.5899604943722595,1,0.3012290209350177
+8f6efae0-9889-4aa1-828b-38a146408367,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.42685319337048383,1,0.3012290209350177
+900e8cf0-ad44-410b-821b-dde76ab2e7f1,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.320338919626985,1,0.3012290209350177
+9a7708ec-d531-4831-be5e-a8e5a2fa0950,AYA-1458,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.28304907378996397,0,0.3012290209350177
+bcc479b7-566a-4d2d-bec4-66db77bea6d2,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.06540249430670543,0,0.3012290209350177
+9804ab78-7564-477c-b290-8c4eda36515d,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.07334078901896987,0,0.3012290209350177
+6e7c96d6-e090-4569-8cd0-457312ff79c3,AYA-1540,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.0678045022660578,0,0.3012290209350177
+bc7812da-187b-4cbd-87c6-2d7caee48ac1,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.6497577439483186,1,0.3012290209350177
+e355e12e-618d-47d7-ab2f-5b49ea50c379,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.5063984342159041,1,0.3012290209350177
+f97e311d-7aad-457a-94a0-7d31c02af655,AYA-1839,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.4974973386528617,1,0.3012290209350177
+abd1171a-f7fc-4b52-9143-78b4052ca864,AYA-1856,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.3103682602108937,1,0.3012290209350177
+867b4f79-8531-40bf-9d41-8e67b4710e5d,AYA-1856,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.2889895973869396,0,0.3012290209350177
+383255ce-f7ff-4252-abf1-bb25a4411be7,AYA-1856,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.3109390115307906,1,0.3012290209350177
+1a88af81-3ca1-49d8-ac4c-67e6ce375f0d,AYA-375,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.019357211488630285,0,0.3012290209350177
+b45d3096-4761-479b-85fc-cb2114ff9f10,AYA-375,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.02942380074163358,0,0.3012290209350177
+9fdbd2ab-1ff6-4fe3-8031-c9f37c3ac98a,AYA-375,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.03634610129429052,0,0.3012290209350177
+a8da0525-19c6-4837-82e5-27d2ba278bf7,AYA-725,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.43747066673224366,1,0.3012290209350177
+d9e7c57c-5922-4e4f-baee-d277f626fad8,AYA-725,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.3234339011517449,1,0.3012290209350177
+5b2a9d30-5c8e-46d3-aa5d-81f5d2a9cee7,AYA-725,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.41526060900657613,1,0.3012290209350177
+35832729-ac5a-4cd5-a64b-9a2f8862b2fd,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.012325588070896018,0,0.3012290209350177
+1e7596c6-d573-4cf9-ab40-7abd472eea6c,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.031486865630806674,0,0.3012290209350177
+c523616a-6b47-4342-a4f2-a2142794c63f,BBH-disambiguation_qa-000,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.03932132482496495,0,0.3012290209350177
+c2b20277-52b2-400f-9c51-9a2c0429ea45,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.13035009800263805,0,0.3012290209350177
+45778c3c-0b4b-40ea-8d37-91127a2df154,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.027289030450001684,0,0.3012290209350177
+aeccbcd8-39b9-4139-96e2-5713699e5075,BBH-disambiguation_qa-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.09808467790013169,0,0.3012290209350177
+88789a4e-8c1b-4e7c-9767-3d59e1bba074,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.02725733822124893,0,0.3012290209350177
+994403bf-fe8c-48e1-8a47-19911440d376,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.027733862988683928,0,0.3012290209350177
+7213e626-0226-49d2-86ed-9bab4748b6ba,BBH-formal_fallacies-001,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.03525326741819236,0,0.3012290209350177
+0394a299-63ac-4f7a-80f7-0223c7f8fe1a,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.03728364484572751,0,0.3012290209350177
+b6ac60b3-d346-4794-a0e6-64e90cf25324,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.03646997969473625,0,0.3012290209350177
+e08b190d-cfae-477c-958c-907981f675d9,BBH-formal_fallacies-003,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.028789662604103986,0,0.3012290209350177
+a624303c-8797-4443-a6b7-a888c4207bb3,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,0,rf_stylometry,validation,0.18021712986601432,0,0.3012290209350177
+15bc81a4-d5bf-4fc0-8d4f-e4970d3951b2,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,0,rf_stylometry,validation,0.2099025598779376,0,0.3012290209350177
+9f696bcf-415b-4cce-9daa-f1472bb22d26,BBH-hyperbaton-001,llama3.2-3b,English language and wording,P13,0,rf_stylometry,validation,0.020487872238293733,0,0.3012290209350177
+2c662d35-fbb6-4038-81ae-9baa871532b5,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.17303703257106848,0,0.3012290209350177
+e8872be2-a963-4e79-8503-7dbd8d0228a6,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.09592827669391886,0,0.3012290209350177
+632f0c96-01b4-45af-809f-63426ffe1ef4,BBH-multistep_arithmetic_two-002,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.13277460449145223,0,0.3012290209350177
+88ea3d83-7fbc-4792-92a2-27139146257e,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.004490766627865286,0,0.3012290209350177
+87043650-5667-47b6-91ea-ca7f285ab9f1,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.059958346356698854,0,0.3012290209350177
+cb111cc6-e7d0-4cd1-a6c8-2629916153ea,BBH-sports_understanding-002,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.034669788177953666,0,0.3012290209350177
+b516fe47-286f-4984-b963-6ece5db88df3,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.4834830110101421,1,0.3012290209350177
+b80afcfd-be16-4171-bddd-e7978a03457a,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.703649135181008,1,0.3012290209350177
+9312a2a0-a3cd-4d7e-8753-5bb480369331,BBH-sports_understanding-004,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.34933616544919205,1,0.3012290209350177
+afac0ccd-3324-489f-a567-292335021679,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.011714404302913503,0,0.3012290209350177
+c89287dc-7b44-4dd6-971b-760c38258e71,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.01416865236960551,0,0.3012290209350177
+f6f76a4a-8621-48b0-901e-cf16b0307686,BBH-temporal_sequences-005,llama3.2-3b,Multi-step reasoning,P13,0,rf_stylometry,validation,0.012154483726131333,0,0.3012290209350177
+ade74b31-3128-420f-836d-b735239d6fab,BK-003,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.07636048589157288,0,0.3012290209350177
+86815e49-38fe-49a0-ae57-9e9d510611bc,BK-003,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.07416331612763165,0,0.3012290209350177
+10af37a8-cfc3-4681-a146-02d7bc6877d9,BK-003,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.07122868600664221,0,0.3012290209350177
+5269e45c-52ec-47ba-9ad9-d124579302e5,BK-012,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.008312152501985703,0,0.3012290209350177
+62a12608-6909-4907-8375-78ea1a1eca7a,BK-012,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.006182593818161898,0,0.3012290209350177
+f50f143d-4b97-4da8-a595-6d4c7ddb038a,BK-012,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.057292869808744,0,0.3012290209350177
+701aab16-f651-4bb0-8c03-09d7eaf64834,BK-014,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.012053419572333529,0,0.3012290209350177
+76fb1f42-bb6a-4cfa-a386-615fceb02897,BK-014,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.13987002545845412,0,0.3012290209350177
+ffd51e07-d4e4-4792-a72e-47932a6cad39,BK-014,llama3.2-3b,General Q&A and explanation,BK1,0,rf_stylometry,validation,0.06716804511596218,0,0.3012290209350177
+5fb24d06-14c5-47d2-a741-2b84aa999ab1,BK-015,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.0973029656295096,0,0.3012290209350177
+63fd5a88-6db8-4559-90ad-1ace596c8a5d,BK-015,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.05798441887635169,0,0.3012290209350177
+988238e1-565a-4c08-8b90-6f458179d969,BK-015,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.06631034350141819,0,0.3012290209350177
+1a95d672-9563-4c27-a5f5-d5970035454c,BK-018,llama3.2-3b,Text transformation,BK2,0,rf_stylometry,validation,0.5067187520605254,1,0.3012290209350177
+4131263b-6137-4903-b9c7-7a9f68e819b1,BK-018,llama3.2-3b,Text transformation,BK2,0,rf_stylometry,validation,0.507021658374515,1,0.3012290209350177
+01388dab-7f9c-4eba-8a7b-e19181dba354,BK-018,llama3.2-3b,Text transformation,BK2,0,rf_stylometry,validation,0.305518101149763,1,0.3012290209350177
+53269415-3a6a-4004-a5f8-ab1f14f6561a,BK-045,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.23537801465814562,0,0.3012290209350177
+ac03ec16-7d80-4709-b3b5-8fd52e3bd2ba,BK-045,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.06169997271915631,0,0.3012290209350177
+4a6f99c7-8101-4ef1-95b2-ac7031d60011,BK-045,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.07680130062510615,0,0.3012290209350177
+286093cc-7153-4d34-b3c7-0a4f00e9b7f6,BK-048,llama3.2-3b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.09903665595904229,0,0.3012290209350177
+26ca439b-4779-4016-a85b-6b6f689c8134,BK-048,llama3.2-3b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.17101895611147108,0,0.3012290209350177
+9aed6588-d752-4a4a-a1c0-8d846519ef9d,BK-048,llama3.2-3b,General Q&A and explanation,BK4,0,rf_stylometry,validation,0.11095500540694075,0,0.3012290209350177
+acf3574d-2333-4637-935d-b8b9dddfd6dd,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.10465143475476577,0,0.3012290209350177
+f5d25fc7-6449-43ce-bf52-acc7a5ca8082,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.04014612733128147,0,0.3012290209350177
+4916545e-0a41-4eaf-b5d5-db37f8459cae,BK-056,llama3.2-3b,Ambiguous and minimal,BK1,0,rf_stylometry,validation,0.05945226474989766,0,0.3012290209350177
+cf9e1927-22cf-4975-ac82-f2c9e739bb7d,IF-1021,llama3.2-3b,Structured instruction following,P04,0,rf_stylometry,validation,0.06186273474543678,0,0.3012290209350177
+3e23a8c9-a1b8-48f9-a908-39b8e7c38c8e,IF-1021,llama3.2-3b,Structured instruction following,P04,0,rf_stylometry,validation,0.054094417373220065,0,0.3012290209350177
+23632201-3f97-484f-843e-2e09884a327c,IF-1021,llama3.2-3b,Structured instruction following,P04,0,rf_stylometry,validation,0.07609305285902357,0,0.3012290209350177
+071781b7-7530-48f1-bf37-8da0c28f61d8,IF-1148,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.42587567048047503,1,0.3012290209350177
+25bd6347-bde5-41f8-a19e-a2dd9f55f7c7,IF-1148,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.42053995691649954,1,0.3012290209350177
+8ca508e3-2b91-44b5-8cb7-1086a4d0be13,IF-1148,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.46202294753702783,1,0.3012290209350177
+e5d16694-b210-4b42-b415-b3945c6d5277,IF-1242,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.3856602047687718,1,0.3012290209350177
+2686313f-4f5b-486d-bfb8-a3be126e8331,IF-1242,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.38483150474229577,1,0.3012290209350177
+33a03c33-a498-4c21-99f8-994c860881e7,IF-1242,llama3.2-3b,Structured instruction following,P13,0,rf_stylometry,validation,0.38151184600940036,1,0.3012290209350177
+3d856dda-9448-475b-893a-8540fa40d661,IF-1516,llama3.2-3b,Structured instruction following,P05,0,rf_stylometry,validation,0.42012117894083906,1,0.3012290209350177
+ca9a6c33-514a-4ca5-ae76-550e5a101fa9,IF-1516,llama3.2-3b,Structured instruction following,P05,0,rf_stylometry,validation,0.5042814335929416,1,0.3012290209350177
+1b2836df-065a-4446-933b-4a5fe52a16fd,IF-1516,llama3.2-3b,Structured instruction following,P05,0,rf_stylometry,validation,0.5773661397521973,1,0.3012290209350177
+dded3406-6e6f-4877-9bf1-4715005b4254,IF-2034,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.30436618234114315,1,0.3012290209350177
+58d52e29-0a7b-4ab8-bf6a-4e0b722988e3,IF-2034,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.3201816725091782,1,0.3012290209350177
+97cb2858-5d20-4a8a-93a7-cc9c48637130,IF-2034,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.10399624674954874,0,0.3012290209350177
+a4d3646b-b36b-4877-887b-034ff39a4bed,IF-2577,llama3.2-3b,Structured instruction following,P07,0,rf_stylometry,validation,0.12481415237958067,0,0.3012290209350177
+42abd6ca-6636-4912-9ce1-133dc4df84f8,IF-2577,llama3.2-3b,Structured instruction following,P07,0,rf_stylometry,validation,0.13096987121586487,0,0.3012290209350177
+e4b43b92-dfe2-4741-9241-2827c2c89983,IF-2577,llama3.2-3b,Structured instruction following,P07,0,rf_stylometry,validation,0.4659325968202747,1,0.3012290209350177
+9c974b4c-0aa6-4211-b601-46408012e9d9,IF-3150,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.0817308414678136,0,0.3012290209350177
+34ffeca2-7483-4ecb-a44c-3e4a3cbf0503,IF-3150,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.081470387403989,0,0.3012290209350177
+6d4c9afc-77eb-4330-b038-a79cdf13461c,IF-3150,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.05592421103379956,0,0.3012290209350177
+55773d7a-f4e1-4c9a-afeb-3fb766541407,WC-015,llama3.2-3b,Programming and technical,P09,0,rf_stylometry,validation,0.2334194223226449,0,0.3012290209350177
+0ec43cb8-38d0-432a-9cb5-9a277c7a62f3,WC-015,llama3.2-3b,Programming and technical,P09,0,rf_stylometry,validation,0.17710991784554994,0,0.3012290209350177
+2381c452-bf95-4c05-afa5-ad8ae5e1a391,WC-015,llama3.2-3b,Programming and technical,P09,0,rf_stylometry,validation,0.06413144311897645,0,0.3012290209350177
+05503c19-56b4-4487-b7ab-c97923263bd0,WC-056,llama3.2-3b,Programming and technical,P12,0,rf_stylometry,validation,0.47306904684373646,1,0.3012290209350177
+f695554a-1ee9-430b-8057-97e289834f96,WC-056,llama3.2-3b,Programming and technical,P12,0,rf_stylometry,validation,0.4565650438936371,1,0.3012290209350177
+8c51df5c-fecb-4a52-9840-a9e629ae5c78,WC-056,llama3.2-3b,Programming and technical,P12,0,rf_stylometry,validation,0.024290151051426026,0,0.3012290209350177
+ba22df33-2d58-441d-84e5-45fa0170bd6b,WC-079,llama3.2-3b,English language and wording,BK1,0,rf_stylometry,validation,0.31013878996384786,1,0.3012290209350177
+026a0ad4-19f8-42c5-9ffe-75876df419ad,WC-079,llama3.2-3b,English language and wording,BK1,0,rf_stylometry,validation,0.14246000050840307,0,0.3012290209350177
+89362d65-011e-499c-9e98-3961bbdff1ac,WC-079,llama3.2-3b,English language and wording,BK1,0,rf_stylometry,validation,0.44054651732822453,1,0.3012290209350177
+53c04244-0753-41b7-bbb9-dfaa00331f7b,WC-099,llama3.2-3b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.014252146776387382,0,0.3012290209350177
+f8126883-c65a-47a7-8431-0487c0122747,WC-099,llama3.2-3b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.02583618444702047,0,0.3012290209350177
+80fc3f68-0e27-40f9-acef-8e3c03107286,WC-099,llama3.2-3b,Creative and open-ended,BK2,0,rf_stylometry,validation,0.027477891630769923,0,0.3012290209350177
+dca68822-1d0d-4770-8eb2-7108f692a46e,WC-140,llama3.2-3b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.0033333333333333335,0,0.3012290209350177
+a50b39e7-89c0-4830-8319-7035bfba12d9,WC-140,llama3.2-3b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.0,0,0.3012290209350177
+772928a2-8d6b-47f5-a24d-268e0de17184,WC-140,llama3.2-3b,General Q&A and explanation,P01,0,rf_stylometry,validation,0.0,0,0.3012290209350177
+f3701647-cb64-46d0-83cc-1d10ec894f52,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.08733736902291757,0,0.3012290209350177
+027185ea-fd32-44a6-8f33-0ec0587f44ee,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.1193785651125633,0,0.3012290209350177
+9aacf08c-5f58-48e5-afed-fc9f591d9d1f,WCNEW-1384-22,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.3982702780157026,1,0.3012290209350177
+fb1a8afe-2513-42aa-a4d9-b022b653ef1f,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.4476983901009959,1,0.3012290209350177
+f5233e7b-70b3-40fa-8256-147f6923c6c4,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.4476983901009959,1,0.3012290209350177
+36fa56af-1ed9-4203-b6f1-fea2157133fb,WCNEW-16-0,llama3.2-3b,Ambiguous and minimal,P13,0,rf_stylometry,validation,0.4400627240669818,1,0.3012290209350177
+5692bb1b-c4ed-4a12-a357-a8314dd578e9,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.005980720527911539,0,0.3012290209350177
+49a16c77-8028-4e26-a7d3-7c2880e68954,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0041858090926402015,0,0.3012290209350177
+d4deb0c3-b89d-4c2c-bf5d-5d10ac85ed15,WCNEW-176-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0041858090926402015,0,0.3012290209350177
+f3be2bbf-57ec-46cf-bec0-adf75e856ac4,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.053508400777425136,0,0.3012290209350177
+d5e8ca7c-8481-4999-8873-dc90599ada7b,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.08643980434199496,0,0.3012290209350177
+e580c2db-a5bd-4fca-83cd-547d1b83cf6a,WCNEW-235-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.02827674613320801,0,0.3012290209350177
+9f065a69-6699-4080-bc07-c7fc6347ee62,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.053299633958248126,0,0.3012290209350177
+64bb055a-0f06-402a-b62b-629724f2848d,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.08201709863088844,0,0.3012290209350177
+94f6e2de-36a2-49ec-8ab1-4c05835d373d,WCNEW-446-0,llama3.2-3b,Programming and technical,P13,0,rf_stylometry,validation,0.08394113001424863,0,0.3012290209350177
+16831293-ac95-4020-89f0-ed38ccb91d68,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0056143437219019765,0,0.3012290209350177
+8217641c-6191-4ad5-988f-896b61476254,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0025046333068572944,0,0.3012290209350177
+20e58f53-51a5-4a8f-a423-5549717f20cd,WCNEW-721-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.0,0,0.3012290209350177
+55c7e304-0456-4636-a05d-c08518fb8f66,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.019522835703161007,0,0.3012290209350177
+d2f1a6fd-c7ba-41b0-848a-faf26eb5927b,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.02891029542079092,0,0.3012290209350177
+d98aca99-b11c-43d3-b9fc-63e64df2a272,WCNEW-791-2,llama3.2-3b,General Q&A and explanation,P13,0,rf_stylometry,validation,0.027708796601819317,0,0.3012290209350177
+2dac7425-c5b9-4f1f-8f0c-956bc6e5cc6c,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.008632154882154882,0,0.3012290209350177
+219ccb46-8b4f-4b55-b0b4-852c036ffb47,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.005818109610802224,0,0.3012290209350177
+5b09c9ac-4b92-4112-b548-3c229abdbc4c,WCNEW-855-0,llama3.2-3b,Creative and open-ended,P13,0,rf_stylometry,validation,0.006149155102135504,0,0.3012290209350177
+5bcdd565-ac36-479b-9112-89100276f264,WCNEW-985-14,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.36831567926755354,1,0.3012290209350177
+ad4755bd-9d46-485c-99b4-9980e9c6e382,WCNEW-985-14,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.1984025383564069,0,0.3012290209350177
+a0e1d96e-2ab2-452d-b264-70a1477f89ae,WCNEW-985-14,llama3.2-3b,Text transformation,P13,0,rf_stylometry,validation,0.19472232677770768,0,0.3012290209350177

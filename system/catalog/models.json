@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "source_notes": [
+    "Canonical model_key values from collector/models.yaml",
+    "Broad family_id aligns with Stage 1 family matching; optional product_line preserves Harness-level distinctions",
+    "This snapshot is metadata, not an indication that a classifier supports every listed model"
+  ],
+  "models": {
+    "llama3.1-8b": {
+      "developer": "Meta",
+      "family_id": "llama",
+      "display_name": "Llama 3.1 8B",
+      "provider": "ollama",
+      "provider_model_id": "llama3.1:8b"
+    },
+    "llama3.2-3b": {
+      "developer": "Meta",
+      "family_id": "llama",
+      "display_name": "Llama 3.2 3B",
+      "provider": "ollama",
+      "provider_model_id": "llama3.2:3b"
+    },
+    "qwen3-8b": {
+      "developer": "Alibaba",
+      "family_id": "qwen",
+      "display_name": "Qwen3 8B",
+      "provider": "ollama",
+      "provider_model_id": "qwen3:8b"
+    },
+    "qwen3.5-9b": {
+      "developer": "Alibaba",
+      "family_id": "qwen",
+      "display_name": "Qwen3.5 9B",
+      "provider": "ollama",
+      "provider_model_id": "qwen3.5:9b"
+    },
+    "gemma3-4b": {
+      "developer": "Google",
+      "family_id": "gemma",
+      "display_name": "Gemma 3 4B",
+      "provider": "ollama",
+      "provider_model_id": "gemma3:4b"
+    },
+    "llama3.2-1b": {
+      "developer": "Meta",
+      "family_id": "llama",
+      "display_name": "llama3.2-1b",
+      "provider": "ollama",
+      "provider_model_id": "llama3.2:1b"
+    },
+    "qwen2.5-3b": {
+      "developer": "Alibaba",
+      "family_id": "qwen",
+      "display_name": "qwen2.5-3b",
+      "provider": "ollama",
+      "provider_model_id": "qwen2.5:3b"
+    },
+    "gemma3-1b": {
+      "developer": "Google",
+      "family_id": "gemma",
+      "display_name": "gemma3-1b",
+      "provider": "ollama",
+      "provider_model_id": "gemma3:1b"
+    },
+    "gpt-5.6-terra": {
+      "developer": "OpenAI",
+      "family_id": "gpt",
+      "display_name": "GPT-5.6 Terra",
+      "provider": "openai",
+      "provider_model_id": "gpt-5.6-terra",
+      "product_line": "GPT Terra"
+    },
+    "gpt-5.6-luna": {
+      "developer": "OpenAI",
+      "family_id": "gpt",
+      "display_name": "GPT-5.6 Luna",
+      "provider": "openai",
+      "provider_model_id": "gpt-5.6-luna",
+      "product_line": "GPT Luna"
+    },
+    "claude-sonnet-5.5": {
+      "developer": "Anthropic",
+      "family_id": "claude",
+      "display_name": "Claude Sonnet 5.5",
+      "provider": "anthropic",
+      "provider_model_id": "claude-sonnet-5-5",
+      "product_line": "Claude Sonnet"
+    },
+    "claude-haiku-4.5": {
+      "developer": "Anthropic",
+      "family_id": "claude",
+      "display_name": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "provider_model_id": "claude-haiku-4-5-20251001",
+      "product_line": "Claude Haiku"
+    },
+    "gemini-3.8-flash": {
+      "developer": "Google",
+      "family_id": "gemini",
+      "display_name": "Gemini 3.8 Flash",
+      "provider": "google",
+      "provider_model_id": "gemini-3.8-flash",
+      "product_line": "Gemini Flash"
+    },
+    "gemini-3.1-pro": {
+      "developer": "Google",
+      "family_id": "gemini",
+      "display_name": "Gemini 3.1 Pro",
+      "provider": "google",
+      "provider_model_id": "gemini-3.1-pro-preview",
+      "product_line": "Gemini Pro"
+    },
+    "claude-haiku-5.5": {
+      "developer": "Anthropic",
+      "family_id": "claude",
+      "display_name": "claude-haiku-5.5",
+      "provider": "anthropic",
+      "provider_model_id": "claude-haiku-5-5"
+    },
+    "gpt-6.1-terra": {
+      "developer": "OpenAI",
+      "family_id": "gpt",
+      "display_name": "gpt-6.1-terra",
+      "provider": "openai",
+      "provider_model_id": "gpt-6.1-terra"
+    },
+    "gpt-6-luna": {
+      "developer": "OpenAI",
+      "family_id": "gpt",
+      "display_name": "gpt-6-luna",
+      "provider": "openai",
+      "provider_model_id": "gpt-6-luna"
+    }
+  }
+}

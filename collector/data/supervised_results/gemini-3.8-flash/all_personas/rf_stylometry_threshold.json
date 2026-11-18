@@ -1,0 +1,9 @@
+{
+  "algorithm": "rf_stylometry",
+  "target_model": "gemini-3.8-flash",
+  "view": "all_personas",
+  "threshold": 0.3012290209350177,
+  "selection": "validation_false_alarm_limit",
+  "max_false_alarm": 0.1,
+  "seed": 42
+}

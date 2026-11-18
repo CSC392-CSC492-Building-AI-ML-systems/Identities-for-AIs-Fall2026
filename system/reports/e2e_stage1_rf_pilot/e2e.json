@@ -1,0 +1,678 @@
+{
+  "status": "completed",
+  "scope": "e2e",
+  "strategy": "logistic_regression:hierarchy_hard_route:stage1_lr/v1 + only_random_forest",
+  "metrics": {
+    "n_cases": 21,
+    "end_to_end_exact_model_accuracy": 0.1905,
+    "resolved": 7,
+    "verified": 7,
+    "drift_detected": 0,
+    "needs_review": 14,
+    "errors": 0,
+    "false_verification_count": 3,
+    "false_drift_alarm_count": 0,
+    "correct_drift_detections": 0,
+    "true_drift_cases": 15,
+    "drift_detection_recall": 0.0,
+    "correctly_verified_unchanged": 4,
+    "true_unchanged_cases": 6,
+    "stage2_invocations": 14,
+    "attempts_by_method": {
+      "lora": 0,
+      "harness": 0,
+      "random_forest": 14
+    },
+    "false_verification_rate_on_changed": 0.2,
+    "false_drift_alarm_rate_on_unchanged": 0.0,
+    "review_rate": 0.6667,
+    "stage2_invocation_rate": 0.6667,
+    "accepted_candidate_accuracy": null,
+    "per_dataset": {
+      "rf_fingerprint_v0": {
+        "cases": 21,
+        "exact_model_accuracy": 0.1905
+      }
+    }
+  },
+  "rows": [
+    {
+      "case_id": "73ca6c39-d956-4cd8-9c7c-9aa31cfb0866|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "gemma3-4b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "gemma3-4b",
+          "accepted_model": null,
+          "score": 0.992,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 392.693550000331
+        }
+      ],
+      "duration_ms": 433.0891099998553,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "fda69694-8a15-4cd3-b342-e1aaa8c865e8|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "gemma3-4b",
+      "true_change": true,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "verified",
+      "predicted_model": "llama3.1-8b",
+      "resolved_by": "stage1",
+      "exact_match": false,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 28.055826000127126,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "38643075-b372-49c8-939f-fccdf51c4846|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "gemma3-4b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "gemma3-4b",
+          "accepted_model": null,
+          "score": 0.56,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 35.249032999672636
+        }
+      ],
+      "duration_ms": 41.466603000117175,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "05f54746-3103-4c24-8de2-2f714df78975|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.1-8b",
+      "true_change": false,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "verified",
+      "predicted_model": "llama3.1-8b",
+      "resolved_by": "stage1",
+      "exact_match": true,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 9.187725999254326,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "05f54746-3103-4c24-8de2-2f714df78975|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.1-8b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.1-8b",
+          "accepted_model": null,
+          "score": 0.454,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 38.86631200020929
+        }
+      ],
+      "duration_ms": 48.45662300067488,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "20a2f8fe-1d17-4e1f-ad25-555190c89cd8|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.1-8b",
+      "true_change": false,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "verified",
+      "predicted_model": "llama3.1-8b",
+      "resolved_by": "stage1",
+      "exact_match": true,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 6.758225999874412,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "20a2f8fe-1d17-4e1f-ad25-555190c89cd8|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.1-8b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.1-8b",
+          "accepted_model": null,
+          "score": 0.752,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 37.333410999963235
+        }
+      ],
+      "duration_ms": 43.07958299978054,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "dc17d37e-2682-4e0c-ae9b-579a4af886ac|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.1-8b",
+      "true_change": false,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.1-8b",
+          "accepted_model": null,
+          "score": 0.724,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 37.94257099980314
+        }
+      ],
+      "duration_ms": 61.83883700032311,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "dc17d37e-2682-4e0c-ae9b-579a4af886ac|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.1-8b",
+      "true_change": true,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "verified",
+      "predicted_model": "llama3.2-3b",
+      "resolved_by": "stage1",
+      "exact_match": false,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 24.541478999708488,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "f9fa7242-8cf4-4407-9b35-c44eaf66a3de|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.2-3b",
+      "true_change": false,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "verified",
+      "predicted_model": "llama3.2-3b",
+      "resolved_by": "stage1",
+      "exact_match": true,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 9.565252999891527,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "f9fa7242-8cf4-4407-9b35-c44eaf66a3de|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.2-3b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.2-3b",
+          "accepted_model": null,
+          "score": 0.584,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 34.702158000072814
+        }
+      ],
+      "duration_ms": 42.50259099990217,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "0ad8f489-59ad-4384-8e2c-951cb2fbd06a|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.2-3b",
+      "true_change": false,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.2-3b",
+          "accepted_model": null,
+          "score": 0.664,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 40.44184200029122
+        }
+      ],
+      "duration_ms": 46.1118709999937,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "0ad8f489-59ad-4384-8e2c-951cb2fbd06a|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.2-3b",
+      "true_change": true,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.1-8b",
+      "status": "verified",
+      "predicted_model": "llama3.1-8b",
+      "resolved_by": "stage1",
+      "exact_match": false,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 5.923790999986522,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "83a388d9-7505-46a3-ab52-17835e3f6789|approved=llama3.2-3b",
+      "expected_model": "llama3.2-3b",
+      "actual_model": "llama3.2-3b",
+      "true_change": false,
+      "stage1_verdict": "verified",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "verified",
+      "predicted_model": "llama3.2-3b",
+      "resolved_by": "stage1",
+      "exact_match": true,
+      "attempted_methods": [],
+      "stage2_attempts": [],
+      "duration_ms": 25.731974000336777,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:verified"
+      ]
+    },
+    {
+      "case_id": "83a388d9-7505-46a3-ab52-17835e3f6789|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "llama3.2-3b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "llama3.2-3b",
+          "accepted_model": null,
+          "score": 0.884,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 39.90114699990954
+        }
+      ],
+      "duration_ms": 61.98347000008653,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "35e90f9e-6f83-4800-924b-1978dbc7b24a|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3-8b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3-8b",
+          "accepted_model": null,
+          "score": 0.764,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 37.34390000045096
+        }
+      ],
+      "duration_ms": 49.490827000227,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "b88debab-a1ad-475c-8747-428d69b01d86|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3-8b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "llama",
+      "stage1_predicted_model": "llama3.2-3b",
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3-8b",
+          "accepted_model": null,
+          "score": 0.776,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 35.61449500011804
+        }
+      ],
+      "duration_ms": 44.77020200010884,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "205bf707-f7f8-40c0-a493-aec464891801|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3-8b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3-8b",
+          "accepted_model": null,
+          "score": 0.998,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 38.242188000367605
+        }
+      ],
+      "duration_ms": 55.99599000015587,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "3eeb1ff4-87cc-439d-a9d7-ace34193a4dc|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3.5-9b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3-8b",
+          "accepted_model": null,
+          "score": 0.542,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 37.878484000430035
+        }
+      ],
+      "duration_ms": 46.63678799988702,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "852fca5a-cc5d-45c2-9225-b35488c68323|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3.5-9b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3-8b",
+          "accepted_model": null,
+          "score": 0.602,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 37.286413999936485
+        }
+      ],
+      "duration_ms": 47.74387999987084,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    },
+    {
+      "case_id": "28df283f-07c5-4dce-8b57-3723d8ff87c5|approved=llama3.1-8b",
+      "expected_model": "llama3.1-8b",
+      "actual_model": "qwen3.5-9b",
+      "true_change": true,
+      "stage1_verdict": "mismatch",
+      "stage1_predicted_family": "gemini",
+      "stage1_predicted_model": null,
+      "status": "needs_review",
+      "predicted_model": null,
+      "resolved_by": null,
+      "exact_match": false,
+      "attempted_methods": [
+        "random_forest"
+      ],
+      "stage2_attempts": [
+        {
+          "method": "random_forest",
+          "outcome": "unknown",
+          "candidate_model": "qwen3.5-9b",
+          "accepted_model": null,
+          "score": 0.954,
+          "score_type": "rf_predict_proba",
+          "reason": "Closed-set RF candidate only; identity requires review",
+          "duration_ms": 44.83441100001073
+        }
+      ],
+      "duration_ms": 58.60893599947303,
+      "routing_trace": [
+        "stage1:logistic_regression:hierarchy_hard_route:stage1_lr/v1:mismatch",
+        "stage2:entered",
+        "stage2:random_forest:unknown",
+        "stage2:unresolved"
+      ]
+    }
+  ],
+  "config_sha256": "4059b39e95fc85d82a5438e7f882e9a3271a0273e2aa3f4cf244137bb9353c71",
+  "artifact_ids": [
+    "stage1_lr/v1",
+    "random_forest/v1"
+  ],
+  "manifest_sha256": {
+    "stage1_lr/v1": "75a58b7bc17e867494e466572633de22649007d383f4cf91a9c547e3fee607d2",
+    "random_forest/v1": "edebdadc39cbfa06ba425c653f7ac01c98a91ec012542ab6bc74a7fbab091f79"
+  },
+  "partial_pipeline": true,
+  "omitted_methods": [
+    "lora",
+    "harness"
+  ],
+  "note": "Subset/partial E2E diagnostic; NOT full configured pipeline evaluation"
+}

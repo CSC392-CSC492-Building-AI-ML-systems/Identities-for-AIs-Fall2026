@@ -1,0 +1,34 @@
+model_key: qwen3.5-9b
+name: "Qwen3.5 9B"
+family: Qwen
+access: open
+domain: compliance
+retrieved_at: 2026-10-26
+licence_id: apache-2.0
+fields:
+  developer:
+    value: "Qwen Team, Alibaba Cloud (the licence notice reads Copyright 2026 Alibaba Cloud)"
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  licence:
+    value: "Apache License 2.0 (confirmed on the official Qwen/Qwen3.5-9B page)"
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  base_model:
+    value: "Fine-tune of Qwen/Qwen3.5-9B-Base (the developer's own base model)"
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  training_data:
+    value: "Not disclosed. The model card only describes training stages (pre-training on multimodal tokens, reinforcement learning); no datasets, token counts or sources are named."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  permitted_uses:
+    value: "No usage policy published. The Apache 2.0 licence allows any use, including commercial, with no use restrictions."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  official_documentation:
+    value: "Partial: Hugging Face model card and release blog; no technical report found for the 9B model"
+    source:
+      - "https://huggingface.co/Qwen/Qwen3.5-9B"
+      - "https://qwen.ai/blog?id=qwen3.5"
+  disclosed_risks:
+    value: "No risks disclosed. No safety or limitations section; only usage cautions (long-context scaling can hurt short texts; repetition penalties can cause language mixing)."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  audit_contact:
+    value: "No contact channel listed. Fall back to the Hugging Face community discussions on Qwen/Qwen3.5-9B."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"

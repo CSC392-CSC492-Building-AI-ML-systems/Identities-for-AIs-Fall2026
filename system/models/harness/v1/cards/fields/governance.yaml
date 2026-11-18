@@ -1,0 +1,88 @@
+# Governance card: who approved the model, how it is kept under review, and what happens when it changes.
+# Most fields are entered by the bank or produced by our system; only the research fields are stored here.
+# filled_by / level: see fields/compliance.yaml.
+
+domain: governance
+title: Governance card
+purpose: Answers "Who said yes to this model?", "How often do we re-check it?" and "What happens if it changes?"
+
+fields:
+  - id: pinned_identity
+    name: Pinned model identity
+    filled_by: research
+    level: version
+    where_open: Hugging Face repo ID (plus commit hash); Ollama tag and digest
+    where_closed: Exact API model ID or dated snapshot from the developer's model list
+    if_missing: Alias only (e.g. "latest") -> record it and flag "cannot be pinned"
+
+  - id: registry_entry
+    name: Registry entry
+    filled_by: system
+    level: version
+    where_open: Created by our system when the model is approved
+    where_closed: Created by our system when the model is approved
+    if_missing: Not created until a decision is recorded
+
+  - id: accountable_owner
+    name: Accountable owner
+    filled_by: organization
+    level: version
+    where_open: Entered by the bank at registration
+    where_closed: Entered by the bank at registration
+    if_missing: '"To be entered at registration" (should not be approved without one)'
+
+  - id: approval_decision
+    name: Approving authority and decision
+    filled_by: organization
+    level: version
+    where_open: Entered by the bank (role/body, Approved / Rejected / Conditional / Pending, date, reason)
+    where_closed: Same
+    if_missing: Status stays "Pending review"
+
+  - id: review_cadence
+    name: Review cadence and next review date
+    filled_by: organization
+    level: version
+    where_open: Entered by the bank, set by risk level
+    where_closed: Same
+    if_missing: '"To be entered at registration"'
+
+  - id: monitoring_status
+    name: Monitoring status
+    filled_by: system
+    level: version
+    where_open: From scan results (last scan date; Verified / Drift detected / Needs review)
+    where_closed: Same
+    if_missing: '"Not yet scanned"'
+
+  - id: rereview_triggers
+    name: Re-review triggers
+    filled_by: research
+    level: family
+    where_open: System rules plus the developer's release notes / repository history
+    where_closed: System rules plus the developer's changelog and deprecation page
+    if_missing: '"No published change policy": rely on scans alone and flag'
+
+  - id: support_status
+    name: Developer support status
+    filled_by: research
+    level: version
+    where_open: Model card and developer announcements (superseded? end-of-support notice?)
+    where_closed: Developer's model lifecycle / deprecation page
+    if_missing: '"No policy published"'
+
+  - id: decommission_plan
+    name: Decommission plan and fallback model
+    filled_by: organization
+    level: version
+    where_open: Entered by the bank
+    where_closed: Entered by the bank
+    if_missing: '"To be entered at registration"'
+
+  - id: incident_escalation
+    name: Incident escalation path
+    filled_by: organization
+    level: version
+    where_open: Entered by the bank (internal owner and first action). The developer's channel is Compliance "Audit contact"
+    where_closed: Same
+    if_missing: '"To be entered at registration"'

@@ -1,0 +1,18 @@
+model_key: qwen3.5-9b
+name: "Qwen3.5 9B"
+family: Qwen
+access: open
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "Hugging Face Qwen/Qwen3.5-9B (small models released early March 2026); run locally as Ollama tag qwen3.5:9b. Ollama digest seen in our data: 56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90 (Q4_K_M). Thinking mode is on by default."
+    source:
+      - "https://huggingface.co/Qwen/Qwen3.5-9B"
+      - "https://artificialanalysis.ai/articles/qwen3-5-small-models"
+  rereview_triggers:
+    value: "Scan detects drift; a new Qwen release; changes to the Hugging Face repo (licence or model card). No published change or deprecation policy, so rely on scans and repo history."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"
+  support_status:
+    value: "Current small Qwen model as of our research; larger Qwen3.6 models exist. No end-of-support policy published."
+    source: "https://huggingface.co/Qwen/Qwen3.5-9B"

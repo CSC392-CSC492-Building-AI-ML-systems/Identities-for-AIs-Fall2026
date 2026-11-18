@@ -1,0 +1,76 @@
+model_key: gemma3-4b
+name: Gemma 3 4B Instruct
+family: Gemma
+access: open
+domain: risk
+retrieved_at: 2026-10-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Developer-reported: SimpleQA 4.0 (weak factual recall), FACTS Grounding 70.1. Google says it is not a reliable
+      knowledge base.'
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  confabulation:
+    evidence: low
+    value: Google acknowledges it may give outdated or incorrect facts; no fabrication rate published.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  data_leakage_model:
+    evidence: moderate
+    value: Training data filtered with automated techniques to remove personal information and other sensitive data; no memorization
+      rate.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Runs on the bank's own hardware (we use Ollama locally), so prompts and answers never go to the developer. Risk
+      depends on how the bank hosts it.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  security:
+    evidence: low
+    value: No jailbreak or prompt-injection results for the 4B. Phare only covers larger Gemma 3 models (jailbreak resistance
+      44.27% for 12B, 40.07% for 27B), so this is family-level evidence only.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    - https://phare.giskard.ai
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Data categories only (web, code, maths, images); no dataset list or regurgitation rate.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  agentic_tool_use:
+    evidence: none
+    value: Tool use not evaluated in the model card.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null
+  harmful_content:
+    evidence: moderate
+    value: Google reports 'major improvements' and minimal policy violations in child safety and content safety, tested without
+      safety filters, English only; no rates. Phare harm resistance for Gemma 3 12B is 92.65% (family-level only).
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    - https://phare.giskard.ai
+    own_test: null
+  bias_fairness:
+    evidence: low
+    value: 'Representational harms evaluated but only described qualitatively. Phare bias resistance for larger Gemma 3 models:
+      32.14% (12B), 38.01% (27B), family-level only.'
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    - https://phare.giskard.ai
+    own_test: null
+  environmental_impact:
+    evidence: low
+    value: Trained on TPUv4p/v5p/v5e with JAX; no energy or emissions figures for the 4B.
+    source:
+    - https://ai.google.dev/gemma/docs/core/model_card_3
+    own_test: null

@@ -1,0 +1,58 @@
+{
+  "note": "Real model inference; prompt-held-out subset of original collector test CSV, not end-to-end Stage 2 accuracy",
+  "source_csv_name": "test.csv",
+  "source_sha256": "c6a5241754decc18ed12f2a7aaf89b63c806a6478cb7a5b05da3435ffd4fcf05",
+  "sample_counts_per_actual_model": {
+    "gemini-3.1-pro": 20,
+    "gemini-3.8-flash": 20,
+    "llama3.1-8b": 20,
+    "llama3.2-3b": 20
+  },
+  "n_unique_response_samples": 80,
+  "n_unique_prompts": 20,
+  "n_pairs_per_approach": 320,
+  "n_unchanged_cases_per_approach": 80,
+  "n_swap_cases_per_approach": 240,
+  "manifest_sha256": "75a58b7bc17e867494e466572633de22649007d383f4cf91a9c547e3fee607d2",
+  "artifact_id": "stage1_lr/v1",
+  "methodology": "Deterministic seeded prompt-diverse sampling (seed=42), then all four expected models paired with each sampled response; predictions use response text only.",
+  "limitation": "Same response reused for four expected model scenarios; observations are correlated. No unknown out-of-set families. Metrics are descriptive, not independent confidence intervals.",
+  "results": {
+    "hierarchy_hard_route": {
+      "n_cases": 320,
+      "verification_decision_coverage": 1.0,
+      "verification_decision_accuracy": 0.8688,
+      "family_accuracy_on_predicted": 1.0,
+      "family_predictions": 320,
+      "model_accuracy_on_predicted": 0.7375,
+      "model_predictions": 160,
+      "false_verifications": 21,
+      "false_mismatch_alarms": 21,
+      "inconclusive_or_error": 0
+    },
+    "hierarchy_soft": {
+      "n_cases": 320,
+      "verification_decision_coverage": 1.0,
+      "verification_decision_accuracy": 0.8719,
+      "family_accuracy_on_predicted": 1.0,
+      "family_predictions": 320,
+      "model_accuracy_on_predicted": 0.7375,
+      "model_predictions": 160,
+      "false_verifications": 20,
+      "false_mismatch_alarms": 21,
+      "inconclusive_or_error": 0
+    },
+    "ovr_direct": {
+      "n_cases": 320,
+      "verification_decision_coverage": 1.0,
+      "verification_decision_accuracy": 0.8719,
+      "family_accuracy_on_predicted": 1.0,
+      "family_predictions": 320,
+      "model_accuracy_on_predicted": 0.7375,
+      "model_predictions": 160,
+      "false_verifications": 20,
+      "false_mismatch_alarms": 21,
+      "inconclusive_or_error": 0
+    }
+  }
+}

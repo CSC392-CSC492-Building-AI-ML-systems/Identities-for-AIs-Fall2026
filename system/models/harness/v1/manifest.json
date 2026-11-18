@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "harness/v1",
+  "adapter": "harness",
+  "stage": 2,
+  "kind": "agentic_identifier",
+  "supported_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen3-8b",
+    "qwen3.5-9b",
+    "gemma3-4b",
+    "gemini-3.8-flash",
+    "gemini-3.1-pro",
+    "claude-sonnet-5.5",
+    "claude-haiku-4.5",
+    "gpt-5.6-terra",
+    "gpt-5.6-luna"
+  ],
+  "required_files": [
+    {
+      "path": "agent/card_lookup.py",
+      "sha256": "3046a4daee4df24a39d76d709ed49bbb3df797bcb9536142f5e8a8ab0c1af614"
+    },
+    {
+      "path": "agent/check_chatbot.py",
+      "sha256": "6f2eaec979f5ab26178907bb8bffec3f713e6e61c2504ab426e885575f3d712a"
+    },
+    {
+      "path": "agent/identify.py",
+      "sha256": "16ec63e97c07e92567184e03bb42f053f9e094ef9221d519700b77ec8410247d"
+    },
+    {
+      "path": "agent/identify_api.py",
+      "sha256": "883577780ba7c5090937219ff845cd322235405fceb8c2e8b92417e1d87c1e10"
+    },
+    {
+      "path": "agent/probe_identify.py",
+      "sha256": "2b6f5668d0ebcff8a4c90ab8d08450abcc18ada27064cd16b746abe81da692a6"
+    },
+    {
+      "path": "agent/test_rules.py",
+      "sha256": "0635be4ec16006bff5b13415b26ad401294a9b3dcfa33793f6e0fe9f6fd184e6"
+    },
+    {
+      "path": "cards/README.md",
+      "sha256": "af0e2f37d51fea8584c46516870b7cb18c3a14b199cd486d8a9310801d753b53"
+    },
+    {
+      "path": "cards/cardlib.py",
+      "sha256": "5917397b1b4ec15cba7c0fe70d9011a0db00de0c46b01794f5920482acd59ccc"
+    },
+    {
+      "path": "cards/check_cards.py",
+      "sha256": "3f67992bf3ca88eb1294b7bd8402b65832f91db1ff9247eec7a15a3665f125a4"
+    },
+    {
+      "path": "cards/data/compliance/claude-haiku-4.5.yaml",
+      "sha256": "21546a27d83fa06b4d6440fdb251e78d71a11b06482393c2453edace9e5ea2a6"
+    },
+    {
+      "path": "cards/data/compliance/claude-sonnet-5.5.yaml",
+      "sha256": "8902c708921aeae6a3eccc9fff6e36deec8ec93e844e39f4a34ec785273fffe5"
+    },
+    {
+      "path": "cards/data/compliance/gemini-3.1-pro.yaml",
+      "sha256": "6e944d69b7599822e0ff6247775feae307548c26f67e6cafdf27f2ce27b2ab19"
+    },
+    {
+      "path": "cards/data/compliance/gemini-3.8-flash.yaml",
+      "sha256": "899de2ec38a22700f6c35da950c31fd014efeb09a8e364bf5d11afb051f84dc6"
+    },
+    {
+      "path": "cards/data/compliance/gemma3-4b.yaml",
+      "sha256": "78b369cd989f93fc19b76aa35085d5afc13c1433afd9a2435dcc84457c6d8e12"
+    },
+    {
+      "path": "cards/data/compliance/gpt-5.6-luna.yaml",
+      "sha256": "1ac228919d08e0007a9df95d774f57643d23d297c3548560de8a4ce781c82fdd"
+    },
+    {
+      "path": "cards/data/compliance/gpt-5.6-terra.yaml",
+      "sha256": "61ea58cde550778fb7e12bc1cca9a065b89519e7a837e271b26aea09d61c6a24"
+    },
+    {
+      "path": "cards/data/compliance/llama3.1-8b.yaml",
+      "sha256": "38e8aaff3017a72f67967f857fe07517c215ae63b370398cf4fa5b7ce73bf64c"
+    },
+    {
+      "path": "cards/data/compliance/llama3.2-3b.yaml",
+      "sha256": "b868e52ca2cb7034aa88c25858919dee75e9b1becbc27ad3b06eae4e3f509e26"
+    },
+    {
+      "path": "cards/data/compliance/qwen3-8b.yaml",
+      "sha256": "401727fcb7747f5e420c3874cbff6810a2a9165dcba67b8ad4efbd13ce92a9e2"
+    },
+    {
+      "path": "cards/data/compliance/qwen3.5-9b.yaml",
+      "sha256": "de089f62770aae7c960ef9ac975f167ed1ed8db2cb1873de281f34a7f4794f85"
+    },
+    {
+      "path": "cards/data/evaluation/claude-haiku-4.5.yaml",
+      "sha256": "7176288f9a715fde7c946048c095b9540d46ab29548f1b30ae3706854eae1e24"
+    },
+    {
+      "path": "cards/data/evaluation/claude-sonnet-5.5.yaml",
+      "sha256": "1db050248afe084569fc52bd8ea8d46b42738f87d1fccbcbf9bc2e3568ed92dd"
+    },
+    {
+      "path": "cards/data/evaluation/gemini-3.1-pro.yaml",
+      "sha256": "0f3709ad47b33e13c8830868b646ee9c8dc70a5fb1401a129ab4741dd41b87ad"
+    },
+    {
+      "path": "cards/data/evaluation/gemini-3.8-flash.yaml",
+      "sha256": "90cc6daf5fc24b156313ec38255e2dc60ec1a23ab5ef8a02ca3e14909db01d86"
+    },
+    {
+      "path": "cards/data/evaluation/gemma3-4b.yaml",
+      "sha256": "c1eb621add5034d4758c138d0c7a7eec750a3e81f83df229deb80e87be00455b"
+    },
+    {
+      "path": "cards/data/evaluation/gpt-5.6-luna.yaml",
+      "sha256": "eec5d3a423d9d3ad49e297f405e6d34f66c79400afed3f6d5c84139ee65b22d7"
+    },
+    {
+      "path": "cards/data/evaluation/gpt-5.6-terra.yaml",
+      "sha256": "cd87c1b328579500ba370696e2d6b3eab7d012eb1665a5737dc079de08c001ba"
+    },
+    {
+      "path": "cards/data/evaluation/llama3.1-8b.yaml",
+      "sha256": "56d2deb2de78f053a711c3169f1b574431b37ad77eef9ba9b91facb92a000081"
+    },
+    {
+      "path": "cards/data/evaluation/llama3.2-3b.yaml",
+      "sha256": "deb09fe9a689b9074c24e5504a2d695ba67e933e8e370aa30caac730de476429"
+    },
+    {
+      "path": "cards/data/evaluation/qwen3-8b.yaml",
+      "sha256": "2096aa0dd23943bca51d656d953ebdc0c49049dddb726b368e0905dd04cdb2c5"
+    },
+    {
+      "path": "cards/data/evaluation/qwen3.5-9b.yaml",
+      "sha256": "56cbd54c2466369721835a5ca8e9ddac232fb6cbaf42c233c7a79f116740e9d8"
+    },
+    {
+      "path": "cards/data/governance/claude-haiku-4.5.yaml",
+      "sha256": "6f3fe642c10ac7cf04ef649394ce82a03f298cbccc3e8074a0670f22fa7470bb"
+    },
+    {
+      "path": "cards/data/governance/claude-sonnet-5.5.yaml",
+      "sha256": "3adfd3b222c34a36c5702d977e43c7f891718b95be307430331cfd4361302e0c"
+    },
+    {
+      "path": "cards/data/governance/gemini-3.1-pro.yaml",
+      "sha256": "b566b22a4daea6e1014091ab5a7c39bd16f5f048f5456af74a7af48e91f84013"
+    },
+    {
+      "path": "cards/data/governance/gemini-3.8-flash.yaml",
+      "sha256": "bf5b2b3b2d33ba37a9b147b3de8e2deb496089d326a4e1473c3c148ad5a6b5a6"
+    },
+    {
+      "path": "cards/data/governance/gemma3-4b.yaml",
+      "sha256": "879cb07aa6a5b8323c7e26af795993da28b578c80ccab140f8200a2bb54e7c1e"
+    },
+    {
+      "path": "cards/data/governance/gpt-5.6-luna.yaml",
+      "sha256": "e5d99a2d95bc81d3f1445855268f7834809cf3355317584cb5447aaa753092eb"
+    },
+    {
+      "path": "cards/data/governance/gpt-5.6-terra.yaml",
+      "sha256": "304eb3ce90660d1ada8e6a11c0d40682990e1e17b5358fcfbe836fd2130be30a"
+    },
+    {
+      "path": "cards/data/governance/llama3.1-8b.yaml",
+      "sha256": "4321ba3129b0baa8aac3b514486794445910bfccda3da243a5a2e032cb08b798"
+    },
+    {
+      "path": "cards/data/governance/llama3.2-3b.yaml",
+      "sha256": "83cd5d5cca7e3c81981043739bdcead40df1f4f0036898fb9de86ebed1316816"
+    },
+    {
+      "path": "cards/data/governance/qwen3-8b.yaml",
+      "sha256": "f7f2d701dad6c0b0b4525f23b6baa8ff6f8fbc730a21101fb6ea4b33d8f8a4f2"
+    },
+    {
+      "path": "cards/data/governance/qwen3.5-9b.yaml",
+      "sha256": "48ffca5154b0819fbaaa6ff66d12ecb059aa295406c2c4dc2ea9eb83f4325241"
+    },
+    {
+      "path": "cards/data/risk/claude-haiku-4.5.yaml",
+      "sha256": "4479da2e99ecb13e0cef95e6212f15102e22ab2f21359b470f4eda9ee337c6ea"
+    },
+    {
+      "path": "cards/data/risk/claude-sonnet-5.5.yaml",
+      "sha256": "3154c167b3e4e5fcd4df4d017e4cfc3156379450d71fab3a67ee05a5377f0b94"
+    },
+    {
+      "path": "cards/data/risk/gemini-3.1-pro.yaml",
+      "sha256": "51cebcc06e0cd7474351f9018323efdd493d32ec0ca657151cc3db1b81e0e615"
+    },
+    {
+      "path": "cards/data/risk/gemini-3.8-flash.yaml",
+      "sha256": "cbde46312090102121cac13f8c9e820faf8ebc70f56043b813669b566d06b252"
+    },
+    {
+      "path": "cards/data/risk/gemma3-4b.yaml",
+      "sha256": "b55484bdaa4c5c1942d969bb5bc1f17f76d141c5348dc5ff23e8a21a187646fa"
+    },
+    {
+      "path": "cards/data/risk/gpt-5.6-luna.yaml",
+      "sha256": "41bc945c1e9ce0614fb36d4fd0422a20fccc58dde22dd4f5f176ef729edbce2a"
+    },
+    {
+      "path": "cards/data/risk/gpt-5.6-terra.yaml",
+      "sha256": "d01813e9ba3b10855dfdf7ea1fe82dc29023e6d8291da6fbff54d5e1eead9b95"
+    },
+    {
+      "path": "cards/data/risk/llama3.1-8b.yaml",
+      "sha256": "23a47c136938b52586237f948a3b4206cb7c7d31fd8c9a564da38bd0a10bd860"
+    },
+    {
+      "path": "cards/data/risk/llama3.2-3b.yaml",
+      "sha256": "5b02b6e41556a1439b68951cf25a6bacbe687cb12cd18f026e2e5e22c3c060af"
+    },
+    {
+      "path": "cards/data/risk/qwen3-8b.yaml",
+      "sha256": "805040e26b7fd346f4bd228e0fa1d26cc56669a29a65a3c81f42e905806fab0c"
+    },
+    {
+      "path": "cards/data/risk/qwen3.5-9b.yaml",
+      "sha256": "d6963fac84de767eac8c58e76a2d9c1b9f08a196f680efc0ad9aa8974a587eca"
+    },
+    {
+      "path": "cards/fields/compliance.yaml",
+      "sha256": "4b920fe1ddd4db0ae3aecbffefdb4825b7d6de93a32b3c28068f8f801d4f2fb6"
+    },
+    {
+      "path": "cards/fields/evaluation.yaml",
+      "sha256": "9822d567db0a745f1b6fda9fdf047ddc24df3fb0b46ece4c904de91d2d3f6116"
+    },
+    {
+      "path": "cards/fields/governance.yaml",
+      "sha256": "2a4828dc17c3ee8222024d9258371f5d00d949c39e1fd8398370734f109ff30a"
+    },
+    {
+      "path": "cards/fields/risk.yaml",
+      "sha256": "7974f09fe242d21ebbf398d4ebc42ef0fba8cb3275a068def0feec22bb8d93d9"
+    },
+    {
+      "path": "cards/new_model.py",
+      "sha256": "af2385e5f4a7f0672a1d3c8c0f9a7102a1bd33951baea1ad034577e8cc428771"
+    },
+    {
+      "path": "cards/show_card.py",
+      "sha256": "bcffaf1bd2fa4d6f095567664a32b3bc7090ca37042f95ffee28d10965c38d81"
+    },
+    {
+      "path": "collector/data/raw/claude-haiku-4.5/fingerprint_v0.jsonl",
+      "sha256": "358c8aa5bc0b1bb778bdf9b164bc18bd24157355ba8e3c3b9b28737329470e9e"
+    },
+    {
+      "path": "collector/data/raw/claude-sonnet-5.5/fingerprint_v0.jsonl",
+      "sha256": "3bd5d15713ef531b2b81bfde8319b9fbabd29936b04eccc83266712002fe4894"
+    },
+    {
+      "path": "collector/data/raw/gemini-3.1-pro/fingerprint_v0.jsonl",
+      "sha256": "31ac069062a82a3f15a99b68f47fb59f725d803f5ef3ddd1d7475437360f4a68"
+    },
+    {
+      "path": "collector/data/raw/gemini-3.8-flash/fingerprint_v0.jsonl",
+      "sha256": "a1f8bd9b50f5b196fd81b3ce314d314d23fdca5b8e789620bbf80fcf5df36ed8"
+    },
+    {
+      "path": "collector/data/raw/gemma3-4b/fingerprint_v0.jsonl",
+      "sha256": "cd7f5ca3db103eb97f5d75aa195aa54f85fb83183445a630fb6582af52ba79a3"
+    },
+    {
+      "path": "collector/data/raw/gpt-5.6-luna/fingerprint_v0.jsonl",
+      "sha256": "92f657da2e3846a03ea0b62b4bf731a6c4b69b1ba2f49f327a8fb473591bc220"
+    },
+    {
+      "path": "collector/data/raw/gpt-5.6-terra/fingerprint_v0.jsonl",
+      "sha256": "7c81b25ca2d891c5319a30b8a4fe491bb85a7ff3d08472b0c1f7eb248ea0b445"
+    },
+    {
+      "path": "collector/data/raw/llama3.1-8b/fingerprint_v0.jsonl",
+      "sha256": "6b41a0fa0101b4e12eb3496f54acdf14fa5289b3c8de87e4675544072313ecd3"
+    },
+    {
+      "path": "collector/data/raw/llama3.2-3b/fingerprint_v0.jsonl",
+      "sha256": "965171e082e71606199aecccda93cdbff55d818729a8ed4f4d2bc988a350c546"
+    },
+    {
+      "path": "collector/data/raw/qwen3-8b/fingerprint_v0.jsonl",
+      "sha256": "a28a8f459331725dca9af126f4ffc0080f19429a39b01c30ff852bc9ef65d080"
+    },
+    {
+      "path": "collector/data/raw/qwen3.5-9b/fingerprint_v0.jsonl",
+      "sha256": "299d9a46b9ba571e4eebb338399d2a893f88302e675765f5446d5975764b5d6d"
+    },
+    {
+      "path": "collector/licences.yaml",
+      "sha256": "bd6374febb3caef9fe512667604b5050494407dc227236011ccc0b34e2d17621"
+    },
+    {
+      "path": "collector/models.yaml",
+      "sha256": "d3e0bf39045440ce8afbb56d0946bed02cd522a4d4690cd5ef3d2d6ecba3807b"
+    },
+    {
+      "path": "collector/prompts/fingerprinting_prompts.yaml",
+      "sha256": "129e08dc37f411c9ddefd399d153897f153fa2d921f47c232bf8ae0f37c68756"
+    },
+    {
+      "path": "collector/prompts/personas.yaml",
+      "sha256": "b7236bb5d1aed5c73287be52125226ac41bd7acf449fb0897918d11faa91aae9"
+    }
+  ],
+  "options": {
+    "probe_ids": [
+      "LM-01",
+      "LM-05",
+      "LM-06",
+      "I1",
+      "I2",
+      "V1-15"
+    ],
+    "judge_provider": "google",
+    "judge_model": "gemini-3.8-flash",
+    "handoff_below": 0.7,
+    "timeout_seconds": 240,
+    "min_probes": 6,
+    "acceptance_policy": "legacy_handoff_and_exact_model",
+    "reference_split": "sample_index in {0,1} only",
+    "worker_entry": "agent/identify_api.py"
+  },
+  "provenance": {
+    "status": "assembled_reference_bundle",
+    "reference_dataset": "collector fingerprint_v0",
+    "note": "Original Harness v1 source + pinned six-probe reference responses only (sample 0 and 1) and domain-card snapshots; the judge still needs an API credential. Test sample 2 is kept outside artifact."
+  }
+}

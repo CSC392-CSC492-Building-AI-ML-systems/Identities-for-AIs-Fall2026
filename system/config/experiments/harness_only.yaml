@@ -1,0 +1,14 @@
+schema_version: '1.0'
+pipeline:
+  name: harness_only
+stage1:
+  enabled: false
+  adapter: logistic_regression
+  artifact: stage1_lr/v1
+  approach: hierarchy_hard_route
+stage2:
+  mode: single
+  methods:
+    - {adapter: harness, artifact: harness/v1}
+cards:
+  enabled: false

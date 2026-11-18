@@ -1,0 +1,7 @@
+{
+  "target": "llama3.2-3b",
+  "algorithm": "baseline_lr",
+  "approach": "ovr_direct",
+  "validation_threshold": 0.3740820102176698,
+  "max_false_alarm": 0.1
+}

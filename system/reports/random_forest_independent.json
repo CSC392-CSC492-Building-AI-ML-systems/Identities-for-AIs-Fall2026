@@ -1,0 +1,25 @@
+{
+  "warning": "Fixed prompt evaluation; rejection policy review_only. Model refitted using sklearn 1.8.0.",
+  "artifact_id": "random_forest/v1",
+  "config_sha256": "f46014d3d1cf9d71cc94b8525e655e7f195fef0ae3303d3960242eb6dfc1beeb",
+  "metrics": {
+    "n_cases": 132,
+    "accepted": 0,
+    "acceptance_coverage": 0.0,
+    "exact_accuracy_all_cases": 0.0,
+    "exact_accuracy_accepted": null,
+    "unresolved": 132,
+    "by_method": {
+      "random_forest": {
+        "attempted": 132,
+        "accepted": 0,
+        "candidate_predictions": 132,
+        "candidate_correct": 123,
+        "candidate_top1_accuracy": 0.9318,
+        "accepted_correct": 0,
+        "accepted_accuracy": null,
+        "errors": 0
+      }
+    }
+  }
+}

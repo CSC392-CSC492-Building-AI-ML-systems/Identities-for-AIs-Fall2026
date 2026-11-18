@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "2026-11-05T17:18:46.818552+00:00",
+  "seed": 42,
+  "raw_dir": "collector\\data\\raw",
+  "prompt_csv": "collector\\prompts\\training_prompts.csv",
+  "source_files": [
+    "collector\\data\\raw\\gemini-3.1-pro\\training_v1.jsonl",
+    "collector\\data\\raw\\gemini-3.8-flash\\training_v1.jsonl",
+    "collector\\data\\raw\\llama3.1-8b\\training_v1.jsonl",
+    "collector\\data\\raw\\llama3.2-3b\\training_v1.jsonl"
+  ],
+  "models": [
+    "gemini-3.1-pro",
+    "gemini-3.8-flash",
+    "llama3.1-8b",
+    "llama3.2-3b"
+  ],
+  "model_counts": {
+    "gemini-3.1-pro": 900,
+    "gemini-3.8-flash": 898,
+    "llama3.1-8b": 900,
+    "llama3.2-3b": 900
+  },
+  "unique_prompts": 300,
+  "prompts_by_split": {
+    "development": 210,
+    "validation": 45,
+    "test": 45
+  },
+  "responses_by_split": {
+    "development": 2518,
+    "test": 540,
+    "validation": 540
+  },
+  "load_stats": {
+    "loaded": 3600,
+    "kept": 3598,
+    "skipped_empty_responses": 2
+  },
+  "metadata_disagreements": {},
+  "views": {
+    "all_personas": null,
+    "persona_P13": "P13",
+    "persona_BK1": "BK1",
+    "persona_P05": "P05"
+  },
+  "methodology": {
+    "split_unit": "prompt_id; all models and repetitions remain together",
+    "stratified_by": "prompt_category",
+    "splitting_algorithm": "same deterministic SHA-256-seeded category shuffles as Jev preparation",
+    "positive_label": "1 = target model, 0 = another known model",
+    "features": "to be extracted from response_text only by supervised training scripts",
+    "test_policy": "freeze models/thresholds before running evaluate_test.py"
+  },
+  "warnings": [
+    "Skipped 2 empty responses"
+  ]
+}

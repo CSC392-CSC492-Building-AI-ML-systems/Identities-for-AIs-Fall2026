@@ -1,0 +1,18 @@
+model_key: llama3.2-3b
+name: "Llama 3.2 3B Instruct"
+family: Llama
+access: open
+domain: governance
+retrieved_at: 2026-10-26
+fields:
+  pinned_identity:
+    value: "Hugging Face meta-llama/Llama-3.2-3B-Instruct (released September 25, 2024); run locally as Ollama tag llama3.2:3b (4-bit quantized). Record the Ollama digest (model_digest in collected records) at registration."
+    source:
+      - "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct"
+      - "https://ollama.com/library/llama3.2"
+  rereview_triggers:
+    value: "Scan detects drift; licence or Acceptable Use Policy changes; Meta releases a new version or end-of-support notice. Watch the meta-llama/llama-models repository history and the Hugging Face repo commits."
+    source: "https://github.com/meta-llama/llama-models"
+  support_status:
+    value: "Superseded by Llama 4. No formal end-of-support notice found. Open weights stay downloadable, so the pinned version keeps working but gets no updates."
+    source: "https://github.com/meta-llama/llama-models"

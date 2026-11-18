@@ -1,0 +1,16 @@
+schema_version: '1.0'
+pipeline:
+  name: fingerprinting_default
+stage1:
+  enabled: true
+  adapter: logistic_regression
+  artifact: stage1_lr/v1
+  approach: hierarchy_soft
+stage2:
+  mode: fallback
+  methods:
+    - {adapter: lora, artifact: lora/v1}
+    - {adapter: harness, artifact: harness/v1}
+    - {adapter: random_forest, artifact: random_forest/v1}
+cards:
+  enabled: false

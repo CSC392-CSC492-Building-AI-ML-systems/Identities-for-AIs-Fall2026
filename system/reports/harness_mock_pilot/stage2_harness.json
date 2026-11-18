@@ -1,0 +1,106 @@
+{
+  "status": "completed_diagnostic_only",
+  "scope": "stage2",
+  "strategy": "only_harness",
+  "metrics": {
+    "n_cases": 2,
+    "accepted": 0,
+    "acceptance_coverage": 0.0,
+    "exact_accuracy_all_cases": null,
+    "exact_accuracy_accepted": null,
+    "unresolved": 2,
+    "by_method": {
+      "harness": {
+        "attempted": 2,
+        "accepted": 0,
+        "candidate_predictions": 1,
+        "candidate_correct": 1,
+        "candidate_top1_accuracy": null,
+        "accepted_correct": 0,
+        "accepted_accuracy": null,
+        "errors": 0
+      }
+    },
+    "case_coverage_with_candidate": 0.5,
+    "missing_replay_probe_errors": 0,
+    "mock_judge_attempts": 2,
+    "supported_identity_cases": 2,
+    "out_of_supported_identity_cases": 0,
+    "candidate_top1_accuracy_on_supported_with_candidate": null,
+    "accepted_out_of_supported_identity_count": 0
+  },
+  "rows": [
+    {
+      "case_id": "harness-bk1-llama3.1-8b-swap",
+      "actual_model": "llama3.1-8b",
+      "accepted_model": null,
+      "selected_method": null,
+      "exact_match": false,
+      "probes_collected": [
+        "LM-01",
+        "LM-05",
+        "LM-06",
+        "I1",
+        "I2",
+        "V1-15"
+      ],
+      "attempts": [
+        {
+          "method": "harness",
+          "outcome": "unknown",
+          "candidate_model": "llama3.1-8b",
+          "accepted_model": null,
+          "handoff_requested": true,
+          "score": 0.83,
+          "score_type": "fit_score",
+          "duration_ms": 1358.6890510005105,
+          "reason": "uses 5 phrases only Llama 3.1 8B uses vs 2 of Llama 3.2 3B's, so switched from Llama 3.2 3B; mock; does not fit Llama 3.1 8B: V1-15: length",
+          "diagnostics": {
+            "artifact_id": "harness/v1",
+            "mock_judge": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "harness-bk1-gemini-3.1-pro-swap",
+      "actual_model": "gemini-3.1-pro",
+      "accepted_model": null,
+      "selected_method": null,
+      "exact_match": false,
+      "probes_collected": [
+        "LM-01",
+        "LM-05",
+        "LM-06",
+        "I1",
+        "I2",
+        "V1-15"
+      ],
+      "attempts": [
+        {
+          "method": "harness",
+          "outcome": "unknown",
+          "candidate_model": null,
+          "accepted_model": null,
+          "handoff_requested": true,
+          "score": 0.17,
+          "score_type": "fit_score",
+          "duration_ms": 1641.5847509997548,
+          "reason": "5 probes do not fit GPT-5.6 Terra; mock; does not fit GPT-5.6 Terra: LM-01: refusal/length, LM-05: refusal, I1: length, I2: refusal/length, V1-15: refusal/length",
+          "diagnostics": {
+            "artifact_id": "harness/v1",
+            "mock_judge": true
+          }
+        }
+      ]
+    }
+  ],
+  "config_sha256": "2c8f88961bba3d209af20db34e92f6e69c7e1b4dcf7c21cbdd5279a8ea5c2343",
+  "artifact_ids": [
+    "harness/v1"
+  ],
+  "manifest_sha256": {
+    "harness/v1": "ccffba9c2d32a3e1598121c0982f0fc061f579bf38ca29392c9f000e2aed6b6c"
+  },
+  "note": "Mock judge runs are PLUMBING-ONLY: no identification-accuracy claim"
+}
