@@ -93,9 +93,9 @@ def load_models(path, only=None):
 
 # --- Calling a model ------------------------------------------------------------------------
 def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_tokens, seed=None):
-    """Send one request. Returns (text, served_model, finish_reason, in_tokens, out_tokens)."""
+    """Send one request and return response data plus any explicit refusal signal."""
     if provider == "mock":
-        return (f"[mock answer from {model_id} to: {user_prompt[:40]}]", model_id, "stop", 10, 12)
+        return (f"[mock answer from {model_id} to: {user_prompt[:40]}]", model_id, "stop", 10, 12, None)
     cfg = PROVIDERS[provider]
     messages = ([{"role": "system", "content": system_prompt}] if system_prompt else []) + \
                [{"role": "user", "content": user_prompt}]
@@ -113,15 +113,71 @@ def call_model(provider, model_id, system_prompt, user_prompt, temperature, max_
     req = urllib.request.Request(cfg["base_url"] + "/chat/completions", data=body, headers=headers)
     with urllib.request.urlopen(req, timeout=300) as resp:
         data = json.load(resp)
-    choice = data["choices"][0]
+    return parse_completion_response(data)
+
+
+def parse_completion_response(data):
+    """Parse chat-completion data while preserving explicit provider refusal signals."""
+    if not isinstance(data, dict):
+        raise ValueError("Completion response is not a JSON object")
+    choices = data.get("choices")
+    choice = choices[0] if isinstance(choices, list) and choices else {}
+    if not isinstance(choice, dict):
+        raise ValueError("Completion response contains an invalid choice")
     usage = data.get("usage") or {}
-    msg = choice["message"]
+    msg = choice.get("message")
+    refusal = explicit_refusal(data, choice, msg)
+    if msg is None:
+        if refusal:
+            return (None, data.get("model"), choice.get("finish_reason"),
+                    usage.get("prompt_tokens"), usage.get("completion_tokens"), True)
+        raise ValueError(
+            "Completion response has no message and no explicit refusal/block indicator"
+        )
+    if not isinstance(msg, dict):
+        raise ValueError("Completion response contains an invalid message")
+    finish_reason = choice.get("finish_reason") or choice.get("finishReason")
     text = msg.get("content") or ""
     thinking = msg.get("reasoning") or msg.get("reasoning_content")   # some servers return reasoning separately
     if thinking:
         text = f"<think>{thinking}</think>" + text
-    return (text, data.get("model"), choice.get("finish_reason"),
-            usage.get("prompt_tokens"), usage.get("completion_tokens"))
+    return (text, data.get("model"), finish_reason,
+            usage.get("prompt_tokens"), usage.get("completion_tokens"), refusal)
+
+
+def explicit_refusal(data, choice, message):
+    """Return True only when the provider explicitly reports a refusal or safety block."""
+    if isinstance(message, dict) and message.get("refusal"):
+        return True
+
+    finish_reason = choice.get("finish_reason") or choice.get("finishReason")
+    if isinstance(finish_reason, str) and finish_reason.lower() in {
+        "content_filter", "safety", "blocked", "blocklist", "prohibited_content",
+    }:
+        return True
+
+    prompt_feedback = data.get("promptFeedback") or data.get("prompt_feedback") or {}
+    block_reason = (
+        prompt_feedback.get("blockReason") or prompt_feedback.get("block_reason")
+        if isinstance(prompt_feedback, dict) else None
+    )
+    if isinstance(block_reason, str) and block_reason.upper() in {
+        "SAFETY", "BLOCKLIST", "PROHIBITED_CONTENT", "IMAGE_SAFETY", "OTHER",
+    }:
+        return True
+
+    candidates = data.get("candidates")
+    if isinstance(candidates, list):
+        blocked_reasons = {
+            "SAFETY", "BLOCKLIST", "PROHIBITED_CONTENT", "IMAGE_SAFETY",
+        }
+        for candidate in candidates:
+            if not isinstance(candidate, dict):
+                continue
+            candidate_reason = candidate.get("finishReason") or candidate.get("finish_reason")
+            if isinstance(candidate_reason, str) and candidate_reason.upper() in blocked_reasons:
+                return True
+    return None
  
 
 def call_with_retries(*args):
@@ -232,7 +288,9 @@ def main():
                         seed = SEED_BASE + s
                         result, err = call_with_retries(m["provider"], m["model_id"], personas[persona_id],
                                                         p["text"], temp, args.max_tokens, seed)
-                        text, served, finish, tin, tout = result or (None, None, None, None, None)
+                        text, served, finish, tin, tout, reported_refusal = (
+                            result or (None, None, None, None, None, None)
+                        )
                         reasoning = None
                         if text and THINK_BLOCK.search(text):   # keep reasoning separate from the answer
                             reasoning = "\n".join(THINK_BLOCK.findall(text)).strip()
@@ -257,7 +315,10 @@ def main():
                             "max_tokens": args.max_tokens,
                             "response_text": None if refusal_only else text,
                             "reasoning_text": None if refusal_only else reasoning,
-                            "refused": bool(REFUSAL_PATTERNS.search(text)) if text else None,
+                            "refused": (
+                                reported_refusal if reported_refusal is not None
+                                else bool(REFUSAL_PATTERNS.search(text)) if text else None
+                            ),
                             "finish_reason": finish,
                             "input_tokens": tin,
                             "output_tokens": tout,

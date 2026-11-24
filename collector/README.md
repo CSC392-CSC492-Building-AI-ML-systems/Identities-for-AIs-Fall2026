@@ -99,4 +99,5 @@ Collected data in `data/` is committed to the repo (it is no longer in `.gitigno
 
 - The OpenAI model IDs in `models.yaml` are not set yet.
 - Anthropic and Gemini are called through their OpenAI-compatible endpoints. Test each with `--limit 1` before a full run.
-- The `refused` flag is a keyword check only, so it can be wrong.
+- The `refused` flag uses an explicit provider refusal/safety-block marker when available and otherwise falls back to a keyword check, so it is still preliminary and can be wrong.
+- For a response with no chat message, the collector records a successful refusal only when the provider explicitly reports a refusal or safety block. Other malformed responses remain errors. Prompts marked `refusal_only` still never save response text.

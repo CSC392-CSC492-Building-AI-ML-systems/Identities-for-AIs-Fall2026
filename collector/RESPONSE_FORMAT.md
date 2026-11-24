@@ -30,7 +30,7 @@ Records are stored as **JSON Lines** (`.jsonl`): one record per line.
 | `max_tokens` | integer | `1200` | Maximum response length requested |
 | `response_text` | string or null | `"Here's a summary…"` | The answer, without any reasoning text. `null` when the prompt has `save_response: refusal_only` (e.g. LM-02) |
 | `reasoning_text` | string or null | `"Okay, the user wants…"` | "Thinking" text some models output (e.g. Qwen3 inside `<think>…</think>`), kept separate so it doesn't skew style features. `null` if none |
-| `refused` | boolean or null | `false` | **Preliminary** refusal flag from a keyword check in the collector; can be relabelled later by the NLP/ML team. Refusal rate goes on the evaluation and risk cards, and LM-02 has no saved text to check later |
+| `refused` | boolean or null | `false` | **Preliminary** refusal flag. The collector uses an explicit provider refusal/safety-block marker when available, otherwise a keyword check on returned text; it can be relabelled later by the NLP/ML team. For `refusal_only` prompts such as LM-02, a provider-confirmed block is recorded as a successful response with `refused: true` and no saved response text |
 | `finish_reason` | string or null | `"stop"` | `"stop"` = completed; `"length"` = cut off at `max_tokens`. Cut-off answers can skew style features, so the NLP team can filter them out |
 | `input_tokens` | integer or null | `212` | Tokens sent. For tracking API cost |
 | `output_tokens` | integer or null | `148` | Tokens received. For tracking API cost |
