@@ -1,6 +1,10 @@
+> **Backend M3 update (local mock jobs only):** The proposed `/api/v1/fingerprint/jobs` POST/GET routes now exist for **mock analyses** in a SQLite-backed worker. Live OpenAI target requests remain synchronous; authentication, credential-safe live workers, and confirmed cards/history are still TODO. See [`BACKEND_MILESTONE3.md`](BACKEND_MILESTONE3.md) for the implemented contract.
+
+> **Backend Milestone 2 update:** A **local-only** `POST /api/v1/analyze/live` route now accepts an OpenAI key, target model routing ID and prompt for one analysis. This is a temporary developer API, not the production job API described below. The real target is queried, but the Harness judge is mocked; the UI must label results `needs_review` and not display a confirmed model/card. For the intended prompt-only product UI, provider/key/model are configured beforehand in personalization or connection setup. See [BACKEND_MILESTONE2.md](BACKEND_MILESTONE2.md).
+
 # UI handoff — Prompt-only fingerprinting experience
 
-**Updated November 18, 2026.** This document describes the **intended UI/HTTP contract**. The existing `system/` package provides a Python workflow but **does not implement HTTP routes or a deployed UI**.
+**Updated November 18, 2026.** This document describes the **intended production UI/HTTP contract**. Two local FastAPI routes are implemented for UI experimentation: `POST /api/v1/analyze` (offline mock) and `POST /api/v1/analyze/live` (OpenAI target with mock judge); health and capabilities routes also exist. It accepts one prompt and produces `mode: "mock"` results using synthetic provider/judge responses; no deployed UI, real credentials, async jobs or production routes exist. See [`BACKEND_MILESTONE1.md`](BACKEND_MILESTONE1.md).
 
 ## What the user sees
 
@@ -37,7 +41,7 @@
 | `same_model` / `model_changed` / `unresolved` | Compare accepted identity with persisted confirmed baseline; unresolved does not imply no change. |
 | `card_comparison_status = not_comparable` | Current and prior authoritative card snapshots are not both available. |
 
-## Proposed API contract (backend team must implement)
+## Proposed production API contract (backend team must implement; distinct from the M1 mock API)
 
 **1. User connects target AI once** (separate credentials flow; suggested `POST /api/v1/connections` or provider OAuth, not implemented). Backend creates a secure `connection_id` tied to the authenticated account, endpoint/provider/model routing and a secret vault reference. Do NOT embed the key in source, browser localStorage, job logs, result JSON, or analysis history.
 

@@ -1,6 +1,10 @@
+> **Backend M3 update (local mock jobs only):** The proposed `/api/v1/fingerprint/jobs` POST/GET routes now exist for **mock analyses** in a SQLite-backed worker. Live OpenAI target requests remain synchronous; authentication, credential-safe live workers, and confirmed cards/history are still TODO. See [`BACKEND_MILESTONE3.md`](BACKEND_MILESTONE3.md) for the implemented contract.
+
+> **Backend Milestone 2 update:** A local synchronous OpenAI target route and per-analysis key input are implemented at `POST /api/v1/analyze/live` in `backend/app.py`, using `backend/providers/openai.py`. The target queries are real when supplied a working key; the Harness judge is still MOCK, and no confirmed model result/card/history is available. This is intentionally separate from the *proposed* authenticated production `/jobs` API below. See [BACKEND_MILESTONE2.md](BACKEND_MILESTONE2.md).
+
 # Backend handoff — One prompt, authorized target queries, model cards and changes
 
-**Updated November 18, 2026.** The Python inference/workflow system exists in `system/`. **HTTP APIs, live provider connections, authentication/authorization, secret storage, job queues, history and an authoritative card service still must be implemented.** Examples and routes below are not existing endpoints.
+**Updated November 18, 2026.** The Python inference/workflow system exists in `system/`. **FastAPI now provides `POST /api/v1/analyze` (offline mock), `POST /api/v1/analyze/live` (OpenAI target with user key, MOCK judge), `GET /health`, and `GET /api/v1/capabilities`.** The live target route works at the protocol level but has not been tested with a real key. Authentication/authorization, persistent async jobs, history, and authoritative cards remain unimplemented. See [`BACKEND_MILESTONE2.md`](BACKEND_MILESTONE2.md) for current routes. The job and connection routes proposed below are NOT implemented.
 
 ## Ownership boundary
 
@@ -57,7 +61,7 @@ result_for_ui = report.to_dict()
 6. If a previous *confirmed* baseline exists, compare current accepted ID against it. If both old and new domain-card snapshots exist and have compatible schemas, compute field changes; otherwise return `card_comparison_status='not_comparable'`.
 7. Return a sanitized, versioned result; update per-deployment history **only under a documented acceptance policy**. A `review_only` candidate is not a confirmed model baseline.
 
-## Suggested HTTP endpoints (TO BUILD)
+## Suggested production HTTP endpoints (NOT YET IMPLEMENTED; distinct from M1 mock routes)
 
 | Endpoint | Purpose |
 |---|---|
@@ -87,4 +91,4 @@ Never accept arbitrary unvalidated network URLs for `TargetClient` from a web re
 - Do not copy private target response text into telemetry, browser diagnostics, public datasets or logs by default. Define user consent and retention policies, including sharing with an external Harness judge.
 - Version/pin base models and classifier artifacts, surface partial failures, cap API spend, and keep outcome states (`identified`, `verified`, `drift_detected`, `needs_review`, `error`) distinct.
 
-**Development checkpoints:** use `python system/run.py example prompt_workflow_mock_demo` for offline contract testing, then implement an authorized provider adapter and a card resolver, wire the HTTP job service, test with a permitted deployment, and only then run live end-to-end validation. Track all remaining work in `system/TBD.md`.
+**Development checkpoints:** use `python system/run.py example prompt_workflow_mock_demo` for offline contract testing, then run the M2 OpenAI target against a controlled development deployment; implement authenticated jobs and a card resolver before public use. Real judge and full E2E accuracy require separate validation. Track all remaining work in `system/TBD.md`.
