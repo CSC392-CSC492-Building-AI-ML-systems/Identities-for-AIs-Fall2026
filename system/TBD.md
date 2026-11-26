@@ -1,3 +1,42 @@
+# Dataset update — November 26, 2026
+
+- [x] Stage the exact new `raw.zip` as `datasets/collector_raw/2026-11-26/`, preserving bytes and providing file checksums and record counts. All 17 IDs already exist in the catalog.
+- [ ] **ML team:** Review 83 collection errors and 765 blank responses without recorded errors (631 in Qwen3.5 9B fingerprint data); define preprocessing and observable-response handling. Confirm missing Gemini 3.1 Pro `fingerprint_v0` and completeness of paired probe sessions.
+- [ ] Freeze leakage-checked train/calibration/test cohorts, prompt/persona definitions, licenses and provenance; do not automatically merge raw data into historical evaluation or Harness references.
+- [ ] Publish new trained artifacts and Harness reference versions with checksums, label/feature contracts, dataset manifest hash, calibrated unknown rejection, and regression reports before switching configuration. Existing artifacts remain unchanged.
+- [ ] Review dataset privacy and redistribution rights before committing raw records to GitHub; decide appropriate data storage.
+
+---
+
+# M6 — Deployment-linked jobs (November 25, 2026)
+
+- [x] Owner-validate an optional `deployment_id` on live job submission; resolve routing target from the reviewed deployment, reject conflicting target metadata, and return 404 for cross-user access.
+- [x] Pin the reviewed baseline **revision at submission time** and store the associated reference with the encrypted job; no automatic promotion of candidates.
+- [x] Add `GET /api/v1/deployments/{id}/jobs` and a typed `result.ui_result` response with conservative identification/card/change states.
+- [x] Add additive SQLite migration and tests covering old unlinked jobs, reviewer changes during queueing, fake target calls, and owner isolation.
+- [ ] **Backend M7:** Use vetted production authentication, managed secrets/credentials, data privacy and user quota policies before remote frontend launch. Saved personalization API keys are not implemented.
+- [ ] **ML/backend:** After ML approval, introduce accepted identities into the UI summary with validated open-set rejection; never auto-promote a candidate into reviewed baseline history.
+- [ ] **Stage 1 live jobs:** Support optional verification with a known supported baseline ID (currently HTTP 409 even for linked jobs).
+- [ ] **Deployment connection setup:** Create durable, authenticated connection metadata and safe per-job key retrieval or delegated credentials; the current UI submits a key for each job.
+- [ ] **Operations:** Add robust migrations, cancellations, timeouts/heartbeats, retention, rate limits, and card lookup for accepted current identities.
+
+---
+
+# Backend Milestone 4 — implemented, LOCAL ONLY (November 19, 2026)
+
+- [x] Implement local high-entropy bearer token authentication for live jobs; user ID derived server-side, authenticated job ownership enforced; only token SHA-256 digests stored in `.local/dev_users.json`.
+- [x] Implement separate authenticated `POST/GET /api/v1/fingerprint/live-jobs` and a separate worker `--kind live`; original mock jobs remain for offline learning.
+- [x] Keep the per-analysis OpenAI key **out of SQLite**: a temporary Fernet-encrypted local vault file, deleted on normal success/failure, with expiry cleanup. Encrypt queued prompt/metadata and completed result in SQLite.
+- [x] Disable the unauthenticated legacy synchronous live endpoint by default; opt-in flag only for localhost learning.
+- [x] Add isolated fake-provider tests for 7 target requests, cross-user access, privacy, expiry, worker error handling, concurrent claims and process isolation. **Evidence:** `tests/test_backend_live_jobs.py`, `docs/BACKEND_MILESTONE4.md`.
+- [ ] **Production identity and transport:** Replace dev bearer tokens with a trusted account/OIDC service, TLS, audit logs, rate limiting, token revocation/expiry, ownership checks for all routes, tenant isolation and restrictive CORS.
+- [ ] **Managed key/secret infrastructure:** Local `.local/dev_job.key` coexists with encrypted data and is NOT a production protection boundary. Replace with managed secrets/KMS, separate keys and rotation, secure storage permissions and background TTL cleanup.
+- [ ] **Worker robustness:** Implement leases/heartbeats, stuck-worker recovery, cancellation, a privacy retention policy, idempotency controls and provider cost ceilings. Current stale expiry may mark very slow but legitimate jobs abandoned; do not retry billable requests automatically.
+- [ ] **Real provider smoke test:** No genuine billable OpenAI calls made in automated tests; confirm model routing, timeouts and seven-query behavior with a test account before deploying.
+- [ ] **Real Harness judge and approved acceptance policies:** Still mocked in backend; no verified model identity, trusted model card or change declaration yet.
+
+---
+
 ## Backend Milestone 2 — next work and known limitations
 
 - [x] Add local, per-analysis OpenAI Responses API **target** adapter: fixed HTTPS endpoint, safe key handling in memory, bounded output, no retries, sanitized errors and fake-provider tests. See `docs/BACKEND_MILESTONE2.md`. This is not production authentication.
@@ -10,7 +49,7 @@
 
 # TBD — Release blockers and integration work
 
-**Last updated: November 18, 2026 — Backend M3.** This is the active backlog for the `system/` GitHub subdirectory. Keep this file updated with owner, date, validation evidence and published artifact IDs. Previous milestone backlog is archived in [`docs/IMPLEMENTATION_TBD_HISTORY.md`](docs/IMPLEMENTATION_TBD_HISTORY.md). **Do not place credentials or private responses in Git.**
+**Last updated: November 19, 2026 — Backend M4.** This is the active backlog for the `system/` GitHub subdirectory. Keep this file updated with owner, date, validation evidence and published artifact IDs. Previous milestone backlog is archived in [`docs/IMPLEMENTATION_TBD_HISTORY.md`](docs/IMPLEMENTATION_TBD_HISTORY.md). **Do not place credentials or private responses in Git.**
 
 ## Backend Milestone 1 — implemented (mock only)
 
@@ -92,3 +131,20 @@
 ## Current status in one paragraph
 
 The Stage 1, Harness and RF software adapters are integrated. LoRA **weights are now present and checksummed** as `lora/v2`, but class mapping, base training commit and inference parity remain unverified. All identity methods except the unvalidated live Harness judge currently lack an approved acceptance policy. A backend-neutral **prompt-first workflow**, synchronous mock/OpenAI-target HTTP endpoints, and **local SQLite-backed mock jobs** exist and are tested; **production auth/worker key handoff, real async jobs, card retrieval and historical change detection storage** must be built by the backend team. Until then, show `needs_review`, missing-card and no-baseline states honestly rather than claiming a verified model change.
+
+## Backend Milestone 5 — cards/history integration (Nov 19, 2026)
+
+- [x] Add owner-scoped SQLite monitored deployments and **append-only manually reviewed** baseline history, storing full card snapshots and deterministic SHA-256 digests. Tests: `tests/test_backend_history.py`.
+- [x] Expose the team's **existing root `cards/cardlib.py`** through authenticated read-only HTTP without copying/redefining the card data. Cards remain `unavailable` when the sibling repository `cards/` folder isn't present.
+- [x] Compare two latest reviewed baseline identities and card snapshots, field by domain/field ID, and derive within-family versus cross-family changes using the canonical catalog.
+- [x] Add `system/CLEANUP_REVIEW.md` with **no removals performed**, listing each proposed cleanup, its purpose, overlap evidence, and required owner approval.
+- [ ] Link authorized live analysis jobs to a monitored deployment, validate provider/routing identity, and carry the prior approved baseline to workers when Stage 1 is explicitly enabled. Current M4 worker still refuses Stage 1.
+- [ ] Allow only independently verified, validated accepted ML results to propose review of a new baseline. **Never auto-promote** `needs_review`, closed-set candidates, or mock-judge outputs.
+- [ ] Build production-grade authenticated user management and encrypted history persistence with retention/deletion rules and audit logs. M5 SQLite history contains plaintext card snapshots, routing metadata, deployment labels and notes; local-only.
+- [ ] Integrate a real Harness judge, calibrated LoRA/RF rejection policies, and unknown-family detection before claiming the end-to-end pipeline can confirm model swaps.
+- [ ] Get explicit per-item approval before cleanup actions in `CLEANUP_REVIEW.md`; the out-of-date uploaded `system/` folder was ignored as requested.
+
+## Approved cleanup status — November 22, 2026
+
+- [x] **C1 Stage 1 research-script deduplication:** Removed only the 17 byte-identical `system/reference_stage1/scripts/*.py` copies. Retained original repository-root `scripts/*.py`, all Stage 1 classifiers, thresholds, versioned artifact manifests, and the opt-in Stage 1 feature. Updated original-script parity test to use root scripts when present. After overlay extraction, run the checked `system/tools/apply_c1_cleanup.py --apply` migration to remove stale copies from your working tree. Historical release-manifest provenance is intentionally unmodified; see `docs/CLEANUP_C1_MIGRATION.md`.
+- [ ] **C2–C8 remain unapproved and unchanged.** Do not delete Harness card snapshots, research tests, Jev code, requirements, card tools, collector, or legacy HTTP endpoints without new, separate approval.

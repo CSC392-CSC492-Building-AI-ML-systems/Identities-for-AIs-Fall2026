@@ -1,3 +1,15 @@
+> **Implemented M6 update (November 25, 2026):** The frontend should build on `POST /api/v1/fingerprint/live-jobs`, `GET /api/v1/fingerprint/live-jobs/{job_id}`, and `GET /api/v1/deployments/{id}/jobs`. A linked POST can specify `deployment_id` instead of `target_model`, and completed jobs provide `result.ui_result` for model identity, comparison, card availability, and evidence. The real Harness judge is **not validated**; linked jobs do not auto-update reviewed baselines. See [BACKEND_MILESTONE6.md](BACKEND_MILESTONE6.md) for the current authoritative contract; older descriptions below are historical proposals.
+
+> **Backend M4 update (November 19, 2026):** An authenticated local
+> `POST /api/v1/fingerprint/live-jobs` and owner-restricted GET now exist.
+> A separate `--kind live` worker uses an encrypted short-lived local
+> credential file; queued prompts/results are encrypted in SQLite. The old
+> `/api/v1/analyze/live` route is **disabled by default**. This is a local
+> development mechanism, not production login/secret management. See
+> [`BACKEND_MILESTONE4.md`](BACKEND_MILESTONE4.md) for the authoritative
+> implemented endpoint and startup guide. The sections below describe the
+> longer-term intended product and previous milestones.
+
 > **Backend M3 update (local mock jobs only):** The proposed `/api/v1/fingerprint/jobs` POST/GET routes now exist for **mock analyses** in a SQLite-backed worker. Live OpenAI target requests remain synchronous; authentication, credential-safe live workers, and confirmed cards/history are still TODO. See [`BACKEND_MILESTONE3.md`](BACKEND_MILESTONE3.md) for the implemented contract.
 
 > **Backend Milestone 2 update:** A **local-only** `POST /api/v1/analyze/live` route now accepts an OpenAI key, target model routing ID and prompt for one analysis. This is a temporary developer API, not the production job API described below. The real target is queried, but the Harness judge is mocked; the UI must label results `needs_review` and not display a confirmed model/card. For the intended prompt-only product UI, provider/key/model are configured beforehand in personalization or connection setup. See [BACKEND_MILESTONE2.md](BACKEND_MILESTONE2.md).

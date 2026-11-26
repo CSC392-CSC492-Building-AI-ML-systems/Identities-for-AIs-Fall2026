@@ -1,3 +1,15 @@
+> **Implemented M6 update:** Live jobs can now be linked to owner-scoped deployments and return a typed `result.ui_result` for the frontend. Review [BACKEND_MILESTONE6.md](BACKEND_MILESTONE6.md) for the current, implemented contract. Earlier proposed endpoints below may differ from the actual API.
+
+> **Backend M4 update (November 19, 2026):** An authenticated local
+> `POST /api/v1/fingerprint/live-jobs` and owner-restricted GET now exist.
+> A separate `--kind live` worker uses an encrypted short-lived local
+> credential file; queued prompts/results are encrypted in SQLite. The old
+> `/api/v1/analyze/live` route is **disabled by default**. This is a local
+> development mechanism, not production login/secret management. See
+> [`BACKEND_MILESTONE4.md`](BACKEND_MILESTONE4.md) for the authoritative
+> implemented endpoint and startup guide. The sections below describe the
+> longer-term intended product and previous milestones.
+
 > **Backend M3 update (local mock jobs only):** The proposed `/api/v1/fingerprint/jobs` POST/GET routes now exist for **mock analyses** in a SQLite-backed worker. Live OpenAI target requests remain synchronous; authentication, credential-safe live workers, and confirmed cards/history are still TODO. See [`BACKEND_MILESTONE3.md`](BACKEND_MILESTONE3.md) for the implemented contract.
 
 > **Backend Milestone 2 update:** A local synchronous OpenAI target route and per-analysis key input are implemented at `POST /api/v1/analyze/live` in `backend/app.py`, using `backend/providers/openai.py`. The target queries are real when supplied a working key; the Harness judge is still MOCK, and no confirmed model result/card/history is available. This is intentionally separate from the *proposed* authenticated production `/jobs` API below. See [BACKEND_MILESTONE2.md](BACKEND_MILESTONE2.md).

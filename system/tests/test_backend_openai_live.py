@@ -126,7 +126,7 @@ class LiveBackendHttpTests(unittest.TestCase):
             cls.created.append(provider)
             return provider
         cls.live = LiveOpenAIAnalysisGateway(mock.workflow, provider_factory=fake_factory)
-        cls.client = TestClient(create_app(mock, cls.live))
+        cls.client = TestClient(create_app(mock, cls.live, enable_legacy_sync_live=True))
 
     @classmethod
     def tearDownClass(cls):
@@ -201,7 +201,7 @@ class LiveBackendHttpTests(unittest.TestCase):
             def send_prompt(self, prompt):
                 raise ValueError('bad request included ' + SENTINEL)
         live = LiveOpenAIAnalysisGateway(mock.workflow, provider_factory=lambda k,m: BadTarget())
-        with TestClient(create_app(mock, live)) as client:
+        with TestClient(create_app(mock, live, enable_legacy_sync_live=True)) as client:
             r = client.post('/api/v1/analyze/live', json=self.payload())
         self.assertEqual(r.status_code, 500)
         self.assertEqual(r.json(), {'detail':'Analysis failed'})
@@ -214,7 +214,7 @@ class LiveBackendHttpTests(unittest.TestCase):
                 raise ProviderRequestError('provider_credentials_rejected',
                                            status_code=502, message='Credentials rejected by provider')
         live = LiveOpenAIAnalysisGateway(mock.workflow, provider_factory=lambda k,m: DeniedTarget())
-        with TestClient(create_app(mock, live)) as client:
+        with TestClient(create_app(mock, live, enable_legacy_sync_live=True)) as client:
             r = client.post('/api/v1/analyze/live', json=self.payload())
         self.assertEqual(r.status_code, 502)
         self.assertEqual(r.json()['detail']['code'], 'provider_credentials_rejected')

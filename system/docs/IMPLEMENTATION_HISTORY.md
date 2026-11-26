@@ -648,6 +648,15 @@ scripts, kept solely to independently test numerical prediction equivalence;
 the production adapter does **not** import those training or experimentation
 modules.
 
+**C1 migration note (Nov 22, 2026):** The reference copy described above was
+removed with approval after verifying all 17 files matched the root research
+scripts byte-for-byte. Current parity tests use the repository-root `scripts/`
+directory when available, skipping only that original-source parity test in
+standalone `system/` distributions. The runtime Stage 1 adapter still uses its
+own checksummed trained artifacts. Historical `stage1_lr/v1` manifest provenance
+was deliberately not edited; its `source_script` records the original release
+location, not a live path. See `docs/CLEANUP_C1_MIGRATION.md`.
+
 ---
 
 ## Stage 2A integration: LoRA (this release)

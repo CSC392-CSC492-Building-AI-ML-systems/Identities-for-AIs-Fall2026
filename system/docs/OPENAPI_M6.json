@@ -1,0 +1,1840 @@
+{
+  "components": {
+    "schemas": {
+      "AnalyzeRequest": {
+        "additionalProperties": false,
+        "description": "The UI supplies one prompt; never a response, probe list, or API key.\n\nUnknown fields are rejected so that a user cannot accidentally post an\nAPI key to this mock-only endpoint.",
+        "properties": {
+          "prompt_text": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Prompt Text",
+            "type": "string"
+          },
+          "use_stage1": {
+            "default": false,
+            "title": "Use Stage1",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt_text"
+        ],
+        "title": "AnalyzeRequest",
+        "type": "object"
+      },
+      "AnalyzeResponse": {
+        "description": "A completed synchronous MOCK report, not a live fingerprint result.",
+        "properties": {
+          "change_status": {
+            "title": "Change Status",
+            "type": "string"
+          },
+          "mode": {
+            "const": "mock",
+            "default": "mock",
+            "title": "Mode",
+            "type": "string"
+          },
+          "model_card_status": {
+            "title": "Model Card Status",
+            "type": "string"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "report": {
+            "additionalProperties": true,
+            "title": "Report",
+            "type": "object"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "stage1_enabled": {
+            "title": "Stage1 Enabled",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "identified",
+              "verified",
+              "drift_detected",
+              "needs_review",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "target_queries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Target Queries",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "status",
+          "model_id",
+          "stage1_enabled",
+          "model_card_status",
+          "change_status",
+          "target_queries",
+          "report"
+        ],
+        "title": "AnalyzeResponse",
+        "type": "object"
+      },
+      "BaselineReference": {
+        "properties": {
+          "card_snapshot_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Card Snapshot Sha256"
+          },
+          "card_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Card Status"
+          },
+          "confirmation_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmation Source"
+          },
+          "confirmed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmed At"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "model_id"
+        ],
+        "title": "BaselineReference",
+        "type": "object"
+      },
+      "CapabilitiesResponse": {
+        "properties": {
+          "accepted_model_identification_available": {
+            "default": false,
+            "title": "Accepted Model Identification Available",
+            "type": "boolean"
+          },
+          "accepts_api_keys": {
+            "default": false,
+            "title": "Accepts Api Keys",
+            "type": "boolean"
+          },
+          "confirmed_baselines": {
+            "default": false,
+            "title": "Confirmed Baselines",
+            "type": "boolean"
+          },
+          "durable_mock_jobs_available": {
+            "default": true,
+            "title": "Durable Mock Jobs Available",
+            "type": "boolean"
+          },
+          "job_worker_required": {
+            "default": true,
+            "title": "Job Worker Required",
+            "type": "boolean"
+          },
+          "live_jobs_available": {
+            "default": false,
+            "title": "Live Jobs Available",
+            "type": "boolean"
+          },
+          "live_jobs_require_bearer_token": {
+            "default": true,
+            "title": "Live Jobs Require Bearer Token",
+            "type": "boolean"
+          },
+          "live_judge_available": {
+            "default": false,
+            "title": "Live Judge Available",
+            "type": "boolean"
+          },
+          "live_provider_available": {
+            "default": false,
+            "title": "Live Provider Available",
+            "type": "boolean"
+          },
+          "live_target_providers": {
+            "default": [
+              "openai"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "title": "Live Target Providers",
+            "type": "array"
+          },
+          "manual_baseline_history_available": {
+            "default": true,
+            "title": "Manual Baseline History Available",
+            "type": "boolean"
+          },
+          "mode": {
+            "const": "mock",
+            "default": "mock",
+            "title": "Mode",
+            "type": "string"
+          },
+          "prompt_only": {
+            "default": true,
+            "title": "Prompt Only",
+            "type": "boolean"
+          },
+          "repository_card_lookup_available": {
+            "default": false,
+            "title": "Repository Card Lookup Available",
+            "type": "boolean"
+          },
+          "stage1_available": {
+            "default": false,
+            "title": "Stage1 Available",
+            "type": "boolean"
+          },
+          "stage1_enabled_by_default": {
+            "default": false,
+            "title": "Stage1 Enabled By Default",
+            "type": "boolean"
+          },
+          "synchronous_prototype_only": {
+            "default": false,
+            "title": "Synchronous Prototype Only",
+            "type": "boolean"
+          },
+          "verified_model_cards": {
+            "default": false,
+            "title": "Verified Model Cards",
+            "type": "boolean"
+          }
+        },
+        "title": "CapabilitiesResponse",
+        "type": "object"
+      },
+      "CardComparisonView": {
+        "properties": {
+          "changes": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Changes",
+            "type": "array"
+          },
+          "status": {
+            "const": "not_comparable",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "CardComparisonView",
+        "type": "object"
+      },
+      "ComparisonView": {
+        "properties": {
+          "card_comparison": {
+            "$ref": "#/components/schemas/CardComparisonView"
+          },
+          "current_model_id": {
+            "title": "Current Model Id",
+            "type": "null"
+          },
+          "family_change": {
+            "title": "Family Change",
+            "type": "null"
+          },
+          "identity_change": {
+            "title": "Identity Change",
+            "type": "null"
+          },
+          "previous_model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previous Model Id"
+          },
+          "status": {
+            "enum": [
+              "no_baseline",
+              "insufficient_evidence"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "previous_model_id",
+          "card_comparison"
+        ],
+        "title": "ComparisonView",
+        "type": "object"
+      },
+      "CreateJobResponse": {
+        "properties": {
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "mock",
+            "default": "mock",
+            "title": "Mode",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "status": {
+            "const": "queued",
+            "default": "queued",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "created_at"
+        ],
+        "title": "CreateJobResponse",
+        "type": "object"
+      },
+      "CreateLiveJobRequest": {
+        "additionalProperties": false,
+        "description": "Authenticated live job. Link to a reviewed deployment when available.\n\nIf linked, the backend derives the routing model from that owned deployment;\nno user-provided routing value is ever treated as an inferred identity.",
+        "properties": {
+          "api_key": {
+            "format": "password",
+            "title": "Api Key",
+            "type": "string",
+            "writeOnly": true
+          },
+          "deployment_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deployment Id"
+          },
+          "prompt_text": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Prompt Text",
+            "type": "string"
+          },
+          "provider": {
+            "const": "openai",
+            "default": "openai",
+            "title": "Provider",
+            "type": "string"
+          },
+          "target_model": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9._:-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Model"
+          },
+          "use_stage1": {
+            "default": false,
+            "title": "Use Stage1",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt_text",
+          "api_key"
+        ],
+        "title": "CreateLiveJobRequest",
+        "type": "object"
+      },
+      "CreateLiveJobResponse": {
+        "properties": {
+          "baseline_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Revision"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "deployment_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deployment Id"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "live_target_mock_judge",
+            "default": "live_target_mock_judge",
+            "title": "Mode",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "status": {
+            "const": "queued",
+            "default": "queued",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "created_at"
+        ],
+        "title": "CreateLiveJobResponse",
+        "type": "object"
+      },
+      "CreateMockJobRequest": {
+        "additionalProperties": false,
+        "description": "Only a prompt and Stage 1 flag; unknown fields (especially keys) rejected.\n\nStage 1 is not enabled in the mock worker because no confirmed baseline\nstore has been implemented; the route rejects that combination with 409.",
+        "properties": {
+          "prompt_text": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Prompt Text",
+            "type": "string"
+          },
+          "use_stage1": {
+            "default": false,
+            "title": "Use Stage1",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt_text"
+        ],
+        "title": "CreateMockJobRequest",
+        "type": "object"
+      },
+      "DeploymentCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "provider": {
+            "const": "openai",
+            "default": "openai",
+            "title": "Provider",
+            "type": "string"
+          },
+          "requested_model_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "title": "Requested Model Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "requested_model_id"
+        ],
+        "title": "DeploymentCreate",
+        "type": "object"
+      },
+      "DeploymentJobListItem": {
+        "properties": {
+          "baseline_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Revision"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "status",
+          "created_at",
+          "updated_at",
+          "baseline_revision",
+          "error_code"
+        ],
+        "title": "DeploymentJobListItem",
+        "type": "object"
+      },
+      "DeploymentJobsResponse": {
+        "properties": {
+          "deployment_id": {
+            "title": "Deployment Id",
+            "type": "string"
+          },
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/DeploymentJobListItem"
+            },
+            "title": "Jobs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "deployment_id",
+          "jobs"
+        ],
+        "title": "DeploymentJobsResponse",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "properties": {
+          "mode": {
+            "const": "mock",
+            "default": "mock",
+            "title": "Mode",
+            "type": "string"
+          },
+          "status": {
+            "const": "ok",
+            "default": "ok",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "IdentificationView": {
+        "properties": {
+          "accepted_model_id": {
+            "title": "Accepted Model Id",
+            "type": "null"
+          },
+          "reason": {
+            "const": "live_judge_not_validated",
+            "title": "Reason",
+            "type": "string"
+          },
+          "status": {
+            "const": "needs_review",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason"
+        ],
+        "title": "IdentificationView",
+        "type": "object"
+      },
+      "JobStatusResponse": {
+        "properties": {
+          "attempt_count": {
+            "title": "Attempt Count",
+            "type": "integer"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "mock",
+            "default": "mock",
+            "title": "Mode",
+            "type": "string"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalyzeResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "status",
+          "created_at",
+          "updated_at",
+          "started_at",
+          "finished_at",
+          "attempt_count",
+          "result",
+          "error_code"
+        ],
+        "title": "JobStatusResponse",
+        "type": "object"
+      },
+      "LiveJobStatusResponse": {
+        "properties": {
+          "attempt_count": {
+            "title": "Attempt Count",
+            "type": "integer"
+          },
+          "baseline_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Revision"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "deployment_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deployment Id"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "live_target_mock_judge",
+            "default": "live_target_mock_judge",
+            "title": "Mode",
+            "type": "string"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LiveOpenAIAnalyzeResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "status",
+          "created_at",
+          "updated_at",
+          "started_at",
+          "finished_at",
+          "attempt_count",
+          "result",
+          "error_code"
+        ],
+        "title": "LiveJobStatusResponse",
+        "type": "object"
+      },
+      "LiveOpenAIAnalyzeRequest": {
+        "additionalProperties": false,
+        "description": "Per-analysis OpenAI key; never persisted or serialized in the result.\n\nThe model ID routes requests to a specific OpenAI deployment. It is NOT\nsupplied as a fingerprinting ground truth or predicted identity.",
+        "properties": {
+          "api_key": {
+            "format": "password",
+            "title": "Api Key",
+            "type": "string",
+            "writeOnly": true
+          },
+          "prompt_text": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Prompt Text",
+            "type": "string"
+          },
+          "provider": {
+            "const": "openai",
+            "default": "openai",
+            "title": "Provider",
+            "type": "string"
+          },
+          "target_model": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "title": "Target Model",
+            "type": "string"
+          },
+          "use_stage1": {
+            "default": false,
+            "title": "Use Stage1",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt_text",
+          "target_model",
+          "api_key"
+        ],
+        "title": "LiveOpenAIAnalyzeRequest",
+        "type": "object"
+      },
+      "LiveOpenAIAnalyzeResponse": {
+        "description": "Real OpenAI target answers, MOCK judge, no accepted identification.",
+        "properties": {
+          "change_status": {
+            "title": "Change Status",
+            "type": "string"
+          },
+          "mode": {
+            "const": "live_target_mock_judge",
+            "default": "live_target_mock_judge",
+            "title": "Mode",
+            "type": "string"
+          },
+          "model_card_status": {
+            "title": "Model Card Status",
+            "type": "string"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "report": {
+            "additionalProperties": true,
+            "title": "Report",
+            "type": "object"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "stage1_enabled": {
+            "title": "Stage1 Enabled",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "identified",
+              "verified",
+              "drift_detected",
+              "needs_review",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "target_queries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Target Queries",
+            "type": "array"
+          },
+          "ui_result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnifiedLiveResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "request_id",
+          "status",
+          "model_id",
+          "stage1_enabled",
+          "model_card_status",
+          "change_status",
+          "target_queries",
+          "report"
+        ],
+        "title": "LiveOpenAIAnalyzeResponse",
+        "type": "object"
+      },
+      "ManualBaselineCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "acknowledge_manual_review": {
+            "const": true,
+            "title": "Acknowledge Manual Review",
+            "type": "boolean"
+          },
+          "model_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "title": "Model Id",
+            "type": "string"
+          },
+          "review_note": {
+            "maxLength": 500,
+            "minLength": 10,
+            "title": "Review Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "model_id",
+          "acknowledge_manual_review",
+          "review_note"
+        ],
+        "title": "ManualBaselineCreate",
+        "type": "object"
+      },
+      "ModelCardView": {
+        "properties": {
+          "card": {
+            "title": "Card",
+            "type": "null"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "null"
+          },
+          "status": {
+            "const": "unavailable",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "ModelCardView",
+        "type": "object"
+      },
+      "ResultEvidenceView": {
+        "properties": {
+          "baseline_auto_updated": {
+            "const": false,
+            "title": "Baseline Auto Updated",
+            "type": "boolean"
+          },
+          "identity_confirmed": {
+            "const": false,
+            "title": "Identity Confirmed",
+            "type": "boolean"
+          },
+          "judge": {
+            "const": "mock",
+            "title": "Judge",
+            "type": "string"
+          },
+          "target_provider": {
+            "const": "openai",
+            "title": "Target Provider",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_provider",
+          "judge",
+          "identity_confirmed",
+          "baseline_auto_updated"
+        ],
+        "title": "ResultEvidenceView",
+        "type": "object"
+      },
+      "UnifiedLiveResult": {
+        "description": "Safe, typed UI result. Raw report remains for research diagnostics.",
+        "properties": {
+          "baseline": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BaselineReference"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "comparison": {
+            "$ref": "#/components/schemas/ComparisonView"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/ResultEvidenceView"
+          },
+          "identification": {
+            "$ref": "#/components/schemas/IdentificationView"
+          },
+          "model_card": {
+            "$ref": "#/components/schemas/ModelCardView"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identification",
+          "comparison",
+          "model_card",
+          "baseline",
+          "evidence"
+        ],
+        "title": "UnifiedLiveResult",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "description": "Authenticated encrypted live jobs and mock jobs; judge remains mocked.",
+    "title": "LLM Fingerprinting Backend \u2014 M6 Local Prototype",
+    "version": "0.6.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/analyze": {
+      "post": {
+        "operationId": "analyze_api_v1_analyze_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Analyze"
+      }
+    },
+    "/api/v1/analyze/live": {
+      "post": {
+        "description": "Synchronous OpenAI target interrogation; judge remains a mock.\n\nThis endpoint must be called only against localhost until authentication,\nHTTPS, rate limiting, and job execution are implemented. API keys are\nsupplied per request and are NOT stored by the application.",
+        "operationId": "analyze_live_api_v1_analyze_live_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LiveOpenAIAnalyzeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveOpenAIAnalyzeResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Analyze Live"
+      }
+    },
+    "/api/v1/capabilities": {
+      "get": {
+        "operationId": "capabilities_api_v1_capabilities_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilitiesResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Capabilities"
+      }
+    },
+    "/api/v1/deployments": {
+      "get": {
+        "operationId": "list_deployments_api_v1_deployments_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Deployments",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      },
+      "post": {
+        "operationId": "create_deployment_api_v1_deployments_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeploymentCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Deployment",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/api/v1/deployments/{deployment_id}": {
+      "get": {
+        "operationId": "get_deployment_api_v1_deployments__deployment_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deployment_id",
+            "required": true,
+            "schema": {
+              "title": "Deployment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get Deployment",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/api/v1/deployments/{deployment_id}/baselines": {
+      "post": {
+        "operationId": "record_baseline_api_v1_deployments__deployment_id__baselines_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deployment_id",
+            "required": true,
+            "schema": {
+              "title": "Deployment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManualBaselineCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Record Baseline",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/api/v1/deployments/{deployment_id}/changes": {
+      "get": {
+        "operationId": "get_changes_api_v1_deployments__deployment_id__changes_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deployment_id",
+            "required": true,
+            "schema": {
+              "title": "Deployment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get Changes",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/api/v1/deployments/{deployment_id}/history": {
+      "get": {
+        "operationId": "get_history_api_v1_deployments__deployment_id__history_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deployment_id",
+            "required": true,
+            "schema": {
+              "title": "Deployment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get History",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/api/v1/deployments/{deployment_id}/jobs": {
+      "get": {
+        "operationId": "list_deployment_jobs_api_v1_deployments__deployment_id__jobs_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deployment_id",
+            "required": true,
+            "schema": {
+              "title": "Deployment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentJobsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Deployment Jobs"
+      }
+    },
+    "/api/v1/fingerprint/jobs": {
+      "post": {
+        "description": "Queue mock-only analysis; worker runs separately. Never accept keys.",
+        "operationId": "create_mock_job_api_v1_fingerprint_jobs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMockJobRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateJobResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Mock Job"
+      }
+    },
+    "/api/v1/fingerprint/jobs/{job_id}": {
+      "get": {
+        "operationId": "get_mock_job_api_v1_fingerprint_jobs__job_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatusResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Mock Job"
+      }
+    },
+    "/api/v1/fingerprint/live-jobs": {
+      "post": {
+        "description": "Never put the user's provider key in the SQLite job payload.",
+        "operationId": "create_live_job_api_v1_fingerprint_live_jobs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLiveJobRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateLiveJobResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Live Job"
+      }
+    },
+    "/api/v1/fingerprint/live-jobs/{job_id}": {
+      "get": {
+        "operationId": "get_live_job_api_v1_fingerprint_live_jobs__job_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveJobStatusResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get Live Job"
+      }
+    },
+    "/api/v1/models/{model_id}/card": {
+      "get": {
+        "operationId": "get_model_card_api_v1_models__model_id__card_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "model_id",
+            "required": true,
+            "schema": {
+              "title": "Model Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get Model Card",
+        "tags": [
+          "Model cards and monitored deployments"
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    }
+  }
+}

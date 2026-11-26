@@ -1,7 +1,10 @@
-# FastAPI Milestone 3: persistent mock jobs + prior mock/live endpoints.
+# FastAPI Milestone 4: authenticated encrypted live jobs + mock jobs.
 # SQLite is included in the Python standard library; no Redis service required.
 # Install requirements-integrated.txt separately for the fingerprinting core.
 fastapi>=0.115,<1
 uvicorn>=0.30,<1
 pydantic>=2.8,<3
 httpx>=0.27,<1
+
+# Reviewed Fernet encryption primitive for local, temporary worker secrets.
+cryptography>=43,<47

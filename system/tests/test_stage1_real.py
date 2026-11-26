@@ -1,7 +1,9 @@
 """Real Stage 1 integration tests. Loads only user-provided, checksummed artifacts.
 
-The original script is retained under reference_stage1/ for independent parity
-checks. There is NO stage 2 model loading or API use in these tests.
+The historical Stage 1 research script lives at the repository root's
+``scripts/`` directory (not copied into ``system/``). If only the isolated
+``system/`` ZIP is present, the original-source parity test is skipped;
+all artifact/inference tests continue to run. No Stage 2 weights or APIs.
 """
 from __future__ import annotations
 
@@ -130,7 +132,12 @@ class RealStage1Tests(unittest.TestCase):
     def test_target_scores_match_original_inference_script(self):
         # Original code MUST match numeric scores and threshold decisions, even
         # though the new *verdict* has an additional model-identity requirement.
-        src = ROOT / 'reference_stage1/scripts'
+        src = ROOT.parent / 'scripts'
+        required = ('predict_hierarchical.py', 'train_hierarchical.py',
+                    'experiment_common.py')
+        if not all((src / name).is_file() for name in required):
+            self.skipTest('Original repository scripts/ not found beside system/; '
+                          'parity against original research script requires full repository')
         sys.path.insert(0, str(src))
         try:
             orig = importlib.import_module('predict_hierarchical')

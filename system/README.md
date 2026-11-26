@@ -1,4 +1,73 @@
+## Updated collector dataset — November 26, 2026
+
+The team's new raw collection is staged at [`datasets/collector_raw/2026-11-26/`](datasets/collector_raw/2026-11-26/README.md): 20 JSONL files, 9,717 records, 17 catalog IDs and six families. See the [dataset manifest](datasets/collector_raw/2026-11-26/manifest.json) for file hashes and quality counts. The existing trained models, Harness reference bundle, config selections and evaluation data remain unchanged while the ML team reruns models. New model releases must reference their exact dataset/split and pass validation before activation. Raw data is not a frozen evaluation split; review permissions and privacy before publishing it to GitHub.
+
+---
+
+## Backend Milestone 6 — Linked jobs and unified frontend results (November 25, 2026)
+
+Implemented: `POST /api/v1/fingerprint/live-jobs` now accepts an optional **owned**
+`deployment_id`; the server derives the target routing ID and pins that
+submission's reviewed baseline revision. `GET /api/v1/deployments/{id}/jobs`
+lists linked jobs without secrets, and completed jobs expose typed
+`result.ui_result` containing identification, comparison, model-card, and evidence
+states. **Live judge stays mocked**, so identity and drift remain unconfirmed.
+Existing unlinked live jobs and previously reviewed history are unchanged.
+See **[docs/BACKEND_MILESTONE6.md](docs/BACKEND_MILESTONE6.md)** for actual
+request/response formats, Windows Git Bash instructions, and security limits.
+No additional legacy cleanup has been performed beyond C1.
+
+---
+
+## Backend Milestone 5 — model cards and reviewed deployment history (prior milestone)
+
+## Stage 1 script deduplication (C1 — November 22, 2026)
+
+**After merging the ZIP into an existing checkout**, run the checked migration
+helper so old copies actually disappear (ZIP extraction doesn't delete files):
+
+```bash
+python system/tools/apply_c1_cleanup.py          # Dry run
+python system/tools/apply_c1_cleanup.py --apply  # Apply checked deletion
+```
+
+The 17 historical Stage 1 **research scripts** remain at the **GitHub repository
+root** in `scripts/` and are no longer duplicated under
+`system/reference_stage1/scripts/`. This cleanup **does not remove Stage 1
+verification**, its trained `models/stage1_lr/v1/` artifacts, or the opt-in
+`use_stage1` switch. The parity test imports `../scripts/` when the full
+repository is present; only that original-source comparison is skipped if
+`system/` is distributed alone. All other system tests remain runnable.
+
+The `stage1_lr/v1` manifest's old `provenance.source_script` is retained as an
+**immutable historical release reference**; the current canonical research
+source is `scripts/predict_hierarchical.py` at the repository root. See
+[the migration report](docs/CLEANUP_C1_MIGRATION.md) and
+[cleanup decisions](CLEANUP_REVIEW.md). No other cleanup items were removed.
+
+
+The FastAPI backend now reads the team's **authoritative sibling `cards/` folder** and stores owner-scoped **manually reviewed** baseline snapshots; it never promotes a classifier candidate automatically. APIs include `GET /api/v1/models/{model_id}/card`, `POST /api/v1/deployments`, reviewed `POST /baselines`, `GET /history` and `GET /changes`. Stage 1 remains opt-in; M4 worker/live provider routes are unchanged.
+
+From the GitHub repository root, with `cards/`, `collector/` and `system/` as siblings, see **[`docs/BACKEND_MILESTONE5.md`](docs/BACKEND_MILESTONE5.md)** for Windows Git Bash commands and API examples. All proposed legacy removals are documented—**none performed**—in **[`CLEANUP_REVIEW.md`](CLEANUP_REVIEW.md)**. 
+
+---
+
 ## Backend Milestone 3 — durable mock jobs (NEW)
+
+## FastAPI Backend M4 — local authenticated live jobs
+
+The subsystem now provides **authenticated live OpenAI-target analysis jobs**
+(`POST /api/v1/fingerprint/live-jobs` and owner-scoped GET) processed by a
+separate worker. A per-analysis provider key is stored in a temporary **encrypted
+local vault file, not SQLite**, while queued prompts/results are encrypted in
+SQLite. This is a local development mechanism, NOT a production authentication
+service, managed secrets or validated model identity. The Harness judge is mocked.
+
+See [`docs/BACKEND_MILESTONE4.md`](docs/BACKEND_MILESTONE4.md) for Windows Git Bash
+commands, three-terminal startup and a secure interactive client. Existing mock
+endpoints and test commands are unchanged. The old unauthenticated synchronous
+live endpoint is disabled by default.
+
 
 The FastAPI backend now supports `POST /api/v1/fingerprint/jobs` (returns a
 queued **mock** job ID immediately) and `GET /api/v1/fingerprint/jobs/{job_id}`

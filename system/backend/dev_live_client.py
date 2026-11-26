@@ -4,6 +4,9 @@ From repo root after starting FastAPI:
     python -m system.backend.dev_live_client --model YOUR_OPENAI_MODEL --prompt 'Hello'
 
 This makes *real billable OpenAI API calls*. Harness judge is still mocked.
+The legacy synchronous live endpoint is DISABLED by default since M4.
+Prefer `python -m system.backend.dev_live_job_client` for live jobs.
+For localhost legacy tests only, set SYSTEM_ENABLE_LEGACY_SYNC_LIVE=1 on server.
 """
 from __future__ import annotations
 

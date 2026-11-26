@@ -1,32 +1,34 @@
-# Backend (FastAPI)
+## Backend Milestone 6 — Linked jobs and unified frontend results (November 25, 2026)
 
-**Milestone 3:** Development-only local API with three paths:
+Implemented: `POST /api/v1/fingerprint/live-jobs` now accepts an optional **owned**
+`deployment_id`; the server derives the target routing ID and pins that
+submission's reviewed baseline revision. `GET /api/v1/deployments/{id}/jobs`
+lists linked jobs without secrets, and completed jobs expose typed
+`result.ui_result` containing identification, comparison, model-card, and evidence
+states. **Live judge stays mocked**, so identity and drift remain unconfirmed.
+Existing unlinked live jobs and previously reviewed history are unchanged.
+See **[docs/BACKEND_MILESTONE6.md](docs/BACKEND_MILESTONE6.md)** for actual
+request/response formats, Windows Git Bash instructions, and security limits.
+No additional legacy cleanup has been performed beyond C1.
 
-- `POST /api/v1/analyze` — synchronous mock fingerprinting (M1)
-- `POST /api/v1/analyze/live` — synchronous OpenAI target using a per-request
-  user API key, **mock judge** (M2, opt-in billable provider requests)
-- `POST /api/v1/fingerprint/jobs` and `GET /api/v1/fingerprint/jobs/{job_id}` —
-  persistent **mock-only** jobs processed by an independent SQLite worker (M3)
+---
 
-From the parent GitHub root, after activating the Python 3.11+ environment:
+# Backend — FastAPI M4 (local development)
 
-```bash
-python -m pip install -r system/requirements-integrated.txt
-python -m pip install -r system/requirements-backend.txt
-# Git Bash terminal 1
-python -m uvicorn system.backend.app:app --host 127.0.0.1 --port 8000 --reload
-# Git Bash terminal 2
-python -m system.backend.worker --loop --poll-seconds 1
-```
+Three workflows are preserved:
 
-Open http://127.0.0.1:8000/docs to try the mock job API.
+1. `POST /api/v1/analyze` — synchronous offline mock.
+2. `POST /api/v1/fingerprint/jobs` + GET — durable **mock-only** jobs.
+3. `POST /api/v1/fingerprint/live-jobs` + GET — **authenticated** live OpenAI
+   target jobs, processed by a **separate** worker. Key is stored only in a
+   **temporary encrypted local secret file**, never plaintext in SQLite.
 
-See [Backend Milestone 3](../docs/BACKEND_MILESTONE3.md) for file roles,
-SQLite job semantics, security considerations, examples and tests. Previous
-milestones: [M1](../docs/BACKEND_MILESTONE1.md),
-[M2](../docs/BACKEND_MILESTONE2.md).
+The earlier synchronous `/api/v1/analyze/live` is **disabled by default**.
 
-**Not production-ready:** no auth, credential vault, live job worker, secure
-storage for prompts, validated live judge, approved unknown-model rejection,
-confirmed history or automatic model-card change detection. Keep bound to
-`127.0.0.1` only; never submit real API keys to `/jobs`.
+Read **[Milestone 4 guide](../docs/BACKEND_MILESTONE4.md)** first. It includes
+Windows Git Bash setup, local bearer token provisioning, encryption-key setup,
+three-terminal API/worker/client instructions, endpoint contracts and privacy
+limitations. Previous milestones remain in `../docs/BACKEND_MILESTONE{1,2,3}.md`.
+
+All real target requests are potentially billable; the Harness judge is still
+mocked and no real model identity is confirmed. Keep the server on `127.0.0.1`.
