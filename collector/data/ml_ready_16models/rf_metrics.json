@@ -1,0 +1,320 @@
+{
+  "estimators": 500,
+  "seed": 42,
+  "feature_count": 20,
+  "test_file": "data/ml_ready_16models/rf_P13_test.csv",
+  "split_mode": "prompt-held-out",
+  "held_out_prompt_ids": [
+    "I1",
+    "LM-06"
+  ],
+  "experiments": {
+    "all_personas": {
+      "training_rows": 4539,
+      "test_rows": 94,
+      "class_counts_train": {
+        "claude-haiku-4.5": 96,
+        "claude-haiku-5.5": 96,
+        "claude-sonnet-5.5": 96,
+        "gemini-3.8-flash": 696,
+        "gemma3-1b": 96,
+        "gemma3-4b": 696,
+        "gpt-5.6-luna": 96,
+        "gpt-5.6-terra": 96,
+        "gpt-6-luna": 96,
+        "gpt-6.1-terra": 96,
+        "llama3.1-8b": 696,
+        "llama3.2-1b": 96,
+        "llama3.2-3b": 696,
+        "qwen2.5-3b": 96,
+        "qwen3-8b": 670,
+        "qwen3.5-9b": 125
+      },
+      "class_counts_test": {
+        "claude-haiku-4.5": 6,
+        "claude-haiku-5.5": 6,
+        "claude-sonnet-5.5": 6,
+        "gemini-3.8-flash": 6,
+        "gemma3-1b": 6,
+        "gemma3-4b": 6,
+        "gpt-5.6-luna": 6,
+        "gpt-5.6-terra": 6,
+        "gpt-6-luna": 6,
+        "gpt-6.1-terra": 6,
+        "llama3.1-8b": 6,
+        "llama3.2-1b": 6,
+        "llama3.2-3b": 6,
+        "qwen2.5-3b": 6,
+        "qwen3-8b": 6,
+        "qwen3.5-9b": 4
+      },
+      "accuracy": 0.48936170212765956,
+      "macro_f1": 0.46155266302325126,
+      "classification_report": {
+        "claude-haiku-4.5": {
+          "precision": 0.2857142857142857,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.3076923076923077,
+          "support": 6.0
+        },
+        "claude-haiku-5.5": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "claude-sonnet-5.5": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "gemini-3.8-flash": {
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.8333333333333334,
+          "support": 6.0
+        },
+        "gemma3-1b": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1-score": 0.5,
+          "support": 6.0
+        },
+        "gemma3-4b": {
+          "precision": 0.7142857142857143,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.7692307692307693,
+          "support": 6.0
+        },
+        "gpt-5.6-luna": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "gpt-5.6-terra": {
+          "precision": 0.3333333333333333,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.47619047619047616,
+          "support": 6.0
+        },
+        "gpt-6-luna": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "gpt-6.1-terra": {
+          "precision": 0.5555555555555556,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "llama3.1-8b": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.4,
+          "support": 6.0
+        },
+        "llama3.2-1b": {
+          "precision": 0.2727272727272727,
+          "recall": 0.5,
+          "f1-score": 0.35294117647058826,
+          "support": 6.0
+        },
+        "llama3.2-3b": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "qwen2.5-3b": {
+          "precision": 0.6,
+          "recall": 0.5,
+          "f1-score": 0.5454545454545454,
+          "support": 6.0
+        },
+        "qwen3-8b": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 6.0
+        },
+        "qwen3.5-9b": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1-score": 0.4,
+          "support": 4.0
+        },
+        "accuracy": 0.48936170212765956,
+        "macro avg": {
+          "precision": 0.51635101010101,
+          "recall": 0.48437500000000006,
+          "f1-score": 0.46155266302325126,
+          "support": 94.0
+        },
+        "weighted avg": {
+          "precision": 0.5060606060606061,
+          "recall": 0.48936170212765956,
+          "f1-score": 0.46286229415140556,
+          "support": 94.0
+        }
+      }
+    },
+    "P13_only": {
+      "training_rows": 572,
+      "test_rows": 94,
+      "class_counts_train": {
+        "claude-haiku-4.5": 12,
+        "claude-haiku-5.5": 12,
+        "claude-sonnet-5.5": 12,
+        "gemini-3.8-flash": 87,
+        "gemma3-1b": 12,
+        "gemma3-4b": 87,
+        "gpt-5.6-luna": 12,
+        "gpt-5.6-terra": 12,
+        "gpt-6-luna": 12,
+        "gpt-6.1-terra": 12,
+        "llama3.1-8b": 87,
+        "llama3.2-1b": 12,
+        "llama3.2-3b": 87,
+        "qwen2.5-3b": 12,
+        "qwen3-8b": 76,
+        "qwen3.5-9b": 28
+      },
+      "class_counts_test": {
+        "claude-haiku-4.5": 6,
+        "claude-haiku-5.5": 6,
+        "claude-sonnet-5.5": 6,
+        "gemini-3.8-flash": 6,
+        "gemma3-1b": 6,
+        "gemma3-4b": 6,
+        "gpt-5.6-luna": 6,
+        "gpt-5.6-terra": 6,
+        "gpt-6-luna": 6,
+        "gpt-6.1-terra": 6,
+        "llama3.1-8b": 6,
+        "llama3.2-1b": 6,
+        "llama3.2-3b": 6,
+        "qwen2.5-3b": 6,
+        "qwen3-8b": 6,
+        "qwen3.5-9b": 4
+      },
+      "accuracy": 0.4148936170212766,
+      "macro_f1": 0.4165648587523587,
+      "classification_report": {
+        "claude-haiku-4.5": {
+          "precision": 0.1,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.125,
+          "support": 6.0
+        },
+        "claude-haiku-5.5": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "claude-sonnet-5.5": {
+          "precision": 0.6,
+          "recall": 0.5,
+          "f1-score": 0.5454545454545454,
+          "support": 6.0
+        },
+        "gemini-3.8-flash": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 6.0
+        },
+        "gemma3-1b": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.3333333333333333,
+          "support": 6.0
+        },
+        "gemma3-4b": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.2857142857142857,
+          "support": 6.0
+        },
+        "gpt-5.6-luna": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.2857142857142857,
+          "support": 6.0
+        },
+        "gpt-5.6-terra": {
+          "precision": 0.3,
+          "recall": 1.0,
+          "f1-score": 0.46153846153846156,
+          "support": 6.0
+        },
+        "gpt-6-luna": {
+          "precision": 0.6,
+          "recall": 0.5,
+          "f1-score": 0.5454545454545454,
+          "support": 6.0
+        },
+        "gpt-6.1-terra": {
+          "precision": 0.3333333333333333,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.2222222222222222,
+          "support": 6.0
+        },
+        "llama3.1-8b": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.4,
+          "support": 6.0
+        },
+        "llama3.2-1b": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "llama3.2-3b": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "qwen2.5-3b": {
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1-score": 0.4,
+          "support": 6.0
+        },
+        "qwen3-8b": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "qwen3.5-9b": {
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "f1-score": 0.7272727272727273,
+          "support": 4.0
+        },
+        "accuracy": 0.4148936170212766,
+        "macro avg": {
+          "precision": 0.5419642857142857,
+          "recall": 0.4270833333333333,
+          "f1-score": 0.4165648587523587,
+          "support": 94.0
+        },
+        "weighted avg": {
+          "precision": 0.5413373860182371,
+          "recall": 0.4148936170212766,
+          "f1-score": 0.4099540530391594,
+          "support": 94.0
+        }
+      }
+    }
+  },
+  "caveat": "Both models use the same P13 test set, and all test prompt IDs were excluded from training."
+}

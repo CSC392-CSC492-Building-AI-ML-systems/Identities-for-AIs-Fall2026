@@ -1,0 +1,122 @@
+{
+  "input_files": {
+    "all_personas": "data/processed/fingerprint_v0_all.csv",
+    "selected_persona": "data/processed/fingerprint_v0_P13.csv"
+  },
+  "persona": "P13",
+  "seed": 42,
+  "split_mode": "prompt-held-out",
+  "test_prompt_fraction": 0.4,
+  "held_out_prompt_ids": [
+    "I1",
+    "LM-06"
+  ],
+  "split_strategy": "Hold out 2 entire prompt IDs from all personas and models; prompts are selected from the set with usable P13 responses for every model.",
+  "input_records": {
+    "all_personas": 6117,
+    "selected_persona": 769,
+    "all_missing_response": 846,
+    "persona_missing_response": 103,
+    "all_missing_output_tokens": 0,
+    "all_missing_latency_ms": 0
+  },
+  "output_records": {
+    "rf_all_train": 4539,
+    "rf_P13_train": 572,
+    "rf_P13_test": 94
+  },
+  "class_counts": {
+    "rf_all_train": {
+      "claude-haiku-4.5": 96,
+      "claude-haiku-5.5": 96,
+      "claude-sonnet-5.5": 96,
+      "gemini-3.8-flash": 696,
+      "gemma3-1b": 96,
+      "gemma3-4b": 696,
+      "gpt-5.6-luna": 96,
+      "gpt-5.6-terra": 96,
+      "gpt-6-luna": 96,
+      "gpt-6.1-terra": 96,
+      "llama3.1-8b": 696,
+      "llama3.2-1b": 96,
+      "llama3.2-3b": 696,
+      "qwen2.5-3b": 96,
+      "qwen3-8b": 670,
+      "qwen3.5-9b": 125
+    },
+    "rf_P13_train": {
+      "claude-haiku-4.5": 12,
+      "claude-haiku-5.5": 12,
+      "claude-sonnet-5.5": 12,
+      "gemini-3.8-flash": 87,
+      "gemma3-1b": 12,
+      "gemma3-4b": 87,
+      "gpt-5.6-luna": 12,
+      "gpt-5.6-terra": 12,
+      "gpt-6-luna": 12,
+      "gpt-6.1-terra": 12,
+      "llama3.1-8b": 87,
+      "llama3.2-1b": 12,
+      "llama3.2-3b": 87,
+      "qwen2.5-3b": 12,
+      "qwen3-8b": 76,
+      "qwen3.5-9b": 28
+    },
+    "rf_P13_test": {
+      "claude-haiku-4.5": 6,
+      "claude-haiku-5.5": 6,
+      "claude-sonnet-5.5": 6,
+      "gemini-3.8-flash": 6,
+      "gemma3-1b": 6,
+      "gemma3-4b": 6,
+      "gpt-5.6-luna": 6,
+      "gpt-5.6-terra": 6,
+      "gpt-6-luna": 6,
+      "gpt-6.1-terra": 6,
+      "llama3.1-8b": 6,
+      "llama3.2-1b": 6,
+      "llama3.2-3b": 6,
+      "qwen2.5-3b": 6,
+      "qwen3-8b": 6,
+      "qwen3.5-9b": 4
+    }
+  },
+  "feature_count": 20,
+  "feature_columns": [
+    "response_char_count",
+    "response_word_count",
+    "response_avg_word_length",
+    "response_unique_word_fraction",
+    "response_line_count",
+    "response_punctuation_count",
+    "response_punctuation_fraction",
+    "response_uppercase_letter_fraction",
+    "response_uppercase_word_fraction",
+    "response_markdown_marker_count",
+    "response_bullet_marker_count",
+    "response_code_fence_count",
+    "response_first_person_pronoun_count",
+    "response_first_person_pronoun_fraction",
+    "prompt_char_count",
+    "prompt_word_count",
+    "output_tokens",
+    "latency_ms",
+    "output_tokens_missing",
+    "latency_ms_missing"
+  ],
+  "unsplittable_groups": [],
+  "split_assignment_counts": {
+    "P13_train_and_all_train": 572,
+    "all_train": 3967,
+    "missing_response": 846,
+    "prompt_test": 732
+  },
+  "outputs": [
+    "rf_all_train.csv",
+    "rf_P13_train.csv",
+    "rf_P13_test.csv",
+    "rf_split_manifest.csv",
+    "rf_feature_manifest.json",
+    "rf_preparation_report.json"
+  ]
+}

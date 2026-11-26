@@ -1,17 +1,39 @@
 {
   "source_files": [
+    "claude-haiku-4.5/fingerprint_v0.jsonl",
+    "claude-haiku-5.5/fingerprint_v0.jsonl",
+    "claude-sonnet-5.5/fingerprint_v0.jsonl",
+    "gemini-3.8-flash/fingerprint_v0.jsonl",
+    "gemma3-1b/fingerprint_v0.jsonl",
     "gemma3-4b/fingerprint_v0.jsonl",
+    "gpt-5.6-luna/fingerprint_v0.jsonl",
+    "gpt-5.6-terra/fingerprint_v0.jsonl",
+    "gpt-6-luna/fingerprint_v0.jsonl",
+    "gpt-6.1-terra/fingerprint_v0.jsonl",
     "llama3.1-8b/fingerprint_v0.jsonl",
+    "llama3.2-1b/fingerprint_v0.jsonl",
     "llama3.2-3b/fingerprint_v0.jsonl",
+    "qwen2.5-3b/fingerprint_v0.jsonl",
     "qwen3-8b/fingerprint_v0.jsonl",
     "qwen3.5-9b/fingerprint_v0.jsonl"
   ],
-  "prompt_yaml": "prompts\\fingerprinting_prompts.yaml",
+  "prompt_yaml": "prompts/fingerprinting_prompts.yaml",
   "prompt_definitions": 32,
   "model_labels": [
+    "claude-haiku-4.5",
+    "claude-haiku-5.5",
+    "claude-sonnet-5.5",
+    "gemini-3.8-flash",
+    "gemma3-1b",
     "gemma3-4b",
+    "gpt-5.6-luna",
+    "gpt-5.6-terra",
+    "gpt-6-luna",
+    "gpt-6.1-terra",
     "llama3.1-8b",
+    "llama3.2-1b",
     "llama3.2-3b",
+    "qwen2.5-3b",
     "qwen3-8b",
     "qwen3.5-9b"
   ],
@@ -27,37 +49,98 @@
     "P15"
   ],
   "all": {
-    "total": 3840,
-    "null_response_text": 120,
-    "missing_response_text": 753,
-    "expected_missing_refusal_only": 120,
-    "unexpected_missing_response_text": 633
+    "total": 6117,
+    "null_response_text": 213,
+    "missing_response_text": 846,
+    "expected_missing_refusal_only": 205,
+    "unexpected_missing_response_text": 641
   },
   "P13": {
-    "total": 480,
-    "null_response_text": 15,
-    "missing_response_text": 87,
-    "expected_missing_refusal_only": 15,
-    "unexpected_missing_response_text": 72
+    "total": 769,
+    "null_response_text": 31,
+    "missing_response_text": 103,
+    "expected_missing_refusal_only": 30,
+    "unexpected_missing_response_text": 73
   },
   "records_per_model": {
+    "claude-haiku-4.5": 152,
+    "claude-haiku-5.5": 144,
+    "claude-sonnet-5.5": 144,
+    "gemini-3.8-flash": 829,
+    "gemma3-1b": 144,
     "gemma3-4b": 768,
+    "gpt-5.6-luna": 144,
+    "gpt-5.6-terra": 144,
+    "gpt-6-luna": 144,
+    "gpt-6.1-terra": 144,
     "llama3.1-8b": 768,
+    "llama3.2-1b": 144,
     "llama3.2-3b": 768,
+    "qwen2.5-3b": 144,
     "qwen3-8b": 768,
     "qwen3.5-9b": 768
   },
   "records_per_persona": {
-    "BK1": 480,
-    "BK2": 480,
-    "BK3": 480,
-    "BK4": 480,
-    "P01": 480,
-    "P12": 480,
-    "P13": 480,
-    "P15": 480
+    "BK1": 758,
+    "BK2": 763,
+    "BK3": 765,
+    "BK4": 767,
+    "P01": 761,
+    "P12": 769,
+    "P13": 769,
+    "P15": 765
   },
   "records_per_model_and_persona": {
+    "claude-haiku-4.5": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 21,
+      "P01": 21,
+      "P12": 19,
+      "P13": 19,
+      "P15": 18
+    },
+    "claude-haiku-5.5": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
+    "claude-sonnet-5.5": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
+    "gemini-3.8-flash": {
+      "BK1": 98,
+      "BK2": 103,
+      "BK3": 105,
+      "BK4": 104,
+      "P01": 98,
+      "P12": 108,
+      "P13": 108,
+      "P15": 105
+    },
+    "gemma3-1b": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
     "gemma3-4b": {
       "BK1": 96,
       "BK2": 96,
@@ -67,6 +150,46 @@
       "P12": 96,
       "P13": 96,
       "P15": 96
+    },
+    "gpt-5.6-luna": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
+    "gpt-5.6-terra": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
+    "gpt-6-luna": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
+    "gpt-6.1-terra": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
     },
     "llama3.1-8b": {
       "BK1": 96,
@@ -78,6 +201,16 @@
       "P13": 96,
       "P15": 96
     },
+    "llama3.2-1b": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
+    },
     "llama3.2-3b": {
       "BK1": 96,
       "BK2": 96,
@@ -87,6 +220,16 @@
       "P12": 96,
       "P13": 96,
       "P15": 96
+    },
+    "qwen2.5-3b": {
+      "BK1": 18,
+      "BK2": 18,
+      "BK3": 18,
+      "BK4": 18,
+      "P01": 18,
+      "P12": 18,
+      "P13": 18,
+      "P15": 18
     },
     "qwen3-8b": {
       "BK1": 96,
@@ -110,12 +253,18 @@
     }
   },
   "duplicate_record_ids": 0,
-  "repeated_sample_keys": 0,
+  "repeated_sample_keys": 69,
   "warnings": [
+    "Repeated model/prompt/persona/sample_index: claude-haiku-4.5/fingerprint_v0.jsonl:45 and claude-haiku-4.5/fingerprint_v0.jsonl:145; preserved both",
+    "Repeated model/prompt/persona/sample_index: claude-haiku-4.5/fingerprint_v0.jsonl:58 and claude-haiku-4.5/fingerprint_v0.jsonl:146; preserved both",
+    "Repeated model/prompt/persona/sample_index: claude-haiku-4.5/fingerprint_v0.jsonl:59 and claude-haiku-4.5/fingerprint_v0.jsonl:147; preserved both",
+    "Repeated model/prompt/persona/sample_index: claude-haiku-4.5/fingerprint_v0.jsonl:60 and claude-haiku-4.5/fingerprint_v0.jsonl:148; preserved both",
+    "Repeated model/prompt/persona/sample_index: claude-haiku-4.5/fingerprint_v0.jsonl:61 and claude-haiku-4.5/fingerprint_v0.jsonl:149; preserved both",
+    "... plus 64 additional repeated sample keys",
     "Some response text is missing for prompts that request full storage"
   ],
   "outputs": [
-    "data\\processed\\fingerprint_v0_all.csv",
-    "data\\processed\\fingerprint_v0_P13.csv"
+    "data/processed/fingerprint_v0_all.csv",
+    "data/processed/fingerprint_v0_P13.csv"
   ]
 }
