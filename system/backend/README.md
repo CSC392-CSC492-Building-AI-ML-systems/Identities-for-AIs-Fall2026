@@ -1,3 +1,9 @@
+# Latest prototype update — live Stage 2 review
+
+See [CPU-only replay and PowerShell setup](../docs/BACKEND_STAGE2_REVIEW.md) for the new opt-in Factory-driven RF/Harness live job mode. Stage 1 deferred; LoRA GPU validation pending. Existing mock workflows remain supported.
+
+---
+
 ## Backend Milestone 6 — Linked jobs and unified frontend results (November 25, 2026)
 
 Implemented: `POST /api/v1/fingerprint/live-jobs` now accepts an optional **owned**

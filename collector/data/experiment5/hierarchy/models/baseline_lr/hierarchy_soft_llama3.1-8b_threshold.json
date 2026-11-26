@@ -1,7 +1,0 @@
-{
-  "target": "llama3.1-8b",
-  "algorithm": "baseline_lr",
-  "approach": "hierarchy_soft",
-  "validation_threshold": 0.2644125238581067,
-  "max_false_alarm": 0.1
-}

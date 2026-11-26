@@ -1,0 +1,386 @@
+{
+  "catalog_sha256": "c6606fbeb727a121800baacca5c7224c68940a589860d870472ace87138d6df4",
+  "dataset_id": "collector_raw/agentic-2026-11-26",
+  "eligibility_policy": "include_blank_without_error_v2",
+  "files": [
+    {
+      "blank_without_error": 0,
+      "bytes": 231577,
+      "family_id": "claude",
+      "model_id": "claude-haiku-4.5",
+      "nonempty_without_error": 144,
+      "path": "raw/claude-haiku-4.5/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 8,
+      "records": 152,
+      "sha256": "714d184f63456552a89888f5d6d915f6e2ca24bcc2fa3364f4033693beecff64"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 171073,
+      "family_id": "claude",
+      "model_id": "claude-haiku-5.5",
+      "nonempty_without_error": 144,
+      "path": "raw/claude-haiku-5.5/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "fb309f911488b7f645782b263392f40737819bd3b7325c12900ec4c153d6adf3"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 195862,
+      "family_id": "claude",
+      "model_id": "claude-sonnet-5.5",
+      "nonempty_without_error": 144,
+      "path": "raw/claude-sonnet-5.5/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "d134ea9dfad6fa98564cd1c8dbe066d8af9f2689817b9e801c513cd693dadf1d"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 145244,
+      "family_id": "gemini",
+      "model_id": "gemini-3.1-pro",
+      "nonempty_without_error": 144,
+      "path": "raw/gemini-3.1-pro/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "9eacca5bc146484bae9ca43421d4135f2b91dabaf69617e20326d9dc93cc84a9"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 2138002,
+      "family_id": "gemini",
+      "model_id": "gemini-3.1-pro",
+      "nonempty_without_error": 900,
+      "path": "raw/gemini-3.1-pro/training_v1.jsonl",
+      "prompt_set_version": "training_v1",
+      "recorded_errors": 0,
+      "records": 900,
+      "sha256": "645a8ff2b6d73fbe7a78a748818b68c0148158b0bacfe35fb2004718259f97ef"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 140703,
+      "family_id": "gemini",
+      "model_id": "gemini-3.8-flash",
+      "nonempty_without_error": 144,
+      "path": "raw/gemini-3.8-flash/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "0c40978b32ecf106328df059a41518bb7eb0ed485fdc0f7674461d6591a71e1e"
+    },
+    {
+      "blank_without_error": 2,
+      "bytes": 1458280,
+      "family_id": "gemini",
+      "model_id": "gemini-3.8-flash",
+      "nonempty_without_error": 898,
+      "path": "raw/gemini-3.8-flash/training_v1.jsonl",
+      "prompt_set_version": "training_v1",
+      "recorded_errors": 0,
+      "records": 900,
+      "sha256": "ed53f073dbb72c53cfdf497eb1eff8235a5a658a3f27eefeeb55315208e894b9"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 297149,
+      "family_id": "gemma",
+      "model_id": "gemma3-1b",
+      "nonempty_without_error": 144,
+      "path": "raw/gemma3-1b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "a3929f1df8471eee4a2e7dca6877e30ecfa791b36e8d632e7333144f61c6ef32"
+    },
+    {
+      "blank_without_error": 24,
+      "bytes": 3105065,
+      "family_id": "gemma",
+      "model_id": "gemma3-4b",
+      "nonempty_without_error": 744,
+      "path": "raw/gemma3-4b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 768,
+      "sha256": "960e699524fb7f30fd0de250bb8b97a4efd7bb7ae7516101eba205eb166ab9c2"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 204159,
+      "family_id": "gpt",
+      "model_id": "gpt-5.6-luna",
+      "nonempty_without_error": 144,
+      "path": "raw/gpt-5.6-luna/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "557d816336a7a6f381adaa2eb06db31e18c93c271a0de7905647530d3025b4f5"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 206168,
+      "family_id": "gpt",
+      "model_id": "gpt-5.6-terra",
+      "nonempty_without_error": 144,
+      "path": "raw/gpt-5.6-terra/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "a6ace7807bc9857cd48b4d8ef97ac2e60a00514a62e5cc8e08b3aef70239adcd"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 159011,
+      "family_id": "gpt",
+      "model_id": "gpt-6-luna",
+      "nonempty_without_error": 144,
+      "path": "raw/gpt-6-luna/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "26a7a1ef4ec1e76efb87b53513e7d4f6a7c11b11a913b7278f2cf9f70693ee4d"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 157730,
+      "family_id": "gpt",
+      "model_id": "gpt-6.1-terra",
+      "nonempty_without_error": 144,
+      "path": "raw/gpt-6.1-terra/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "67ecea992157236eff9222010e6408f5a363b6d08ef007d664481a050b724871"
+    },
+    {
+      "blank_without_error": 24,
+      "bytes": 2115674,
+      "family_id": "llama",
+      "model_id": "llama3.1-8b",
+      "nonempty_without_error": 744,
+      "path": "raw/llama3.1-8b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 768,
+      "sha256": "a6ac63fca21b380f3dd3ffcf0372bd53972d55066c0136a8341b7bbf6722a5b8"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 1899799,
+      "family_id": "llama",
+      "model_id": "llama3.1-8b",
+      "nonempty_without_error": 900,
+      "path": "raw/llama3.1-8b/training_v1.jsonl",
+      "prompt_set_version": "training_v1",
+      "recorded_errors": 0,
+      "records": 900,
+      "sha256": "332738b8847aefae9257d578e5ecd420af81a453ad037587c38c9409567fb683"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 241152,
+      "family_id": "llama",
+      "model_id": "llama3.2-1b",
+      "nonempty_without_error": 144,
+      "path": "raw/llama3.2-1b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "d546061fb7dd634e9f1b62bde82bbbdc83ef40161169e28937b4f3a5f14c7019"
+    },
+    {
+      "blank_without_error": 24,
+      "bytes": 2173397,
+      "family_id": "llama",
+      "model_id": "llama3.2-3b",
+      "nonempty_without_error": 744,
+      "path": "raw/llama3.2-3b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 768,
+      "sha256": "1a5abde12665215f4d44471b02ad9a1d6f04a371f66afd3a3a5f2df729e467cb"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 1978751,
+      "family_id": "llama",
+      "model_id": "llama3.2-3b",
+      "nonempty_without_error": 900,
+      "path": "raw/llama3.2-3b/training_v1.jsonl",
+      "prompt_set_version": "training_v1",
+      "recorded_errors": 0,
+      "records": 900,
+      "sha256": "ad69c3e60636403d075dc26875640ee159c6c046de2fe7de06496a0ad3ac5bc8"
+    },
+    {
+      "blank_without_error": 0,
+      "bytes": 245424,
+      "family_id": "qwen",
+      "model_id": "qwen2.5-3b",
+      "nonempty_without_error": 144,
+      "path": "raw/qwen2.5-3b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 144,
+      "sha256": "36991d31866bc7fc6835cc5341491feee51055cbae33e9dd96b8810e03ba585b"
+    },
+    {
+      "blank_without_error": 50,
+      "bytes": 3650412,
+      "family_id": "qwen",
+      "model_id": "qwen3-8b",
+      "nonempty_without_error": 718,
+      "path": "raw/qwen3-8b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 768,
+      "sha256": "320125cbb5de5c334953bf414ba50037370354a340a44e0ec08ac0bbcc44f922"
+    },
+    {
+      "blank_without_error": 631,
+      "bytes": 4336080,
+      "family_id": "qwen",
+      "model_id": "qwen3.5-9b",
+      "nonempty_without_error": 137,
+      "path": "raw/qwen3.5-9b/fingerprint_v0.jsonl",
+      "prompt_set_version": "fingerprint_v0",
+      "recorded_errors": 0,
+      "records": 768,
+      "sha256": "0ade2e7e47b5321c57808fc085ccccea0fa849519505189832191c7be9b49aef"
+    }
+  ],
+  "license_review": "pending",
+  "privacy_review": "pending",
+  "schema_version": "1.0",
+  "source_archive_sha256": null,
+  "source_note": "Exact collector/data/raw snapshot extracted from supplied Agentic repository; SHA256 a2ded71c71515bfcec39fa4ed700eac9966eec1733c717b65d4ede8a40d97d0d",
+  "status": "raw_unreviewed",
+  "summary": {
+    "blank_with_reasoning": 633,
+    "blank_without_error": 755,
+    "by_model": {
+      "claude-haiku-4.5": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144,
+        "recorded_error": 8
+      },
+      "claude-haiku-5.5": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "claude-sonnet-5.5": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "gemini-3.1-pro": {
+        "eligible": 1044,
+        "eligible_prompt_ids": 306,
+        "nonempty_without_error": 1044
+      },
+      "gemini-3.8-flash": {
+        "blank_response": 2,
+        "eligible": 1044,
+        "eligible_prompt_ids": 306,
+        "nonempty_without_error": 1042
+      },
+      "gemma3-1b": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "gemma3-4b": {
+        "blank_response": 24,
+        "eligible": 768,
+        "eligible_prompt_ids": 32,
+        "nonempty_without_error": 744
+      },
+      "gpt-5.6-luna": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "gpt-5.6-terra": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "gpt-6-luna": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "gpt-6.1-terra": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "llama3.1-8b": {
+        "blank_response": 24,
+        "eligible": 1668,
+        "eligible_prompt_ids": 332,
+        "nonempty_without_error": 1644
+      },
+      "llama3.2-1b": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "llama3.2-3b": {
+        "blank_response": 24,
+        "eligible": 1668,
+        "eligible_prompt_ids": 332,
+        "nonempty_without_error": 1644
+      },
+      "qwen2.5-3b": {
+        "eligible": 144,
+        "eligible_prompt_ids": 6,
+        "nonempty_without_error": 144
+      },
+      "qwen3-8b": {
+        "blank_response": 50,
+        "eligible": 768,
+        "eligible_prompt_ids": 32,
+        "nonempty_without_error": 718
+      },
+      "qwen3.5-9b": {
+        "blank_response": 631,
+        "eligible": 768,
+        "eligible_prompt_ids": 32,
+        "nonempty_without_error": 137
+      }
+    },
+    "by_prompt_set": {
+      "fingerprint_v0": {
+        "blank_response": 753,
+        "eligible": 5568,
+        "nonempty_without_error": 4815,
+        "recorded_error": 8
+      },
+      "training_v1": {
+        "blank_response": 2,
+        "eligible": 3600,
+        "nonempty_without_error": 3598
+      }
+    },
+    "distinct_prompt_ids": 332,
+    "duplicate_record_ids": 0,
+    "eligible": 9168,
+    "family_count": 6,
+    "model_count": 17,
+    "nonempty_reasoning": 1488,
+    "recorded_errors": 8,
+    "records": 9176,
+    "refused": 468,
+    "repeated_exact_responses_same_model_prompt_persona": 733
+  }
+}

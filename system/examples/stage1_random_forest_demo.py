@@ -21,7 +21,7 @@ def main():
     constructors.register_stage1('logistic_regression',build_logistic_regression)
     constructors.register_stage2('random_forest',build_random_forest)
     pipeline=PipelineFactory(registry,constructors).build(cfg)
-    rows=[json.loads(x) for x in (ROOT/'testdata/random_forest/heldout_raw_cases.jsonl').read_text().splitlines()]
+    rows=[json.loads(x) for x in (ROOT.parent/'tests/fixtures/random_forest/heldout_raw_cases.jsonl').read_text().splitlines()]
     row=next(r for r in rows if r['model_key']=='gemma3-4b')
     obs=Observation(row['prompt'],row['response_text'],row['prompt_id'],
                     int(float(row['output_tokens'])),float(row['latency_ms']))

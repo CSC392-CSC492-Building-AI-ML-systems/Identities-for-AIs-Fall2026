@@ -25,7 +25,7 @@ from fingerprinting.schemas import IdentificationInput, Observation
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--answers', default='testdata/harness_replay/llama3.1-8b_BK1_sample2.json')
+    p.add_argument('--answers', default='../tests/fixtures/harness_replay/llama3.1-8b_BK1_sample2.json')
     p.add_argument('--judge-provider', choices=['google', 'anthropic', 'openai', 'mock'], default='mock')
     p.add_argument('--domain', choices=['compliance', 'governance', 'evaluation', 'risk'], default='risk')
     p.add_argument('--deployment', default=None)

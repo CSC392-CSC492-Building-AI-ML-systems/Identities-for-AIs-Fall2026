@@ -1,9 +1,0 @@
-family,target_model,sibling_model,algorithm,matched_prompts,target_higher_prompts,mean_prompt_score_margin,prompt_win_rate
-gemini,gemini-3.1-pro,gemini-3.8-flash,lr_tfidf,45,44,0.2279738651980319,0.9777777777777777
-gemini,gemini-3.1-pro,gemini-3.8-flash,rf_stylometry,45,39,0.3466587314189819,0.8666666666666667
-gemini,gemini-3.8-flash,gemini-3.1-pro,lr_tfidf,45,44,0.22797386519803461,0.9777777777777777
-gemini,gemini-3.8-flash,gemini-3.1-pro,rf_stylometry,45,39,0.3466587314189819,0.8666666666666667
-llama,llama3.1-8b,llama3.2-3b,lr_tfidf,45,33,0.035161664330810714,0.7333333333333333
-llama,llama3.1-8b,llama3.2-3b,rf_stylometry,45,30,0.03869768722175904,0.6666666666666666
-llama,llama3.2-3b,llama3.1-8b,lr_tfidf,45,33,0.035161664330810694,0.7333333333333333
-llama,llama3.2-3b,llama3.1-8b,rf_stylometry,45,30,0.03869768722175907,0.6666666666666666

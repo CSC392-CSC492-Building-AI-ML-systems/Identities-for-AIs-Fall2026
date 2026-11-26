@@ -5,8 +5,8 @@ From the repository root:
 
 This is still a localhost development application. Linked live jobs require
 bearer auth, encrypted queued inputs/results and a separate encrypted credential
-vault. Production OIDC, managed secret storage, HTTPS, rate limits and consent
-are NOT implemented.
+vault. Production OIDC, managed secret storage, HTTPS and rate limits are NOT implemented.
+External Stage 2 judging requires explicit consent per job.
 """
 from __future__ import annotations
 
@@ -47,9 +47,9 @@ def create_app(gateway: MockAnalysisGateway | None = None,
                repository_cards: RepositoryCards | None = None,
                enable_legacy_sync_live: bool = False) -> FastAPI:
     app = FastAPI(
-        title="LLM Fingerprinting Backend — M6 Local Prototype",
-        description="Authenticated encrypted live jobs and mock jobs; judge remains mocked.",
-        version="0.6.0",
+        title="LLM Fingerprinting Backend — Stage 2 Local Prototype",
+        description="Authenticated encrypted live jobs and mock jobs; explicit review-only Stage 2 mode.",
+        version="0.7.0",
     )
     app.state.analysis_gateway = gateway if gateway is not None else make_mock_gateway()
     # Mock jobs contain NO API keys. Their worker is a separate process sharing
@@ -241,7 +241,8 @@ def create_app(gateway: MockAnalysisGateway | None = None,
             vault.put(job_id, user, payload.api_key.get_secret_value())
             job = request.app.state.live_job_store.enqueue(
                 user, payload.prompt_text, target_model, job_id=job_id,
-                deployment_id=deployment_id, baseline=baseline)
+                deployment_id=deployment_id, baseline=baseline,
+                mode=payload.mode, allow_live_judge=payload.allow_live_judge)
         except Exception:
             vault.delete(job_id)
             raise HTTPException(status_code=500, detail='Could not create analysis job') from None

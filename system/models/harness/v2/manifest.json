@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "harness/v2",
+  "adapter": "harness",
+  "stage": 2,
+  "kind": "agentic_identifier",
+  "supported_models": [
+    "claude-haiku-4.5",
+    "claude-haiku-5.5",
+    "claude-sonnet-5.5",
+    "gemini-3.1-pro",
+    "gemini-3.8-flash",
+    "gemma3-1b",
+    "gemma3-4b",
+    "gpt-5.6-luna",
+    "gpt-5.6-terra",
+    "gpt-6-luna",
+    "gpt-6.1-terra",
+    "llama3.1-8b",
+    "llama3.2-1b",
+    "llama3.2-3b",
+    "qwen2.5-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "required_files": [
+    {
+      "path": "agent/check_chatbot.py",
+      "sha256": "5b530ed3cc0c2f1120517aff9f47a8732327c7886ec65c79c00f092e0fa862fe"
+    },
+    {
+      "path": "agent/identify.py",
+      "sha256": "342db0ca83df6d0c7be220022546170bf445943416916cd1e9365950033fc171"
+    },
+    {
+      "path": "agent/identify_api.py",
+      "sha256": "388bb802e730ff8e6a1ee0bd1b84d5817855b8828c42ee761ca1b1cc32633b29"
+    },
+    {
+      "path": "agent/probe_identify.py",
+      "sha256": "a2a3d1ad83161eed2a03ff2d0e2aa8722e63947ca580af13e570d87640ba181f"
+    },
+    {
+      "path": "collector/data/raw/claude-haiku-4.5/fingerprint_v0.jsonl",
+      "sha256": "f85ad65ca56d5922da84fd7d8c628dc67aae11d4ea4cc3bb7e85c1df0c0eb1f6"
+    },
+    {
+      "path": "collector/data/raw/claude-haiku-5.5/fingerprint_v0.jsonl",
+      "sha256": "122ca3966b8b67d4249ab8cbb10af0b11acb0c091fecb6be1d0418ea42047151"
+    },
+    {
+      "path": "collector/data/raw/claude-sonnet-5.5/fingerprint_v0.jsonl",
+      "sha256": "4731c0eb020a9c58ab9d070f2a9f3a23dbafebd0e7b1ec371d7a8dad33a3a21f"
+    },
+    {
+      "path": "collector/data/raw/gemini-3.1-pro/fingerprint_v0.jsonl",
+      "sha256": "5aec496448dd937264a0bbd15f06bef439ba30cd66456b5a55d845f8b22858b8"
+    },
+    {
+      "path": "collector/data/raw/gemini-3.8-flash/fingerprint_v0.jsonl",
+      "sha256": "1daae38abc271fda039f691607ac8829078b318e8d24f3201bcf6ea3d41c8110"
+    },
+    {
+      "path": "collector/data/raw/gemma3-1b/fingerprint_v0.jsonl",
+      "sha256": "715c1a6909ffcf9107fe6d018ba808f6280e11a1344564a099871d40f39900fa"
+    },
+    {
+      "path": "collector/data/raw/gemma3-4b/fingerprint_v0.jsonl",
+      "sha256": "d0834732ab399226bd7e319ee9488258eb190c95e08901415ad6a9596e8beca8"
+    },
+    {
+      "path": "collector/data/raw/gpt-5.6-luna/fingerprint_v0.jsonl",
+      "sha256": "9e72802e688a2600843ab02175a9ad26595c1330c3aceedc239230dcb405839e"
+    },
+    {
+      "path": "collector/data/raw/gpt-5.6-terra/fingerprint_v0.jsonl",
+      "sha256": "c1641548252dd0e72c4cfb69a2e031dc0d9fde40cf4bc7e2ad48822039bbcd8f"
+    },
+    {
+      "path": "collector/data/raw/gpt-6-luna/fingerprint_v0.jsonl",
+      "sha256": "bafbffcb5e4fe38af2c9f5bb428b26aae97d70ba63807424fd43d0f56551bd4d"
+    },
+    {
+      "path": "collector/data/raw/gpt-6.1-terra/fingerprint_v0.jsonl",
+      "sha256": "409b5c7049d6946c7ff1b10f225be461b56ccba82f26394549d50d23d01af39c"
+    },
+    {
+      "path": "collector/data/raw/llama3.1-8b/fingerprint_v0.jsonl",
+      "sha256": "97964e43487e474e507bdf25ab0076ac9d6441d1a2a98d36c9aca102085aee5d"
+    },
+    {
+      "path": "collector/data/raw/llama3.2-1b/fingerprint_v0.jsonl",
+      "sha256": "c52752b0b3338b527a3fa753a07f23195ba650bcd11c5be45a94783889cc9472"
+    },
+    {
+      "path": "collector/data/raw/llama3.2-3b/fingerprint_v0.jsonl",
+      "sha256": "cb66cfef2d886640c15640941b3334ae33ead0a32c5a365141a20c53e31caf4e"
+    },
+    {
+      "path": "collector/data/raw/qwen2.5-3b/fingerprint_v0.jsonl",
+      "sha256": "d6a6e26f58a8356f10d208ea5f8a1a606d38aacebe4a1a91c3a85600f5a533ce"
+    },
+    {
+      "path": "collector/data/raw/qwen3-8b/fingerprint_v0.jsonl",
+      "sha256": "2a5a3619e1a1b356826b3805852bc58e663a2efa76c747020ca8fcec8f66e118"
+    },
+    {
+      "path": "collector/data/raw/qwen3.5-9b/fingerprint_v0.jsonl",
+      "sha256": "68673ec9270724117314349006bd18767469ee18d343bf9683b5c5a23dc5fdf0"
+    },
+    {
+      "path": "collector/prompts/fingerprinting_prompts.yaml",
+      "sha256": "e6a5e7da934a9ae30f3b8cd261823026068f804129f2001326410d864aea3c14"
+    },
+    {
+      "path": "reference_report.json",
+      "sha256": "f2473dfe928a699056201910b7c36e6b8bbb6ed8e2dc9cad1b82f4d9ae875553"
+    }
+  ],
+  "options": {
+    "reference_abi": "catalog_reference_v2",
+    "probe_ids": [
+      "LM-01",
+      "LM-05",
+      "LM-06",
+      "I1",
+      "I2",
+      "V1-15"
+    ],
+    "judge_provider": "google",
+    "judge_model": "gemini-3.8-flash",
+    "handoff_below": 0.7,
+    "timeout_seconds": 240,
+    "min_probes": 6,
+    "acceptance_policy": "review_only",
+    "reference_split": "sample_index in {0,1} only",
+    "worker_entry": "agent/identify_api.py"
+  },
+  "provenance": {
+    "source": "Pinned Harness v1, catalog-driven six-probe reference builder",
+    "source_artifact": "harness/v1",
+    "source_manifest_sha256": "ccffba9c2d32a3e1598121c0982f0fc061f579bf38ca29392c9f000e2aed6b6c",
+    "training_code_revision": "sha256:f064754f1cfab12986692437d72b62b07e7ddf92e4806a97bce01c96e86122e1",
+    "runtime_dependencies": {
+      "python": "3.13.5",
+      "PyYAML": "6.0.3"
+    },
+    "training_dataset_id": "collector_raw/agentic-2026-11-26",
+    "split_id": "rf_panel_v1",
+    "dataset_manifest_sha256": "641ab124ef8d0e6f5da6aa9504045ade355266e2e88a4f9363d3377ae830f78e",
+    "split_manifest_sha256": "52b66288d9c599743a49e3db7a0666fd3bb77943b70c27de59278be5cf30024e",
+    "eligibility_policy": "include_blank_without_error_v2",
+    "reference_build_sha256": "c55d059668afe6032093ff15b8e6b0a437d3c84eb936f6edfd01e06a7cae93b6",
+    "test_used": false,
+    "judge_validated": false,
+    "training_run_id": "1c9308305ad24aca82ee1acd5276d69e",
+    "onboarding_status": "candidate_metadata_checked_runtime_pending"
+  }
+}

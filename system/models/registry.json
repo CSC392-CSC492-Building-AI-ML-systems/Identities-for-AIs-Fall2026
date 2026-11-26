@@ -5,6 +5,8 @@
     "lora/v1": "models/lora/v1/manifest.json",
     "harness/v1": "models/harness/v1/manifest.json",
     "random_forest/v1": "models/random_forest/v1/manifest.json",
-    "lora/v2": "models/lora/v2/manifest.json"
+    "lora/v2": "models/lora/v2/manifest.json",
+    "random_forest/v2": "models/random_forest/v2/manifest.json",
+    "harness/v2": "models/harness/v2/manifest.json"
   }
 }

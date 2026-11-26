@@ -1,0 +1,15 @@
+schema_version: '1.0'
+pipeline:
+  name: live_stage2_review
+stage1:
+  enabled: false
+  adapter: logistic_regression
+  artifact: stage1_lr/v1
+  approach: hierarchy_hard_route
+stage2:
+  mode: fallback
+  methods:
+    - {adapter: harness, artifact: harness/v2}
+    - {adapter: random_forest, artifact: random_forest/v2}
+cards:
+  enabled: false

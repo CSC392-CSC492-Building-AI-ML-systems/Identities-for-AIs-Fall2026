@@ -1,0 +1,90 @@
+{
+  "mode": "offline_replay",
+  "fixture_model_id": "claude-haiku-4.5",
+  "initial_reply": "synthetic",
+  "target_api_calls": 0,
+  "replay_queries": 7,
+  "target_queries": [
+    "UI-INITIAL",
+    "LM-01",
+    "LM-05",
+    "LM-06",
+    "I1",
+    "I2",
+    "V1-15"
+  ],
+  "ui_result": {
+    "schema_version": "1.0",
+    "identification": {
+      "status": "needs_review",
+      "accepted_model_id": null,
+      "reason": "acceptance_not_validated"
+    },
+    "comparison": {
+      "status": "no_baseline",
+      "previous_model_id": null,
+      "current_model_id": null,
+      "identity_change": null,
+      "family_change": null,
+      "card_comparison": {
+        "status": "not_comparable",
+        "changes": []
+      }
+    },
+    "model_card": {
+      "status": "unavailable",
+      "model_id": null,
+      "card": null
+    },
+    "baseline": null,
+    "evidence": {
+      "target_provider": "openai",
+      "judge": "mock",
+      "identity_confirmed": false,
+      "baseline_auto_updated": false
+    },
+    "method_candidates": [
+      {
+        "method": "lora",
+        "artifact_id": null,
+        "status": "not_configured",
+        "candidate_model_id": null,
+        "score": null,
+        "score_type": null,
+        "probe_ids_used": []
+      },
+      {
+        "method": "harness",
+        "artifact_id": "harness/v2",
+        "status": "mock_judge",
+        "candidate_model_id": null,
+        "score": null,
+        "score_type": null,
+        "probe_ids_used": [
+          "LM-01",
+          "LM-05",
+          "LM-06",
+          "I1",
+          "I2",
+          "V1-15"
+        ]
+      },
+      {
+        "method": "random_forest",
+        "artifact_id": "random_forest/v2",
+        "status": "candidate",
+        "candidate_model_id": "claude-haiku-4.5",
+        "score": 0.35,
+        "score_type": "rf_panel_predict_proba",
+        "probe_ids_used": [
+          "I2",
+          "LM-01",
+          "LM-05",
+          "LM-06",
+          "I1"
+        ]
+      }
+    ],
+    "candidate_agreement": "single_candidate"
+  }
+}

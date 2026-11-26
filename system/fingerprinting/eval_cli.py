@@ -60,7 +60,7 @@ def main(argv: list[str] | None = None) -> int:
     if methods is not None:
         methods = [x.strip() for x in methods]
     if args.rf_pilot:
-        path = root/'testdata/random_forest/heldout_raw_cases.jsonl'
+        path = root.parent/'tests/fixtures/random_forest/heldout_raw_cases.jsonl'
         cases = convert_rf_holdout(path, catalog, limit_per_model=args.limit_per_model)
         source_type = 'rf_fixed_prompt_holdout_P13:paired_scenarios_NOT_independent'
     else:

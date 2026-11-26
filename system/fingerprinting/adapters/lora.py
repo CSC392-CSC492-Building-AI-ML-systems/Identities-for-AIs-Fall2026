@@ -19,6 +19,7 @@ from time import perf_counter
 from ..config import Stage2MethodSelection
 from ..registry import ArtifactManifest
 from ..schemas import IdentificationInput, IdentificationResult, ProbeQuestion
+from .lora_preprocessing import LEGACY_POLICY, BLANK_POLICY, prepare_response
 
 
 class LoRAConfigurationError(ValueError):
@@ -49,6 +50,9 @@ class LoRAIdentifier:
         if not isinstance(opts.get('base_model'), str) or not opts['base_model'].strip():
             raise LoRAConfigurationError('Manifest must include a nonempty base_model')
         self.base_revision = opts.get('base_model_revision')
+        self.input_policy = opts.get('input_policy', LEGACY_POLICY)
+        if self.input_policy not in (LEGACY_POLICY, BLANK_POLICY):
+            raise LoRAConfigurationError('Unsupported LoRA input policy')
         self.max_tokens = opts.get('max_tokens')
         if not isinstance(self.max_tokens, int) or not (0 < self.max_tokens <= 8192):
             raise LoRAConfigurationError('max_tokens must be a positive integer')
@@ -151,7 +155,7 @@ class LoRAIdentifier:
         model.eval()
 
         def run(text: str) -> Sequence[float]:
-            encoded = tok(text.strip(), truncation=True, max_length=self.max_tokens,
+            encoded = tok(prepare_response(text, self.input_policy), truncation=True, max_length=self.max_tokens,
                           return_tensors='pt').to(device)
             with torch.inference_mode():
                 scores = torch.softmax(model(**encoded).logits.float(), dim=-1)[0]

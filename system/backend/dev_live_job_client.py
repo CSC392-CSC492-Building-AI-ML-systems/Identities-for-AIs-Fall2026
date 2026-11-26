@@ -6,7 +6,8 @@ Run from repository root (FastAPI AND live worker must already be running):
 Either supply --model (unlinked job) or --deployment-id (linked job), e.g.:
     python -m system.backend.dev_live_job_client --deployment-id YOUR_DEPLOYMENT_UUID
 
-This may make seven BILLABLE target-provider requests; judge is still mocked.
+This may make seven BILLABLE target-provider requests. Stage 2 mode can explicitly
+consent to additional external judge calls; default is no external judge.
 Provider key and local bearer token are requested via getpass and never printed.
 """
 from __future__ import annotations
@@ -29,7 +30,11 @@ def main(argv: list[str] | None=None) -> int:
     connection.add_argument('--deployment-id', help='Owned deployment ID; backend resolves routing model')
     p.add_argument('--prompt', help='User prompt; omit to type it interactively (avoids shell history)')
     p.add_argument('--timeout', type=int, default=240, help='Maximum seconds to poll (30-600)')
+    p.add_argument("--stage2", action="store_true", help="Use the review-only Stage 2 worker")
+    p.add_argument("--allow-live-judge", action="store_true", help="Consent to sending probe responses and references to the configured judge")
     args=p.parse_args(argv)
+    if args.allow_live_judge and not args.stage2:
+        p.error("--allow-live-judge requires --stage2")
     if not 30 <= args.timeout <= 600:
         p.error('--timeout must be between 30 and 600')
     prompt = args.prompt if args.prompt is not None else input('Prompt to analyze: ')
@@ -43,6 +48,8 @@ def main(argv: list[str] | None=None) -> int:
         with httpx.Client(timeout=15,trust_env=False) as client:
             payload={'prompt_text':prompt,'provider':'openai',
                      'api_key':key,'use_stage1':False}
+            if args.stage2:
+                payload.update(mode='live_stage2_review',allow_live_judge=args.allow_live_judge)
             if args.deployment_id:
                 payload['deployment_id']=args.deployment_id
             else:
@@ -75,7 +82,7 @@ def main(argv: list[str] | None=None) -> int:
                         'model_card_status','change_status','target_queries')}
                     summary['ui_result']=result.get('ui_result')
                     print(json.dumps(summary,indent=2))
-                    print('Target responses real; judge mocked. This is NOT verified model attribution.')
+                    print('Candidate evidence only; see ui_result.evidence for judge mode. This is NOT verified model attribution.')
                     return 0
         print('Polling timed out. Job may still be running; no automatic retry.',file=sys.stderr)
         return 1

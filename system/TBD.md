@@ -1,3 +1,152 @@
+# Current update — root repository consolidation
+
+- [x] Consolidate the root release into `system/`, `tests/`, `cards/` plus root README and ignore rules; move collector, research scripts, tests and fixtures; adjust card and onboarding paths and launcher. Preserve registered artifacts, catalog, configuration, backend and immutable raw data byte-for-byte. Remove old root legacy/ and 261 historical derived collector files from the distributed snapshot, retain deferred Stage 1 source and registered artifacts. No changes to the user's actual checkout. See `docs/REPOSITORY_CONSOLIDATION.md` and inventory.
+- [x] Core suite: 373 tests passed; original root research tests: 14 passed. Collector dry run, real card family lookup, catalog audit, configuration and CPU Stage 2 replay passed. Real historical Stage 1 parity module is separate and was not rerun. No live judge/target calls or new model training.
+- [ ] Next: frontend integration and end-to-end prototype demonstration using the review-only profile. Run authorized live target and judge tests, reconcile collector routes and card metadata, handle successful blank transport semantics, and validate candidate behavior. LoRA actual training/reload remains deferred until suitable compute; Stage 1, production authentication, thresholds and unknown-family detection remain deferred. No automated baseline promotion.
+
+Older entries below are historical and paths may have changed.
+
+---
+
+# Current update — automated evaluation and reviewed publication
+
+- [x] Add `release evaluate/evaluate-run/publish/rollback/history` using existing verified dataset snapshots, Factory and evaluator. Paired fixed-panel comparison, common label vs full cohort coverage, missing candidates count as failures, confusion matrices, hashes and review-only publication.
+- [x] Add optional `training run --evaluate-candidates`: evaluate registered RF/LoRA candidates on validation; skip unchanged/unregistered methods; Harness requires explicit judge consent. No event scheduler or automatic activation.
+- [x] Actual RF v2 vs v1 validation comparison: 49/51 vs 3/51; common five labels 15/15 vs 3/15. Different query budgets and legacy metadata mismatch; validation used for prompt selection, no independent holdout claim.
+- [x] Verify local immutable review profile publication and rollback, preserve prior artifact versions; explicit worker restart selects chosen profile. 122 focused tests passed including temporary real RF training/evaluation.
+- [ ] Real LoRA checkpoint/GPU or CPU validation and real judge/provider evaluation remain pending. Harness mock/partial evidence cannot publish; current release comparator fixed-panel only, independent/unseen-prompt and unknown-family evaluation still needed.
+- [ ] Optional reviewed dataset trigger / CI; no automatic test tuning or automatic publication. Final repository consolidation (`system/`, `tests/`, `cards/`) and frontend integration/prototype demonstration next. Audit legacy dependencies before removing, preserve raw and active artifacts/fixtures. Stage 1, production auth, thresholds deferred.
+
+Older entries below are historical; this update takes precedence.
+
+---
+
+# Current update — model and family onboarding
+
+- [x] Add canonical identity onboarding (`onboard-model plan/register/draft-cards/publish-cards/status`), explicit new-family permission, disabled collector entry, draft isolation, existing card checker and family aggregation reuse, declared Stage 2 artifact coverage.
+- [x] Audit supplied sibling snapshot: 17 identities / six families; nine matching collector routes, six missing, two placeholder mismatches; 44 existing domain cards lack researched_by and 24 are absent. No existing card or route was rewritten.
+- [x] Validate temporary seventh-family registration, raw dataset eligibility, unchanged old panel, draft gate and real card library family lookup. 108 focused tests passed; no actual new model registered in shipped catalog.
+- [ ] Reconcile root collector routes against verified IDs; fill actual researcher provenance and missing domain cards/licences. User/team must confirm sources and permissions. Existing root card library can still expose historical incomplete cards; audit and correct them separately.
+- [ ] Model collection and retraining: collect comparable probes/personas for old + new identities, register approved dataset/split, run RF/Harness and LoRA when compute available; evaluate and review candidates. New transports require explicit implementation.
+- [ ] Automated evaluation/publication and optional dataset-approval trigger; then consolidate repository layout and complete frontend prototype demonstration.
+- [ ] Live provider/judge validation, explicit successful blank semantics, LoRA real checkpoint and arbitrary-prompt evaluation pending. Stage 1, production auth, confidence thresholds and unknown-family detection deferred.
+
+Older entries below are historical; this update takes precedence.
+
+---
+
+# Current update — Stage 2 review-only live integration
+
+- [x] Add separate opt-in `live_stage2_review` API/queue mode, config-driven Factory worker, Harness v2 with deterministic abstaining mock judge, real RF v2, six-probe shared cache, explicit LoRA unavailable state, typed candidate results and agreement; Stage 1 stays off.
+- [x] Add separately consented optional external judge route using trusted Harness config and worker-only credential. Unconfigured consent fails before target calls. Actual live judge/provider testing remains pending.
+- [x] CPU replay of actual stored probe trace through RF v2; new backend tests, OpenAPI, PowerShell demo guide. See `docs/BACKEND_STAGE2_REVIEW.md`.
+- [ ] LoRA operational validation: CPU smoke or remote GPU (no local NVIDIA required); actual fine-tuning, checkpoint reload, pinned revision, class mapping and held-out evaluation. Then configure the new artifact in the live profile.
+- [ ] Run authorized real target and judge smoke tests, handle explicit live blank/refusal semantics, confirm judge model availability and dependencies, validate costs and error paths. Prototype remains localhost-only.
+- [ ] Model/family onboarding, automatic publication/evaluation and repository consolidation. No new removals.
+- [ ] Stage 1, production authentication, calibrated acceptance/unknown-family detection remain deferred. No confirmed automatic identity or baseline promotion.
+
+Older entries below are historical; current status takes precedence.
+
+---
+
+# Current update — Harness reference builder; Stage 1 deferred
+
+- [x] Implement and register `harness/v2` from the approved fixed panel: 17 models, 816 training-only reference records, 28 blanks; no new card snapshot, no fitted weights, no judge calls during build.
+- [x] Support exact reference-content reuse (`skipped_unchanged`), catalog-driven identities, successful blank observations, review-only acceptance, and bounded replay tool.
+- [x] Defer Stage 1 training and keep it OFF in all new prototype configs. Preserve historical code/artifacts and tests; do not schedule its implementation before Stage 2 is functional.
+- [ ] Run controlled real Harness judge replay and evaluate candidate accuracy; three-case mock validation passed, full 51-case mock replay timed out; no accuracy claim.
+- [ ] Run LoRA GPU smoke test using pinned base revision and evaluate the trained artifact.
+- [ ] Connect live HTTP worker to config-driven LoRA → Harness → RF (Stage 1 off), add real judge and authoritative card retrieval only for approved identities; retain conservative review-only behavior pending acceptance validation.
+- [ ] Model and family onboarding, evaluation/publication and repository consolidation (no further unapproved removals).
+- [ ] Production authentication and confidence threshold / unknown-family calibration deferred for the prototype.
+
+Older entries below document prior milestones and may contain superseded status descriptions.
+
+---
+
+# Automated LoRA training — November 26, 2026 (current)
+
+- [x] Implement notebook-derived LoRA strategy in existing orchestrator, shared blank preprocessing, balanced class/prompt data, pinned split provenance, sorted label mapping, manifest and validation output, optional candidate registration.
+- [x] Preview actual six-probe dataset: 1,224 train / 306 validation rows, 17 identities, 42 / 17 blanks. Add separate frozen test evaluation using existing Factory. Synthetic lifecycle tests only; no actual HF training.
+- [ ] Supply actual 40-character base commit, run GPU smoke and full training, validate exported head/reload parity, freeze dependencies and evaluate candidate. Existing v2 remains provisional. New candidate remains review-only.
+- [ ] Broader common prompt coverage and independent persona/prompt/unknown-family evaluation. Fixed six-probe response-level results are not equivalent to multi-query RF trace-level results. Live arbitrary prompts require separate evaluation.
+- [ ] Harness reference builder, Stage 1 training, live worker integration, model/family onboarding, CI and repository consolidation. No additional deletion. Production authentication and confidence thresholds deferred.
+
+---
+
+# Multi-probe RF and teammate intake — November 26, 2026 (current)
+
+- [x] Reviewed three teammate repositories; LoRA source-only notebooks extracted, no new checkpoint; Agentic runtime and cards match existing pinned Harness v1, no duplicated runtime. See `docs/TEAM_BRANCH_REVIEW.md`.
+- [x] Registered Agentic raw snapshot (17 identities), complete six-probe fixed panel; explicit disjoint-persona split, blanks retained, failed retries excluded. Old dataset/version kept.
+- [x] Implemented automatic RF training in orchestrator, validation-only greedy probe selection, shared text-only multi-probe feature ABI, review-only Factory adapter and separate held-out evaluation. Five-probe v2 registered but not activated. Test 94/102 candidates; see `docs/RF_MULTI_PROMPT.md`.
+- [ ] Collect wider balanced prompt pool and additional persona/configuration groups; independently evaluate unknown families, same-family mistakes and generalization. No calibrated thresholds yet. Do not select on test.
+- [ ] LoRA: convert supplied notebook recipe to automated training strategy, pin base revision, confirm checkpoint mapping, implement blank parity, export actual weights; Harness: reference-builder with known-set update, data partitions, card mappings, blank policy and actual judge validation. Both not yet integrated as trainers.
+- [ ] Prototype live worker still uses mock Harness only; connect config-driven classifiers including multi-probe RF, provide explicit completed-blank semantics from live providers, verify reused probe cache and actual live end-to-end. No production authentication or threshold work activated.
+- [ ] Review overlaps (246 RF test rows in pinned Harness references), privacy/licence and new dataset storage before publishing. Maintain separate known-prompt/persona protocol versus general unseen-prompt protocol. No additional cleanup performed.
+
+---
+
+# Training orchestration foundation — November 26, 2026 (current status)
+
+- [x] Refine onboarding: blank no-error responses retained, recorded errors excluded; old split policy remains reproducible. New example split has 9,634 eligible rows, 83 excluded; 17 model IDs in every eligible partition. New test still overlaps Harness v1 by 270 record IDs.
+- [x] Add `inspect` and optional verified local split hash binding to classifier templates/provenance. Existing artifact manifests unchanged.
+- [x] Implement local training plan/run/history, one method or batch, pinned data/split provenance, input-integrity checks, candidate validation/optional registration, no automatic activation. All four actual trainer implementations remain unavailable; synthetic tests only.
+- [ ] Integrate RF trainer from finalized code (feature ABI, null/blank handling, parity and validation).
+- [ ] Implement Harness reference builder with separate complete probe/session protocol and skip refresh when data is unchanged; validate actual judge.
+- [ ] Integrate LoRA trainer (pinned base revision, labels, preprocessing, GPU/dependencies) and generalize Stage 1 training/adapter when team specifications arrive.
+- [ ] Add automatic run trigger after reviewed data approval, relevant-data change detection, reproducible run environments, unified validation/test execution, publication/rollback, and CI. Current explicit batch command is not an event scheduler.
+- [ ] **Legacy cleanup:** apply checked Jev removal to real repo; review active research uses before applying four derived-data groups; keep all raw, pinned artifact dependencies and test fixtures. See `docs/LEGACY_CLEANUP.md`. Future folder migration into system/tests/cards still pending.
+- [ ] Model/family onboarding using authoritative sibling cards/catalog and collector; no further unapproved removals.
+- [ ] Prototype demo: wire real selected artifacts and judge to the live worker and run end-to-end inference/evaluation. Do not promote unconfirmed identities. Production authentication, operational hardening and threshold calibration deferred; local-only demo.
+
+Older milestone notes below are historical; the current entries supersede conflicting eligibility, cleanup and training status statements.
+
+---
+
+# Dataset onboarding — prototype (November 26, 2026)
+
+- [x] Add offline validate/register/split/audit/export CLI; immutable raw files,
+  canonical IDs, SHA-256 manifests, duplicate/error/blank diagnostics, deterministic
+  prompt-group allocations, coverage checks and record-reference splits.
+- [x] Test on the existing 20 files (9,717 records); 8,869 structurally eligible,
+  848 excluded. Preserve raw manifest and all raw bytes. Generate an illustrative
+  four-way split and audit overlap with pinned Harness v1.
+- [ ] ML team: reconcile actual prompt definitions/aliases, historical training and
+  reference overlap (795 shared record IDs with Harness v1; 393 in candidate test),
+  paired probe completeness, rare-class coverage and unknown-family cohorts before
+  treating a split as an independent benchmark. Candidate splits are not approved.
+- [ ] Review privacy/licensing and decide retention/storage before publishing raw data.
+- [ ] Extend classifier provenance verification to exact split membership and
+  split/export hashes; automatic training and artifact promotion remain deferred.
+- [ ] Model and family card onboarding, real inference integration and CI remain
+  open. Production authentication and confidence calibration deferred by team choice.
+  No further legacy cleanup approved.
+
+---
+
+# Classifier onboarding — prototype (November 26, 2026)
+
+- [x] Add manifest templates, full payload inventory/checksums, canonical model IDs,
+  provenance validation and adapter-specific static checks using the current registry.
+- [x] Register trusted candidates under new artifact IDs; create separate evaluation YAML,
+  preserve existing artifacts and production config. No further legacy cleanup.
+- [ ] Obtain actual retrained bundles and their dataset/split manifests, code revisions,
+  dependency versions and evaluation evidence; run real parity/holdout evaluations.
+- [ ] Upgrade Stage 1 adapter for the intended six families (currently four Gemini/Llama
+  identities); upgrade RF/LoRA/Harness adapters when submitted contracts change.
+- [ ] Integrate approved real config-driven classifiers into the live backend worker.
+  Current worker is Harness-only with mock judge; registering new weights does not
+  change that behavior. Authentication expansion deferred for prototype.
+- [ ] Confidence/unknown-family acceptance calibration deferred, not solved by onboarding.
+  New LoRA and RF candidates must be review-only. No automatic activation or baseline promotion.
+- [ ] Model/catalog + card onboarding and automated retraining remain separate future
+  work. Dataset ingestion/split tooling is now implemented below. Local dataset hash
+  check is not proof of split membership.
+- [ ] Team review before loading joblib or executing submitted Harness sources. Local tool
+  does not provide a sandbox, signature verification, or crash-safe distributed publishing.
+
+---
+
 # Dataset update — November 26, 2026
 
 - [x] Stage the exact new `raw.zip` as `datasets/collector_raw/2026-11-26/`, preserving bytes and providing file checksums and record counts. All 17 IDs already exist in the catalog.

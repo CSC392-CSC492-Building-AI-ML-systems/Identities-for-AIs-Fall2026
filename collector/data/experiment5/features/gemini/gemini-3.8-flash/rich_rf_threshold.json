@@ -1,7 +1,0 @@
-{
-  "threshold": 0.41456775082876535,
-  "target_model": "gemini-3.8-flash",
-  "feature_set": "rich_rf",
-  "max_false_alarm": 0.1,
-  "selection_split": "validation"
-}

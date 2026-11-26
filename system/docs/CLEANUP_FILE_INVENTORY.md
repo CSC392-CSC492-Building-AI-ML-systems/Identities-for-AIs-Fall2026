@@ -1,3 +1,7 @@
+> November 26 update: C4 and conditional inactive derived-data cleanup are now
+> authorized; use the checked helper described in [Legacy Cleanup](LEGACY_CLEANUP.md).
+> Historical review below preserves the original dependency findings.
+
 # Detailed cleanup inventory — C1 completed; remaining proposals pending
 
 The uploaded older `system/` directory is **excluded** from this inventory per your instruction. The candidate below is the set of 17 byte-identical pairs between your repository's root `scripts/` and the former `system/reference_stage1/scripts/`. **Uses were reviewed before C1 was approved.** Most are scientific research assets even when the runtime no longer uses them directly.

@@ -20,10 +20,13 @@ def main() -> None:
     root = Path(sys.argv[1]).resolve()
     agent = root / 'agent'
     cards = root / 'cards'
-    if not (agent / 'identify_api.py').is_file() or not (cards / 'cardlib.py').is_file():
+    manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+    review_only = manifest.get('options', {}).get('reference_abi') == 'catalog_reference_v2'
+    if not (agent / 'identify_api.py').is_file() or (not review_only and not (cards / 'cardlib.py').is_file()):
         raise FileNotFoundError('Harness artifact lacks agent/identify_api.py or cards/cardlib.py')
     sys.path.insert(0, str(agent))
-    sys.path.insert(0, str(cards))
+    if not review_only:
+        sys.path.insert(0, str(cards))
     from identify_api import identify
     import check_chatbot
     if os.environ.get('FINGERPRINTING_DEPLOYMENTS_DIR'):
@@ -33,7 +36,7 @@ def main() -> None:
     response = identify(
         answers=request['answers'],
         domain=request.get('domain'),
-        deployment=request.get('deployment'),
+        deployment=None if review_only else request.get('deployment'),
         judge_provider=request['judge_provider'],
         judge_model=request['judge_model'],
         handoff_below=request['handoff_below'],

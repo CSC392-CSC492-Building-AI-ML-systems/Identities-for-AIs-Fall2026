@@ -27,7 +27,8 @@ def _observation(raw: dict, *, probe_id: str | None = None) -> Observation:
         return Observation(
             prompt_text=raw['prompt_text'], response_text=raw['response_text'],
             prompt_id=raw.get('prompt_id') or probe_id,
-            output_tokens=raw.get('output_tokens'), latency_ms=raw.get('latency_ms'))
+            output_tokens=raw.get('output_tokens'), latency_ms=raw.get('latency_ms'),
+            completed_blank=raw.get('completed_blank',False))
     except (KeyError, TypeError, ValueError) as exc:
         raise EvaluationDataError(f'Invalid observation: {exc}') from exc
 

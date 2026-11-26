@@ -1,0 +1,466 @@
+{
+  "status": "reference_coverage_only",
+  "judge_called": false,
+  "test_used": false,
+  "validation_used_for_references": false,
+  "train_personas": [
+    "BK1",
+    "BK2",
+    "P01",
+    "P13"
+  ],
+  "validation_personas": [
+    "BK3"
+  ],
+  "training_traces": 204,
+  "validation_traces": 51,
+  "reference_records": 816,
+  "blank_reference_records": 28,
+  "excluded_training_sample2_records": 408,
+  "models": {
+    "claude-haiku-4.5": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "claude-haiku-5.5": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "claude-sonnet-5.5": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gemini-3.1-pro": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gemini-3.8-flash": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gemma3-1b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gemma3-4b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gpt-5.6-luna": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gpt-5.6-terra": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gpt-6-luna": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "gpt-6.1-terra": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "llama3.1-8b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "llama3.2-1b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "llama3.2-3b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "qwen2.5-3b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 0
+      }
+    },
+    "qwen3-8b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 0
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 0
+      },
+      "I1": {
+        "references": 8,
+        "blank": 0
+      },
+      "I2": {
+        "references": 8,
+        "blank": 0
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 1
+      }
+    },
+    "qwen3.5-9b": {
+      "LM-01": {
+        "references": 8,
+        "blank": 5
+      },
+      "LM-05": {
+        "references": 8,
+        "blank": 4
+      },
+      "LM-06": {
+        "references": 8,
+        "blank": 6
+      },
+      "I1": {
+        "references": 8,
+        "blank": 5
+      },
+      "I2": {
+        "references": 8,
+        "blank": 1
+      },
+      "V1-15": {
+        "references": 8,
+        "blank": 6
+      }
+    }
+  },
+  "reference_build_sha256": "c55d059668afe6032093ff15b8e6b0a437d3c84eb936f6edfd01e06a7cae93b6",
+  "matching_registered_artifacts": []
+}

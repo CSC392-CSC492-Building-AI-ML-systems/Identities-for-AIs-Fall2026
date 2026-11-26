@@ -21,3 +21,12 @@ reports/unified_pilot/
 *.sqlite3
 *.sqlite3-shm
 *.sqlite3-wal
+
+# Local classifier onboarding staging/lock (never commit partial releases)
+models/.onboarding-*/
+models/.onboarding.lock
+
+# Local dataset staging, publication locks and exported training data
+datasets/**/.dataset-staging-*/
+datasets/**/.*.lock
+local_training/

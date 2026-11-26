@@ -12,7 +12,7 @@ import textwrap
 from cardlib import DOMAINS, build_card
 
 LABEL = {"organization": "entered by the bank", "system": "filled by our system",
-         "licence_library": "from collector/licences.yaml"}
+         "licence_library": "from system/collector/licences.yaml"}
 
 
 def fmt(value, indent="      "):

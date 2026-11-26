@@ -1,0 +1,26 @@
+{
+  "source_archive_sha256": "c39fef756871fe96e334a4e1383f37b8b478725c37d42e28c6f26e0fa28cc34b",
+  "files": [
+    {
+      "source": "Identities-for-AIs-Fall2026/lora-finetuning/lora_llm_identification(closed_models).ipynb",
+      "source_sha256": "8e91972084fd6723c4d6446cde54ccc9d920ce7fd8f2291a7d3c52b53f9dd5c8",
+      "path": "lora_llm_identification(closed_models).ipynb",
+      "extracted_sha256": "0ae265ce26d09e4222a905f0fe0a2dd485553ff0cdf412f88121698787fc6582",
+      "transformation": "code and markdown sources preserved; outputs, attachments, runtime metadata removed"
+    },
+    {
+      "source": "Identities-for-AIs-Fall2026/lora-finetuning/lora_llm_identification(open_models).ipynb",
+      "source_sha256": "562e565583d3a75e596a8c25a6c633ff06366be5cba33b36a05c6a75b944b17e",
+      "path": "lora_llm_identification(open_models).ipynb",
+      "extracted_sha256": "eaf35b681b73bd4da7b1768c7cb53e922152d19abeab2ed4b06800ed4e6673db",
+      "transformation": "code and markdown sources preserved; outputs, attachments, runtime metadata removed"
+    },
+    {
+      "source": "Identities-for-AIs-Fall2026/lora-finetuning/v2_lora_finetuning.ipynb",
+      "source_sha256": "7225592f149db7fdaa00324aa4e41ab5839262bee2d10dd68eb8cb7b3a5c42e1",
+      "path": "v2_lora_finetuning.ipynb",
+      "extracted_sha256": "7dcb180ddd993c63763d7a793c871b4a17f71be216fa7affb1ff636f1448b273",
+      "transformation": "code and markdown sources preserved; outputs, attachments, runtime metadata removed"
+    }
+  ]
+}

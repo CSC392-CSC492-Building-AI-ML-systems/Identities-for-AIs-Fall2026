@@ -29,7 +29,7 @@ def main():
     constructors.register_stage1('logistic_regression', build_logistic_regression)
     constructors.register_stage2('harness', lambda m, s: HarnessIdentifier(m, judge_provider='mock'))
     pipeline = PipelineFactory(registry, constructors).build(config)
-    sample = json.loads((ROOT/'testdata/harness_replay/llama3.1-8b_BK1_sample2.json').read_text())
+    sample = json.loads((ROOT.parent/'tests/fixtures/harness_replay/llama3.1-8b_BK1_sample2.json').read_text())
     prompts = pipeline.stage2.identifiers[0].required_probes()
     replays = {p.probe_id: Observation(p.prompt_text, sample[p.probe_id], p.probe_id) for p in prompts}
     request = FingerprintRequest(

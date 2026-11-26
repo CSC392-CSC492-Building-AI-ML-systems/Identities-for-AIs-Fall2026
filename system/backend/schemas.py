@@ -85,7 +85,7 @@ class BaselineReference(BaseModel):
 class IdentificationView(BaseModel):
     status: Literal['needs_review']
     accepted_model_id: None = None
-    reason: Literal['live_judge_not_validated']
+    reason: Literal['live_judge_not_validated', 'acceptance_not_validated', 'methods_failed']
 
 
 class CardComparisonView(BaseModel):
@@ -110,9 +110,19 @@ class ModelCardView(BaseModel):
 
 class ResultEvidenceView(BaseModel):
     target_provider: Literal['openai']
-    judge: Literal['mock']
+    judge: Literal['mock', 'google', 'openai', 'not_configured']
     identity_confirmed: Literal[False]
     baseline_auto_updated: Literal[False]
+
+
+class MethodCandidateView(BaseModel):
+    method: Literal['lora', 'harness', 'random_forest']
+    artifact_id: str | None = None
+    status: Literal['candidate', 'abstained', 'error', 'not_configured', 'mock_judge']
+    candidate_model_id: str | None = None
+    score: float | None = None
+    score_type: str | None = None
+    probe_ids_used: list[str] = Field(default_factory=list)
 
 
 class UnifiedLiveResult(BaseModel):
@@ -123,13 +133,15 @@ class UnifiedLiveResult(BaseModel):
     model_card: ModelCardView
     baseline: BaselineReference | None
     evidence: ResultEvidenceView
+    method_candidates: list[MethodCandidateView] = Field(default_factory=list)
+    candidate_agreement: Literal["none", "single_candidate", "agree", "disagree"] = "none"
 
 
 class LiveOpenAIAnalyzeResponse(BaseModel):
-    """Real OpenAI target answers, MOCK judge, no accepted identification."""
+    """Real target responses; legacy mock or review-only Stage 2 evidence."""
 
     schema_version: Literal["1.0"] = "1.0"
-    mode: Literal["live_target_mock_judge"] = "live_target_mock_judge"
+    mode: Literal["live_target_mock_judge", "live_stage2_review"] = "live_target_mock_judge"
     request_id: str
     status: Literal["identified", "verified", "drift_detected", "needs_review", "error"]
     model_id: str | None
@@ -155,6 +167,7 @@ class CapabilitiesResponse(BaseModel):
     live_provider_available: bool = False  # Available to API only when configured
     live_target_providers: list[str] = ["openai"]
     live_judge_available: bool = False
+    stage2_review_jobs_supported: bool = True  # API contract only, not worker liveness
     accepted_model_identification_available: bool = False
     synchronous_prototype_only: bool = False  # New mock job route is asynchronous via a separate worker.
     durable_mock_jobs_available: bool = True
@@ -203,6 +216,8 @@ class CreateLiveJobRequest(LiveOpenAIAnalyzeRequest):
     If linked, the backend derives the routing model from that owned deployment;
     no user-provided routing value is ever treated as an inferred identity.
     """
+    mode: Literal["live_target_mock_judge", "live_stage2_review"] = "live_target_mock_judge"
+    allow_live_judge: bool = False
     target_model: str | None = Field(default=None, min_length=1, max_length=100,
                                       pattern=r"^[A-Za-z0-9._:-]+$")
     deployment_id: str | None = Field(default=None, min_length=1, max_length=100,
@@ -210,6 +225,8 @@ class CreateLiveJobRequest(LiveOpenAIAnalyzeRequest):
 
     @model_validator(mode='after')
     def target_or_deployment(self):
+        if self.allow_live_judge and self.mode != "live_stage2_review":
+            raise ValueError("External judge consent requires Stage 2 review mode")
         if self.target_model is None and self.deployment_id is None:
             raise ValueError('Provide target_model or deployment_id')
         return self
@@ -218,7 +235,7 @@ class CreateLiveJobRequest(LiveOpenAIAnalyzeRequest):
 class CreateLiveJobResponse(BaseModel):
     schema_version: Literal["1.0"] = "1.0"
     job_id: str
-    mode: Literal["live_target_mock_judge"] = "live_target_mock_judge"
+    mode: Literal["live_target_mock_judge", "live_stage2_review"] = "live_target_mock_judge"
     status: Literal["queued"] = "queued"
     created_at: str
     deployment_id: str | None = None
@@ -228,7 +245,7 @@ class CreateLiveJobResponse(BaseModel):
 class LiveJobStatusResponse(BaseModel):
     schema_version: Literal["1.0"] = "1.0"
     job_id: str
-    mode: Literal["live_target_mock_judge"] = "live_target_mock_judge"
+    mode: Literal["live_target_mock_judge", "live_stage2_review"] = "live_target_mock_judge"
     status: Literal["queued", "running", "completed", "failed"]
     created_at: str
     updated_at: str

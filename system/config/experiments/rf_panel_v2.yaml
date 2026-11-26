@@ -1,0 +1,15 @@
+schema_version: '1.0'
+pipeline:
+  name: candidate_random_forest_v2
+stage1:
+  enabled: false
+  adapter: logistic_regression
+  artifact: stage1_lr/v1
+  approach: hierarchy_hard_route
+stage2:
+  mode: single
+  methods:
+  - adapter: random_forest
+    artifact: random_forest/v2
+cards:
+  enabled: false

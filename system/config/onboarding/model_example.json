@@ -1,0 +1,13 @@
+{
+  "model_id": "example-model-1",
+  "family_id": "example",
+  "family_name": "Example",
+  "developer": "Example Research",
+  "display_name": "Example Model 1",
+  "product_line": "Example",
+  "provider": "ollama",
+  "provider_model_id": "example-model:1",
+  "access": "open",
+  "identity_source": "REPLACE_WITH_OFFICIAL_HTTPS_SOURCE",
+  "researched_by": "Replace with researcher name"
+}

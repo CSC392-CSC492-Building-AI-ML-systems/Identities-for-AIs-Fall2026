@@ -1,0 +1,625 @@
+{
+  "summary": {
+    "model_count": 17,
+    "family_count": 6,
+    "collector_routes": {
+      "match": 9,
+      "missing": 6,
+      "mismatch": 2
+    },
+    "card_domains": {
+      "complete": 0,
+      "draft": 0,
+      "invalid": 44,
+      "missing": 24
+    }
+  },
+  "models": {
+    "claude-haiku-4.5": {
+      "family_id": "claude",
+      "collector_route": "match",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "claude-haiku-5.5": {
+      "family_id": "claude",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "claude-sonnet-5.5": {
+      "family_id": "claude",
+      "collector_route": "match",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gemini-3.1-pro": {
+      "family_id": "gemini",
+      "collector_route": "match",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gemini-3.8-flash": {
+      "family_id": "gemini",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gemma3-1b": {
+      "family_id": "gemma",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gemma3-4b": {
+      "family_id": "gemma",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "lora/v1",
+        "lora/v2",
+        "random_forest/v1",
+        "random_forest/v2"
+      ]
+    },
+    "gpt-5.6-luna": {
+      "family_id": "gpt",
+      "collector_route": "mismatch",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gpt-5.6-terra": {
+      "family_id": "gpt",
+      "collector_route": "mismatch",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gpt-6-luna": {
+      "family_id": "gpt",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "gpt-6.1-terra": {
+      "family_id": "gpt",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "llama3.1-8b": {
+      "family_id": "llama",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "lora/v1",
+        "lora/v2",
+        "random_forest/v1",
+        "random_forest/v2"
+      ]
+    },
+    "llama3.2-1b": {
+      "family_id": "llama",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "llama3.2-3b": {
+      "family_id": "llama",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "lora/v1",
+        "lora/v2",
+        "random_forest/v1",
+        "random_forest/v2"
+      ]
+    },
+    "qwen2.5-3b": {
+      "family_id": "qwen",
+      "collector_route": "missing",
+      "collector_enabled": false,
+      "cards": {
+        "compliance": "missing",
+        "governance": "missing",
+        "evaluation": "missing",
+        "risk": "missing"
+      },
+      "card_checks": {},
+      "declared_stage2_artifacts": [
+        "harness/v2",
+        "random_forest/v2"
+      ]
+    },
+    "qwen3-8b": {
+      "family_id": "qwen",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "lora/v1",
+        "lora/v2",
+        "random_forest/v1",
+        "random_forest/v2"
+      ]
+    },
+    "qwen3.5-9b": {
+      "family_id": "qwen",
+      "collector_route": "match",
+      "collector_enabled": true,
+      "cards": {
+        "compliance": "invalid",
+        "governance": "invalid",
+        "evaluation": "invalid",
+        "risk": "invalid"
+      },
+      "card_checks": {
+        "compliance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "governance": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "evaluation": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        },
+        "risk": {
+          "errors": [
+            "missing header 'researched_by'"
+          ],
+          "todos": []
+        }
+      },
+      "declared_stage2_artifacts": [
+        "harness/v1",
+        "harness/v2",
+        "lora/v1",
+        "lora/v2",
+        "random_forest/v1",
+        "random_forest/v2"
+      ]
+    }
+  },
+  "families": {
+    "claude": [
+      "claude-haiku-4.5",
+      "claude-haiku-5.5",
+      "claude-sonnet-5.5"
+    ],
+    "gemini": [
+      "gemini-3.1-pro",
+      "gemini-3.8-flash"
+    ],
+    "gemma": [
+      "gemma3-1b",
+      "gemma3-4b"
+    ],
+    "gpt": [
+      "gpt-5.6-luna",
+      "gpt-5.6-terra",
+      "gpt-6-luna",
+      "gpt-6.1-terra"
+    ],
+    "llama": [
+      "llama3.1-8b",
+      "llama3.2-1b",
+      "llama3.2-3b"
+    ],
+    "qwen": [
+      "qwen2.5-3b",
+      "qwen3-8b",
+      "qwen3.5-9b"
+    ]
+  },
+  "collector_only_models": [],
+  "note": "Declared support is not validated accuracy, artifact readiness, or activation. Card checks are structural, not evidence verification."
+}

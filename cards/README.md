@@ -15,14 +15,14 @@ Every value has a source link and a retrieval date. Missing information is recor
 | `show_card.py` | Prints a model's cards, or `--json` for the website and identifier. |
 | `cardlib.py` | Shared code; `build_card()` is what other code imports. |
 
-The licence details (conditions, restrictions, bank note) are not repeated here. Each compliance card has a `licence_id` that points to `collector/licences.yaml`, so a licence is summarized once and reused.
+The licence details (conditions, restrictions, bank note) are not repeated here. Each compliance card has a `licence_id` that points to `system/collector/licences.yaml`, so a licence is summarized once and reused.
 
 ## Who fills what
 
 Each field has a `filled_by`:
 
 - **research**: we look it up once per model and store it in `data/`.
-- **licence_library**: taken from `collector/licences.yaml`.
+- **licence_library**: taken from `system/collector/licences.yaml`.
 - **organization**: entered by the bank when it registers a deployment (e.g. accountable owner, approval decision). Not stored here; the card shows a placeholder.
 - **system**: produced by our identifier at run time (e.g. monitoring status, confidence). Not stored here.
 
@@ -32,7 +32,7 @@ Each field also has a `level`. **Family** fields stay true when only the family 
 
 Uses the collector's venv (it already has PyYAML). From inside `cards/`:
 ```
-source ../collector/.venv/bin/activate
+source ../system/collector/.venv/bin/activate
 python check_cards.py
 ```
 
@@ -55,13 +55,13 @@ card = build_card(family="Qwen")        # only the family identified
 
 ## Add a new model
 
-1. Add it to `collector/models.yaml` (and, for the identifier, to `MODELS` in `agent/identify.py`).
+1. Add it to `system/collector/models.yaml` (and, for the identifier, to `MODELS` in `agent/identify.py`).
 2. Create its blank cards:
    ```
    python new_model.py mistral-small-3.2 --name "Mistral Small 3.2" --family Mistral --access open --by YourName
    ```
 3. Research each TODO, following the hint above each field. Good starting searches: `"<model>" model card`, `"<model>" system card`, `"<model>" technical report`; for risk also the [Phare leaderboard](https://phare.giskard.ai) and Artificial Analysis.
-4. Set `licence_id` in the compliance card. If the licence is new, add an entry to `collector/licences.yaml` first; either way, add the model to that licence's `applies_to`.
+4. Set `licence_id` in the compliance card. If the licence is new, add an entry to `system/collector/licences.yaml` first; either way, add the model to that licence's `applies_to`.
 5. Run `python check_cards.py --todo` until the model shows `done` in every column.
 6. Commit on a branch and open a pull request.
 

@@ -1,3 +1,0 @@
-algorithm,n,n_prompts,accuracy_0.5,roc_auc,gemini_rows,llama_rows
-baseline_rf,540,45,0.8629629629629629,0.9549382716049383,270,270
-baseline_lr,540,45,0.9166666666666666,0.9776543209876543,270,270

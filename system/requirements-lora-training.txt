@@ -1,0 +1,8 @@
+# Use a separate training venv; do not downgrade integrated RF's scikit-learn.
+-r requirements-integrated.txt
+# Install a CUDA-compatible torch build separately if required by your GPU.
+torch>=2.2,<3
+transformers>=4.45,<5
+peft>=0.13,<1
+accelerate>=0.30,<2
+# Exact resolved versions recorded at training time; lock after real smoke test.

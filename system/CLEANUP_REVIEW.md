@@ -1,3 +1,17 @@
+# Current cleanup decision — November 26, 2026
+
+C1 stays completed. User now approved removal of obsolete legacy material and
+inactive derived data. C4 Jev script is eligible for the checked root cleanup;
+four derived-data groups are conditional on confirmed inactivity because old
+research scripts still consume them. See `docs/LEGACY_CLEANUP.md` and the exact
+hash inventory. The current system-only ZIP cannot itself delete root files;
+the helper has been exercised in a temporary snapshot. Active raw collections,
+pinned model/reference files, test fixtures and all remaining C2–C3/C5–C8
+components stay unchanged. No root folder moves are applied. Older review below
+is retained as historical evidence, superseded where applicable.
+
+---
+
 # Cleanup status — C1 approved and completed; C2–C8 unchanged
 
 Detailed per-file uses for the 17 exact Stage 1 duplicates and other reviewed files are in [`docs/CLEANUP_FILE_INVENTORY.md`](docs/CLEANUP_FILE_INVENTORY.md).

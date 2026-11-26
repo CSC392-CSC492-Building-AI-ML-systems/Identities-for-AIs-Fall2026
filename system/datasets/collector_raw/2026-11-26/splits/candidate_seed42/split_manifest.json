@@ -1,0 +1,172 @@
+{
+  "algorithm": "sha256_prompt_groups_coverage_search_v2",
+  "catalog_sha256": "c6606fbeb727a121800baacca5c7224c68940a589860d870472ace87138d6df4",
+  "coverage_search_attempt_limit": 128,
+  "dataset_id": "collector_raw/2026-11-26",
+  "dataset_manifest_sha256": "8209b47419c3a4b16a1ea591a413967814722eaac649b8f52dca6bef17c90cfd",
+  "partitions": {
+    "calibration": {
+      "by_model": {
+        "claude-haiku-4.5": 24,
+        "claude-haiku-5.5": 24,
+        "claude-sonnet-5.5": 24,
+        "gemini-3.1-pro": 90,
+        "gemini-3.8-flash": 162,
+        "gemma3-1b": 24,
+        "gemma3-4b": 72,
+        "gpt-5.6-luna": 24,
+        "gpt-5.6-terra": 24,
+        "gpt-6-luna": 24,
+        "gpt-6.1-terra": 24,
+        "llama3.1-8b": 162,
+        "llama3.2-1b": 24,
+        "llama3.2-3b": 162,
+        "qwen2.5-3b": 24,
+        "qwen3-8b": 72,
+        "qwen3.5-9b": 14
+      },
+      "by_prompt_set": {
+        "fingerprint_v0": 614,
+        "training_v1": 360
+      },
+      "groups": 33,
+      "missing_models": [],
+      "records": 974,
+      "sha256": "7a93d4ad9ee4a92f18239e844ad54bc3f4723252e9b6dec3f49752a60ffdf69a"
+    },
+    "excluded": {
+      "by_model": {
+        "claude-haiku-4.5": 8,
+        "gemini-3.8-flash": 87,
+        "gemma3-4b": 24,
+        "llama3.1-8b": 24,
+        "llama3.2-3b": 24,
+        "qwen3-8b": 50,
+        "qwen3.5-9b": 631
+      },
+      "by_prompt_set": {
+        "fingerprint_v0": 846,
+        "training_v1": 2
+      },
+      "groups": 34,
+      "missing_models": [
+        "claude-haiku-5.5",
+        "claude-sonnet-5.5",
+        "gemini-3.1-pro",
+        "gemma3-1b",
+        "gpt-5.6-luna",
+        "gpt-5.6-terra",
+        "gpt-6-luna",
+        "gpt-6.1-terra",
+        "llama3.2-1b",
+        "qwen2.5-3b"
+      ],
+      "records": 848,
+      "sha256": "3f679d53f3c9aa0dc2cee36bd4de5eb3d586c0eea2c6ac9b656736c1f36b67de"
+    },
+    "test": {
+      "by_model": {
+        "claude-haiku-4.5": 72,
+        "claude-haiku-5.5": 72,
+        "claude-sonnet-5.5": 72,
+        "gemini-3.1-pro": 135,
+        "gemini-3.8-flash": 255,
+        "gemma3-1b": 72,
+        "gemma3-4b": 120,
+        "gpt-5.6-luna": 72,
+        "gpt-5.6-terra": 72,
+        "gpt-6-luna": 72,
+        "gpt-6.1-terra": 72,
+        "llama3.1-8b": 255,
+        "llama3.2-1b": 72,
+        "llama3.2-3b": 255,
+        "qwen2.5-3b": 72,
+        "qwen3-8b": 119,
+        "qwen3.5-9b": 26
+      },
+      "by_prompt_set": {
+        "fingerprint_v0": 1345,
+        "training_v1": 540
+      },
+      "groups": 50,
+      "missing_models": [],
+      "records": 1885,
+      "sha256": "ef30e8c643c204972f9baca8a069c3d6b12dab86dfa650054998bd7e7e788df9"
+    },
+    "train": {
+      "by_model": {
+        "claude-haiku-4.5": 24,
+        "claude-haiku-5.5": 24,
+        "claude-sonnet-5.5": 24,
+        "gemini-3.1-pro": 540,
+        "gemini-3.8-flash": 971,
+        "gemma3-1b": 24,
+        "gemma3-4b": 432,
+        "gpt-5.6-luna": 24,
+        "gpt-5.6-terra": 24,
+        "gpt-6-luna": 24,
+        "gpt-6.1-terra": 24,
+        "llama3.1-8b": 972,
+        "llama3.2-1b": 24,
+        "llama3.2-3b": 972,
+        "qwen2.5-3b": 24,
+        "qwen3-8b": 408,
+        "qwen3.5-9b": 83
+      },
+      "by_prompt_set": {
+        "fingerprint_v0": 2459,
+        "training_v1": 2159
+      },
+      "groups": 198,
+      "missing_models": [],
+      "records": 4618,
+      "sha256": "10a3e107462597860f77d64f766243b9a8c05da363ee09240c134786b748eb96"
+    },
+    "validation": {
+      "by_model": {
+        "claude-haiku-4.5": 24,
+        "claude-haiku-5.5": 24,
+        "claude-sonnet-5.5": 24,
+        "gemini-3.1-pro": 135,
+        "gemini-3.8-flash": 254,
+        "gemma3-1b": 24,
+        "gemma3-4b": 120,
+        "gpt-5.6-luna": 24,
+        "gpt-5.6-terra": 24,
+        "gpt-6-luna": 24,
+        "gpt-6.1-terra": 24,
+        "llama3.1-8b": 255,
+        "llama3.2-1b": 24,
+        "llama3.2-3b": 255,
+        "qwen2.5-3b": 24,
+        "qwen3-8b": 119,
+        "qwen3.5-9b": 14
+      },
+      "by_prompt_set": {
+        "fingerprint_v0": 853,
+        "training_v1": 539
+      },
+      "groups": 50,
+      "missing_models": [],
+      "records": 1392,
+      "sha256": "08b6b6ef23ff1ab1094d08628ecef6b2d269e977aef8bb933a434f81b0d7422b"
+    }
+  },
+  "prompt_aliases": {},
+  "schema_version": "1.0",
+  "seed": 42,
+  "split_id": "candidate_seed42",
+  "status": "candidate_split_not_certified_holdout",
+  "warnings": [
+    "Raw prompt text is absent; different prompt IDs can still represent identical/related prompts.",
+    "Review overlaps with previous training/reference/evaluation data and prompt definitions.",
+    "Weights apply to eligible prompt groups, not individual records. Coverage search minimizes missing model/partition pairs but cannot guarantee coverage.",
+    "This does not create complete multi-probe sessions or certify unknown-family evaluation."
+  ],
+  "weights_percent": {
+    "calibration": 10,
+    "test": 15,
+    "train": 60,
+    "validation": 15
+  }
+}

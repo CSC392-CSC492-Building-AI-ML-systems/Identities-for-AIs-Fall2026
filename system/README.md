@@ -1,3 +1,77 @@
+# Consolidated repository
+
+See the [root README](../README.md) and [migration guide](docs/REPOSITORY_CONSOLIDATION.md) for the current layout. Historical milestones below may describe superseded paths; `collector/` is now `system/collector/`, root `scripts/` moved to `system/research/stage1/`, and tests/fixtures live at the repository root.
+
+# Latest prototype update — automated evaluation and reviewed publication
+
+See [Release workflow](docs/RELEASE_WORKFLOW.md) for CPU-only RF comparison, `training run --evaluate-candidates`, explicit review-profile publication and rollback. No automatic activation, identity acceptance, live judge or real LoRA validation. Stage 1 remains deferred.
+
+---
+
+# Latest prototype update — model and family onboarding
+
+Use `python system/run.py onboard-model status` to audit catalog/collector/card coverage. See [Model and family onboarding](docs/MODEL_FAMILY_ONBOARDING.md) for registration, draft research cards, reviewed publication and handoff to existing dataset/training tools. No new target identity or artifact was activated in this release.
+
+---
+
+# Latest prototype update — live Stage 2 review
+
+See [CPU-only replay and PowerShell setup](docs/BACKEND_STAGE2_REVIEW.md) for the new opt-in Factory-driven RF/Harness live job mode. Stage 1 deferred; LoRA GPU validation pending. Existing mock workflows remain supported.
+
+---
+
+## Harness reference builder (current update)
+
+`harness/v2` is a registered 17-model, six-probe, review-only reference candidate. See [Harness reference builder](docs/HARNESS_REFERENCE_BUILDER.md). RF, LoRA and Harness training/maintenance strategies are registered; Stage 1 is deferred and is not part of the prototype training roadmap. The live backend and production selection are unchanged.
+
+## Automated LoRA training (current update)
+
+The notebook-derived LoRA strategy is registered alongside RF. See [LoRA training guide](docs/LORA_TRAINING.md) and [actual data preview](reports/lora_candidate_data_preview.json). A real pinned base revision and training environment are required; no new trained checkpoint or runtime validation is claimed. Review-only, no auto-activation.
+
+## New: multi-prompt Random Forest and teammate intake
+
+The training orchestrator now has a real RF fixed-probe strategy. See
+[RF_MULTI_PROMPT.md](docs/RF_MULTI_PROMPT.md) and
+[TEAM_BRANCH_REVIEW.md](docs/TEAM_BRANCH_REVIEW.md). `random_forest/v2` is a
+registered, review-only 17-class candidate (five selected probes). Use
+`config/experiments/rf_panel_v2.yaml` for offline replay; the default production
+configuration and live mock-judge worker are unchanged. The new Agentic raw
+snapshot and fixed-probe split retain successful blank responses. The other
+trainer implementations remain pending.
+
+## Training orchestration foundation — November 26, 2026
+
+Use `python system/run.py training methods`, `training plan --config
+config/training/nov26_candidate.json`, and `training history`. See
+[Training Orchestrator](docs/TRAINING_ORCHESTRATOR.md). All method-specific
+trainers are explicitly blocked until finalized training/reference code arrives;
+no model was retrained or activated. Refined dataset onboarding retains blank
+responses without recorded errors (new `candidate_include_blank_seed42` split),
+verifies existing splits, and binds classifier templates to local split hashes.
+
+For the approved obsolete legacy cleanup and conditional inactive derived-data
+cleanup, see [Legacy Cleanup](docs/LEGACY_CLEANUP.md). Run the checked migration
+helper against the real repository after merging; a ZIP overlay cannot delete
+old root paths. Other cleanup proposals remain pending. Production auth and
+confidence thresholds are deferred for the local research prototype.
+
+## Dataset onboarding — prototype (November 26, 2026)
+
+New offline CLI: `python system/tools/onboard_dataset.py --help`. Validate ZIP/raw
+collections, register immutable snapshots, create reproducible prompt-grouped
+candidate splits, audit overlap, and export selected original rows. See
+[Dataset Onboarding](docs/DATASET_ONBOARDING.md). The included November 26 example
+split is not a certified holdout; pinned Harness reference overlap remains.
+No classifiers, production configuration or backend behavior changed.
+
+## Classifier artifact onboarding (November 26, 2026)
+
+New local CLI: `python system/tools/onboard_classifier.py --help` from the repository root.
+Use `template`, `validate`, `register --trust-bundle`, and `candidate-config` for
+versioned teammate submissions. See [Classifier Onboarding](docs/CLASSIFIER_ONBOARDING.md).
+Registration is metadata/file validation only, not real inference, threshold approval,
+or automatic activation; the backend remains in its existing development mode.
+
 ## Updated collector dataset — November 26, 2026
 
 The team's new raw collection is staged at [`datasets/collector_raw/2026-11-26/`](datasets/collector_raw/2026-11-26/README.md): 20 JSONL files, 9,717 records, 17 catalog IDs and six families. See the [dataset manifest](datasets/collector_raw/2026-11-26/manifest.json) for file hashes and quality counts. The existing trained models, Harness reference bundle, config selections and evaluation data remain unchanged while the ML team reruns models. New model releases must reference their exact dataset/split and pass validation before activation. Raw data is not a frozen evaluation split; review permissions and privacy before publishing it to GitHub.

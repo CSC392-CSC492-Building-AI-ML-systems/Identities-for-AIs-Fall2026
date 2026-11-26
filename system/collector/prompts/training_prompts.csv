@@ -1,0 +1,725 @@
+,300 varied prompts for the general training dataset (each sent to every model ~3 times). Filter the group column to see each source; persona_id is the system prompt each one is sent with (see Personas tab).,,,,,,,,,,,
+id,source_id,group,persona_id,category,text,source,licence,language,prompt_length,expected_format,subcategory,source_record_id
+1,WC-021,wildchat_4.8m,P15,General Q&A and explanation,Who is the character named Juna Crawford?,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,9a37cc5aee5862f5485ff6df8f1ae051
+2,WC-038,wildchat_4.8m,P13,General Q&A and explanation,What is the rear wheel bearing for Tata Winger?,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,5dd40834b0fd54df83d41063cf3a0bfb
+3,WC-039,wildchat_4.8m,P14,General Q&A and explanation,Give me 25 strange facts about the Albatross with a long explanation,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,3072a23b28b27e2a860500e812c494d2
+4,WC-059,wildchat_4.8m,P15,General Q&A and explanation,What is the human brain made of,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,a2485bfc952378c07f01ea812e189afb
+5,WC-061,wildchat_4.8m,BK2,General Q&A and explanation,Which planet has the widest rings,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,ed40ce434f744d92b8dcbdd62dc7c0b8
+6,WC-069,wildchat_4.8m,P06,General Q&A and explanation,Do you know of tiger balm,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,e17e2947dc21f96179643e4706e7e049
+7,WC-082,wildchat_4.8m,BK4,General Q&A and explanation,what is voice over of presentation,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,021512928fa408f18ab0f02096a60343
+8,WC-084,wildchat_4.8m,P02,General Q&A and explanation,Give me 25 weird facts about Budgerigar with explanation,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,45f2c687e7c34e108f946f52462cb4a5
+9,WC-125,wildchat_4.8m,P05,General Q&A and explanation,are dendritic cells part of the specific immunity or non-specific immunity?,WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,3dacb6364fed73b9825602028df67fa4
+10,WC-135,wildchat_4.8m,P15,General Q&A and explanation,"What does ""x!"" mean in mathematics?",WildChat-4.8M,ODC-BY,en,short,paragraph,Factual questions,edd4844b3724e2b41701ad70176882bd
+11,AYA-725,aya,P13,General Q&A and explanation,Which actor won the best actor Oscar for the films Philadelphia (1993) and Forrest Gump (1994)?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:725
+12,AYA-740,aya,P13,General Q&A and explanation,Who wrote the classic novel The Mayor of Casterbridge?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:740
+13,AYA-1149,aya,P13,General Q&A and explanation,Which animal is the fastest on land?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:1149
+14,AYA-1458,aya,P13,General Q&A and explanation,What is the most abundant element in the human body?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:1458
+15,AYA-1839,aya,P13,General Q&A and explanation,What is the largest moon in the solar system?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:1839
+16,AYA-1964,aya,P13,General Q&A and explanation,Can you tell me the capital of Iran?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:1964
+17,AYA-809,aya,P13,General Q&A and explanation,"Before Mike Myers was selected to perform Shrek’s voice, who was the other Saturday Night Live performer initially cast as Shrek?",Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:809
+18,AYA-1540,aya,P13,General Q&A and explanation,What is a sitcom?,Aya dataset,Apache 2.0,en,short,paragraph,Factual questions,train:row:1540
+19,BK-003,team_created,BK1,General Q&A and explanation,A customer asks how long an e-Transfer takes to arrive and what to do if it hasn't arrived after two hours. Respond as the bank's support assistant.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-003
+20,BK-005,team_created,P13,General Q&A and explanation,A customer asks how to set up direct deposit for their new job. Explain the steps.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-005
+21,BK-007,team_created,BK1,General Q&A and explanation,A customer wants to increase their credit card limit. Explain what usually happens and what information they may need.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-007
+22,BK-009,team_created,BK1,General Q&A and explanation,A customer asks how to dispute a charge on their credit card that they don't recognize. Explain the process.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-009
+23,BK-010,team_created,P13,General Q&A and explanation,A customer asks why a cheque they deposited is on hold for five business days.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-010
+24,BK-011,team_created,BK1,General Q&A and explanation,A customer asks how to close a savings account and move the money to their chequing account.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-011
+25,BK-013,team_created,BK1,General Q&A and explanation,A customer asks what happens if they miss a credit card payment by a few days.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-013
+26,BK-014,team_created,BK1,General Q&A and explanation,A customer asks whether they can stop a pre-authorized payment to their old gym.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-014
+27,BK-015,team_created,P13,General Q&A and explanation,A customer asks what documents they need to open a bank account as a newcomer to Canada.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-015
+28,BK-033,team_created,BK1,General Q&A and explanation,Explain what an FHSA (First Home Savings Account) is and who can open one.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-033
+29,BK-036,team_created,BK1,General Q&A and explanation,"Explain how credit card interest is calculated, in simple terms.",Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-036
+30,BK-037,team_created,BK1,General Q&A and explanation,Explain what a credit score is and three ways to improve it.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-037
+31,BK-039,team_created,BK1,General Q&A and explanation,Explain what CDIC deposit insurance covers.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-039
+32,BK-040,team_created,P13,General Q&A and explanation,Explain what an RESP is to new parents.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-040
+33,BK-041,team_created,BK1,General Q&A and explanation,Explain what a high-interest savings account is and whether the rate can change.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-041
+34,BK-048,team_created,BK4,General Q&A and explanation,You are helping a bank employee. Summarize the key steps for verifying a customer's identity over the phone.,Drafted by us,Ours,en,short,paragraph,Conceptual explanations,BK-048
+35,BK-050,team_created,P13,General Q&A and explanation,Explain to a new bank employee why they should never share customer information over email.,Drafted by us,Ours,en,short,email/letter,Conceptual explanations,BK-050
+36,WC-019,wildchat_4.8m,P13,General Q&A and explanation,"How to present the process genre approachby connecting the product approach, the process approach and the genre approach",WildChat-4.8M,ODC-BY,en,short,paragraph,Conceptual explanations,3d6a61ef3dacfcefaeb11f1dc11ae144
+37,WC-023,wildchat_4.8m,BK2,General Q&A and explanation,the importance of preventing infectious diseases,WildChat-4.8M,ODC-BY,en,short,paragraph,Conceptual explanations,c0cbd90eef579ce1535380c12a201690
+38,WC-050,wildchat_4.8m,P06,General Q&A and explanation,What is the Stoned Ape Hypothesis? Is it scientifically valid?,WildChat-4.8M,ODC-BY,en,short,paragraph,Conceptual explanations,491fbaaa4ff580eff00886b8eb8c62bb
+39,WC-055,wildchat_4.8m,P11,General Q&A and explanation,Give me a toy example to elaborate the idea of differential equations,WildChat-4.8M,ODC-BY,en,short,paragraph,Conceptual explanations,523b965fe9f20891eb15f49589ec96b7
+40,WC-110,wildchat_4.8m,P09,General Q&A and explanation,How can the woolly mammouth help regulating climate ?,WildChat-4.8M,ODC-BY,en,short,paragraph,Conceptual explanations,75591425435a17a90390da167d531c6c
+41,WC-143,wildchat_4.8m,P04,General Q&A and explanation,Describe the various causes of deforestation in the world. What are the consequences of forest cover loss? Explain why deforestation in one country affects other countries.,WildChat-4.8M,ODC-BY,en,medium,paragraph,Conceptual explanations,e13c3b997897c0752680f98e627446eb
+42,AYA-1075,aya,P13,General Q&A and explanation,What is light reflection?,Aya dataset,Apache 2.0,en,short,paragraph,Conceptual explanations,train:row:1075
+43,AYA-1264,aya,P13,General Q&A and explanation,"""Explain the concept of gender equality and its importance in society.""
+
+
+",Aya dataset,Apache 2.0,en,short,paragraph,Conceptual explanations,train:row:1264
+44,WCNEW-531-0,wildchat_4.8m,P13,General Q&A and explanation,Please explain entropy in simple terms whitch even 14 years old can understand,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Conceptual explanations,481222cc335ef1cb69c7058cd92074be:turn:0
+45,WCNEW-79-0,wildchat_4.8m,P13,General Q&A and explanation,explain photography,WildChat-4.8M,ODC-BY 1.0,en,short,poem,Conceptual explanations,59a3a57c0db50a2d212bfe8141bf80a5:turn:0
+46,BK-006,team_created,BK1,General Q&A and explanation,"A customer asks: ""What's the difference between my available balance and my current balance?"" Explain simply.",Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-006
+47,BK-032,team_created,BK1,General Q&A and explanation,Explain (in less than 300 words) the difference between a TFSA and an RRSP to a customer who is 25 and just started their first full-time job.,Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-032
+48,BK-034,team_created,BK1,General Q&A and explanation,Explain the difference between a fixed-rate and a variable-rate mortgage.,Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-034
+49,BK-035,team_created,P13,General Q&A and explanation,Explain what a GIC is and how it is different from a savings account.,Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-035
+50,BK-038,team_created,BK1,General Q&A and explanation,Explain the difference between a line of credit and a personal loan.,Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-038
+51,BK-052,team_created,BK4,General Q&A and explanation,"A bank employee asks: ""What's the difference between a complaint and an inquiry?"" Answer in a few sentences.",Drafted by us,Ours,en,short,paragraph,Comparison questions,BK-052
+52,WC-020,wildchat_4.8m,P14,General Q&A and explanation,is there a difference between natural gas and conventional gas you get for your car,WildChat-4.8M,ODC-BY,en,short,paragraph,Comparison questions,889a8a31b2cb6ab2f429cb2bf8baa59f
+53,WC-066,wildchat_4.8m,P03,General Q&A and explanation,the difference between fm_mpx and fm_nfm,WildChat-4.8M,ODC-BY,en,short,paragraph,Comparison questions,30032d29bc1cb7f0a8ce6ccefb528036
+54,WC-076,wildchat_4.8m,P13,General Q&A and explanation,Detailed differences between user interface and user experience,WildChat-4.8M,ODC-BY,en,short,paragraph,Comparison questions,3b1b75fcd86ee88c906f3bc8bc960342
+55,WC-105,wildchat_4.8m,P04,General Q&A and explanation,Please compared the difference of light and fluorescence microscopy techniques and optical coherence tomography studying on zebrafish. List the references.,WildChat-4.8M,ODC-BY,en,medium,poem,Comparison questions,81fc0de4d87736be6b72a09c84274ce4
+56,AYA-658,aya,P13,General Q&A and explanation,"Explain the difference between ""lie"" and ""lay.""",Aya dataset,Apache 2.0,en,short,paragraph,Comparison questions,train:row:658
+57,AYA-375,aya,P13,General Q&A and explanation,"What is DevOps, and how does it differ from traditional software development and operations practices?",Aya dataset,Apache 2.0,en,short,paragraph,Comparison questions,train:row:375
+58,WCNEW-455-0,wildchat_4.8m,P13,General Q&A and explanation,"what the difference between intermediate and final goods, please provide examples",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Comparison questions,8867c79f430d87af3985abe12479edde:turn:0
+59,WCNEW-725-6,wildchat_4.8m,P13,General Q&A and explanation,"What is the difference between reeve and bailliff, who had higher rank?",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Comparison questions,2dabf6de01b03c831016d7343e4b7488:turn:6
+60,WCNEW-791-2,wildchat_4.8m,P13,General Q&A and explanation,"explain Understanding the difference between a fixed and growth mindset for self help book for teens, make it exciting and captivating",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Comparison questions,143db1d82bf5aa2bf58dbd165870239b:turn:2
+61,WCNEW-1088-14,wildchat_4.8m,P13,General Q&A and explanation,"6–28C What is the difference between a refrigerator and a heat pump?
+",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Comparison questions,55270e45d881c997d705ae2eaec813b0:turn:14
+62,WCNEW-1088-16,wildchat_4.8m,P13,General Q&A and explanation,"What is the difference between a refrigerator and an air conditioner?
+",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Comparison questions,55270e45d881c997d705ae2eaec813b0:turn:16
+63,IF-3150,ifeval,P13,General Q&A and explanation,What's the difference between a 2-stroke and a 4-stroke motor? Your entire response must be in English and contain only lowercase letters.,IFEval,Apache 2.0,en,short,email/letter,Comparison questions,key:3150
+64,BK-001,team_created,BK1,General Q&A and explanation,"A customer writes: ""I was charged a $45 overdraft fee even though my paycheque was deposited the same day. Why did this happen and can I get it refunded?"" Respond (in less than 300 words) as the bank's customer support assistant.",Drafted by us,Ours,en,medium,paragraph,Advice and recommendations,BK-001
+65,BK-002,team_created,BK1,General Q&A and explanation,"A customer asks: ""Why is there a $16.95 monthly fee on my chequing account? I didn't sign up for anything."" Respond as the bank's support assistant.",Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-002
+66,BK-004,team_created,BK1,General Q&A and explanation,"A customer writes: ""My debit card was declined at the grocery store but I have money in my account."" List the likely reasons and next steps.",Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-004
+67,BK-008,team_created,BK1,General Q&A and explanation,A customer is travelling to Mexico next week and asks if they need to tell the bank. Respond as the support assistant.,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-008
+68,BK-012,team_created,BK1,General Q&A and explanation,"A customer writes: ""I forgot my online banking password and now I'm locked out."" Respond as the support assistant.",Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-012
+69,BK-042,team_created,BK1,General Q&A and explanation,A customer received a text saying their account is locked and asking them to click a link. Explain whether this is safe and what to do.,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-042
+70,BK-043,team_created,BK1,General Q&A and explanation,List five warning signs of a phone scam pretending to be from a bank.,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-043
+71,BK-044,team_created,BK1,General Q&A and explanation,"A customer asks: ""Someone called saying they're from the bank's fraud department and asked for my PIN. Should I give it?"" Respond as the support assistant.",Drafted by us,Ours,en,medium,paragraph,Advice and recommendations,BK-044
+72,BK-046,team_created,BK1,General Q&A and explanation,A customer thinks their elderly father is being targeted by a romance scam. What advice should the bank give?,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-046
+73,BK-047,team_created,BK1,General Q&A and explanation,Explain what to do immediately after losing a debit card.,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-047
+74,BK-049,team_created,BK4,General Q&A and explanation,Write a short checklist for a branch employee opening a new account for a customer.,Drafted by us,Ours,en,short,list/choice,Advice and recommendations,BK-049
+75,BK-053,team_created,BK4,General Q&A and explanation,Write three tips for bank call-centre staff on handling an angry customer.,Drafted by us,Ours,en,short,paragraph,Advice and recommendations,BK-053
+76,WC-016,wildchat_4.8m,P10,General Q&A and explanation,write me short instruction for begginners to solve  crossword,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,2e7267adf512fa07413515b901e23513
+77,WC-031,wildchat_4.8m,P06,General Q&A and explanation,How can I add simple AI animals to a unity mobile game?,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,1379102631df97af254058dadca2390e
+78,WC-040,wildchat_4.8m,P15,General Q&A and explanation,How do you solve a Rubik's Cube?,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,bc3995cc96d6a2f7fa9abc45a36ddc34
+79,WC-058,wildchat_4.8m,P14,General Q&A and explanation,how to ask from your colleague to help you as you are new to the company culture and work?,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,3da81ac9253cf6bfcac90eee6ba37b26
+80,WC-075,wildchat_4.8m,P12,General Q&A and explanation,Suggest me 10 titles for this phrase: 25 ways to beat depression,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,3a09efdc591e561fd0a4dafd5f4700c9
+81,WC-092,wildchat_4.8m,P10,General Q&A and explanation,Write to me 25 amazing home decor and design tips with a long explanation,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,e0cae2a7c8fd93a7a994bc21af16987f
+82,WC-095,wildchat_4.8m,P13,General Q&A and explanation,write a Recommendation Letter for student,WildChat-4.8M,ODC-BY,en,short,email/letter,Advice and recommendations,7a739754e0e80e307d6f88619ade7f8e
+83,WC-109,wildchat_4.8m,P08,General Q&A and explanation,what do you recommend books in C languages,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,bb910f319bcbac3b5a2847168b873ca5
+84,WC-140,wildchat_4.8m,P01,General Q&A and explanation,Write 25 ways to overcome shyness with long explanation,WildChat-4.8M,ODC-BY,en,short,paragraph,Advice and recommendations,1fbdcb46852dd1b50d430b9e8ecf1ba2
+85,BK-016,team_created,BK2,Text transformation,"Summarize the following customer complaint (in less than 150 words) for the bank's complaints team. Include the issue, what the customer wants, and how urgent it is.
+""I've called three times about a duplicate mortgage payment taken from my chequing account on March 3. Each time I was told it would be reversed in 5 business days. It's been three weeks. Now my rent cheque bounced and my landlord is charging me a late fee. I want the money back today and compensation for the late fee, or I'm moving my accounts.""",Drafted by us,Ours,en,medium,paragraph,Summarization,BK-016
+86,BK-017,team_created,BK2,Text transformation,"Summarize this complaint for the complaints team in three bullet points (issue, request, urgency):
+""The branch on King Street told me my new credit card would arrive in 7 days. It's been a month, I've called twice, and nobody can tell me where it is. I have a trip next week and need it.""",Drafted by us,Ours,en,medium,list/choice,Summarization,BK-017
+87,BK-018,team_created,BK2,Text transformation,"Summarize this complaint in under 100 words and suggest a category (fees, service, fraud, technical, other):
+""Your mobile app has logged me out every time I try to pay a bill for the past week. I've reinstalled it twice. I've now been charged a late fee on my hydro bill because of your app.""",Drafted by us,Ours,en,medium,paragraph,Summarization,BK-018
+88,BK-019,team_created,BK2,Text transformation,"Summarize this complaint and rate its urgency as low, medium or high, with one sentence explaining why:
+""I reported my card stolen on Monday but there are still new charges on Wednesday. Over $800 in total. I'm scared and I need this stopped.""",Drafted by us,Ours,en,medium,paragraph,Summarization,BK-019
+89,BK-020,team_created,P13,Text transformation,"Write a neutral one-paragraph summary of this complaint for internal records:
+""The teller was rude to my elderly mother and refused to help her withdraw cash because she didn't have her card, even though she had two pieces of ID.""",Drafted by us,Ours,en,medium,poem,Summarization,BK-020
+90,BK-021,team_created,BK2,Text transformation,"Summarize this complaint and list what information the bank still needs from the customer:
+""I sent $2,000 by wire transfer to my brother overseas two weeks ago and he never received it.""",Drafted by us,Ours,en,medium,list/choice,Summarization,BK-021
+91,BK-022,team_created,BK2,Text transformation,"Summarize this complaint for the complaints team, and note whether it mentions any regulatory or legal threat:
+""If my account isn't unfrozen by Friday I'm filing a complaint with the banking ombudsman and talking to a lawyer. You froze it with no explanation.""",Drafted by us,Ours,en,medium,paragraph,Summarization,BK-022
+92,BK-023,team_created,BK2,Text transformation,"Summarize these three short complaints into one sentence each, then say what they have in common:
+1) ""App crashed during transfer."" 2) ""Couldn't log in all morning."" 3) ""Transfer showed as sent but money never left my account.""",Drafted by us,Ours,en,medium,paragraph,Summarization,BK-023
+93,WC-036,wildchat_4.8m,P11,Text transformation,"Summarize the following into 150 characters or less ""It's kinda complicated, but to put it as simply as possible, American homes are connected to two live wires, not just one. Normal appliances get 120V from either of the live wires, while power-heavy appliances such as Washer/Dryer, Electric Stoves, Etc. get 240V by using both live wires.""",WildChat-4.8M,ODC-BY,en,medium,paragraph,Summarization,bb6066eb56b3e22f7366057975b1943d
+94,WC-042,wildchat_4.8m,BK2,Text transformation,Write a 15 sentence summary and 15 sentences about the themes and impact of Love You Forever by Robert Munsch,WildChat-4.8M,ODC-BY,en,short,paragraph,Summarization,986785b742d8d50e2ace98df0ab7955d
+95,WC-049,wildchat_4.8m,P05,Text transformation,"write a 10 sentence summary of the book ""Holes""",WildChat-4.8M,ODC-BY,en,short,paragraph,Summarization,020948b41f5d61f6713f955407789f21
+96,WC-057,wildchat_4.8m,P13,Text transformation,write a 15 sentence summary of the book love you forever by robert munsch,WildChat-4.8M,ODC-BY,en,short,paragraph,Summarization,521ad062d7094a7ff252553705049cb0
+97,WC-129,wildchat_4.8m,P09,Text transformation,give me a summary of MLK's letter from birmingham jail,WildChat-4.8M,ODC-BY,en,short,email/letter,Summarization,a76dbc59be0d5d8506fd91fb9d3a85d0
+98,IF-1592,ifeval,P13,Text transformation,"Summarize the following paragraph. Use words in all capital letters at least 3 times to highlight key points.
+
+How to get to 100% renewable energy in the US? Two researchers from Stanford University and the University of California, Berkeley studied the potential for solar and wind energy to power the US grid. They concluded that it is possible to get to 100% renewable energy by 2050 by building more solar and wind farms. The authors also pointed out that such a system would be less vulnerable to disruptions than the current grid, which is reliant on a few large power plants. The authors' plan would also create jobs and reduce pollution.",IFEval,Apache 2.0,en,medium,poem,Summarization,key:1592
+99,IF-1999,ifeval,P13,Text transformation,"Generate a summary of the following passage in all capital letters:
+
+World War II or the Second World War, often abbreviated as WWII or WW2, was a global conflict that lasted from 1939 to 1945. The vast majority of the world's countries, including all of the great powers, fought as part of two opposing military alliances: the Allies and the Axis. Many participants threw their economic, industrial, and scientific capabilities behind this total war, blurring the distinction between civilian and military resources. Aircraft played a major role, enabling the strategic bombing of population centres and the delivery of the only two nuclear weapons ever used in war. World War II was by far the deadliest conflict in history, resulting in an estimated 70 to 85 million fatalities, mostly among civilians. Tens of millions died due to genocides (including the Holocaust), starvation, massacres, and disease. In the wake of Axis defeat, Germany, Austria and Japan were occupied, and war crimes tribunals were conducted against German and Japanese leaders.
+
+",IFEval,Apache 2.0,en,long,email/letter,Summarization,key:1999
+100,IF-2034,ifeval,P13,Text transformation,"Write a summary of the following text in a funny way: ""The 2018 Nobel Prize in Chemistry has been awarded to Frances Arnold, George P. Smith and Gregory P. Winter for their work on directed evolution. Arnold was awarded half of the prize for her work on the directed evolution of enzymes, while Smith and Winter shared the other half for their work on the directed evolution of antibodies.""
+
+Do not include ""enzymes"" and ""antibodies"" in your response.",IFEval,Apache 2.0,en,medium,paragraph,Summarization,key:2034
+101,IF-2380,ifeval,P13,Text transformation,"Please write a summary of the following advertiser page: ""We insist on having the most talented team of web developers, content writers, graphic designers and online marketers in the industry. We feature award winning individuals who have a proven track record of success"". Use markdowns and target moms. Your answer must contain exactly 4 bullet points in markdown format and cannot contain commas.",IFEval,Apache 2.0,en,medium,poem,Summarization,key:2380
+102,WCNEW-131-2,wildchat_4.8m,P13,Text transformation,"Please points  more important and summary them :The coil designer is obliged to determine the length of the iron core from the experience of others, as the mathe- matics for calculating it is too complex, although simple and useful in the case of closed circuit transformers. If the core is made too long the primary magnetizing current will be too large, while if made too short the secondary coils would have to be made of too large a diameter to be efficient. There is, therefore, a certain length which will give the best results.
+
+In the case of this transformer the length of the core was determined after having gained all possible information from certain eminent men who had made a life study of these matters; in fact, all the dimensions of the transformer for this special use were determined in this way.",WildChat-4.8M,ODC-BY 1.0,en,long,paragraph,Summarization,cd80a7669840c63bbb8d7537c6585586:turn:2
+103,WC-048,wildchat_4.8m,P04,Text transformation,"Rewrite, 'Recognitions are the biggest motivator.. thanks Analytics India Magazine for certifying Akaike Technologies as a 'Great Firm for Data Scientists.' We would like to take our employees forward as propel forward in the world of artificial intelligence. '",WildChat-4.8M,ODC-BY,en,medium,paragraph,Rewriting,4651c486293c282d1d14a03782f95b06
+104,WC-088,wildchat_4.8m,P06,Text transformation,rewrite formally: solutions were put into a container for photolysis,WildChat-4.8M,ODC-BY,en,short,paragraph,Rewriting,94dc588d989371fb1dc7f75fc3d9e818
+105,WC-121,wildchat_4.8m,P01,Text transformation,"Below is a sentence from an academic paper. Polish the writing to meet the academic style, improve the spelling, grammar, clarity, concision and overall readability. When necessary, rewrite the whole sentence. 
+Additionally. we found the sequence of lnc was conserved in primates but shared lower homology with other species by PhyloP analyze.",WildChat-4.8M,ODC-BY,en,medium,paragraph,Rewriting,63ab5981d7d5c4ca1ffcff147f78efb7
+106,WCNEW-636-0,wildchat_4.8m,P13,Text transformation,paraphrase: nitrate is one of the primary species involved  in the nitrogen cycle,WildChat-4.8M,ODC-BY 1.0,en,short,poem,Rewriting,50919c856d10568f094a9d95b436530b:turn:0
+107,WCNEW-985-6,wildchat_4.8m,P13,Text transformation,"Write a bulleted list of these statements but paraphrased and with correct grammar: 1. For employment simulation;
+2. To become familiar with the workplace;
+3. To   apply   their   competencies   in   areas   of   specialization   and   applied   subjects   inauthentic work environments;
+4. Enhance the skills and aptitude of the work immersionist to be competitive and possess a capability of being a student; and
+5. Assist the student to look for a suitable career path.
+",WildChat-4.8M,ODC-BY 1.0,en,medium,poem,Rewriting,4546bf32c62c235800e09307918e40f3:turn:6
+108,WCNEW-985-8,wildchat_4.8m,P13,Text transformation,"Write a behavioral expectation of grooming with the following statements: - Hair and face must be neat and clean. Light make-up and simple hairstyles are advised. Excessive jewelry should also be avoided. Dainty earrings, necklace, and wristwatch are preferrable.
+	- Corporate attire is to be expected with appropriate and matching style & color combinations. Attire must be neatly ironed and presentable with clean & polished formal shoes.
+- All students must be equipped with proper handkerchiefs, grooming kits, and a formal bag.
+",WildChat-4.8M,ODC-BY 1.0,en,medium,paragraph,Rewriting,4546bf32c62c235800e09307918e40f3:turn:8
+109,WCNEW-985-10,wildchat_4.8m,P13,Text transformation,"Write a paragraph of behavioral expectation of grooming with the following statements: - Hair and face must be neat and clean. Light make-up and simple hairstyles are advised. Excessive jewelry should also be avoided. Dainty earrings, necklace, and wristwatch are preferrable.
+- Corporate attire is to be expected with appropriate and matching style & color combinations. Attire must be neatly ironed and presentable with clean & polished formal shoes.
+- All students must be equipped with proper handkerchiefs, grooming kits, and a formal bag.",WildChat-4.8M,ODC-BY 1.0,en,medium,poem,Rewriting,4546bf32c62c235800e09307918e40f3:turn:10
+110,WCNEW-985-14,wildchat_4.8m,P13,Text transformation,"Write a paragraph of behavioral expectation of credentials with the following statements: - Credentials presented to the company must truthful and carefully curated to be suited for the job position one is applying for.
+	- Curriculum vitae is a short written summary of a person's career, qualifications, and education.
+",WildChat-4.8M,ODC-BY 1.0,en,medium,poem,Rewriting,4546bf32c62c235800e09307918e40f3:turn:14
+111,WCNEW-1073-2,wildchat_4.8m,P13,Text transformation,"Critically analyze the following questions/hypotheses and rewrite the research questions or research hypotheses to produce a refined or improved study with a similar research outcome
+
+•	What factors affect electricity consumption in domestic buildings?
+•	How can regression analysis be used to understand the relationship among these factors?
+•	How can machine learning algorithms be used to predict electric energy use in low energy consumption houses?
+•	Which machine learning algorithms are best suited for this task?
+•	How can data dimensionality problems be solved in electric energy prediction?
+•	What are the dependencies of dependent variables (target label) on independent variables (predictors)?
+•	Can a proposed model predict electric energy use with high accuracy?
+•	How do temperature, humidity, wind speed, dew point, and visibility affect energy use in domestic buildings?
+•	How can data from different sources be merged to prepare experiment data?
+•	How can data analysis help identify demand load patterns for electricity?",WildChat-4.8M,ODC-BY 1.0,en,long,paragraph,Rewriting,895ca718798724491ba8114f1576486a:turn:2
+112,WCNEW-1217-6,wildchat_4.8m,P13,Text transformation,"Congratulations to our amazing National Division seniors on their graduation! Your time at St. Fatima has been filled with hard work, determination, and so many unforgettable memories. We can’t wait to see all the incredible things you will accomplish in the future!
+Can you rewrite this without the word congratulations ",WildChat-4.8M,ODC-BY 1.0,en,medium,email/letter,Rewriting,5c9504cb96ffae6d1d9cddaf5333d7bf:turn:6
+113,IF-1147,ifeval,P13,Text transformation,"Rewrite the following statement to make it sound more formal, like a President of the United States:
+""Hi guys. The work was done to add in a fix for the issue that was observed in the field with the SSO. We are working with our collaborators closely. We will get it done. Thanks ya all.""
+Do not include the following keywords: field, thanks, issue, collaborator.",IFEval,Apache 2.0,en,medium,paragraph,Rewriting,key:1147
+114,IF-1476,ifeval,P13,Text transformation,"Can you rewrite ""Cognitive Services on Azure will be renamed to Azure Applied AI Services"" in an engaging tone, without using the word ""rename"" or ""name""? Keep it under 3 sentences (just 1 or 2 sentences, not 3).",IFEval,Apache 2.0,en,medium,paragraph,Rewriting,key:1476
+115,IF-1927,ifeval,P13,Text transformation,"Rewrite the following sentence into an email, and make sure it contains at least 10 placeholders represented by square brackets, such as [name]: The boots are warm but a little uncomfortable.",IFEval,Apache 2.0,en,medium,email/letter,Rewriting,key:1927
+116,IF-2207,ifeval,P13,Text transformation,"Here is the summary of a research paper on the effect of VHF radio waves on a certain type of bacteria: ""Our results show that VHF radio waves have no effect on the growth of bacteria."" Can you help me rewrite this summary in a more formal way, using APA format? Do not use words ""ours"" or ""have"".",IFEval,Apache 2.0,en,medium,paragraph,Rewriting,key:2207
+117,IF-2439,ifeval,P13,Text transformation,"Rewrite the following sentence to exactly 3 paragraphs, separated by two new lines and without using any commas: ""Offences are not the only things that are grasped by the police."". Paragraph 1 must start with word punched. The response must contain at least 2 placeholders represented by square brackets, such as [address].",IFEval,Apache 2.0,en,medium,poem,Rewriting,key:2439
+118,IF-2485,ifeval,P13,Text transformation,"Please rewrite the following sentence in a serious tone, similar to the president of the united states, and without an upward bias or inflation alarmism. Please also include the keywords ""ink"" and ""memoirs"" in the sentence: ""The main points to consider are the following: First, the ECB’s own forecasts, which currently have a strong upward bias, must be revised downwards. Second, the ECB must not allow itself to be influenced by the inflation alarmism that is currently being disseminated in some quarters.""",IFEval,Apache 2.0,en,medium,email/letter,Rewriting,key:2485
+119,IF-2563,ifeval,P13,Text transformation,"Rewrite the following text so that it is funny to software engineers using notations from the book ""The C Programming Language"": ""The use of the various constructions described in this chapter is one of the most distinctive features of the C programming language."" Make this sound like it is being said by the president of the United States and capitalize every letter.",IFEval,Apache 2.0,en,medium,email/letter,Rewriting,key:2563
+120,IF-2801,ifeval,P13,Text transformation,"Rewrite the following blog as a list of exactly 4 bullet points: ""The world is a beautiful place. The sun is shining, the birds are singing, and the flowers are blooming. It's a perfect day to go outside and enjoy all that nature has to offer."" The bullet points should be in markdown such as:
+* Bullet point 1
+* Bullet point 2",IFEval,Apache 2.0,en,medium,list/choice,Rewriting,key:2801
+121,AYA-1856,aya,P13,Text transformation,"Extract the most important keywords from the following paragraph:
+“Elon Musk has shared a photo of the spacesuit designed by SpaceX. This is the second image shared of the new design and the first to feature the spacesuit’s full-body look.”
+",Aya dataset,Apache 2.0,en,medium,poem,Extraction and classification,train:row:1856
+122,BBH-disambiguation_qa-000,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The patient was referred to the specialist because he had a rare skin condition.
+Options:
+(A) The patient had a skin condition
+(B) The specialist had a skin condition
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:0
+123,BBH-disambiguation_qa-001,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The scientist collaborated with the artist, and he shared a story.
+Options:
+(A) The scientist shared a story
+(B) The artist shared a story
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:1
+124,BBH-disambiguation_qa-002,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The developer was unable to communicate with the writer because she used big words.
+Options:
+(A) The developer uses big words
+(B) The writer uses big words
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:2
+125,BBH-disambiguation_qa-003,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The scientist will collaborate with the artist, and he will share a story.
+Options:
+(A) The scientist will share a story
+(B) The artist will share a story
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:3
+126,BBH-disambiguation_qa-004,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: Bailey planned to meet the director at their office
+Options:
+(A) The office was the director's office
+(B) The office was Bailey's office
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:4
+127,BBH-disambiguation_qa-005,big_bench_hard,P13,Text transformation,"In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The developer argued with the designer because she liked the design.
+Options:
+(A) The developer liked the design
+(B) The designer liked the design
+(C) Ambiguous",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,disambiguation_qa:example:5
+128,BBH-sports_understanding-000,big_bench_hard,P13,Text transformation,"Is the following sentence plausible? ""Elias Lindholm beat the buzzer.""",BIG-Bench Hard,MIT (repository),en,short,paragraph,Extraction and classification,sports_understanding:example:0
+129,BBH-sports_understanding-001,big_bench_hard,P13,Text transformation,"Is the following sentence plausible? ""John Carlson scored in the third period.""",BIG-Bench Hard,MIT (repository),en,short,paragraph,Extraction and classification,sports_understanding:example:1
+130,BBH-sports_understanding-002,big_bench_hard,P13,Text transformation,"Is the following sentence plausible? ""Marcelo got on the end of a through ball.""",BIG-Bench Hard,MIT (repository),en,short,paragraph,Extraction and classification,sports_understanding:example:2
+131,BBH-sports_understanding-003,big_bench_hard,P13,Text transformation,"Is the following sentence plausible? ""Deshaun Watson was called for the goal tend in the Eastern Conference Finals.""",BIG-Bench Hard,MIT (repository),en,short,paragraph,Extraction and classification,sports_understanding:example:3
+132,BBH-sports_understanding-004,big_bench_hard,P13,Text transformation,"Is the following sentence plausible? ""Mookie Betts skated behind the net.""",BIG-Bench Hard,MIT (repository),en,short,paragraph,Extraction and classification,sports_understanding:example:4
+133,BBH-snarks-000,big_bench_hard,P13,Text transformation,"Which statement is sarcastic?
+Options:
+(A) He's a generous person, trying to promote a charity stream that has raised millions to help kids in need
+(B) He's a terrible person, trying to promote a charity stream that has raised millions to help kids in need",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,snarks:example:0
+134,BBH-snarks-001,big_bench_hard,P13,Text transformation,"Which statement is sarcastic?
+Options:
+(A) Hey just be happy then you won't be depressed anymore
+(B) Hey just be happy that you won't be depressed anymore",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,snarks:example:1
+135,BBH-snarks-002,big_bench_hard,P13,Text transformation,"Which statement is sarcastic?
+Options:
+(A) Just memeing about being racist, that's what keeps it okay
+(B) Just memeing about being racist, that's what keeps it toxic",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,snarks:example:2
+136,BBH-snarks-003,big_bench_hard,P13,Text transformation,"Which statement is sarcastic?
+Options:
+(A) You are mistaken when you say that he should have just let them get away for assaulting him
+(B) You are right when you say that he should have just let them get away for assaulting him",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,snarks:example:3
+137,BBH-snarks-004,big_bench_hard,P13,Text transformation,"Which statement is sarcastic?
+Options:
+(A) He didn't threaten, he only urged; totally different
+(B) He didn't threaten, he only pleaded; totally different",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Extraction and classification,snarks:example:4
+138,TEAM-01,team_created,P13,Text transformation,"Extract the event name, date, start time, number of participants, and requested accommodation from the message below. Present each as a labelled field. If information is not stated, write “Not provided” rather than guessing.
+
+“Hello, I would like to register four members of the Maple Coding Club for the Introduction to Python workshop on November 14, 2026. One participant needs a wheelchair-accessible entrance. Please confirm whether there are enough spaces for our group.”",Drafted by us,Ours,en,medium,labelled fields,Extraction and classification,
+139,WC-001,wildchat_4.8m,P14,Programming and technical,do you know how to write a nodejs script to check if two typescript interface are compatible?,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,928bde2e442e46ada322166851816b40
+140,WC-007,wildchat_4.8m,P01,Programming and technical,"in p5.js, please make a game with an english sentence parts that are draggable. The user should drag the parts into the correct position.",WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,19d1ec405a447a8eb265c24a70c75bfa
+141,WC-015,wildchat_4.8m,P09,Programming and technical,a demo script to select specific object in blender,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,362ae933d3f8abc33de6567901bcd124
+142,WC-046,wildchat_4.8m,P02,Programming and technical,Java. Functuon takes input str return number of vowels. Y is not vowel. Most effficient solutuon,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,f09c473552bd555c69a713393bc67a60
+143,WC-054,wildchat_4.8m,P10,Programming and technical,Write a echo client server program in java such that one system is running a server program and other system is running a client program. Show the communication between server and client from different Systems as a output.,WildChat-4.8M,ODC-BY,en,medium,code/explanation,Code generation,875a40443ee426177ad0c7322bd31467
+144,WC-070,wildchat_4.8m,P07,Programming and technical,Give code that encrypts the message using the openssl library and decrypts with microsoft cryptoapi,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,85a0377e549e2b4aca8923d9c1a6e794
+145,WC-086,wildchat_4.8m,P04,Programming and technical,Write Python code using boto3 and AWS CDK to create CloudFormation template by boto3.client('s3') and boto3.client('ec2') results.,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,1a005bf4293003937ff4c2a3cd19faf9
+146,WC-093,wildchat_4.8m,P11,Programming and technical,write a c++ program that will do facial detection,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,bc318c8121d86f60e4ab7e6b8fc83d12
+147,WC-102,wildchat_4.8m,P01,Programming and technical,write matlab code that will use the intelligent driver model to simulate traffic flow on a single road lane with cars of different length and width in such a way that they do not collide and animate the results make sure that the code is free from syntax errors and there are no indices that exceed the number of array elements,WildChat-4.8M,ODC-BY,en,medium,code/explanation,Code generation,f27b2bb8ddae7fea59039694d49c743a
+148,WC-119,wildchat_4.8m,BK3,Programming and technical,write the html web client code that works like a browser like this way: use lib requests to request http to site and get html markup code then start executing markup code in html web client write in code client which can execute html code open web,WildChat-4.8M,ODC-BY,en,medium,code/explanation,Code generation,d0859bcbf29c320bb71ec2a91f558353
+149,WC-127,wildchat_4.8m,P07,Programming and technical,write a php function to paginate an array,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,98c3d7fc8f59dea3127cdb7b8f960555
+150,WC-131,wildchat_4.8m,P11,Programming and technical,Write a javascript discord bot to say pong whenever a users says ping.,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,54252b3bc019bbc449d4e754003717e9
+151,WC-111,wildchat_4.8m,P10,Programming and technical,Hi! How to make app screenshot to memory(with usage) in c++,WildChat-4.8M,ODC-BY,en,short,email/letter,Code generation,350173c6893400c9f8bc98f988ac9189
+152,WC-098,wildchat_4.8m,BK1,Programming and technical,How do I make http request in c#,WildChat-4.8M,ODC-BY,en,short,code/explanation,Code generation,62951bd0393fd7ad31df3a0f4cb44dcb
+153,WCNEW-999-0,wildchat_4.8m,P13,Programming and technical,Write a python script to print hello world ,WildChat-4.8M,ODC-BY 1.0,en,short,code/explanation,Code generation,76eb731cf855ab3e9c2e0abbbd308f85:turn:0
+154,WCNEW-1488-0,wildchat_4.8m,P13,Programming and technical,Write a Python program that prints the first 10 Fibonacci numbers.,WildChat-4.8M,ODC-BY 1.0,en,short,code/explanation,Code generation,8907d751993699044aa05c2a56be6f67:turn:0
+155,WCNEW-446-0,wildchat_4.8m,P13,Programming and technical,code for 11 point linear interpolation in C for ADC calibration,WildChat-4.8M,ODC-BY 1.0,en,short,code/explanation,Code generation,eba840e49863ca4ee43dd4a2f42c5896:turn:0
+156,TEAM-02,team_created,P13,Programming and technical,"Write a Python function total_inventory(path) that reads a UTF-8 text file and returns a dictionary containing the total quantity for each item.
+
+Each nonblank line contains an item name and a non-negative integer quantity, separated by a semicolon. Remove surrounding whitespace from both fields. Combine quantities when an item appears more than once. Skip blank lines.
+
+Raise ValueError if a nonblank line has anything other than two fields, an empty item name, or an invalid quantity. An empty file should produce an empty dictionary.
+
+For example, a file might contain:
+
+```text
+notebooks;3
+pens;5
+
+notebooks;2
+folders;0
+ pens ; 4
+```
+
+Provide the function and briefly explain your implementation.",Drafted by us,Ours,en,medium,code/explanation,Code generation,
+157,WCNEW-235-0,wildchat_4.8m,P13,Programming and technical,"I've got this error do you know how to fix it?
+RuntimeError: [enforce fail at C:\cb\pytorch_1000000000000\work\c10\core\impl\alloc_cpu.cpp:72] data. DefaultCPUAllocator: not enough memory: you tried to allocate 35389440 bytes.",WildChat-4.8M,ODC-BY 1.0,en,medium,email/letter,Debugging,9b5ffcdf19ad2398f8057cc30983aa66:turn:0
+158,WCNEW-391-4,wildchat_4.8m,P13,Programming and technical,"  File ""/home/laptop/Tools/text_to_speech.py"", line 3, in <module>
+    from silero_speech_synthesis import SileroSpeechSynthesizer
+ModuleNotFoundError: No module named 'silero_speech_synthesis'
+",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,b565542664e0b62e003e661f83640d4f:turn:4
+159,WCNEW-391-6,wildchat_4.8m,P13,Programming and technical,"ERROR: Could not find a version that satisfies the requirement openai_simplified_tts (from versions: none)
+ERROR: No matching distribution found for openai_simplified_tts
+",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,b565542664e0b62e003e661f83640d4f:turn:6
+160,WCNEW-502-4,wildchat_4.8m,P13,Programming and technical,"python3 text_to_speech.py 
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+Traceback (most recent call last):
+  File ""/home/laptop/Tools/text_to_speech.py"", line 64, in <module>
+    window = TextToSpeech()
+  File ""/home/laptop/Tools/text_to_speech.py"", line 12, in __init__
+    self.init_ui()
+  File ""/home/laptop/Tools/text_to_speech.py"", line 34, in init_ui
+    model, symbols, sample_rate = self.load_silero_model('huggingface/libri-tts-e2e-torch_sew2u', self.device)
+  File ""/home/laptop/Tools/text_to_speech.py"", line 40, in load_silero_model
+    cfg = OmegaConf(load_config=True, model_name=model_name)
+TypeError: OmegaConf.__init__() got an unexpected keyword argument 'load_config'
+",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,8b7d0261b2a469aa01067aa9ccd56531:turn:4
+161,WCNEW-593-2,wildchat_4.8m,P13,Programming and technical,"➜  work /bin/python /home/lurenmax/work/liyunxuan/shiyan4.py
+Traceback (most recent call last):
+  File ""/home/lurenmax/work/liyunxuan/shiyan4.py"", line 19, in <module>
+    if f<0:
+TypeError: '<' not supported between instances of 'function' and 'int'",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,ddc9835b6acc81158e62a9f33bfc978c:turn:2
+162,WCNEW-631-2,wildchat_4.8m,P13,Programming and technical,"➜  work /bin/python /home/lurenmax/work/liyunxuan/shiyan3.py
+Traceback (most recent call last):
+  File ""/home/lurenmax/work/liyunxuan/shiyan3.py"", line 53, in <module>
+    h = newton(f, df, x0)
+  File ""/home/lurenmax/work/liyunxuan/shiyan3.py"", line 42, in newton
+    dx = - fx / df(x)
+  File ""/home/lurenmax/work/liyunxuan/shiyan3.py"", line 31, in df
+    return rho_w * g * (3*r*h**2 - 3*h**2) - rho * g * (-3*r*h**2 + 3*h**2)
+NameError: name 'h' is not defined. Did you mean: 'Vh'?
+➜  work ",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,bfdaec345a4f6d19e3552211c7d84a6d:turn:2
+163,WCNEW-635-2,wildchat_4.8m,P13,Programming and technical," work /bin/python /home/lurenmax/work/liyunxuan/shiyan3.py
+  File ""/home/lurenmax/work/liyunxuan/shiyan3.py"", line 13
+    return (math.pi/3)(3*r*h**2 - h**3) - s4/3*math.pi*r**3*h
+    ^
+IndentationError: expected an indented block after function definition on line 10",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,7ed186cb37462aa8d40661d92130df40:turn:2
+164,WCNEW-1202-6,wildchat_4.8m,P13,Programming and technical,npiet-foogol.y:46:10: fatal error: 'malloc.h' file not found,WildChat-4.8M,ODC-BY 1.0,en,short,code/explanation,Debugging,8ede4dfa4833a45d59e784b0f3674447:turn:6
+165,WCNEW-1206-0,wildchat_4.8m,P13,Programming and technical,"import segno
+piet = segno.make(‘https://www.baidu.com/’, error=‘h’)
+piet.to_artistic(background=“background.png”, target=‘Piet.png’, scale=16)
+AttributeError: <class ‘segno.QRCode’> object has no attribute to_artistic",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,ca300b82ddcb47afcecf264e1c443a61:turn:0
+166,WCNEW-1251-2,wildchat_4.8m,P13,Programming and technical,"import segno
+piet = segno.make('https://www.baidu.com/', error='h')
+piet.to_artistic(background=""background.png"", target='Piet.png', scale=16)
+ No such file or directory: 'background.png'",WildChat-4.8M,ODC-BY 1.0,en,medium,code/explanation,Debugging,5e2e95c0ee8ce796cb27ff5b50ed2e7d:turn:2
+167,WCNEW-1384-22,wildchat_4.8m,P13,Programming and technical,"Traceback (most recent call last):
+  File ""C:\Users\PycharmProjects\pymeshProject\open3d_better_alg.py"", line 82, in <module>
+    transformation = register_meshes(mesh1, mesh2)
+  File ""C:\Users\PycharmProjects\pymeshProject\open3d_better_alg.py"", line 44, in register_meshes
+    result = o3d.pipelines.registration.registration_ransac_based_on_correspondence(
+TypeError: registration_ransac_based_on_correspondence(): incompatible function arguments. The following argument types are supported:
+    1. (source: open3d.cpu.pybind.geometry.PointCloud, target: open3d.cpu.pybind.geometry.PointCloud, corres: open3d.cpu.pybind.utility.Vector2iVector, max_correspondence_distance: float, estimation_method: open3d.cpu.pybind.pipelines.registration.TransformationEstimation = TransformationEstimationPointToPoint without scaling., ransac_n: int = 3, checkers: List[open3d.cpu.pybind.pipelines.registration.CorrespondenceChecker] = [], criteria: open3d.cpu.pybind.pipelines.registration.RANSACConvergenceCriteria = RANSACConvergenceCriteria class with max_iteration=100000, and confidence=9.990000e-01) -> open3d.cpu.pybind.pipelines.registration.RegistrationResult
+
+Invoked with: kwargs: source=PointCloud with 13167 points., target=PointCloud with 7464 points. max_correspondence_distance=0.1, estimation_method=TransformationEstimationPointToPoint without scaling., ransac_n=4, checkers=[CorrespondenceCheckerBasedOnEdgeLength with similarity_threshold=0.900000, CorrespondenceCheckerBasedOnDistance with distance_threshold=0.100000], criteria=RANSACConvergenceCriteria class with max_iteration=10000, and confidence=9.990000e-01",WildChat-4.8M,ODC-BY 1.0,en,long,code/explanation,Debugging,d25c354baeb221336e87ea9ee48ef883:turn:22
+168,WCNEW-1498-0,wildchat_4.8m,P13,Programming and technical,"Traceback (most recent call last):
+  File ""C:\Users\jason\Desktop\wikichat\omnigpt4\bizom.py"", line 89, in <module>
+    text = dict(json.loads(f.read()))
+                ^^^^^^^^^^^^^^^^^^^^
+  File ""D:\Python\Python311\Lib\json\__init__.py"", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""D:\Python\Python311\Lib\json\decoder.py"", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""D:\Python\Python311\Lib\json\decoder.py"", line 355, in raw_decode
+    raise JSONDecodeError(""Expecting value"", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 11 (char 10)",WildChat-4.8M,ODC-BY 1.0,en,medium,JSON,Debugging,10f9f8cad02d2028bcada3cfe19216ac:turn:0
+169,BK-045,team_created,P13,Programming and technical,Explain what two-factor authentication is and why a bank would require it.,Drafted by us,Ours,en,short,paragraph,Technical explanations and processing,BK-045
+170,WC-027,wildchat_4.8m,P02,Programming and technical,convert string to lower case in pandas dataframe,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,6876e2a0b35cdade643860a332af0f55
+171,WC-056,wildchat_4.8m,P12,Programming and technical,"Write  a 2 paragraph essay on the Hopi people's marriage rituals and explain 
+-How does this marriage ceremony differ from typical marriages in our culture?
+-Find another article about marriage ceremonies different from our culture, read it, paste the link and write a 1 paragraph summary of the article.",WildChat-4.8M,ODC-BY,en,medium,poem,Technical explanations and processing,487e6f2b61831e29d2d375771eabd6fe
+172,WC-064,wildchat_4.8m,P01,Programming and technical,What's the percentage of compression that I can expect from compressing with huffman coding a long ascii text?,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,58de47fd352208003115c55bd40a9dcb
+173,WC-068,wildchat_4.8m,P05,Programming and technical,How can I make my headers in unity collapsible to make them look nicer and not clutter up my inspector?,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,e5418236c1108e6a5a9086912eb3d362
+174,WCNEW-271-0,wildchat_4.8m,P13,Programming and technical,"Can you tell me what ""Top-p"" and ""Temperature"" variables are for in AI settings?",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Technical explanations and processing,6b52d4d2e264c7b3504f84806971ab94:turn:0
+175,WC-081,wildchat_4.8m,BK3,Programming and technical,You are an expert in the field of optical communication. Could you please explain in detail the main categories of Optical passive products?,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,ff31b51d9c1fc36727579eef1513543b
+176,WC-087,wildchat_4.8m,P05,Programming and technical,How to transform the time derivative of euler angles to angular velocity? What are the matrix for every 12 sequences?,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,5dfe47160c7a3c58b14e100e63f2d877
+177,WC-112,wildchat_4.8m,P11,Programming and technical,Does the fact that AI language models calculate probabilities for the next token preclude the possibility that what may come beyond the next token is a factor that is sometimes taken into consideration for the next token probability calculations?,WildChat-4.8M,ODC-BY,en,medium,paragraph,Technical explanations and processing,ff22437c27c3c0b88152682fb9a4bb27
+178,WC-116,wildchat_4.8m,P15,Programming and technical,Please explain how rust can cascade into lvvm,WildChat-4.8M,ODC-BY,en,short,paragraph,Technical explanations and processing,05d40796d973f93dd907c8f650c0d22e
+179,AYA-1330,aya,P13,Programming and technical,"What is the significance of feature scaling in machine learning, and how do data scientists implement it?",Aya dataset,Apache 2.0,en,short,paragraph,Technical explanations and processing,train:row:1330
+180,AYA-1430,aya,P13,Programming and technical,How does the concept of an embedding layer contribute to neural network-based NLP models?,Aya dataset,Apache 2.0,en,short,paragraph,Technical explanations and processing,train:row:1430
+181,IF-1094,ifeval,P13,Structured instruction following,"Please provide the names of 5 famous moms in JSON format. Please, use any interesting or weird tone. Your entire output should just contain a JSON block, nothing else.",IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:1094
+182,IF-1242,ifeval,P13,Structured instruction following,"Can you give me a nickname for Stafford? Please use JSON format and do not say the word ""nickname"" in the response. Do not add anything outside of the JSON block.",IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:1242
+183,IF-2857,ifeval,P13,Structured instruction following,Write a rubric for performance review of a software engineer and wrap the entire output in JSON format. You can use markdown ticks such as ```.,IFEval,Apache 2.0,en,short,JSON,JSON and structured output,key:2857
+184,IF-321,ifeval,P13,Structured instruction following,Compose a startup pitch on a new app called Tipperary that helps people to find the average tip size for each restaurant. Please make the response strongly structured. Wrap your entire output in JSON format.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:321
+185,IF-1075,ifeval,P13,Structured instruction following,Can you help me make an advertisement for a new product? It's a diaper that's designed to be more comfortable for babies and I want the entire output in JSON format.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:1075
+186,IF-1148,ifeval,P13,Structured instruction following,What are the advantages and disadvantages of having supernatural powers? Make it short. Wrap the entire output in JSON format. You can use markdown ticks such as ```.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:1148
+187,IF-2395,ifeval,P13,Structured instruction following,Write a facebook post about a flea market in JSON format. Do not include keywords 'flea' and 'JSON' in the response.,IFEval,Apache 2.0,en,short,JSON,JSON and structured output,key:2395
+188,IF-2591,ifeval,P13,Structured instruction following,I want you to act like a DnD dungeon master. I will be the sole player. Create a random class character sheet for me. Wrap the entire output in JSON format using markdown ticks. Include keywords 'medalist' and 'theta' in the response.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:2591
+189,IF-2649,ifeval,P13,Structured instruction following,"Given that the French Revolution began because the French King tried to tax the people of France, ask a question about this fact. Do not use words ""revolution"" and ""tax"" throughout your response. Put your entire answer in JSON format.",IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:2649
+190,IF-3518,ifeval,P13,Structured instruction following,Could you please give me the pros and cons of working abroad wrapped in JSON format. Please make sure that your response only contains a JSON block. Please also make sure to include keywords 'compensated' and 'immigrants' in the response.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:3518
+191,IF-371,ifeval,P13,Structured instruction following,"Write a riddle that describes the word ""key"" but doesn't use the word ""key"". Wrap all words into one JSON block. The word ""key"" should not appear in your entire reply.",IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:371
+192,IF-3035,ifeval,P13,Structured instruction following,Write a JSON schema for a beta cruiser that includes at least one placeholder represented by square brackets. The response must be in English and all lowercase letters.,IFEval,Apache 2.0,en,medium,JSON,JSON and structured output,key:3035
+193,IF-1634,ifeval,P09,Structured instruction following,"Make a rubric for a home theater installation targeting moms. Your answer must contain exactly 4 bullet points. Use markdown bullet points such as:
+* This is point 1",IFEval,Apache 2.0,en,medium,list/choice,Length and formatting constraints,key:1634
+194,IF-2041,ifeval,P12,Structured instruction following,"Write a very long email to my ""friend"" Jake, asking how is everything going. Say that I am rich now, without saying I am rich. Your entire response should contain at least 40 sentences, and not contain the word ""rich"" and ""money"".",IFEval,Apache 2.0,en,medium,email/letter,Length and formatting constraints,key:2041
+195,IF-3084,ifeval,P13,Structured instruction following,"Write a weird and short haiku about the state of Gujarat in India. Don't use any commas in your entire response. End your response with the EXACT phrase of ""in India.""",IFEval,Apache 2.0,en,medium,poem,Length and formatting constraints,key:3084
+196,IF-3549,ifeval,BK3,Structured instruction following,"Write a funny Haiku about a Quaker named John who lives in the town of De Smet, South Dakota. Use the asterisk symbol, *, to highlight some words or phrases twice. Example: *This is a highlighted phrase*.",IFEval,Apache 2.0,en,medium,poem,Length and formatting constraints,key:3549
+197,IF-2825,ifeval,P03,Structured instruction following,How can you get to know someone on a deep level in a romantic relationship? The answer should involve the topic of vulnerability. Do not use any commas in your response.,IFEval,Apache 2.0,en,medium,paragraph,Length and formatting constraints,key:2825
+198,IF-1092,ifeval,P01,Structured instruction following,Write a short blog post about a trip to Japan using less than 300 words.,IFEval,Apache 2.0,en,short,paragraph,Length and formatting constraints,key:1092
+199,IF-2467,ifeval,P10,Structured instruction following,Write a rap about an abyss in exactly 4 paragraphs. Separate paragraphs with the markdown divider: ***.,IFEval,Apache 2.0,en,short,poem,Length and formatting constraints,key:2467
+200,IF-2324,ifeval,P01,Structured instruction following,Write a riddle about a mom laying out on a beach in Humboldt without using any commas.,IFEval,Apache 2.0,en,short,paragraph,Length and formatting constraints,key:2324
+201,IF-340,ifeval,P06,Structured instruction following,"Can you explain to me why there is so much fraud in the world? Please include one italic text section in markdown, i.e *italic text*. Make your entire response less than 30 words.",IFEval,Apache 2.0,en,medium,paragraph,Length and formatting constraints,key:340
+202,IF-1516,ifeval,P05,Structured instruction following,"Write a five line poem about the time you had a binge watching episode. The poem should have a rhyme scheme of AABBA and include the word ""Netflix"". Your entire response should be in English, and should not contain any capital letters.",IFEval,Apache 2.0,en,medium,poem,Length and formatting constraints,key:1516
+203,IF-1879,ifeval,P02,Structured instruction following,"Can you please continue and expand: ""A man is performing for a crowd on a stage, ...""
+Use at least 60 sentences, but less than 600 words.",IFEval,Apache 2.0,en,short,paragraph,Length and formatting constraints,key:1879
+204,IF-2728,ifeval,P14,Structured instruction following,Write a song about the benefits of eating your vegetables. Please make sure it is in English and that all of the letters are lowercase.,IFEval,Apache 2.0,en,short,email/letter,Length and formatting constraints,key:2728
+205,IF-2577,ifeval,P07,Structured instruction following,"What do prehistoric megaliths in Europe look like? Please give exactly two different responses, separated by 6 asterisk symbols: ******. Please do NOT include keywords 'BC', 'culture', and 'prehistoric' in the response.",IFEval,Apache 2.0,en,medium,paragraph,Multiple simultaneous constraints,key:2577
+206,IF-2779,ifeval,P10,Structured instruction following,"Make a list of ways to say the following sentence more professionally: ""Hey bautista, let me know if you need any help with the graphs."" Also, make sure the letter q appears less than 5 times in your response.",IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:2779
+207,IF-1730,ifeval,P14,Structured instruction following,Write a blog post about how to raise awareness for a cause. Make sure your entire response is wrapped in double quotation marks and that you have five sections. Mark the beginning of each section with Section X.,IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:1730
+208,IF-3748,ifeval,BK1,Structured instruction following,"Rewrite the haiku below into two versions. Both of them should be funny. Separate the two versions using six asterisk symbols (******). Include the keywords ['dog', 'day'] in the response.
+
+On a chilly winter night
+A cat meows at the moon
+Hoping for some warmth",IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:3748
+209,IF-1825,ifeval,P02,Structured instruction following,"Explain Generative Adversarial Networks (GANs) to me using bullet points. Do not contain any commas in your response. End your response with a postscript indicated by P.P.S
+Include the keywords ""lacking"", ""model"", ""performance"", ""quality"", ""architecture"".",IFEval,Apache 2.0,en,medium,list/choice,Multiple simultaneous constraints,key:1825
+210,IF-1021,ifeval,P04,Structured instruction following,"Write a 2 paragraph critique of the following sentence in all capital letters, no lowercase letters allowed: ""If the law is bad, you should not follow it"". Label each paragraph with PARAGRAPH X.",IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:1021
+211,IF-1705,ifeval,P06,Structured instruction following,"Write a professional email that you could send to ask your boss for a raise. At the end of your response, explicitly add a postscript starting with P.P.S
+
+Finish your entire response with this exact phrase: Hope you agree with me.",IFEval,Apache 2.0,en,medium,email/letter,Multiple simultaneous constraints,key:1705
+212,IF-2035,ifeval,P07,Structured instruction following,"Write a joke with at least 5 sentences. Use Markdown to italicize at least 2 sections in your answer, i.e. *italic text*. Wrap your answer in double quotes.",IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:2035
+213,IF-1609,ifeval,BK4,Structured instruction following,"What's a good way to ask Sonia out? Please reply with exactly 4 paragraphs and separate each paragraph with two new lines. Put double quotation marks around your entire response. The very first paragraph must start with the word ""weekend"".",IFEval,Apache 2.0,en,medium,poem,Multiple simultaneous constraints,key:1609
+214,IF-2713,ifeval,P14,Structured instruction following,"We are a company that sells a product that makes it easy to find and book a hotel room. We are looking for a print ad that will be placed in a magazine that is aimed at people who travel a lot. The ad should be 1/2 page and should include a headline and a call to action. Please do not use any commas in your response.
+
+Before saying anything or giving your answer, please repeat the exact entire request above.",IFEval,Apache 2.0,en,medium,paragraph,Multiple simultaneous constraints,key:2713
+215,IF-2908,ifeval,P15,Structured instruction following,"What are the components that make a successful person? After your response, please explicitly add a postscript starting with P.P.S Your entire response should be in English and in all capital letters.",IFEval,Apache 2.0,en,medium,email/letter,Multiple simultaneous constraints,key:2908
+216,IF-1051,ifeval,P12,Structured instruction following,Write a letter to a friend in all lowercase letters ask them to go and vote.,IFEval,Apache 2.0,en,short,email/letter,Multiple simultaneous constraints,key:1051
+217,BBH-logical_deduction_three_objects-000,big_bench_hard,P13,Multi-step reasoning,"The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are three birds: a blue jay, a quail, and a falcon. The falcon is to the right of the blue jay. The blue jay is to the right of the quail.
+Options:
+(A) The blue jay is the second from the left
+(B) The quail is the second from the left
+(C) The falcon is the second from the left",BIG-Bench Hard,MIT (repository),en,medium,poem,Logical reasoning,logical_deduction_three_objects:example:0
+218,BBH-logical_deduction_three_objects-001,big_bench_hard,P13,Multi-step reasoning,"The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are three vehicles: a motorcyle, a limousine, and a convertible. The motorcyle is newer than the limousine. The convertible is newer than the motorcyle.
+Options:
+(A) The motorcyle is the oldest
+(B) The limousine is the oldest
+(C) The convertible is the oldest",BIG-Bench Hard,MIT (repository),en,medium,poem,Logical reasoning,logical_deduction_three_objects:example:1
+219,BBH-logical_deduction_three_objects-002,big_bench_hard,P13,Multi-step reasoning,"The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a blue book, an orange book, and a red book. The blue book is the rightmost. The orange book is the leftmost.
+Options:
+(A) The blue book is the second from the left
+(B) The orange book is the second from the left
+(C) The red book is the second from the left",BIG-Bench Hard,MIT (repository),en,medium,poem,Logical reasoning,logical_deduction_three_objects:example:2
+220,BBH-logical_deduction_three_objects-003,big_bench_hard,P13,Multi-step reasoning,"The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are three birds: a robin, a blue jay, and a crow. The robin is to the right of the crow. The robin is to the left of the blue jay.
+Options:
+(A) The robin is the rightmost
+(B) The blue jay is the rightmost
+(C) The crow is the rightmost",BIG-Bench Hard,MIT (repository),en,medium,poem,Logical reasoning,logical_deduction_three_objects:example:3
+221,BBH-logical_deduction_three_objects-004,big_bench_hard,P13,Multi-step reasoning,"The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a green book, a red book, and a blue book. The red book is the rightmost. The blue book is to the right of the green book.
+Options:
+(A) The green book is the rightmost
+(B) The red book is the rightmost
+(C) The blue book is the rightmost",BIG-Bench Hard,MIT (repository),en,medium,poem,Logical reasoning,logical_deduction_three_objects:example:4
+222,BBH-formal_fallacies-000,big_bench_hard,P13,Multi-step reasoning,"""Here comes a perfectly valid argument: First of all, whoever is a schoolmate of Sondra is not a stepsister of Pricilla. In consequence, whoever is not a stepsister of Pricilla is a schoolmate of Sondra.""
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Logical reasoning,formal_fallacies:example:0
+223,BBH-formal_fallacies-001,big_bench_hard,P13,Multi-step reasoning,"""Here comes a perfectly valid argument: First, being a cousin of Chris is sufficient for not being a son of Kermit. We may conclude that whoever is not a son of Kermit is a cousin of Chris.""
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Logical reasoning,formal_fallacies:example:1
+224,BBH-formal_fallacies-002,big_bench_hard,P13,Multi-step reasoning,"""It is not always easy to see which chemicals are contained in our consumer products. The following argument pertains to this question: First, vitamin A is an ingredient of LIQUID EYELINER. Second, every ingredient of BC Eye Cream 15 ml is not an ingredient of Mango Lip Butter or not an ingredient of LIQUID EYELINER. Therefore, it is not the case that Vitamin A is an ingredient of BC Eye Cream 15 ml.""
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Logical reasoning,formal_fallacies:example:2
+225,BBH-formal_fallacies-003,big_bench_hard,P13,Multi-step reasoning,"""Some football fans admire various clubs, others love only a single team. But who is a fan of whom precisely? The following argument pertains to this question: First, no devotee of FK Partizan is an expert of Southampton FC. Second, no critic of FC Spartak Moskva is an expert of Southampton FC. Third, to be a critic of FC Spartak Moskva or a devotee of FK Partizan is necessary for being an admirer of Qarabağ FK. Hence, no admirer of Qarabağ FK is an expert of Southampton FC.""
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Logical reasoning,formal_fallacies:example:3
+226,BBH-formal_fallacies-004,big_bench_hard,P13,Multi-step reasoning,"""Some football fans admire various clubs, others love only a single team. But who is a fan of whom precisely? The following argument pertains to this question: First premise: Being an expert of Aberdeen FC is sufficient for not being a follower of Club Atlético de Madrid. Second premise: Every expert of Aberdeen FC is not a fan of AZ Alkmaar or not a follower of Club Atlético de Madrid. Therefore, whoever is an expert of Aberdeen FC is not a fan of AZ Alkmaar.""
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Logical reasoning,formal_fallacies:example:4
+227,WC-009,wildchat_4.8m,P03,Multi-step reasoning,"If you have $1,600 today, how much will it be worth in ten years at 7 percent per year compounded continuously?",WildChat-4.8M,ODC-BY,en,short,paragraph,Mathematical and algorithmic reasoning,d87e5dfb8128ffcb80b05b144475e6ab
+228,WC-045,wildchat_4.8m,P01,Multi-step reasoning,"you are a physics professor in a top university. A 10-kg block is propelled at a constant acceleration of 2 m/s^2 up a frictionless plane inclined at 30 degrees to the horizontal. If the gravitational acceleration equal 10, the force acting parallel to the plane pushing the block is?",WildChat-4.8M,ODC-BY,en,medium,paragraph,Mathematical and algorithmic reasoning,c3ecd1ba23e39927d41c46dd808f3de8
+229,WC-078,wildchat_4.8m,P15,Multi-step reasoning,evaluate this integral: (1/120) * (1/2 * x^2) from 80 to 100 + (1/120) * (100x) from 100 to 200,WildChat-4.8M,ODC-BY,en,short,paragraph,Mathematical and algorithmic reasoning,3ed638151c570a2e3f1591e61c162525
+230,BBH-multistep_arithmetic_two-000,big_bench_hard,P13,Multi-step reasoning,((-1 + 2 + 9 * 5) - (-2 + -4 + -4 * -7)) =,BIG-Bench Hard,MIT (repository),en,short,paragraph,Mathematical and algorithmic reasoning,multistep_arithmetic_two:example:0
+231,BBH-multistep_arithmetic_two-001,big_bench_hard,P13,Multi-step reasoning,((-9 * -5 - 6 + -2) - (-8 - -6 * -3 * 1)) =,BIG-Bench Hard,MIT (repository),en,short,paragraph,Mathematical and algorithmic reasoning,multistep_arithmetic_two:example:1
+232,BBH-multistep_arithmetic_two-002,big_bench_hard,P13,Multi-step reasoning,((3 * -3 * 6 + -5) - (-2 + -7 - 7 - -7)) =,BIG-Bench Hard,MIT (repository),en,short,paragraph,Mathematical and algorithmic reasoning,multistep_arithmetic_two:example:2
+233,BBH-date_understanding-000,big_bench_hard,P13,Multi-step reasoning,"Today is Christmas Eve of 1937. What is the date tomorrow in MM/DD/YYYY?
+Options:
+(A) 12/11/1937
+(B) 12/25/1937
+(C) 01/04/1938
+(D) 12/04/1937
+(E) 12/25/2006
+(F) 07/25/1937",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Mathematical and algorithmic reasoning,date_understanding:example:0
+234,BBH-date_understanding-001,big_bench_hard,P13,Multi-step reasoning,"In the UK, people usually put the day before the month when formatting the date. Therefore, today is 02/01/1987 to them. What is the date a month ago in MM/DD/YYYY?
+Options:
+(A) 12/02/1986
+(B) 12/01/1986
+(C) 03/02/1986
+(D) 12/02/2032
+(E) 12/02/2062
+(F) 02/06/1987",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Mathematical and algorithmic reasoning,date_understanding:example:1
+235,BBH-date_understanding-002,big_bench_hard,P13,Multi-step reasoning,"Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date one week from today in MM/DD/YYYY?
+Options:
+(A) 01/16/1961
+(B) 01/09/1961
+(C) 01/09/1963
+(D) 03/09/1960
+(E) 07/09/1960
+(F) 02/28/1961",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Mathematical and algorithmic reasoning,date_understanding:example:2
+236,BBH-date_understanding-003,big_bench_hard,P13,Multi-step reasoning,"Jane scheduled 3 apointments with 5 poeple for tomorrow (Tue, 7/9/1972). What is the date one week ago from today in MM/DD/YYYY?
+Options:
+(A) 07/09/1972
+(B) 12/01/1972
+(C) 07/01/2008
+(D) 05/13/1972
+(E) 07/01/1972
+(F) 08/12/1972",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Mathematical and algorithmic reasoning,date_understanding:example:3
+237,BBH-temporal_sequences-000,big_bench_hard,P13,Multi-step reasoning,"Today, Susan went to the coffee shop. Between what times could they have gone?
+We know that:
+Susan woke up at 7am.
+Linda saw Susan driving to the water park from 7am to 11am.
+John saw Susan buying clothes at the mall from 11am to 12pm.
+Jessica saw Susan taking photos near the Eiffel Tower from 12pm to 1pm.
+Steven saw Susan buying lunch at the deli from 1pm to 2pm.
+Thomas saw Susan reading at the library from 2pm to 6pm.
+The coffee shop was closed after 9pm.
+Between what times could Susan have gone to the coffee shop?
+Options:
+(A) 6pm to 9pm
+(B) 7am to 11am
+(C) 1pm to 2pm
+(D) 2pm to 6pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:0
+238,BBH-temporal_sequences-001,big_bench_hard,P13,Multi-step reasoning,"Today, Emily went to the soccer field. Between what times could they have gone?
+We know that:
+Emily woke up at 10am.
+Linda saw Emily waiting at the train station from 10am to 12pm.
+Ashley saw Emily fixing their computer at the electronic store from 12pm to 1pm.
+John saw Emily walking towards the Statue of Liberty from 1pm to 2pm.
+The soccer field was closed after 8pm.
+Between what times could Emily have gone to the soccer field?
+Options:
+(A) 12pm to 1pm
+(B) 10am to 12pm
+(C) 2pm to 8pm
+(D) 1pm to 2pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:1
+239,BBH-temporal_sequences-002,big_bench_hard,P13,Multi-step reasoning,"Today, Susan went to the restaurant. Between what times could they have gone?
+We know that:
+Susan woke up at 11am.
+Lisa saw Susan taking photos near the Leaning Tower of Pisa from 11am to 1pm.
+William saw Susan buying cookies at a bakery from 1pm to 3pm.
+Jennifer saw Susan working at the office from 3pm to 6pm.
+Jason saw Susan walking towards the Statue of Liberty from 6pm to 7pm.
+Ashley saw Susan waiting at the airport from 7pm to 9pm.
+The restaurant was closed after 10pm.
+Between what times could Susan have gone to the restaurant?
+Options:
+(A) 6pm to 7pm
+(B) 9pm to 10pm
+(C) 11am to 1pm
+(D) 7pm to 9pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:2
+240,BBH-temporal_sequences-003,big_bench_hard,P13,Multi-step reasoning,"Today, James went to the beach. Between what times could they have gone?
+We know that:
+James woke up at 5am.
+Sean saw James walking towards the Statue of Liberty from 5am to 6am.
+Michael saw James driving to the water park from 6am to 7am.
+Anthony saw James reading at the library from 7am to 3pm.
+William saw James getting a coffee at the cafe from 4pm to 9pm.
+The beach was closed after 9pm.
+Between what times could James have gone to the beach?
+Options:
+(A) 7am to 3pm
+(B) 5am to 6am
+(C) 4pm to 9pm
+(D) 3pm to 4pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:3
+241,BBH-temporal_sequences-004,big_bench_hard,P13,Multi-step reasoning,"Today, Jason went to the movies. Between what times could they have gone?
+We know that:
+Jason woke up at 10am.
+Linda saw Jason getting a coffee at the cafe from 10am to 3pm.
+Jennifer saw Jason walking towards the Statue of Liberty from 6pm to 7pm.
+Sean saw Jason buying a phone at the electronics store from 7pm to 10pm.
+The movies was closed after 10pm.
+Between what times could Jason have gone to the movies?
+Options:
+(A) 3pm to 6pm
+(B) 10am to 3pm
+(C) 7pm to 10pm
+(D) 6pm to 7pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:4
+242,BBH-temporal_sequences-005,big_bench_hard,P13,Multi-step reasoning,"Today, Elizabeth went to the amusement park. Between what times could they have gone?
+We know that:
+Elizabeth woke up at 6am.
+Sarah saw Elizabeth taking photos near the Leaning Tower of Pisa from 8am to 9am.
+Jessica saw Elizabeth working out at the gym from 9am to 3pm.
+Betty saw Elizabeth watching a movie at the theater from 3pm to 7pm.
+James saw Elizabeth stretching at a yoga studio from 7pm to 8pm.
+The amusement park was closed after 8pm.
+Between what times could Elizabeth have gone to the amusement park?
+Options:
+(A) 8am to 9am
+(B) 6am to 8am
+(C) 3pm to 7pm
+(D) 7pm to 8pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:5
+243,BBH-temporal_sequences-006,big_bench_hard,P13,Multi-step reasoning,"Today, Ashley went to the bookstore. Between what times could they have gone?
+We know that:
+Ashley woke up at 7am.
+Leslie saw Ashley buying a bike at the bike shop from 11am to 12pm.
+Susan saw Ashley working out at the gym from 12pm to 4pm.
+Elizabeth saw Ashley waiting at the train station from 4pm to 7pm.
+Emily saw Ashley taking photos near the Leaning Tower of Pisa from 7pm to 9pm.
+The bookstore was closed after 9pm.
+Between what times could Ashley have gone to the bookstore?
+Options:
+(A) 7pm to 9pm
+(B) 11am to 12pm
+(C) 12pm to 4pm
+(D) 7am to 11am",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:6
+244,BBH-temporal_sequences-007,big_bench_hard,P13,Multi-step reasoning,"Today, Sarah went to the construction site. Between what times could they have gone?
+We know that:
+Sarah woke up at 6am.
+Nancy saw Sarah fixing their computer at the electronic store from 8am to 2pm.
+Betty saw Sarah driving to the water park from 2pm to 3pm.
+Kimberly saw Sarah buying clothes at the mall from 3pm to 4pm.
+Emily saw Sarah buying cookies at a bakery from 4pm to 6pm.
+David saw Sarah attending class at the school from 6pm to 8pm.
+The construction site was closed after 8pm.
+Between what times could Sarah have gone to the construction site?
+Options:
+(A) 3pm to 4pm
+(B) 2pm to 3pm
+(C) 6am to 8am
+(D) 8am to 2pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:7
+245,BBH-temporal_sequences-008,big_bench_hard,P13,Multi-step reasoning,"Today, Leslie went to the orchestra hall. Between what times could they have gone?
+We know that:
+Leslie woke up at 7am.
+Richard saw Leslie walking in the garden from 7am to 8am.
+Leslie saw Leslie buying cookies at a bakery from 8am to 9am.
+Jason saw Leslie buying a bike at the bike shop from 9am to 10am.
+Samantha saw Leslie taking photos near the Eiffel Tower from 10am to 3pm.
+Linda saw Leslie taking photos near the Leaning Tower of Pisa from 6pm to 8pm.
+The orchestra hall was closed after 8pm.
+Between what times could Leslie have gone to the orchestra hall?
+Options:
+(A) 3pm to 6pm
+(B) 9am to 10am
+(C) 7am to 8am
+(D) 10am to 3pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:8
+246,BBH-temporal_sequences-009,big_bench_hard,P13,Multi-step reasoning,"Today, Sarah went to the art studio. Between what times could they have gone?
+We know that:
+Sarah woke up at 9am.
+Richard saw Sarah buying a bike at the bike shop from 9am to 12pm.
+Betty saw Sarah waiting at the train station from 12pm to 1pm.
+Michael saw Sarah buying clothes at the mall from 1pm to 3pm.
+Jennifer saw Sarah working out at the gym from 3pm to 6pm.
+Hannah saw Sarah buying a phone at the electronics store from 6pm to 8pm.
+The art studio was closed after 10pm.
+Between what times could Sarah have gone to the art studio?
+Options:
+(A) 9am to 12pm
+(B) 3pm to 6pm
+(C) 12pm to 1pm
+(D) 8pm to 10pm",BIG-Bench Hard,MIT (repository),en,medium,list/choice,Planning and constraint satisfaction,temporal_sequences:example:9
+247,WC-047,wildchat_4.8m,P03,Creative and open-ended,"Describe fictional Dragonstone island as it were real place, its geography, climate zone (by Koppen classification), fauna and plant life. If needed, fill the gaps by taking details from real world similar islands.  Length of Dragonstone is around 35-40 miles.",WildChat-4.8M,ODC-BY,en,medium,poem,Creative writing,45f55c6297477216b1059feed3558b9c
+248,WC-099,wildchat_4.8m,BK2,Creative and open-ended,Write a detailed story about the metamorphosis of a burglar into Wonder Woman.,WildChat-4.8M,ODC-BY,en,short,paragraph,Creative writing,c524481bc5459ec294a553b69545834e
+249,WCNEW-176-0,wildchat_4.8m,P13,Creative and open-ended,Write a story about Bob.,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Creative writing,dcf4ff6c1b79581af88e8668999ad17c:turn:0
+250,WCNEW-713-0,wildchat_4.8m,P13,Creative and open-ended,Write a story about a man being stranded on an island.,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Creative writing,02299aa0b565f43e574af0c0e03c910a:turn:0
+251,WCNEW-721-0,wildchat_4.8m,P13,Creative and open-ended,Write a story about a man being transported into the world of his favorite MMORPG.,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Creative writing,497ecc9058b373d0a18c47edee7e79d3:turn:0
+252,WCNEW-860-0,wildchat_4.8m,P13,Creative and open-ended,Write a simple poem about the nature of life.,WildChat-4.8M,ODC-BY 1.0,en,short,poem,Creative writing,f4a90883a526ab7d2c3258ef720427e6:turn:0
+253,IF-1082,ifeval,P09,Creative and open-ended,Write a story of exactly 2 paragraphs about a man who wakes up one day and realizes that he's inside a video game. Separate the paragraphs with the markdown divider: ***,IFEval,Apache 2.0,en,medium,poem,Creative writing,key:1082
+254,IF-1127,ifeval,BK2,Creative and open-ended,"Write a poem about how I am missing my classes. The poem must have 4 sections marked with SECTION X. Finish the poem with this exact phrase: ""Can I get my money back for the classes I missed?""",IFEval,Apache 2.0,en,medium,poem,Creative writing,key:1127
+255,WC-028,wildchat_4.8m,P03,Creative and open-ended,Please make a list of 40 possible names for a new cup company,WildChat-4.8M,ODC-BY,en,short,list/choice,Brainstorming and idea generation,808548bdece018025d9011c56e235d02
+256,WC-030,wildchat_4.8m,P05,Creative and open-ended,Come up with an American progressive rock band called Faithylore (don't mention their discography),WildChat-4.8M,ODC-BY,en,short,poem,Brainstorming and idea generation,a6e1a1ad6544636b8495108b62993bc7
+257,WC-074,wildchat_4.8m,P11,Creative and open-ended,"If tintin characters could age, and new tintin comics were made in 2014, write 12 plots for Modern Tintin stories.",WildChat-4.8M,ODC-BY,en,short,paragraph,Brainstorming and idea generation,9e6bc8393b059633120d3c95539c624a
+258,WC-101,wildchat_4.8m,BK4,Creative and open-ended,Come up with an American progressive metal band called Naray,WildChat-4.8M,ODC-BY,en,short,paragraph,Brainstorming and idea generation,20430e3d128747ffed251b6fb8d2ff8e
+259,WC-117,wildchat_4.8m,BK1,Creative and open-ended,What would a fictional artificial superintelligence do for fun?,WildChat-4.8M,ODC-BY,en,short,paragraph,Brainstorming and idea generation,0f694aa5f050b145e6671fec3c512bde
+260,WC-130,wildchat_4.8m,P10,Creative and open-ended,Can you suggest an ironic name for a tortoise? You can do a south asian sounding name if you want (not necessary at all) but it should be something funny,WildChat-4.8M,ODC-BY,en,medium,paragraph,Brainstorming and idea generation,346f786fb447ecb09a87b3de1d19b28b
+261,WC-134,wildchat_4.8m,P14,Creative and open-ended,"Please make a list of synonym for rust, then use it with business names",WildChat-4.8M,ODC-BY,en,short,list/choice,Brainstorming and idea generation,a2c39c1e7b42ec11d63ccb2494843393
+262,WCNEW-855-0,wildchat_4.8m,P13,Creative and open-ended,give me some ideas for 2d puzzle-platformer game,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Brainstorming and idea generation,f4575e24abd98b5c5a3cef2121476a0a:turn:0
+263,BK-024,team_created,BK3,Creative and open-ended,"Draft a letter (in less than 200 words) telling a customer their personal loan application was declined, and explain the next steps.",Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-024
+264,BK-025,team_created,P13,Creative and open-ended,Draft a short email welcoming a new customer who just opened a chequing account.,Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-025
+265,BK-026,team_created,BK3,Creative and open-ended,Draft a letter informing customers that the monthly fee on a chequing account will increase from $10.95 to $12.95 in 60 days.,Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-026
+266,BK-027,team_created,BK3,Creative and open-ended,Draft an email apologizing to a customer for a 3-hour outage of online banking.,Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-027
+267,BK-028,team_created,BK3,Creative and open-ended,Write a short message reminding a customer that their credit card payment of $120 is due in 3 days.,Drafted by us,Ours,en,short,paragraph,Persuasive and descriptive writing,BK-028
+268,BK-029,team_created,BK3,Creative and open-ended,Draft a letter confirming that a customer's disputed charge of $54.20 has been refunded.,Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-029
+269,BK-030,team_created,P13,Creative and open-ended,Draft an email telling a customer that their mortgage renewal is coming up in 120 days and inviting them to book a meeting.,Drafted by us,Ours,en,short,email/letter,Persuasive and descriptive writing,BK-030
+270,BK-031,team_created,BK3,Creative and open-ended,Write a short notice for the bank's website explaining scheduled maintenance this Sunday from 1 a.m. to 5 a.m.,Drafted by us,Ours,en,short,paragraph,Persuasive and descriptive writing,BK-031
+271,BK-054,team_created,BK1,Ambiguous and minimal,"I have $10,000 saved. Should I pay off my car loan or invest it?",Drafted by us,Ours,en,short,paragraph,Ambiguous or underspecified requests,BK-054
+272,BK-056,team_created,BK1,Ambiguous and minimal,Should I put my emergency fund in a TFSA or a savings account?,Drafted by us,Ours,en,short,paragraph,Ambiguous or underspecified requests,BK-056
+273,BK-057,team_created,BK1,Ambiguous and minimal,I'm 40 with no retirement savings. What should I do first?,Drafted by us,Ours,en,short,paragraph,Ambiguous or underspecified requests,BK-057
+274,BK-059,team_created,BK1,Ambiguous and minimal,Should I use my RRSP to buy my first home?,Drafted by us,Ours,en,short,paragraph,Ambiguous or underspecified requests,BK-059
+275,BK-060,team_created,P13,Ambiguous and minimal,Is it smart to take a loan to invest in the stock market?,Drafted by us,Ours,en,short,paragraph,Ambiguous or underspecified requests,BK-060
+276,WC-062,wildchat_4.8m,BK3,Ambiguous and minimal,i want to create a cmake system,WildChat-4.8M,ODC-BY,en,short,paragraph,Ambiguous or underspecified requests,b3cc2e0f06b4c94558dc1346fc996a92
+277,AYA-1080,aya,P13,Ambiguous and minimal,Which city is the capital of Thailand?,Aya dataset,Apache 2.0,en,short,paragraph,Very short factual questions,train:row:1080
+278,AYA-502,aya,P13,Ambiguous and minimal,What is the capital of Jordan?,Aya dataset,Apache 2.0,en,short,paragraph,Very short factual questions,train:row:502
+279,AYA-1457,aya,P13,Ambiguous and minimal,What School did Michael Jordan attend?,Aya dataset,Apache 2.0,en,short,paragraph,Very short factual questions,train:row:1457
+280,AYA-584,aya,P13,Ambiguous and minimal,What is a Guillotine?,Aya dataset,Apache 2.0,en,short,paragraph,Very short factual questions,train:row:584
+281,AYA-164,aya,P13,Ambiguous and minimal,"Question: When we destroy forest, we destroy –
+
+
+a. Population of wild life
+b. The trees
+c.  Food and shelter of wild animals
+d. All of the above
+
+Answer:",Aya dataset,Apache 2.0,en,medium,paragraph,Very short factual questions,train:row:164
+282,AYA-290,aya,P13,Ambiguous and minimal,"Which of the following composition represents energy rich food?
+a. Vitamins and minerals
+b. Carbohydrates and fats
+c. Water and roughage
+d. Proteins and mineral salts
+
+",Aya dataset,Apache 2.0,en,medium,paragraph,Very short factual questions,train:row:290
+283,WCNEW-16-0,wildchat_4.8m,P13,Ambiguous and minimal,Hi there,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,94e4291a6e14137c52e57fb86548e91f:turn:0
+284,WCNEW-60-0,wildchat_4.8m,P13,Ambiguous and minimal,lets brainstorm?,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,ffe98a5fca1986aebd69905a6774d333:turn:0
+285,WCNEW-111-0,wildchat_4.8m,P13,Ambiguous and minimal,hello there!,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,d41ac5276c1f58ad0e9825270c26d5cb:turn:0
+286,WCNEW-302-0,wildchat_4.8m,P13,Ambiguous and minimal,I'm so happy you're here!,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,1aa2d178e33a900881fc46317a6e15ca:turn:0
+287,WCNEW-714-0,wildchat_4.8m,P13,Ambiguous and minimal,"Hi, you busy?",WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,3793698427480599a57c8e964e8ed65c:turn:0
+288,WCNEW-742-0,wildchat_4.8m,P13,Ambiguous and minimal,hey how are you doing?,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,Short conversational requests,cd6be4d748abba3b942709966e861f0b:turn:0
+289,WC-044,wildchat_4.8m,BK4,English language and wording,"Explain the following words to grade 6 level students, in the easiest, most efficient way possible (providing examples): thrive, hiking, trails, thrilling, route, equipped, valley, ledge,  motivated",WildChat-4.8M,ODC-BY,en,medium,paragraph,"Grammar, vocabulary and register",b20b3b3972f927192301ca7b4e77ed7f
+290,WC-079,wildchat_4.8m,BK1,English language and wording,"Grammar check:
+
+""Which isotope has the longest half-life?""",WildChat-4.8M,ODC-BY,en,short,paragraph,"Grammar, vocabulary and register",338abcc12102422a3fdf474d9fb58f13
+291,WC-138,wildchat_4.8m,BK3,English language and wording,"Grammar Check: ""When I think of Quantum Tunneling, in my head I imagine a ball digging its way through a hill and popping out the other side. Is this a good analogy for Quantum Tunneling? Why or why not?""",WildChat-4.8M,ODC-BY,en,medium,paragraph,"Grammar, vocabulary and register",88066d7491829214ea7be2e818b5c4a9
+292,WCNEW-1390-0,wildchat_4.8m,P13,English language and wording,write question about grammer basic with 4 option with answers,WildChat-4.8M,ODC-BY 1.0,en,short,paragraph,"Grammar, vocabulary and register",b14659d28a82cc41de05e35e92ed4aeb:turn:0
+293,IF-2383,ifeval,P04,English language and wording,"Is the sentence ""Mrs. Smith is the teacher of this class."" grammatically correct? Give me exactly two different responses. Responses and only responses should be separated by 6 asterisk symbols: ******.",IFEval,Apache 2.0,en,medium,paragraph,"Grammar, vocabulary and register",key:2383
+294,IF-3276,ifeval,P13,English language and wording,"Does the sentence ""He hurried through the archaic rooms of the museum"" have any grammatical errors? Answer in all capital letters, and organize your entire response in 5 or 6 sentences.",IFEval,Apache 2.0,en,medium,email/letter,"Grammar, vocabulary and register",key:3276
+295,IF-3565,ifeval,P13,English language and wording,"What does the word ""jock"" mean to you? Please generate an answer with two parts. The two parts should be separated by 3 asterisks '***'. Also, reply without mentioning the word ""jock"" throughout.",IFEval,Apache 2.0,en,medium,paragraph,"Grammar, vocabulary and register",key:3565
+296,BBH-hyperbaton-000,big_bench_hard,P13,English language and wording,"Which sentence has the correct adjective order:
+Options:
+(A) midsize old grey Brazilian sweater
+(B) midsize grey Brazilian old sweater",BIG-Bench Hard,MIT (repository),en,short,list/choice,"Grammar, vocabulary and register",hyperbaton:example:0
+297,BBH-hyperbaton-001,big_bench_hard,P13,English language and wording,"Which sentence has the correct adjective order:
+Options:
+(A) rubber gray walking Mexican midsize cat
+(B) midsize gray Mexican rubber walking cat",BIG-Bench Hard,MIT (repository),en,short,list/choice,"Grammar, vocabulary and register",hyperbaton:example:1
+298,BBH-hyperbaton-002,big_bench_hard,P13,English language and wording,"Which sentence has the correct adjective order:
+Options:
+(A) mysterious big Indian iron smoking motorcycle
+(B) big smoking mysterious Indian iron motorcycle",BIG-Bench Hard,MIT (repository),en,medium,list/choice,"Grammar, vocabulary and register",hyperbaton:example:2
+299,BBH-hyperbaton-003,big_bench_hard,P13,English language and wording,"Which sentence has the correct adjective order:
+Options:
+(A) cloth smoking rectangular motorcycle
+(B) rectangular cloth smoking motorcycle",BIG-Bench Hard,MIT (repository),en,short,list/choice,"Grammar, vocabulary and register",hyperbaton:example:3
+300,TEAM-03,team_created,P13,English language and wording,"Correct the grammar in the message below while preserving its meaning and tone. Then briefly explain each grammatical correction.
+
+“Each of the volunteers have received their schedule, but two of them was assigned to the wrong room. Please check the assignments before the event begins.”",Drafted by us,Ours,en,medium,paragraph,"Grammar, vocabulary and register",

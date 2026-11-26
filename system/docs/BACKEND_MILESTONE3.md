@@ -137,8 +137,8 @@ are listed in `system/TBD.md`.
 ## Test
 
 ```bash
-python -m unittest system.tests.test_backend_jobs -v
-python -m unittest system.tests.test_backend_api system.tests.test_backend_openai_live -v
+python -m unittest tests.core.test_backend_jobs -v
+python -m unittest tests.core.test_backend_api tests.core.test_backend_openai_live -v
 python system/run.py test
 ```
 

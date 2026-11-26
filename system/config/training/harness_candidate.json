@@ -1,0 +1,10 @@
+{
+  "dataset_id": "collector_raw/agentic-2026-11-26",
+  "split_id": "rf_panel_v1",
+  "methods": {
+    "harness": {
+      "artifact_id": "harness/v2",
+      "parameters": {"judge_provider": "google", "judge_model": "gemini-3.8-flash"}
+    }
+  }
+}

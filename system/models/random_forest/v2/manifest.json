@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "random_forest/v2",
+  "adapter": "random_forest",
+  "stage": 2,
+  "kind": "sklearn_classifier",
+  "supported_models": [
+    "claude-haiku-4.5",
+    "claude-haiku-5.5",
+    "claude-sonnet-5.5",
+    "gemini-3.1-pro",
+    "gemini-3.8-flash",
+    "gemma3-1b",
+    "gemma3-4b",
+    "gpt-5.6-luna",
+    "gpt-5.6-terra",
+    "gpt-6-luna",
+    "gpt-6.1-terra",
+    "llama3.1-8b",
+    "llama3.2-1b",
+    "llama3.2-3b",
+    "qwen2.5-3b",
+    "qwen3-8b",
+    "qwen3.5-9b"
+  ],
+  "required_files": [
+    {
+      "path": "classifier.joblib",
+      "sha256": "9a6fa6e6a90adba60230f91d91c2e0a11f05a9237cbdf0fc447b5a0f96626af4"
+    },
+    {
+      "path": "feature_manifest.json",
+      "sha256": "64ba5f06cb5ac94546631029b9a506a56cb548bff9abc71207851fdf6a935293"
+    },
+    {
+      "path": "feature_extractor.py",
+      "sha256": "25d912e7bfda13fd4c9ef65526687f39269fcd81af4ab4f6d64d31d3783f40cd"
+    },
+    {
+      "path": "base_text_features.py",
+      "sha256": "813c1dc1e7ae28284f2d1d55d246d88423a3c9e017ca93c78f51e4e381fbd23c"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "d827332e86095fc61bad77b7cda5695c391cf56bef3e908597f3a68854357e9d"
+    }
+  ],
+  "options": {
+    "feature_abi": "fingerprint_rf_panel_text_v1",
+    "label_order": [
+      "claude-haiku-4.5",
+      "claude-haiku-5.5",
+      "claude-sonnet-5.5",
+      "gemini-3.1-pro",
+      "gemini-3.8-flash",
+      "gemma3-1b",
+      "gemma3-4b",
+      "gpt-5.6-luna",
+      "gpt-5.6-terra",
+      "gpt-6-luna",
+      "gpt-6.1-terra",
+      "llama3.1-8b",
+      "llama3.2-1b",
+      "llama3.2-3b",
+      "qwen2.5-3b",
+      "qwen3-8b",
+      "qwen3.5-9b"
+    ],
+    "probe_ids": [
+      "I2",
+      "LM-01",
+      "LM-05",
+      "LM-06",
+      "I1"
+    ],
+    "sklearn_version": "1.8.0",
+    "acceptance_policy": {
+      "mode": "review_only"
+    },
+    "input_policy": "fixed_probe_text_only",
+    "n_estimators": 100,
+    "random_state": 42,
+    "min_samples_leaf": 1,
+    "max_depth": null
+  },
+  "provenance": {
+    "source": "LLMmap-inspired RF trainer, existing stylometric features plus hashed lexical features",
+    "training_code_revision": "sha256:fd0042f17b96a202ed82b9efd3737bbb25ca54e7d84bbf4d3a1b10e88a04a0a7",
+    "runtime_dependencies": {
+      "python": "3.13.5",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3",
+      "pandas": "2.2.3",
+      "numpy": "2.3.5"
+    },
+    "training_dataset_id": "collector_raw/agentic-2026-11-26",
+    "split_id": "rf_panel_v1",
+    "dataset_manifest_sha256": "641ab124ef8d0e6f5da6aa9504045ade355266e2e88a4f9363d3377ae830f78e",
+    "split_manifest_sha256": "52b66288d9c599743a49e3db7a0666fd3bb77943b70c27de59278be5cf30024e",
+    "eligibility_policy": "include_blank_without_error_v2",
+    "training_traces": 204,
+    "validation_traces": 51,
+    "test_used": false,
+    "training_run_id": "432819afe00a4fc4896c0dab2c01a24c",
+    "onboarding_status": "candidate_metadata_checked_runtime_pending"
+  }
+}

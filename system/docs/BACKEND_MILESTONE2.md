@@ -77,7 +77,7 @@ The response includes `mode=live_target_mock_judge`, `status=needs_review`, `mod
 
 ```bash
 # Fast backend tests
-python -m unittest system.tests.test_backend_api system.tests.test_backend_openai_live -v
+python -m unittest tests.core.test_backend_api tests.core.test_backend_openai_live -v
 # Full system suite (some legacy Stage 1 tests are slow)
 python system/run.py test
 ```

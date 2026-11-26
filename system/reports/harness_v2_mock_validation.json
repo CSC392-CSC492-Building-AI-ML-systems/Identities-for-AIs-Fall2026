@@ -1,0 +1,25 @@
+{
+  "artifact_id": "harness/v2",
+  "artifact_manifest_sha256": "8a7dd8f397a72a48837539e08b654a73d92b92d4ff303eddb0e515a685074ee0",
+  "dataset_id": "collector_raw/agentic-2026-11-26",
+  "split_id": "rf_panel_v1",
+  "partition": "validation",
+  "split_manifest_sha256": "52b66288d9c599743a49e3db7a0666fd3bb77943b70c27de59278be5cf30024e",
+  "judge_provider": "mock",
+  "judge_model": "gemini-3.8-flash",
+  "stage1_enabled": false,
+  "cases": 3,
+  "available_cases": 51,
+  "personas": [
+    "BK3"
+  ],
+  "errors": 0,
+  "accepted": 0,
+  "handoffs": 3,
+  "blank_probe_observations": 0,
+  "target_api_calls": 0,
+  "independent_holdout_certified": false,
+  "unknown_family_evaluated": false,
+  "status": "mock_plumbing_only",
+  "note": "Mock judge guesses randomly; identification accuracy intentionally omitted."
+}

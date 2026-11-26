@@ -1,0 +1,9 @@
+{
+  "requested_artifact_id": "harness/v3",
+  "status": "skipped_unchanged",
+  "reusable_artifacts": [
+    "harness/v2"
+  ],
+  "reason": "Reference content and settings unchanged",
+  "new_artifact_registered": false
+}

@@ -16,7 +16,7 @@ def blank_card(domain, args):
              f"access: {args.access}", f"domain: {domain}", f"retrieved_at: {datetime.date.today()}",
              f"researched_by: {args.by}"]
     if domain == "compliance":
-        lines.append("licence_id: TODO   # an entry in collector/licences.yaml (add one if the licence is new)")
+        lines.append("licence_id: TODO   # an entry in system/collector/licences.yaml (add one if the licence is new)")
     lines.append("fields:")
     for f in research_fields(domain):
         where = f["where_open"] if args.access == "open" else f["where_closed"]
@@ -31,7 +31,7 @@ def blank_card(domain, args):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("model_key", help="same model_key as in collector/models.yaml")
+    ap.add_argument("model_key", help="same model_key as in system/collector/models.yaml")
     ap.add_argument("--name", required=True, help='display name, e.g. "Llama 3.1 8B Instruct"')
     ap.add_argument("--family", required=True, help="e.g. Llama, Qwen, Gemma, Gemini, Claude, GPT")
     ap.add_argument("--access", required=True, choices=["open", "closed"])
@@ -40,7 +40,7 @@ def main():
     args = ap.parse_args()
 
     if args.model_key not in collector_models():
-        print(f"Note: '{args.model_key}' is not in collector/models.yaml yet. Add it there too.")
+        print(f"Note: '{args.model_key}' is not in system/collector/models.yaml yet. Add it there too.")
     for domain in args.domain or DOMAINS:
         path = card_path(domain, args.model_key)
         if path.exists():

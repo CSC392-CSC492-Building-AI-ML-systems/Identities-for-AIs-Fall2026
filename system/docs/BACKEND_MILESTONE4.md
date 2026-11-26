@@ -160,7 +160,7 @@ billable API requests are made by the unit tests.
 From the GitHub repository root:
 
 ```bash
-python -m unittest system.tests.test_backend_live_jobs -v
+python -m unittest tests.core.test_backend_live_jobs -v
 python system/run.py test
 ```
 

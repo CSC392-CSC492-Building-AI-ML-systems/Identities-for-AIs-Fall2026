@@ -30,7 +30,7 @@ def check_file(domain, path, models, lics):
     if card.get("model_key") != path.stem:
         errors.append(f"model_key '{card.get('model_key')}' does not match the file name")
     if models and path.stem not in models:
-        errors.append(f"'{path.stem}' is not in collector/models.yaml")
+        errors.append(f"'{path.stem}' is not in system/collector/models.yaml")
     if card.get("access") not in ("open", "closed", None) and not is_todo(card.get("access")):
         errors.append("access must be 'open' or 'closed'")
 
@@ -62,9 +62,9 @@ def check_file(domain, path, models, lics):
         if is_todo(lid):
             todos.append("licence_id")
         elif lid not in lics:
-            errors.append(f"licence_id '{lid}' is not in collector/licences.yaml")
+            errors.append(f"licence_id '{lid}' is not in system/collector/licences.yaml")
         elif path.stem not in (lics[lid].get("applies_to") or []):
-            errors.append(f"add '{path.stem}' to applies_to of '{lid}' in collector/licences.yaml")
+            errors.append(f"add '{path.stem}' to applies_to of '{lid}' in system/collector/licences.yaml")
     return errors, todos
 
 

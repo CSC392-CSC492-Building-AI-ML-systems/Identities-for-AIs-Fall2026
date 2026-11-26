@@ -1,0 +1,26 @@
+{
+  "dataset_id": "collector_raw/agentic-2026-11-26",
+  "split_id": "rf_panel_v1",
+  "methods": {
+    "lora": {
+      "artifact_id": "lora/v3",
+      "parameters": {
+        "base_model": "Qwen/Qwen2.5-1.5B",
+        "base_model_revision": "REPLACE_WITH_EXACT_40_CHARACTER_COMMIT",
+        "max_tokens": 512,
+        "lora_rank": 32,
+        "lora_alpha": 64,
+        "lora_dropout": 0.05,
+        "epochs": 8,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "batch_size": 2,
+        "gradient_accumulation_steps": 8,
+        "max_train_per_class": 200,
+        "seed": 42,
+        "device": "cuda",
+        "precision": "fp16"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "dataset_id": "collector_raw/2026-11-26",
+  "dataset_manifest_sha256": "8209b47419c3a4b16a1ea591a413967814722eaac649b8f52dca6bef17c90cfd",
+  "independent_holdout_certified": false,
+  "references": [
+    {
+      "by_partition": {
+        "calibration": {
+          "shared_prompt_ids": [
+            "LM-01"
+          ],
+          "shared_record_ids": 131
+        },
+        "excluded": {
+          "shared_prompt_ids": [
+            "I1",
+            "I2",
+            "LM-01",
+            "LM-05",
+            "LM-06",
+            "V1-15"
+          ],
+          "shared_record_ids": 0
+        },
+        "test": {
+          "shared_prompt_ids": [
+            "I1",
+            "LM-06",
+            "V1-15"
+          ],
+          "shared_record_ids": 393
+        },
+        "train": {
+          "shared_prompt_ids": [
+            "I2"
+          ],
+          "shared_record_ids": 137
+        },
+        "validation": {
+          "shared_prompt_ids": [
+            "LM-05"
+          ],
+          "shared_record_ids": 134
+        }
+      },
+      "reference": "models/harness/v1/collector/data/raw",
+      "reference_unique_record_ids": 987,
+      "shared_prompt_ids": [
+        "I1",
+        "I2",
+        "LM-01",
+        "LM-05",
+        "LM-06",
+        "V1-15"
+      ],
+      "shared_record_ids": 795
+    }
+  ],
+  "split_id": "candidate_seed42"
+}

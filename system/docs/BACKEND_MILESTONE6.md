@@ -142,8 +142,8 @@ Open `http://127.0.0.1:8000/docs` for OpenAPI/Swagger. Authorize with the develo
 To test without external requests:
 
 ```bash
-python -m unittest system.tests.test_backend_deployment_jobs -v
-python -m unittest system.tests.test_backend_live_jobs system.tests.test_backend_history -v
+python -m unittest tests.core.test_backend_deployment_jobs -v
+python -m unittest tests.core.test_backend_live_jobs tests.core.test_backend_history -v
 python system/run.py test
 ```
 

@@ -1,7 +1,0 @@
-{
-  "target": "gemini-3.8-flash",
-  "algorithm": "baseline_rf",
-  "approach": "hierarchy_hard_route",
-  "validation_threshold": 0.3570564180764555,
-  "max_false_alarm": 0.1
-}

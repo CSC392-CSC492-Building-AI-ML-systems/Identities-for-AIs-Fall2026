@@ -58,7 +58,7 @@ curl http://127.0.0.1:8000/api/v1/capabilities
 # Run new and existing tests from the repository root
 python system/run.py test
 # Or run only this milestone's HTTP tests:
-python -m unittest discover -s system/tests -p test_backend_api.py -v
+python -m unittest discover -s tests/core -t . -p test_backend_api.py -v
 ```
 
 ## API contracts (the only implemented endpoints)

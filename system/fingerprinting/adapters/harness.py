@@ -60,7 +60,11 @@ class HarnessIdentifier:
         if (not isinstance(self.probe_ids, list) or len(self.probe_ids) != 6
                 or len(set(self.probe_ids)) != 6 or any(not isinstance(x, str) for x in self.probe_ids)):
             raise HarnessConfigurationError('Harness requires six unique probe IDs')
-        if manifest.options.get('acceptance_policy') != 'legacy_handoff_and_exact_model':
+        self.review_only = manifest.options.get('reference_abi') == 'catalog_reference_v2'
+        if self.review_only and self.provider not in ('google','openai','mock'):
+            raise HarnessConfigurationError('Unsupported v2 judge transport')
+        expected_policy = 'review_only' if self.review_only else 'legacy_handoff_and_exact_model'
+        if manifest.options.get('acceptance_policy') != expected_policy:
             raise HarnessConfigurationError('Unrecognized Harness acceptance policy')
         self._runner = runner
         # Keep the exact prompt definitions bound to the version's reference snapshot.
@@ -85,7 +89,7 @@ class HarnessIdentifier:
         worker = Path(__file__).with_name('harness_worker.py')
         try:
             process = subprocess.run(
-                [sys.executable, str(worker), str(self.manifest.directory)],
+                [sys.executable, "-B", str(worker), str(self.manifest.directory)],
                 input=json.dumps(payload, ensure_ascii=False), text=True,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                 timeout=float(self.timeout_seconds), check=False,
@@ -95,6 +99,8 @@ class HarnessIdentifier:
             raise HarnessExecutionError('Harness worker timed out') from exc
         if process.returncode != 0:
             # Avoid echoing probe responses or entire stack traces in error messages.
+            if self.review_only:
+                raise HarnessExecutionError(f'Harness worker failed (exit {process.returncode}); check judge setup locally')
             raise HarnessExecutionError(f'Harness worker failed (exit {process.returncode}); '
                                         f'{process.stderr.strip()[-350:]}')
         lines = [x[len(RESULT_MARKER):] for x in process.stdout.splitlines()
@@ -122,7 +128,7 @@ class HarnessIdentifier:
         payload = {
             'answers': {p.probe_id: context.probes[p.probe_id].response_text for p in self._probes},
             'domain': context.domain,
-            'deployment': context.deployment_id,
+            'deployment': None if self.review_only else context.deployment_id,
             'judge_provider': self.provider,
             'judge_model': self.judge_model,
             'handoff_below': float(self.handoff_below),
@@ -146,7 +152,7 @@ class HarnessIdentifier:
             raise HarnessExecutionError(f'Unexpected Harness status: {status!r}')
         # Mock judge is for plumbing only, NEVER an accepted production identity.
         accepted = bool(model_key and not legacy_handoff and status in ('Identified', 'Verified')
-                        and self.provider != 'mock')
+                        and self.provider != 'mock' and not self.review_only)
         reasons = data.get('reasons') or []
         if not isinstance(reasons, list):
             raise HarnessExecutionError('Harness reasons must be a list')
@@ -158,8 +164,9 @@ class HarnessIdentifier:
             'legacy_identified': info,
             'legacy_judge': data.get('judge'),
             'mock_judge': self.provider == 'mock',
+            'review_only': self.review_only,
         }
-        if 'card' in data:
+        if 'card' in data and not self.review_only:
             diag['card'] = data['card']
         return IdentificationResult(
             method='harness', outcome='identified' if accepted else 'unknown',

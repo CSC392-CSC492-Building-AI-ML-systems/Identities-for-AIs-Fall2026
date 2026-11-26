@@ -8,7 +8,7 @@ Dataset ID: `collector_raw/2026-11-26`. This is the exact uploaded `raw.zip` col
 | `training_v1` | 4 | 3,600 |
 | Total | 20 | 9,717 |
 
-All 17 existing catalog IDs appear across the two sets, representing six families. There are 8,869 nonempty responses with no recorded error, 83 records with recorded errors, and 765 blank responses without a recorded error. No duplicate record IDs or path/model/prompt-set mismatches were found. The term nonempty does not imply a valid or useful training label. In particular, `qwen3.5-9b/fingerprint_v0.jsonl` has 631 blank responses without an error (137 nonempty). Preserve failed/blank rows for audit; exclude or explicitly handle them during preparation. Some rows contain separate reasoning text. Do not substitute it for the observable reply without an explicit research protocol.
+All 17 existing catalog IDs appear across the two sets, representing six families. There are 8,869 nonempty responses with no recorded error, 83 records with recorded errors, and 765 blank responses without a recorded error. No duplicate record IDs or path/model/prompt-set mismatches were found. The term nonempty does not imply a valid or useful training label. In particular, `qwen3.5-9b/fingerprint_v0.jsonl` has 631 blank responses without an error (137 nonempty). Preserve failed/blank rows for audit. Current split policy includes blanks without errors and excludes recorded errors. The new `candidate_include_blank_seed42` split has 9,634 eligible rows. The original manifest and old split remain unchanged for reproducibility. Some rows contain separate reasoning text. Do not substitute it for the observable reply without an explicit research protocol.
 
 From the GitHub root (Windows Git Bash):
 

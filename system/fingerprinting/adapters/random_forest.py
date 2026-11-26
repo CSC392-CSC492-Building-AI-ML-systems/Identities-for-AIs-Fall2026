@@ -194,4 +194,8 @@ def build_random_forest(manifest: ArtifactManifest,
                         selection: Stage2MethodSelection) -> RandomForestIdentifier:
     if selection.adapter != 'random_forest' or selection.artifact_id != manifest.artifact_id:
         raise RFConfigurationError('Random Forest selection does not match artifact')
+    from .rf_panel_features import FEATURE_ABI as PANEL_ABI
+    if manifest.options.get("feature_abi") == PANEL_ABI:
+        from .random_forest_panel import RandomForestPanelIdentifier
+        return RandomForestPanelIdentifier(manifest)
     return RandomForestIdentifier(manifest)

@@ -1,7 +1,0 @@
-{
-  "target": "gemini-3.1-pro",
-  "algorithm": "baseline_lr",
-  "approach": "hierarchy_soft",
-  "validation_threshold": 0.21417150354388406,
-  "max_false_alarm": 0.1
-}

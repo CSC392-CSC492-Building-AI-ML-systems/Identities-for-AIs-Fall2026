@@ -1,7 +1,0 @@
-{
-  "threshold": 0.45973909175211725,
-  "target_model": "llama3.2-3b",
-  "feature_set": "char_lr",
-  "max_false_alarm": 0.1,
-  "selection_split": "validation"
-}

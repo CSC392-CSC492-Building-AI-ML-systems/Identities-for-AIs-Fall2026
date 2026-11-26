@@ -16,7 +16,7 @@ from fingerprinting.model_catalog import ModelCatalog
 from fingerprinting.registry import ArtifactRegistry
 from fingerprinting.schemas import EvaluationCase, FingerprintRequest, Observation
 
-p=ROOT/'testdata/random_forest/heldout_raw_cases.jsonl'
+p=ROOT.parent/'tests/fixtures/random_forest/heldout_raw_cases.jsonl'
 def main():
     catalog=ModelCatalog.from_file(ROOT/'catalog/models.json')
     registry=ArtifactRegistry(ROOT,catalog)

@@ -93,8 +93,8 @@ The M4 live job still runs with a mock Harness judge. M5 does not auto-associate
 ## Testing
 
 ```bash
-python -m unittest system.tests.test_backend_history -v
-python -m unittest system.tests.test_backend_api system.tests.test_backend_live_jobs -v
+python -m unittest tests.core.test_backend_history -v
+python -m unittest tests.core.test_backend_api tests.core.test_backend_live_jobs -v
 python system/run.py test
 ```
 

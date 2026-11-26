@@ -23,19 +23,23 @@ SYSTEM_ROOT = Path(__file__).resolve().parent
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=("evaluate", "config", "test", "example"),
+    parser.add_argument("command", choices=("evaluate", "config", "test", "example", "training", "onboard-dataset", "onboard-classifier", "onboard-model", "release"),
                         help="Action to execute within system/")
     parser.add_argument("arguments", nargs=argparse.REMAINDER, help="Arguments for the chosen action")
     ns = parser.parse_args(argv)
 
     # Do not depend on the calling shell's working directory or PYTHONPATH.
     # This also preserves existing paths in the original project, which use
-    # catalog/, models/, config/, testdata/, and reports/ relative to system/.
+    # catalog/, models/, config/, and reports/ relative to system/.
     os.chdir(SYSTEM_ROOT)
     sys.path.insert(0, str(SYSTEM_ROOT))
     args = ns.arguments
     if args[:1] == ["--"]:
         args = args[1:]
+
+    if ns.command in ("training", "onboard-dataset", "onboard-classifier", "onboard-model", "release"):
+        script = {"training":"train_classifiers.py", "onboard-dataset":"onboard_dataset.py", "onboard-classifier":"onboard_classifier.py", "onboard-model":"onboard_model.py", "release":"release_classifiers.py"}[ns.command]
+        return subprocess.run([sys.executable, str(SYSTEM_ROOT / "tools" / script), *args], cwd=SYSTEM_ROOT, check=False).returncode
 
     if ns.command == "evaluate":
         from fingerprinting.eval_cli import main as run_evaluation
@@ -52,11 +56,13 @@ def main(argv: list[str] | None = None) -> int:
         return inspect_config()
 
     if ns.command == "test":
-        if args:
-            parser.error("'test' takes no extra arguments; use unittest directly for filtered tests")
+        if args not in ([], ["--research"], ["--all"]):
+            parser.error("test accepts --research or --all; default is core tests")
+        start = {(): "tests/core", ("--research",): "tests/research", ("--all",): "tests"}[tuple(args)]
         return subprocess.run(
-            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
-            cwd=SYSTEM_ROOT,
+            [sys.executable, "-B", "-m", "unittest", "discover", "-s", start, "-t", ".", "-v"],
+            cwd=SYSTEM_ROOT.parent,
+            env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
             check=False,
         ).returncode
 

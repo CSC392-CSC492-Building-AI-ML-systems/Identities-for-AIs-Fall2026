@@ -1,0 +1,1341 @@
+{
+  "schema_version": "1.0",
+  "source": "Identities-for-AIs-Fall2026 (2).zip (older snapshot, system excluded)",
+  "groups": {
+    "legacy": {
+      "directory": "legacy",
+      "files": [
+        {
+          "path": "legacy/prepare_jev_datasets.py",
+          "bytes": 25314,
+          "sha256": "ab502064f56a41e0b8470e1123b544c4fe8d5681f98d5c9022192b587ae043ac"
+        }
+      ]
+    },
+    "experiment5": {
+      "directory": "collector/data/experiment5",
+      "files": [
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_category_and_model_rates.csv",
+          "bytes": 147334,
+          "sha256": "98206f748692b4e724ab9e1365c4f72ae1448a7206bef676d6d2b009679e0b25"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_prompt_category_summary.csv",
+          "bytes": 15824,
+          "sha256": "060ea0178c5fbba0e04a254f527324afef1a8c3df5dcf8a9aab83dbcd8779285"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_prompt_scores.csv",
+          "bytes": 158600,
+          "sha256": "384fe92d829a22e6fec523348f957e09c5f9c7c4a20ddcb56251fb4c433762b0"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_validation_metrics.csv",
+          "bytes": 16960,
+          "sha256": "00f38487c171b80f26abc73c841984ea2ae9fadef22734b3a9ebb3cbaec178f3"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_validation_predictions.csv",
+          "bytes": 2619582,
+          "sha256": "7381a7212f9655c9b7cd09834298d8495263a8afbb33dd3df485592e7a650a02"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/feature_vs_baseline_deltas.csv",
+          "bytes": 4254,
+          "sha256": "cd2258a76891700fb7624c25700b92a2fed5c62cb4ed9d4e06756720139e67ef"
+        },
+        {
+          "path": "collector/data/experiment5/features/comparison/manifest.json",
+          "bytes": 590,
+          "sha256": "88572694281cd0a5c75e1cdcc9c04ddf2f7a8307e83de0475774c8a9be769151"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/baseline_lr.joblib",
+          "bytes": 1644835,
+          "sha256": "8140f83cc5a81f0364b88631dc55ac6638c894e52c422d56d79b298f4890ec44"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/baseline_lr_threshold.json",
+          "bytes": 174,
+          "sha256": "2dc3804b5775ffc8e7f81fb06bbfa6c0a6670c46da6a08c80115442d8df9d1ef"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/baseline_rf.joblib",
+          "bytes": 2382120,
+          "sha256": "c0755cb8d9d3144247eb4fec68364afd9520e4208eda95e4ee96e0b1eae3bee4"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/baseline_rf_threshold.json",
+          "bytes": 174,
+          "sha256": "f6b1c2de971b2789bd6c2d57c3163e2854d9ae4da55db450de77a29b421c1c22"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/char_lr.joblib",
+          "bytes": 1031481,
+          "sha256": "542bb8fe4ac0535515253b5c217532c498af4e9e43d21770eb41c51f7957ed1d"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/char_lr_threshold.json",
+          "bytes": 171,
+          "sha256": "dc901f25552a1c1897decb63afa587341aa006696062e2877dede2c210335d4f"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/hybrid_lr.joblib",
+          "bytes": 1647810,
+          "sha256": "1a975b15d4273918b751139f0fa265fb2e45bc3ea3dca03e31550bea29f969a8"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/hybrid_lr_threshold.json",
+          "bytes": 173,
+          "sha256": "fe24fe639354d4127036791525d249ddeb318e90013a8412423a4c1535968637"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/rich_rf.joblib",
+          "bytes": 2360166,
+          "sha256": "9529d6b2a821d077fc9be2e0bcabeeb1e8773cd08920b5f6ba8a1eca1cd89992"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/rich_rf_feature_importance.csv",
+          "bytes": 2917,
+          "sha256": "cf0c9c19075735552341e0f80e83a3d3c8bfeb1e2db2ac157cf482929caa98fb"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/rich_rf_threshold.json",
+          "bytes": 170,
+          "sha256": "f6be63bf9343e7b49ea1eff4f4fabb830af1bd35e3d1367b5ed2e1b3792eabc3"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/word_lr.joblib",
+          "bytes": 614595,
+          "sha256": "cfe9ecbacd11210f7a5a9a0a15227a62e58087ab770b74f6d10e5c27e5a3a1e2"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.1-pro/word_lr_threshold.json",
+          "bytes": 171,
+          "sha256": "f3808ac62a7699b65b94da41b59775f17ff412b067c586f934a76bc1a11e38be"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/baseline_lr.joblib",
+          "bytes": 1644788,
+          "sha256": "7f8314eaf09deaa679bfd7e0cfa601a7de4647714ccd16c696154f7fce779aac"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/baseline_lr_threshold.json",
+          "bytes": 176,
+          "sha256": "76826bc4a8779be4bdbe0c9dbcf34e32aaee4f87a91eee8dfb3e643d193a89ed"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/baseline_rf.joblib",
+          "bytes": 2382313,
+          "sha256": "03982f4427c7273b6b9eca45e5a3b0894d2feffbee76e4ac434b082089179c66"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/baseline_rf_threshold.json",
+          "bytes": 176,
+          "sha256": "bae138eb0e8707cc53be6afd253a8d7530ae9bb27b64c2980148d673c4d5e279"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/char_lr.joblib",
+          "bytes": 1031576,
+          "sha256": "1d3e42d2cd4606b7db9066ebf018a05a43966d1dbeec8d59e86191b1d6f0518e"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/char_lr_threshold.json",
+          "bytes": 173,
+          "sha256": "219389b8620b921d4c4ce3d8d8100f4fa640600d13f844672d57a1977069b9ea"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/hybrid_lr.joblib",
+          "bytes": 1647857,
+          "sha256": "532e5ed92b80a7d733d18af55bb965f0a3a1f07f717328b2284a30d6080c5e9b"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/hybrid_lr_threshold.json",
+          "bytes": 174,
+          "sha256": "aad0317d53fee6e09b88fcbc73e2d51b1e76765d5ed68bf8849720c28115c3cc"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/rich_rf.joblib",
+          "bytes": 2359831,
+          "sha256": "2bb850ad76559edc8c3023901d73aae877b6918a5b3d24c2d5724aa9927b283c"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/rich_rf_feature_importance.csv",
+          "bytes": 2917,
+          "sha256": "cf0c9c19075735552341e0f80e83a3d3c8bfeb1e2db2ac157cf482929caa98fb"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/rich_rf_threshold.json",
+          "bytes": 173,
+          "sha256": "2f1a0a0d863678de2acc997a48e5fb55f16749420d01b8f23819e5e7a7faa6c2"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/word_lr.joblib",
+          "bytes": 614454,
+          "sha256": "9207a141cf32686917814114aa2c5262f69737d463a104bf032899cd3e13d4ed"
+        },
+        {
+          "path": "collector/data/experiment5/features/gemini/gemini-3.8-flash/word_lr_threshold.json",
+          "bytes": 173,
+          "sha256": "7df62c15b475862d02eaacb480e4e3da92a6c1775cab96bc7704c6cd1ead4674"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/baseline_lr.joblib",
+          "bytes": 1648538,
+          "sha256": "5bd87fe3e3e85fb2b92df8ffc81ec5854e47fb87fbf16b904e0b68151b61f50e"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/baseline_lr_threshold.json",
+          "bytes": 171,
+          "sha256": "9e302e5de83fa087e81a106113e9d2dc95e41be1681bf6fa901fb567f803937a"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/baseline_rf.joblib",
+          "bytes": 3094522,
+          "sha256": "c44df66d7048b6fed049fdc09327f0f61b88bcc38b9c0cf9811782ac7b2a0ac6"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/baseline_rf_threshold.json",
+          "bytes": 170,
+          "sha256": "db9c9b4a367a79f91d2e35baa9a9ba7b9f44b0e242baaa4384b8b47f62cc8720"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/char_lr.joblib",
+          "bytes": 1023389,
+          "sha256": "91213b1d2e7232579db077c4a0d2b4c8a98ab5eab56b7511bd1c0ab7e24431e5"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/char_lr_threshold.json",
+          "bytes": 168,
+          "sha256": "62a3437fc983748db8780f5955c9d41328fd44f679e49acd56e13ec9db01ca68"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/hybrid_lr.joblib",
+          "bytes": 1651549,
+          "sha256": "1829be5cf8d9d2f15c95a1cc6af31ea6cca40e73787ebf3894b2c7d557f7f60c"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/hybrid_lr_threshold.json",
+          "bytes": 169,
+          "sha256": "306f37e2e80addc953bb2f7ccfd83d3dc840459dd9aa67c813fc292d63653a05"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/rich_rf.joblib",
+          "bytes": 2994072,
+          "sha256": "1da25c76da0a0ace4dbe163c0b59fc87ac770d939e56b3ea9aac57338b5080a8"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/rich_rf_feature_importance.csv",
+          "bytes": 2896,
+          "sha256": "ff49a7c9180f2ab0da99aae04f98a255e498ed73a717d6fb4ac1a9a1f22ac5cd"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/rich_rf_threshold.json",
+          "bytes": 167,
+          "sha256": "59335b8a3a54209b36c933db0695cdcac0db8d957bf2902200e904dd248d1328"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/word_lr.joblib",
+          "bytes": 626224,
+          "sha256": "8d2e5c0a3d447cc15c0d1860c7de97fd59aae5bf86a60c62b7d2769dc82685eb"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.1-8b/word_lr_threshold.json",
+          "bytes": 168,
+          "sha256": "aee3cfccf3b0663e6da72f8068be7e52c25dac9fd34ff03f612898eb5491e1ca"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/baseline_lr.joblib",
+          "bytes": 1648469,
+          "sha256": "6238fda12d712676a4470eac5aea12f14901e02ec37d223bbfec1d11361382e4"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/baseline_lr_threshold.json",
+          "bytes": 171,
+          "sha256": "85e9784b9120c402b6874e556d8c46f05b0c7761bbafc250e4ff59d935931c56"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/baseline_rf.joblib",
+          "bytes": 3094685,
+          "sha256": "31b7a7c00fa0ca2d0ad0e3a2ebeab1f97eb1e5ea3f40e0d23289326cadf501e7"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/baseline_rf_threshold.json",
+          "bytes": 171,
+          "sha256": "bcdcdcb9d5a85ba4743671246bc8f7f67726f1474b3d7b287ce379adc552eab2"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/char_lr.joblib",
+          "bytes": 1023414,
+          "sha256": "2394d03030b9f6bba36e0de6f900f158f6771cd152691259f5fd044531b25f56"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/char_lr_threshold.json",
+          "bytes": 168,
+          "sha256": "54fb4610f39d9c8a847327ec58a955ec566fdd8796e40cb8f1bcb4d637425acb"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/hybrid_lr.joblib",
+          "bytes": 1651612,
+          "sha256": "964250d0a31e937590acc71aa0e58a701d408c6e07cb2204e873023f82b5ca4f"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/hybrid_lr_threshold.json",
+          "bytes": 169,
+          "sha256": "59fff4ed280ade1abcd5ceab3f51f2dfbb94dbfe5a74dcc0a9699600e3e0d1bb"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/rich_rf.joblib",
+          "bytes": 2994266,
+          "sha256": "389163b4a98c3da9a0f6adca1c97ad3d187d134941b42b526cb6dd284828cd10"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/rich_rf_feature_importance.csv",
+          "bytes": 2896,
+          "sha256": "ff49a7c9180f2ab0da99aae04f98a255e498ed73a717d6fb4ac1a9a1f22ac5cd"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/rich_rf_threshold.json",
+          "bytes": 168,
+          "sha256": "e5345e710374fe79ee28edf59fc9bbc6a078e47315a406d0843f3c5ba34ae04c"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/word_lr.joblib",
+          "bytes": 626201,
+          "sha256": "263eee6da954e62e2a1a2e6f5c0da2d50822b87791f65b2c61679b0b76f6f96a"
+        },
+        {
+          "path": "collector/data/experiment5/features/llama/llama3.2-3b/word_lr_threshold.json",
+          "bytes": 167,
+          "sha256": "7ca1acb386de0a87c4ebc6e249a3182c9a7f782061d66b034a5469aad97c175c"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/family_stage_metrics.csv",
+          "bytes": 199,
+          "sha256": "16d5de9c37109ae938e456923326bd76a709022eab1aff28930aa9e48f441a3d"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_improvement_deltas.csv",
+          "bytes": 9668,
+          "sha256": "1f1c5559db9a7c8497f7d8da19fa7cab9b89cb848a40138283db86e9a1cf1b71"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_negative_model_category_rates.csv",
+          "bytes": 172380,
+          "sha256": "3d445ded6ff0e73d9703b2f58d353471f6ce29759e28f8daf7a7579d878e15f7"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_routing_metrics.csv",
+          "bytes": 195,
+          "sha256": "aa096ee5a48e46e0f7fecc0c97f700c3a1c11131457d8a6d3c285ef3929e0007"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_routing_predictions.csv",
+          "bytes": 165538,
+          "sha256": "daab50b53338d0f2a0eb9264c15b4573e74bf487487026a248fcf82cfbf74664"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_vs_ovr_metrics.csv",
+          "bytes": 17569,
+          "sha256": "e9ac595ff0c329fd6a665de44c672ff74943e0cc0c7bc98e3149f580b4717ec3"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/hierarchy_vs_ovr_predictions.csv",
+          "bytes": 4998676,
+          "sha256": "628a10040ebcd4132685001a98850de30e590dea41bb18bbda2d24eb6b2af4be"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/comparison/manifest.json",
+          "bytes": 745,
+          "sha256": "92cae1877d154c38160af36e20148afbc1848987df8af28da097127a1cc2de2f"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/family_gemini_vs_llama.joblib",
+          "bytes": 1714633,
+          "sha256": "79c1c0f576863e74cd2d06e94cafc5b2402d57d6644efa2e67b017c8846b03cb"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/gemini_conditional_gemini-3.1-pro.joblib",
+          "bytes": 1644835,
+          "sha256": "8140f83cc5a81f0364b88631dc55ac6638c894e52c422d56d79b298f4890ec44"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_hard_route_gemini-3.1-pro_threshold.json",
+          "bytes": 181,
+          "sha256": "5feb1b90a3973450ffe56bb671eed5cce02f741caf6ece2c36e1ed1ae4383d9e"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_hard_route_gemini-3.8-flash_threshold.json",
+          "bytes": 182,
+          "sha256": "c8e01e85a538756c097ff4538b49ea7c90e6476e4bdb6f297ccd4a1dead5a9d4"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_hard_route_llama3.1-8b_threshold.json",
+          "bytes": 165,
+          "sha256": "f30a4bbe828adba758bf20e5653b7b2282f78099d7df128e2de491ca9d1db41e"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_hard_route_llama3.2-3b_threshold.json",
+          "bytes": 165,
+          "sha256": "8195a3a0efc257cdfaa291fb89182cd2ab64fe7844438e4b1147115bcb9755bf"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_soft_gemini-3.1-pro_threshold.json",
+          "bytes": 175,
+          "sha256": "123ea0aeac626e78e00d0abf926dac3d36356f8e70e554e9e62b869a06af4c24"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_soft_gemini-3.8-flash_threshold.json",
+          "bytes": 176,
+          "sha256": "9df58455c234e5f88ceb903ec0da1a3b229e86581f85cc1b4c4dc4dc3f8b170f"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_soft_llama3.1-8b_threshold.json",
+          "bytes": 171,
+          "sha256": "781d8a7b50577a6bf9cb74993b481362c8c869f617076fbcc0b66f17a3f1a7f9"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/hierarchy_soft_llama3.2-3b_threshold.json",
+          "bytes": 171,
+          "sha256": "a6ef1d876d08a51859f3734760528ab13c955d9645c53442f169f17518c004da"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/llama_conditional_llama3.1-8b.joblib",
+          "bytes": 1648538,
+          "sha256": "5bd87fe3e3e85fb2b92df8ffc81ec5854e47fb87fbf16b904e0b68151b61f50e"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_direct_gemini-3.1-pro_threshold.json",
+          "bytes": 171,
+          "sha256": "d1d88e6e9d4376b87c89ea2ec2d58feb851a9e09c9d61a94ef5e284b0de94b7d"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_direct_gemini-3.8-flash_threshold.json",
+          "bytes": 173,
+          "sha256": "4684b01754e82394ff2ecc83bcb087133ececaccd196a74c10434b7dc8736486"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_direct_llama3.1-8b_threshold.json",
+          "bytes": 167,
+          "sha256": "e98cfc24be9e193023a346b7de82762baf48c1808ddd632f1324c9ece990336b"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_direct_llama3.2-3b_threshold.json",
+          "bytes": 167,
+          "sha256": "6416442c8a08512f8d263b06b233b855b439b590a8cedf3977d1d5a6de2c315a"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_gemini-3.1-pro.joblib",
+          "bytes": 1714720,
+          "sha256": "f5aa31bad8ad6f4f3fe6f34522ce226b2179ab210b0f574ca4115142d2e90a04"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_gemini-3.8-flash.joblib",
+          "bytes": 1714528,
+          "sha256": "9cb66e3e0e61b7193e248f9cdb3824a64075769b18e5def7eb759cf3c6388586"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_llama3.1-8b.joblib",
+          "bytes": 1714748,
+          "sha256": "d844c22191ffb641327678bc751a0ba1db4b01a5b6b52d20828356d4fb1b0e9c"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_lr/ovr_llama3.2-3b.joblib",
+          "bytes": 1714641,
+          "sha256": "e5bc9bb8808335b21c76d4c1892c7bfe86c771ff9ea41743212add4adcc4298a"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/family_gemini_vs_llama.joblib",
+          "bytes": 3559541,
+          "sha256": "be806097cdec6fbd5a7827f6e7e9a76a05ea982514d9bf11e062ad9f22dc1b82"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/gemini_conditional_gemini-3.1-pro.joblib",
+          "bytes": 2382120,
+          "sha256": "c0755cb8d9d3144247eb4fec68364afd9520e4208eda95e4ee96e0b1eae3bee4"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_hard_route_gemini-3.1-pro_threshold.json",
+          "bytes": 168,
+          "sha256": "c501b6b715a1dfa6d328a1fca5978b4c84c5ce937ae2ed498b430c319f64dacb"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_hard_route_gemini-3.8-flash_threshold.json",
+          "bytes": 182,
+          "sha256": "0dd4fe9bea1698508e834f2c3ed5a3fee64db7dcf3621be91f5518587e1732d5"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_hard_route_llama3.1-8b_threshold.json",
+          "bytes": 165,
+          "sha256": "182d780c4b94fd1069de661ddebf85637e3abbf9f17c2bc26d5f58681035ff4f"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_hard_route_llama3.2-3b_threshold.json",
+          "bytes": 165,
+          "sha256": "dc6cab65863127108a3cc5e6aad77b863abc853dc1cbb113dc8a7f9bfad44fdb"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_soft_gemini-3.1-pro_threshold.json",
+          "bytes": 174,
+          "sha256": "ffaa09741e8fab80c4cf10ec7fde3458e85c455a850b278ee9528c2c3166eb96"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_soft_gemini-3.8-flash_threshold.json",
+          "bytes": 176,
+          "sha256": "179be2999bde142f254867a440aeb9d44aa9255522ab97b220f3197ac16c6d3d"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_soft_llama3.1-8b_threshold.json",
+          "bytes": 171,
+          "sha256": "700808bb8d1c6e2f8553bf5738b63df3227cb95d27c22af30857786a6fafac16"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/hierarchy_soft_llama3.2-3b_threshold.json",
+          "bytes": 172,
+          "sha256": "3fbf71d4077df2cdbccde92f6ae536efb31d92cbfae3eb2c98046a606d07b386"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/llama_conditional_llama3.1-8b.joblib",
+          "bytes": 3094522,
+          "sha256": "c44df66d7048b6fed049fdc09327f0f61b88bcc38b9c0cf9811782ac7b2a0ac6"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_direct_gemini-3.1-pro_threshold.json",
+          "bytes": 170,
+          "sha256": "464530ee107f1ae17ae1942ec55b9ebd8187d793be10a17ead6073c87e5f5c50"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_direct_gemini-3.8-flash_threshold.json",
+          "bytes": 172,
+          "sha256": "d94825a93a5b9ba5c24c25ffe74cdec87a1c9d23c7ec4e646f7a432f34228587"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_direct_llama3.1-8b_threshold.json",
+          "bytes": 168,
+          "sha256": "b6fafd1b431701fe9400c7a86c84f21c4fd41972025ce311c231390bb8272520"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_direct_llama3.2-3b_threshold.json",
+          "bytes": 167,
+          "sha256": "46c633cedb92b0b58269294d6e24be9fa29d1d96dc620a931d041b1abbfce391"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_gemini-3.1-pro.joblib",
+          "bytes": 3923122,
+          "sha256": "916a39a3f64ce1b8647d12643cd34d0586bc40fe8b31cc408de8981897c3a90e"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_gemini-3.8-flash.joblib",
+          "bytes": 3512264,
+          "sha256": "7e67c2695d22997d8ff47e6c02a223d7a9be2dee791a224c35658a2685088c97"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_llama3.1-8b.joblib",
+          "bytes": 4419737,
+          "sha256": "003340669534630bfccfcd7385274c09d33a2cb609d1c610e542103ab09d0fa5"
+        },
+        {
+          "path": "collector/data/experiment5/hierarchy/models/baseline_rf/ovr_llama3.2-3b.joblib",
+          "bytes": 4223719,
+          "sha256": "6168481154164eb24467579a1f2168545af24d5808ed9590d5070869ddbc9ab2"
+        }
+      ]
+    },
+    "supervised": {
+      "directory": "collector/data/supervised",
+      "files": [
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/all_personas/development.csv",
+          "bytes": 4196118,
+          "sha256": "5b69128dc1879f254ff5121b95d479cc9a416e1a562767256231dc7a4210a853"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/all_personas/test.csv",
+          "bytes": 828247,
+          "sha256": "b356fa88da8d089e7e5ebbedfc6d0e4df0e828ad5cbd9cc5338c955da4b2beb6"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/all_personas/validation.csv",
+          "bytes": 874795,
+          "sha256": "4d1464683030e1f145f895608358faeed82157b56fe4a1ca7590b4d657275b40"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_BK1/development.csv",
+          "bytes": 442138,
+          "sha256": "7cea7d2829d0a582bb26bec80efbc2839ebe117428ea832414b58fbc22cb60f8"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_BK1/test.csv",
+          "bytes": 75733,
+          "sha256": "b4e1bee7a3e012c4be11bdafa65130353d690d6167955c88c63eecd9cceea171"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_BK1/validation.csv",
+          "bytes": 72891,
+          "sha256": "3663ecc07e557a46deb6386571a3cdeede706bc900c1f85c8b8ff5b85986d34f"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P05/development.csv",
+          "bytes": 100702,
+          "sha256": "230c916ae4a8d73953d8de8be33254d2330076bc0323d2ef76ab9d08cb2aed01"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P05/test.csv",
+          "bytes": 18880,
+          "sha256": "c135b1772e3a063c449850c0f0cd97fd4a4fa25bb437cc68311ea71d54394791"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P05/validation.csv",
+          "bytes": 6829,
+          "sha256": "35f9c3aa7466258a35ccac0929f2488a144ef53d56163ff2d2fc61030c75f723"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P13/development.csv",
+          "bytes": 2012476,
+          "sha256": "0cd30868824e592319f40373b25cb37cf5db50730f4d9b125ff26bad49dfc7d8"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P13/test.csv",
+          "bytes": 396666,
+          "sha256": "8bd537f806a8de5f8ff256c3233376110e137f543f23d292160e6e3ffb5402a1"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.1-pro/persona_P13/validation.csv",
+          "bytes": 628379,
+          "sha256": "3b72dfb84c00ca0f1c3130bd96b481e0095e98a3818c545b65b28cfc637396c9"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/all_personas/development.csv",
+          "bytes": 4201154,
+          "sha256": "6b307282943d295c4b56df8cfceb768ac38963f30952559203c4aff1950f4cca"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/all_personas/test.csv",
+          "bytes": 829327,
+          "sha256": "89f8acad893f368970acb5931f70066c0b35ce755d35781b0b28a86f93ccfdaf"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/all_personas/validation.csv",
+          "bytes": 875875,
+          "sha256": "9cc742a06faf9eca10a784607a79b70827777cf61752c2b21d60c543cfcd0014"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_BK1/development.csv",
+          "bytes": 442688,
+          "sha256": "a75ad94dd2f92dabac8e02542ef0ee3eaa214ec1d29211e7a79aeac64f24e93a"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_BK1/test.csv",
+          "bytes": 75853,
+          "sha256": "c1eabc3c2225281b494a05163e023008ac6aa7cce1640719a5eebfed7b2ca52c"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_BK1/validation.csv",
+          "bytes": 73011,
+          "sha256": "75dad7ead08e22f0a5513c1879f7aa5a838528f633a1609e03feada8ed0e12ce"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P05/development.csv",
+          "bytes": 100798,
+          "sha256": "91625cca8c29894425572f44982cca4929ae7ee369386c6a3ba07eed233f9738"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P05/test.csv",
+          "bytes": 18904,
+          "sha256": "03f09124b8b69be2a8ddc22ce852ed3b20b3ea5e5652701eb3458985d8bf5b55"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P05/validation.csv",
+          "bytes": 6853,
+          "sha256": "e13fe468092887318b6c5a146ceb15321eed22ece57f57cf7cc0f06876d490a5"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P13/development.csv",
+          "bytes": 2014970,
+          "sha256": "7cdb0a27d3de00962d801c19ebca272b5cbfbe4b5f9c5c4db9f27f8b2561e11c"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P13/test.csv",
+          "bytes": 397218,
+          "sha256": "e9d0d4be693f88def216f6f5394b5c4ef23b8fb8d514ba072e275c5f4db818c0"
+        },
+        {
+          "path": "collector/data/supervised/binary/gemini-3.8-flash/persona_P13/validation.csv",
+          "bytes": 629123,
+          "sha256": "b3ef103b717605d1636db4bf327f1f53cb74a52eeabce2c84f8ebe4de439e10a"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/all_personas/development.csv",
+          "bytes": 4188564,
+          "sha256": "77344b7c0e64dd1c576a4d686245c73590f7c77f49859c95f88f0503691d7371"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/all_personas/test.csv",
+          "bytes": 826627,
+          "sha256": "256b94b8969d4e0b18d73571bbf5dce9d60159f70312658dfe1c2b99d1e7a3c5"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/all_personas/validation.csv",
+          "bytes": 873175,
+          "sha256": "b7a1874d82b4f16866aaecff1e6a6ba999c9c4cec555cd7a51383b5b3eea339b"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_BK1/development.csv",
+          "bytes": 441313,
+          "sha256": "a0264f0e6b191e1a93a54aa8c7deb2ef41496e729d9a0ebb7eef5e0884ec53ba"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_BK1/test.csv",
+          "bytes": 75553,
+          "sha256": "8aa149e4df22677b114af676b89fe100f12330d6d146f645f399b83bca5df4ec"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_BK1/validation.csv",
+          "bytes": 72711,
+          "sha256": "458150d50d52bb92147c98d662578252bba3ee6d130c7077859d8a2e02fc99ee"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P05/development.csv",
+          "bytes": 100558,
+          "sha256": "debede344358fd5fca414ceb92aec000e13781cd10e0a368b5046a5f4c520f6f"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P05/test.csv",
+          "bytes": 18844,
+          "sha256": "d957b0867084361eb9d01c130416d2a427385d1ed557274041b0efe67215b72e"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P05/validation.csv",
+          "bytes": 6793,
+          "sha256": "bbffa8d621108716551350964ace785f5e75eb16dec3055454f9e8c26ac481f3"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P13/development.csv",
+          "bytes": 2008735,
+          "sha256": "384ff4ce7ba5d1b9475a65553fae4b1a1226fa458e996961ce01b3db6126b267"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P13/test.csv",
+          "bytes": 395838,
+          "sha256": "c7212c077d3d4ad17608887d34db3d1cf479513fec878eb7a1ce9e0f13a68ca7"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.1-8b/persona_P13/validation.csv",
+          "bytes": 627263,
+          "sha256": "7e1cf2b25aaa26d76b5044dc183777c157e539932ff65262199d48480fcbc83c"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/all_personas/development.csv",
+          "bytes": 4188564,
+          "sha256": "7639b8dd1dc8528076dfe1f7d82247e7a092b76a1b6270bbb39d1e4f75a5f110"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/all_personas/test.csv",
+          "bytes": 826627,
+          "sha256": "77c26023cf03a6c6a0426688bc2f2374ccd624b50476e99049622e5ca56866d9"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/all_personas/validation.csv",
+          "bytes": 873175,
+          "sha256": "42dff8f5bcef2c77bfe2bf4e302942ee08016a5a7515b5a2d9abfd1deb4e08ce"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_BK1/development.csv",
+          "bytes": 441313,
+          "sha256": "4adaa041307c70976f056391a394520ba136434d57e7b2cfeac0c60fa1d6c1e2"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_BK1/test.csv",
+          "bytes": 75553,
+          "sha256": "da77cf68eae4e1582ed6d7c62589049972377487f882d050bb6420695c687175"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_BK1/validation.csv",
+          "bytes": 72711,
+          "sha256": "9470768d97037cc33cbde24b5d3edfdd4ae055d078d2fe9e274d081a5742e6ac"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P05/development.csv",
+          "bytes": 100558,
+          "sha256": "8cd16a09778e0c11f91e66a5dfad4be5812ed01ab0426311563a83cc57c07038"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P05/test.csv",
+          "bytes": 18844,
+          "sha256": "c7519401c073e72cff702d2a1448a84bd6a29d7c27b17476d61a22c234187c3a"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P05/validation.csv",
+          "bytes": 6793,
+          "sha256": "bf9048d01934d1b8b32f401c61e2711046bdb9591c6a5c83370b7d344c4f6b46"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P13/development.csv",
+          "bytes": 2008735,
+          "sha256": "b810fbab2dd8513bd7b24ce174bfa7883e217ea3324ee043d7eaf5952755c708"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P13/test.csv",
+          "bytes": 395838,
+          "sha256": "81184296805010a84751d749d6e1e3908766f2715a5c5e95dc58691417e4157d"
+        },
+        {
+          "path": "collector/data/supervised/binary/llama3.2-3b/persona_P13/validation.csv",
+          "bytes": 627263,
+          "sha256": "acf3d49f77b2e2479c7797040d7a0f81f7b86ce51424439c529f18a530797771"
+        },
+        {
+          "path": "collector/data/supervised/data/all_responses.csv",
+          "bytes": 6682144,
+          "sha256": "a1824bb39c7c5d6a517da12e7066efa241a812eb26959a71abb88f3a949c236f"
+        },
+        {
+          "path": "collector/data/supervised/data/all_responses.jsonl",
+          "bytes": 9230110,
+          "sha256": "56b04caee5bc2138377ca6f0d8792c9203d7aa82be6d8892d78d226dad5e9d09"
+        },
+        {
+          "path": "collector/data/supervised/data/prompt_assignments.csv",
+          "bytes": 15786,
+          "sha256": "cea0fefa45cbe3d2908b5ec1d8b1da09dfc6dd39f3915fd48b05c76cf2d6c7f9"
+        },
+        {
+          "path": "collector/data/supervised/splits/development.csv",
+          "bytes": 4745604,
+          "sha256": "180c34b14666b59013945bb11e6af1eb9c3b6fc07fb94a3cd86fdda40a452239"
+        },
+        {
+          "path": "collector/data/supervised/splits/test.csv",
+          "bytes": 944810,
+          "sha256": "c6a5241754decc18ed12f2a7aaf89b63c806a6478cb7a5b05da3435ffd4fcf05"
+        },
+        {
+          "path": "collector/data/supervised/splits/validation.csv",
+          "bytes": 992676,
+          "sha256": "5c6667cacc555237e301cc585b642755947248a62695b4d05c4b83c96b0a68b5"
+        },
+        {
+          "path": "collector/data/supervised/summary.json",
+          "bytes": 1715,
+          "sha256": "eb5e9d84da423fc71ac49b063299e9bb55c9ec85c19461762fb516c16294bf53"
+        },
+        {
+          "path": "collector/data/supervised/views/all_personas/development.csv",
+          "bytes": 4745604,
+          "sha256": "180c34b14666b59013945bb11e6af1eb9c3b6fc07fb94a3cd86fdda40a452239"
+        },
+        {
+          "path": "collector/data/supervised/views/all_personas/test.csv",
+          "bytes": 944810,
+          "sha256": "c6a5241754decc18ed12f2a7aaf89b63c806a6478cb7a5b05da3435ffd4fcf05"
+        },
+        {
+          "path": "collector/data/supervised/views/all_personas/validation.csv",
+          "bytes": 992676,
+          "sha256": "5c6667cacc555237e301cc585b642755947248a62695b4d05c4b83c96b0a68b5"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_BK1/development.csv",
+          "bytes": 497726,
+          "sha256": "65f009ff9a449b2c9ee986924a8ef6d42fc7cc6d0dbd1a8f18d914f5055de0b9"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_BK1/test.csv",
+          "bytes": 88313,
+          "sha256": "54be36dd0a26914deb42964fbf84ffcc9e898523a61ecdc8c4ef37791283afdd"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_BK1/validation.csv",
+          "bytes": 85671,
+          "sha256": "03b50ceaec9fa1e678366daa18616ff60c760da57d73e959bae96c034c9fcf9a"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P05/development.csv",
+          "bytes": 112118,
+          "sha256": "972bdd5f79d546f80708d13f849f36660a50aa2166089a56aa22f74a669d19f3"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P05/test.csv",
+          "bytes": 21823,
+          "sha256": "f0fca57960fd79d8b4af91e3e6087c9c3386df0cf3f0bcd714823f808806f43b"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P05/validation.csv",
+          "bytes": 9582,
+          "sha256": "43befd676cf5271fad4af6939a862ff8b6fb9796609a3d4c5361686c3624e297"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P13/development.csv",
+          "bytes": 2288850,
+          "sha256": "dc0daf65c79d9ffc3bcb0c1f1ed0f18ac4a6b881eca6ccff5a5286eb55b18f3d"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P13/test.csv",
+          "bytes": 457274,
+          "sha256": "485effbd67fc31bfa3c65dc2da5f6914a5b54897cf31758242ae808154818eb2"
+        },
+        {
+          "path": "collector/data/supervised/views/persona_P13/validation.csv",
+          "bytes": 710955,
+          "sha256": "f355080deb4be174ff192e3a69984ae01f932f912f60efb575ac436d0de88e4b"
+        }
+      ]
+    },
+    "supervised_results": {
+      "directory": "collector/data/supervised_results",
+      "files": [
+        {
+          "path": "collector/data/supervised_results/comparison/all_validation_predictions.csv",
+          "bytes": 1516186,
+          "sha256": "e088ab4146d78047804bd20e732aaeb0beee19eb720ece59df823a17a92450c3"
+        },
+        {
+          "path": "collector/data/supervised_results/comparison/baseline_false_alarm_rates.csv",
+          "bytes": 1811,
+          "sha256": "e22c18cca8ef1c0918ab1d13f00300a7ebaacbfe9f26a4c6fc8be0fcffa92160"
+        },
+        {
+          "path": "collector/data/supervised_results/comparison/negative_acceptance_matrix.csv",
+          "bytes": 1668,
+          "sha256": "19f44a442fdcb66883d37c2b29ea220e908606d47d544698560a23ab8e25860a"
+        },
+        {
+          "path": "collector/data/supervised_results/comparison/negative_model_rates.csv",
+          "bytes": 5729,
+          "sha256": "4b490d1f147af6284fc77218c980b1f20a6ba2e0daa26afdfdd8299b2a9a9d7c"
+        },
+        {
+          "path": "collector/data/supervised_results/comparison/overall_validation_metrics.csv",
+          "bytes": 4848,
+          "sha256": "d53d931143763b4703129ef153eb0338f224db77b07908e096f6119beecc9189"
+        },
+        {
+          "path": "collector/data/supervised_results/comparison/report_manifest.json",
+          "bytes": 3227,
+          "sha256": "b2397cce14614bf3a333b32e5743a0b1b10b8746d57ce4f312e9c3a496293c5f"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/lr_tfidf.joblib",
+          "bytes": 1714720,
+          "sha256": "c840fcfca4cd664b1f950f470228ea9a90e0719a5c64d0e15d3f8f8672203824"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/lr_tfidf_threshold.json",
+          "bytes": 224,
+          "sha256": "14cf0bd73f27037916dae8452bcfec7c509fda379785677bf0a7af7db4715e2a"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/lr_tfidf_validation_by_group.csv",
+          "bytes": 1490,
+          "sha256": "0680088140ff7675285b775f1be46bad036e7cf66db0b1317e1c29791a6403b7"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/lr_tfidf_validation_predictions.csv",
+          "bytes": 85055,
+          "sha256": "37c39e498c00a3c6871fd43a7b518b99b7ee0e628ea801ab646ca31e40ebcea4"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/lr_top_coefficients.csv",
+          "bytes": 2003,
+          "sha256": "bb11847699671e534c9b8bf87474b6f4d8ad270d04245c4b19d28b9f2f92ee71"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/rf_feature_importance.csv",
+          "bytes": 1328,
+          "sha256": "34bb8994f930fc22f8d9b2012289501bdc0734ddf66558ed08ce58bd8ed4c65a"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/rf_stylometry.joblib",
+          "bytes": 3923122,
+          "sha256": "916a39a3f64ce1b8647d12643cd34d0586bc40fe8b31cc408de8981897c3a90e"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/rf_stylometry_threshold.json",
+          "bytes": 228,
+          "sha256": "27d43365d64e666d6d157ebbe9fc64b81719c3c3912b958b7bafc76a147002eb"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/rf_stylometry_validation_by_group.csv",
+          "bytes": 1581,
+          "sha256": "7e337e3e750407f08004e58f95b5ce4811a779756547da7a29186ed6cef40cca"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/rf_stylometry_validation_predictions.csv",
+          "bytes": 87329,
+          "sha256": "9f13157d679f89aa8a1d004d2f8bbd9a64309f38b0041ebdc48e5ef396cf7197"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/training_settings.json",
+          "bytes": 860,
+          "sha256": "59d4803fae64cad092c1a18e00ab41312c61406e75abb6e8cce7a8cf197de4ba"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.1-pro/all_personas/validation_metrics.csv",
+          "bytes": 1437,
+          "sha256": "9e9e984a22df07b3339b3e5e13da15c22eded27e9019be16ba85e7c72c7023ff"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/lr_tfidf.joblib",
+          "bytes": 1714527,
+          "sha256": "f1f74884cfa78d1b9c3cc80f0c8cafd6d0573742ca9b6afb4fadf8403bec831a"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/lr_tfidf_threshold.json",
+          "bytes": 226,
+          "sha256": "0e3f1e2facc02a7cdc429bd892d549c886518049b2fffa8270423ba700933a1d"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/lr_tfidf_validation_by_group.csv",
+          "bytes": 1473,
+          "sha256": "f728b87ab7f4af33f7264b58e32f4e0f21110191a73094e51dbae66c042864ea"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/lr_tfidf_validation_predictions.csv",
+          "bytes": 85045,
+          "sha256": "47a2a319c5bca982776565581f0b20d9892f0f919f20d2bb368d3ebd33db750e"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/lr_top_coefficients.csv",
+          "bytes": 1897,
+          "sha256": "9ff527e41b8e4217387566884ac3ddb8eb1883467cedfb882c57365672e46fa8"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/rf_feature_importance.csv",
+          "bytes": 1330,
+          "sha256": "d327e376c37e40a6512a70a525355ad3b69f998dfcbcb3bd63fa080c7dbf6504"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/rf_stylometry.joblib",
+          "bytes": 3512264,
+          "sha256": "7e67c2695d22997d8ff47e6c02a223d7a9be2dee791a224c35658a2685088c97"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/rf_stylometry_threshold.json",
+          "bytes": 230,
+          "sha256": "5d3c10eea58af2dd23415ec5c258fcbaf71a39fd61274d46fa00a01d9fb9b4df"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/rf_stylometry_validation_by_group.csv",
+          "bytes": 1534,
+          "sha256": "82ea104cb447cc7d8cb480b7c66c009e09825c8bbf4767b566c94a65680f907c"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/rf_stylometry_validation_predictions.csv",
+          "bytes": 87282,
+          "sha256": "28b7e881eed39700fff93d0d561c7ec093d5c8f3cc5c17d19d5d37e9f27dc813"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/training_settings.json",
+          "bytes": 860,
+          "sha256": "e16d8bb99a8ad1b7d2a2a0723306196c2c4281b2492179ccdc2e73dd864d248e"
+        },
+        {
+          "path": "collector/data/supervised_results/gemini-3.8-flash/all_personas/validation_metrics.csv",
+          "bytes": 1443,
+          "sha256": "4832af376b20fbf256a260cf15cf244f6113e445edbfc1b76085c99fa58f1a9f"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/lr_tfidf.joblib",
+          "bytes": 1714748,
+          "sha256": "dd3a81b097a42efc2ae88d2207877748925cd1218e67c642ddff9c4221e0d12f"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/lr_tfidf_threshold.json",
+          "bytes": 220,
+          "sha256": "1bdf888af5734b7222a4257404dd4e13ebcb013039e19dc828bcfa22f1fddc65"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/lr_tfidf_validation_by_group.csv",
+          "bytes": 1645,
+          "sha256": "3d8e15e597a2027be156302a6bbc9f04a4dbb01cf28cb1e0cbe3db446d50ef7f"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/lr_tfidf_validation_predictions.csv",
+          "bytes": 84509,
+          "sha256": "a066ab8a9854d7a32b318aa75815d51698e5d42f0c660dc9a473e7993e279c4d"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/lr_top_coefficients.csv",
+          "bytes": 1976,
+          "sha256": "31d1db58d4eaf52dd8b438babca7db4811fe5d353c89b2cae0b35fdf49980043"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/rf_feature_importance.csv",
+          "bytes": 1325,
+          "sha256": "250ec026e727ad159a249f39a778b63cce7a06c637c09450fd68c872d13aecbc"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/rf_stylometry.joblib",
+          "bytes": 4419737,
+          "sha256": "003340669534630bfccfcd7385274c09d33a2cb609d1c610e542103ab09d0fa5"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/rf_stylometry_threshold.json",
+          "bytes": 226,
+          "sha256": "11ddba6ff9c49cf3c25e83b70cb987225eb34e7fbd333a73dd4449d1a48d0cf0"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/rf_stylometry_validation_by_group.csv",
+          "bytes": 1629,
+          "sha256": "4ac226c7889b3abecf676035223f2c66a6628e659ab4eb9a56b941f045e3dc79"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/rf_stylometry_validation_predictions.csv",
+          "bytes": 87852,
+          "sha256": "58e1d5166964586acd618c936c24efb05088e2583da6c852d2c5ec1b62f0c11a"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/training_settings.json",
+          "bytes": 860,
+          "sha256": "df327b63d73d73792766415d9cef4ffc5b5dccc77fe2d704432807f9d7f75719"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.1-8b/all_personas/validation_metrics.csv",
+          "bytes": 1411,
+          "sha256": "42ea02c9fc92e88f89c343674631b53e9e60512ca566a3158d4d11b49402dc36"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/lr_tfidf.joblib",
+          "bytes": 1714641,
+          "sha256": "8c62537cf0c2f8996c45caea0ae4c40c73874fed90a36f4eb8fd24ff01b98455"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/lr_tfidf_threshold.json",
+          "bytes": 220,
+          "sha256": "1c240a809a6687d6c7f2092d1afa64a083516b73d91808383982699ad73e4a6b"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/lr_tfidf_validation_by_group.csv",
+          "bytes": 1599,
+          "sha256": "0afbe115c0c7d0587532eef3ad313cfe3e0a248d80a01b3d54275d8f72794806"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/lr_tfidf_validation_predictions.csv",
+          "bytes": 84481,
+          "sha256": "3b11825f521451d02ac7d731026923d542ac64ff13a726a845ae52898f4d009e"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/lr_top_coefficients.csv",
+          "bytes": 1954,
+          "sha256": "b08cdff47e5f6d8b6acd6bba3f6a739306a9fec3d78bb330ac3a44c2522ed463"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/rf_feature_importance.csv",
+          "bytes": 1324,
+          "sha256": "8677badb4c20617810b4aa43ebbb0982e5b6b468dc3fc892321422dfa92dde51"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/rf_stylometry.joblib",
+          "bytes": 4223719,
+          "sha256": "6168481154164eb24467579a1f2168545af24d5808ed9590d5070869ddbc9ab2"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/rf_stylometry_threshold.json",
+          "bytes": 225,
+          "sha256": "4c8cc65aa1d7c4415413b6d755fdcf9265629bfe77d7db9b2d9d537930703b67"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/rf_stylometry_validation_by_group.csv",
+          "bytes": 1618,
+          "sha256": "aceb75f098a87ac9f6cccb00ab41d84457139b496add0ef516a2ece8d7c19ff5"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/rf_stylometry_validation_predictions.csv",
+          "bytes": 87336,
+          "sha256": "a967ac6c796755a30cdba28af4adc62993d99f9f1bb7a1bc3bcd09a7f235dd0b"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/training_settings.json",
+          "bytes": 860,
+          "sha256": "01d4eff8a850e31179ff88b3b627e88cb65bee43f20a06b5fa92c921d4d2edd9"
+        },
+        {
+          "path": "collector/data/supervised_results/llama3.2-3b/all_personas/validation_metrics.csv",
+          "bytes": 1380,
+          "sha256": "3bb1c2562a22a91dd275c1877a28aa0c19ed72fdb9e2581bd732948d1a01a2bd"
+        }
+      ]
+    },
+    "within_family_results": {
+      "directory": "collector/data/within_family_results",
+      "files": [
+        {
+          "path": "collector/data/within_family_results/comparison/all_within_family_validation_predictions.csv",
+          "bytes": 855616,
+          "sha256": "f3151a1c4a307f33944503354205acf4d9a99beb9dc5e0d593f5a8202f35f0d0"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/fair_pairwise_vs_ovr_metrics.csv",
+          "bytes": 11879,
+          "sha256": "c77e5b8fc3386f5d7a11b3e0a594cae87f8c0de96268b1c2dcabb219a72902e8"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/pairwise_improvement_deltas.csv",
+          "bytes": 3579,
+          "sha256": "133ad78be0ec0bd8406f3229dec9be693b42913c185ee68f7c7ed11ec581cf4a"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/run_manifest.json",
+          "bytes": 2097,
+          "sha256": "25d76fdd796eb2cf694bd074fc6322bd44d8de856adaacfac229aa8ae30d5e27"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/within_family_prompt_ranking.csv",
+          "bytes": 44712,
+          "sha256": "d1d99f84e93b587c6a1f7fa3399fcc084511cbba1919c28c2ddca6116cf31438"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/within_family_prompt_summary.csv",
+          "bytes": 859,
+          "sha256": "ee8c67320e6c39ac56e75d4748e473902924c7424ee4eaa4277368ac9c4c0d2d"
+        },
+        {
+          "path": "collector/data/within_family_results/comparison/within_family_validation_metrics.csv",
+          "bytes": 5386,
+          "sha256": "a58b533caa8043539a57fc87d9d81619710b8b4dfb7f9d4e3f91b25be421d124"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/lr_tfidf.joblib",
+          "bytes": 1644834,
+          "sha256": "1a752c4df483c2cd028ed4810bd3335927dd8127f0397fe81b4dba289e6bb3fd"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/lr_tfidf_threshold.json",
+          "bytes": 376,
+          "sha256": "cb225b59d883ef460a7d8c68e65372322381117e87b6900b6313b0d8c556b2cd"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/lr_top_coefficients.csv",
+          "bytes": 1973,
+          "sha256": "5ed4289ea2c786c428b257c8a844bd03f05bf630fdc513299da9adbba4bbe183"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/rf_feature_importance.csv",
+          "bytes": 1324,
+          "sha256": "a0d03e13cd336a5c114eaa52c12c116af33428dfeea9c2f0c84f66a0a44e4ca2"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/rf_stylometry.joblib",
+          "bytes": 2382120,
+          "sha256": "c0755cb8d9d3144247eb4fec68364afd9520e4208eda95e4ee96e0b1eae3bee4"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/rf_stylometry_threshold.json",
+          "bytes": 381,
+          "sha256": "3afa197b89110916d37bd93ead9450fdaf521505f75ed3ee61721adb5b5dec46"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.1-pro/all_personas/validation_metrics.csv",
+          "bytes": 1610,
+          "sha256": "5fd0718cffc2ce183d8198921100f915e8f4409d5fdd64c1826fa08123853d19"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/lr_tfidf.joblib",
+          "bytes": 1644787,
+          "sha256": "cf990d2091ef9a232803866fea2629153eb8bdd45f1f369dce032dadb20680b3"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/lr_tfidf_threshold.json",
+          "bytes": 376,
+          "sha256": "a789d3e5f4c238f68a3b4bccd88e001e9c012e8707a80438162baeec4ddb5127"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/lr_top_coefficients.csv",
+          "bytes": 1978,
+          "sha256": "5af52a8b7df6abe96cf96bc994e53dbf1101d10e1b2fdc04d2cee3b6de9b57bc"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/rf_feature_importance.csv",
+          "bytes": 1324,
+          "sha256": "a0d03e13cd336a5c114eaa52c12c116af33428dfeea9c2f0c84f66a0a44e4ca2"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/rf_stylometry.joblib",
+          "bytes": 2382313,
+          "sha256": "03982f4427c7273b6b9eca45e5a3b0894d2feffbee76e4ac434b082089179c66"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/rf_stylometry_threshold.json",
+          "bytes": 381,
+          "sha256": "c443fa35189f52c6acadb041b796590666d0b4b0dde326e406cca6655462d6b8"
+        },
+        {
+          "path": "collector/data/within_family_results/gemini/gemini-3.8-flash/all_personas/validation_metrics.csv",
+          "bytes": 1613,
+          "sha256": "b6e4a8c78f1912e7cf6f64a23b8c2fd42c34b2fed494b3a275acab108e08c6c9"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/lr_tfidf.joblib",
+          "bytes": 1648538,
+          "sha256": "6a3853e122dd8c5477c06e55c336bba38afcde4b013d9b9ee40da2948dea6874"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/lr_tfidf_threshold.json",
+          "bytes": 367,
+          "sha256": "a5c7f8f78c23249b3fbaa6f804caf69860eac372cb1c2d9ab5a05569f7b800b8"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/lr_top_coefficients.csv",
+          "bytes": 2096,
+          "sha256": "a82a38f4ffe48647bd41b6a89e98087b9cacc1513f06cbd842d002dd80b12ad0"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/rf_feature_importance.csv",
+          "bytes": 1310,
+          "sha256": "ff0b1f484f4b389d7f13240d44e6d0d6673c3bf05ac8081ec37563d769104d09"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/rf_stylometry.joblib",
+          "bytes": 3094522,
+          "sha256": "c44df66d7048b6fed049fdc09327f0f61b88bcc38b9c0cf9811782ac7b2a0ac6"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/rf_stylometry_threshold.json",
+          "bytes": 371,
+          "sha256": "29ba145a6cfee3bf36e3bb78207e530d5109c84fb4b2eaca2e28003509ce84af"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.1-8b/all_personas/validation_metrics.csv",
+          "bytes": 1577,
+          "sha256": "e656b288b5587f62f713c752df3aa05e2f51f022fd1e28bc44035256a265d5fd"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/lr_tfidf.joblib",
+          "bytes": 1648469,
+          "sha256": "4b1df5c4e9a625b59a6ed295e661f4b87e4c55b12f9dc80df17f43d61e4c5c2d"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/lr_tfidf_threshold.json",
+          "bytes": 367,
+          "sha256": "09b3e752ddde0f880009e9a2882e2c367c05f61278f8b8ac61b50174d882f74d"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/lr_top_coefficients.csv",
+          "bytes": 2093,
+          "sha256": "0217812a84f4610b65d3ce70a478b3be759b5ebf3ab12db862fb067d48dd50c6"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/rf_feature_importance.csv",
+          "bytes": 1310,
+          "sha256": "ff0b1f484f4b389d7f13240d44e6d0d6673c3bf05ac8081ec37563d769104d09"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/rf_stylometry.joblib",
+          "bytes": 3094685,
+          "sha256": "31b7a7c00fa0ca2d0ad0e3a2ebeab1f97eb1e5ea3f40e0d23289326cadf501e7"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/rf_stylometry_threshold.json",
+          "bytes": 372,
+          "sha256": "975c2f6909b1b86f09368dbcb47f3d87ec1eb08425cc0cb341a2020b3432b345"
+        },
+        {
+          "path": "collector/data/within_family_results/llama/llama3.2-3b/all_personas/validation_metrics.csv",
+          "bytes": 1576,
+          "sha256": "bcf39d7707075d373ed800b8bec3d084ec874abbe4d2be769ec66b57c32d8f03"
+        }
+      ]
+    }
+  }
+}

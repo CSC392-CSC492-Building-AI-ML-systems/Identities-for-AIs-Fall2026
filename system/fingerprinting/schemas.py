@@ -24,12 +24,15 @@ class Observation:
     prompt_id: str | None = None
     output_tokens: int | None = None
     latency_ms: float | None = None
+    completed_blank: bool = False  # explicitly marked successful blank, e.g. collector replay
 
     def __post_init__(self) -> None:
         if not self.prompt_text.strip():
             raise ValueError("Observation.prompt_text must not be empty")
-        if not self.response_text.strip():
-            raise ValueError("Observation.response_text must not be empty")
+        if not isinstance(self.response_text,str) or (not self.response_text.strip() and self.completed_blank is not True):
+            raise ValueError("Observation.response_text must not be empty unless explicitly completed_blank")
+        if type(self.completed_blank) is not bool or (self.completed_blank and self.response_text.strip()):
+            raise ValueError("completed_blank is only valid for blank responses")
         if self.output_tokens is not None and self.output_tokens < 0:
             raise ValueError("output_tokens must not be negative")
         if self.latency_ms is not None and self.latency_ms < 0:

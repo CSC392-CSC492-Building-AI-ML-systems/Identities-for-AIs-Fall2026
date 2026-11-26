@@ -1,0 +1,10 @@
+{
+  "dataset_id": "collector_raw/2026-11-26",
+  "split_id": "candidate_include_blank_seed42",
+  "methods": {
+    "random_forest": {"artifact_id": "random_forest/v2", "parameters": {}},
+    "harness": {"artifact_id": "harness/v2", "parameters": {}},
+    "lora": {"artifact_id": "lora/v3", "parameters": {}},
+    "logistic_regression": {"artifact_id": "stage1_lr/v2", "parameters": {}}
+  }
+}

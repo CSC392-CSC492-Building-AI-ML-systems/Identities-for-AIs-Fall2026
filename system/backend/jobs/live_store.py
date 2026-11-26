@@ -47,7 +47,7 @@ class SqliteLiveJobStore(SqliteJobStore):
             columns = {r['name'] for r in con.execute('PRAGMA table_info(fingerprint_live_jobs)')}
             for name, sql_type in (
                 ('deployment_id', 'TEXT'), ('baseline_id', 'TEXT'),
-                ('baseline_revision', 'INTEGER')):
+                ('baseline_revision', 'INTEGER'), ('mode', "TEXT NOT NULL DEFAULT 'live_target_mock_judge'")):
                 if name not in columns:
                     con.execute(f'ALTER TABLE fingerprint_live_jobs ADD COLUMN {name} {sql_type}')
             con.execute('CREATE INDEX IF NOT EXISTS idx_live_jobs_deployment_owner '
@@ -56,23 +56,26 @@ class SqliteLiveJobStore(SqliteJobStore):
             con.commit()
 
     def enqueue(self, owner_id: str, prompt: str, target_model: str, *, job_id: str,
-                deployment_id: str | None = None, baseline: dict[str, Any] | None = None) -> dict[str, Any]:
+                deployment_id: str | None = None, baseline: dict[str, Any] | None = None,
+                mode: str = "live_target_mock_judge", allow_live_judge: bool = False) -> dict[str, Any]:
+        if mode not in ("live_target_mock_judge", "live_stage2_review") or (allow_live_judge and mode != "live_stage2_review"):
+            raise ValueError("Invalid live job mode")
         now = utcnow()
         expires = (datetime.now(timezone.utc) + timedelta(seconds=self.ttl_seconds)).isoformat(timespec='milliseconds')
         # Pin the already-owner-validated baseline to this run, not the latest
         # mutable deployment state at worker execution time.
         ciphertext = self.crypto.seal({'prompt_text': prompt, 'target_model': target_model,
-                                       'deployment_id': deployment_id, 'baseline': baseline})
+                                       'deployment_id': deployment_id, 'baseline': baseline, 'allow_live_judge': allow_live_judge})
         with self._connect() as con:
             con.execute('''INSERT INTO fingerprint_live_jobs
                (job_id,owner_id,status,created_at,updated_at,expires_at,request_ciphertext,
-                deployment_id,baseline_id,baseline_revision)
-               VALUES (?,?,'queued',?,?,?,?,?,?,?)''',
+                deployment_id,baseline_id,baseline_revision,mode)
+               VALUES (?,?,'queued',?,?,?,?,?,?,?,?)''',
                 (job_id,owner_id,now,now,expires,ciphertext,deployment_id,
                  baseline['id'] if baseline else None,
-                 baseline['revision'] if baseline else None))
+                 baseline['revision'] if baseline else None, mode))
             con.commit()
-        return {'job_id':job_id,'status':'queued','mode':'live_target_mock_judge',
+        return {'job_id':job_id,'status':'queued','mode':mode,
                 'created_at':now,'deployment_id':deployment_id,
                 'baseline_revision':baseline['revision'] if baseline else None}
 
@@ -83,7 +86,7 @@ class SqliteLiveJobStore(SqliteJobStore):
         if row is None:
             return None
         return {
-            'schema_version':'1.0', 'job_id':row['job_id'], 'mode':'live_target_mock_judge',
+            'schema_version':'1.0', 'job_id':row['job_id'], 'mode':row['mode'],
             'status':row['status'], 'created_at':row['created_at'], 'updated_at':row['updated_at'],
             'started_at':row['started_at'], 'finished_at':row['finished_at'],
             'attempt_count':row['attempt_count'], 'error_code':row['error_code'],
@@ -138,14 +141,14 @@ class SqliteLiveJobStore(SqliteJobStore):
             con.commit()
         return ids
 
-    def claim_next(self, worker_id: str) -> tuple[str,str,dict[str,Any]] | None:
+    def claim_next(self, worker_id: str, *, mode: str = "live_target_mock_judge") -> tuple[str,str,dict[str,Any]] | None:
         if not worker_id or len(worker_id)>128:
             raise ValueError('Invalid worker ID')
         with self._connect() as con:
             try:
                 con.execute('BEGIN IMMEDIATE')
                 row=con.execute("""SELECT job_id,owner_id,request_ciphertext FROM fingerprint_live_jobs
-                  WHERE status='queued' AND expires_at>? ORDER BY created_at,rowid LIMIT 1""",(utcnow(),)).fetchone()
+                  WHERE status='queued' AND expires_at>? AND mode=? ORDER BY created_at,rowid LIMIT 1""",(utcnow(),mode)).fetchone()
                 if row is None:
                     con.commit()
                     return None
@@ -164,7 +167,7 @@ class SqliteLiveJobStore(SqliteJobStore):
                error_code: str | None=None) -> None:
         if (result is None)==(error_code is None):
             raise ValueError('Provide result XOR error_code')
-        if error_code is not None and error_code not in {'ANALYSIS_FAILED','PROVIDER_ERROR','CREDENTIAL_UNAVAILABLE'}:
+        if error_code is not None and error_code not in {'ANALYSIS_FAILED','PROVIDER_ERROR','CREDENTIAL_UNAVAILABLE','JUDGE_NOT_CONFIGURED'}:
             raise ValueError('Invalid public error code')
         status='completed' if result is not None else 'failed'
         encrypted=self.crypto.seal(result) if result is not None else None
