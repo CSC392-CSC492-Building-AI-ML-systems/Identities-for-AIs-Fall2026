@@ -1,0 +1,69 @@
+model_key: gpt-6-luna
+name: GPT-6 Luna
+family: GPT
+access: closed
+domain: risk
+retrieved_at: 2026-11-26
+fields:
+  information_integrity:
+    evidence: low
+    value: 'Hallucination results only in charts: the October 7 version improved on GPT-5.6 Luna on nearly all metrics, and the October 29 update had higher factual-error rates than October 7.'
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+      - https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum
+    own_test: null
+  confabulation:
+    evidence: low
+    value: No hallucination rate given in text for this model.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  data_leakage_model:
+    evidence: moderate
+    value: Training data filtered to reduce personal information; no memorization rate.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: API data is not used to train OpenAI's models unless the customer opts in.
+    source:
+      - https://openai.com/policies/services-agreement/
+    own_test: null
+  security:
+    evidence: high
+    value: Instruction-hierarchy robustness 99.79%; indirect prompt-injection robustness (GPT-RED) 95.80%. Rated High cyber capability under the Preparedness Framework (below Critical).
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Training data categories only. OpenAI covers customers against third-party IP claims, with exclusions.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+      - https://openai.com/policies/services-agreement/
+    own_test: null
+  agentic_tool_use:
+    evidence: low
+    value: No destructive-action or transaction-confirmation results for this model; worked around environment barriers in 15.9% of rollouts; no auto-review exploits found.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: 'Safe-completion rates on challenging prompts: violent illicit 0.959, extremism 0.894, hate 0.965, self-harm 0.901, gore 0.812, sexual/minors 0.829 (significant regressions on self-harm, gore and sexual content vs GPT-5.6 Luna). Rated High biological/chemical capability, with safeguards.'
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  bias_fairness:
+    evidence: low
+    value: No fairness results published for this model.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf
+    own_test: null

@@ -1,0 +1,20 @@
+model_key: qwen2.5-3b
+name: "Qwen2.5 3B Instruct"
+family: Qwen
+access: open
+domain: governance
+retrieved_at: 2026-11-26
+fields:
+  pinned_identity:
+    value: "Hugging Face Qwen/Qwen2.5-3B-Instruct (released September 19, 2024); run locally as Ollama tag qwen2.5:3b (4-bit quantized, Q4_K_M). Ollama digest in our collected records: 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://ollama.com/library/qwen2.5"
+  rereview_triggers:
+    value: "Scan detects drift; a change to the Qwen Research License (or a commercial licence agreed with Alibaba Cloud); a new Qwen release; changes to the Hugging Face repo. No published change or deprecation policy, so rely on scans and repo history."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE"
+  support_status:
+    value: "Superseded by Qwen3 (April 2025) and later Qwen3.5. No end-of-support policy published. Open weights stay downloadable."
+    source: "https://qwenlm.github.io/blog/qwen3/"

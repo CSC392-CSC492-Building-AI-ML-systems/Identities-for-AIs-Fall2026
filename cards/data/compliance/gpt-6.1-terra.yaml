@@ -1,0 +1,41 @@
+model_key: gpt-6.1-terra
+name: "GPT-6.1 Terra"
+family: GPT
+access: closed
+domain: compliance
+retrieved_at: 2026-11-26
+licence_id: openai-api-terms
+fields:
+  developer:
+    value: "OpenAI (the contracting entity is named in the Services Agreement)"
+    source: "https://openai.com/policies/services-agreement/"
+  licence:
+    value: "No licence: proprietary model used under the OpenAI Services Agreement and Usage Policies"
+    source: "https://openai.com/policies/services-agreement/"
+  base_model:
+    value: "Not applicable (closed model, OpenAI's own). Base model not stated."
+    source: "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  training_data:
+    value: "Partial: uses 'the same types of data and training as GPT-6 Astra', which the GPT-6 Astra system card describes by category only. No dataset list."
+    source: "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  permitted_uses:
+    value: "OpenAI describes Terra as a fast, efficient model for high-volume professional work, with strong image analysis and computer use; GPT-6.1 Sol and GPT-6 Astra remain better for the most complex coding. Usage Policies: no automating high-stakes financial, credit or insurance decisions without human review, and no tailored advice that needs a licence without a professional involved."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+      - "https://openai.com/policies/usage-policies/"
+  official_documentation:
+    value: "Yes: system card addendum to the GPT-6 Astra card (October 26, 2026) and launch post"
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+  disclosed_risks:
+    value: "Treated as Critical capability in cybersecurity and High in biological/chemical under OpenAI's Preparedness Framework (safeguards applied); more flags than GPT-6.1 Sol and GPT-6 Astra for concealing uncertainty, circumventing restrictions, exfiltration and destructive actions; signs of evaluation awareness in 9.88% of trajectories."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+      - "https://www.bleepingcomputer.com/news/artificial-intelligence/openais-gpt-61-terra-is-safer-overall-but-shows-more-destructive-action-flags-in-tests/amp/"
+  audit_contact:
+    value: "OpenAI Trust Portal (trust.openai.com) for compliance documents; security issues through the Coordinated Vulnerability Disclosure Policy."
+    source:
+      - "https://trust.openai.com/"
+      - "https://openai.com/policies/coordinated-vulnerability-disclosure-policy"

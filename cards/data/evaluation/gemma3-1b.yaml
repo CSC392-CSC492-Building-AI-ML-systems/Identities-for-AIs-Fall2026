@@ -1,0 +1,72 @@
+model_key: gemma3-1b
+name: "Gemma 3 1B Instruct"
+family: Gemma
+access: open
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "Reasoning and factuality (GPQA Diamond, SimpleQA, FACTS Grounding, BIG-Bench Hard, BIG-Bench Extra Hard, IFEval), STEM and code (MMLU-Pro, LiveCodeBench, MATH, HumanEval, MBPP, GSM8K), multilingual (Global-MMLU-Lite, WMT24++). No multimodal results: the 1B takes text only."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  benchmark_results:
+    value:
+      - benchmark: GPQA Diamond
+        score: 19.2
+        setting: 0-shot, instruction-tuned
+      - benchmark: SimpleQA
+        score: 2.2
+        setting: 0-shot (factual recall)
+      - benchmark: FACTS Grounding
+        score: 36.4
+        setting: ''
+      - benchmark: BIG-Bench Hard
+        score: 39.1
+        setting: 0-shot
+      - benchmark: BIG-Bench Extra Hard
+        score: 7.2
+        setting: 0-shot
+      - benchmark: IFEval
+        score: 80.2
+        setting: 0-shot
+      - benchmark: MMLU-Pro
+        score: 14.7
+        setting: 0-shot
+      - benchmark: MATH
+        score: 48.0
+        setting: 0-shot
+      - benchmark: HumanEval
+        score: 41.5
+        setting: 0-shot
+      - benchmark: MBPP
+        score: 35.2
+        setting: 3-shot
+      - benchmark: GSM8K
+        score: 62.8
+        setting: 0-shot
+      - benchmark: Global-MMLU-Lite
+        score: 34.2
+        setting: 0-shot, multilingual
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  methodology:
+    value: "Shot counts listed per benchmark in the model card; separate tables for instruction-tuned (IT) and pretrained (PT) versions. Safety evaluations: structured evaluations and red teaming without safety filters, English prompts only."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  evaluated_version:
+    value: "Gemma 3 1B (instruction-tuned and pretrained), Gemma 3 release, March 2025 (model card last updated August 14, 2025). 32K-token context."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  known_limitations:
+    value: "Not a reliable knowledge base (SimpleQA 2.2); weak on harder reasoning and knowledge (BIG-Bench Extra Hard 7.2, MMLU-Pro 14.7); text only, with a 32K context (larger Gemma 3 models take images and 128K); safety evaluations were English-only."
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  capabilities:
+    value:
+      - instruction following
+      - mathematics
+      - code
+      - multilingual
+      - reasoning and factuality
+      - safety
+    source: "https://ai.google.dev/gemma/docs/core/model_card_3"
+  provenance:
+    value: "Developer-reported by Google DeepMind (model card, technical report arXiv 2503.19786). Independent Phare results exist only for larger Gemma 3 models (12B, 27B), not the 1B. Not reproduced by our project."
+    source:
+      - "https://ai.google.dev/gemma/docs/core/model_card_3"
+      - "https://phare.giskard.ai"

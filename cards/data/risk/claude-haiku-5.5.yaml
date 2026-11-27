@@ -1,0 +1,72 @@
+model_key: claude-haiku-5.5
+name: Claude Haiku 5.5
+family: Claude
+access: closed
+domain: risk
+retrieved_at: 2026-11-26
+fields:
+  information_integrity:
+    evidence: low
+    value: No factuality benchmark found in the launch post or the readable parts of the system card.
+    source:
+      - https://www.anthropic.com/news/claude-haiku-5-5
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+    own_test: null
+  confabulation:
+    evidence: low
+    value: No hallucination rate found for this model.
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed.
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: Anthropic may not train models on customer content from its commercial services.
+    source:
+      - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  security:
+    evidence: high
+    value: 'Indirect prompt-injection attack success (Gray Swan, 15 attempts) cut from 83.2% (Haiku 4.5) to 7.1%. Cyber: full arbitrary code execution in 1.0% of ExploitBench attempts (4/410); 3.3% of CyScenarioBench challenges completed.'
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+      - https://www.helpnetsecurity.com/2026/10/08/anthropic-claude-haiku-5-5/
+    own_test: null
+  intellectual_property:
+    evidence: moderate
+    value: Training data categories only (public web, public and private datasets, permitted user data, synthetic data; cutoff June 2026). IP indemnity for paid customers.
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+      - https://www.anthropic.com/legal/commercial-terms
+    own_test: null
+  agentic_tool_use:
+    evidence: high
+    value: 'Refused 84.3% of malicious Claude Code requests (Haiku 4.5: 66.6%) and 82.59% of malicious computer-use tasks (Haiku 4.5: 58.93%). OSWorld 2.1 72.4%, Terminal-Bench 4.0 39.2%.'
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+      - https://www.anthropic.com/news/claude-haiku-5-5
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: Harmful single-turn requests answered harmlessly 98.39% (API) / 99.71% (claude.ai); benign requests refused 0.17% / 0.82%. Anthropic flags remaining weaknesses on self-harm and eating disorders.
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+      - https://www.anthropic.com/news/claude-haiku-5-5
+    own_test: null
+  bias_fairness:
+    evidence: high
+    value: BBQ bias score 1.67% (disambiguated) / 0.27% (ambiguous), accuracy 55.56% / 99.65%; political even-handedness 97.7% (API) / 99.1% (claude.ai).
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+      - https://www.anthropic.com/claude-haiku-5-5-system-card
+    own_test: null

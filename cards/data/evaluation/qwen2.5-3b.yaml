@@ -1,0 +1,71 @@
+model_key: qwen2.5-3b
+name: "Qwen2.5 3B Instruct"
+family: Qwen
+access: open
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "MMLU-Pro, MMLU-redux, GPQA, MATH, GSM8K, HumanEval, MBPP, MultiPL-E, LiveCodeBench, LiveBench, IFEval"
+    source: "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  benchmark_results:
+    value:
+      - benchmark: MMLU-Pro
+        score: 43.7
+        setting: ''
+      - benchmark: MMLU-redux
+        score: 64.4
+        setting: ''
+      - benchmark: GPQA
+        score: 30.3
+        setting: ''
+      - benchmark: MATH
+        score: 65.9
+        setting: ''
+      - benchmark: GSM8K
+        score: 86.7
+        setting: ''
+      - benchmark: HumanEval
+        score: 74.4
+        setting: ''
+      - benchmark: MBPP
+        score: 72.7
+        setting: ''
+      - benchmark: MultiPL-E
+        score: 60.2
+        setting: ''
+      - benchmark: LiveCodeBench
+        score: 19.9
+        setting: 2305-2409
+      - benchmark: LiveBench
+        score: 26.8
+        setting: 0831
+      - benchmark: IFEval
+        score: 58.2
+        setting: strict-prompt
+    source: "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  methodology:
+    value: "The Qwen Team's own evaluation, in the blog's instruction-tuned table (compared with Gemma2-2B-IT, Phi3.5-mini-Instruct and MiniCPM3-4B). Shot counts and sampling settings are not given per benchmark."
+    source: "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  evaluated_version:
+    value: "Qwen2.5-3B-Instruct as released September 19, 2024 (3.09B parameters, 32,768-token context, 8,192-token generation)."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  known_limitations:
+    value: "No limitations section published. Behind Phi3.5-mini-Instruct on MMLU-Pro (47.5) and MiniCPM3-4B on IFEval (68.4) in the developer's own table; 32K context, while larger Qwen2.5 models support 128K."
+    source:
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+  capabilities:
+    value:
+      - general knowledge
+      - mathematics
+      - coding
+      - instruction following
+    source: "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  provenance:
+    value: "Developer-reported by the Qwen Team (blog and technical report). No independent evaluation found for the 3B. Not reproduced by our project."
+    source:
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+      - "https://arxiv.org/abs/2412.15115"
