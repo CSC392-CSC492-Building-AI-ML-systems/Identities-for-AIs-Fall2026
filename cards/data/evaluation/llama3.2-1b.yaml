@@ -1,0 +1,65 @@
+model_key: llama3.2-1b
+name: "Llama 3.2 1B Instruct"
+family: Llama
+access: open
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "MMLU, Open-rewrite, TLDR9+, IFEval, GSM8K, MATH, ARC-C, GPQA, Hellaswag, BFCL V2, Nexus, InfiniteBench, Needle-in-a-haystack, MGSM"
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  benchmark_results:
+    value:
+      - benchmark: MMLU
+        score: 49.3
+        setting: 5-shot, macro_avg/acc
+      - benchmark: IFEval
+        score: 59.5
+        setting: 0-shot, avg prompt/instruction acc
+      - benchmark: GSM8K (CoT)
+        score: 44.4
+        setting: 8-shot, em_maj1@1
+      - benchmark: MATH (CoT)
+        score: 30.6
+        setting: 0-shot, final_em
+      - benchmark: ARC-C
+        score: 59.4
+        setting: 0-shot, acc
+      - benchmark: GPQA
+        score: 27.2
+        setting: 0-shot, acc
+      - benchmark: BFCL V2
+        score: 25.7
+        setting: 0-shot, tool use
+      - benchmark: TLDR9+
+        score: 16.8
+        setting: 1-shot, rougeL (summarization)
+      - benchmark: NIH/Multi-needle
+        score: 75.0
+        setting: 0-shot, recall (long context)
+      - benchmark: MGSM (CoT)
+        score: 24.5
+        setting: 0-shot, multilingual math
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  methodology:
+    value: "Meta's internal evaluation library; settings per benchmark as listed in the model card (bf16 weights)."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  evaluated_version:
+    value: "Llama 3.2 1B Instruct, bf16 weights (released September 25, 2024). Not the 8-bit Ollama version we run."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  known_limitations:
+    value: "May produce inaccurate or biased output; static model trained on offline data; a smaller, less capable derivative of Llama 3.1 (MMLU 49.3, BFCL V2 25.7); CBRNE and cyber risks were assessed on larger Llama 3.1 models and assumed to apply; only 8 languages officially supported."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  capabilities:
+    value:
+      - general knowledge
+      - summarization and rewriting
+      - instruction following
+      - mathematics
+      - tool use
+      - long context
+      - multilingual
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"
+  provenance:
+    value: "Developer-reported by Meta (model card). No independent evaluation found for the 1B model. Not reproduced by our project."
+    source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md"

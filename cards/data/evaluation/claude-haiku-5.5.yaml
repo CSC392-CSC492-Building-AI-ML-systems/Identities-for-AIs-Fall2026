@@ -1,0 +1,58 @@
+model_key: claude-haiku-5.5
+name: "Claude Haiku 5.5"
+family: Claude
+access: closed
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "GDPval-AA v2.1, AA-Briefcase v1.1, OSWorld 2.1, Humanity's Last Exam, Terminal-Bench 4.0, FrontierCode 1.1, Chartography (launch post); safety, bias and RSP evaluations (system card)"
+    source:
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+      - "https://www.anthropic.com/claude-haiku-5-5-system-card"
+  benchmark_results:
+    value:
+      - benchmark: GDPval-AA v2.1
+        score: 1620
+        setting: 'rating; Haiku 4.5: 735'
+      - benchmark: OSWorld 2.1
+        score: 72.4%
+        setting: offline subset
+      - benchmark: Humanity's Last Exam
+        score: 45.9% no tools / 57.4% with tools
+        setting: ''
+      - benchmark: Terminal-Bench 4.0
+        score: 39.2%
+        setting: ''
+      - benchmark: FrontierCode 1.1
+        score: 46.4%
+        setting: Main
+      - benchmark: Chartography
+        score: 46.4%
+        setting: no tools
+    source: "https://www.anthropic.com/news/claude-haiku-5-5"
+  methodology:
+    value: "Scores from Anthropic's launch-post table, compared with Haiku 4.5, GPT-6 Luna and Sonnet 5.5; settings in the post's footnotes. Haiku 5.5 is the first Haiku with an adjustable effort setting, which changes results."
+    source: "https://www.anthropic.com/news/claude-haiku-5-5"
+  evaluated_version:
+    value: "claude-haiku-5-5, system card dated October 7, 2026."
+    source: "https://www.anthropic.com/claude-haiku-5-5-system-card"
+  known_limitations:
+    value: "'Not at the capability frontier'; Anthropic says Sonnet 5.5 and Opus 5.5 are better for complex agentic coding; weaknesses in self-harm and eating-disorder conversations; a new tokenizer uses slightly more tokens per task."
+    source:
+      - "https://www.anthropic.com/claude-haiku-5-5-system-card"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+  capabilities:
+    value:
+      - knowledge work
+      - computer and browser use
+      - coding sub-agents
+      - tool use
+      - reasoning
+      - chart understanding
+    source: "https://www.anthropic.com/news/claude-haiku-5-5"
+  provenance:
+    value: "Developer-reported by Anthropic (launch post and system card); customer-reported results (HubSpot, AlphaSense, Box) in the launch post. No independent evaluation found. Not reproduced by our project."
+    source:
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+      - "https://www.anthropic.com/claude-haiku-5-5-system-card"

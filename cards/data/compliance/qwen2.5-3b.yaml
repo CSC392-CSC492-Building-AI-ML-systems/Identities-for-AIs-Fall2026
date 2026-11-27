@@ -1,0 +1,45 @@
+model_key: qwen2.5-3b
+name: "Qwen2.5 3B Instruct"
+family: Qwen
+access: open
+domain: compliance
+retrieved_at: 2026-11-26
+licence_id: qwen-research
+fields:
+  developer:
+    value: "Qwen Team, Alibaba Cloud (Alibaba Cloud is the licensor named in the licence)"
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE"
+  licence:
+    value: "Qwen Research License Agreement, dated September 19, 2024 (Hugging Face license field: qwen-research). Research and evaluation only: commercial use needs a separate licence from Alibaba Cloud. Unlike the 0.5B, 1.5B, 7B, 14B and 32B Qwen2.5 models, which are Apache 2.0."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE"
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+  base_model:
+    value: "Fine-tune of Qwen/Qwen2.5-3B (the developer's own base model)"
+    source: "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+  training_data:
+    value: "Partial. Up to 18 trillion tokens for the Qwen2.5 family, quality-filtered with Qwen2-Instruct models, with maths and code data from Qwen2.5-Math and Qwen2.5-Coder and synthetic data from Qwen2 72B models. No 3B-specific data mix, dataset list or cutoff date."
+    source:
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+      - "https://arxiv.org/abs/2412.15115"
+  permitted_uses:
+    value: "No usage policy published. The licence allows only non-commercial research or evaluation (Section 2); any commercial use, including a bank's production chatbot, requires requesting a licence from Alibaba Cloud. Derived models must say 'Built with Qwen' or 'Improved using Qwen' (Section 4(b))."
+    source: "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE"
+  official_documentation:
+    value: "Yes: Hugging Face model card, Qwen2.5 blog post (September 19, 2024) and the Qwen2.5 Technical Report (arXiv 2412.15115)"
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://qwenlm.github.io/blog/qwen2.5-llm/"
+      - "https://arxiv.org/abs/2412.15115"
+  disclosed_risks:
+    value: "No risks disclosed: the model card has no limitations or safety section. The licence says Alibaba Cloud makes no warranty and takes no responsibility for the safety or stability of the model or its outputs (Section 6(b))."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE"
+  audit_contact:
+    value: "No contact channel listed. Fall back to the Hugging Face community discussions on Qwen/Qwen2.5-3B-Instruct or GitHub issues on QwenLM/Qwen2.5."
+    source:
+      - "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct"
+      - "https://github.com/QwenLM/Qwen2.5"

@@ -1,0 +1,69 @@
+model_key: gpt-6.1-terra
+name: GPT-6.1 Terra
+family: GPT
+access: closed
+domain: risk
+retrieved_at: 2026-11-26
+fields:
+  information_integrity:
+    evidence: moderate
+    value: 'Developer-reported factual error rate on error-inducing prompts: 16.7% at low effort and 4.3% at max effort (GPT-5.6 Terra: 53.6%). System card: substantially fewer factual errors than GPT-6 Sol.'
+    source:
+      - https://openai.com/index/introducing-gpt-6-1-terra/
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  confabulation:
+    evidence: moderate
+    value: Same internal factuality evaluation (error rate 16.7% at low effort, 4.3% at max). No public benchmark.
+    source:
+      - https://openai.com/index/introducing-gpt-6-1-terra/
+    own_test: null
+  data_leakage_model:
+    evidence: low
+    value: Not disclosed beyond the GPT-6 Astra card's data description.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  data_leakage_deployment:
+    evidence: high
+    value: API data is not used to train OpenAI's models unless the customer opts in.
+    source:
+      - https://openai.com/policies/services-agreement/
+    own_test: null
+  security:
+    evidence: moderate
+    value: Treated as Critical cybersecurity capability (safeguards applied). No Terra-specific prompt-injection numbers in the text; OpenAI says it is similar to GPT-6.1 Sol and Astra (99.99% on instruction-hierarchy tests). Multiturn jailbreak robustness on par with GPT-5.6 Terra.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  intellectual_property:
+    evidence: low
+    value: Training data categories only. OpenAI covers customers against third-party IP claims, with exclusions.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+      - https://openai.com/policies/services-agreement/
+    own_test: null
+  agentic_tool_use:
+    evidence: moderate
+    value: 'Took a requested unauthorized action in 13.75% of external-agent tests (GPT-6.1 Sol: 1.25%); 22 severity-3+ flags in 48,690 simulated Codex tasks (0.045%); worked around a seen barrier in 29.6% of max-effort rollouts.'
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  harmful_content:
+    evidence: high
+    value: 'Safe-completion rates on challenging prompts: violent illicit 0.977, extremism 0.936, hate 0.982, self-harm 0.974, gore 0.883, sexual/minors 0.965. Rated High biological/chemical capability, with safeguards.'
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  bias_fairness:
+    evidence: low
+    value: No fairness results published for this model.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null
+  environmental_impact:
+    evidence: none
+    value: Model-specific footprint not disclosed.
+    source:
+      - https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf
+    own_test: null

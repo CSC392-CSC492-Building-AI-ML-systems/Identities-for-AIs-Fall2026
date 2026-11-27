@@ -1,0 +1,40 @@
+model_key: claude-haiku-5.5
+name: "Claude Haiku 5.5"
+family: Claude
+access: closed
+domain: compliance
+retrieved_at: 2026-11-26
+licence_id: anthropic-commercial-terms
+fields:
+  developer:
+    value: "Anthropic PBC"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  licence:
+    value: "No licence: proprietary model used under Anthropic's Commercial Terms of Service and Usage Policy"
+    source: "https://www.anthropic.com/legal/commercial-terms"
+  base_model:
+    value: "Not applicable (closed model, Anthropic's own)"
+    source: "https://www.anthropic.com/claude-haiku-5-5-system-card"
+  training_data:
+    value: "Partial, by category only: a proprietary mix of public internet data, public and private datasets, user data shared in feedback or permitted for training, and synthetic data from other models. Knowledge cutoff June 2026."
+    source: "https://www.anthropic.com/claude-haiku-5-5-system-card"
+  permitted_uses:
+    value: "Anthropic positions it for high-volume, cost-sensitive work (summaries, classification, sub-agents, live customer support, browser use), not complex agentic coding. Governed by the Usage Policy: finance and credit are high-risk uses, so a qualified person must review AI recommendations, people must be told AI was used, and customer chatbots must say they are AI."
+    source:
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+      - "https://www.anthropic.com/aup"
+  official_documentation:
+    value: "Yes: system card (October 7, 2026) and launch post (October 7, 2026)"
+    source:
+      - "https://www.anthropic.com/claude-haiku-5-5-system-card"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+  disclosed_risks:
+    value: "Not at the capability frontier; treated as meeting Anthropic's CB-1 and Autonomy-1 RSP thresholds (not CB-2 or Autonomy-2); remaining weaknesses in sensitive conversations (self-harm and eating disorders), so API developers should add safeguards; over-refused more than any other model in Anthropic's automated behavioural audit."
+    source:
+      - "https://www.anthropic.com/claude-haiku-5-5-system-card"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+  audit_contact:
+    value: "Harmful content: claude.com/form/anthropic-content-reporting. Model safety issues: Anthropic safety team email (on the support page). Security: Responsible Disclosure Policy."
+    source:
+      - "https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude"
+      - "https://www.anthropic.com/responsible-disclosure-policy"

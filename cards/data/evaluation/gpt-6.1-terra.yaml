@@ -1,0 +1,61 @@
+model_key: gpt-6.1-terra
+name: "GPT-6.1 Terra"
+family: GPT
+access: closed
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "Terminal-Bench 4.0 and an internal factuality evaluation (launch post); HealthBench, MentalHealthBench, Preparedness and safety evaluations (system card). Agents' Last Exam, MMMU-Pro and OSWorld 2.1 appear only in launch-post charts."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  benchmark_results:
+    value:
+      - benchmark: Terminal-Bench 4.0
+        score: 50.3%
+        setting: 'max reasoning effort (GPT-5.6 Terra: 21.5%)'
+      - benchmark: Internal factuality (error-inducing prompts)
+        score: 16.7% errors / 4.3% errors
+        setting: 'low / max effort; lower is better (GPT-5.6 Terra: 53.6%)'
+      - benchmark: HealthBench Professional
+        score: 62.7
+        setting: length-adjusted (64.2 unadjusted)
+      - benchmark: HealthBench
+        score: 55.1
+        setting: length-adjusted
+      - benchmark: MentalHealthBench
+        score: 55.5%
+        setting: ''
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  methodology:
+    value: "Reasoning effort (low to max) changes results, and OpenAI reports scores at different effort levels. HealthBench scores are length-adjusted. Scores shown only in charts are not recorded here."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  evaluated_version:
+    value: "gpt-6.1-terra, system card addendum dated October 26, 2026."
+    source: "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  known_limitations:
+    value: "OpenAI says GPT-6.1 Sol and GPT-6 Astra are better for the most complex coding. In 29.6% of max-effort rollouts it saw a barrier but completed the task another way; it took a requested unauthorized action in 13.75% of external-agent tests (11 of 80)."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  capabilities:
+    value:
+      - computer use
+      - image analysis
+      - writing
+      - coding
+      - health questions
+      - tool use
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"
+  provenance:
+    value: "Developer-reported by OpenAI (launch post and system card). No independent evaluation found. Not reproduced by our project."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-1-terra/"
+      - "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf"

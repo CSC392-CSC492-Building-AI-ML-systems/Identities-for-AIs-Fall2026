@@ -1,0 +1,40 @@
+model_key: gpt-6-luna
+name: "GPT-6 Luna"
+family: GPT
+access: closed
+domain: compliance
+retrieved_at: 2026-11-26
+licence_id: openai-api-terms
+fields:
+  developer:
+    value: "OpenAI (the contracting entity is named in the Services Agreement)"
+    source: "https://openai.com/policies/services-agreement/"
+  licence:
+    value: "No licence: proprietary model used under the OpenAI Services Agreement and Usage Policies"
+    source: "https://openai.com/policies/services-agreement/"
+  base_model:
+    value: "Not applicable (closed model, OpenAI's own). Base model not stated."
+    source: "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+  training_data:
+    value: "Partial: 'trained on diverse datasets and filtered through our data processing pipeline, including to reduce personal information'. No dataset list or cutoff date."
+    source: "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+  permitted_uses:
+    value: "OpenAI positions Luna for high-volume tasks with a clear goal, like summarizing documents, extracting information or answering quick questions. Usage Policies: no automating high-stakes financial, credit or insurance decisions without human review, and no tailored advice that needs a licence without a professional involved."
+    source:
+      - "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      - "https://openai.com/policies/usage-policies/"
+  official_documentation:
+    value: "Yes: GPT-6 Sol and Luna October 2026 system card (October 7, 2026) and an addendum for the October 29, 2026 update"
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+  disclosed_risks:
+    value: "Treated as High capability in cybersecurity and biological/chemical (safeguards applied); statistically significant regressions on self-harm, gore and sexual content versus GPT-5.6 Luna; more likely to engage with gore and sexual requests than refuse; the October 29 update has higher factual-error rates than the October 7 version."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+  audit_contact:
+    value: "OpenAI Trust Portal (trust.openai.com) for compliance documents; security issues through the Coordinated Vulnerability Disclosure Policy."
+    source:
+      - "https://trust.openai.com/"
+      - "https://openai.com/policies/coordinated-vulnerability-disclosure-policy"

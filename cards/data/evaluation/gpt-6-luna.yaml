@@ -1,0 +1,68 @@
+model_key: gpt-6-luna
+name: "GPT-6 Luna"
+family: GPT
+access: closed
+domain: evaluation
+retrieved_at: 2026-11-26
+fields:
+  benchmarks:
+    value: "DeepSWE 1.1 (launch post); HealthBench, MentalHealthBench, Preparedness and safety evaluations (system card). OSWorld 2.1, Terminal-Bench 4.0 and FrontierCode 1.1 scores published by Anthropic."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+  benchmark_results:
+    value:
+      - benchmark: DeepSWE 1.1
+        score: 66.6%
+        setting: max effort
+      - benchmark: HealthBench Professional
+        score: 48.2
+        setting: length-adjusted (57.8 unadjusted), October 7 version
+      - benchmark: HealthBench Hard
+        score: 27.2
+        setting: length-adjusted, October 7 version
+      - benchmark: MentalHealthBench
+        score: 51.73
+        setting: October 7 version
+      - benchmark: OSWorld 2.1
+        score: 48.9%
+        setting: offline subset; reported by Anthropic in the Claude Haiku 5.5 launch post, not by OpenAI
+      - benchmark: Terminal-Bench 4.0
+        score: 16.4%
+        setting: reported by Anthropic, not by OpenAI
+    source:
+      - "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
+  methodology:
+    value: "Reasoning effort changes results; HealthBench scores are length-adjusted (unadjusted in brackets). Most other Luna claims in the launch post are relative to other models, with no absolute score."
+    source:
+      - "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+  evaluated_version:
+    value: "gpt-6-luna, October 7, 2026 version (system card); an October 29, 2026 update scored lower on HealthBench (Professional 47.4)."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+  known_limitations:
+    value: "Built for simpler, high-volume tasks; regressions on self-harm, gore and sexual-content safety versus GPT-5.6 Luna; in 15.9% of rollouts it worked around environment barriers; the October 29 update made more factual errors than the October 7 version."
+    source:
+      - "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+  capabilities:
+    value:
+      - summarization
+      - information extraction
+      - coding
+      - computer use
+      - health questions
+    source:
+      - "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      - "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+  provenance:
+    value: "Developer-reported by OpenAI (launch post and system cards); two scores come from Anthropic's comparison table. No independent evaluation found. Not reproduced by our project."
+    source:
+      - "https://deploymentsafety.openai.com/gpt-6-october/gpt-6-october.pdf"
+      - "https://www.anthropic.com/news/claude-haiku-5-5"
